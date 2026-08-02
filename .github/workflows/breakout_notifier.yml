@@ -2,9 +2,6 @@ name: Nifty500 Result-Day Breakout Notifier
 
 on:
   schedule:
-    # Same window as the result notifier: every 15 min, Mon-Fri,
-    # roughly covering 9:00-16:00 IST (3:30-10:30 UTC). Script's own
-    # is_market_hours_now() check skips anything outside real hours.
     - cron: '*/15 3-10 * * 1-5'
   workflow_dispatch: {}
 
@@ -36,6 +33,14 @@ jobs:
         run: |
           git config user.name "breakout-notifier-bot"
           git config user.email "actions@github.com"
-          git add breakout_state.json nifty500_symbols.json
-          git diff --quiet --cached || git commit -m "Update breakout tracking state [skip ci]"
-          git push
+          FILES_TO_ADD=""
+          for f in breakout_state.json nifty500_symbols.json; do
+            if [ -f "$f" ]; then FILES_TO_ADD="$FILES_TO_ADD $f"; fi
+          done
+          if [ -n "$FILES_TO_ADD" ]; then
+            git add $FILES_TO_ADD
+            git diff --quiet --cached || git commit -m "Update breakout tracking state [skip ci]"
+            git push
+          else
+            echo "No state files exist yet -- nothing to commit."
+          fi
