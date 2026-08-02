@@ -1,0 +1,46 @@
+name: NSE-BSE Result Notifier
+
+on:
+  schedule:
+    # Every 15 minutes, Mon-Fri, roughly covering 9:00-16:00 IST.
+    # GitHub Actions cron is in UTC. IST = UTC+5:30, so 9:00-16:00 IST
+    # is 3:30-10:30 UTC. Cron can't express the ":30" offset cleanly
+    # for a repeating 15-min pattern, so this window runs slightly
+    # wider (3:15-10:45 UTC) -- the script's own is_market_hours_now()
+    # check silently skips any run that lands outside real IST market
+    # hours, so the wider window is harmless.
+    - cron: '*/15 3-10 * * 1-5'
+  workflow_dispatch: {}  # lets you manually trigger a run from the GitHub UI to test
+
+permissions:
+  contents: write  # needed so the workflow can commit seen_announcements.json back
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run notifier (single poll)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 result_notifier.py --once
+
+      - name: Commit updated seen-announcements state
+        run: |
+          git config user.name "result-notifier-bot"
+          git config user.email "actions@github.com"
+          git add seen_announcements.json
+          git diff --quiet --cached || git commit -m "Update seen announcements [skip ci]"
+          git push
+
