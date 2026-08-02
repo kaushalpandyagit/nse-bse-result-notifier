@@ -1,0 +1,41 @@
+name: Nifty500 Result-Day Breakout Notifier
+
+on:
+  schedule:
+    # Same window as the result notifier: every 15 min, Mon-Fri,
+    # roughly covering 9:00-16:00 IST (3:30-10:30 UTC). Script's own
+    # is_market_hours_now() check skips anything outside real hours.
+    - cron: '*/15 3-10 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements_breakout.txt
+
+      - name: Run breakout notifier (single poll)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 price_rsi_breakout.py --once
+
+      - name: Commit updated state
+        run: |
+          git config user.name "breakout-notifier-bot"
+          git config user.email "actions@github.com"
+          git add breakout_state.json nifty500_symbols.json
+          git diff --quiet --cached || git commit -m "Update breakout tracking state [skip ci]"
+          git push
