@@ -8,18 +8,21 @@ For every Nifty 500 stock:
   1. Watches NSE + BSE announcements for financial-result filings
      (same detection logic as result_notifier.py).
   2. The FIRST TIME a result is detected for a stock, it records a
-     "baseline": that day's High price (fetched from Yahoo Finance
-     historical data) -- this is the "result day high".
+     "baseline" from that trading day: the day's High, Low, and the
+     14-period RSI AS OF that day (falls forward to the next trading
+     day if the result was announced on a weekend/holiday).
   3. On every subsequent poll (same 15-min cadence), for every stock
-     with an active baseline, it checks:
-       - Has the LIVE PRICE crossed above the result-day high?
-       - Has the 14-period RSI crossed above RSI_THRESHOLD (default 70)?
-     Each condition alerts independently, exactly once per stock
-     (tracked in state so you don't get spammed every 15 min).
+     with an active baseline, it checks FOUR independent conditions:
+       - Has price broken ABOVE the result-day High?
+       - Has price broken BELOW the result-day Low?
+       - Has RSI crossed ABOVE the result-day RSI?
+       - Has RSI crossed BELOW the result-day RSI?
+     Each fires independently, exactly once per stock (tracked in
+     state so you don't get spammed every 15 min).
   4. Baselines expire automatically after TRACK_WINDOW_DAYS (default
      15 calendar days) to keep the state file small and relevant --
-     "result day high" loses its meaning as a signal long after the
-     result.
+     the result-day levels lose their meaning as a signal long after
+     the result.
 
 Data sources
 ------------
@@ -81,8 +84,8 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 POLL_INTERVAL_MINUTES = 15
 POLL_ONLY_MARKET_HOURS = True
 
-# RSI level that counts as a "breakout" alert.
-RSI_THRESHOLD = 70
+# RSI comparisons are against each stock's OWN result-day RSI value
+# (dynamic per stock), not a fixed threshold -- see get_baseline_metrics().
 RSI_PERIOD = 14
 
 # How many calendar days after a result a baseline stays active before
@@ -316,19 +319,36 @@ def compute_rsi(closes: pd.Series, period: int = RSI_PERIOD) -> float:
     return float(rsi.iloc[-1])
 
 
-def get_day_high(yahoo_ticker: str, date: datetime.date) -> float | None:
-    """Fetch the High price on the given date, or the NEXT available
-    trading day if that date had no trading (e.g. results announced
-    on a Saturday board meeting, when NSE is closed)."""
+def get_baseline_metrics(yahoo_ticker: str, date: datetime.date):
+    """Returns dict with day_high, day_low, baseline_rsi (RSI computed
+    using data up to and including the result day), and actual_date
+    (falls forward to the next trading day if `date` was a weekend/
+    holiday, e.g. a Saturday board meeting). Returns None on failure."""
     try:
-        hist = yf.Ticker(yahoo_ticker).history(
-            start=date, end=date + datetime.timedelta(days=7)
-        )
+        start = date - datetime.timedelta(days=100)
+        end = date + datetime.timedelta(days=7)
+        hist = yf.Ticker(yahoo_ticker).history(start=start, end=end)
         if hist.empty:
             return None
-        return float(hist["High"].iloc[0])
+
+        hist_dates = [d.date() if hasattr(d, "date") else d for d in hist.index]
+        idx = next((i for i, d in enumerate(hist_dates) if d >= date), None)
+        if idx is None:
+            return None
+
+        day_high = float(hist["High"].iloc[idx])
+        day_low = float(hist["Low"].iloc[idx])
+        closes_up_to = hist["Close"].iloc[: idx + 1]
+        baseline_rsi = compute_rsi(closes_up_to) if len(closes_up_to) >= RSI_PERIOD + 1 else None
+
+        return {
+            "day_high": day_high,
+            "day_low": day_low,
+            "baseline_rsi": baseline_rsi,
+            "actual_date": hist_dates[idx],
+        }
     except Exception as e:
-        log.warning("Could not fetch day-high for %s on/after %s: %s", yahoo_ticker, date, e)
+        log.warning("Could not fetch baseline metrics for %s on/after %s: %s", yahoo_ticker, date, e)
         return None
 
 
@@ -378,50 +398,98 @@ def poll_once(state: dict) -> dict:
     today = datetime.date.today()
     for symbol in new_result_symbols:
         yahoo_ticker = f"{symbol}.NS"
-        day_high = get_day_high(yahoo_ticker, today)
-        if day_high is None:
+        metrics = get_baseline_metrics(yahoo_ticker, today)
+        if metrics is None:
             continue
         state[symbol] = {
-            "result_date": datetime.datetime.now().isoformat(),
-            "day_high": day_high,
-            "price_alerted": False,
-            "rsi_alerted": False,
+            "result_date": datetime.datetime.combine(metrics["actual_date"], datetime.time()).isoformat(),
+            "day_high": metrics["day_high"],
+            "day_low": metrics["day_low"],
+            "baseline_rsi": metrics["baseline_rsi"],
             "yahoo_ticker": yahoo_ticker,
+            "price_high_alerted": False,
+            "price_low_alerted": False,
+            "rsi_up_alerted": False,
+            "rsi_down_alerted": False,
         }
-        log.info("New baseline set: %s result-day high = %.2f", symbol, day_high)
+        log.info("New baseline set: %s high=%.2f low=%.2f rsi=%s",
+                  symbol, metrics["day_high"], metrics["day_low"],
+                  f"{metrics['baseline_rsi']:.1f}" if metrics["baseline_rsi"] else "n/a")
+        rsi_line = (f"Result-day RSI({RSI_PERIOD}): {metrics['baseline_rsi']:.1f}\n"
+                    if metrics["baseline_rsi"] else "")
         send_telegram_message(
             f"\U0001F4CC <b>{symbol}</b> result filed today.\n"
-            f"Tracking result-day high: \u20b9{day_high:.2f}\n"
-            f"Will alert if price crosses this level or RSI({RSI_PERIOD}) crosses {RSI_THRESHOLD}."
+            f"Result-day High: \u20b9{metrics['day_high']:.2f} | Low: \u20b9{metrics['day_low']:.2f}\n"
+            f"{rsi_line}"
+            f"Will alert if price breaks this High/Low or RSI crosses the result-day RSI level."
         )
 
     # --- Step 2: check active baselines for price/RSI breakout ---
     state = prune_expired(state)
     for symbol, entry in state.items():
-        if entry.get("price_alerted") and entry.get("rsi_alerted"):
-            continue  # both already fired, nothing left to check
+        # Auto-migrate older entries (pre-High/Low/RSI-baseline schema)
+        if "day_low" not in entry or "baseline_rsi" not in entry:
+            yahoo_ticker = entry.get("yahoo_ticker", f"{symbol}.NS")
+            try:
+                result_date = datetime.datetime.fromisoformat(entry["result_date"]).date()
+            except Exception:
+                result_date = today
+            metrics = get_baseline_metrics(yahoo_ticker, result_date)
+            if metrics is not None:
+                entry["day_high"] = metrics["day_high"]
+                entry["day_low"] = metrics["day_low"]
+                entry["baseline_rsi"] = metrics["baseline_rsi"]
+                entry["price_high_alerted"] = entry.get("price_alerted", False)
+                entry["price_low_alerted"] = False
+                entry["rsi_up_alerted"] = entry.get("rsi_alerted", False)
+                entry["rsi_down_alerted"] = False
+                log.info("Migrated old baseline for %s to new High/Low/RSI schema.", symbol)
+            else:
+                continue  # can't migrate yet, skip this cycle
+
+        all_alerted = (entry.get("price_high_alerted") and entry.get("price_low_alerted")
+                       and entry.get("rsi_up_alerted") and entry.get("rsi_down_alerted"))
+        if all_alerted:
+            continue
 
         yahoo_ticker = entry.get("yahoo_ticker", f"{symbol}.NS")
         price, rsi = get_live_price_and_rsi(yahoo_ticker)
         if price is None:
             continue
 
-        if not entry["price_alerted"] and price > entry["day_high"]:
-            entry["price_alerted"] = True
+        if not entry["price_high_alerted"] and price > entry["day_high"]:
+            entry["price_high_alerted"] = True
             send_telegram_message(
-                f"\U0001F680 <b>{symbol}</b> price crossed result-day high!\n"
-                f"Current: \u20b9{price:.2f} | Result-day high: \u20b9{entry['day_high']:.2f}"
+                f"\U0001F680 <b>{symbol}</b> price broke ABOVE result-day High!\n"
+                f"Current: \u20b9{price:.2f} | Result-day High: \u20b9{entry['day_high']:.2f}"
             )
-            log.info("PRICE breakout alert: %s @ %.2f (baseline %.2f)",
-                      symbol, price, entry["day_high"])
+            log.info("PRICE HIGH breakout: %s @ %.2f (baseline high %.2f)", symbol, price, entry["day_high"])
 
-        if rsi is not None and not entry["rsi_alerted"] and rsi > RSI_THRESHOLD:
-            entry["rsi_alerted"] = True
+        if not entry["price_low_alerted"] and price < entry["day_low"]:
+            entry["price_low_alerted"] = True
             send_telegram_message(
-                f"\U0001F4C8 <b>{symbol}</b> RSI({RSI_PERIOD}) crossed {RSI_THRESHOLD}!\n"
-                f"Current RSI: {rsi:.1f} | Price: \u20b9{price:.2f}"
+                f"\U0001F53B <b>{symbol}</b> price broke BELOW result-day Low!\n"
+                f"Current: \u20b9{price:.2f} | Result-day Low: \u20b9{entry['day_low']:.2f}"
             )
-            log.info("RSI breakout alert: %s RSI=%.1f", symbol, rsi)
+            log.info("PRICE LOW breakdown: %s @ %.2f (baseline low %.2f)", symbol, price, entry["day_low"])
+
+        baseline_rsi = entry.get("baseline_rsi")
+        if rsi is not None and baseline_rsi is not None:
+            if not entry["rsi_up_alerted"] and rsi > baseline_rsi:
+                entry["rsi_up_alerted"] = True
+                send_telegram_message(
+                    f"\U0001F4C8 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\n"
+                    f"Current RSI: {rsi:.1f} | Result-day RSI: {baseline_rsi:.1f} | Price: \u20b9{price:.2f}"
+                )
+                log.info("RSI UP break: %s RSI=%.1f (baseline %.1f)", symbol, rsi, baseline_rsi)
+
+            if not entry["rsi_down_alerted"] and rsi < baseline_rsi:
+                entry["rsi_down_alerted"] = True
+                send_telegram_message(
+                    f"\U0001F4C9 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\n"
+                    f"Current RSI: {rsi:.1f} | Result-day RSI: {baseline_rsi:.1f} | Price: \u20b9{price:.2f}"
+                )
+                log.info("RSI DOWN break: %s RSI=%.1f (baseline %.1f)", symbol, rsi, baseline_rsi)
 
     return state
 
