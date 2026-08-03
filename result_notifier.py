@@ -95,6 +95,11 @@ RESULT_KEYWORDS = [
     "audited financial",
     "results for the quarter",
     "results for the year",
+    "regulation 33",
+    "reg. 33",
+    "reg 33",
+    "standalone and consolidated financial",
+    "submitted to the exchange",
 ]
 
 # Empty = track every company. To restrict to specific tickers, add
@@ -325,7 +330,9 @@ def is_result_announcement(subject: str) -> bool:
     if not RESULT_KEYWORDS:
         return True  # no filter -> everything counts
     subj_lower = subject.lower()
-    return any(kw in subj_lower for kw in RESULT_KEYWORDS)
+    if any(kw in subj_lower for kw in RESULT_KEYWORDS):
+        return True
+    return "board meeting" in subj_lower and "result" in subj_lower
 
 
 def matches_watchlist(company: str, symbol: str) -> bool:

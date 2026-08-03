@@ -53,8 +53,19 @@ RESULT_KEYWORDS = [
     "financial result", "financial results", "quarterly result",
     "quarterly results", "board meeting outcome", "un-audited",
     "unaudited", "audited financial", "results for the quarter",
-    "results for the year",
+    "results for the year", "regulation 33", "reg. 33", "reg 33",
+    "standalone and consolidated financial", "submitted to the exchange",
 ]
+
+
+def is_result_announcement(subject: str) -> bool:
+    subj_lower = subject.lower()
+    if any(kw in subj_lower for kw in RESULT_KEYWORDS):
+        return True
+    # Fallback heuristic: "board meeting" + "result" appearing anywhere
+    # in the same text (not necessarily as an exact phrase) catches
+    # more phrasing variants smaller/BSE-only companies sometimes use.
+    return "board meeting" in subj_lower and "result" in subj_lower
 
 STATE_FILE = Path(__file__).parent / "breakout_state.json"
 OUTPUT_CSV = Path(__file__).parent / "result_dates_filled.csv"
@@ -92,11 +103,6 @@ def parse_nse_date(date_str: str):
         except ValueError:
             continue
     return None
-
-
-def is_result_announcement(subject: str) -> bool:
-    subj_lower = subject.lower()
-    return any(kw in subj_lower for kw in RESULT_KEYWORDS)
 
 
 def send_telegram_message(text: str) -> bool:

@@ -44,7 +44,8 @@ RESULT_KEYWORDS = [
     "financial result", "financial results", "quarterly result",
     "quarterly results", "board meeting outcome", "un-audited",
     "unaudited", "audited financial", "results for the quarter",
-    "results for the year",
+    "results for the year", "regulation 33", "reg. 33", "reg 33",
+    "standalone and consolidated financial", "submitted to the exchange",
 ]
 
 STATE_FILE = Path(__file__).parent / "breakout_state.json"
@@ -95,7 +96,9 @@ def normalise_company(name: str) -> str:
 
 def is_result_announcement(subject: str) -> bool:
     subj_lower = subject.lower()
-    return any(kw in subj_lower for kw in RESULT_KEYWORDS)
+    if any(kw in subj_lower for kw in RESULT_KEYWORDS):
+        return True
+    return "board meeting" in subj_lower and "result" in subj_lower
 
 
 def get_nifty500_symbols() -> list:
