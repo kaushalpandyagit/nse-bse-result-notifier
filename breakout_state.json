@@ -1,110 +1,37 @@
 {
-  "FIRSTCRY": {
-    "result_date": "2026-06-25T00:00:00",
-    "day_high": 226.6999969482422,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
   "COHANCE": {
     "result_date": "2026-07-20T00:00:00",
     "day_high": 457.25,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 435.0,
+    "baseline_rsi": 55.1327181087275,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "BAJAJ-AUTO": {
     "result_date": "2026-07-20T00:00:00",
     "day_high": 10535.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 10401.5,
+    "baseline_rsi": 64.21280489291877,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
-  "MMTC": {
-    "result_date": "2026-06-24T00:00:00",
-    "day_high": 74.41999816894531,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AIIL": {
-    "result_date": "2026-06-18T00:00:00",
-    "day_high": 558.4000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GABRIEL": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 1247.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "POONAWALLA": {
-    "result_date": "2026-07-08T00:00:00",
-    "day_high": 478.3999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ANTHEM": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 769.5934641724301,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PARADEEP": {
-    "result_date": "2026-05-20T00:00:00",
-    "day_high": 125.5999984741211,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NH": {
-    "result_date": "2026-06-29T00:00:00",
-    "day_high": 1967.2397941042038,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RKFORGE": {
-    "result_date": "2026-06-25T00:00:00",
-    "day_high": 577.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NCC": {
-    "result_date": "2026-05-25T00:00:00",
-    "day_high": 151.60000610351562,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SAREGAMA": {
-    "result_date": "2026-05-25T00:00:00",
-    "day_high": 407.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AMBER": {
-    "result_date": "2026-06-11T00:00:00",
-    "day_high": 7575.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SJVN": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 77.80000305175781,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BLUEDART": {
-    "result_date": "2026-05-20T00:00:00",
-    "day_high": 4889.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MFSL": {
-    "result_date": "2026-05-22T00:00:00",
-    "day_high": 1687.199951171875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "THERMAX": {
-    "result_date": "2026-05-21T00:00:00",
-    "day_high": 4602.104317027597,
-    "price_alerted": false,
-    "rsi_alerted": false
+  "JMFINANCIL": {
+    "result_date": "2026-08-03T00:00:00",
+    "day_high": 125.25,
+    "day_low": 117.69999694824219,
+    "baseline_rsi": 38.93992910073227,
+    "yahoo_ticker": "JMFINANCIL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
