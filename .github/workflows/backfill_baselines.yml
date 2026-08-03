@@ -1,49 +1,331 @@
-name: Backfill Result Baselines (manual)
+"""
+One-time backfill: seed result-day-high baselines for Nifty 500 stocks
+that ALREADY declared results earlier this quarter (before the live
+tracker started running).
 
-on:
-  workflow_dispatch:
-    inputs:
-      days:
-        description: 'How many days back to scan for already-declared results'
-        required: false
-        default: '75'
+This does NOT run on a schedule -- run it once (or whenever you want
+to catch up on newly-added historical results), and it merges new
+baselines into the same breakout_state.json that price_rsi_breakout.py
+uses for its ongoing 15-min checks.
 
-permissions:
-  contents: write
+Usage:
+    python3 backfill_baselines.py [--days N]
 
-jobs:
-  backfill:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repo
-        uses: actions/checkout@v4
+    --days N   How many days back to scan for already-declared results
+               (default 75, enough to cover a full quarterly earnings
+               season).
+"""
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+import os
+import re
+import io
+import sys
+import json
+import time
+import logging
+import datetime
+from pathlib import Path
 
-      - name: Install dependencies
-        run: pip install -r requirements_breakout.txt
+import requests
+import pandas as pd
 
-      - name: Run backfill
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python3 backfill_baselines.py --days ${{ github.event.inputs.days }}
+try:
+    import yfinance as yf
+except ImportError:
+    print("yfinance is required: pip install yfinance")
+    raise
 
-      - name: Commit updated state
-        run: |
-          git config user.name "breakout-notifier-bot"
-          git config user.email "actions@github.com"
-          FILES_TO_ADD=""
-          for f in breakout_state.json nifty500_symbols.json; do
-            if [ -f "$f" ]; then FILES_TO_ADD="$FILES_TO_ADD $f"; fi
-          done
-          if [ -n "$FILES_TO_ADD" ]; then
-            git add $FILES_TO_ADD
-            git diff --quiet --cached || git commit -m "Backfill result baselines [skip ci]"
-            git push
-          else
-            echo "No state files to commit."
-          fi
+# Reuse the same config values as price_rsi_breakout.py -- kept in
+# sync manually since this is a standalone one-off script.
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
+
+RESULT_KEYWORDS = [
+    "financial result", "financial results", "quarterly result",
+    "quarterly results", "board meeting outcome", "un-audited",
+    "unaudited", "audited financial", "results for the quarter",
+    "results for the year",
+]
+
+STATE_FILE = Path(__file__).parent / "breakout_state.json"
+NIFTY500_CACHE_FILE = Path(__file__).parent / "nifty500_symbols.json"
+NSE_500_CSV_URL = "https://archives.nseindia.com/content/indices/ind_nifty500list.csv"
+
+FALLBACK_SYMBOLS = [
+    "RELIANCE", "TCS", "HDFCBANK", "INFY", "ICICIBANK", "HINDUNILVR",
+    "ITC", "SBIN", "BHARTIARTL", "KOTAKBANK", "LT", "AXISBANK",
+    "BAJFINANCE", "ASIANPAINT", "MARUTI", "SUNPHARMA", "TITAN",
+    "ULTRACEMCO", "WIPRO", "NESTLEIND", "TATASTEEL", "TATAMOTORS",
+    "ADANIENT", "ADANIPORTS", "POWERGRID", "NTPC", "ONGC", "HCLTECH",
+    "M&M", "JSWSTEEL",
+]
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+    ),
+}
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+log = logging.getLogger("backfill")
+
+
+def send_telegram_message(text: str) -> bool:
+    if "PUT_YOUR" in TELEGRAM_BOT_TOKEN or "PUT_YOUR" in TELEGRAM_CHAT_ID:
+        log.error("Telegram not configured.")
+        return False
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    payload = {"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "HTML",
+               "disable_web_page_preview": True}
+    try:
+        resp = requests.post(url, data=payload, timeout=15)
+        return resp.status_code == 200
+    except requests.RequestException as e:
+        log.error("Telegram send exception: %s", e)
+        return False
+
+
+def normalise_company(name: str) -> str:
+    name = name.upper()
+    name = re.sub(r"\b(LIMITED|LTD|LTD\.|THE)\b", "", name)
+    name = re.sub(r"[^A-Z0-9]", "", name)
+    return name.strip()
+
+
+def is_result_announcement(subject: str) -> bool:
+    subj_lower = subject.lower()
+    return any(kw in subj_lower for kw in RESULT_KEYWORDS)
+
+
+def get_nifty500_symbols() -> list:
+    if NIFTY500_CACHE_FILE.exists():
+        try:
+            cached = json.loads(NIFTY500_CACHE_FILE.read_text())
+            fetched_at = datetime.datetime.fromisoformat(cached["fetched_at"])
+            if (datetime.datetime.now() - fetched_at).days < 7:
+                return cached["symbols"]
+        except Exception:
+            pass
+    try:
+        resp = requests.get(NSE_500_CSV_URL, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        df = pd.read_csv(io.StringIO(resp.text))
+        symbols = sorted(df["Symbol"].astype(str).str.strip().tolist())
+        NIFTY500_CACHE_FILE.write_text(json.dumps({
+            "fetched_at": datetime.datetime.now().isoformat(), "symbols": symbols,
+        }))
+        log.info("Nifty 500 list: %d symbols.", len(symbols))
+        return symbols
+    except Exception as e:
+        log.error("Could not fetch Nifty 500 list (%s). Using fallback.", e)
+        return FALLBACK_SYMBOLS
+
+
+def fetch_nse_historical(from_date: datetime.date, to_date: datetime.date) -> list:
+    """Returns list of (symbol, subject, date_str) for NSE announcements
+    in the given date range."""
+    session = requests.Session()
+    try:
+        session.get("https://www.nseindia.com", headers=HEADERS, timeout=15)
+        time.sleep(1)
+        params = {
+            "index": "equities",
+            "from_date": from_date.strftime("%d-%m-%Y"),
+            "to_date": to_date.strftime("%d-%m-%Y"),
+        }
+        resp = session.get(
+            "https://www.nseindia.com/api/corporate-announcements",
+            headers=HEADERS, params=params, timeout=20,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as e:
+        log.error("NSE historical fetch failed: %s", e)
+        return []
+
+    if isinstance(data, str):
+        try:
+            data = json.loads(data)
+        except Exception:
+            return []
+    if not isinstance(data, list):
+        return []
+
+    results = []
+    for item in data:
+        symbol = (item.get("symbol") or "").strip().upper()
+        subject = item.get("desc") or item.get("attchmntText", "") or ""
+        date_str = item.get("an_dt") or ""
+        if symbol and subject:
+            results.append((symbol, subject, date_str))
+    return results
+
+
+def fetch_bse_historical(from_date: datetime.date, to_date: datetime.date) -> list:
+    """Returns list of (company_name, subject, date_str) for BSE
+    announcements in the given date range."""
+    url = (
+        "https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w"
+        f"?pageno=1&strCat=-1&strPrevDate={from_date.strftime('%Y%m%d')}"
+        f"&strScrip=&strSearch=P&strToDate={to_date.strftime('%Y%m%d')}"
+        f"&strType=C&subcategory=-1"
+    )
+    try:
+        resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=20)
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as e:
+        log.error("BSE historical fetch failed: %s", e)
+        return []
+
+    if isinstance(data, str):
+        try:
+            data = json.loads(data)
+        except Exception:
+            log.warning("BSE historical query returned non-JSON string (likely no records for "
+                        "this date range, or blocked). First 200 chars: %r", data[:200])
+            return []
+    if not isinstance(data, dict):
+        return []
+
+    results = []
+    for item in data.get("Table", []):
+        company = item.get("SLONGNAME") or ""
+        subject = item.get("NEWSSUB") or item.get("HEADLINE", "") or ""
+        date_str = item.get("NEWS_DT") or item.get("DissemDT", "") or ""
+        if company and subject:
+            results.append((company, subject, date_str))
+    return results
+
+
+def parse_nse_date(date_str: str):
+    date_part = date_str.strip()
+    for fmt in ("%d-%b-%Y %H:%M:%S", "%d-%b-%Y", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d"):
+        try:
+            return datetime.datetime.strptime(date_part, fmt)
+        except ValueError:
+            continue
+    return None
+
+
+def get_day_high(symbol: str, date: datetime.date):
+    ticker = f"{symbol}.NS"
+    try:
+        hist = yf.Ticker(ticker).history(start=date, end=date + datetime.timedelta(days=1))
+        if hist.empty:
+            return None
+        return float(hist["High"].iloc[0])
+    except Exception as e:
+        log.warning("Could not fetch day-high for %s on %s: %s", symbol, date, e)
+        return None
+
+
+def main():
+    days_back = 75
+    if "--days" in sys.argv:
+        idx = sys.argv.index("--days")
+        if idx + 1 < len(sys.argv):
+            days_back = int(sys.argv[idx + 1])
+
+    to_date = datetime.date.today()
+    from_date = to_date - datetime.timedelta(days=days_back)
+    log.info("Backfilling results from %s to %s (%d days).", from_date, to_date, days_back)
+
+    nifty500 = set(get_nifty500_symbols())
+    nifty500_normalised = {normalise_company(s): s for s in nifty500}
+
+    # Existing state -- don't clobber baselines already tracked
+    state = {}
+    if STATE_FILE.exists():
+        try:
+            state = json.loads(STATE_FILE.read_text())
+        except Exception:
+            log.warning("Could not parse existing state file, starting fresh.")
+
+    # --- NSE ---
+    nse_items = fetch_nse_historical(from_date, to_date)
+    log.info("NSE returned %d announcements in range.", len(nse_items))
+    nse_matches = {}  # symbol -> earliest matching date_str
+    for symbol, subject, date_str in nse_items:
+        if symbol in nifty500 and is_result_announcement(subject):
+            parsed = parse_nse_date(date_str)
+            if parsed is None:
+                continue
+            existing = nse_matches.get(symbol)
+            if existing is None or parsed < parse_nse_date(existing):
+                nse_matches[symbol] = date_str
+
+    # --- BSE ---
+    bse_items = fetch_bse_historical(from_date, to_date)
+    log.info("BSE returned %d announcements in range.", len(bse_items))
+    bse_matches = {}  # symbol -> earliest matching date_str
+    for company, subject, date_str in bse_items:
+        norm = normalise_company(company)
+        if norm in nifty500_normalised and is_result_announcement(subject):
+            symbol = nifty500_normalised[norm]
+            if symbol not in bse_matches or date_str < bse_matches[symbol]:
+                bse_matches[symbol] = date_str
+
+    # --- Merge: BSE and NSE use different date string formats, so we
+    # don't try to string-compare across sources. Prefer BSE's date if
+    # a symbol appears in both (arbitrary but consistent tie-break).
+    all_matches = dict(nse_matches)
+    all_matches.update(bse_matches)
+
+    log.info("Total unique Nifty500 result matches found: %d", len(all_matches))
+
+    added = []
+    skipped_existing = 0
+    skipped_no_price_data = 0
+
+    for symbol, date_str in all_matches.items():
+        if symbol in state:
+            skipped_existing += 1
+            continue
+        result_date = None
+        date_part = date_str.strip()
+        for fmt in ("%d-%b-%Y %H:%M:%S", "%d-%b-%Y", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d"):
+            try:
+                result_date = datetime.datetime.strptime(date_part, fmt).date()
+                break
+            except ValueError:
+                continue
+        if result_date is None:
+            log.warning("Could not parse date '%s' for %s, skipping.", date_str, symbol)
+            continue
+
+        day_high = get_day_high(symbol, result_date)
+        if day_high is None:
+            skipped_no_price_data += 1
+            continue
+
+        state[symbol] = {
+            "result_date": datetime.datetime.combine(result_date, datetime.time()).isoformat(),
+            "day_high": day_high,
+            "price_alerted": False,
+            "rsi_alerted": False,
+        }
+        added.append((symbol, result_date, day_high))
+        log.info("Backfilled %s: result date %s, day high %.2f", symbol, result_date, day_high)
+
+    STATE_FILE.write_text(json.dumps(state, indent=2))
+
+    log.info(
+        "Done. Added %d new baselines. Skipped %d already-tracked, %d with no price data.",
+        len(added), skipped_existing, skipped_no_price_data,
+    )
+
+    if added:
+        lines = [f"\U0001F4CB <b>Backfill complete</b>: {len(added)} Nifty 500 stocks added to tracking.\n"]
+        for symbol, result_date, day_high in sorted(added, key=lambda x: x[1], reverse=True)[:30]:
+            lines.append(f"\u2022 {symbol}: {result_date} \u2014 \u20b9{day_high:.2f}")
+        if len(added) > 30:
+            lines.append(f"...and {len(added) - 30} more.")
+        send_telegram_message("\n".join(lines))
+    else:
+        log.info("Nothing new to backfill.")
+
+
+if __name__ == "__main__":
+    main()
