@@ -50,6 +50,7 @@ Notes on the data sources
 
 import os
 import re
+import sys
 import json
 import time
 import logging
@@ -68,8 +69,8 @@ except ImportError:
 # CONFIG -- edit these
 # ----------------------------------------------------------------------
 
-TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "8974222959:AAG7S_dPYmDXBOX_ZnDWXMEenwqrmygkC-4")
-TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "1689560854")
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
 # How often to poll, in minutes.
 POLL_INTERVAL_MINUTES = 15
@@ -108,7 +109,7 @@ LOG_FILE = Path(__file__).parent / "notifier.log"
 # ----------------------------------------------------------------------
 
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.FileHandler(LOG_FILE),
@@ -233,7 +234,7 @@ def fetch_nse_announcements() -> list:
     results = []
     for item in data:
         company = item.get("sm_name") or item.get("symbol", "")
-        subject = item.get("desc") or item.get("attchmntText", "") or ""
+        subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}"
         date_str = item.get("an_dt") or item.get("attchmntFile", "") or ""
         results.append({
             "company": company,
@@ -303,7 +304,7 @@ def fetch_bse_announcements() -> list:
     results = []
     for item in data.get("Table", []):
         company = item.get("SLONGNAME") or item.get("SCRIP_CD", "")
-        subject = item.get("NEWSSUB") or item.get("HEADLINE", "") or ""
+        subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}"
         date_str = item.get("NEWS_DT") or item.get("DissemDT", "") or ""
         results.append({
             "company": company,
@@ -399,9 +400,24 @@ def poll_once(seen: set) -> set:
 
 
 def main():
-    log.info("Starting NSE+BSE result notifier. Polling every %d minutes.",
-              POLL_INTERVAL_MINUTES)
+    one_shot = "--once" in sys.argv
+
+    log.info("Starting NSE+BSE result notifier. Polling every %d minutes.%s",
+              POLL_INTERVAL_MINUTES, " (single-shot mode)" if one_shot else "")
     seen = load_seen()
+
+    if one_shot:
+        # Used by scheduled runners (e.g. GitHub Actions) where the
+        # scheduler itself controls timing -- run exactly one poll and exit.
+        if is_market_hours_now():
+            try:
+                seen = poll_once(seen)
+                save_seen(seen)
+            except Exception as e:
+                log.exception("Unexpected error during poll: %s", e)
+        else:
+            log.info("Outside market hours -- skipping.")
+        return
 
     while True:
         if is_market_hours_now():

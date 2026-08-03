@@ -155,7 +155,7 @@ def fetch_nse_historical(from_date: datetime.date, to_date: datetime.date) -> li
     results = []
     for item in data:
         symbol = (item.get("symbol") or "").strip().upper()
-        subject = item.get("desc") or item.get("attchmntText", "") or ""
+        subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}"
         date_str = item.get("an_dt") or ""
         if symbol and subject:
             results.append((symbol, subject, date_str))
@@ -192,7 +192,7 @@ def fetch_bse_historical(from_date: datetime.date, to_date: datetime.date) -> li
     results = []
     for item in data.get("Table", []):
         company = item.get("SLONGNAME") or ""
-        subject = item.get("NEWSSUB") or item.get("HEADLINE", "") or ""
+        subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}"
         date_str = item.get("NEWS_DT") or item.get("DissemDT", "") or ""
         if company and subject:
             results.append((company, subject, date_str))

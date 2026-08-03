@@ -229,7 +229,7 @@ def fetch_nse_result_symbols() -> set:
 
     hits = set()
     for item in data:
-        subject = item.get("desc") or item.get("attchmntText", "") or ""
+        subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}"
         symbol = (item.get("symbol") or "").strip().upper()
         if symbol and is_result_announcement(subject):
             hits.add(symbol)
@@ -264,7 +264,7 @@ def fetch_bse_result_companies() -> set:
 
     hits = set()
     for item in data.get("Table", []):
-        subject = item.get("NEWSSUB") or item.get("HEADLINE", "") or ""
+        subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}"
         company = item.get("SLONGNAME") or ""
         if company and is_result_announcement(subject):
             hits.add(normalise_company(company))
@@ -316,33 +316,31 @@ def compute_rsi(closes: pd.Series, period: int = RSI_PERIOD) -> float:
     return float(rsi.iloc[-1])
 
 
-def get_day_high(symbol: str, date: datetime.date) -> float | None:
-    """Fetch that day's High price for symbol.NS from Yahoo Finance."""
-    ticker = f"{symbol}.NS"
+def get_day_high(yahoo_ticker: str, date: datetime.date) -> float | None:
+    """Fetch that day's High price from Yahoo Finance for the given ticker."""
     try:
-        hist = yf.Ticker(ticker).history(
+        hist = yf.Ticker(yahoo_ticker).history(
             start=date, end=date + datetime.timedelta(days=1)
         )
         if hist.empty:
             return None
         return float(hist["High"].iloc[0])
     except Exception as e:
-        log.warning("Could not fetch day-high for %s on %s: %s", symbol, date, e)
+        log.warning("Could not fetch day-high for %s on %s: %s", yahoo_ticker, date, e)
         return None
 
 
-def get_live_price_and_rsi(symbol: str) -> tuple:
+def get_live_price_and_rsi(yahoo_ticker: str) -> tuple:
     """Returns (latest_price, rsi) or (None, None) on failure."""
-    ticker = f"{symbol}.NS"
     try:
-        hist = yf.Ticker(ticker).history(period="2mo", interval="1d")
+        hist = yf.Ticker(yahoo_ticker).history(period="2mo", interval="1d")
         if hist.empty or len(hist) < RSI_PERIOD + 1:
             return None, None
         latest_price = float(hist["Close"].iloc[-1])
         rsi = compute_rsi(hist["Close"])
         return latest_price, rsi
     except Exception as e:
-        log.warning("Could not fetch price/RSI for %s: %s", symbol, e)
+        log.warning("Could not fetch price/RSI for %s: %s", yahoo_ticker, e)
         return None, None
 
 
@@ -377,7 +375,8 @@ def poll_once(state: dict) -> dict:
 
     today = datetime.date.today()
     for symbol in new_result_symbols:
-        day_high = get_day_high(symbol, today)
+        yahoo_ticker = f"{symbol}.NS"
+        day_high = get_day_high(yahoo_ticker, today)
         if day_high is None:
             continue
         state[symbol] = {
@@ -385,6 +384,7 @@ def poll_once(state: dict) -> dict:
             "day_high": day_high,
             "price_alerted": False,
             "rsi_alerted": False,
+            "yahoo_ticker": yahoo_ticker,
         }
         log.info("New baseline set: %s result-day high = %.2f", symbol, day_high)
         send_telegram_message(
@@ -399,7 +399,8 @@ def poll_once(state: dict) -> dict:
         if entry.get("price_alerted") and entry.get("rsi_alerted"):
             continue  # both already fired, nothing left to check
 
-        price, rsi = get_live_price_and_rsi(symbol)
+        yahoo_ticker = entry.get("yahoo_ticker", f"{symbol}.NS")
+        price, rsi = get_live_price_and_rsi(yahoo_ticker)
         if price is None:
             continue
 
