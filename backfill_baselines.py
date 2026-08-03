@@ -229,14 +229,17 @@ def parse_nse_date(date_str: str):
 
 
 def get_day_high(symbol: str, date: datetime.date):
+    """Fetch the High price on the given date, or the NEXT available
+    trading day if that date had no trading (e.g. results announced
+    on a Saturday board meeting, when NSE is closed)."""
     ticker = f"{symbol}.NS"
     try:
-        hist = yf.Ticker(ticker).history(start=date, end=date + datetime.timedelta(days=1))
+        hist = yf.Ticker(ticker).history(start=date, end=date + datetime.timedelta(days=7))
         if hist.empty:
             return None
         return float(hist["High"].iloc[0])
     except Exception as e:
-        log.warning("Could not fetch day-high for %s on %s: %s", symbol, date, e)
+        log.warning("Could not fetch day-high for %s on/after %s: %s", symbol, date, e)
         return None
 
 

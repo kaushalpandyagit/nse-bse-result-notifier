@@ -317,16 +317,18 @@ def compute_rsi(closes: pd.Series, period: int = RSI_PERIOD) -> float:
 
 
 def get_day_high(yahoo_ticker: str, date: datetime.date) -> float | None:
-    """Fetch that day's High price from Yahoo Finance for the given ticker."""
+    """Fetch the High price on the given date, or the NEXT available
+    trading day if that date had no trading (e.g. results announced
+    on a Saturday board meeting, when NSE is closed)."""
     try:
         hist = yf.Ticker(yahoo_ticker).history(
-            start=date, end=date + datetime.timedelta(days=1)
+            start=date, end=date + datetime.timedelta(days=7)
         )
         if hist.empty:
             return None
         return float(hist["High"].iloc[0])
     except Exception as e:
-        log.warning("Could not fetch day-high for %s on %s: %s", yahoo_ticker, date, e)
+        log.warning("Could not fetch day-high for %s on/after %s: %s", yahoo_ticker, date, e)
         return None
 
 
