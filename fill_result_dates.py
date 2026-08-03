@@ -358,6 +358,8 @@ def main():
 
         if result_dt is None:
             not_found += 1
+            log.info("[%d/%d] NOT FOUND: %s (%s) -- no result filing detected in range.",
+                      i + 1, len(watchlist), name, state_key)
             output_rows.append({"Name": name, "NSE Code": nse_symbol, "BSE Code": bse_code,
                                  "ResultDate": "", "DayHigh": "", "Status": "no result found"})
             continue
@@ -366,6 +368,8 @@ def main():
         day_high = get_day_high(yahoo_ticker, result_date)
         if day_high is None:
             no_price_data += 1
+            log.info("[%d/%d] NO PRICE DATA: %s (%s) -- result found on %s but Yahoo has no price data.",
+                      i + 1, len(watchlist), name, state_key, result_date)
             output_rows.append({"Name": name, "NSE Code": nse_symbol, "BSE Code": bse_code,
                                  "ResultDate": result_date.isoformat(), "DayHigh": "",
                                  "Status": "no price data"})
@@ -399,6 +403,18 @@ def main():
         added, already_tracked, not_found, no_price_data,
     )
     log.info("Full details written to %s", OUTPUT_CSV)
+
+    not_found_names = [r["Name"] for r in output_rows if r["Status"] == "no result found"]
+    if not_found_names:
+        log.info("--- Companies with NO RESULT FOUND (%d) ---", len(not_found_names))
+        for n in not_found_names:
+            log.info("  - %s", n)
+
+    no_price_names = [r["Name"] for r in output_rows if r["Status"] == "no price data"]
+    if no_price_names:
+        log.info("--- Companies with NO PRICE DATA (%d) ---", len(no_price_names))
+        for n in no_price_names:
+            log.info("  - %s", n)
 
     if added:
         send_telegram_message(
