@@ -204,25 +204,40 @@ def fetch_nse_bulk_announcements(session, from_date: datetime.date, to_date: dat
     return matches
 
 
-def find_result_date_bse(bse_code: str, from_date: datetime.date, to_date: datetime.date):
+def find_result_date_bse(bse_code: str, from_date: datetime.date, to_date: datetime.date, retries: int = 3):
     """Queries BSE for this specific scrip code's announcements in
     range, returns the earliest result-type announcement's datetime,
-    or None."""
+    or None. Retries on timeout since BSE's per-scrip endpoint is
+    prone to occasional slow responses under repeated querying."""
     url = (
         "https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w"
         f"?pageno=1&strCat=-1&strPrevDate={from_date.strftime('%Y%m%d')}"
         f"&strScrip={bse_code}&strSearch=P&strToDate={to_date.strftime('%Y%m%d')}"
         f"&strType=C&subcategory=-1"
     )
-    try:
-        resp = requests.get(
-            url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"},
-            timeout=20,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception as e:
-        log.warning("BSE query failed for scrip %s: %s", bse_code, e)
+    data = None
+    for attempt in range(1, retries + 1):
+        try:
+            time.sleep(0.5)  # brief pause before each attempt, reduces rate-limit timeouts
+            resp = requests.get(
+                url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"},
+                timeout=30,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            break
+        except requests.exceptions.Timeout:
+            if attempt < retries:
+                log.info("BSE timeout for scrip %s, retrying (%d/%d)...", bse_code, attempt, retries)
+                time.sleep(2 * attempt)  # backoff: 2s, 4s
+            else:
+                log.warning("BSE query failed for scrip %s after %d attempts (timeout).", bse_code, retries)
+                return None
+        except Exception as e:
+            log.warning("BSE query failed for scrip %s: %s", bse_code, e)
+            return None
+
+    if data is None:
         return None
 
     if isinstance(data, str):
