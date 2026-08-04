@@ -86,5 +86,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
+  },
+  "SAREGAMA": {
+    "result_date": "2026-08-04T00:00:00",
+    "day_high": 517.0,
+    "day_low": 494.04998779296875,
+    "baseline_rsi": 59.18231236841435,
+    "yahoo_ticker": "SAREGAMA.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
