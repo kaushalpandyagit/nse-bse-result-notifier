@@ -42,5 +42,27 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
+  },
+  "BLUEJET": {
+    "result_date": "2026-08-04T00:00:00",
+    "day_high": 612.5999755859375,
+    "day_low": 580.25,
+    "baseline_rsi": 54.98536886628796,
+    "yahoo_ticker": "BLUEJET.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
+  },
+  "OIL": {
+    "result_date": "2026-08-04T00:00:00",
+    "day_high": 454.0,
+    "day_low": 447.1000061035156,
+    "baseline_rsi": 52.744969778025485,
+    "yahoo_ticker": "OIL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
