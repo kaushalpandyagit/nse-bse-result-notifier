@@ -163,13 +163,13 @@ def analyze_delivery(df: pd.DataFrame) -> list:
 # ----------------------------------------------------------------------
 
 def fetch_fo_bhavcopy(session, date: datetime.date) -> pd.DataFrame | None:
-    month_str = date.strftime("%b").upper()
-    year_str = date.strftime("%Y")
-    date_str = date.strftime("%d%b%Y").upper()
-    url = (
-        f"https://archives.nseindia.com/content/historical/DERIVATIVES/"
-        f"{year_str}/{month_str}/fo{date_str}bhav.csv.zip"
-    )
+    """NSE switched to the UDiFF Bhavcopy format on a new domain in
+    July 2024 (NSE Circular 62424) -- old archives.nseindia.com format
+    is discontinued. New format uses different column names entirely
+    (TckrSymb, ClsPric, OpnIntrst, etc. instead of SYMBOL, CLOSE,
+    OPEN_INT)."""
+    date_str = date.strftime("%Y%m%d")
+    url = f"https://nsearchives.nseindia.com/content/fo/BhavCopy_NSE_FO_0_0_0_{date_str}_F_0000.csv.zip"
     try:
         resp = session.get(url, headers=HEADERS, timeout=30)
         resp.raise_for_status()
@@ -186,21 +186,21 @@ def fetch_fo_bhavcopy(session, date: datetime.date) -> pd.DataFrame | None:
 
 def analyze_long_short_buildup(df: pd.DataFrame) -> dict:
     """Returns dict of category -> list of (symbol, price_chg_pct, oi_chg_pct),
-    using each stock's near-month FUTSTK contract."""
+    using each stock's near-month stock-futures contract (FinInstrmTp
+    == 'STF' in the UDiFF format)."""
     categories = {"Long Buildup": [], "Short Buildup": [], "Short Covering": [], "Long Unwinding": []}
     try:
-        fut = df[df["INSTRUMENT"].str.strip() == "FUTSTK"].copy()
-        # Keep only the near-month (earliest expiry) contract per symbol
-        fut["EXPIRY_DT"] = pd.to_datetime(fut["EXPIRY_DT"], errors="coerce")
-        fut = fut.sort_values("EXPIRY_DT").groupby("SYMBOL").first().reset_index()
+        fut = df[df["FinInstrmTp"].str.strip() == "STF"].copy()
+        fut["XpryDt"] = pd.to_datetime(fut["XpryDt"], errors="coerce")
+        fut = fut.sort_values("XpryDt").groupby("TckrSymb").first().reset_index()
 
         for _, row in fut.iterrows():
             try:
-                symbol = str(row["SYMBOL"]).strip()
-                close = float(row["CLOSE"])
-                prev_close = float(row["PREV_CLOSE"] if "PREV_CLOSE" in row else row["SETTLE_PR"])
-                oi = float(row["OPEN_INT"])
-                chg_oi = float(row["CHG_IN_OI"])
+                symbol = str(row["TckrSymb"]).strip()
+                close = float(row["ClsPric"])
+                prev_close = float(row["PrvsClsgPric"])
+                oi = float(row["OpnIntrst"])
+                chg_oi = float(row["ChngInOpnIntrst"])
                 if prev_close == 0 or (oi - chg_oi) == 0:
                     continue
                 price_chg_pct = ((close - prev_close) / prev_close) * 100
@@ -230,11 +230,12 @@ def analyze_long_short_buildup(df: pd.DataFrame) -> dict:
 
 
 def analyze_pcr(df: pd.DataFrame) -> tuple:
-    """Returns (overall_pcr, list of (symbol, pcr)) using OPTSTK open interest."""
+    """Returns (overall_pcr, list of (symbol, pcr)) using stock-options
+    open interest (FinInstrmTp == 'STO', OptnTp == 'CE'/'PE')."""
     per_stock_pcr = []
     try:
-        opts = df[df["INSTRUMENT"].str.strip() == "OPTSTK"].copy()
-        grouped = opts.groupby(["SYMBOL", "OPTION_TYP"])["OPEN_INT"].sum().unstack(fill_value=0)
+        opts = df[df["FinInstrmTp"].str.strip() == "STO"].copy()
+        grouped = opts.groupby(["TckrSymb", "OptnTp"])["OpnIntrst"].sum().unstack(fill_value=0)
         total_ce = grouped["CE"].sum() if "CE" in grouped else 0
         total_pe = grouped["PE"].sum() if "PE" in grouped else 0
         overall_pcr = round(total_pe / total_ce, 2) if total_ce else None
@@ -256,18 +257,27 @@ def analyze_pcr(df: pd.DataFrame) -> tuple:
 # ----------------------------------------------------------------------
 
 def fetch_fii_stats(session, date: datetime.date) -> str | None:
-    """Attempts to fetch FII derivatives long/short stats. Least
-    certain part of this script -- returns None on any failure rather
-    than crashing, so the rest of the analysis still gets sent."""
-    url = f"https://archives.nseindia.com/content/fo/fii_stats_{date.strftime('%d%m%Y')}.csv"
-    try:
-        resp = session.get(url, headers=HEADERS, timeout=20)
-        resp.raise_for_status()
-        df = pd.read_csv(io.StringIO(resp.text))
-        return df.to_string(index=False)
-    except Exception as e:
-        log.warning("FII stats fetch failed (best-effort section): %s", e)
-        return None
+    """Attempts to fetch FII derivatives long/short stats. This is an
+    .xls file (not .csv) at a DD-MMM-YYYY date format. Tries the new
+    nsearchives.nseindia.com domain first, falls back to the older
+    archives.nseindia.com domain in case this specific report wasn't
+    migrated. Returns None on total failure rather than crashing, so
+    the rest of the analysis still gets sent."""
+    date_str = date.strftime("%d-%b-%Y")
+    urls = [
+        f"https://nsearchives.nseindia.com/content/fo/fii_stats_{date_str}.xls",
+        f"https://archives.nseindia.com/content/fo/fii_stats_{date_str}.xls",
+    ]
+    for url in urls:
+        try:
+            resp = session.get(url, headers=HEADERS, timeout=20)
+            resp.raise_for_status()
+            df = pd.read_excel(io.BytesIO(resp.content))
+            return df.to_string(index=False)
+        except Exception as e:
+            log.warning("FII stats fetch failed for %s: %s", url, e)
+            continue
+    return None
 
 
 # ----------------------------------------------------------------------
