@@ -107,7 +107,7 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
   },
   "GRAPHITE": {
     "result_date": "2026-08-04T00:00:00",
