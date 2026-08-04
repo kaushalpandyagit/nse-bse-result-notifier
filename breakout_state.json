@@ -1,35 +1,11 @@
 {
-  "COHANCE": {
-    "result_date": "2026-07-20T00:00:00",
-    "day_high": 457.25,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 435.0,
-    "baseline_rsi": 55.1327181087275,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "BAJAJ-AUTO": {
-    "result_date": "2026-07-20T00:00:00",
-    "day_high": 10535.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 10401.5,
-    "baseline_rsi": 64.21280489291877,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
   "JMFINANCIL": {
     "result_date": "2026-08-03T00:00:00",
     "day_high": 125.25,
     "day_low": 117.69999694824219,
     "baseline_rsi": 38.93992910073227,
     "yahoo_ticker": "JMFINANCIL.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
