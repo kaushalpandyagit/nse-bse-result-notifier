@@ -256,7 +256,7 @@ def analyze_pcr(df: pd.DataFrame) -> tuple:
 # 4. FII AGGREGATE POSITIONING (best-effort)
 # ----------------------------------------------------------------------
 
-def fetch_fii_stats(session, date: datetime.date) -> str | None:
+def fetch_fii_stats(session, date: datetime.date) -> pd.DataFrame | None:
     """Attempts to fetch FII derivatives long/short stats. This is an
     .xls file (not .csv) at a DD-MMM-YYYY date format. Tries the new
     nsearchives.nseindia.com domain first, falls back to the older
@@ -274,34 +274,64 @@ def fetch_fii_stats(session, date: datetime.date) -> str | None:
             resp.raise_for_status()
             # The report has a multi-row header layout (title row, then
             # a two-level column header), which confuses pandas' default
-            # single-header-row parsing into "Unnamed: X" columns. Read
-            # raw (no header assumption) and format each row's non-empty
-            # cells manually for clean, readable Telegram output instead.
+            # single-header-row parsing. Read raw and parse each data
+            # row manually instead.
             df = pd.read_excel(io.BytesIO(resp.content), header=None)
-            lines = []
-            for _, row in df.iterrows():
-                cells = [str(c).strip() for c in row if pd.notna(c) and str(c).strip()]
-                if cells:
-                    lines.append("  ".join(cells))
-            return "\n".join(lines)
+            return df
         except Exception as e:
             log.warning("FII stats fetch failed for %s: %s", url, e)
             continue
     return None
 
 
+def parse_fii_stats(df: pd.DataFrame) -> list:
+    """Parses the raw FII stats sheet into a list of dicts, one per
+    category row (INDEX FUTURES, STOCK FUTURES, etc.):
+    {category, buy_amt, sell_amt, net_amt}. Skips title/header rows
+    that don't match the expected 'name + 6 numbers' pattern."""
+    import re
+    results = []
+    for _, row in df.iterrows():
+        cells = [str(c).strip() for c in row if pd.notna(c) and str(c).strip()]
+        if len(cells) < 7:
+            continue
+        # Last 6 cells should be numeric: buy_ct, buy_amt, sell_ct, sell_amt, oi_ct, oi_amt
+        nums = cells[-6:]
+        name_parts = cells[:-6]
+        if not name_parts:
+            continue
+        try:
+            nums_clean = [float(n.replace(",", "")) for n in nums]
+        except ValueError:
+            continue  # header row or non-numeric row, skip
+        category = " ".join(name_parts)
+        buy_amt, sell_amt = nums_clean[1], nums_clean[3]
+        results.append({
+            "category": category,
+            "buy_amt": buy_amt,
+            "sell_amt": sell_amt,
+            "net_amt": round(buy_amt - sell_amt, 2),
+        })
+    return results
+
+
 # ----------------------------------------------------------------------
 # MAIN
 # ----------------------------------------------------------------------
 
-def format_stock_list(items, unit="%"):
+def format_stock_list(items, comment=None):
     if not items:
         return "  (none)"
     lines = []
     for entry in items:
         if len(entry) == 3:
             symbol, price_chg, extra = entry
-            lines.append(f"  {symbol}: price {price_chg:+.1f}%, OI {extra:+.1f}%")
+            line = f"  {symbol}: price {price_chg:+.1f}%, OI {extra:+.1f}%"
+            if comment:
+                # High delivery + price direction -> genuine interest read
+                direction = "buying interest" if price_chg > 0 else "selling pressure"
+                line += f" (high delivery {direction})"
+            lines.append(line)
         else:
             symbol, val = entry
             lines.append(f"  {symbol}: {val}")
@@ -326,8 +356,10 @@ def main():
         deliv_signals = analyze_delivery(deliv_df)
         sections.append(
             f"\U0001F4E6 <b>High Delivery % Signals</b> (>{DELIVERY_PCT_THRESHOLD:.0f}% delivery, "
-            f">{DELIVERY_PRICE_MOVE_THRESHOLD:.0f}% move)\n" +
-            format_stock_list([(s, p, d) for s, p, d in deliv_signals])
+            f">{DELIVERY_PRICE_MOVE_THRESHOLD:.0f}% move)\n"
+            f"<i>High delivery % with a real price move suggests investors are taking/exiting "
+            f"positions, not just intraday trading</i>\n" +
+            format_stock_list([(s, p, d) for s, p, d in deliv_signals], comment=True)
         )
         log.info("Delivery analysis: %d signals found.", len(deliv_signals))
     else:
@@ -337,9 +369,17 @@ def main():
     fo_df = fetch_fo_bhavcopy(session, date)
     if fo_df is not None:
         buildup = analyze_long_short_buildup(fo_df)
+        buildup_notes = {
+            "Long Buildup": "Price + OI both rising \u2014 commonly read as fresh long positioning (bullish)",
+            "Short Buildup": "Price falling + OI rising \u2014 commonly read as fresh short positioning (bearish)",
+            "Short Covering": "Price rising + OI falling \u2014 shorts being closed out (bullish reversal)",
+            "Long Unwinding": "Price falling + OI falling \u2014 longs being closed out (bearish reversal)",
+        }
         for cat, emoji in [("Long Buildup", "\U0001F7E2"), ("Short Buildup", "\U0001F534"),
                              ("Short Covering", "\U0001F7E1"), ("Long Unwinding", "\U0001F7E0")]:
-            sections.append(f"{emoji} <b>{cat}</b>\n" + format_stock_list(buildup[cat]))
+            sections.append(
+                f"{emoji} <b>{cat}</b>\n<i>{buildup_notes[cat]}</i>\n" + format_stock_list(buildup[cat])
+            )
         log.info("Long/Short buildup: %s", {k: len(v) for k, v in buildup.items()})
 
         overall_pcr, stock_pcr = analyze_pcr(fo_df)
@@ -347,17 +387,34 @@ def main():
         pcr_line = f"Overall Market PCR: {overall_pcr}\n" if overall_pcr else ""
         sections.append(
             f"\U0001F4CA <b>Put-Call Ratio</b>\n{pcr_line}"
-            f"Highest PCR (bullish bias):\n" + format_stock_list(stock_pcr[:5]) +
-            f"\nLowest PCR (bearish bias):\n" + format_stock_list(stock_pcr[-5:])
+            f"<i>PCR &gt;1 = more Put OI than Call OI (heavier downside hedging/bets); "
+            f"PCR &lt;1 = more Call OI (heavier upside bets). Many traders read extremes as "
+            f"contrarian -- very high PCR is sometimes viewed as oversold, very low as overbought.</i>\n"
+            f"Highest PCR:\n" + format_stock_list(stock_pcr[:5]) +
+            f"\nLowest PCR:\n" + format_stock_list(stock_pcr[-5:])
         )
         log.info("PCR analysis: overall=%s, %d stocks", overall_pcr, len(stock_pcr))
     else:
         sections.append("\U0001F4CA <b>F&O buildup/PCR unavailable</b> (data fetch failed -- see logs)")
 
     # --- FII stats (best-effort) ---
-    fii_text = fetch_fii_stats(session, date)
-    if fii_text:
-        sections.append(f"\U0001F3E6 <b>FII Derivatives Stats</b>\n<pre>{fii_text[:500]}</pre>")
+    fii_df = fetch_fii_stats(session, date)
+    if fii_df is not None:
+        fii_rows = parse_fii_stats(fii_df)
+        if fii_rows:
+            lines = [
+                "\U0001F3E6 <b>FII Derivatives Stats</b> (Net = Buy \u2212 Sell, \u20b9 Cr)",
+                "<i>Net positive = FII net buyers in that category (bullish tilt); "
+                "net negative = FII net sellers (bearish tilt)</i>",
+            ]
+            for row in fii_rows:
+                tilt = "bullish tilt" if row["net_amt"] > 0 else "bearish tilt" if row["net_amt"] < 0 else "neutral"
+                lines.append(f"  {row['category']}: Net {row['net_amt']:+.1f} Cr ({tilt})")
+            sections.append("\n".join(lines))
+            log.info("FII stats parsed: %d categories.", len(fii_rows))
+        else:
+            sections.append("\U0001F3E6 <b>FII stats fetched but could not be parsed</b> -- see logs")
+            log.warning("FII stats dataframe fetched but parse_fii_stats found no valid rows.")
     else:
         sections.append("\U0001F3E6 <b>FII stats unavailable</b> (best-effort source -- see logs)")
 
