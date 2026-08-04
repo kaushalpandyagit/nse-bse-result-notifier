@@ -75,5 +75,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "ENDURANCE": {
+    "result_date": "2026-08-04T00:00:00",
+    "day_high": 2849.0,
+    "day_low": 2750.199951171875,
+    "baseline_rsi": 63.50391074561799,
+    "yahoo_ticker": "ENDURANCE.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
