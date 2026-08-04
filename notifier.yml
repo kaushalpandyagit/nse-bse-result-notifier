@@ -1,0 +1,53 @@
+name: NSE-BSE Result Notifier
+
+on:
+  # Scheduling is now handled externally via cron-job.org calling the
+  # workflow_dispatch API every 15 min (GitHub's own schedule trigger
+  # proved unreliable -- runs were sparse and sometimes fired hours
+  # off-schedule). Keeping only workflow_dispatch avoids double-firing
+  # from both triggers at once, which caused git push race conditions.
+  workflow_dispatch: {}
+
+permissions:
+  contents: write  # needed so the workflow can commit seen_announcements.json back
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run notifier (single poll)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 result_notifier.py --once
+
+      - name: Commit updated seen-announcements state
+        run: |
+          git config user.name "result-notifier-bot"
+          git config user.email "actions@github.com"
+          if [ -f seen_announcements.json ]; then
+            git add seen_announcements.json
+            git diff --quiet --cached || git commit -m "Update seen announcements [skip ci]"
+            for i in 1 2 3 4 5; do
+              if git push; then
+                echo "Push succeeded."
+                break
+              fi
+              echo "Push rejected (attempt $i/5) -- pulling and retrying..."
+              git pull --rebase origin main
+              sleep 2
+            done
+          else
+            echo "No state file exists yet -- nothing to commit."
+          fi
