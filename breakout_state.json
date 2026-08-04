@@ -115,7 +115,7 @@
     "day_low": 657.0999755859375,
     "baseline_rsi": 60.525760447646576,
     "yahoo_ticker": "GRAPHITE.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
