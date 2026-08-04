@@ -19,6 +19,17 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
+    "rsi_down_alerted": true
+  },
+  "MSUMI": {
+    "result_date": "2026-08-04T00:00:00",
+    "day_high": 42.099998474121094,
+    "day_low": 41.209999084472656,
+    "baseline_rsi": 60.80719519799571,
+    "yahoo_ticker": "MSUMI.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": false
   }
 }
