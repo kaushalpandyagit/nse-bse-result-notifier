@@ -127,6 +127,17 @@
     "baseline_rsi": 60.59968381871867,
     "yahoo_ticker": "MAPMYINDIA.NS",
     "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": true
+  },
+  "DOMS": {
+    "result_date": "2026-08-04T00:00:00",
+    "day_high": 2260.89990234375,
+    "day_low": 2175.0,
+    "baseline_rsi": 46.58725322993172,
+    "yahoo_ticker": "DOMS.NS",
+    "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
