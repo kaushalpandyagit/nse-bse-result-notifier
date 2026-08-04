@@ -9,5 +9,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
+  },
+  "UNOMINDA": {
+    "result_date": "2026-08-04T00:00:00",
+    "day_high": 1230.0,
+    "day_low": 1202.0,
+    "baseline_rsi": 71.26687713480655,
+    "yahoo_ticker": "UNOMINDA.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
