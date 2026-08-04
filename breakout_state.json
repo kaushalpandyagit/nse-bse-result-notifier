@@ -97,5 +97,27 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "PIDILITIND": {
+    "result_date": "2026-08-04T00:00:00",
+    "day_high": 1657.300048828125,
+    "day_low": 1625.699951171875,
+    "baseline_rsi": 65.29571571195113,
+    "yahoo_ticker": "PIDILITIND.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
+  },
+  "GRAPHITE": {
+    "result_date": "2026-08-04T00:00:00",
+    "day_high": 679.5,
+    "day_low": 657.0999755859375,
+    "baseline_rsi": 60.525760447646576,
+    "yahoo_ticker": "GRAPHITE.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
