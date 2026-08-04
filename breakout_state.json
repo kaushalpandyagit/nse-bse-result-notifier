@@ -93,9 +93,9 @@
     "day_low": 494.04998779296875,
     "baseline_rsi": 59.18231236841435,
     "yahoo_ticker": "SAREGAMA.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true
   }
 }
