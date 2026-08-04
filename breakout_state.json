@@ -72,7 +72,7 @@
     "baseline_rsi": 44.570121305031876,
     "yahoo_ticker": "ZYDUSWELL.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
