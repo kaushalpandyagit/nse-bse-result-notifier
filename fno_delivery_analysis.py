@@ -272,8 +272,18 @@ def fetch_fii_stats(session, date: datetime.date) -> str | None:
         try:
             resp = session.get(url, headers=HEADERS, timeout=20)
             resp.raise_for_status()
-            df = pd.read_excel(io.BytesIO(resp.content))
-            return df.to_string(index=False)
+            # The report has a multi-row header layout (title row, then
+            # a two-level column header), which confuses pandas' default
+            # single-header-row parsing into "Unnamed: X" columns. Read
+            # raw (no header assumption) and format each row's non-empty
+            # cells manually for clean, readable Telegram output instead.
+            df = pd.read_excel(io.BytesIO(resp.content), header=None)
+            lines = []
+            for _, row in df.iterrows():
+                cells = [str(c).strip() for c in row if pd.notna(c) and str(c).strip()]
+                if cells:
+                    lines.append("  ".join(cells))
+            return "\n".join(lines)
         except Exception as e:
             log.warning("FII stats fetch failed for %s: %s", url, e)
             continue
