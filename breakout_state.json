@@ -149,7 +149,7 @@
     "baseline_rsi": 58.516271082452874,
     "yahoo_ticker": "MARUTI.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
   },
@@ -162,7 +162,7 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
   },
   "ASAHIINDIA": {
     "result_date": "2026-08-05T00:00:00",
@@ -174,5 +174,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "POLYMED": {
+    "result_date": "2026-08-05T00:00:00",
+    "day_high": 1746.0,
+    "day_low": 1707.0,
+    "baseline_rsi": 57.09985448453542,
+    "yahoo_ticker": "POLYMED.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
