@@ -182,7 +182,7 @@
     "baseline_rsi": 57.09985448453542,
     "yahoo_ticker": "POLYMED.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
