@@ -61,9 +61,9 @@
     "baseline_rsi": 52.744969778025485,
     "yahoo_ticker": "OIL.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
   },
   "ZYDUSWELL": {
     "result_date": "2026-08-04T00:00:00",
