@@ -38,7 +38,7 @@
     "day_low": 1990.0,
     "baseline_rsi": 47.69318937155276,
     "yahoo_ticker": "GODREJPROP.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
