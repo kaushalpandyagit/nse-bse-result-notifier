@@ -185,5 +185,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "BERGEPAINT": {
+    "result_date": "2026-08-05T00:00:00",
+    "day_high": 547.9500122070312,
+    "day_low": 525.0999755859375,
+    "baseline_rsi": 69.71713531713448,
+    "yahoo_ticker": "BERGEPAINT.NS",
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
