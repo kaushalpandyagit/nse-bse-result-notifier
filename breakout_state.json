@@ -196,5 +196,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "LICHSGFIN": {
+    "result_date": "2026-08-06T00:00:00",
+    "day_high": 515.0,
+    "day_low": 510.6000061035156,
+    "baseline_rsi": 34.03748215446478,
+    "yahoo_ticker": "LICHSGFIN.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
