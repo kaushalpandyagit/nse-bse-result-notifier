@@ -204,7 +204,7 @@
     "baseline_rsi": 34.03748215446478,
     "yahoo_ticker": "LICHSGFIN.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
   }
