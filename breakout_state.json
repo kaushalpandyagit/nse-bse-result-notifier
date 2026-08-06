@@ -207,5 +207,16 @@
     "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
+  },
+  "AEGISLOG": {
+    "result_date": "2026-08-06T00:00:00",
+    "day_high": 1444.0,
+    "day_low": 1340.4000244140625,
+    "baseline_rsi": 65.10943423196213,
+    "yahoo_ticker": "AEGISLOG.NS",
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
