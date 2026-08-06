@@ -217,6 +217,17 @@
     "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
+  },
+  "TIMKEN": {
+    "result_date": "2026-08-06T00:00:00",
+    "day_high": 3390.39990234375,
+    "day_low": 3285.5,
+    "baseline_rsi": 61.23013797926117,
+    "yahoo_ticker": "TIMKEN.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
