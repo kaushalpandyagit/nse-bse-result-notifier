@@ -104,7 +104,7 @@
     "day_low": 1625.699951171875,
     "baseline_rsi": 65.29571571195113,
     "yahoo_ticker": "PIDILITIND.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
