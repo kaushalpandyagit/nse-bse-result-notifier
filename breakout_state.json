@@ -171,7 +171,7 @@
     "baseline_rsi": 61.044223649227305,
     "yahoo_ticker": "ASAHIINDIA.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
