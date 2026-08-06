@@ -60,6 +60,7 @@ import json
 import zipfile
 import logging
 import datetime
+from pathlib import Path
 
 import requests
 import pandas as pd
@@ -133,10 +134,17 @@ def fetch_delivery_data(session, date: datetime.date) -> pd.DataFrame | None:
         return None
 
 
-def analyze_delivery(df: pd.DataFrame) -> list:
-    """Returns list of (symbol, price_change_pct, delivery_pct) for
-    stocks with high delivery % AND a meaningful price move."""
-    results = []
+EARLY_MOVE_MIN = 2.0
+EARLY_MOVE_MAX = 5.0
+BIG_MOVE_MIN = 5.0
+
+
+def analyze_delivery(df: pd.DataFrame) -> dict:
+    """Returns dict with 'big_movers' (already moved >5%, confirmed but
+    less favorable risk/reward) and 'early_movers' (moved 2-5%, still
+    early -- better risk/reward for a fresh entry), both filtered on
+    high delivery %."""
+    all_signals = []
     try:
         df = df[df["SERIES"].str.strip() == "EQ"]
         for _, row in df.iterrows():
@@ -145,16 +153,122 @@ def analyze_delivery(df: pd.DataFrame) -> list:
                 close = float(row["CLOSE_PRICE"])
                 prev_close = float(row["PREV_CLOSE"])
                 deliv_pct = float(row["DELIV_PER"])
+                volume = float(row["TTL_TRD_QNTY"])
                 if prev_close == 0:
                     continue
                 price_change_pct = ((close - prev_close) / prev_close) * 100
-                if deliv_pct >= DELIVERY_PCT_THRESHOLD and abs(price_change_pct) >= DELIVERY_PRICE_MOVE_THRESHOLD:
-                    results.append((symbol, price_change_pct, deliv_pct))
+                if deliv_pct >= DELIVERY_PCT_THRESHOLD and abs(price_change_pct) >= EARLY_MOVE_MIN:
+                    all_signals.append((symbol, price_change_pct, deliv_pct, volume))
             except (ValueError, KeyError):
                 continue
     except Exception as e:
         log.error("Delivery analysis failed: %s", e)
-    results.sort(key=lambda x: abs(x[1]), reverse=True)
+
+    big_movers = [s for s in all_signals if abs(s[1]) > BIG_MOVE_MIN]
+    early_movers = [s for s in all_signals if EARLY_MOVE_MIN <= abs(s[1]) <= EARLY_MOVE_MAX]
+
+    big_movers.sort(key=lambda x: abs(x[1]), reverse=True)
+    early_movers.sort(key=lambda x: abs(x[1]), reverse=True)
+
+    return {"big_movers": big_movers[:TOP_N], "early_movers": early_movers[:TOP_N]}
+
+
+# ----------------------------------------------------------------------
+# UNUSUAL VOLUME (high volume, minimal price move, not a bulk/block deal)
+# ----------------------------------------------------------------------
+
+VOLUME_HISTORY_FILE = Path(__file__).parent / "volume_history.json"
+VOLUME_HISTORY_DAYS = 20  # rolling window for average volume
+UNUSUAL_VOLUME_RATIO = 2.5  # today's volume vs N-day average
+UNUSUAL_VOLUME_PRICE_CAP = 1.5  # max abs price move % to still count as "unusual"
+MIN_HISTORY_DAYS = 5  # need at least this many days before flagging (avoid noise early on)
+
+
+def load_volume_history() -> dict:
+    if VOLUME_HISTORY_FILE.exists():
+        try:
+            return json.loads(VOLUME_HISTORY_FILE.read_text())
+        except Exception:
+            log.warning("Could not parse volume history, starting fresh.")
+    return {}
+
+
+def save_volume_history(history: dict):
+    VOLUME_HISTORY_FILE.write_text(json.dumps(history))
+
+
+def fetch_bulk_block_symbols(session, date: datetime.date) -> set:
+    """Fetches today's bulk and block deal symbols, to exclude from
+    the unusual-volume signal (a single large bulk/block trade can
+    spike volume without reflecting genuine broad-based buying)."""
+    symbols = set()
+    for report in ("bulk", "block"):
+        url = f"https://archives.nseindia.com/content/equities/{report}.csv"
+        try:
+            resp = session.get(url, headers=HEADERS, timeout=20)
+            resp.raise_for_status()
+            df = pd.read_csv(io.StringIO(resp.text))
+            df.columns = [c.strip() for c in df.columns]
+            symbol_col = next((c for c in df.columns if "Symbol" in c), None)
+            if symbol_col:
+                symbols.update(str(s).strip().upper() for s in df[symbol_col])
+        except Exception as e:
+            log.warning("Could not fetch %s deals: %s", report, e)
+    return symbols
+
+
+def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date) -> list:
+    """Returns list of (symbol, price_change_pct, volume_ratio) for
+    stocks with volume well above their recent average, but price
+    barely moved -- and excludes any symbol with a bulk/block deal
+    today, since a single large trade isn't the same signal as broad
+    organic volume."""
+    history = load_volume_history()
+    bulk_block = fetch_bulk_block_symbols(session, date)
+    results = []
+
+    try:
+        df = df[df["SERIES"].str.strip() == "EQ"]
+        today_str = date.isoformat()
+        for _, row in df.iterrows():
+            try:
+                symbol = str(row["SYMBOL"]).strip()
+                close = float(row["CLOSE_PRICE"])
+                prev_close = float(row["PREV_CLOSE"])
+                volume = float(row["TTL_TRD_QNTY"])
+                if prev_close == 0:
+                    continue
+                price_change_pct = ((close - prev_close) / prev_close) * 100
+
+                sym_hist = history.get(symbol, {})
+                past_volumes = [v for d, v in sym_hist.items() if d != today_str]
+
+                # Update history with today's volume, trim to rolling window
+                sym_hist[today_str] = volume
+                if len(sym_hist) > VOLUME_HISTORY_DAYS:
+                    oldest = sorted(sym_hist.keys())[0]
+                    del sym_hist[oldest]
+                history[symbol] = sym_hist
+
+                if len(past_volumes) < MIN_HISTORY_DAYS:
+                    continue  # not enough history yet for this symbol
+                if symbol in bulk_block:
+                    continue  # exclude bulk/block-driven volume spikes
+
+                avg_volume = sum(past_volumes) / len(past_volumes)
+                if avg_volume <= 0:
+                    continue
+                volume_ratio = volume / avg_volume
+
+                if volume_ratio >= UNUSUAL_VOLUME_RATIO and abs(price_change_pct) <= UNUSUAL_VOLUME_PRICE_CAP:
+                    results.append((symbol, price_change_pct, volume_ratio))
+            except (ValueError, KeyError):
+                continue
+    except Exception as e:
+        log.error("Unusual volume analysis failed: %s", e)
+
+    save_volume_history(history)
+    results.sort(key=lambda x: x[2], reverse=True)
     return results[:TOP_N]
 
 
@@ -319,14 +433,14 @@ def parse_fii_stats(df: pd.DataFrame) -> list:
 # MAIN
 # ----------------------------------------------------------------------
 
-def format_stock_list(items, comment=None):
+def format_stock_list(items, comment=None, third_label="OI"):
     if not items:
         return "  (none)"
     lines = []
     for entry in items:
         if len(entry) == 3:
             symbol, price_chg, extra = entry
-            line = f"  {symbol}: price {price_chg:+.1f}%, OI {extra:+.1f}%"
+            line = f"  {symbol}: price {price_chg:+.1f}%, {third_label} {extra:+.1f}%"
             if comment:
                 # High delivery + price direction -> genuine interest read
                 direction = "buying interest" if price_chg > 0 else "selling pressure"
@@ -334,7 +448,7 @@ def format_stock_list(items, comment=None):
             lines.append(line)
         else:
             symbol, val = entry
-            lines.append(f"  {symbol}: {val}")
+            lines.append(f"  {symbol}: {val}x avg volume")
     return "\n".join(lines)
 
 
@@ -350,18 +464,35 @@ def main():
 
     sections = []
 
-    # --- Delivery analysis ---
+    # --- Delivery analysis (two tiers) ---
     deliv_df = fetch_delivery_data(session, date)
     if deliv_df is not None:
-        deliv_signals = analyze_delivery(deliv_df)
+        tiers = analyze_delivery(deliv_df)
         sections.append(
-            f"\U0001F4E6 <b>High Delivery % Signals</b> (>{DELIVERY_PCT_THRESHOLD:.0f}% delivery, "
-            f">{DELIVERY_PRICE_MOVE_THRESHOLD:.0f}% move)\n"
-            f"<i>High delivery % with a real price move suggests investors are taking/exiting "
-            f"positions, not just intraday trading</i>\n" +
-            format_stock_list([(s, p, d) for s, p, d in deliv_signals], comment=True)
+            f"\U0001F4E6 <b>High Delivery % \u2014 Big Movers</b> (>{DELIVERY_PCT_THRESHOLD:.0f}% delivery, "
+            f">{BIG_MOVE_MIN:.0f}% move)\n"
+            f"<i>Move already confirmed \u2014 risk/reward less favorable after this much of the "
+            f"move has played out</i>\n" +
+            format_stock_list([(s, p, d) for s, p, d, v in tiers["big_movers"]], comment=True, third_label="Delivery")
         )
-        log.info("Delivery analysis: %d signals found.", len(deliv_signals))
+        sections.append(
+            f"\U0001F331 <b>High Delivery % \u2014 Early Movers</b> ({EARLY_MOVE_MIN:.0f}-{EARLY_MOVE_MAX:.0f}% move)\n"
+            f"<i>Smaller move so far \u2014 potentially better risk/reward if the move is just starting</i>\n" +
+            format_stock_list([(s, p, d) for s, p, d, v in tiers["early_movers"]], comment=True, third_label="Delivery")
+        )
+        log.info("Delivery analysis: %d big movers, %d early movers.",
+                  len(tiers["big_movers"]), len(tiers["early_movers"]))
+
+        # --- Unusual volume (needs the same delivery dataframe) ---
+        unusual = analyze_unusual_volume(deliv_df, session, date)
+        sections.append(
+            f"\U0001F50D <b>Unusual Volume, Minimal Price Move</b> (\u2265{UNUSUAL_VOLUME_RATIO:.1f}x avg volume, "
+            f"\u2264{UNUSUAL_VOLUME_PRICE_CAP:.1f}% move, bulk/block deals excluded)\n"
+            f"<i>High volume without a price move can signal quiet accumulation or distribution "
+            f"before the move shows up in price</i>\n" +
+            format_stock_list([(s, round(v, 1)) for s, p, v in unusual])
+        )
+        log.info("Unusual volume signals: %d found.", len(unusual))
     else:
         sections.append("\U0001F4E6 <b>Delivery analysis unavailable</b> (data fetch failed -- see logs)")
 

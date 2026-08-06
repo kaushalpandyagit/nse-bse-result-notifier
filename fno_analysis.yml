@@ -1,0 +1,48 @@
+name: Daily FnO and Delivery Analysis
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements_fno.txt
+
+      - name: Run FnO + Delivery analysis
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 fno_delivery_analysis.py
+
+      - name: Commit updated volume history
+        run: |
+          git config user.name "fno-analysis-bot"
+          git config user.email "actions@github.com"
+          if [ -f volume_history.json ]; then
+            git add volume_history.json
+            git diff --quiet --cached || git commit -m "Update volume history [skip ci]"
+            for i in 1 2 3 4 5; do
+              if git push; then
+                echo "Push succeeded."
+                break
+              fi
+              echo "Push rejected (attempt $i/5) -- pulling and retrying..."
+              git pull --rebase origin main
+              sleep 2
+            done
+          else
+            echo "No volume history file yet -- nothing to commit."
+          fi
