@@ -229,5 +229,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "BIKAJI": {
+    "result_date": "2026-08-06T00:00:00",
+    "day_high": 651.0499877929688,
+    "day_low": 623.7000122070312,
+    "baseline_rsi": 39.120572350567166,
+    "yahoo_ticker": "BIKAJI.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
