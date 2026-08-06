@@ -237,8 +237,19 @@
     "baseline_rsi": 39.120572350567166,
     "yahoo_ticker": "BIKAJI.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
+  },
+  "TRENT": {
+    "result_date": "2026-08-06T00:00:00",
+    "day_high": 3244.5,
+    "day_low": 3046.199951171875,
+    "baseline_rsi": 62.25576624281148,
+    "yahoo_ticker": "TRENT.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
