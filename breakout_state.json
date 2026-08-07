@@ -273,5 +273,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "LICI": {
+    "result_date": "2026-08-07T00:00:00",
+    "day_high": 396.8500061035156,
+    "day_low": 391.1000061035156,
+    "baseline_rsi": 33.867291945918126,
+    "yahoo_ticker": "LICI.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
