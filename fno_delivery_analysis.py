@@ -54,6 +54,7 @@ Config knobs are in the CONFIG section below.
 
 import os
 import io
+import re
 import sys
 import csv
 import json
@@ -64,6 +65,8 @@ from pathlib import Path
 
 import requests
 import pandas as pd
+
+from email_notifier import send_email
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
@@ -106,6 +109,10 @@ def send_telegram_message(text: str) -> bool:
     except requests.RequestException as e:
         log.error("Telegram send exception: %s", e)
         return False
+
+
+def strip_html_tags(text: str) -> str:
+    return re.sub(r"<[^>]+>", "", text)
 
 
 def get_session():
@@ -403,7 +410,6 @@ def parse_fii_stats(df: pd.DataFrame) -> list:
     category row (INDEX FUTURES, STOCK FUTURES, etc.):
     {category, buy_amt, sell_amt, net_amt}. Skips title/header rows
     that don't match the expected 'name + 6 numbers' pattern."""
-    import re
     results = []
     for _, row in df.iterrows():
         cells = [str(c).strip() for c in row if pd.notna(c) and str(c).strip()]
@@ -550,6 +556,11 @@ def main():
         sections.append("\U0001F3E6 <b>FII stats unavailable</b> (best-effort source -- see logs)")
 
     message = f"\U0001F4C8 <b>F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}</b>\n\n" + "\n\n".join(sections)
+
+    send_email(
+        subject=f"F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}",
+        body=strip_html_tags(message),
+    )
 
     # Telegram has a 4096-char message limit -- split if needed
     if len(message) <= 4000:
