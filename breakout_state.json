@@ -292,7 +292,7 @@
     "baseline_rsi": 52.96823187431811,
     "yahoo_ticker": "CARBORUNIV.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
