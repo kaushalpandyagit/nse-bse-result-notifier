@@ -317,5 +317,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "IKS": {
+    "result_date": "2026-08-07T00:00:00",
+    "day_high": 1769.699951171875,
+    "day_low": 1686.4000244140625,
+    "baseline_rsi": 41.94099948097386,
+    "yahoo_ticker": "IKS.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
