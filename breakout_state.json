@@ -284,5 +284,38 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "CARBORUNIV": {
+    "result_date": "2026-08-07T00:00:00",
+    "day_high": 1101.4000244140625,
+    "day_low": 1066.5,
+    "baseline_rsi": 52.96823187431811,
+    "yahoo_ticker": "CARBORUNIV.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
+  },
+  "JYOTICNC": {
+    "result_date": "2026-08-07T00:00:00",
+    "day_high": 873.0,
+    "day_low": 738.9000244140625,
+    "baseline_rsi": 41.508911027778574,
+    "yahoo_ticker": "JYOTICNC.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
+  },
+  "SBIN": {
+    "result_date": "2026-08-07T00:00:00",
+    "day_high": 1124.5,
+    "day_low": 1075.699951171875,
+    "baseline_rsi": 73.47220613210413,
+    "yahoo_ticker": "SBIN.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
