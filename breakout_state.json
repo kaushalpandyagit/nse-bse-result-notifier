@@ -251,5 +251,27 @@
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "AUROPHARMA": {
+    "result_date": "2026-08-07T00:00:00",
+    "day_high": 1639.300048828125,
+    "day_low": 1579.9000244140625,
+    "baseline_rsi": 62.237732407117335,
+    "yahoo_ticker": "AUROPHARMA.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
+  },
+  "GODREJCP": {
+    "result_date": "2026-08-07T00:00:00",
+    "day_high": 1087.199951171875,
+    "day_low": 1035.699951171875,
+    "baseline_rsi": 48.00409704275129,
+    "yahoo_ticker": "GODREJCP.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
