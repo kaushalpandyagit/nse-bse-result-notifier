@@ -258,7 +258,7 @@
     "day_low": 1579.9000244140625,
     "baseline_rsi": 62.237732407117335,
     "yahoo_ticker": "AUROPHARMA.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
