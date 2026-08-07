@@ -1,35 +1,28 @@
 name: Daily FnO and Delivery Analysis
-
 on:
   workflow_dispatch: {}
-
 permissions:
   contents: write
-
 jobs:
   analyze:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install dependencies
         run: pip install -r requirements_fno.txt
-
       - name: Run FnO + Delivery analysis
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-         GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}
         run: python3 fno_delivery_analysis.py
-
       - name: Commit updated volume history
         run: |
           git config user.name "fno-analysis-bot"
