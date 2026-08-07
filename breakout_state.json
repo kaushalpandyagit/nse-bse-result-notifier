@@ -137,7 +137,7 @@
     "day_low": 2175.0,
     "baseline_rsi": 46.58725322993172,
     "yahoo_ticker": "DOMS.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
