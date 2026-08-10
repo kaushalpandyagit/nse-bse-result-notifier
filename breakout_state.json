@@ -328,5 +328,27 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "IGIL": {
+    "result_date": "2026-08-10T00:00:00",
+    "day_high": 360.70001220703125,
+    "day_low": 352.29998779296875,
+    "baseline_rsi": 53.50210052520163,
+    "yahoo_ticker": "IGIL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
+  },
+  "ABFRL": {
+    "result_date": "2026-08-10T00:00:00",
+    "day_high": 61.70000076293945,
+    "day_low": 57.5,
+    "baseline_rsi": 50.43139901346249,
+    "yahoo_ticker": "ABFRL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
