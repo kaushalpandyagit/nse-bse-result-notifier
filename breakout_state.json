@@ -226,7 +226,7 @@
     "baseline_rsi": 61.23013797926117,
     "yahoo_ticker": "TIMKEN.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
@@ -416,5 +416,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
+  },
+  "TRAVELFOOD": {
+    "result_date": "2026-08-10T00:00:00",
+    "day_high": 1438.9000244140625,
+    "day_low": 1384.0,
+    "baseline_rsi": 61.65630492197196,
+    "yahoo_ticker": "TRAVELFOOD.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
