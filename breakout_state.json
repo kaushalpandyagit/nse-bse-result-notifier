@@ -414,7 +414,7 @@
     "yahoo_ticker": "IGL.NS",
     "price_high_alerted": false,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
   "TRAVELFOOD": {
