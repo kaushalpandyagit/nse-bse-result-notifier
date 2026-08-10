@@ -215,7 +215,7 @@
     "baseline_rsi": 65.10943423196213,
     "yahoo_ticker": "AEGISLOG.NS",
     "price_high_alerted": true,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
