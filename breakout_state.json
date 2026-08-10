@@ -350,5 +350,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
+  },
+  "KPRMILL": {
+    "result_date": "2026-08-10T00:00:00",
+    "day_high": 1100.4000244140625,
+    "day_low": 1064.800048828125,
+    "baseline_rsi": 52.00282357467157,
+    "yahoo_ticker": "KPRMILL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
