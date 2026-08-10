@@ -391,7 +391,7 @@
     "baseline_rsi": 58.259203236613956,
     "yahoo_ticker": "ARE&M.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
@@ -404,6 +404,17 @@
     "price_high_alerted": false,
     "price_low_alerted": true,
     "rsi_up_alerted": true,
+    "rsi_down_alerted": true
+  },
+  "IGL": {
+    "result_date": "2026-08-10T00:00:00",
+    "day_high": 153.39999389648438,
+    "day_low": 151.2100067138672,
+    "baseline_rsi": 44.746606896095145,
+    "yahoo_ticker": "IGL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
     "rsi_down_alerted": true
   }
 }
