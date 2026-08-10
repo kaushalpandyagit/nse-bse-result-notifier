@@ -361,5 +361,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
+  },
+  "NAUKRI": {
+    "result_date": "2026-08-10T00:00:00",
+    "day_high": 1288.0,
+    "day_low": 1236.699951171875,
+    "baseline_rsi": 65.39273698983882,
+    "yahoo_ticker": "NAUKRI.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
