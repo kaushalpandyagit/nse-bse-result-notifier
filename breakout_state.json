@@ -382,7 +382,7 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
   },
   "ARE&M": {
     "result_date": "2026-08-10T00:00:00",
@@ -393,6 +393,17 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
+  },
+  "BHARATFORG": {
+    "result_date": "2026-08-10T00:00:00",
+    "day_high": 2295.0,
+    "day_low": 2159.39990234375,
+    "baseline_rsi": 52.35125770742424,
+    "yahoo_ticker": "BHARATFORG.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
