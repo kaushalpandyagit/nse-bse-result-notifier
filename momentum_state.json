@@ -1594,7 +1594,7 @@
       "base_low": 39505.0,
       "prev_close": 43505.0,
       "rs_rank": 74.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "BPCL": {
@@ -2601,7 +2601,7 @@
       "base_low": 107.0,
       "prev_close": 133.55999755859375,
       "rs_rank": 38.0,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "DIVISLAB": {
