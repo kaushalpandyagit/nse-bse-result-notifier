@@ -683,7 +683,7 @@
       "prev_close": 853.0,
       "rs_rank": 81.9,
       "zanger_alerted": false,
-      "bonde_alerted": false
+      "bonde_alerted": true
     },
     "ANURAS": {
       "sma50": 1262.252001953125,
@@ -6572,7 +6572,7 @@
       "base_low": 410.8999938964844,
       "prev_close": 453.0,
       "rs_rank": 26.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "OLAELEC": {
