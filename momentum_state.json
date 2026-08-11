@@ -2032,7 +2032,7 @@
       "prev_close": 1240.0999755859375,
       "rs_rank": 87.5,
       "zanger_alerted": false,
-      "bonde_alerted": false
+      "bonde_alerted": true
     },
     "CHOICEIN": {
       "sma50": 761.7969970703125,
@@ -7009,7 +7009,7 @@
       "base_low": 1605.5999755859375,
       "prev_close": 1772.4000244140625,
       "rs_rank": 77.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "POONAWALLA": {
@@ -7522,7 +7522,7 @@
       "base_low": 171.89999389648438,
       "prev_close": 220.6199951171875,
       "rs_rank": 49.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "SARDAEN": {
