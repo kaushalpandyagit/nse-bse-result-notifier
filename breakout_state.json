@@ -460,5 +460,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "KEC": {
+    "result_date": "2026-08-11T00:00:00",
+    "day_high": 467.8999938964844,
+    "day_low": 454.1000061035156,
+    "baseline_rsi": 36.84593856666289,
+    "yahoo_ticker": "KEC.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
