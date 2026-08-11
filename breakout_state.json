@@ -449,5 +449,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "ZYDUSLIFE": {
+    "result_date": "2026-08-11T00:00:00",
+    "day_high": 1166.5,
+    "day_low": 1117.5999755859375,
+    "baseline_rsi": 61.11517089313264,
+    "yahoo_ticker": "ZYDUSLIFE.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
