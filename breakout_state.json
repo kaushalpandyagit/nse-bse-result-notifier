@@ -336,7 +336,7 @@
     "baseline_rsi": 53.50210052520163,
     "yahoo_ticker": "IGIL.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
