@@ -468,7 +468,7 @@
     "baseline_rsi": 36.84593856666289,
     "yahoo_ticker": "KEC.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
   }
