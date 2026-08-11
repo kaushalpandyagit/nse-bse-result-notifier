@@ -1,19 +1,14 @@
 name: NSE-BSE Result Notifier
 
 on:
-  schedule:
-    # Every 15 minutes, Mon-Fri, roughly covering 9:00-16:00 IST.
-    # GitHub Actions cron is in UTC. IST = UTC+5:30, so 9:00-16:00 IST
-    # is 3:30-10:30 UTC. Cron can't express the ":30" offset cleanly
-    # for a repeating 15-min pattern, so this window runs slightly
-    # wider (3:15-10:45 UTC) -- the script's own is_market_hours_now()
-    # check silently skips any run that lands outside real IST market
-    # hours, so the wider window is harmless.
-    - cron: '*/15 3-10 * * 1-5'
-  workflow_dispatch: {}  # lets you manually trigger a run from the GitHub UI to test
+  workflow_dispatch: {}
+
+concurrency:
+  group: result-notifier
+  cancel-in-progress: false
 
 permissions:
-  contents: write  # needed so the workflow can commit seen_announcements.json back
+  contents: write
 
 jobs:
   poll:
@@ -40,7 +35,18 @@ jobs:
         run: |
           git config user.name "result-notifier-bot"
           git config user.email "actions@github.com"
-          git add seen_announcements.json
-          git diff --quiet --cached || git commit -m "Update seen announcements [skip ci]"
-          git push
-
+          if [ -f seen_announcements.json ]; then
+            git add seen_announcements.json
+            git diff --quiet --cached || git commit -m "Update seen announcements [skip ci]"
+            for i in 1 2 3 4 5; do
+              if git push; then
+                echo "Push succeeded."
+                break
+              fi
+              echo "Push rejected (attempt $i/5) -- pulling and retrying..."
+              git pull --rebase origin main
+              sleep 2
+            done
+          else
+            echo "No state file exists yet -- nothing to commit."
+          fi

@@ -1,50 +1,53 @@
 name: Nifty500 Result-Day Breakout Notifier
+
 on:
-  # Scheduling is handled externally via cron-job.org calling the
-  # workflow_dispatch API every 15 min (GitHub's own schedule trigger
-  # proved unreliable). Keeping only workflow_dispatch avoids
-  # double-firing from both triggers at once.
   workflow_dispatch: {}
+
+# Ensures only ONE run of this workflow executes at a time. Without
+# this, overlapping runs (e.g. a manual trigger landing close to a
+# cron-job.org trigger) can both modify breakout_state.json and race
+# to push -- sometimes a genuine merge conflict the retry below can't
+# auto-resolve. queue (not cancel) so no poll cycle is silently
+# dropped -- it just waits its turn instead of running in parallel.
+concurrency:
+  group: breakout-notifier
+  cancel-in-progress: false
+
 permissions:
   contents: write
+
 jobs:
   poll:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
       - name: Install dependencies
         run: pip install -r requirements_breakout.txt
+
       - name: Run breakout notifier (single poll)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}   
         run: python3 price_rsi_breakout.py --once
+
       - name: Commit updated state
         run: |
           git config user.name "breakout-notifier-bot"
           git config user.email "actions@github.com"
-
           FILES_TO_ADD=""
-          for f in breakout_state.json nifty500_symbols.json momentum_state.json; do
-            if [ -f "$f" ]; then
-              FILES_TO_ADD="$FILES_TO_ADD $f"
-            fi
+          for f in breakout_state.json nifty500_symbols.json; do
+            if [ -f "$f" ]; then FILES_TO_ADD="$FILES_TO_ADD $f"; fi
           done
-
           if [ -n "$FILES_TO_ADD" ]; then
             git add $FILES_TO_ADD
             git diff --quiet --cached || git commit -m "Update breakout tracking state [skip ci]"
-
-            # Retry push up to 5 times, pulling+rebasing in between --
-            # handles overlapping runs racing to push at the same time.
             for i in 1 2 3 4 5; do
               if git push; then
                 echo "Push succeeded."
