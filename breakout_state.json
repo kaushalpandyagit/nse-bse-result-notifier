@@ -424,7 +424,7 @@
     "baseline_rsi": 61.65630492197196,
     "yahoo_ticker": "TRAVELFOOD.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
@@ -471,5 +471,27 @@
     "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
+  },
+  "SIEMENS": {
+    "result_date": "2026-08-11T00:00:00",
+    "day_high": 3946.300048828125,
+    "day_low": 3854.60009765625,
+    "baseline_rsi": 65.58106663940113,
+    "yahoo_ticker": "SIEMENS.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
+  },
+  "FINCABLES": {
+    "result_date": "2026-08-11T00:00:00",
+    "day_high": 1132.0,
+    "day_low": 1052.6500244140625,
+    "baseline_rsi": 66.96745221172318,
+    "yahoo_ticker": "FINCABLES.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
