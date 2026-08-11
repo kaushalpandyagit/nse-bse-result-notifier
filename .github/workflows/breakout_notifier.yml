@@ -1,42 +1,37 @@
-name: Nifty500 Result-Day Breakout Notifier
+name: Backfill Result Baselines (manual)
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'How many days back to scan for already-declared results'
+        required: false
+        default: '75'
 
-# Ensures only ONE run of this workflow executes at a time. Without
-# this, overlapping runs (e.g. a manual trigger landing close to a
-# cron-job.org trigger) can both modify breakout_state.json and race
-# to push -- sometimes a genuine merge conflict the retry below can't
-# auto-resolve. queue (not cancel) so no poll cycle is silently
-# dropped -- it just waits its turn instead of running in parallel.
 concurrency:
-  group: breakout-notifier
+  group: repo-state-writer
   cancel-in-progress: false
 
 permissions:
   contents: write
 
 jobs:
-  poll:
+  backfill:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install dependencies
         run: pip install -r requirements_breakout.txt
-
-      - name: Run breakout notifier (single poll)
+      - name: Run backfill
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python3 price_rsi_breakout.py --once
-
+        run: python3 backfill_baselines.py --days ${{ github.event.inputs.days }}
       - name: Commit updated state
         run: |
           git config user.name "breakout-notifier-bot"
@@ -47,16 +42,18 @@ jobs:
           done
           if [ -n "$FILES_TO_ADD" ]; then
             git add $FILES_TO_ADD
-            git diff --quiet --cached || git commit -m "Update breakout tracking state [skip ci]"
+            git diff --quiet --cached || git commit -m "Backfill result baselines [skip ci]"
             for i in 1 2 3 4 5; do
               if git push; then
                 echo "Push succeeded."
                 break
               fi
               echo "Push rejected (attempt $i/5) -- pulling and retrying..."
+              git checkout -- . 2>/dev/null || true
+              git clean -fd -e breakout_state.json -e nifty500_symbols.json 2>/dev/null || true
               git pull --rebase origin main
               sleep 2
             done
           else
-            echo "No state files exist yet -- nothing to commit."
+            echo "No state files to commit."
           fi
