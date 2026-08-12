@@ -3127,5 +3127,17 @@
     "day_high": 5441.7607421875,
     "price_alerted": false,
     "rsi_alerted": false
+  },
+  "PIIND": {
+    "result_date": "2026-08-11T00:00:00",
+    "day_high": 2700.5,
+    "price_alerted": false,
+    "rsi_alerted": false
+  },
+  "BATAINDIA": {
+    "result_date": "2026-08-11T00:00:00",
+    "day_high": 715.2999877929688,
+    "price_alerted": false,
+    "rsi_alerted": false
   }
 }
