@@ -3139,5 +3139,11 @@
     "day_high": 715.2999877929688,
     "price_alerted": false,
     "rsi_alerted": false
+  },
+  "AIAENG": {
+    "result_date": "2026-08-12T00:00:00",
+    "day_high": 4824.39990234375,
+    "price_alerted": false,
+    "rsi_alerted": false
   }
 }
