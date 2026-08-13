@@ -623,7 +623,7 @@
     "baseline_rsi": 68.69395303200957,
     "price_high_alerted": true,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
   "LUPIN": {
@@ -1247,7 +1247,7 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
   },
   "ABREL": {
     "result_date": "2026-08-13T00:00:00",
@@ -1267,9 +1267,9 @@
     "baseline_rsi": 65.74660955204828,
     "yahoo_ticker": "MINDACORP.NS",
     "price_high_alerted": true,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
   },
   "GODREJIND": {
     "result_date": "2026-08-13T00:00:00",
