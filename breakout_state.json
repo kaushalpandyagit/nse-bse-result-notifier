@@ -1266,6 +1266,17 @@
     "day_low": 728.0499877929688,
     "baseline_rsi": 65.74660955204828,
     "yahoo_ticker": "MINDACORP.NS",
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
+  },
+  "GODREJIND": {
+    "result_date": "2026-08-13T00:00:00",
+    "day_high": 1274.9000244140625,
+    "day_low": 1211.5,
+    "baseline_rsi": 39.68330002616057,
+    "yahoo_ticker": "GODREJIND.NS",
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
