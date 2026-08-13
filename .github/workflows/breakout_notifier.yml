@@ -49,7 +49,12 @@ jobs:
                 break
               fi
               echo "Push rejected (attempt $i/5) -- pulling and retrying..."
-              git pull --rebase origin main
+              git fetch origin main
+              if ! git rebase origin/main; then
+                echo "Rebase conflict -- resolving in favor of this run's freshly computed state."
+                git rebase --abort
+                git merge -X ours --no-edit origin/main
+              fi
               sleep 2
             done
           else
