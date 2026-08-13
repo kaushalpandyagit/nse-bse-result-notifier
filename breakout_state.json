@@ -1257,7 +1257,18 @@
     "yahoo_ticker": "ABREL.NS",
     "price_high_alerted": false,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true
+  },
+  "MINDACORP": {
+    "result_date": "2026-08-13T00:00:00",
+    "day_high": 750.0,
+    "day_low": 728.0499877929688,
+    "baseline_rsi": 65.74660955204828,
+    "yahoo_ticker": "MINDACORP.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
