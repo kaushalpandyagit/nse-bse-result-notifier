@@ -2259,7 +2259,7 @@
       "base_low": 448.45001220703125,
       "prev_close": 522.75,
       "rs_rank": 48.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "CONCORDBIO": {
@@ -5014,7 +5014,7 @@
       "base_low": 408.54998779296875,
       "prev_close": 474.8500061035156,
       "rs_rank": 16.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "JUBLINGREA": {
@@ -6249,7 +6249,7 @@
       "base_low": 4115.0,
       "prev_close": 5090.0,
       "rs_rank": 95.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "NEULANDLAB": {
@@ -7846,7 +7846,7 @@
       "prev_close": 19310.0,
       "rs_rank": 92.2,
       "zanger_alerted": true,
-      "bonde_alerted": false
+      "bonde_alerted": true
     },
     "SONACOMS": {
       "sma50": 682.142998046875,

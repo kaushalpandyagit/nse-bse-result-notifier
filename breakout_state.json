@@ -1300,7 +1300,7 @@
     "baseline_rsi": 30.47421332921489,
     "yahoo_ticker": "MAXHEALTH.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
   },
@@ -1310,7 +1310,7 @@
     "day_low": 18744.0,
     "baseline_rsi": 63.74098658670985,
     "yahoo_ticker": "SOLARINDS.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
