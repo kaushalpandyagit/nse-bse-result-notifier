@@ -1,5 +1,4 @@
 name: Backfill Result Baselines (manual)
-
 on:
   workflow_dispatch:
     inputs:
@@ -7,31 +6,28 @@ on:
         description: 'How many days back to scan for already-declared results'
         required: false
         default: '75'
-
+concurrency:
+  group: repo-state-writer
+  cancel-in-progress: false
 permissions:
   contents: write
-
 jobs:
   backfill:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install dependencies
         run: pip install -r requirements_breakout.txt
-
       - name: Run backfill
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python3 backfill_baselines.py --days ${{ github.event.inputs.days }}
-
       - name: Commit updated state
         run: |
           git config user.name "breakout-notifier-bot"
@@ -43,7 +39,20 @@ jobs:
           if [ -n "$FILES_TO_ADD" ]; then
             git add $FILES_TO_ADD
             git diff --quiet --cached || git commit -m "Backfill result baselines [skip ci]"
-            git push
+            for i in 1 2 3 4 5; do
+              if git push; then
+                echo "Push succeeded."
+                break
+              fi
+              echo "Push rejected (attempt $i/5) -- pulling and retrying..."
+              git fetch origin main
+              if ! git rebase origin/main; then
+                echo "Rebase conflict -- resolving in favor of this run's freshly computed state."
+                git rebase --abort
+                git merge -X ours --no-edit origin/main
+              fi
+              sleep 2
+            done
           else
             echo "No state files to commit."
           fi
