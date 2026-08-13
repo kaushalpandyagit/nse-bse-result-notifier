@@ -1150,7 +1150,7 @@
     "day_low": 1395.0,
     "baseline_rsi": 67.49367855934415,
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
   },
