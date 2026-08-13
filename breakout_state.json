@@ -1281,5 +1281,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
+  },
+  "JUBLFOOD": {
+    "result_date": "2026-08-13T00:00:00",
+    "day_high": 482.0,
+    "day_low": 471.6000061035156,
+    "baseline_rsi": 61.16537075696203,
+    "yahoo_ticker": "JUBLFOOD.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
