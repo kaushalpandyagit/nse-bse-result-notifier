@@ -1067,7 +1067,7 @@
     "baseline_rsi": 33.96123084211857,
     "price_high_alerted": false,
     "price_low_alerted": true,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
   "INTELLECT": {
