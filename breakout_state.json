@@ -1314,5 +1314,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
+  },
+  "HONASA": {
+    "result_date": "2026-08-13T00:00:00",
+    "day_high": 487.0,
+    "day_low": 468.6499938964844,
+    "baseline_rsi": 64.66529495968908,
+    "yahoo_ticker": "HONASA.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
