@@ -41,7 +41,7 @@
     "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
   },
   "BLUEJET": {
     "result_date": "2026-08-04T00:00:00",
@@ -324,7 +324,7 @@
     "day_low": 1686.4000244140625,
     "baseline_rsi": 41.94099948097386,
     "yahoo_ticker": "IKS.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
@@ -347,7 +347,7 @@
     "baseline_rsi": 50.43139901346249,
     "yahoo_ticker": "ABFRL.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
@@ -379,7 +379,7 @@
     "day_low": 532.5,
     "baseline_rsi": 69.32235810005969,
     "yahoo_ticker": "HINDCOPPER.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
@@ -412,7 +412,7 @@
     "day_low": 151.2100067138672,
     "baseline_rsi": 44.746606896095145,
     "yahoo_ticker": "IGL.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
@@ -435,7 +435,7 @@
     "baseline_rsi": 49.60865177637299,
     "yahoo_ticker": "WOCKPHARMA.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true
   },
@@ -478,7 +478,7 @@
     "day_low": 3854.60009765625,
     "baseline_rsi": 65.58106663940113,
     "yahoo_ticker": "SIEMENS.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
@@ -489,2667 +489,753 @@
     "day_low": 1052.6500244140625,
     "baseline_rsi": 66.96745221172318,
     "yahoo_ticker": "FINCABLES.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
-  },
-  "KPIL": {
-    "result_date": "2026-07-03T00:00:00",
-    "day_high": 1392.5,
-    "price_alerted": false,
-    "rsi_alerted": false
   },
   "RVNL": {
     "result_date": "2026-08-11T00:00:00",
     "day_high": 231.60000610351562,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CHOICEIN": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 678.0,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 227.1300048828125,
+    "baseline_rsi": 49.10368333341468,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "JUBLPHARMA": {
     "result_date": "2026-08-10T00:00:00",
     "day_high": 970.2999877929688,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 928.5,
+    "baseline_rsi": 50.03466842326931,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "LLOYDSME": {
     "result_date": "2026-08-10T00:00:00",
     "day_high": 2125.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IDEA": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 14.199999809265137,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 2034.0999755859375,
+    "baseline_rsi": 61.67315468650902,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "BOSCHLTD": {
     "result_date": "2026-08-10T00:00:00",
     "day_high": 43505.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 42620.0,
+    "baseline_rsi": 67.15400418837444,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "TRITURBINE": {
     "result_date": "2026-08-10T00:00:00",
     "day_high": 648.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 631.5999755859375,
+    "baseline_rsi": 52.77492353159017,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "KEI": {
     "result_date": "2026-08-03T00:00:00",
     "day_high": 5063.2001953125,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ZEEL": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 117.6500015258789,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 4963.2001953125,
+    "baseline_rsi": 48.935832279052626,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "GLAND": {
     "result_date": "2026-08-10T00:00:00",
     "day_high": 2664.8672818891923,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AFCONS": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 329.3623623219068,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 2590.528995418967,
+    "baseline_rsi": 67.75499459359878,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "DELHIVERY": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 491.3999938964844,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ANANTRAJ": {
-    "result_date": "2026-06-04T00:00:00",
-    "day_high": 591.9773096659595,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 465.0,
+    "baseline_rsi": 50.90637761296981,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "AFFLE": {
     "result_date": "2026-08-08T00:00:00",
     "day_high": 1683.0999755859375,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GPIL": {
-    "result_date": "2026-06-29T00:00:00",
-    "day_high": 268.3500061035156,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HBLENGINE": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 832.5,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1578.0,
+    "baseline_rsi": 53.07076969942016,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "RAMCOCEM": {
     "result_date": "2026-08-07T00:00:00",
     "day_high": 944.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SAILIFE": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1190.0,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 914.8499755859375,
+    "baseline_rsi": 53.81911853256386,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "TITAN": {
     "result_date": "2026-08-07T00:00:00",
     "day_high": 5003.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BLS": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 268.1499938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 4891.2998046875,
+    "baseline_rsi": 68.69395303200957,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "LUPIN": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 2427.699951171875,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 2382.60009765625,
+    "baseline_rsi": 46.790588666266046,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "BLUESTARCO": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 1671.5999755859375,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LEMONTREE": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 119.58000183105469,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "KAYNES": {
-    "result_date": "2026-07-02T00:00:00",
-    "day_high": 3188.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MOTHERSON": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 148.8000030517578,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BRITANNIA": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 5189.570951292878,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "WAAREEENER": {
-    "result_date": "2026-06-24T00:00:00",
-    "day_high": 3057.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NLCINDIA": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 347.8999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CUMMINSIND": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 6049.821052103703,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PFC": {
-    "result_date": "2026-06-10T00:00:00",
-    "day_high": 436.5665530652345,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HEROMOTOCO": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 4974.823659934938,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "FORCEMOT": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 17375.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "POWERINDIA": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 34435.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "OLAELEC": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 43.689998626708984,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INOXWIND": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 96.79000091552734,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HINDALCO": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1126.4238549787588,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TENNIND": {
-    "result_date": "2026-05-30T00:00:00",
-    "day_high": 604.75,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1549.4000244140625,
+    "baseline_rsi": 37.87496761533763,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "SONATSOFTW": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 343.54998779296875,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JKTYRE": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 377.84821125066986,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BEML": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 1861.5319991260037,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PFOCUS": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 239.85000610351562,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 327.0,
+    "baseline_rsi": 61.75021215133008,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "VIJAYA": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 1423.300048828125,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1340.5,
+    "baseline_rsi": 53.7154411594629,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "PGEL": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 616.2000122070312,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 597.0,
+    "baseline_rsi": 59.53382269275947,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "EIHOTEL": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 333.29998779296875,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 324.1499938964844,
+    "baseline_rsi": 48.62508221711033,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "ENRIN": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 3295.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ASTERDM": {
-    "result_date": "2026-07-07T00:00:00",
-    "day_high": 803.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RPOWER": {
-    "result_date": "2026-07-09T00:00:00",
-    "day_high": 25.049999237060547,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "FORTIS": {
-    "result_date": "2026-07-03T00:00:00",
-    "day_high": 987.4025595539587,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 3216.5,
+    "baseline_rsi": 43.29582775050398,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "SCI": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 311.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GRSE": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 2665.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "APOLLOTYRE": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 395.09052578633754,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PREMIERENE": {
-    "result_date": "2026-06-03T00:00:00",
-    "day_high": 1095.699951171875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "KIRLOSENG": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 2017.733991043968,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NCC": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 159.89999389648438,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SIGNATURE": {
-    "result_date": "2026-06-24T00:00:00",
-    "day_high": 789.5999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 300.54998779296875,
+    "baseline_rsi": 64.66914264670967,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "CROMPTON": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 270.54998779296875,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "EMCURE": {
-    "result_date": "2026-06-24T00:00:00",
-    "day_high": 1850.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "FSL": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 246.9499969482422,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 265.70001220703125,
+    "baseline_rsi": 59.602853134981736,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "POWERGRID": {
     "result_date": "2026-08-05T00:00:00",
     "day_high": 285.20001220703125,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GVT&D": {
-    "result_date": "2026-06-11T00:00:00",
-    "day_high": 4880.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JUBLFOOD": {
-    "result_date": "2026-07-14T00:00:00",
-    "day_high": 432.47010225248505,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NUVAMA": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 1747.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NHPC": {
-    "result_date": "2026-06-09T00:00:00",
-    "day_high": 74.27999877929688,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ECLERX": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1431.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BHARTIHEXA": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1491.5887853950312,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "COHANCE": {
-    "result_date": "2026-06-23T00:00:00",
-    "day_high": 486.29998779296875,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 281.25,
+    "baseline_rsi": 42.80052426822642,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "POLICYBZR": {
     "result_date": "2026-08-05T00:00:00",
     "day_high": 1639.9000244140625,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MARICO": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 860.6641377366142,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RITES": {
-    "result_date": "2026-06-11T00:00:00",
-    "day_high": 200.94178189842034,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BIOCON": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 421.64575954109074,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AEGISVOPAK": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 205.6106414794922,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CASTROLIND": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 180.28038357841825,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1603.0,
+    "baseline_rsi": 53.68036838027025,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "NEULANDLAB": {
     "result_date": "2026-08-05T00:00:00",
     "day_high": 20099.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 19431.0,
+    "baseline_rsi": 63.26868232350399,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "NAVINFLUOR": {
     "result_date": "2026-08-05T00:00:00",
     "day_high": 7729.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "WHIRLPOOL": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 815.8499755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CREDITACC": {
-    "result_date": "2026-07-24T00:00:00",
-    "day_high": 1522.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "UBL": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 1346.319740424658,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ONGC": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 246.6999969482422,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DLF": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 580.7092633657957,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 7551.0,
+    "baseline_rsi": 51.30181961100345,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "TATAINVEST": {
     "result_date": "2026-08-04T00:00:00",
     "day_high": 688.5,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 674.0,
+    "baseline_rsi": 55.898753477564895,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "BSE": {
     "result_date": "2026-08-04T00:00:00",
     "day_high": 3637.800048828125,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PNBHOUSING": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 1023.9093501076437,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BAJFINANCE": {
-    "result_date": "2026-07-15T00:00:00",
-    "day_high": 1037.300048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DEEPAKNTR": {
-    "result_date": "2026-07-21T00:00:00",
-    "day_high": 1718.6502842138073,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JAINREC": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 381.8999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 3555.39990234375,
+    "baseline_rsi": 45.429089250898485,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "KALYANKJIL": {
     "result_date": "2026-08-04T00:00:00",
     "day_high": 610.7999877929688,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 586.5499877929688,
+    "baseline_rsi": 65.08573701054146,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "NYKAA": {
     "result_date": "2026-08-04T00:00:00",
     "day_high": 342.5,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 334.6000061035156,
+    "baseline_rsi": 71.4680866355643,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "EMAMILTD": {
     "result_date": "2026-08-04T00:00:00",
     "day_high": 407.95001220703125,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ACC": {
-    "result_date": "2026-07-24T00:00:00",
-    "day_high": 1354.699951171875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AMBUJACEM": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 459.6746914738415,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IREDA": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 135.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "KIMS": {
-    "result_date": "2026-06-11T00:00:00",
-    "day_high": 782.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PETRONET": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 268.40362244598634,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TORNTPOWER": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1468.9123499024633,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 389.54998779296875,
+    "baseline_rsi": 39.018359196369566,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "MUTHOOTFIN": {
     "result_date": "2026-08-03T00:00:00",
     "day_high": 2928.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 2671.0,
+    "baseline_rsi": 39.144100313179756,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "GESHIP": {
     "result_date": "2026-08-03T00:00:00",
     "day_high": 1397.1687902943715,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RRKABEL": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 2462.0,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1343.5457320652708,
+    "baseline_rsi": 47.292279889516244,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "GLAXO": {
     "result_date": "2026-08-03T00:00:00",
     "day_high": 2670.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ABLBL": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 101.9983794852186,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MAZDOCK": {
-    "result_date": "2026-06-08T00:00:00",
-    "day_high": 2413.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NATIONALUM": {
-    "result_date": "2026-06-03T00:00:00",
-    "day_high": 441.95001220703125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CLEAN": {
-    "result_date": "2026-06-01T00:00:00",
-    "day_high": 809.4500122070312,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JSL": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 698.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "UPL": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 620.5499877929688,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ATHERENERG": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 1058.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DABUR": {
-    "result_date": "2026-06-03T00:00:00",
-    "day_high": 419.3595383589609,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 2630.0,
+    "baseline_rsi": 71.7734193212339,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "SUNDARMFIN": {
     "result_date": "2026-08-03T00:00:00",
     "day_high": 4965.2998046875,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 4629.7998046875,
+    "baseline_rsi": 69.9515433028113,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "ESCORTS": {
     "result_date": "2026-08-03T00:00:00",
     "day_high": 3150.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 3043.39990234375,
+    "baseline_rsi": 71.86612354318598,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "CAMS": {
     "result_date": "2026-08-03T00:00:00",
-    "day_high": 815.0,
+    "day_high": 812.41433627084,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NH": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 1868.7580712482907,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AADHARHFC": {
-    "result_date": "2026-06-18T00:00:00",
-    "day_high": 490.1000061035156,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 787.2942734595609,
+    "baseline_rsi": 54.47789685030115,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "APLAPOLLO": {
     "result_date": "2026-08-01T00:00:00",
     "day_high": 1958.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PERSISTENT": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 5215.3861124323175,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1820.300048828125,
+    "baseline_rsi": 65.03083044457362,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "LTFOODS": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 403.3999938964844,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "THELEELA": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 490.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LATENTVIEW": {
-    "result_date": "2026-06-09T00:00:00",
-    "day_high": 305.5,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 375.0,
+    "baseline_rsi": 61.19659218489278,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "DIXON": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 14589.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 13601.0,
+    "baseline_rsi": 60.012295728987766,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "SARDAEN": {
     "result_date": "2026-08-01T00:00:00",
     "day_high": 538.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 515.2000122070312,
+    "baseline_rsi": 54.295094723906445,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "CDSL": {
     "result_date": "2026-08-01T00:00:00",
     "day_high": 1354.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ABCAPITAL": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 352.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "URBANCO": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 139.8000030517578,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DIVISLAB": {
-    "result_date": "2026-07-06T00:00:00",
-    "day_high": 6861.704420912322,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IOC": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 145.74000549316406,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BLUEDART": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 4768.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GLENMARK": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 2400.699951171875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CONCORDBIO": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 1116.9123387185814,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ACMESOLAR": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 396.25,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1318.0,
+    "baseline_rsi": 46.00788400209478,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "SWIGGY": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 298.8500061035156,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PCBL": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 292.6144818040581,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 281.2300109863281,
+    "baseline_rsi": 66.50987412657581,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "ABB": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 7567.907497844137,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 7158.724566656011,
+    "baseline_rsi": 62.80782085325172,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "ITC": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 285.79998779296875,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HINDUNILVR": {
-    "result_date": "2026-06-18T00:00:00",
-    "day_high": 2199.2305034441215,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IRB": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 21.39672158097547,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 280.04998779296875,
+    "baseline_rsi": 43.593325482061275,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "BAJAJHLDNG": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 11629.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PRESTIGE": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 1504.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SHREECEM": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 24625.99010503166,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "KAJARIACER": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 1120.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DEEPAKFERT": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 1448.300048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 11257.0,
+    "baseline_rsi": 73.897074934648,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "SUNPHARMA": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 2046.9000244140625,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SJVN": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 77.80000305175781,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1965.300048828125,
+    "baseline_rsi": 67.07305752804841,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "GAIL": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 182.2100067138672,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 173.5,
+    "baseline_rsi": 66.01432034591754,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "GMDCLTD": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 578.4500122070312,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 548.0999755859375,
+    "baseline_rsi": 40.90776870057011,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "APTUS": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 288.3999938964844,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 256.0,
+    "baseline_rsi": 33.96123084211857,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "INTELLECT": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 764.4000244140625,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RAINBOW": {
-    "result_date": "2026-07-03T00:00:00",
-    "day_high": 1446.8985721629733,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BAJAJFINSV": {
-    "result_date": "2026-07-20T00:00:00",
-    "day_high": 1871.5999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AWL": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 192.42999267578125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AARTIIND": {
-    "result_date": "2026-06-18T00:00:00",
-    "day_high": 494.3999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 722.1500244140625,
+    "baseline_rsi": 53.59583921003692,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "DATAPATTNS": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 4488.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INDGN": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 513.8438521300495,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 4361.0,
+    "baseline_rsi": 52.33472940586872,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "TATASTEEL": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 188.99000549316406,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RAILTEL": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 320.25,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TORNTPHARM": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 4453.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SYRMA": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 1279.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 186.10000610351562,
+    "baseline_rsi": 46.56565203947532,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "JBMA": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 689.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 665.0999755859375,
+    "baseline_rsi": 51.47314037733137,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "NIVABUPA": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 87.58999633789062,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LODHA": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 936.6096284880035,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 85.1500015258789,
+    "baseline_rsi": 50.61968623930275,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "THERMAX": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 4366.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CHAMBLFERT": {
-    "result_date": "2026-06-03T00:00:00",
-    "day_high": 464.7415707968115,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MANKIND": {
-    "result_date": "2026-06-10T00:00:00",
-    "day_high": 2410.60009765625,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 4238.5,
+    "baseline_rsi": 36.1499585961973,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "MEDANTA": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 1427.800048828125,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HYUNDAI": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 2039.523008609622,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "VEDL": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 343.5,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1395.0,
+    "baseline_rsi": 67.49367855934415,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "AJANTPHARM": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 3499.838151749272,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TBOTEK": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 1225.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IRFC": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 98.25,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 3324.6432938042553,
+    "baseline_rsi": 56.86652674603645,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "MGL": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 1167.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "M&M": {
-    "result_date": "2026-07-06T00:00:00",
-    "day_high": 3212.699951171875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "EXIDEIND": {
-    "result_date": "2026-06-23T00:00:00",
-    "day_high": 389.08545721596226,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1069.0,
+    "baseline_rsi": 51.92309579237788,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "VTL": {
     "result_date": "2026-07-30T00:00:00",
     "day_high": 650.0,
     "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GILLETTE": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 7778.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HEXT": {
-    "result_date": "2026-07-06T00:00:00",
-    "day_high": 549.2000122070312,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PPLPHARMA": {
-    "result_date": "2026-06-29T00:00:00",
-    "day_high": 169.7899932861328,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ZENSARTECH": {
-    "result_date": "2026-06-09T00:00:00",
-    "day_high": 468.42455219845635,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CHALET": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 829.7999877929688,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CGCL": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 246.00999450683594,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GALLANTT": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 547.25,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "EICHERMOT": {
-    "result_date": "2026-06-18T00:00:00",
-    "day_high": 7588.533681577671,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "COFORGE": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 1408.4786457462956,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "STARHEALTH": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 538.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BALKRISIND": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 2086.745306100356,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SYNGENE": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 417.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "REDINGTON": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 289.79998779296875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SPLPETRO": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 712.1606147607395,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TEJASNET": {
-    "result_date": "2026-06-29T00:00:00",
-    "day_high": 623.3499755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BAJAJHFL": {
-    "result_date": "2026-07-13T00:00:00",
-    "day_high": 89.44000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "J&KBANK": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 163.49000549316406,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ADANIENT": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 3048.300048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HONAUT": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 41495.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ASIANPAINT": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 2724.56159325931,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "KPITTECH": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 752.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ERIS": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 1441.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ADANIPORTS": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 1792.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CRAFTSMAN": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 9925.887579547047,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "COLPAL": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 2213.39990234375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DEVYANI": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 114.23999786376953,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CARTRADE": {
-    "result_date": "2026-07-29T00:00:00",
-    "day_high": 3068.89990234375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CUB": {
-    "result_date": "2026-07-28T00:00:00",
-    "day_high": 243.10249441139,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HOMEFIRST": {
-    "result_date": "2026-06-10T00:00:00",
-    "day_high": 1080.4000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PARADEEP": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 127.98999786376953,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PHOENIXLTD": {
-    "result_date": "2026-07-28T00:00:00",
-    "day_high": 2045.4000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DCMSHRIRAM": {
-    "result_date": "2026-07-28T00:00:00",
-    "day_high": 1074.9124667864464,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HUDCO": {
-    "result_date": "2026-07-09T00:00:00",
-    "day_high": 205.25007159049113,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LT": {
-    "result_date": "2026-07-28T00:00:00",
-    "day_high": 3837.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BSOFT": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 322.3395984698088,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TATACAP": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 350.4148440097997,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NETWEB": {
-    "result_date": "2026-07-28T00:00:00",
-    "day_high": 4475.510068390167,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CEMPRO": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1146.0671444828456,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PINELABS": {
-    "result_date": "2026-07-28T00:00:00",
-    "day_high": 156.25,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CHOLAFIN": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 1808.189817951112,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RADICO": {
-    "result_date": "2026-07-28T00:00:00",
-    "day_high": 4350.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PFIZER": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 4406.902544498314,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SUZLON": {
-    "result_date": "2026-07-28T00:00:00",
-    "day_high": 53.20000076293945,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INDIGO": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 4555.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "APARINDS": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 13426.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "COALINDIA": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 425.3180864657575,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "USHAMART": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 499.29998779296875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SUPREMEIND": {
-    "result_date": "2026-07-28T00:00:00",
-    "day_high": 3492.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "360ONE": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 1127.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GODFRYPHLP": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 2256.7884554321045,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "VBL": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 538.1032110466231,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BANDHANBNK": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 206.1699981689453,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INDUSTOWER": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 421.1502590673575,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CCL": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 1202.5999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TATACHEM": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 702.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TATAPOWER": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 379.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BEL": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 408.45001220703125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GRAVITA": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 1807.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SUMICHEM": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 551.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SAIL": {
-    "result_date": "2026-06-29T00:00:00",
-    "day_high": 176.88999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SBFC": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 95.0999984741211,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TMCV": {
-    "result_date": "2026-07-27T00:00:00",
-    "day_high": 416.8999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CANBK": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 125.36450206143778,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ZENTEC": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 1679.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "FIVESTAR": {
-    "result_date": "2026-07-25T00:00:00",
-    "day_high": 555.9321412724898,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INDIAMART": {
-    "result_date": "2026-07-03T00:00:00",
-    "day_high": 1914.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IDFCFIRSTB": {
-    "result_date": "2026-07-25T00:00:00",
-    "day_high": 88.50001826783308,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RECLTD": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 353.89218695296154,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ABDL": {
-    "result_date": "2026-07-23T00:00:00",
-    "day_high": 623.4000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "KFINTECH": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 841.7525188526959,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AUBANK": {
-    "result_date": "2026-07-25T00:00:00",
-    "day_high": 1060.969617693212,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NIACL": {
-    "result_date": "2026-07-24T00:00:00",
-    "day_high": 175.99000549316406,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NTPC": {
-    "result_date": "2026-07-09T00:00:00",
-    "day_high": 351.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CONCOR": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 462.2868220987011,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ONESOURCE": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 1626.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PVRINOX": {
-    "result_date": "2026-06-03T00:00:00",
-    "day_high": 985.7999877929688,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ABSLAMC": {
-    "result_date": "2026-07-14T00:00:00",
-    "day_high": 1150.860527336372,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JINDALSTEL": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 1049.300048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CIEINDIA": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 466.6000061035156,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "YESBANK": {
-    "result_date": "2026-06-29T00:00:00",
-    "day_high": 25.3799991607666,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BANKINDIA": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 147.25999450683594,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "OFSS": {
-    "result_date": "2026-06-10T00:00:00",
-    "day_high": 9757.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BANKBARODA": {
-    "result_date": "2026-07-24T00:00:00",
-    "day_high": 247.10000610351562,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SBICARD": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 597.0499877929688,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HEG": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 607.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TATACONSUM": {
-    "result_date": "2026-07-24T00:00:00",
-    "day_high": 1117.0999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CIPLA": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 1362.300048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LAURUSLABS": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1450.0999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SBILIFE": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1797.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CGPOWER": {
-    "result_date": "2026-06-24T00:00:00",
-    "day_high": 944.9500122070312,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RKFORGE": {
-    "result_date": "2026-06-25T00:00:00",
-    "day_high": 577.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HINDZINC": {
-    "result_date": "2026-06-23T00:00:00",
-    "day_high": 564.0499877929688,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ATUL": {
-    "result_date": "2026-06-03T00:00:00",
-    "day_high": 6666.626874110815,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LALPATHLAB": {
-    "result_date": "2026-07-24T00:00:00",
-    "day_high": 1786.64201474763,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "WELCORP": {
-    "result_date": "2026-07-03T00:00:00",
-    "day_high": 1501.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SHRIRAMFIN": {
-    "result_date": "2026-07-24T00:00:00",
-    "day_high": 1051.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ZFCVINDIA": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 2441.933846692673,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DALBHARAT": {
-    "result_date": "2026-06-03T00:00:00",
-    "day_high": 1754.7573819340828,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JUBLINGREA": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 792.3323631991859,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SAPPHIRE": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 189.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GMRAIRPORT": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 98.95999908447266,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ACUTAAS": {
-    "result_date": "2026-07-24T00:00:00",
-    "day_high": 3457.10009765625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MPHASIS": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 2300.134271151713,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ICICIBANK": {
-    "result_date": "2026-07-14T00:00:00",
-    "day_high": 1399.9973392167874,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IIFL": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 540.8499755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SAGILITY": {
-    "result_date": "2026-06-18T00:00:00",
-    "day_high": 40.19793105860248,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GODIGIT": {
-    "result_date": "2026-06-29T00:00:00",
-    "day_high": 332.95001220703125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MEESHO": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 167.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CYIENT": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 906.2000122070312,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SONACOMS": {
-    "result_date": "2026-07-23T00:00:00",
-    "day_high": 731.0999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IEX": {
-    "result_date": "2026-07-23T00:00:00",
-    "day_high": 124.83000183105469,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INFY": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 1153.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MOTILALOFS": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 890.5999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INDUSINDBK": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 1077.8499755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "COROMANDEL": {
-    "result_date": "2026-07-03T00:00:00",
-    "day_high": 2054.000132733385,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CHENNPETRO": {
-    "result_date": "2026-07-23T00:00:00",
-    "day_high": 1297.4218764888017,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TTML": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 42.81999969482422,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "VMM": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 119.29000091552734,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CESC": {
-    "result_date": "2026-06-09T00:00:00",
-    "day_high": 175.97000122070312,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "UNITDSPR": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 1407.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NTPCGREEN": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 92.7699966430664,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "UTIAMC": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 905.3462982100139,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "FIRSTCRY": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 226.8000030517578,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SCHAEFFLER": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 4208.7001953125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HINDPETRO": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 389.79998779296875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JSWINFRA": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 281.00248723224587,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NAM-INDIA": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 1165.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "UCOBANK": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 26.690000534057617,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "M&MFIN": {
-    "result_date": "2026-06-18T00:00:00",
-    "day_high": 297.06634937180485,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JIOFIN": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 240.1974663987344,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DRREDDY": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 1282.8644616612225,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PIRAMALFIN": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 2045.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ETERNAL": {
-    "result_date": "2026-07-15T00:00:00",
-    "day_high": 296.45001220703125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SRF": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 2964.2676370696126,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BPCL": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 306.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JSWENERGY": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 592.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AAVAS": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 1424.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ADANIGREEN": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 1548.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AIIL": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 497.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HFCL": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 197.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ADANIPOWER": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 254.1999969482422,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TATACOMM": {
-    "result_date": "2026-07-13T00:00:00",
-    "day_high": 1895.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NESTLEIND": {
-    "result_date": "2026-07-22T00:00:00",
-    "day_high": 1510.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CRISIL": {
-    "result_date": "2026-06-09T00:00:00",
-    "day_high": 3867.4828953382435,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ADANIENSOL": {
-    "result_date": "2026-07-21T00:00:00",
-    "day_high": 1789.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GABRIEL": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 1140.5999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TRIDENT": {
-    "result_date": "2026-07-06T00:00:00",
-    "day_high": 26.860000610351562,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ANTHEM": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 774.8298489692622,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PAYTM": {
-    "result_date": "2026-07-15T00:00:00",
-    "day_high": 1407.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IOB": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 35.279998779296875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INDHOTEL": {
-    "result_date": "2026-07-21T00:00:00",
-    "day_high": 750.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JPPOWER": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 24.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ATGL": {
-    "result_date": "2026-07-08T00:00:00",
-    "day_high": 722.75,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TATATECH": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 762.2931888752975,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TVSMOTOR": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 3480.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BAJAJ-AUTO": {
-    "result_date": "2026-07-20T00:00:00",
-    "day_high": 10535.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GRANULES": {
-    "result_date": "2026-07-21T00:00:00",
-    "day_high": 902.6197580911308,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SOBHA": {
-    "result_date": "2026-07-21T00:00:00",
-    "day_high": 1559.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TARIL": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 316.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ACE": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 953.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CANHLIFE": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 139.1199951171875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "KARURVYSYA": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 299.3220224076102,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CANFINHOME": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 832.0384999410782,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ULTRACEMCO": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 10976.942966913206,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SHYAMMETL": {
-    "result_date": "2026-07-20T00:00:00",
-    "day_high": 1085.2199244205422,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RELIANCE": {
-    "result_date": "2026-06-25T00:00:00",
-    "day_high": 1328.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "KOTAKBANK": {
-    "result_date": "2026-06-18T00:00:00",
-    "day_high": 403.5533015481981,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JKCEMENT": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 4854.930118345264,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IDBI": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 75.23999786376953,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HDFCBANK": {
-    "result_date": "2026-07-18T00:00:00",
-    "day_high": 790.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INDIACEM": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 394.20001220703125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PNB": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 108.69000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CENTRALBK": {
-    "result_date": "2026-07-17T00:00:00",
-    "day_high": 33.29999923706055,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AXISBANK": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1275.0166799677856,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RBLBANK": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 351.1000061035156,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "POONAWALLA": {
-    "result_date": "2026-07-08T00:00:00",
-    "day_high": 478.3999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "OBEROIRLTY": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1655.2101029287232,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JSWSTEEL": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 1302.3196952526814,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HAVELLS": {
-    "result_date": "2026-07-17T00:00:00",
-    "day_high": 1194.0999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "FEDERALBNK": {
-    "result_date": "2026-07-09T00:00:00",
-    "day_high": 332.70001220703125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NEWGEN": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 523.934493303002,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CEATLTD": {
-    "result_date": "2026-06-09T00:00:00",
-    "day_high": 3137.9706282638626,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "EMMVEE": {
-    "result_date": "2026-07-01T00:00:00",
-    "day_high": 356.70001220703125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ANGELONE": {
-    "result_date": "2026-06-24T00:00:00",
-    "day_high": 342.9394091011993,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TECHM": {
-    "result_date": "2026-06-18T00:00:00",
-    "day_high": 1423.019751663595,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "WIPRO": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 181.30931980268286,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "POLYCAB": {
-    "result_date": "2026-07-07T00:00:00",
-    "day_high": 9595.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ITCHOTELS": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 178.9199981689453,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BHEL": {
-    "result_date": "2026-07-16T00:00:00",
-    "day_high": 439.5819997312715,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HSCL": {
-    "result_date": "2026-07-15T00:00:00",
-    "day_high": 684.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MRPL": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 158.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ICICIGI": {
-    "result_date": "2026-07-15T00:00:00",
-    "day_high": 1821.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HDBFS": {
-    "result_date": "2026-07-15T00:00:00",
-    "day_high": 758.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HDFCLIFE": {
-    "result_date": "2026-07-15T00:00:00",
-    "day_high": 575.3499755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HDFCAMC": {
-    "result_date": "2026-07-02T00:00:00",
-    "day_high": 2770.10009765625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ICICIPRULI": {
-    "result_date": "2026-07-15T00:00:00",
-    "day_high": 531.9500122070312,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "UNIONBANK": {
-    "result_date": "2026-07-15T00:00:00",
-    "day_high": 177.49000549316406,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MMTC": {
-    "result_date": "2026-05-31T00:00:00",
-    "day_high": 65.63999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GROWW": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 202.94000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LTTS": {
-    "result_date": "2026-06-10T00:00:00",
-    "day_high": 3444.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TATAELXSI": {
-    "result_date": "2026-07-14T00:00:00",
-    "day_high": 3840.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JINDALSAW": {
-    "result_date": "2026-06-22T00:00:00",
-    "day_high": 262.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NUVOCO": {
-    "result_date": "2026-07-13T00:00:00",
-    "day_high": 325.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HCLTECH": {
-    "result_date": "2026-06-02T00:00:00",
-    "day_high": 1244.2966735618968,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ICICIAMC": {
-    "result_date": "2026-07-13T00:00:00",
-    "day_high": 3256.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LTM": {
-    "result_date": "2026-06-10T00:00:00",
-    "day_high": 4023.199951171875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "DMART": {
-    "result_date": "2026-07-11T00:00:00",
-    "day_high": 4012.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MAHABANK": {
-    "result_date": "2026-07-10T00:00:00",
-    "day_high": 87.45999908447266,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LTF": {
-    "result_date": "2026-06-10T00:00:00",
-    "day_high": 268.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ANANDRATHI": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 1785.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "INDIANB": {
-    "result_date": "2026-07-06T00:00:00",
-    "day_high": 802.7999877929688,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ELECON": {
-    "result_date": "2026-07-10T00:00:00",
-    "day_high": 522.0999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TCS": {
-    "result_date": "2026-07-09T00:00:00",
-    "day_high": 2053.7394523387943,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ENGINERSIN": {
-    "result_date": "2026-07-07T00:00:00",
-    "day_high": 245.89999389648438,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TECHNOE": {
-    "result_date": "2026-07-03T00:00:00",
-    "day_high": 1096.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "WELSPUNLIV": {
-    "result_date": "2026-07-03T00:00:00",
-    "day_high": 171.8867230664771,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TIINDIA": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 3257.124711385158,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LGEINDIA": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 1705.199951171875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "AMBER": {
-    "result_date": "2026-06-11T00:00:00",
-    "day_high": 7575.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MINDACORP": {
-    "result_date": "2026-06-30T00:00:00",
-    "day_high": 701.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BELRISE": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 219.27999877929688,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CHOLAHLDNG": {
-    "result_date": "2026-06-24T00:00:00",
-    "day_high": 1655.0934208753076,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CPPLUS": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 2638.40234375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IRCTC": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 527.0499877929688,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NBCC": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 113.37000274658203,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JSWCEMENT": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 127.6464205863733,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NAVA": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 621.1963799194283,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "FLUOROCHEM": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 3920.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MFSL": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 1691.5999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "3MINDIA": {
-    "result_date": "2026-06-19T00:00:00",
-    "day_high": 32923.195306603775,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "RHIM": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 416.04998779296875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ASHOKLEY": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 160.87562561035156,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GODREJIND": {
-    "result_date": "2026-06-17T00:00:00",
-    "day_high": 1074.4000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "APOLLOHOSP": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 8517.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "CAPLIPOINT": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 2417.89990234375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ITI": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 313.6499938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IRCON": {
-    "result_date": "2026-06-16T00:00:00",
-    "day_high": 140.4499969482422,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SWANCORP": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 339.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PAGEIND": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 39735.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PATANJALI": {
-    "result_date": "2026-05-30T00:00:00",
-    "day_high": 460.6000061035156,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LENSKART": {
-    "result_date": "2026-06-15T00:00:00",
-    "day_high": 506.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MANAPPURAM": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 305.8999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BALRAMCHIN": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 552.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ABREL": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 1226.4619725760538,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "EIDPARRY": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 731.9500122070312,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SUNTV": {
-    "result_date": "2026-06-12T00:00:00",
-    "day_high": 517.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PTCIL": {
-    "result_date": "2026-05-30T00:00:00",
-    "day_high": 19169.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HONASA": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 419.95001220703125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ANURAS": {
-    "result_date": "2026-06-09T00:00:00",
-    "day_high": 1302.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "PWL": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 111.98999786376953,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IFCI": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 82.69000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "GRASIM": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 3114.8963898264383,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "MAXHEALTH": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 977.2133538053755,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TITAGARH": {
-    "result_date": "2026-05-31T00:00:00",
-    "day_high": 839.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "HAL": {
-    "result_date": "2026-06-05T00:00:00",
-    "day_high": 4262.5,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JSWDULUX": {
-    "result_date": "2026-06-03T00:00:00",
-    "day_high": 3199.9518572444013,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "LINDEINDIA": {
-    "result_date": "2026-05-30T00:00:00",
-    "day_high": 7099.460291694973,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "JWL": {
-    "result_date": "2026-05-30T00:00:00",
-    "day_high": 280.3500061035156,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NATCOPHARM": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 1201.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NMDC": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 93.05000305175781,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "NSLNISP": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 46.56999969482422,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "OLECTRA": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 1239.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "TEGA": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 1829.0,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "FACT": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 927.9500122070312,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "IPCALAB": {
-    "result_date": "2026-05-29T00:00:00",
-    "day_high": 1613.0995192260066,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "SCHNEIDER": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 1377.5999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "BDL": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 1282.199951171875,
-    "price_alerted": false,
-    "rsi_alerted": false
-  },
-  "ALKEM": {
-    "result_date": "2026-05-28T00:00:00",
-    "day_high": 5441.7607421875,
-    "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 596.9000244140625,
+    "baseline_rsi": 40.479568807833324,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "PIIND": {
     "result_date": "2026-08-11T00:00:00",
-    "day_high": 2700.5,
+    "day_high": 2783.5,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 2711.60009765625,
+    "baseline_rsi": 50.85244447775431,
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "BATAINDIA": {
     "result_date": "2026-08-11T00:00:00",
     "day_high": 715.2999877929688,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 697.0,
+    "baseline_rsi": 51.15888193950745,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   },
   "AIAENG": {
     "result_date": "2026-08-12T00:00:00",
-    "day_high": 4824.39990234375,
+    "day_high": 4544.2998046875,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 4366.0,
+    "baseline_rsi": 37.90288314718609,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   },
   "ASTRAL": {
     "result_date": "2026-08-12T00:00:00",
     "day_high": 1464.0,
     "price_alerted": false,
-    "rsi_alerted": false
+    "rsi_alerted": false,
+    "day_low": 1425.699951171875,
+    "baseline_rsi": 56.40902724528816,
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false
   }
 }
