@@ -852,7 +852,7 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
   },
   "GESHIP": {
     "result_date": "2026-08-03T00:00:00",
@@ -1140,7 +1140,7 @@
     "price_high_alerted": false,
     "price_low_alerted": true,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true
   },
   "MEDANTA": {
     "result_date": "2026-07-30T00:00:00",
