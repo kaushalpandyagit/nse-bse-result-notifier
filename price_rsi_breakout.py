@@ -128,6 +128,12 @@ RSI_PERIOD = 14
 # it's dropped from tracking.
 TRACK_WINDOW_DAYS = 15
 
+# Minimum minutes between repeat alerts of the SAME type for the SAME
+# stock (e.g. price re-crossing above/below the same level repeatedly
+# through the day). Prevents spam if a price/RSI level is hovering
+# right at the threshold and flapping across it poll to poll.
+ALERT_COOLDOWN_MINUTES = 30
+
 # Keywords that identify a "financial result" announcement (same idea
 # as result_notifier.py).
 RESULT_KEYWORDS = [
@@ -382,6 +388,20 @@ def prune_expired(state: dict) -> dict:
         except Exception:
             continue
     return kept
+
+
+def cooldown_elapsed(entry: dict, last_alert_key: str) -> bool:
+    """Returns True if enough time has passed since the last alert of
+    this type for this stock (or if it has never fired), i.e. it's OK
+    to alert again now."""
+    last = entry.get(last_alert_key)
+    if not last:
+        return True
+    try:
+        last_dt = datetime.datetime.fromisoformat(last)
+    except Exception:
+        return True
+    return (datetime.datetime.now() - last_dt) >= datetime.timedelta(minutes=ALERT_COOLDOWN_MINUTES)
 
 
 # ----------------------------------------------------------------------
@@ -838,16 +858,18 @@ def poll_once(state: dict) -> dict:
         if price is None:
             continue
 
-        if not entry["price_high_alerted"] and price > entry["day_high"]:
+        if not entry["price_high_alerted"] and price > entry["day_high"] and cooldown_elapsed(entry, "price_high_last_alert"):
             entry["price_high_alerted"] = True
+            entry["price_high_last_alert"] = datetime.datetime.now().isoformat()
             send_telegram_message(
                 f"\U0001F680 <b>{symbol}</b> price broke ABOVE result-day High!\n"
                 f"Current: \u20b9{price:.2f} | Result-day High: \u20b9{entry['day_high']:.2f}"
             )
             log.info("PRICE HIGH breakout: %s @ %.2f (baseline high %.2f)", symbol, price, entry["day_high"])
 
-        if not entry["price_low_alerted"] and price < entry["day_low"]:
+        if not entry["price_low_alerted"] and price < entry["day_low"] and cooldown_elapsed(entry, "price_low_last_alert"):
             entry["price_low_alerted"] = True
+            entry["price_low_last_alert"] = datetime.datetime.now().isoformat()
             send_telegram_message(
                 f"\U0001F53B <b>{symbol}</b> price broke BELOW result-day Low!\n"
                 f"Current: \u20b9{price:.2f} | Result-day Low: \u20b9{entry['day_low']:.2f}"
@@ -856,16 +878,18 @@ def poll_once(state: dict) -> dict:
 
         baseline_rsi = entry.get("baseline_rsi")
         if rsi is not None and baseline_rsi is not None:
-            if not entry["rsi_up_alerted"] and rsi > baseline_rsi:
+            if not entry["rsi_up_alerted"] and rsi > baseline_rsi and cooldown_elapsed(entry, "rsi_up_last_alert"):
                 entry["rsi_up_alerted"] = True
+                entry["rsi_up_last_alert"] = datetime.datetime.now().isoformat()
                 send_telegram_message(
                     f"\U0001F4C8 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\n"
                     f"Current RSI: {rsi:.1f} | Result-day RSI: {baseline_rsi:.1f} | Price: \u20b9{price:.2f}"
                 )
                 log.info("RSI UP break: %s RSI=%.1f (baseline %.1f)", symbol, rsi, baseline_rsi)
 
-            if not entry["rsi_down_alerted"] and rsi < baseline_rsi:
+            if not entry["rsi_down_alerted"] and rsi < baseline_rsi and cooldown_elapsed(entry, "rsi_down_last_alert"):
                 entry["rsi_down_alerted"] = True
+                entry["rsi_down_last_alert"] = datetime.datetime.now().isoformat()
                 send_telegram_message(
                     f"\U0001F4C9 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\n"
                     f"Current RSI: {rsi:.1f} | Result-day RSI: {baseline_rsi:.1f} | Price: \u20b9{price:.2f}"
