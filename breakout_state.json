@@ -1248,5 +1248,16 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
+  },
+  "ABREL": {
+    "result_date": "2026-08-13T00:00:00",
+    "day_high": 1449.0,
+    "day_low": 1372.5999755859375,
+    "baseline_rsi": 49.76922526190928,
+    "yahoo_ticker": "ABREL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true
   }
 }
