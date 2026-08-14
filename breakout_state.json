@@ -962,7 +962,7 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false,
-    "price_high_last_alert": "2026-08-14T03:46:23.058937"
+    "price_high_last_alert": "2026-08-14T03:47:50.103246"
   },
   "ABB": {
     "result_date": "2026-07-31T00:00:00",
@@ -1199,7 +1199,7 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-14T03:42:09.742479",
-    "price_high_last_alert": "2026-08-14T03:46:25.798031"
+    "price_high_last_alert": "2026-08-14T03:47:53.808640"
   },
   "AMBER": {
     "result_date": "2026-08-14T00:00:00",
