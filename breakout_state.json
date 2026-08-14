@@ -1279,8 +1279,9 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false,
-    "rsi_up_last_alert": "2026-08-14T07:41:55.271447"
+    "rsi_down_alerted": true,
+    "rsi_up_last_alert": "2026-08-14T07:41:55.271447",
+    "rsi_down_last_alert": "2026-08-14T08:45:59.832575"
   },
   "CHOLAHLDNG": {
     "result_date": "2026-08-14T00:00:00",
@@ -1294,5 +1295,18 @@
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-14T07:55:18.374408",
     "rsi_up_last_alert": "2026-08-14T07:59:54.467936"
+  },
+  "NATCOPHARM": {
+    "result_date": "2026-08-14T00:00:00",
+    "day_high": 964.8499755859375,
+    "day_low": 896.6500244140625,
+    "baseline_rsi": 42.25051523522216,
+    "yahoo_ticker": "NATCOPHARM.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true,
+    "price_low_last_alert": "2026-08-14T08:46:00.640651",
+    "rsi_down_last_alert": "2026-08-14T08:46:01.206764"
   }
 }
