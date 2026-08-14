@@ -957,10 +957,11 @@
     "rsi_alerted": false,
     "day_low": 1318.0,
     "baseline_rsi": 46.00788400209478,
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": false,
+    "price_high_last_alert": "2026-08-14T03:46:23.058937"
   },
   "ABB": {
     "result_date": "2026-07-31T00:00:00",
@@ -1190,11 +1191,12 @@
     "day_low": 468.6499938964844,
     "baseline_rsi": 64.66529495968908,
     "yahoo_ticker": "HONASA.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-08-14T03:42:09.742479"
+    "rsi_down_last_alert": "2026-08-14T03:42:09.742479",
+    "price_high_last_alert": "2026-08-14T03:46:25.798031"
   },
   "AMBER": {
     "result_date": "2026-08-14T00:00:00",
@@ -1204,9 +1206,10 @@
     "yahoo_ticker": "AMBER.NS",
     "price_high_alerted": true,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "price_high_last_alert": "2026-08-14T03:42:10.406605",
-    "rsi_down_last_alert": "2026-08-14T03:42:10.986901"
+    "rsi_down_last_alert": "2026-08-14T03:42:10.986901",
+    "rsi_up_last_alert": "2026-08-14T03:46:26.572607"
   }
 }
