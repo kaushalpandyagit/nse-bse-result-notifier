@@ -1243,5 +1243,41 @@
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-08-14T05:55:28.676297",
     "rsi_down_last_alert": "2026-08-14T05:59:11.081562"
+  },
+  "3MINDIA": {
+    "result_date": "2026-08-14T00:00:00",
+    "day_high": 37300.0,
+    "day_low": 35155.0,
+    "baseline_rsi": 56.29489581894966,
+    "yahoo_ticker": "3MINDIA.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "rsi_up_last_alert": "2026-08-14T07:41:55.271447"
+  },
+  "NAVA": {
+    "result_date": "2026-08-14T00:00:00",
+    "day_high": 588.4000244140625,
+    "day_low": 560.5,
+    "baseline_rsi": 52.39986949351834,
+    "yahoo_ticker": "NAVA.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-08-14T07:41:55.835769"
+  },
+  "ASHOKLEY": {
+    "result_date": "2026-08-14T00:00:00",
+    "day_high": 179.5,
+    "day_low": 176.60000610351562,
+    "baseline_rsi": 69.00282916178614,
+    "yahoo_ticker": "ASHOKLEY.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "rsi_up_last_alert": "2026-08-14T07:41:56.419400"
   }
 }
