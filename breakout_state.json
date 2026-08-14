@@ -502,9 +502,10 @@
     "day_low": 227.1300048828125,
     "baseline_rsi": 49.10368333341468,
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
-    "rsi_down_alerted": true
+    "rsi_down_alerted": true,
+    "price_low_last_alert": "2026-08-14T03:49:27.925556"
   },
   "JUBLPHARMA": {
     "result_date": "2026-08-10T00:00:00",
@@ -1147,10 +1148,11 @@
     "day_low": 1211.5,
     "baseline_rsi": 39.68330002616057,
     "yahoo_ticker": "GODREJIND.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": false,
+    "price_high_last_alert": "2026-08-14T03:49:38.756642"
   },
   "JUBLFOOD": {
     "result_date": "2026-08-13T00:00:00",
@@ -1183,7 +1185,8 @@
     "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-08-14T03:49:39.905227"
   },
   "HONASA": {
     "result_date": "2026-08-13T00:00:00",
@@ -1205,11 +1208,12 @@
     "baseline_rsi": 41.469185722297034,
     "yahoo_ticker": "AMBER.NS",
     "price_high_alerted": true,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "price_high_last_alert": "2026-08-14T03:42:10.406605",
     "rsi_down_last_alert": "2026-08-14T03:42:10.986901",
-    "rsi_up_last_alert": "2026-08-14T03:46:26.572607"
+    "rsi_up_last_alert": "2026-08-14T03:46:26.572607",
+    "price_low_last_alert": "2026-08-14T03:49:41.239515"
   }
 }
