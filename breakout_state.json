@@ -1344,8 +1344,9 @@
     "yahoo_ticker": "FIRSTCRY.NS",
     "price_high_alerted": false,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-08-14T10:01:07.679616"
+    "rsi_down_last_alert": "2026-08-14T10:01:07.679616",
+    "rsi_up_last_alert": "2026-08-14T10:15:51.219448"
   }
 }
