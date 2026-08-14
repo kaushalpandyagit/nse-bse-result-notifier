@@ -1230,5 +1230,17 @@
     "rsi_up_alerted": false,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-14T04:42:20.182389"
+  },
+  "BRIGADE": {
+    "result_date": "2026-08-14T00:00:00",
+    "day_high": 605.9000244140625,
+    "day_low": 587.2999877929688,
+    "baseline_rsi": 60.739360285515914,
+    "yahoo_ticker": "BRIGADE.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "rsi_up_last_alert": "2026-08-14T05:55:28.676297"
   }
 }
