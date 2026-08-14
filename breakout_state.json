@@ -926,18 +926,6 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
   },
-  "LTFOODS": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 403.3999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 375.0,
-    "baseline_rsi": 61.19659218489278,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
   "DIXON": {
     "result_date": "2026-07-31T00:00:00",
     "day_high": 14589.0,
@@ -973,18 +961,6 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
-  },
-  "SWIGGY": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 298.8500061035156,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 281.2300109863281,
-    "baseline_rsi": 66.50987412657581,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
   },
   "ABB": {
     "result_date": "2026-07-31T00:00:00",
@@ -1082,114 +1058,6 @@
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
   },
-  "DATAPATTNS": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 4488.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 4361.0,
-    "baseline_rsi": 52.33472940586872,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
-  "TATASTEEL": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 188.99000549316406,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 186.10000610351562,
-    "baseline_rsi": 46.56565203947532,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "JBMA": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 689.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 665.0999755859375,
-    "baseline_rsi": 51.47314037733137,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "NIVABUPA": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 87.58999633789062,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 85.1500015258789,
-    "baseline_rsi": 50.61968623930275,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "THERMAX": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 4366.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 4238.5,
-    "baseline_rsi": 36.1499585961973,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "MEDANTA": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 1427.800048828125,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 1395.0,
-    "baseline_rsi": 67.49367855934415,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "AJANTPHARM": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 3499.838151749272,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 3324.6432938042553,
-    "baseline_rsi": 56.86652674603645,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
-  "MGL": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 1167.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 1069.0,
-    "baseline_rsi": 51.92309579237788,
-    "price_high_alerted": false,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "VTL": {
-    "result_date": "2026-07-30T00:00:00",
-    "day_high": 650.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 596.9000244140625,
-    "baseline_rsi": 40.479568807833324,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
   "PIIND": {
     "result_date": "2026-08-11T00:00:00",
     "day_high": 2783.5,
@@ -1223,8 +1091,9 @@
     "baseline_rsi": 37.90288314718609,
     "price_high_alerted": false,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": true,
+    "rsi_up_last_alert": "2026-08-14T03:39:40.597026"
   },
   "ASTRAL": {
     "result_date": "2026-08-12T00:00:00",
@@ -1324,6 +1193,20 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-08-14T03:39:42.120713"
+  },
+  "AMBER": {
+    "result_date": "2026-08-14T00:00:00",
+    "day_high": 7170.5,
+    "day_low": 7170.5,
+    "baseline_rsi": 41.521239090980345,
+    "yahoo_ticker": "AMBER.NS",
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true,
+    "price_high_last_alert": "2026-08-14T03:39:42.673011",
+    "rsi_down_last_alert": "2026-08-14T03:39:43.161067"
   }
 }
