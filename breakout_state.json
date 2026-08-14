@@ -1091,11 +1091,12 @@
     "rsi_alerted": false,
     "day_low": 4366.0,
     "baseline_rsi": 37.90288314718609,
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-08-14T03:42:07.269127"
+    "rsi_up_last_alert": "2026-08-14T03:42:07.269127",
+    "price_high_last_alert": "2026-08-14T04:42:18.211559"
   },
   "ASTRAL": {
     "result_date": "2026-08-12T00:00:00",
@@ -1215,5 +1216,17 @@
     "rsi_down_last_alert": "2026-08-14T03:42:10.986901",
     "rsi_up_last_alert": "2026-08-14T03:46:26.572607",
     "price_low_last_alert": "2026-08-14T03:49:41.239515"
+  },
+  "ANURAS": {
+    "result_date": "2026-08-14T00:00:00",
+    "day_high": 1233.800048828125,
+    "day_low": 1208.9000244140625,
+    "baseline_rsi": 40.848354645217626,
+    "yahoo_ticker": "ANURAS.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-08-14T04:42:20.182389"
   }
 }
