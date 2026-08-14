@@ -1246,44 +1246,6 @@
   },
   "NAVA": {
     "result_date": "2026-08-14T00:00:00",
-    "day_high": 583.9500122070312,
-    "day_low": 560.5,
-    "baseline_rsi": 51.86631543552146,
-    "yahoo_ticker": "NAVA.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true,
-    "price_high_last_alert": "2026-08-14T07:39:48.649260",
-    "rsi_up_last_alert": "2026-08-14T07:39:49.263591",
-    "rsi_down_last_alert": "2026-08-14T07:43:29.295875"
-  },
-  "ASHOKLEY": {
-    "result_date": "2026-08-14T00:00:00",
-    "day_high": 179.5,
-    "day_low": 176.60000610351562,
-    "baseline_rsi": 68.64650051779714,
-    "yahoo_ticker": "ASHOKLEY.NS",
-    "price_high_alerted": false,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false,
-    "rsi_up_last_alert": "2026-08-14T07:39:49.996577"
-  },
-  "3MINDIA": {
-    "result_date": "2026-08-14T00:00:00",
-    "day_high": 37300.0,
-    "day_low": 35155.0,
-    "baseline_rsi": 56.29489581894966,
-    "yahoo_ticker": "3MINDIA.NS",
-    "price_high_alerted": false,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false,
-    "rsi_up_last_alert": "2026-08-14T07:41:55.271447"
-  },
-  "NAVA": {
-    "result_date": "2026-08-14T00:00:00",
     "day_high": 588.4000244140625,
     "day_low": 560.5,
     "baseline_rsi": 52.39986949351834,
@@ -1301,9 +1263,23 @@
     "baseline_rsi": 69.00282916178614,
     "yahoo_ticker": "ASHOKLEY.NS",
     "price_high_alerted": false,
+    "price_low_alerted": true,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": true,
+    "rsi_up_last_alert": "2026-08-14T07:41:56.419400",
+    "price_low_last_alert": "2026-08-14T07:46:34.128288",
+    "rsi_down_last_alert": "2026-08-14T07:46:35.005041"
+  },
+  "3MINDIA": {
+    "result_date": "2026-08-14T00:00:00",
+    "day_high": 37300.0,
+    "day_low": 35155.0,
+    "baseline_rsi": 56.29489581894966,
+    "yahoo_ticker": "3MINDIA.NS",
+    "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false,
-    "rsi_up_last_alert": "2026-08-14T07:41:56.419400"
+    "rsi_up_last_alert": "2026-08-14T07:41:55.271447"
   }
 }
