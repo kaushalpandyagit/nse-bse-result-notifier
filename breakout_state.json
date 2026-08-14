@@ -1253,9 +1253,10 @@
     "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false,
+    "rsi_down_alerted": true,
     "price_high_last_alert": "2026-08-14T07:39:48.649260",
-    "rsi_up_last_alert": "2026-08-14T07:39:49.263591"
+    "rsi_up_last_alert": "2026-08-14T07:39:49.263591",
+    "rsi_down_last_alert": "2026-08-14T07:43:29.295875"
   },
   "ASHOKLEY": {
     "result_date": "2026-08-14T00:00:00",
