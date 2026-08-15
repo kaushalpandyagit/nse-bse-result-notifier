@@ -6,7 +6,8 @@ What this does
 ---------------
 Every POLL_INTERVAL_MINUTES, this script:
   1. Fetches the latest corporate announcements from NSE and BSE.
-  2. Filters them to financial-result type filings (configurable).
+  2. Filters them to financial-result type filings (configurable) --
+     AND, separately, order/contract-win filings (new -- see below).
   3. De-duplicates announcements that appear on BOTH exchanges for the
      same company (many companies are dual-listed), using a
      (company_symbol_normalised + subject + date) fingerprint.
@@ -17,6 +18,31 @@ Every POLL_INTERVAL_MINUTES, this script:
      (Mon-Fri, 9:00 AM - 4:00 PM IST) to avoid hammering the APIs
      when the market is shut. Set POLL_ONLY_MARKET_HOURS = False to
      override (e.g. for testing).
+
+ORDER / CONTRACT WIN DETECTION (new)
+--------------------------------------
+Alongside financial results, this now also detects "Award of Order",
+"Receipt of Order/Contract", "Bagging of Contract" type filings --
+the same general announcement category NSE/BSE use for things like
+".../SUNGARNER_..._NSE_NTPC.pdf" style order-win disclosures.
+
+When such a filing is found, the script also attempts to extract a
+rupee VALUE from the available announcement text (subject + NSE's
+attchmntText field, when present) using pattern matching for common
+phrasings like "Rs. 150 crore", "₹45.2 Cr", "INR 12 lakh", etc.
+
+Caveats, so the numbers aren't over-trusted:
+  - BSE's API only exposes a short headline/subject, not the full
+    attachment text -- so order VALUE extraction will often come up
+    empty for BSE-sourced announcements even when the underlying PDF
+    states one. NSE's attchmntText field is more likely to have it,
+    but is not guaranteed either (some filings only state the value
+    inside the PDF itself, which this script does not download/OCR).
+  - When no amount can be confidently parsed, the alert says so
+    explicitly rather than omitting it silently -- check the linked
+    filing yourself for the exact figure when it matters.
+  - This is a best-effort text scan, not a financial-data extraction
+    engine. Always verify against the source PDF before acting.
 
 One-time setup
 ---------------
@@ -101,6 +127,65 @@ RESULT_KEYWORDS = [
     "standalone and consolidated financial",
     "submitted to the exchange",
 ]
+
+# Order / contract-win filing keywords (new). Matches NSE/BSE's
+# "Award of Order / Receipt of Order / Bagging of Contract" style
+# announcement category.
+ORDER_KEYWORDS = [
+    "award of order",
+    "awarded order",
+    "awarded contract",
+    "award of contract",
+    "receipt of order",
+    "received order",
+    "receipt of contract",
+    "bagging of order",
+    "bagging of contract",
+    "bags order",
+    "bags contract",
+    "secures order",
+    "secured order",
+    "secures contract",
+    "wins order",
+    "wins contract",
+    "letter of intent",
+    "l.o.i.",
+    " loi ",
+    "letter of award",
+    "l.o.a.",
+    " loa ",
+    "purchase order",
+    "work order",
+    "order/contract",
+    "order / contract",
+]
+
+# Regex patterns to pull a rupee amount out of announcement text.
+# Matches things like "Rs. 150 crore", "₹45.2 Cr", "INR 12 lakh",
+# "Rs 1,250 Crores", "USD 3 million" (kept, since some order filings
+# quote value in USD for export contracts).
+_AMOUNT_UNIT_PATTERN = re.compile(
+    r"(?:rs\.?|inr|₹|usd|\$)\s*([\d,]+(?:\.\d+)?)\s*"
+    r"(crore|cr\.?|lakh|lac|million|mn|billion|bn)\b",
+    re.IGNORECASE,
+)
+
+
+def extract_order_value(text: str):
+    """Best-effort scan for a rupee/dollar value mentioned in the
+    announcement text. Returns a formatted string like "₹150 crore"
+    (using whatever currency word and unit were found in the source
+    text, not necessarily normalised) or None if nothing matched.
+    See module docstring for caveats -- this is best-effort, not
+    guaranteed, especially for BSE announcements (short text only)."""
+    if not text:
+        return None
+    match = _AMOUNT_UNIT_PATTERN.search(text)
+    if not match:
+        return None
+    amount, unit = match.group(1), match.group(2)
+    return f"{amount} {unit}"
+
 
 # Empty = track every company. To restrict to specific tickers, add
 # NSE symbols / BSE scrip names here, e.g. ["RELIANCE", "TCS", "INFY"]
@@ -335,6 +420,13 @@ def is_result_announcement(subject: str) -> bool:
     return "board meeting" in subj_lower and "result" in subj_lower
 
 
+def is_order_announcement(subject: str) -> bool:
+    """True if the subject text matches an order/contract-win filing
+    (Award of Order, Receipt of Contract, Bagging of Order, etc.)."""
+    subj_lower = f" {subject.lower()} "
+    return any(kw in subj_lower for kw in ORDER_KEYWORDS)
+
+
 def matches_watchlist(company: str, symbol: str) -> bool:
     if not WATCHLIST:
         return True  # no watchlist -> everything counts
@@ -375,9 +467,12 @@ def poll_once(seen: set) -> set:
     for item in all_items:
         if not item["company"] or not item["subject"]:
             continue
-        if not is_result_announcement(item["subject"]):
-            continue
         if not matches_watchlist(item["company"], item["symbol"]):
+            continue
+
+        is_result = is_result_announcement(item["subject"])
+        is_order = is_order_announcement(item["subject"])
+        if not is_result and not is_order:
             continue
 
         fp = fingerprint(item["company"], item["subject"], item["date"])
@@ -385,23 +480,35 @@ def poll_once(seen: set) -> set:
             continue  # already alerted (possibly via the other exchange)
 
         seen.add(fp)
+        item["category"] = "result" if is_result else "order"
         new_alerts.append(item)
 
     for item in new_alerts:
-        msg = (
-            f"\U0001F4E2 <b>{item['company']}</b> ({item['source']})\n"
-            f"{item['subject']}\n"
-            f"\U0001F550 {item['date']}"
-        )
+        if item["category"] == "order":
+            order_value = extract_order_value(item["subject"])
+            value_line = (f"\U0001F4B0 Value: \u20b9{order_value}\n" if order_value
+                          else "\U0001F4B0 Value: not stated in available text -- check filing\n")
+            msg = (
+                f"\U0001F4E6 <b>{item['company']}</b> ({item['source']}) -- Order/Contract Win\n"
+                f"{item['subject']}\n"
+                f"{value_line}"
+                f"\U0001F550 {item['date']}"
+            )
+        else:
+            msg = (
+                f"\U0001F4E2 <b>{item['company']}</b> ({item['source']})\n"
+                f"{item['subject']}\n"
+                f"\U0001F550 {item['date']}"
+            )
         if item.get("link"):
             msg += f"\n\U0001F517 {item['link']}"
         sent = send_telegram_message(msg)
-        log.info("%s alert for %s: %s", "Sent" if sent else "FAILED",
-                  item["company"], item["subject"][:60])
+        log.info("%s %s alert for %s: %s", "Sent" if sent else "FAILED",
+                  item["category"], item["company"], item["subject"][:60])
         time.sleep(1)  # be gentle on Telegram's rate limit
 
     if not new_alerts:
-        log.info("No new result filings this cycle.")
+        log.info("No new result/order filings this cycle.")
 
     return seen
 
@@ -409,7 +516,7 @@ def poll_once(seen: set) -> set:
 def main():
     one_shot = "--once" in sys.argv
 
-    log.info("Starting NSE+BSE result notifier. Polling every %d minutes.%s",
+    log.info("Starting NSE+BSE result/order notifier. Polling every %d minutes.%s",
               POLL_INTERVAL_MINUTES, " (single-shot mode)" if one_shot else "")
     seen = load_seen()
 
