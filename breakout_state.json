@@ -1209,8 +1209,9 @@
     "yahoo_ticker": "NETWEB.NS",
     "price_high_alerted": false,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-08-17T06:45:50.403069"
+    "rsi_down_last_alert": "2026-08-17T06:45:50.403069",
+    "rsi_up_last_alert": "2026-08-17T07:01:03.781250"
   }
 }
