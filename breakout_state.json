@@ -1098,10 +1098,11 @@
     "baseline_rsi": 52.39986949351834,
     "yahoo_ticker": "NAVA.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-08-14T07:41:55.835769"
+    "rsi_down_last_alert": "2026-08-14T07:41:55.835769",
+    "price_low_last_alert": "2026-08-17T04:15:50.471214"
   },
   "ASHOKLEY": {
     "result_date": "2026-08-14T00:00:00",
