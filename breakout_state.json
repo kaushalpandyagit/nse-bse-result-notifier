@@ -673,9 +673,10 @@
     "day_low": 597.0,
     "baseline_rsi": 59.53382269275947,
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
-    "rsi_down_alerted": true
+    "rsi_down_alerted": true,
+    "price_low_last_alert": "2026-08-17T04:00:55.860269"
   },
   "EIHOTEL": {
     "result_date": "2026-08-06T00:00:00",
@@ -995,11 +996,12 @@
     "baseline_rsi": 39.68330002616057,
     "yahoo_ticker": "GODREJIND.NS",
     "price_high_alerted": true,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "price_high_last_alert": "2026-08-14T03:51:49.957222",
-    "rsi_down_last_alert": "2026-08-17T03:45:56.611024"
+    "rsi_down_last_alert": "2026-08-17T03:45:56.611024",
+    "price_low_last_alert": "2026-08-17T04:00:59.693811"
   },
   "JUBLFOOD": {
     "result_date": "2026-08-13T00:00:00",
@@ -1122,11 +1124,12 @@
     "baseline_rsi": 56.29489581894966,
     "yahoo_ticker": "3MINDIA.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-08-14T07:41:55.271447",
-    "rsi_down_last_alert": "2026-08-14T08:45:59.832575"
+    "rsi_down_last_alert": "2026-08-14T08:45:59.832575",
+    "price_low_last_alert": "2026-08-17T04:01:01.394975"
   },
   "CHOLAHLDNG": {
     "result_date": "2026-08-14T00:00:00",
