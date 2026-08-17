@@ -39,9 +39,10 @@
     "baseline_rsi": 47.69318937155276,
     "yahoo_ticker": "GODREJPROP.NS",
     "price_high_alerted": true,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": true
+    "rsi_down_alerted": true,
+    "price_low_last_alert": "2026-08-17T03:45:42.255647"
   },
   "BLUEJET": {
     "result_date": "2026-08-04T00:00:00",
@@ -580,19 +581,6 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": false
   },
-  "DELHIVERY": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 491.3999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 465.0,
-    "baseline_rsi": 50.90637761296981,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true,
-    "price_low_last_alert": "2026-08-14T05:44:47.511437"
-  },
   "AFFLE": {
     "result_date": "2026-08-08T00:00:00",
     "day_high": 1683.0999755859375,
@@ -917,151 +905,6 @@
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
   },
-  "APLAPOLLO": {
-    "result_date": "2026-08-01T00:00:00",
-    "day_high": 1958.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 1820.300048828125,
-    "baseline_rsi": 65.03083044457362,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
-  "DIXON": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 14589.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 13601.0,
-    "baseline_rsi": 60.012295728987766,
-    "price_high_alerted": false,
-    "price_low_alerted": false,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "SARDAEN": {
-    "result_date": "2026-08-01T00:00:00",
-    "day_high": 538.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 515.2000122070312,
-    "baseline_rsi": 54.295094723906445,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
-  "CDSL": {
-    "result_date": "2026-08-01T00:00:00",
-    "day_high": 1354.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 1318.0,
-    "baseline_rsi": 46.00788400209478,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false,
-    "price_high_last_alert": "2026-08-14T03:47:50.103246"
-  },
-  "ABB": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 7567.907497844137,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 7158.724566656011,
-    "baseline_rsi": 62.80782085325172,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
-  "ITC": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 285.79998779296875,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 280.04998779296875,
-    "baseline_rsi": 43.593325482061275,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "BAJAJHLDNG": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 11629.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 11257.0,
-    "baseline_rsi": 73.897074934648,
-    "price_high_alerted": false,
-    "price_low_alerted": false,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "SUNPHARMA": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 2046.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 1965.300048828125,
-    "baseline_rsi": 67.07305752804841,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "GAIL": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 182.2100067138672,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 173.5,
-    "baseline_rsi": 66.01432034591754,
-    "price_high_alerted": false,
-    "price_low_alerted": false,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "GMDCLTD": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 578.4500122070312,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 548.0999755859375,
-    "baseline_rsi": 40.90776870057011,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
-  "APTUS": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 288.3999938964844,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 256.0,
-    "baseline_rsi": 33.96123084211857,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "INTELLECT": {
-    "result_date": "2026-07-31T00:00:00",
-    "day_high": 764.4000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 722.1500244140625,
-    "baseline_rsi": 53.59583921003692,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
   "PIIND": {
     "result_date": "2026-08-11T00:00:00",
     "day_high": 2783.5,
@@ -1154,8 +997,9 @@
     "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false,
-    "price_high_last_alert": "2026-08-14T03:51:49.957222"
+    "rsi_down_alerted": true,
+    "price_high_last_alert": "2026-08-14T03:51:49.957222",
+    "rsi_down_last_alert": "2026-08-17T03:45:56.611024"
   },
   "JUBLFOOD": {
     "result_date": "2026-08-13T00:00:00",
