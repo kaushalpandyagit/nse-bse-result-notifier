@@ -867,8 +867,9 @@
     "baseline_rsi": 71.7734193212339,
     "price_high_alerted": true,
     "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": true,
+    "rsi_up_last_alert": "2026-08-17T06:29:39.408239"
   },
   "SUNDARMFIN": {
     "result_date": "2026-08-03T00:00:00",
