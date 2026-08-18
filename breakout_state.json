@@ -449,9 +449,10 @@
     "baseline_rsi": 61.11517089313264,
     "yahoo_ticker": "ZYDUSLIFE.NS",
     "price_high_alerted": true,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": true
+    "rsi_down_alerted": true,
+    "price_low_last_alert": "2026-08-18T09:45:41.406599"
   },
   "KEC": {
     "result_date": "2026-08-11T00:00:00",
