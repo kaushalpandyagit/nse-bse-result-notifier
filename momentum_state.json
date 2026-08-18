@@ -5090,7 +5090,7 @@
       "base_low": 738.9000244140625,
       "prev_close": 874.2999877929688,
       "rs_rank": 53.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "KAJARIACER": {
@@ -7161,7 +7161,7 @@
       "base_low": 16922.0,
       "prev_close": 20374.0,
       "rs_rank": 59.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false
     },
     "PVRINOX": {
