@@ -1075,12 +1075,13 @@
     "day_low": 2685.0,
     "baseline_rsi": 38.59058503023579,
     "yahoo_ticker": "TIINDIA.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-14T09:01:05.338908",
-    "rsi_up_last_alert": "2026-08-14T09:15:58.260791"
+    "rsi_up_last_alert": "2026-08-14T09:15:58.260791",
+    "price_high_last_alert": "2026-08-18T04:02:27.693828"
   },
   "FACT": {
     "result_date": "2026-08-14T00:00:00",
@@ -1114,11 +1115,12 @@
     "day_low": 5008.2998046875,
     "baseline_rsi": 66.06485742856844,
     "yahoo_ticker": "NETWEB.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-17T06:45:50.403069",
-    "rsi_up_last_alert": "2026-08-17T07:01:03.781250"
+    "rsi_up_last_alert": "2026-08-17T07:01:03.781250",
+    "price_high_last_alert": "2026-08-18T04:02:28.647027"
   }
 }
