@@ -870,10 +870,11 @@
     "day_low": 592.4000244140625,
     "baseline_rsi": 74.15304460897627,
     "yahoo_ticker": "LENSKART.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": true
+    "rsi_down_alerted": true,
+    "price_high_last_alert": "2026-08-18T06:29:50.052344"
   },
   "ABREL": {
     "result_date": "2026-08-13T00:00:00",
