@@ -557,7 +557,8 @@
     "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-08-18T09:15:43.071196"
   },
   "AFFLE": {
     "result_date": "2026-08-08T00:00:00",
@@ -982,10 +983,11 @@
     "yahoo_ticker": "ANURAS.NS",
     "price_high_alerted": false,
     "price_low_alerted": true,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-14T04:42:20.182389",
-    "price_low_last_alert": "2026-08-17T06:15:51.140150"
+    "price_low_last_alert": "2026-08-17T06:15:51.140150",
+    "rsi_up_last_alert": "2026-08-18T09:15:47.538364"
   },
   "BRIGADE": {
     "result_date": "2026-08-14T00:00:00",
