@@ -142,15 +142,18 @@ def fetch_delivery_data(session, date: datetime.date) -> pd.DataFrame | None:
 
 
 EARLY_MOVE_MIN = 2.0
-EARLY_MOVE_MAX = 5.0
-BIG_MOVE_MIN = 5.0
+EARLY_MOVE_MAX = 2.5  # capped tighter -- moves beyond this are already
+                       # played out; risk/reward is no longer favorable
+                       # for a fresh entry at that point.
 
 
 def analyze_delivery(df: pd.DataFrame) -> dict:
-    """Returns dict with 'big_movers' (already moved >5%, confirmed but
-    less favorable risk/reward) and 'early_movers' (moved 2-5%, still
-    early -- better risk/reward for a fresh entry), both filtered on
-    high delivery %."""
+    """Returns dict with 'early_movers' (moved 2-2.5%, still early --
+    favorable risk/reward for a fresh entry), filtered on high
+    delivery %. Moves beyond EARLY_MOVE_MAX are intentionally excluded
+    -- once a stock has already run further than that on high
+    delivery, the move is largely played out and the risk/reward for
+    a new entry is no longer favorable."""
     all_signals = []
     try:
         df = df[df["SERIES"].str.strip() == "EQ"]
@@ -171,13 +174,10 @@ def analyze_delivery(df: pd.DataFrame) -> dict:
     except Exception as e:
         log.error("Delivery analysis failed: %s", e)
 
-    big_movers = [s for s in all_signals if abs(s[1]) > BIG_MOVE_MIN]
     early_movers = [s for s in all_signals if EARLY_MOVE_MIN <= abs(s[1]) <= EARLY_MOVE_MAX]
-
-    big_movers.sort(key=lambda x: abs(x[1]), reverse=True)
     early_movers.sort(key=lambda x: abs(x[1]), reverse=True)
 
-    return {"big_movers": big_movers[:TOP_N], "early_movers": early_movers[:TOP_N]}
+    return {"early_movers": early_movers[:TOP_N]}
 
 
 # ----------------------------------------------------------------------
@@ -224,14 +224,54 @@ def fetch_bulk_block_symbols(session, date: datetime.date) -> set:
     return symbols
 
 
+ETF_LIST_CACHE_FILE = Path(__file__).parent / "etf_symbols.json"
+ETF_LIST_URL = "https://archives.nseindia.com/content/equities/eq_etfseclist.csv"
+
+
+def get_etf_symbols(session) -> set:
+    """Returns the set of NSE-listed ETF symbols (Nippon/Motilal
+    Oswal/UTI/ICICI/etc. ETFs, gilt ETFs, gold ETFs, etc.), fetched
+    from NSE's official ETF security list and cached for a week (the
+    list changes rarely). Used to exclude ETFs from stock-picking
+    signals like Unusual Volume, since ETF volume reflects fund flows
+    rather than company-specific activity."""
+    if ETF_LIST_CACHE_FILE.exists():
+        try:
+            cached = json.loads(ETF_LIST_CACHE_FILE.read_text())
+            fetched_at = datetime.datetime.fromisoformat(cached["fetched_at"])
+            if (datetime.datetime.now() - fetched_at).days < 7:
+                return set(cached["symbols"])
+        except Exception:
+            pass  # fall through to refetch
+
+    try:
+        resp = session.get(ETF_LIST_URL, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        df = pd.read_csv(io.StringIO(resp.text))
+        df.columns = [c.strip() for c in df.columns]
+        symbol_col = next((c for c in df.columns if "Symbol" in c), df.columns[0])
+        symbols = {str(s).strip().upper() for s in df[symbol_col] if str(s).strip()}
+        ETF_LIST_CACHE_FILE.write_text(json.dumps({
+            "fetched_at": datetime.datetime.now().isoformat(),
+            "symbols": sorted(symbols),
+        }))
+        log.info("Refreshed ETF list: %d symbols.", len(symbols))
+        return symbols
+    except Exception as e:
+        log.warning("Could not fetch ETF list (%s). Unusual-volume signal will not exclude ETFs this run.", e)
+        return set()
+
+
 def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date) -> list:
     """Returns list of (symbol, price_change_pct, volume_ratio) for
     stocks with volume well above their recent average, but price
-    barely moved -- and excludes any symbol with a bulk/block deal
-    today, since a single large trade isn't the same signal as broad
-    organic volume."""
+    barely moved -- excludes any symbol with a bulk/block deal today
+    (a single large trade isn't the same signal as broad organic
+    volume) and excludes ETFs entirely (ETF volume reflects fund
+    flows/rebalancing, not company-specific accumulation)."""
     history = load_volume_history()
     bulk_block = fetch_bulk_block_symbols(session, date)
+    etfs = get_etf_symbols(session)
     results = []
 
     try:
@@ -261,6 +301,8 @@ def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date) -> li
                     continue  # not enough history yet for this symbol
                 if symbol in bulk_block:
                     continue  # exclude bulk/block-driven volume spikes
+                if symbol in etfs:
+                    continue  # exclude ETFs -- volume reflects fund flows, not stock-specific activity
 
                 avg_volume = sum(past_volumes) / len(past_volumes)
                 if avg_volume <= 0:
@@ -470,30 +512,24 @@ def main():
 
     sections = []
 
-    # --- Delivery analysis (two tiers) ---
+    # --- Delivery analysis (early movers only -- see EARLY_MOVE_MAX note) ---
     deliv_df = fetch_delivery_data(session, date)
     if deliv_df is not None:
         tiers = analyze_delivery(deliv_df)
         sections.append(
-            f"\U0001F4E6 <b>High Delivery % \u2014 Big Movers</b> (>{DELIVERY_PCT_THRESHOLD:.0f}% delivery, "
-            f">{BIG_MOVE_MIN:.0f}% move)\n"
-            f"<i>Move already confirmed \u2014 risk/reward less favorable after this much of the "
-            f"move has played out</i>\n" +
-            format_stock_list([(s, p, d) for s, p, d, v in tiers["big_movers"]], comment=True, third_label="Delivery")
-        )
-        sections.append(
-            f"\U0001F331 <b>High Delivery % \u2014 Early Movers</b> ({EARLY_MOVE_MIN:.0f}-{EARLY_MOVE_MAX:.0f}% move)\n"
-            f"<i>Smaller move so far \u2014 potentially better risk/reward if the move is just starting</i>\n" +
+            f"\U0001F331 <b>High Delivery % \u2014 Early Movers</b> "
+            f"(>{DELIVERY_PCT_THRESHOLD:.0f}% delivery, {EARLY_MOVE_MIN:.1f}-{EARLY_MOVE_MAX:.1f}% move)\n"
+            f"<i>Kept tight to moves still early \u2014 beyond {EARLY_MOVE_MAX:.1f}% the move is "
+            f"largely played out and risk/reward for a fresh entry is no longer favorable</i>\n" +
             format_stock_list([(s, p, d) for s, p, d, v in tiers["early_movers"]], comment=True, third_label="Delivery")
         )
-        log.info("Delivery analysis: %d big movers, %d early movers.",
-                  len(tiers["big_movers"]), len(tiers["early_movers"]))
+        log.info("Delivery analysis: %d early movers.", len(tiers["early_movers"]))
 
         # --- Unusual volume (needs the same delivery dataframe) ---
         unusual = analyze_unusual_volume(deliv_df, session, date)
         sections.append(
             f"\U0001F50D <b>Unusual Volume, Minimal Price Move</b> (\u2265{UNUSUAL_VOLUME_RATIO:.1f}x avg volume, "
-            f"\u2264{UNUSUAL_VOLUME_PRICE_CAP:.1f}% move, bulk/block deals excluded)\n"
+            f"\u2264{UNUSUAL_VOLUME_PRICE_CAP:.1f}% move, bulk/block deals + ETFs excluded)\n"
             f"<i>High volume without a price move can signal quiet accumulation or distribution "
             f"before the move shows up in price</i>\n" +
             format_stock_list([(s, round(v, 1)) for s, p, v in unusual])
