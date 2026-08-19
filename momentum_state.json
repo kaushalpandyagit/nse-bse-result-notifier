@@ -2459,7 +2459,7 @@
       "rs_rank": 90.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "CREDITACC": {
       "sma50": 1496.276005859375,
@@ -2779,7 +2779,7 @@
       "rs_rank": 77.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "DLF": {
       "sma50": 647.1789965820312,
@@ -3059,7 +3059,7 @@
       "rs_rank": 67.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "ENRIN": {
       "sma50": 3482.073994140625,
@@ -3679,7 +3679,7 @@
       "rs_rank": 37.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "GRANULES": {
       "sma50": 830.5669982910156,
@@ -5019,7 +5019,7 @@
       "rs_rank": 91.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "JINDALSTEL": {
       "sma50": 1082.6300024414063,
@@ -6359,7 +6359,7 @@
       "rs_rank": 32.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "MSUMI": {
       "sma50": 40.013800048828124,
@@ -8799,7 +8799,7 @@
       "rs_rank": 76.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "TCS": {
       "sma50": 2229.4960131835937,
@@ -9359,7 +9359,7 @@
       "rs_rank": 79.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "USHAMART": {
       "sma50": 497.4059991455078,
@@ -9719,7 +9719,7 @@
       "rs_rank": 94.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "ZFCVINDIA": {
       "sma50": 2483.5840087890624,
