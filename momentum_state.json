@@ -959,7 +959,7 @@
       "rs_rank": 29.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "ATGL": {
       "sma50": 693.1930017089844,
@@ -2099,7 +2099,7 @@
       "rs_rank": 34.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "CHAMBLFERT": {
       "sma50": 457.73400024414065,
@@ -2499,7 +2499,7 @@
       "rs_rank": 37.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "CROMPTON": {
       "sma50": 261.3099984741211,
