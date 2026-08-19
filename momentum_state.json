@@ -5119,7 +5119,7 @@
       "rs_rank": 23.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "JPPOWER": {
       "sma50": 17.622400016784667,
@@ -7159,7 +7159,7 @@
       "rs_rank": 32.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "PFC": {
       "sma50": 413.2299993896484,
