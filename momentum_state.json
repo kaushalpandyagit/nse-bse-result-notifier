@@ -2919,7 +2919,7 @@
       "rs_rank": 14.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "EIHOTEL": {
       "sma50": 321.2609991455078,
@@ -3497,7 +3497,7 @@
       "base_low": 2386.199951171875,
       "prev_close": 2883.5,
       "rs_rank": 65.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true
     },
@@ -3759,7 +3759,7 @@
       "rs_rank": 60.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "GRSE": {
       "sma50": 2654.202001953125,
@@ -5959,7 +5959,7 @@
       "rs_rank": 35.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "M&MFIN": {
       "sma50": 344.7069995117188,
@@ -6079,7 +6079,7 @@
       "rs_rank": 60.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "MARUTI": {
       "sma50": 13808.8,
@@ -6419,7 +6419,7 @@
       "rs_rank": 80.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "NATCOPHARM": {
       "sma50": 916.392998046875,
@@ -6759,7 +6759,7 @@
       "rs_rank": 50.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "NSLNISP": {
       "sma50": 43.85420013427734,
