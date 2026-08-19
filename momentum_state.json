@@ -2137,7 +2137,7 @@
       "base_low": 1086.0999755859375,
       "prev_close": 1435.5999755859375,
       "rs_rank": 95.9,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true
     },
@@ -7197,7 +7197,7 @@
       "base_low": 4460.0,
       "prev_close": 4829.89990234375,
       "rs_rank": 30.9,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true
     },
