@@ -5439,7 +5439,7 @@
       "rs_rank": 21.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "KEC": {
       "sma50": 491.377001953125,
@@ -6418,7 +6418,7 @@
       "prev_close": 1177.4000244140625,
       "rs_rank": 80.4,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true
     },
     "NATCOPHARM": {
@@ -6878,7 +6878,7 @@
       "prev_close": 321.6000061035156,
       "rs_rank": 73.0,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": false
     },
     "OBEROIRLTY": {
