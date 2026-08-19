@@ -7199,7 +7199,7 @@
       "rs_rank": 30.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "PFOCUS": {
       "sma50": 259.03220001220706,
@@ -7779,7 +7779,7 @@
       "rs_rank": 86.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "RPOWER": {
       "sma50": 24.637199897766113,
@@ -8159,7 +8159,7 @@
       "rs_rank": 48.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false
+      "resistance_alerted": true
     },
     "SHYAMMETL": {
       "sma50": 992.5039916992188,
