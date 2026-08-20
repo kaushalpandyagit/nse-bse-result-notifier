@@ -1,60 +1,4 @@
 {
-  "MARUTI": {
-    "result_date": "2026-08-05T00:00:00",
-    "day_high": 14249.0,
-    "day_low": 14117.0,
-    "baseline_rsi": 58.516271082452874,
-    "yahoo_ticker": "MARUTI.NS",
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "BHARTIARTL": {
-    "result_date": "2026-08-05T00:00:00",
-    "day_high": 2031.0,
-    "day_low": 1960.0,
-    "baseline_rsi": 66.68223658800844,
-    "yahoo_ticker": "BHARTIARTL.NS",
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "ASAHIINDIA": {
-    "result_date": "2026-08-05T00:00:00",
-    "day_high": 930.9000244140625,
-    "day_low": 897.7999877929688,
-    "baseline_rsi": 61.044223649227305,
-    "yahoo_ticker": "ASAHIINDIA.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true,
-    "price_high_last_alert": "2026-08-14T05:41:13.305859"
-  },
-  "POLYMED": {
-    "result_date": "2026-08-05T00:00:00",
-    "day_high": 1746.0,
-    "day_low": 1707.0,
-    "baseline_rsi": 57.09985448453542,
-    "yahoo_ticker": "POLYMED.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "BERGEPAINT": {
-    "result_date": "2026-08-05T00:00:00",
-    "day_high": 547.9500122070312,
-    "day_low": 525.0999755859375,
-    "baseline_rsi": 69.71713531713448,
-    "yahoo_ticker": "BERGEPAINT.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
   "LICHSGFIN": {
     "result_date": "2026-08-06T00:00:00",
     "day_high": 515.0,
@@ -574,54 +518,6 @@
     "rsi_up_alerted": false,
     "rsi_down_alerted": true
   },
-  "POWERGRID": {
-    "result_date": "2026-08-05T00:00:00",
-    "day_high": 285.20001220703125,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 281.25,
-    "baseline_rsi": 42.80052426822642,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "POLICYBZR": {
-    "result_date": "2026-08-05T00:00:00",
-    "day_high": 1639.9000244140625,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 1603.0,
-    "baseline_rsi": 53.68036838027025,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
-  "NEULANDLAB": {
-    "result_date": "2026-08-05T00:00:00",
-    "day_high": 20099.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 19431.0,
-    "baseline_rsi": 63.26868232350399,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
-  "NAVINFLUOR": {
-    "result_date": "2026-08-05T00:00:00",
-    "day_high": 7729.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 7551.0,
-    "baseline_rsi": 51.30181961100345,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false
-  },
   "PIIND": {
     "result_date": "2026-08-11T00:00:00",
     "day_high": 2783.5,
@@ -935,5 +831,18 @@
     "rsi_down_last_alert": "2026-08-17T06:45:50.403069",
     "rsi_up_last_alert": "2026-08-17T07:01:03.781250",
     "price_high_last_alert": "2026-08-18T04:02:28.647027"
+  },
+  "GICRE": {
+    "result_date": "2026-08-20T00:00:00",
+    "day_high": 362.04998779296875,
+    "day_low": 359.95001220703125,
+    "baseline_rsi": 54.37067618410488,
+    "yahoo_ticker": "GICRE.NS",
+    "price_high_alerted": true,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "price_high_last_alert": "2026-08-20T03:45:52.021429",
+    "rsi_up_last_alert": "2026-08-20T03:45:52.619300"
   }
 }
