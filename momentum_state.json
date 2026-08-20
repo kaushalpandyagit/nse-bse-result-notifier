@@ -206,7 +206,7 @@
       "ema_200_prev": 1457.7080700234012,
       "mcap_cr": 15436.6670224,
       "rs_rank": 43.0,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -1589,7 +1589,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CHAMBLFERT": {
       "sma50": 459.10400024414065,
