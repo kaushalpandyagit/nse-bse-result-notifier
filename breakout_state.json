@@ -590,10 +590,11 @@
     "day_low": 1372.5999755859375,
     "baseline_rsi": 49.76922526190928,
     "yahoo_ticker": "ABREL.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": true
+    "rsi_down_alerted": true,
+    "price_high_last_alert": "2026-08-20T09:00:58.360048"
   },
   "MINDACORP": {
     "result_date": "2026-08-13T00:00:00",
