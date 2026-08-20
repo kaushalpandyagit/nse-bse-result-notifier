@@ -249,10 +249,11 @@
     "day_low": 129700.0,
     "baseline_rsi": 45.05043712113913,
     "yahoo_ticker": "MRF.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": true
+    "rsi_down_alerted": true,
+    "price_high_last_alert": "2026-08-20T07:15:40.571322"
   },
   "ZYDUSLIFE": {
     "result_date": "2026-08-11T00:00:00",
