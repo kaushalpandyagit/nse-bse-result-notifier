@@ -2279,7 +2279,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ELGIEQUIP": {
       "sma50": 593.3979943847656,
