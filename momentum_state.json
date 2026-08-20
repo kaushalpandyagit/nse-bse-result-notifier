@@ -328,7 +328,7 @@
       "rs_rank": 96.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ACUTAAS": {
@@ -1138,7 +1138,7 @@
       "rs_rank": 50.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "BSOFT": {
@@ -1799,7 +1799,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CONCORDBIO": {
       "sma50": 1348.5679956054687,
@@ -2758,7 +2758,7 @@
       "rs_rank": 22.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GRANULES": {
@@ -3808,7 +3808,7 @@
       "rs_rank": 83.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "KAYNES": {
@@ -3839,7 +3839,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "KEC": {
       "sma50": 490.0260021972656,
@@ -4798,7 +4798,7 @@
       "rs_rank": 37.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PFOCUS": {
@@ -5908,7 +5908,7 @@
       "rs_rank": 5.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TBOTEK": {
@@ -6509,7 +6509,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ZENSARTECH": {
       "sma50": 484.21600158691405,
