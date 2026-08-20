@@ -689,13 +689,14 @@
     "day_low": 1208.9000244140625,
     "baseline_rsi": 40.848354645217626,
     "yahoo_ticker": "ANURAS.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-14T04:42:20.182389",
     "price_low_last_alert": "2026-08-17T06:15:51.140150",
-    "rsi_up_last_alert": "2026-08-18T09:15:47.538364"
+    "rsi_up_last_alert": "2026-08-18T09:15:47.538364",
+    "price_high_last_alert": "2026-08-20T09:29:34.331803"
   },
   "BRIGADE": {
     "result_date": "2026-08-14T00:00:00",
