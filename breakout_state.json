@@ -307,9 +307,10 @@
     "baseline_rsi": 49.10368333341468,
     "price_high_alerted": false,
     "price_low_alerted": true,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "price_low_last_alert": "2026-08-14T03:49:27.925556"
+    "price_low_last_alert": "2026-08-14T03:49:27.925556",
+    "rsi_up_last_alert": "2026-08-20T05:29:35.367516"
   },
   "JUBLPHARMA": {
     "result_date": "2026-08-10T00:00:00",
