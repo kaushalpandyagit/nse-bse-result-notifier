@@ -4976,7 +4976,7 @@
       "ema_200_prev": 17142.986988118584,
       "mcap_cr": 29596.7909809,
       "rs_rank": 58.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -5249,7 +5249,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SAGILITY": {
       "sma50": 41.768599853515624,
