@@ -57,7 +57,7 @@
       "mcap_cr": 18898.0608095,
       "rs_rank": 67.4,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -1286,7 +1286,7 @@
       "ema_200_prev": 991.4966934059681,
       "mcap_cr": 21500.437173138966,
       "rs_rank": 83.3,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
