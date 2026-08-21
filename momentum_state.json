@@ -1288,7 +1288,7 @@
       "rs_rank": 83.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "CARTRADE": {
@@ -3476,7 +3476,7 @@
       "ema_200_prev": 635.9342697092158,
       "mcap_cr": 15975.1875332,
       "rs_rank": 72.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -3658,7 +3658,7 @@
       "rs_rank": 47.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "JUBLINGREA": {
@@ -4408,7 +4408,7 @@
       "rs_rank": 30.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NETWEB": {
@@ -4888,7 +4888,7 @@
       "rs_rank": 86.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "POLYMED": {
