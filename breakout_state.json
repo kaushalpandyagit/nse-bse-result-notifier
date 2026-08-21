@@ -119,7 +119,8 @@
     "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-08-21T04:15:38.706498"
   },
   "HINDCOPPER": {
     "result_date": "2026-08-10T00:00:00",

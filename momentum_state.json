@@ -778,7 +778,7 @@
       "rs_rank": 97.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BANDHANBNK": {
@@ -1589,7 +1589,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CHAMBLFERT": {
       "sma50": 457.03300109863284,
@@ -2218,7 +2218,7 @@
       "rs_rank": 17.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "EIHOTEL": {
@@ -2938,7 +2938,7 @@
       "rs_rank": 81.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "HOMEFIRST": {
@@ -3478,7 +3478,7 @@
       "rs_rank": 72.4,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "JINDALSAW": {
@@ -3569,7 +3569,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JPPOWER": {
       "sma50": 17.57860004425049,
@@ -4948,7 +4948,7 @@
       "rs_rank": 85.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PTCIL": {
@@ -5128,7 +5128,7 @@
       "rs_rank": 86.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "RHIM": {
@@ -6266,7 +6266,7 @@
       "ema_200_prev": 135.58559595016231,
       "mcap_cr": 22475.380891096742,
       "rs_rank": 80.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
