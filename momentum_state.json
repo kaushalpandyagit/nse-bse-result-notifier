@@ -3506,7 +3506,7 @@
       "ema_200_prev": 229.3301066021532,
       "mcap_cr": 17340.106429676063,
       "rs_rank": 90.0,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -4978,7 +4978,7 @@
       "rs_rank": 58.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PVRINOX": {
