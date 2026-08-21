@@ -2007,7 +2007,7 @@
       "mcap_cr": 26932.209060266894,
       "rs_rank": 97.3,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
