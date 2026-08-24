@@ -5189,7 +5189,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SAILIFE": {
       "sma50": 1305.2940063476562,
