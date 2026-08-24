@@ -1108,7 +1108,7 @@
       "rs_rank": 64.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BSOFT": {
