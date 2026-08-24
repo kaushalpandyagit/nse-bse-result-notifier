@@ -209,7 +209,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ABSLAMC": {
       "sma50": 1083.3559924316405,
@@ -508,7 +508,7 @@
       "rs_rank": 63.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ANGELONE": {
@@ -596,9 +596,9 @@
       "ema_200_prev": 440.6675277592104,
       "mcap_cr": 28852.035029837007,
       "rs_rank": 43.8,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "APTUS": {
@@ -3778,7 +3778,7 @@
       "rs_rank": 68.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "KAJARIACER": {
@@ -4439,7 +4439,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "NIACL": {
       "sma50": 180.00120025634766,
@@ -5789,7 +5789,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TATACHEM": {
       "sma50": 691.3720056152343,
@@ -6058,7 +6058,7 @@
       "rs_rank": 63.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "TRAVELFOOD": {
