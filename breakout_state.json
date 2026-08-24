@@ -602,5 +602,17 @@
     "rsi_up_alerted": false,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-24T05:29:58.979435"
+  },
+  "JUSTDIAL": {
+    "result_date": "2026-08-24T00:00:00",
+    "day_high": 679.4500122070312,
+    "day_low": 668.0,
+    "baseline_rsi": 47.13918827197676,
+    "yahoo_ticker": "JUSTDIAL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-08-24T05:45:46.630512"
   }
 }
