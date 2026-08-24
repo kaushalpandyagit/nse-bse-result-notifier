@@ -611,10 +611,11 @@
     "baseline_rsi": 47.13918827197676,
     "yahoo_ticker": "JUSTDIAL.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-08-24T05:45:46.630512"
+    "rsi_down_last_alert": "2026-08-24T05:45:46.630512",
+    "price_low_last_alert": "2026-08-24T08:29:37.945135"
   },
   "PIRAMALFIN": {
     "result_date": "2026-08-24T00:00:00",
