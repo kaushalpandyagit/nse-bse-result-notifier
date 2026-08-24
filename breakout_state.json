@@ -1,82 +1,4 @@
 {
-  "AUROPHARMA": {
-    "result_date": "2026-08-07T00:00:00",
-    "day_high": 1639.300048828125,
-    "day_low": 1579.9000244140625,
-    "baseline_rsi": 62.237732407117335,
-    "yahoo_ticker": "AUROPHARMA.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "GODREJCP": {
-    "result_date": "2026-08-07T00:00:00",
-    "day_high": 1087.199951171875,
-    "day_low": 1035.699951171875,
-    "baseline_rsi": 48.00409704275129,
-    "yahoo_ticker": "GODREJCP.NS",
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "LICI": {
-    "result_date": "2026-08-07T00:00:00",
-    "day_high": 396.8500061035156,
-    "day_low": 391.1000061035156,
-    "baseline_rsi": 33.867291945918126,
-    "yahoo_ticker": "LICI.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "CARBORUNIV": {
-    "result_date": "2026-08-07T00:00:00",
-    "day_high": 1101.4000244140625,
-    "day_low": 1066.5,
-    "baseline_rsi": 52.96823187431811,
-    "yahoo_ticker": "CARBORUNIV.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "JYOTICNC": {
-    "result_date": "2026-08-07T00:00:00",
-    "day_high": 873.0,
-    "day_low": 738.9000244140625,
-    "baseline_rsi": 41.508911027778574,
-    "yahoo_ticker": "JYOTICNC.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true,
-    "price_high_last_alert": "2026-08-18T03:45:43.223205"
-  },
-  "SBIN": {
-    "result_date": "2026-08-07T00:00:00",
-    "day_high": 1124.5,
-    "day_low": 1075.699951171875,
-    "baseline_rsi": 73.47220613210413,
-    "yahoo_ticker": "SBIN.NS",
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
-  "IKS": {
-    "result_date": "2026-08-07T00:00:00",
-    "day_high": 1769.699951171875,
-    "day_low": 1686.4000244140625,
-    "baseline_rsi": 41.94099948097386,
-    "yahoo_ticker": "IKS.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
-  },
   "IGIL": {
     "result_date": "2026-08-10T00:00:00",
     "day_high": 360.70001220703125,
@@ -220,8 +142,9 @@
     "yahoo_ticker": "KEC.NS",
     "price_high_alerted": false,
     "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": true,
+    "rsi_up_last_alert": "2026-08-24T03:45:45.185905"
   },
   "SIEMENS": {
     "result_date": "2026-08-11T00:00:00",
@@ -319,43 +242,6 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-18T09:15:43.071196"
-  },
-  "AFFLE": {
-    "result_date": "2026-08-08T00:00:00",
-    "day_high": 1683.0999755859375,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 1578.0,
-    "baseline_rsi": 53.07076969942016,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": false,
-    "price_high_last_alert": "2026-08-17T08:15:45.452774"
-  },
-  "RAMCOCEM": {
-    "result_date": "2026-08-07T00:00:00",
-    "day_high": 944.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 914.8499755859375,
-    "baseline_rsi": 53.81911853256386,
-    "price_high_alerted": false,
-    "price_low_alerted": true,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": true
-  },
-  "TITAN": {
-    "result_date": "2026-08-07T00:00:00",
-    "day_high": 5003.0,
-    "price_alerted": false,
-    "rsi_alerted": false,
-    "day_low": 4891.2998046875,
-    "baseline_rsi": 68.69395303200957,
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true
   },
   "PIIND": {
     "result_date": "2026-08-11T00:00:00",
