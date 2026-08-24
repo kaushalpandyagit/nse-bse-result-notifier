@@ -809,7 +809,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "BATAINDIA": {
       "sma50": 706.2099987792968,
@@ -2216,7 +2216,7 @@
       "ema_200_prev": 836.21454171765,
       "mcap_cr": 14293.401398671069,
       "rs_rank": 19.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
