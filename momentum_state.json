@@ -206,7 +206,7 @@
       "ema_200_prev": 1455.048273990883,
       "mcap_cr": 15662.24609412544,
       "rs_rank": 58.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -419,7 +419,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "AFFLE": {
       "sma50": 1553.1280029296875,
@@ -776,9 +776,9 @@
       "ema_200_prev": 540.8125265582358,
       "mcap_cr": 15388.462143918567,
       "rs_rank": 95.9,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BANDHANBNK": {
@@ -2818,7 +2818,7 @@
       "rs_rank": 48.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GRAVITA": {
@@ -3569,7 +3569,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JPPOWER": {
       "sma50": 17.552800064086913,
@@ -3958,7 +3958,7 @@
       "rs_rank": 70.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "KPITTECH": {
@@ -4168,7 +4168,7 @@
       "rs_rank": 34.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "MINDACORP": {
@@ -4378,7 +4378,7 @@
       "rs_rank": 44.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "NEULANDLAB": {
