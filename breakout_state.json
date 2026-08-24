@@ -590,5 +590,17 @@
     "rsi_down_alerted": true,
     "price_low_last_alert": "2026-08-21T03:45:48.080713",
     "rsi_down_last_alert": "2026-08-21T03:45:48.703569"
+  },
+  "GABRIEL": {
+    "result_date": "2026-08-24T00:00:00",
+    "day_high": 1418.4000244140625,
+    "day_low": 1390.0,
+    "baseline_rsi": 46.557642383376226,
+    "yahoo_ticker": "GABRIEL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-08-24T05:29:58.979435"
   }
 }
