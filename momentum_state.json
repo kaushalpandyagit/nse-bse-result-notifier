@@ -7498,7 +7498,7 @@
       "rs_rank": 91.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "KSB": {
