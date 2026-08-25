@@ -55,7 +55,8 @@
     "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-08-25T04:45:41.354125"
   },
   "RVNL": {
     "result_date": "2026-08-11T00:00:00",

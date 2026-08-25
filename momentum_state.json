@@ -5428,7 +5428,7 @@
       "rs_rank": 69.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "HEG": {
@@ -5579,7 +5579,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "HONASA": {
       "sma50": 458.28300109863284,
@@ -6989,7 +6989,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JYOTICNC": {
       "sma50": 812.195,
@@ -8488,7 +8488,7 @@
       "rs_rank": 74.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NBCC": {
@@ -9718,7 +9718,7 @@
       "rs_rank": 69.8,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "QPOWER": {
