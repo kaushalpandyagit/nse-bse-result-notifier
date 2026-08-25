@@ -4946,7 +4946,7 @@
       "ema_200_prev": 596.4109418516462,
       "mcap_cr": 11044.347974933826,
       "rs_rank": 18.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -7978,7 +7978,7 @@
       "rs_rank": 71.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "MAPMYINDIA": {
@@ -13646,7 +13646,7 @@
       "ema_200_prev": 766.0579688054569,
       "mcap_cr": 8814.97811490487,
       "rs_rank": 78.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
