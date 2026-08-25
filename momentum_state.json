@@ -3837,7 +3837,7 @@
       "mcap_cr": 12124.123596646756,
       "rs_rank": 44.7,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -4948,7 +4948,7 @@
       "rs_rank": 18.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GOKEX": {
@@ -5608,7 +5608,7 @@
       "rs_rank": 92.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ICIL": {
@@ -9056,7 +9056,7 @@
       "ema_200_prev": 139.1967226105438,
       "mcap_cr": 15979.710579660034,
       "rs_rank": 79.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
