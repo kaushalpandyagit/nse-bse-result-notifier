@@ -1646,9 +1646,9 @@
       "ema_200_prev": 1698.100890857912,
       "mcap_cr": 7209.546826416015,
       "rs_rank": 98.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BALRAMCHIN": {
@@ -13256,7 +13256,7 @@
       "ema_200_prev": 232.8935013686044,
       "mcap_cr": 12084.261979356568,
       "rs_rank": 73.3,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
