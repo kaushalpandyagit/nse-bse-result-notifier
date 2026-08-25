@@ -178,7 +178,7 @@
       "rs_rank": 70.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ABFRL": {
@@ -269,7 +269,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ABSLAMC": {
       "sma50": 1080.7799926757812,
@@ -1529,7 +1529,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "AXISCADES": {
       "sma50": 1628.4680078125,
@@ -1588,7 +1588,7 @@
       "rs_rank": 93.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BAJAJELEC": {
@@ -2518,7 +2518,7 @@
       "rs_rank": 90.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "CASTROLIND": {
@@ -3599,7 +3599,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "DEEPAKFERT": {
       "sma50": 1556.02599609375,
@@ -3659,7 +3659,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "DEVYANI": {
       "sma50": 120.95279937744141,
@@ -4168,7 +4168,7 @@
       "rs_rank": 64.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ENTERO": {
@@ -4196,7 +4196,7 @@
       "ema_200_prev": 1202.3763005789042,
       "mcap_cr": 6850.0964083375,
       "rs_rank": 87.9,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -5248,7 +5248,7 @@
       "rs_rank": 49.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GRWRHITECH": {
@@ -5998,7 +5998,7 @@
       "rs_rank": 75.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "INDIASHLTR": {
@@ -8726,10 +8726,10 @@
       "ema_200_prev": 77.93979718665308,
       "mcap_cr": 3593.48678,
       "rs_rank": 21.9,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "NIACL": {
       "sma50": 179.9888003540039,
@@ -9148,7 +9148,7 @@
       "rs_rank": 52.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PFIZER": {
@@ -9716,7 +9716,7 @@
       "ema_200_prev": 1039.9279370959318,
       "mcap_cr": 12376.141690352002,
       "rs_rank": 69.8,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -10076,10 +10076,10 @@
       "ema_200_prev": 130.75856567550557,
       "mcap_cr": 6835.415643180923,
       "rs_rank": 29.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "REDINGTON": {
       "sma50": 301.3539987182617,
@@ -11338,7 +11338,7 @@
       "rs_rank": 90.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SKYGOLD": {
@@ -11758,7 +11758,7 @@
       "rs_rank": 81.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SUMICHEM": {
@@ -12359,7 +12359,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "THANGAMAYL": {
       "sma50": 5889.950029296875,
@@ -12658,7 +12658,7 @@
       "rs_rank": 72.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TRANSRAILL": {
@@ -12896,7 +12896,7 @@
       "ema_200_prev": 123.30998374631167,
       "mcap_cr": 6004.460436744919,
       "rs_rank": 62.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
