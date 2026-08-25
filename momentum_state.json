@@ -2638,7 +2638,7 @@
       "rs_rank": 45.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "CEATLTD": {
@@ -5008,7 +5008,7 @@
       "rs_rank": 82.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GPIL": {
@@ -5398,7 +5398,7 @@
       "rs_rank": 71.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "HCG": {
@@ -9988,7 +9988,7 @@
       "rs_rank": 54.7,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "RAYMONDLSL": {
@@ -10589,7 +10589,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SAILIFE": {
       "sma50": 1309.5520068359374,
@@ -11188,7 +11188,7 @@
       "rs_rank": 92.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SHYAMMETL": {
@@ -11368,7 +11368,7 @@
       "rs_rank": 99.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SMARTWORKS": {
