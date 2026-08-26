@@ -3416,7 +3416,7 @@
       "ema_200_prev": 959.8070558561213,
       "mcap_cr": 10377.8182638,
       "rs_rank": 46.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -5518,7 +5518,7 @@
       "rs_rank": 65.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "HGINFRA": {
@@ -7888,8 +7888,8 @@
       "rs_rank": 33.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "MAHSEAMLES": {
       "sma50": 602.107998046875,
@@ -8338,7 +8338,7 @@
       "rs_rank": 93.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "MSUMI": {
@@ -8549,7 +8549,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "NEOGEN": {
       "sma50": 2072.2520141601562,
@@ -9479,7 +9479,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "PRICOLLTD": {
       "sma50": 669.3289978027344,
@@ -9569,7 +9569,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "PRUDENT": {
       "sma50": 3110.64599609375,
@@ -9959,7 +9959,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "RAYMONDLSL": {
       "sma50": 747.9009973144531,
