@@ -2876,7 +2876,7 @@
       "ema_200_prev": 203.29500477981694,
       "mcap_cr": 23492.91311397835,
       "rs_rank": 84.3,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -6537,7 +6537,7 @@
       "mcap_cr": 18015.983232623938,
       "rs_rank": 88.9,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -9148,7 +9148,7 @@
       "rs_rank": 51.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PFIZER": {
@@ -13347,7 +13347,7 @@
       "mcap_cr": 12647.45504358916,
       "rs_rank": 93.2,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
