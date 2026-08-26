@@ -3566,7 +3566,7 @@
       "ema_200_prev": 177.5408672916388,
       "mcap_cr": 6778.763645385092,
       "rs_rank": 52.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -9478,7 +9478,7 @@
       "rs_rank": 60.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "PRICOLLTD": {
@@ -9508,7 +9508,7 @@
       "rs_rank": 74.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PRIVISCL": {
@@ -10829,7 +10829,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SCHNEIDER": {
       "sma50": 1349.5220068359374,
@@ -11308,7 +11308,7 @@
       "rs_rank": 99.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SMARTWORKS": {
@@ -11938,8 +11938,8 @@
       "rs_rank": 23.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "SYRMA": {
       "sma50": 1404.3100048828126,
