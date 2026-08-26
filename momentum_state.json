@@ -958,8 +958,8 @@
       "rs_rank": 49.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "APOLLO": {
       "sma50": 399.4169989013672,
@@ -2636,7 +2636,7 @@
       "ema_200_prev": 1346.2585928609462,
       "mcap_cr": 29310.160510253907,
       "rs_rank": 45.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -6389,7 +6389,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JAINREC": {
       "sma50": 331.78699951171876,
