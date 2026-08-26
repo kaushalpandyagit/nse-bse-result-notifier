@@ -1588,7 +1588,7 @@
       "rs_rank": 94.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BAJAJELEC": {
@@ -6989,7 +6989,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JYOTICNC": {
       "sma50": 818.0479992675781,
