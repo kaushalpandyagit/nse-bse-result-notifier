@@ -3478,7 +3478,7 @@
       "rs_rank": 88.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "DBL": {
@@ -13346,7 +13346,7 @@
       "ema_200_prev": 1638.075463699013,
       "mcap_cr": 12647.45504358916,
       "rs_rank": 93.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
