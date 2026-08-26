@@ -5066,7 +5066,7 @@
       "ema_200_prev": 157.84750153930113,
       "mcap_cr": 8288.862865183823,
       "rs_rank": 30.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -5998,7 +5998,7 @@
       "rs_rank": 72.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "INDIASHLTR": {
@@ -7048,7 +7048,7 @@
       "rs_rank": 74.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "KANSAINER": {
@@ -7679,7 +7679,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "LLOYDSENGG": {
       "sma50": 89.01699996948243,
@@ -8728,7 +8728,7 @@
       "rs_rank": 21.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NIACL": {
@@ -12988,7 +12988,7 @@
       "rs_rank": 55.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VAIBHAVGBL": {
