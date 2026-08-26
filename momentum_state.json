@@ -6058,7 +6058,7 @@
       "rs_rank": 68.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "INOXGREEN": {
@@ -7886,7 +7886,7 @@
       "ema_200_prev": 13149.473255647856,
       "mcap_cr": 15241.1382848,
       "rs_rank": 33.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -8639,7 +8639,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "NEULANDLAB": {
       "sma50": 19884.22,
