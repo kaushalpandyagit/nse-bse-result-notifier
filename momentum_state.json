@@ -2878,7 +2878,7 @@
       "rs_rank": 84.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "CHALET": {
@@ -3658,7 +3658,7 @@
       "rs_rank": 51.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "DEVYANI": {
@@ -4078,7 +4078,7 @@
       "rs_rank": 12.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "EMBDL": {
@@ -5068,7 +5068,7 @@
       "rs_rank": 30.7,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GRANULES": {
@@ -8909,7 +8909,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ONESOURCE": {
       "sma50": 1609.3899975585937,
@@ -9208,7 +9208,7 @@
       "rs_rank": 53.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PGEL": {
@@ -9448,7 +9448,7 @@
       "rs_rank": 78.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PRAJIND": {
@@ -9746,7 +9746,7 @@
       "ema_200_prev": 265.97254408126486,
       "mcap_cr": 5365.752575325,
       "rs_rank": 96.9,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -10556,7 +10556,7 @@
       "ema_200_prev": 43.21741803578703,
       "mcap_cr": 20892.76920723882,
       "rs_rank": 41.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -13649,7 +13649,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ZENSARTECH": {
       "sma50": 487.87600280761717,
