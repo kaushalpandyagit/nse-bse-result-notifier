@@ -3808,7 +3808,7 @@
       "rs_rank": 56.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "EDELWEISS": {
@@ -3988,7 +3988,7 @@
       "rs_rank": 55.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "ELGIEQUIP": {
@@ -13408,7 +13408,7 @@
       "rs_rank": 77.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "WELSPUNLIV": {
