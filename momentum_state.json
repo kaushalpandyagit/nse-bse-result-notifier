@@ -4196,7 +4196,7 @@
       "ema_200_prev": 1209.3220394807638,
       "mcap_cr": 7157.8043148625,
       "rs_rank": 91.9,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -13528,7 +13528,7 @@
       "rs_rank": 11.5,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "WOCKPHARMA": {
