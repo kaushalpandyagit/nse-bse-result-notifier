@@ -345,9 +345,10 @@
     "baseline_rsi": 34.81817027461442,
     "yahoo_ticker": "INOXWIND.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-08-27T07:01:08.918319"
+    "rsi_down_last_alert": "2026-08-27T07:01:08.918319",
+    "price_low_last_alert": "2026-08-27T08:00:58.916737"
   }
 }
