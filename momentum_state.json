@@ -5608,7 +5608,7 @@
       "rs_rank": 91.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ICIL": {
@@ -7676,7 +7676,7 @@
       "ema_200_prev": 537.8041468616381,
       "mcap_cr": 29268.850887072753,
       "rs_rank": 30.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
