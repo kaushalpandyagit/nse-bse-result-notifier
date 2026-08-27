@@ -3688,7 +3688,7 @@
       "rs_rank": 62.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "DIACABS": {
@@ -6116,7 +6116,7 @@
       "ema_200_prev": 1548.5465590730444,
       "mcap_cr": 17908.545963409422,
       "rs_rank": 94.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -13348,7 +13348,7 @@
       "rs_rank": 95.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "WEBELSOLAR": {
