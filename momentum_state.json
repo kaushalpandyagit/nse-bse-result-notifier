@@ -3778,7 +3778,7 @@
       "rs_rank": 62.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ECLERX": {
@@ -8398,7 +8398,7 @@
       "rs_rank": 98.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NATCOPHARM": {
