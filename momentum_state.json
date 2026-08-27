@@ -809,7 +809,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ANANTRAJ": {
       "sma50": 586.8940014648438,
@@ -1408,7 +1408,7 @@
       "rs_rank": 98.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "AVANTIFEED": {
@@ -4048,7 +4048,7 @@
       "rs_rank": 82.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "EMAMILTD": {
@@ -8819,7 +8819,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "NUVOCO": {
       "sma50": 331.89400085449216,
@@ -9479,7 +9479,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "PRICOLLTD": {
       "sma50": 677.9709985351562,
@@ -13258,7 +13258,7 @@
       "rs_rank": 69.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VTL": {
@@ -13649,7 +13649,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ZENSARTECH": {
       "sma50": 488.02000244140623,
@@ -13738,7 +13738,7 @@
       "rs_rank": 36.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ZYDUSWELL": {
