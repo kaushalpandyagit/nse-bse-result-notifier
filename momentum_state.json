@@ -3986,7 +3986,7 @@
       "ema_200_prev": 79.21784878570998,
       "mcap_cr": 4809.476306634965,
       "rs_rank": 53.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -8818,7 +8818,7 @@
       "rs_rank": 45.5,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "NUVOCO": {
