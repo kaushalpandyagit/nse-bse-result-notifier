@@ -4828,7 +4828,7 @@
       "rs_rank": 42.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GMRP&UI": {
@@ -6989,7 +6989,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JYOTICNC": {
       "sma50": 824.6279992675782,
@@ -11968,7 +11968,7 @@
       "rs_rank": 96.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TANLA": {
