@@ -11098,7 +11098,7 @@
       "rs_rank": 85.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SHYAMMETL": {
@@ -12238,7 +12238,7 @@
       "rs_rank": 73.7,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "TEXRAIL": {
