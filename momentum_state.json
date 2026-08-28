@@ -8456,7 +8456,7 @@
       "ema_200_prev": 292.3705790413106,
       "mcap_cr": 13714.4132556,
       "rs_rank": 80.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -12179,7 +12179,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TEGA": {
       "sma50": 1648.7319995117186,
