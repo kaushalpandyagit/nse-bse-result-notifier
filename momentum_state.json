@@ -418,7 +418,7 @@
       "rs_rank": 94.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ACUTAAS": {
@@ -8786,7 +8786,7 @@
       "ema_200_prev": 42.39522341141227,
       "mcap_cr": 13281.505622765008,
       "rs_rank": 53.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
