@@ -2876,9 +2876,9 @@
       "ema_200_prev": 204.12783049492543,
       "mcap_cr": 23765.2028614,
       "rs_rank": 90.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "CHALET": {
@@ -8368,7 +8368,7 @@
       "rs_rank": 97.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NATCOPHARM": {
@@ -9118,7 +9118,7 @@
       "rs_rank": 52.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PFIZER": {
@@ -10318,7 +10318,7 @@
       "rs_rank": 77.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ROUTE": {
@@ -12418,7 +12418,7 @@
       "rs_rank": 70.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TIMETECHNO": {
@@ -12809,7 +12809,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "UJJIVANSFB": {
       "sma50": 66.23580024719239,
