@@ -4828,7 +4828,7 @@
       "rs_rank": 51.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GMRP&UI": {
@@ -7048,7 +7048,7 @@
       "rs_rank": 73.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "KANSAINER": {
