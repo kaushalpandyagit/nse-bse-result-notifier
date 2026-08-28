@@ -358,7 +358,7 @@
       "rs_rank": 76.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ACI": {
@@ -1319,7 +1319,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ATUL": {
       "sma50": 6525.99,
@@ -8457,7 +8457,7 @@
       "mcap_cr": 13714.4132556,
       "rs_rank": 80.1,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -9716,7 +9716,7 @@
       "ema_200_prev": 1037.7223280854228,
       "mcap_cr": 10842.174,
       "rs_rank": 92.8,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -12059,7 +12059,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TATAELXSI": {
       "sma50": 3704.54599609375,
@@ -12328,7 +12328,7 @@
       "rs_rank": 72.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "THOMASCOOK": {
@@ -13526,7 +13526,7 @@
       "ema_200_prev": 769.680445305453,
       "mcap_cr": 9661.933148175,
       "rs_rank": 84.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
