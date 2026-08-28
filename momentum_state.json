@@ -4167,7 +4167,7 @@
       "mcap_cr": 14083.657885547034,
       "rs_rank": 52.3,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -8308,7 +8308,7 @@
       "rs_rank": 93.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "MSUMI": {
