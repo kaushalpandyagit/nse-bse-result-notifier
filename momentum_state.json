@@ -3416,7 +3416,7 @@
       "ema_200_prev": 960.3064275708098,
       "mcap_cr": 10924.81410782417,
       "rs_rank": 56.9,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -13048,7 +13048,7 @@
       "rs_rank": 46.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VIJAYA": {
