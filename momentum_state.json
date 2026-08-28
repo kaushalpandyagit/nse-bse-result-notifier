@@ -8038,7 +8038,7 @@
       "rs_rank": 41.1,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "MEDPLUS": {
@@ -8666,7 +8666,7 @@
       "ema_200_prev": 593.428341129155,
       "mcap_cr": 7504.745640612708,
       "rs_rank": 44.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
