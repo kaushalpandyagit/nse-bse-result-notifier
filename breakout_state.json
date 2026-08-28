@@ -262,11 +262,12 @@
     "day_low": 5487.39990234375,
     "baseline_rsi": 53.05242454130332,
     "yahoo_ticker": "KEI.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": false,
-    "rsi_up_last_alert": "2026-08-28T06:45:40.261375"
+    "rsi_up_last_alert": "2026-08-28T06:45:40.261375",
+    "price_high_last_alert": "2026-08-28T10:15:48.110217"
   },
   "GALLANTT": {
     "result_date": "2026-08-28T00:00:00",
