@@ -538,7 +538,7 @@
       "rs_rank": 96.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "AFCONS": {
@@ -5458,7 +5458,7 @@
       "rs_rank": 71.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "HEMIPROP": {
@@ -5728,7 +5728,7 @@
       "rs_rank": 84.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "IGIL": {
@@ -6388,7 +6388,7 @@
       "rs_rank": 31.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "JAINREC": {
@@ -7438,7 +7438,7 @@
       "rs_rank": 68.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "KRN": {
@@ -8669,7 +8669,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "NFL": {
       "sma50": 72.7022004699707,
@@ -10078,7 +10078,7 @@
       "rs_rank": 77.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "REDTAPE": {
@@ -12236,7 +12236,7 @@
       "ema_200_prev": 513.9551403052484,
       "mcap_cr": 9847.638992450207,
       "rs_rank": 73.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": true
@@ -12779,7 +12779,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TVSSCS": {
       "sma50": 133.46539947509766,
