@@ -569,7 +569,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "AFFLE": {
       "sma50": 1569.3940063476562,
@@ -1588,7 +1588,7 @@
       "rs_rank": 93.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BAJAJELEC": {
@@ -4018,7 +4018,7 @@
       "rs_rank": 52.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ELLEN": {
@@ -10076,7 +10076,7 @@
       "ema_200_prev": 271.4235604703433,
       "mcap_cr": 28933.472168467248,
       "rs_rank": 77.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
