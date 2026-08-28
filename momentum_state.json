@@ -4196,7 +4196,7 @@
       "ema_200_prev": 1220.9764450600394,
       "mcap_cr": 7773.2206592,
       "rs_rank": 95.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -8849,7 +8849,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "OLECTRA": {
       "sma50": 1388.0319970703124,
@@ -10317,7 +10317,7 @@
       "mcap_cr": 13198.372526318939,
       "rs_rank": 77.7,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },

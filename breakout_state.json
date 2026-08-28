@@ -267,5 +267,17 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": false,
     "rsi_up_last_alert": "2026-08-28T06:45:40.261375"
+  },
+  "GALLANTT": {
+    "result_date": "2026-08-28T00:00:00",
+    "day_high": 585.8499755859375,
+    "day_low": 577.0,
+    "baseline_rsi": 41.497481898086576,
+    "yahoo_ticker": "GALLANTT.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "rsi_up_last_alert": "2026-08-28T07:00:58.265690"
   }
 }
