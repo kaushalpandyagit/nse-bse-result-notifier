@@ -3658,7 +3658,7 @@
       "rs_rank": 53.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "DEVYANI": {
@@ -4109,7 +4109,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "EMIL": {
       "sma50": 146.64120025634764,
@@ -5457,7 +5457,7 @@
       "mcap_cr": 13826.8400245,
       "rs_rank": 71.6,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -7558,7 +7558,7 @@
       "rs_rank": 92.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "LATENTVIEW": {
@@ -8039,7 +8039,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "MEDPLUS": {
       "sma50": 751.5230017089843,
@@ -11126,7 +11126,7 @@
       "ema_200_prev": 921.6064620971871,
       "mcap_cr": 29538.798535036378,
       "rs_rank": 70.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -12539,7 +12539,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TMB": {
       "sma50": 818.6699987792969,
@@ -13198,7 +13198,7 @@
       "rs_rank": 86.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VOLTAMP": {
