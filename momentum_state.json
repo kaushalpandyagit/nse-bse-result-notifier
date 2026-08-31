@@ -1677,7 +1677,7 @@
       "mcap_cr": 13728.445282182276,
       "rs_rank": 83.7,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": false,
       "mtf_alerted": false
     },
@@ -3869,7 +3869,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "EIEL": {
       "sma50": 217.0766000366211,
