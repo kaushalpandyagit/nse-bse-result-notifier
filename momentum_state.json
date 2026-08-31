@@ -418,7 +418,7 @@
       "rs_rank": 93.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ACUTAAS": {
@@ -2217,7 +2217,7 @@
       "mcap_cr": 12077.89524446167,
       "rs_rank": 96.7,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": false,
       "mtf_alerted": false
     },
@@ -3206,7 +3206,7 @@
       "ema_200_prev": 8433.006395904215,
       "mcap_cr": 28704.4902175,
       "rs_rank": 84.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -6839,7 +6839,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JUBLINGREA": {
       "sma50": 708.9189978027343,
@@ -7916,7 +7916,7 @@
       "ema_200_prev": 603.0545218146968,
       "mcap_cr": 8823.180911513306,
       "rs_rank": 62.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -8337,7 +8337,7 @@
       "mcap_cr": 5083.583828125,
       "rs_rank": 90.6,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -13138,7 +13138,7 @@
       "rs_rank": 86.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VIKRAMSOLR": {
@@ -13467,7 +13467,7 @@
       "mcap_cr": 17960.996675905044,
       "rs_rank": 89.1,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
