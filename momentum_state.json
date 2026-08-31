@@ -1108,7 +1108,7 @@
       "rs_rank": 90.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ARVINDFASN": {
@@ -4647,7 +4647,7 @@
       "mcap_cr": 7678.146568449646,
       "rs_rank": 66.0,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": false,
       "mtf_alerted": false
     },
@@ -7408,7 +7408,7 @@
       "rs_rank": 52.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "KPITTECH": {
@@ -7587,7 +7587,7 @@
       "mcap_cr": 12538.609226462586,
       "rs_rank": 92.2,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -8879,7 +8879,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "OLECTRA": {
       "sma50": 1383.67599609375,
@@ -10858,7 +10858,7 @@
       "rs_rank": 43.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "SCHNEIDER": {
