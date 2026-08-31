@@ -417,7 +417,7 @@
       "mcap_cr": 27407.638699857824,
       "rs_rank": 93.7,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -3359,7 +3359,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CUB": {
       "sma50": 216.67640075683593,
@@ -3567,7 +3567,7 @@
       "mcap_cr": 6811.615680545415,
       "rs_rank": 60.6,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -3746,7 +3746,7 @@
       "ema_200_prev": 2324.1063974820286,
       "mcap_cr": 13284.069274380468,
       "rs_rank": 24.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -5428,7 +5428,7 @@
       "rs_rank": 67.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "HEG": {
@@ -5636,7 +5636,7 @@
       "ema_200_prev": 336.6655530498553,
       "mcap_cr": 8629.227835565553,
       "rs_rank": 92.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -7168,8 +7168,8 @@
       "rs_rank": 36.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "KIMS": {
       "sma50": 800.5670007324219,
@@ -12627,7 +12627,7 @@
       "mcap_cr": 13934.136388030114,
       "rs_rank": 77.3,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
