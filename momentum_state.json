@@ -5638,7 +5638,7 @@
       "rs_rank": 92.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "IEX": {
@@ -5936,7 +5936,7 @@
       "ema_200_prev": 520.6376532687806,
       "mcap_cr": 14023.451195629932,
       "rs_rank": 62.3,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -6386,7 +6386,7 @@
       "ema_200_prev": 73.75882512068767,
       "mcap_cr": 6547.228206873253,
       "rs_rank": 41.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -9777,7 +9777,7 @@
       "mcap_cr": 5511.3784281,
       "rs_rank": 98.3,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -10348,7 +10348,7 @@
       "rs_rank": 78.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ROUTE": {
@@ -12779,7 +12779,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TSFINV": {
       "sma50": 438.6550006103516,
@@ -13588,7 +13588,7 @@
       "rs_rank": 85.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ZAGGLE": {
