@@ -1318,7 +1318,7 @@
       "rs_rank": 98.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ATUL": {
@@ -2278,7 +2278,7 @@
       "rs_rank": 70.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BSOFT": {
@@ -3778,7 +3778,7 @@
       "rs_rank": 53.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ECLERX": {
@@ -6118,7 +6118,7 @@
       "rs_rank": 96.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "INOXWIND": {
