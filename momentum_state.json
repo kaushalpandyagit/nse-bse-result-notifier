@@ -958,8 +958,8 @@
       "rs_rank": 55.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "APOLLO": {
       "sma50": 396.86699951171875,
@@ -1408,7 +1408,7 @@
       "rs_rank": 99.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "AVANTIFEED": {
@@ -2369,7 +2369,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CANFINHOME": {
       "sma50": 847.5119982910156,
@@ -3986,7 +3986,7 @@
       "ema_200_prev": 79.26532664204743,
       "mcap_cr": 5121.040925458042,
       "rs_rank": 67.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -9508,8 +9508,8 @@
       "rs_rank": 48.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "PRICOLLTD": {
       "sma50": 685.9359985351563,
@@ -12386,7 +12386,7 @@
       "ema_200_prev": 456.37703285219214,
       "mcap_cr": 18740.04713929685,
       "rs_rank": 71.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
