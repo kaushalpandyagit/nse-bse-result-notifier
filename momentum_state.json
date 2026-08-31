@@ -717,7 +717,7 @@
       "mcap_cr": 17234.65646970996,
       "rs_rank": 89.5,
       "zanger_alerted": true,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -3748,7 +3748,7 @@
       "rs_rank": 24.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "DYNAMATECH": {
@@ -9746,7 +9746,7 @@
       "ema_200_prev": 1038.8367559461192,
       "mcap_cr": 11637.524528854981,
       "rs_rank": 95.0,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -11549,7 +11549,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "STAR": {
       "sma50": 1042.0359948730468,
