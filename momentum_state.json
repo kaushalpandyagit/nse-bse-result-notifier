@@ -1258,7 +1258,7 @@
       "rs_rank": 89.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ASTRAMICRO": {
@@ -3149,7 +3149,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CONCORDBIO": {
       "sma50": 1373.12599609375,
@@ -3806,7 +3806,7 @@
       "ema_200_prev": 1742.7705437999111,
       "mcap_cr": 17854.74282409785,
       "rs_rank": 68.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -4227,7 +4227,7 @@
       "mcap_cr": 7996.871593604747,
       "rs_rank": 62.5,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": false,
       "mtf_alerted": false
     },
@@ -5786,7 +5786,7 @@
       "ema_200_prev": 167.27308664921478,
       "mcap_cr": 20997.223398654784,
       "rs_rank": 17.0,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false

@@ -49,10 +49,11 @@
     "yahoo_ticker": "GABRIEL.NS",
     "price_high_alerted": false,
     "price_low_alerted": true,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-24T05:29:58.979435",
-    "price_low_last_alert": "2026-08-24T06:00:57.596020"
+    "price_low_last_alert": "2026-08-24T06:00:57.596020",
+    "rsi_up_last_alert": "2026-08-31T07:01:07.880969"
   },
   "JUSTDIAL": {
     "result_date": "2026-08-24T00:00:00",
