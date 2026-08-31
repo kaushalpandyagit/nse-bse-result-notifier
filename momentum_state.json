@@ -1019,7 +1019,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "APTUS": {
       "sma50": 272.1980014038086,
@@ -4166,7 +4166,7 @@
       "ema_200_prev": 223.30142275061206,
       "mcap_cr": 14382.66398202656,
       "rs_rank": 64.3,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -4228,7 +4228,7 @@
       "rs_rank": 62.5,
       "zanger_alerted": true,
       "bonde_alerted": true,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "EQUITASBNK": {
@@ -8009,7 +8009,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "MARKSANS": {
       "sma50": 281.0290023803711,
@@ -13258,7 +13258,7 @@
       "rs_rank": 83.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VOLTAMP": {
