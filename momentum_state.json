@@ -3208,7 +3208,7 @@
       "rs_rank": 84.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "CRAMC": {
@@ -7828,7 +7828,7 @@
       "rs_rank": 53.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "LXCHEM": {
@@ -10738,7 +10738,7 @@
       "rs_rank": 94.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SAPPHIRE": {
@@ -12387,7 +12387,7 @@
       "mcap_cr": 18740.04713929685,
       "rs_rank": 71.7,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": true,
       "mtf_alerted": false
     },
@@ -13108,7 +13108,7 @@
       "rs_rank": 43.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VIJAYA": {
