@@ -568,7 +568,7 @@
       "rs_rank": 35.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "AFFLE": {
@@ -716,9 +716,9 @@
       "ema_200_prev": 1084.1876855487192,
       "mcap_cr": 17234.65646970996,
       "rs_rank": 89.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ALKYLAMINE": {
@@ -3568,7 +3568,7 @@
       "rs_rank": 60.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "DCMSHRIRAM": {
@@ -3659,7 +3659,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "DEVYANI": {
       "sma50": 123.43739913940429,
@@ -5938,7 +5938,7 @@
       "rs_rank": 62.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "INDIACEM": {
@@ -9148,7 +9148,7 @@
       "rs_rank": 61.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PFIZER": {
@@ -10259,7 +10259,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "RHIM": {
       "sma50": 392.04200073242185,
@@ -10588,7 +10588,7 @@
       "rs_rank": 63.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SAMHI": {
@@ -12086,7 +12086,7 @@
       "ema_200_prev": 326.9730100582932,
       "mcap_cr": 9707.362888353315,
       "rs_rank": 44.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -13018,7 +13018,7 @@
       "rs_rank": 50.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VAIBHAVGBL": {
