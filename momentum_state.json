@@ -2967,7 +2967,7 @@
       "mcap_cr": 20222.16812,
       "rs_rank": 83.0,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": false,
       "mtf_alerted": false
     },
@@ -8878,7 +8878,7 @@
       "rs_rank": 91.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "OLECTRA": {
