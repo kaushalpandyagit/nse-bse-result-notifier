@@ -3089,7 +3089,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CMSINFO": {
       "sma50": 267.11660034179687,
@@ -3148,7 +3148,7 @@
       "rs_rank": 87.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "CONCORDBIO": {
@@ -3748,7 +3748,7 @@
       "rs_rank": 27.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "DYNAMATECH": {
@@ -4828,7 +4828,7 @@
       "rs_rank": 52.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GMRP&UI": {
@@ -7678,8 +7678,8 @@
       "rs_rank": 35.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "LLOYDSENGG": {
       "sma50": 88.99459991455078,
@@ -8069,7 +8069,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "MEDPLUS": {
       "sma50": 741.7059997558594,
@@ -8698,7 +8698,7 @@
       "rs_rank": 94.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NEWGEN": {
@@ -8878,7 +8878,7 @@
       "rs_rank": 91.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "OLECTRA": {
@@ -10229,7 +10229,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "RENUKA": {
       "sma50": 22.86259994506836,
@@ -10348,7 +10348,7 @@
       "rs_rank": 75.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ROUTE": {
@@ -12298,7 +12298,7 @@
       "rs_rank": 48.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "TEXRAIL": {
@@ -13316,9 +13316,9 @@
       "ema_200_prev": 559.1082286368177,
       "mcap_cr": 17264.337418728028,
       "rs_rank": 46.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "WAAREERTL": {
@@ -13618,7 +13618,7 @@
       "rs_rank": 85.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ZAGGLE": {
