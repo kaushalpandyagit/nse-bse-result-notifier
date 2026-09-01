@@ -1889,7 +1889,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "BECTORFOOD": {
       "sma50": 210.48620025634764,
