@@ -118,5 +118,13 @@
   "custom_rsi_HINDWAREAP": {
     "alerted": false,
     "last_alert": null
+  },
+  "custom_rsi_KOTHARIPET": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_rsi_BSE:PGFOILQ": {
+    "alerted": false,
+    "last_alert": null
   }
 }
