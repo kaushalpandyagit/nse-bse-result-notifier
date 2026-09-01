@@ -809,7 +809,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ANANTRAJ": {
       "sma50": 591.5610021972657,
@@ -7529,7 +7529,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "KSCL": {
       "sma50": 826.117998046875,
