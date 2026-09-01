@@ -114,5 +114,9 @@
     "rsi_up_last_alert": "2026-08-28T07:00:58.265690",
     "price_low_last_alert": "2026-08-28T09:45:43.406362",
     "rsi_down_last_alert": "2026-08-31T03:45:55.640676"
+  },
+  "custom_rsi_HINDWAREAP": {
+    "alerted": false,
+    "last_alert": null
   }
 }
