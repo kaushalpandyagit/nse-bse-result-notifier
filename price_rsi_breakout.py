@@ -8,7 +8,7 @@ Includes:
   4. Intraday Pradeep Bonde 4% Early Entry Trigger
   5. Intraday Horizontal Resistance Proximity Scanner (within 4%)
   6. Intraday Multi-Timeframe RSI & Key EMA Breakout Scanner
-     (Filtered for Market Cap and GLOBAL WEEKLY RSI < 57)
+  7. Custom Manual RSI Alerts Tracker
 """
 
 import os
@@ -56,7 +56,7 @@ ALERT_COOLDOWN_MINUTES = 30
 MIN_MARKET_CAP_CR = 300.0
 MAX_MARKET_CAP_CR = 31000.0
 
-# GLOBAL RESTRICTION: No scanners will alert if Weekly RSI is >= this value
+# GLOBAL RESTRICTION: No auto-scanners will alert if Weekly RSI is >= this value
 MAX_WEEKLY_RSI = 57.0
 
 RESULT_KEYWORDS = [
@@ -282,6 +282,10 @@ def prune_expired(state: dict) -> dict:
     cutoff = datetime.datetime.now() - datetime.timedelta(days=TRACK_WINDOW_DAYS)
     kept = {}
     for symbol, entry in state.items():
+        # Keep custom RSI alerts indefinitely
+        if symbol.startswith("custom_rsi_"):
+            kept[symbol] = entry
+            continue
         try:
             result_date = datetime.datetime.fromisoformat(entry["result_date"])
             if result_date >= cutoff:
@@ -775,7 +779,14 @@ def poll_once(state: dict) -> dict:
         )
 
     state = prune_expired(state)
+    
+    # -------------------------------------------------------------
+    # 1. Result Day RSI Breakout Checks
+    # -------------------------------------------------------------
     for symbol, entry in state.items():
+        if symbol.startswith("custom_rsi_"):
+            continue # Skip custom alerts in this loop
+
         if "day_low" not in entry or "baseline_rsi" not in entry:
             yahoo_ticker = entry.get("yahoo_ticker", f"{symbol}.NS")
             try:
@@ -844,6 +855,51 @@ def poll_once(state: dict) -> dict:
                     f"\U0001F4C9 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\n"
                     f"Current RSI: {rsi:.1f} | Base RSI: {baseline_rsi:.1f} | Price: \u20b9{price:.2f}"
                 )
+
+    # -------------------------------------------------------------
+    # 2. CUSTOM MANUAL RSI ALERTS (Hindware Home Innovation, etc.)
+    # -------------------------------------------------------------
+    custom_alerts = {
+        "HINDWAREAP": {"condition": "above", "target_rsi": 32.63},
+        # You can add more manually tracked stocks below!
+        # "CSBBANK": {"condition": "below", "target_rsi": 45},
+    }
+
+    for symbol, rules in custom_alerts.items():
+        state_key = f"custom_rsi_{symbol}"
+        if state_key not in state:
+            state[state_key] = {"alerted": False, "last_alert": None}
+        
+        c_entry = state[state_key]
+        
+        # Check if it's time to alert (respects the 30-min cooldown)
+        if not c_entry.get("alerted") or cooldown_elapsed(c_entry, "last_alert"):
+            yahoo_ticker = f"{symbol}.NS"
+            c_metrics = get_live_metrics_enhanced(yahoo_ticker)
+            
+            if c_metrics:
+                live_rsi = c_metrics["rsi"]
+                live_price = c_metrics["price"]
+                
+                if rules["condition"] == "below" and live_rsi < rules["target_rsi"]:
+                    c_entry["alerted"] = True
+                    c_entry["last_alert"] = datetime.datetime.now().isoformat()
+                    send_telegram_message(
+                        f"🎯 <b>{symbol}</b> Custom Alert!\n"
+                        f"Live RSI ({live_rsi:.1f}) has dropped BELOW {rules['target_rsi']}.\n"
+                        f"Price: \u20b9{live_price:.2f}"
+                    )
+                    log.info("CUSTOM RSI ALERT: %s RSI=%.1f (Target < %s)", symbol, live_rsi, rules["target_rsi"])
+                    
+                elif rules["condition"] == "above" and live_rsi > rules["target_rsi"]:
+                    c_entry["alerted"] = True
+                    c_entry["last_alert"] = datetime.datetime.now().isoformat()
+                    send_telegram_message(
+                        f"🎯 <b>{symbol}</b> Custom Alert!\n"
+                        f"Live RSI ({live_rsi:.1f}) has crossed ABOVE {rules['target_rsi']}.\n"
+                        f"Price: \u20b9{live_price:.2f}"
+                    )
+                    log.info("CUSTOM RSI ALERT: %s RSI=%.1f (Target > %s)", symbol, live_rsi, rules["target_rsi"])
 
     return state
 
