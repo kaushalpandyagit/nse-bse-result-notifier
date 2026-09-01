@@ -2,13 +2,13 @@
 Nifty Total Market Breakout Notifier -> Telegram + Email
 =========================================================
 Includes:
-  1. Result-Day-High / Low / RSI Breakout Tracker
+  1. Result-Day-High / Low / RSI Breakout Tracker (TradingView RSI matched)
   2. Minervini Stage 2 + VCP / Momentum Leaders Daily Scan
   3. Intraday Dan Zanger Early Entry Breakout
   4. Intraday Pradeep Bonde 4% Early Entry Trigger
   5. Intraday Horizontal Resistance Proximity Scanner (within 4%)
   6. Intraday Multi-Timeframe RSI & Key EMA Breakout Scanner
-     (Filtered for Market Cap between 300 Cr and 31,000 Cr)
+     (Filtered for Market Cap and GLOBAL WEEKLY RSI < 57)
 """
 
 import os
@@ -55,6 +55,9 @@ ALERT_COOLDOWN_MINUTES = 30
 # Market Cap boundaries in Crores (INR)
 MIN_MARKET_CAP_CR = 300.0
 MAX_MARKET_CAP_CR = 31000.0
+
+# GLOBAL RESTRICTION: No scanners will alert if Weekly RSI is >= this value
+MAX_WEEKLY_RSI = 57.0
 
 RESULT_KEYWORDS = [
     "financial result", "financial results", "quarterly result",
@@ -316,15 +319,17 @@ def compute_rsi(closes: pd.Series, period: int = RSI_PERIOD) -> float:
     delta = closes.diff()
     gain = delta.clip(lower=0)
     loss = -delta.clip(upper=0)
-    avg_gain = gain.ewm(alpha=1 / period, min_periods=period).mean()
-    avg_loss = loss.ewm(alpha=1 / period, min_periods=period).mean()
+    # adjust=False matches TradingView's Wilder Smoothing exactly
+    avg_gain = gain.ewm(alpha=1 / period, min_periods=period, adjust=False).mean()
+    avg_loss = loss.ewm(alpha=1 / period, min_periods=period, adjust=False).mean()
     rs = avg_gain / avg_loss.replace(0, 1e-10)
     rsi = 100 - (100 / (1 + rs))
     return float(rsi.iloc[-1])
 
 def get_baseline_metrics(yahoo_ticker: str, date: datetime.date):
     try:
-        start = date - datetime.timedelta(days=100)
+        # Extended lookback to 365 days for accurate RSI warm-up
+        start = date - datetime.timedelta(days=365)
         end = date + datetime.timedelta(days=7)
         hist = yf.Ticker(yahoo_ticker).history(start=start, end=end)
         if hist.empty:
@@ -352,7 +357,8 @@ def get_baseline_metrics(yahoo_ticker: str, date: datetime.date):
 
 def get_live_metrics_enhanced(yahoo_ticker: str) -> dict:
     try:
-        hist = yf.Ticker(yahoo_ticker).history(period="1mo", interval="1d")
+        # Extended to 1y to match TradingView live RSI smoothing and to compute live weekly RSI
+        hist = yf.Ticker(yahoo_ticker).history(period="1y", interval="1d")
         if hist.empty or len(hist) < 5:
             return None
         
@@ -360,6 +366,10 @@ def get_live_metrics_enhanced(yahoo_ticker: str) -> dict:
         yesterday = hist.iloc[-2]
         day3_ago = hist.iloc[-4]
         
+        # Calculate live Weekly RSI
+        weekly_closes = hist["Close"].resample('W-FRI').last().dropna()
+        weekly_rsi = compute_rsi(weekly_closes) if len(weekly_closes) > 14 else 50.0
+
         return {
             "price": float(today["Close"]),
             "volume": float(today["Volume"]),
@@ -367,22 +377,11 @@ def get_live_metrics_enhanced(yahoo_ticker: str) -> dict:
             "prev_volume": float(yesterday["Volume"]),
             "close_3d_ago": float(day3_ago["Close"]),
             "rsi": compute_rsi(hist["Close"]),
+            "weekly_rsi": weekly_rsi,
         }
     except Exception as e:
         log.warning("Could not fetch extended metrics for %s: %s", yahoo_ticker, e)
         return None
-
-def get_live_price_volume_rsi(yahoo_ticker: str) -> tuple:
-    m = get_live_metrics_enhanced(yahoo_ticker)
-    if not m:
-        return None, None, None
-    return m["price"], m["volume"], m["rsi"]
-
-def get_live_price_and_rsi(yahoo_ticker: str) -> tuple:
-    m = get_live_metrics_enhanced(yahoo_ticker)
-    if not m:
-        return None, None
-    return m["price"], m["rsi"]
 
 # ----------------------------------------------------------------------
 # MOMENTUM SCREENING & TECHNICAL CRITERIA
@@ -521,10 +520,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         prev_close = float(closes.iloc[-1])
 
         # Multi-Timeframe RSI baseline metrics
-        weekly_closes = closes.resample('W-FRI').last().dropna()
         monthly_closes = closes.resample('ME').last().dropna()
-        
-        weekly_rsi = compute_rsi(weekly_closes) if len(weekly_closes) > 14 else 50.0
         monthly_rsi = compute_rsi(monthly_closes) if len(monthly_closes) > 14 else 50.0
         yesterday_rsi = compute_rsi(closes)
 
@@ -543,7 +539,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             "base_high": base_high,
             "base_low": base_low,
             "prev_close": prev_close,
-            "weekly_rsi": weekly_rsi,
             "monthly_rsi": monthly_rsi,
             "yesterday_rsi": yesterday_rsi,
             "ema_10_prev": ema_10,
@@ -617,7 +612,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
 
     lines += [
         "",
-        "<i>Intraday alerts active: Zanger Early Entry, Bonde 4% Mod, Resistance Scanner, and MTF RSI+EMA.</i>",
+        f"<i>Intraday alerts active. (Filtered out if Weekly RSI \u2265 {MAX_WEEKLY_RSI})</i>",
     ]
 
     digest = "\n".join(lines)
@@ -641,6 +636,12 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
         yahoo_ticker = f"{symbol}.NS"
         metrics = get_live_metrics_enhanced(yahoo_ticker)
         if not metrics:
+            continue
+
+        live_weekly_rsi = metrics["weekly_rsi"]
+        
+        # --- GLOBAL RESTRICTION: SKIP IF WEEKLY RSI >= 57 ---
+        if live_weekly_rsi >= MAX_WEEKLY_RSI:
             continue
 
         price = metrics["price"]
@@ -690,7 +691,6 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
 
         # --- 4. Multi-Timeframe RSI & Key EMA Scanner ---
         if not entry.get("mtf_alerted") and live_rsi is not None:
-            w_rsi = entry.get("weekly_rsi", 50.0)
             m_rsi = entry.get("monthly_rsi", 50.0)
             y_rsi = entry.get("yesterday_rsi", 50.0)
 
@@ -711,9 +711,8 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
             rsi_condition = (
                 live_rsi > y_rsi and
                 live_rsi > 30 and
-                w_rsi <= 56 and
                 m_rsi <= 56 and
-                w_rsi <= live_rsi
+                live_weekly_rsi <= live_rsi
             )
 
             if rsi_condition and ema_condition:
@@ -721,7 +720,7 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
                 send_telegram_message(
                     f"\U0001F52E <b>{symbol}</b> MTF RSI + EMA Trigger!\n"
                     f"Price \u20b9{price:.2f} (Spiked \u22653% above key EMA).\n"
-                    f"Live Daily RSI: {live_rsi:.1f} | Weekly: {w_rsi:.1f} | Monthly: {m_rsi:.1f}"
+                    f"Live Daily RSI: {live_rsi:.1f} | Weekly: {live_weekly_rsi:.1f} | Monthly: {m_rsi:.1f}"
                 )
                 log.info("MTF SCANNER: %s @ %.2f", symbol, price)
 
@@ -801,9 +800,16 @@ def poll_once(state: dict) -> dict:
             continue
 
         yahoo_ticker = entry.get("yahoo_ticker", f"{symbol}.NS")
-        price, rsi = get_live_price_and_rsi(yahoo_ticker)
-        if price is None:
+        metrics = get_live_metrics_enhanced(yahoo_ticker)
+        if not metrics:
             continue
+        
+        # --- GLOBAL RESTRICTION: SKIP IF WEEKLY RSI >= 57 ---
+        if metrics["weekly_rsi"] >= MAX_WEEKLY_RSI:
+            continue
+
+        price = metrics["price"]
+        rsi = metrics["rsi"]
 
         if not entry["price_high_alerted"] and price > entry["day_high"] and cooldown_elapsed(entry, "price_high_last_alert"):
             entry["price_high_alerted"] = True
