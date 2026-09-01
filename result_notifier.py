@@ -1,11 +1,12 @@
 """
-NSE + BSE Live Result, Order Win & Insider/Promoter Disclosure Notifier -> Telegram
+NSE + BSE Live Result, Order Win, Insider Trade & Circular Notifier -> Telegram
 ===================================================================================
 Covers:
   1. Financial Results (Regulation 33 / Board outcomes)
   2. Order & Contract Wins (with Rupee value extraction)
   3. Insider Trading & Promoter Disclosures (SEBI PIT Reg 7(2), SAST Reg 29/31, Pledges)
-  4. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
+  4. NSE Exchange Circulars (Special Call Auctions, Periodic Call Auctions)
+  5. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
 import os
@@ -34,7 +35,6 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HE
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
 POLL_INTERVAL_MINUTES = 15
-POLL_ONLY_MARKET_HOURS = False  # Controlled by custom schedule in is_polling_allowed_now()
 
 # 1. Financial Results Keywords
 RESULT_KEYWORDS = [
@@ -58,22 +58,27 @@ ORDER_KEYWORDS = [
 
 # 3. Insider Trading & Promoter Disclosures Keywords
 INSIDER_PROMOTER_KEYWORDS = [
-    # SEBI PIT (Prohibition of Insider Trading)
     "regulation 7(2)", "reg 7(2)", "reg. 7(2)", "form c", "insider trading",
     "prohibition of insider trading", "pit regulations",
-    # SEBI SAST (Substantial Acquisition of Shares & Takeovers)
     "regulation 29(1)", "reg 29(1)", "reg. 29(1)",
     "regulation 29(2)", "reg 29(2)", "reg. 29(2)",
     "regulation 29", "reg 29", "reg. 29", "sast",
-    # Promoter Pledging & Encumbrances
     "regulation 31(1)", "reg 31(1)", "reg. 31(1)",
     "regulation 31(2)", "reg 31(2)", "reg. 31(2)",
     "regulation 31", "reg 31", "reg. 31",
     "pledge", "encumbrance", "creation of pledge", "release of pledge",
     "revocation of pledge", "invocation of pledge",
-    # General Promoter Trades
     "promoter group", "acquisition of shares", "disposal of shares",
     "promoter acquisition", "market purchase by promoter"
+]
+
+# 4. Exchange Circular Keywords
+CIRCULAR_KEYWORDS = [
+    "special call auction",
+    "periodic call auction",
+    "illiquid securities",
+    "special pre-open session",
+    "price discovery"
 ]
 
 _AMOUNT_UNIT_PATTERN = re.compile(
@@ -131,7 +136,6 @@ def is_polling_allowed_now() -> bool:
       - Sat & Sun:  09:00 AM - 09:00 PM IST
     """
     now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
-    hour, minute = now.hour, now.minute
     weekday = now.weekday()  # 0=Mon, 4=Fri, 5=Sat, 6=Sun
 
     if weekday < 5:  # Weekday
@@ -292,6 +296,46 @@ def fetch_bse_announcements() -> list:
         })
     return results
 
+def fetch_nse_circulars() -> list:
+    session = requests.Session()
+    headers = get_browser_headers()
+    try:
+        session.get("https://www.nseindia.com", headers=headers, timeout=12)
+        time.sleep(random.uniform(1.2, 2.0))
+        resp = session.get(
+            "https://www.nseindia.com/api/circulars",
+            headers={**headers, "Accept": "application/json"},
+            timeout=15,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as e:
+        log.warning("NSE Circulars unavailable: %s", e)
+        return []
+
+    items = data.get("data", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+    
+    results = []
+    for item in items:
+        subject = item.get("sub", "")
+        subj_lower = subject.lower()
+        
+        if any(kw in subj_lower for kw in CIRCULAR_KEYWORDS):
+            circ_no = item.get("circNo", "Unknown")
+            circ_file = item.get("circFile", "")
+            link = f"https://archives.nseindia.com/content/circulars/{circ_file}" if circ_file else ""
+            
+            results.append({
+                "company": "NSE EXCHANGE",
+                "symbol": "CIRCULAR",
+                "subject": f"[{circ_no}] {subject}",
+                "date": item.get("circDt", datetime.date.today().isoformat()),
+                "source": "NSE",
+                "link": link,
+                "category": "circular"
+            })
+    return results
+
 # ----------------------------------------------------------------------
 # MAIN POLLING LOOP
 # ----------------------------------------------------------------------
@@ -300,13 +344,25 @@ def poll_once(seen: set) -> set:
     nse_items = fetch_nse_announcements()
     time.sleep(random.uniform(1.0, 2.0))
     bse_items = fetch_bse_announcements()
+    time.sleep(random.uniform(1.0, 2.0))
+    nse_circulars = fetch_nse_circulars()
 
-    all_items = nse_items + bse_items
-    log.info("Fetched %d raw filings (NSE: %d, BSE: %d).", len(all_items), len(nse_items), len(bse_items))
+    all_items = nse_items + bse_items + nse_circulars
+    log.info("Fetched %d raw filings (NSE: %d, BSE: %d, Circ: %d).", 
+             len(all_items), len(nse_items), len(bse_items), len(nse_circulars))
 
     new_alerts = []
     for item in all_items:
-        if not item["company"] or not item["subject"]:
+        # 1. Exchange Circulars (Bypass watchlist & categorization)
+        if item.get("category") == "circular":
+            fp = fingerprint(item["company"], item["subject"], item["date"])
+            if fp not in seen:
+                seen.add(fp)
+                new_alerts.append(item)
+            continue
+            
+        # 2. Corporate Announcements
+        if not item.get("company") or not item.get("subject"):
             continue
         if not matches_watchlist(item["company"], item["symbol"]):
             continue
@@ -325,7 +381,11 @@ def poll_once(seen: set) -> set:
 
     for item in new_alerts:
         cat = item["category"]
-        if cat == "order":
+        
+        if cat == "circular":
+            header = f"🏛️ <b>{item['company']}</b> \u2014 Market Wide Circular"
+            body = f"{item['subject']}\n\U0001F550 {item['date']}"
+        elif cat == "order":
             order_val = extract_order_value(item["subject"])
             val_line = f"\U0001F4B0 Value: \u20b9{order_val}\n" if order_val else "\U0001F4B0 Value: check filing\n"
             header = f"\U0001F4E6 <b>{item['company']}</b> ({item['source']}) \u2014 Order/Contract Win"
