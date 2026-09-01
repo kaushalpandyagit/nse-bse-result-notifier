@@ -10228,7 +10228,7 @@
       "rs_rank": 56.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "RENUKA": {
@@ -12328,8 +12328,8 @@
       "rs_rank": 45.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "THANGAMAYL": {
       "sma50": 5884.048017578125,
