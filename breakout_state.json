@@ -130,5 +130,9 @@
   "custom_rsi_TITAN": {
     "alerted": false,
     "last_alert": null
+  },
+  "custom_rsi_BDL": {
+    "alerted": false,
+    "last_alert": null
   }
 }
