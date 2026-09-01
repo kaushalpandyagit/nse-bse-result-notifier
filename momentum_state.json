@@ -568,7 +568,7 @@
       "rs_rank": 33.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "AFFLE": {
@@ -6179,7 +6179,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "IONEXCHANG": {
       "sma50": 404.1110028076172,
@@ -10859,7 +10859,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SCHNEIDER": {
       "sma50": 1337.0780078125,
@@ -11549,7 +11549,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "STAR": {
       "sma50": 1040.0339953613282,
@@ -12598,7 +12598,7 @@
       "rs_rank": 69.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TMB": {
