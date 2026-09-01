@@ -126,5 +126,9 @@
   "custom_rsi_BSE:PGFOILQ": {
     "alerted": false,
     "last_alert": null
+  },
+  "custom_rsi_TITAN": {
+    "alerted": false,
+    "last_alert": null
   }
 }
