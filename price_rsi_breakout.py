@@ -863,6 +863,8 @@ def poll_once(state: dict) -> dict:
         "HINDWAREAP": {"condition": "above", "target_rsi": 32.63},
         "KOTHARIPET": {"condition": "below", "target_rsi": 36.63},
         "BSE:PGFOILQ": {"condition": "below", "target_rsi": 34.2},
+        "TITAN":       {"condition": "below", "target_rsi": 42},
+      
     }
 
     for symbol, rules in custom_alerts.items():
