@@ -718,7 +718,7 @@
       "rs_rank": 87.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ALKYLAMINE": {
@@ -3658,8 +3658,8 @@
       "rs_rank": 48.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "DEVYANI": {
       "sma50": 123.92039901733398,
@@ -5308,7 +5308,7 @@
       "rs_rank": 30.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "HAPPSTMNDS": {
@@ -13468,7 +13468,7 @@
       "rs_rank": 92.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "WESTLIFE": {
