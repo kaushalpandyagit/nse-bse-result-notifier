@@ -12326,7 +12326,7 @@
       "ema_200_prev": 114.43801442550262,
       "mcap_cr": 4426.686667525214,
       "rs_rank": 45.0,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -13768,7 +13768,7 @@
       "rs_rank": 37.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ZYDUSWELL": {
