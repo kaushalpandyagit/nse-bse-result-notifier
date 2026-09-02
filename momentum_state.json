@@ -11918,7 +11918,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TEXRAIL": {
       "sma50": 110.6518000793457,
@@ -11946,7 +11946,7 @@
       "rs_rank": 55.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "THANGAMAYL": {
