@@ -2986,7 +2986,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CMSINFO": {
       "sma50": 267.1792004394531,
@@ -4986,7 +4986,7 @@
       "rs_rank": 54.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GREAVESCOT": {
@@ -5131,7 +5131,7 @@
       "rs_rank": 32.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "HAPPSTMNDS": {
@@ -9917,7 +9917,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "RENUKA": {
       "sma50": 22.87459991455078,
