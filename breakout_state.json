@@ -134,5 +134,17 @@
   "custom_rsi_BDL": {
     "alerted": false,
     "last_alert": null
+  },
+  "SUPRIYA": {
+    "result_date": "2026-09-02T00:00:00",
+    "day_high": 849.5,
+    "day_low": 800.0,
+    "baseline_rsi": 53.39020189491768,
+    "yahoo_ticker": "SUPRIYA.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-09-02T08:45:43.043605"
   }
 }
