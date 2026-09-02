@@ -6175,7 +6175,7 @@
       "rs_rank": 51.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "JAINREC": {
