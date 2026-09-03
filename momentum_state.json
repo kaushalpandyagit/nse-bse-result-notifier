@@ -8583,7 +8583,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "OPTIEMUS": {
       "sma50": 568.1279986572266,
@@ -11163,7 +11163,7 @@
       "rs_rank": 63.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "STARCEMENT": {
@@ -12149,7 +12149,7 @@
       "rs_rank": 64.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TMB": {
