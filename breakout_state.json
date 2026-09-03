@@ -78,13 +78,14 @@
     "day_low": 71.68000030517578,
     "baseline_rsi": 34.81817027461442,
     "yahoo_ticker": "INOXWIND.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-08-27T07:01:08.918319",
     "price_low_last_alert": "2026-08-27T08:00:58.916737",
-    "rsi_up_last_alert": "2026-08-27T10:15:48.196079"
+    "rsi_up_last_alert": "2026-08-27T10:15:48.196079",
+    "price_high_last_alert": "2026-09-03T09:45:46.062113"
   },
   "KEI": {
     "result_date": "2026-08-28T00:00:00",
