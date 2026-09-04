@@ -8322,7 +8322,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "NFL": {
       "sma50": 72.18260055541992,
