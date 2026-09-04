@@ -808,9 +808,9 @@
       "ema_200_prev": 290.89137164184393,
       "mcap_cr": 27334.26059616278,
       "rs_rank": 76.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ANUP": {
@@ -3014,7 +3014,7 @@
       "rs_rank": 90.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "CONCORDBIO": {
@@ -4551,7 +4551,7 @@
       "rs_rank": 21.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GILLETTE": {
@@ -5161,7 +5161,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "HCC": {
       "sma50": 22.546200103759766,
@@ -6146,7 +6146,7 @@
       "rs_rank": 52.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "JAINREC": {
@@ -9250,7 +9250,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "PVRINOX": {
       "sma50": 1106.8850024414062,
@@ -9772,7 +9772,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "RENUKA": {
       "sma50": 22.90699993133545,
