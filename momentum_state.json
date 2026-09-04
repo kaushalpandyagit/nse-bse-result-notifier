@@ -1478,7 +1478,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "AZAD": {
       "sma50": 2480.540017089844,
@@ -5158,7 +5158,7 @@
       "ema_200_prev": 744.2940394086593,
       "mcap_cr": 18931.029175442738,
       "rs_rank": 29.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": true
@@ -11105,7 +11105,7 @@
       "rs_rank": 59.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "STARCEMENT": {
