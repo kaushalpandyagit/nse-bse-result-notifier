@@ -2464,7 +2464,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CCL": {
       "sma50": 1155.7559936523437,
@@ -5160,7 +5160,7 @@
       "rs_rank": 29.5,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "HCC": {
@@ -7915,7 +7915,7 @@
       "rs_rank": 45.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "MOIL": {
@@ -10409,7 +10409,7 @@
       "rs_rank": 39.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SCHNEIDER": {
