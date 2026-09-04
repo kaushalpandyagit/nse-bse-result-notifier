@@ -520,7 +520,7 @@
       "rs_rank": 37.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "AFFLE": {
@@ -9771,7 +9771,7 @@
       "rs_rank": 59.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "RENUKA": {
