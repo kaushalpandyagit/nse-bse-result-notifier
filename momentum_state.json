@@ -5567,7 +5567,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "IIFL": {
       "sma50": 590.6919989013672,
@@ -7913,7 +7913,7 @@
       "ema_200_prev": 63.78734890044295,
       "mcap_cr": 9415.50006866455,
       "rs_rank": 45.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -8234,7 +8234,7 @@
       "rs_rank": 21.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NETWORK18": {
