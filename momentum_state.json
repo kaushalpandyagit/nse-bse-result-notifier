@@ -5567,7 +5567,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "IIFL": {
       "sma50": 596.5629998779297,
@@ -5915,7 +5915,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "INTELLECT": {
       "sma50": 722.097001953125,
