@@ -3015,7 +3015,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CONCORDBIO": {
       "sma50": 1391.0219946289062,
@@ -4668,7 +4668,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "GNFC": {
       "sma50": 542.6520001220703,
@@ -8263,7 +8263,7 @@
       "rs_rank": 27.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NETWEB": {
