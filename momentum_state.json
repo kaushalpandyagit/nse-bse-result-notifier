@@ -202,7 +202,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ABLBL": {
       "sma50": 91.86480010986328,
@@ -4667,7 +4667,7 @@
       "rs_rank": 11.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GNFC": {
@@ -6146,8 +6146,8 @@
       "rs_rank": 49.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "JAINREC": {
       "sma50": 318.5129998779297,
@@ -6582,7 +6582,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JUBLINGREA": {
       "sma50": 715.8319958496094,
@@ -6988,7 +6988,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "KITEX": {
       "sma50": 141.45820007324218,
@@ -8669,7 +8669,7 @@
       "rs_rank": 41.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "OSWALPUMPS": {
@@ -12787,7 +12787,7 @@
       "rs_rank": 9.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VIYASH": {
