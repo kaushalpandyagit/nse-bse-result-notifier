@@ -4523,7 +4523,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "GHCL": {
       "sma50": 435.99699951171874,
@@ -6640,7 +6640,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JUSTDIAL": {
       "sma50": 676.9640014648437,
