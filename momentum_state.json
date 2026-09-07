@@ -810,7 +810,7 @@
       "rs_rank": 73.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ANUP": {
@@ -2521,7 +2521,7 @@
       "rs_rank": 47.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "CEATLTD": {
@@ -5190,7 +5190,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "HCG": {
       "sma50": 684.9530004882813,
@@ -8495,7 +8495,7 @@
       "rs_rank": 61.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "OLAELEC": {

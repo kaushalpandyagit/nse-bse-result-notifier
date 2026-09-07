@@ -127,11 +127,12 @@
     "day_low": 710.0,
     "baseline_rsi": 36.45721245470096,
     "yahoo_ticker": "BBOX.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-04T07:45:44.428734",
-    "rsi_down_last_alert": "2026-09-04T08:00:56.432203"
+    "rsi_down_last_alert": "2026-09-04T08:00:56.432203",
+    "price_high_last_alert": "2026-09-07T04:00:55.239327"
   }
 }
