@@ -12584,7 +12584,7 @@
       "rs_rank": 12.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "V2RETAIL": {
