@@ -104,5 +104,16 @@
     "rsi_down_last_alert": "2026-09-08T05:01:04.006055",
     "price_high_last_alert": "2026-09-08T06:15:47.457216",
     "rsi_up_last_alert": "2026-09-08T06:15:48.128819"
+  },
+  "PARKHOSPS": {
+    "result_date": "2026-09-08T00:00:00",
+    "day_high": 286.8999938964844,
+    "day_low": 281.70001220703125,
+    "baseline_rsi": 49.34679385158914,
+    "yahoo_ticker": "PARKHOSPS.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": false
   }
 }
