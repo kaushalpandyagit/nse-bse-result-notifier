@@ -8290,7 +8290,7 @@
       "ema_200_prev": 1126.2168347193128,
       "mcap_cr": 7567.399704,
       "rs_rank": 32.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -11309,7 +11309,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SUBROS": {
       "sma50": 780.432998046875,
