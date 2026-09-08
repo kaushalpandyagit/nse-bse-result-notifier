@@ -3653,7 +3653,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "EDELWEISS": {
       "sma50": 122.30300003051758,
@@ -8612,7 +8612,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "OPTIEMUS": {
       "sma50": 571.7279986572265,
