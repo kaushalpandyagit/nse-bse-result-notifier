@@ -5190,7 +5190,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "HCG": {
       "sma50": 684.81,
@@ -8698,7 +8698,7 @@
       "rs_rank": 42.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "OSWALPUMPS": {
@@ -9685,7 +9685,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "RBA": {
       "sma50": 84.2515998840332,
@@ -11860,7 +11860,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TEJASNET": {
       "sma50": 537.7389978027344,
