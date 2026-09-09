@@ -60,8 +60,8 @@
     "last_alert": null
   },
   "custom_rsi_BDL": {
-    "alerted": false,
-    "last_alert": null
+    "alerted": true,
+    "last_alert": "2026-09-09T05:15:45.760700"
   },
   "SUPRIYA": {
     "result_date": "2026-09-02T00:00:00",
