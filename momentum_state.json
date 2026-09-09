@@ -4841,7 +4841,7 @@
       "rs_rank": 25.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GPPL": {
@@ -6669,7 +6669,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JUSTDIAL": {
       "sma50": 676.8200012207031,
@@ -10468,7 +10468,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SAREGAMA": {
       "sma50": 503.73999938964846,
