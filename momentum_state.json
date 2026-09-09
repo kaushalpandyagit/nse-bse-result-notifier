@@ -5944,7 +5944,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "INTELLECT": {
       "sma50": 721.5540026855468,
@@ -10465,7 +10465,7 @@
       "ema_200_prev": 519.5109856688697,
       "mcap_cr": 18313.25503205292,
       "rs_rank": 24.8,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
