@@ -11860,7 +11860,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TEJASNET": {
       "sma50": 537.5109973144531,
