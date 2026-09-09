@@ -124,9 +124,10 @@
     "yahoo_ticker": "LICI.NS",
     "price_high_alerted": false,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-09-09T08:01:00.828281"
+    "rsi_down_last_alert": "2026-09-09T08:01:00.828281",
+    "rsi_up_last_alert": "2026-09-09T09:00:58.925060"
   },
   "APOLLO": {
     "result_date": "2026-09-09T00:00:00",
