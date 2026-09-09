@@ -125,6 +125,18 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": false,
+    "rsi_down_alerted": true,
+    "rsi_down_last_alert": "2026-09-09T08:01:00.828281"
+  },
+  "APOLLO": {
+    "result_date": "2026-09-09T00:00:00",
+    "day_high": 427.95001220703125,
+    "day_low": 415.1000061035156,
+    "baseline_rsi": 70.64230825233784,
+    "yahoo_ticker": "APOLLO.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
     "rsi_down_alerted": false
   }
 }
