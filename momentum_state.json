@@ -6582,7 +6582,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JSWCEMENT": {
       "sma50": 130.97179901123047,
@@ -11567,10 +11567,10 @@
       "ema_200_prev": 347.605852056683,
       "mcap_cr": 8674.91932005,
       "rs_rank": 3.0,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SWSOLAR": {
       "sma50": 208.43359954833986,
