@@ -61,7 +61,7 @@
   },
   "custom_rsi_BDL": {
     "alerted": true,
-    "last_alert": "2026-09-09T10:00:55.938989"
+    "last_alert": "2026-09-10T03:45:48.056668"
   },
   "SUPRIYA": {
     "result_date": "2026-09-02T00:00:00",
@@ -124,11 +124,12 @@
     "baseline_rsi": 44.09597677223347,
     "yahoo_ticker": "LICI.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-09-09T08:01:00.828281",
-    "rsi_up_last_alert": "2026-09-09T09:00:58.925060"
+    "rsi_up_last_alert": "2026-09-09T09:00:58.925060",
+    "price_low_last_alert": "2026-09-10T03:45:46.246907"
   },
   "APOLLO": {
     "result_date": "2026-09-09T00:00:00",
