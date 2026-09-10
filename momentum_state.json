@@ -1071,7 +1071,7 @@
       "rs_rank": 48.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ASAHIINDIA": {
@@ -4607,7 +4607,7 @@
       "ema_200_prev": 574.3360709455633,
       "mcap_cr": 18639.57077636719,
       "rs_rank": 45.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -6640,7 +6640,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JUBLINGREA": {
       "sma50": 717.7739953613282,
@@ -8321,7 +8321,7 @@
       "rs_rank": 31.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NETWEB": {
@@ -8583,7 +8583,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "OLECTRA": {
       "sma50": 1341.2619995117188,
@@ -11915,9 +11915,9 @@
       "ema_200_prev": 1692.9342614666334,
       "mcap_cr": 12896.420455262769,
       "rs_rank": 26.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "TEJASNET": {
