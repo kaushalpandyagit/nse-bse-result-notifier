@@ -11338,7 +11338,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SUBROS": {
       "sma50": 777.9629968261719,
