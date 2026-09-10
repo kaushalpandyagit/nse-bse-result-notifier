@@ -113,9 +113,11 @@
     "baseline_rsi": 49.34679385158914,
     "yahoo_ticker": "PARKHOSPS.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true,
+    "price_low_last_alert": "2026-09-10T10:15:42.310946",
+    "rsi_down_last_alert": "2026-09-10T10:15:43.004192"
   },
   "LICI": {
     "result_date": "2026-09-09T00:00:00",
