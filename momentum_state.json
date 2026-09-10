@@ -3740,7 +3740,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "EIHOTEL": {
       "sma50": 314.84899841308595,
@@ -4609,7 +4609,7 @@
       "rs_rank": 45.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GMMPFAUDLR": {
@@ -10726,7 +10726,7 @@
       "ema_200_prev": 584.2441095238148,
       "mcap_cr": 6404.971222692719,
       "rs_rank": 34.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
