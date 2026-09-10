@@ -44,8 +44,8 @@
     "rsi_down_last_alert": "2026-08-31T03:45:55.640676"
   },
   "custom_rsi_HINDWAREAP": {
-    "alerted": false,
-    "last_alert": null
+    "alerted": true,
+    "last_alert": "2026-09-10T04:29:47.090112"
   },
   "custom_rsi_KOTHARIPET": {
     "alerted": false,
@@ -61,7 +61,7 @@
   },
   "custom_rsi_BDL": {
     "alerted": true,
-    "last_alert": "2026-09-10T03:45:48.056668"
+    "last_alert": "2026-09-10T04:29:48.781293"
   },
   "SUPRIYA": {
     "result_date": "2026-09-02T00:00:00",
