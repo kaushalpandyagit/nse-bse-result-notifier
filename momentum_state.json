@@ -1765,7 +1765,7 @@
       "ema_200_prev": 713.757084626239,
       "mcap_cr": 13333.260315375,
       "rs_rank": 84.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false
@@ -8785,7 +8785,7 @@
       "rs_rank": 36.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "OSWALPUMPS": {
