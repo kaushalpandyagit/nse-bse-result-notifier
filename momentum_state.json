@@ -811,7 +811,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ANUP": {
       "sma50": 1995.6039990234376,
@@ -12237,7 +12237,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TIPSMUSIC": {
       "sma50": 669.1430004882812,
@@ -12556,7 +12556,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "UCOBANK": {
       "sma50": 25.873599891662597,
@@ -12729,7 +12729,7 @@
       "rs_rank": 48.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "VAIBHAVGBL": {
