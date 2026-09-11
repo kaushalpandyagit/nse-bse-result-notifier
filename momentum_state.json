@@ -810,7 +810,7 @@
       "rs_rank": 74.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ANUP": {
@@ -1420,7 +1420,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "AWL": {
       "sma50": 190.7733999633789,
@@ -2087,7 +2087,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "BLUESTONE": {
       "sma50": 769.5170056152343,
@@ -12034,7 +12034,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "THANGAMAYL": {
       "sma50": 5796.66,
