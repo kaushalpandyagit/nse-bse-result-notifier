@@ -1417,9 +1417,9 @@
       "ema_200_prev": 350.1554709055751,
       "mcap_cr": 1758.66529595,
       "rs_rank": 14.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "AWL": {
@@ -5190,7 +5190,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "HCC": {
       "sma50": 22.239000091552736,
@@ -12236,7 +12236,7 @@
       "rs_rank": 21.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TIPSMUSIC": {
