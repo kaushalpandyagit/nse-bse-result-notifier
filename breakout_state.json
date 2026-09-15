@@ -13,11 +13,11 @@
   },
   "custom_rsi_TITAN": {
     "alerted": true,
-    "last_alert": "2026-09-15T09:15:43.603906"
+    "last_alert": "2026-09-15T10:00:54.931095"
   },
   "custom_rsi_BDL": {
     "alerted": true,
-    "last_alert": "2026-09-15T09:15:44.483305"
+    "last_alert": "2026-09-15T10:00:55.934685"
   },
   "SUPRIYA": {
     "result_date": "2026-09-02T00:00:00",
@@ -115,5 +115,16 @@
     "rsi_up_last_alert": "2026-09-15T06:45:41.914598",
     "rsi_down_last_alert": "2026-09-15T09:30:02.484125",
     "price_low_last_alert": "2026-09-15T09:45:40.945817"
+  },
+  "INDIASHLTR": {
+    "result_date": "2026-09-15T00:00:00",
+    "day_high": 663.0,
+    "day_low": 640.5,
+    "baseline_rsi": 38.62127027658436,
+    "yahoo_ticker": "INDIASHLTR.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": false
   }
 }

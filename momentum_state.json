@@ -10293,7 +10293,7 @@
       "rs_rank": 21.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SAGILITY": {
