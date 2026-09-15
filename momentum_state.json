@@ -9859,7 +9859,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "REFEX": {
       "sma50": 301.81099975585937,
