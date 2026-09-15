@@ -172,7 +172,7 @@
       "rs_rank": 78.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ABFRL": {
@@ -1941,7 +1941,7 @@
       "rs_rank": 43.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BLS": {
@@ -4291,7 +4291,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "FORCEMOT": {
       "sma50": 17943.94,
@@ -4349,7 +4349,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "GABRIEL": {
       "sma50": 1394.9200073242187,
@@ -6668,7 +6668,7 @@
       "rs_rank": 57.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "JUSTDIAL": {
@@ -9743,7 +9743,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "RBA": {
       "sma50": 85.90720016479492,
