@@ -13,11 +13,11 @@
   },
   "custom_rsi_TITAN": {
     "alerted": true,
-    "last_alert": "2026-09-15T06:00:57.171565"
+    "last_alert": "2026-09-15T06:45:43.016337"
   },
   "custom_rsi_BDL": {
     "alerted": true,
-    "last_alert": "2026-09-15T06:00:58.028539"
+    "last_alert": "2026-09-15T06:45:43.792692"
   },
   "SUPRIYA": {
     "result_date": "2026-09-02T00:00:00",
@@ -101,5 +101,17 @@
     "rsi_down_alerted": true,
     "price_low_last_alert": "2026-09-15T04:45:38.481121",
     "rsi_down_last_alert": "2026-09-15T04:45:39.020771"
+  },
+  "SRF": {
+    "result_date": "2026-09-15T00:00:00",
+    "day_high": 2490.699951171875,
+    "day_low": 2457.10009765625,
+    "baseline_rsi": 30.475815999742238,
+    "yahoo_ticker": "SRF.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "rsi_up_last_alert": "2026-09-15T06:45:41.914598"
   }
 }
