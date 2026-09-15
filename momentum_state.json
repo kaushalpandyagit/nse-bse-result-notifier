@@ -489,10 +489,10 @@
       "ema_200_prev": 323.2147347629076,
       "mcap_cr": 10167.40657295085,
       "rs_rank": 27.0,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "AFFLE": {
       "sma50": 1594.2220092773437,
@@ -1274,8 +1274,8 @@
       "rs_rank": 4.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "AVALON": {
       "sma50": 1956.6260131835938,
@@ -2145,7 +2145,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CAMPUS": {
       "sma50": 223.06199951171874,
@@ -8641,7 +8641,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "OPTIEMUS": {
       "sma50": 576.7579992675782,
@@ -13339,7 +13339,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ZENTEC": {
       "sma50": 1792.7999951171876,
