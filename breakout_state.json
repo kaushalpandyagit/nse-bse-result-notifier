@@ -124,6 +124,18 @@
     "yahoo_ticker": "INDIASHLTR.NS",
     "price_high_alerted": false,
     "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "rsi_up_last_alert": "2026-09-15T10:15:40.497031"
+  },
+  "GHCL": {
+    "result_date": "2026-09-15T00:00:00",
+    "day_high": 430.0,
+    "day_low": 422.0,
+    "baseline_rsi": 35.2864700784376,
+    "yahoo_ticker": "GHCL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": false
   }
