@@ -56,7 +56,7 @@
       "rs_rank": 61.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "AARTIIND": {
@@ -491,7 +491,7 @@
       "rs_rank": 27.0,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "AFFLE": {
@@ -3247,7 +3247,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "DATAPATTNS": {
       "sma50": 4510.02001953125,
@@ -11799,7 +11799,7 @@
       "ema_200_prev": 721.9117342464838,
       "mcap_cr": 18722.03949218357,
       "rs_rank": 46.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": true
@@ -12237,7 +12237,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TITAGARH": {
       "sma50": 842.9049987792969,
