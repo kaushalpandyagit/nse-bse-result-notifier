@@ -12,12 +12,12 @@
     "last_alert": null
   },
   "custom_rsi_TITAN": {
-    "alerted": false,
-    "last_alert": null
+    "alerted": true,
+    "last_alert": "2026-09-15T04:45:39.999446"
   },
   "custom_rsi_BDL": {
     "alerted": true,
-    "last_alert": "2026-09-15T04:15:39.768841"
+    "last_alert": "2026-09-15T04:45:40.589867"
   },
   "SUPRIYA": {
     "result_date": "2026-09-02T00:00:00",
@@ -96,8 +96,10 @@
     "baseline_rsi": 70.64230825233784,
     "yahoo_ticker": "APOLLO.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true,
+    "price_low_last_alert": "2026-09-15T04:45:38.481121",
+    "rsi_down_last_alert": "2026-09-15T04:45:39.020771"
   }
 }
