@@ -13,11 +13,11 @@
   },
   "custom_rsi_TITAN": {
     "alerted": true,
-    "last_alert": "2026-09-16T03:45:40.417146"
+    "last_alert": "2026-09-16T04:15:46.714737"
   },
   "custom_rsi_BDL": {
     "alerted": true,
-    "last_alert": "2026-09-16T03:45:41.023752"
+    "last_alert": "2026-09-16T04:15:47.298631"
   },
   "SUPRIYA": {
     "result_date": "2026-09-02T00:00:00",
@@ -125,8 +125,9 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false,
-    "rsi_up_last_alert": "2026-09-15T10:15:40.497031"
+    "rsi_down_alerted": true,
+    "rsi_up_last_alert": "2026-09-15T10:15:40.497031",
+    "rsi_down_last_alert": "2026-09-16T04:15:45.484394"
   },
   "GHCL": {
     "result_date": "2026-09-15T00:00:00",
