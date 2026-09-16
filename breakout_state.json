@@ -123,12 +123,13 @@
     "day_low": 640.5,
     "baseline_rsi": 38.62127027658436,
     "yahoo_ticker": "INDIASHLTR.NS",
-    "price_high_alerted": false,
+    "price_high_alerted": true,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-15T10:15:40.497031",
-    "rsi_down_last_alert": "2026-09-16T04:15:45.484394"
+    "rsi_down_last_alert": "2026-09-16T04:15:45.484394",
+    "price_high_last_alert": "2026-09-16T09:45:43.423375"
   },
   "GHCL": {
     "result_date": "2026-09-15T00:00:00",
