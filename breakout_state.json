@@ -1,24 +1,4 @@
 {
-  "custom_rsi_HINDWAREAP": {
-    "alerted": true,
-    "last_alert": "2026-09-10T06:45:55.893400"
-  },
-  "custom_rsi_KOTHARIPET": {
-    "alerted": false,
-    "last_alert": null
-  },
-  "custom_rsi_BSE:PGFOILQ": {
-    "alerted": false,
-    "last_alert": null
-  },
-  "custom_rsi_TITAN": {
-    "alerted": true,
-    "last_alert": "2026-09-17T07:01:04.439045"
-  },
-  "custom_rsi_BDL": {
-    "alerted": true,
-    "last_alert": "2026-09-17T07:01:05.279953"
-  },
   "BBOX": {
     "result_date": "2026-09-04T00:00:00",
     "day_high": 731.2000122070312,
@@ -140,5 +120,17 @@
     "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": false
+  },
+  "custom_alert_HINDWAREAP_rsi": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_KOTHARIPET_rsi": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_BSE:PGFOILQ_rsi": {
+    "alerted": false,
+    "last_alert": null
   }
 }
