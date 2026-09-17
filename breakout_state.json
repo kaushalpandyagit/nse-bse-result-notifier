@@ -138,5 +138,9 @@
   "custom_alert_BASILIC_price": {
     "alerted": false,
     "last_alert": null
+  },
+  "custom_alert_ALLETEC_price": {
+    "alerted": true,
+    "last_alert": "2026-09-17T09:15:44.528797"
   }
 }
