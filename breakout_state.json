@@ -13,25 +13,11 @@
   },
   "custom_rsi_TITAN": {
     "alerted": true,
-    "last_alert": "2026-09-16T10:00:56.917145"
+    "last_alert": "2026-09-17T03:45:41.946919"
   },
   "custom_rsi_BDL": {
     "alerted": true,
-    "last_alert": "2026-09-16T10:00:57.541669"
-  },
-  "SUPRIYA": {
-    "result_date": "2026-09-02T00:00:00",
-    "day_high": 849.5,
-    "day_low": 800.0,
-    "baseline_rsi": 53.39020189491768,
-    "yahoo_ticker": "SUPRIYA.NS",
-    "price_high_alerted": true,
-    "price_low_alerted": false,
-    "rsi_up_alerted": true,
-    "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-09-02T08:45:43.043605",
-    "rsi_up_last_alert": "2026-09-02T09:01:03.217889",
-    "price_high_last_alert": "2026-09-04T04:00:51.534938"
+    "last_alert": "2026-09-17T03:45:42.558609"
   },
   "BBOX": {
     "result_date": "2026-09-04T00:00:00",
