@@ -117,9 +117,11 @@
     "baseline_rsi": 42.84979886151653,
     "yahoo_ticker": "CPPLUS.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": false,
-    "rsi_down_alerted": false
+    "rsi_down_alerted": true,
+    "price_low_last_alert": "2026-09-17T07:45:37.070133",
+    "rsi_down_last_alert": "2026-09-17T07:45:37.666795"
   },
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
