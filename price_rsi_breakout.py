@@ -2,13 +2,12 @@
 Nifty Total Market Breakout Notifier -> Telegram + Email
 =========================================================
 Includes:
-  1. Result-Day-High / Low / RSI Breakout Tracker (TradingView RSI matched)
+  1. Result-Day-High / Low / RSI Breakout Tracker
   2. Minervini Stage 2 + VCP / Momentum Leaders Daily Scan
-  3. Intraday Dan Zanger Early Entry Breakout
-  4. Intraday Pradeep Bonde 4% Early Entry Trigger
-  5. Intraday Horizontal Resistance Proximity Scanner (within 4%)
-  6. Intraday Multi-Timeframe RSI & Key EMA Breakout Scanner
-  7. Custom Manual RSI Alerts Tracker (Supports BSE: prefix)
+  3. Intraday Dan Zanger & Pradeep Bonde Early Entry Breakout
+  4. Intraday Horizontal Resistance & MTF RSI Scanner
+  5. Custom Manual Alerts Tracker (Static + Google Sheet Integration)
+     Supports Dynamic Metrics (Price, RSI, EMA, SMA) and BSE: prefix.
 """
 
 import os
@@ -29,7 +28,7 @@ from email_notifier import send_email
 try:
     import yfinance as yf
 except ImportError:
-    print("yfinance is required: pip install yfinance")
+    print("yfinance is required: pip install yfinance pandas")
     raise
 
 try:
@@ -44,6 +43,9 @@ except ImportError:
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
+
+# Converted your /pubhtml link to /pub?output=csv so Pandas can read it natively
+GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTicCnhvOb2njwMTaCp4oEnOv3LONbfE796ZVTtvPPA_uRN9C2lNeWXL813jxiW_n7zxf1-4HBG_c1G/pub?output=csv"
 
 POLL_INTERVAL_MINUTES = 15
 POLL_ONLY_MARKET_HOURS = True
@@ -89,7 +91,6 @@ HEADERS = {
 }
 
 # --- Momentum/trend screening config ---
-
 MOMENTUM_STATE_FILE = Path(__file__).parent / "momentum_state.json"
 HISTORY_PERIOD = "18mo"
 
@@ -102,12 +103,10 @@ RS_LOOKBACK_DAYS = 126
 MOMENTUM_LEADER_RS_RANK_MIN = 90.0
 MOMENTUM_LEADER_NEAR_HIGH_PCT = 15.0
 
-# Zanger Early Entry Config
 ZANGER_BASE_LOOKBACK_DAYS = 30
 ZANGER_VOLUME_MULT = 2.0
 ZANGER_EARLY_MOVE_PCT = 1.5
 
-# Bonde Early Entry Config
 BONDE_MIN_MOVE_PCT = 2.0
 BONDE_MIN_VOLUME = 700000
 
@@ -181,9 +180,6 @@ def get_universe_symbols() -> list:
         log.error("Could not fetch Universe list (%s). Using fallback list.", e)
         return FALLBACK_SYMBOLS
 
-def get_nifty500_symbols() -> list:
-    return get_universe_symbols()
-
 # ----------------------------------------------------------------------
 # ANNOUNCEMENT FETCH
 # ----------------------------------------------------------------------
@@ -191,8 +187,7 @@ def get_nifty500_symbols() -> list:
 def normalise_company(name: str) -> str:
     name = name.upper()
     name = re.sub(r"\b(LIMITED|LTD|LTD\.|THE)\b", "", name)
-    name = re.sub(r"[^A-Z0-9]", "", name)
-    return name.strip()
+    return re.sub(r"[^A-Z0-9]", "", name).strip()
 
 def is_result_announcement(subject: str) -> bool:
     subj_lower = subject.lower()
@@ -282,8 +277,7 @@ def prune_expired(state: dict) -> dict:
     cutoff = datetime.datetime.now() - datetime.timedelta(days=TRACK_WINDOW_DAYS)
     kept = {}
     for symbol, entry in state.items():
-        # Keep custom RSI alerts indefinitely
-        if symbol.startswith("custom_rsi_"):
+        if symbol.startswith("custom_alert_"):
             kept[symbol] = entry
             continue
         try:
@@ -323,7 +317,6 @@ def compute_rsi(closes: pd.Series, period: int = RSI_PERIOD) -> float:
     delta = closes.diff()
     gain = delta.clip(lower=0)
     loss = -delta.clip(upper=0)
-    # adjust=False matches TradingView's Wilder Smoothing exactly
     avg_gain = gain.ewm(alpha=1 / period, min_periods=period, adjust=False).mean()
     avg_loss = loss.ewm(alpha=1 / period, min_periods=period, adjust=False).mean()
     rs = avg_gain / avg_loss.replace(0, 1e-10)
@@ -332,7 +325,6 @@ def compute_rsi(closes: pd.Series, period: int = RSI_PERIOD) -> float:
 
 def get_baseline_metrics(yahoo_ticker: str, date: datetime.date):
     try:
-        # Extended lookback to 365 days for accurate RSI warm-up
         start = date - datetime.timedelta(days=365)
         end = date + datetime.timedelta(days=7)
         hist = yf.Ticker(yahoo_ticker).history(start=start, end=end)
@@ -361,17 +353,16 @@ def get_baseline_metrics(yahoo_ticker: str, date: datetime.date):
 
 def get_live_metrics_enhanced(yahoo_ticker: str) -> dict:
     try:
-        # Extended to 1y to match TradingView live RSI smoothing and to compute live weekly RSI
         hist = yf.Ticker(yahoo_ticker).history(period="1y", interval="1d")
         if hist.empty or len(hist) < 5:
             return None
         
+        closes = hist["Close"]
         today = hist.iloc[-1]
         yesterday = hist.iloc[-2]
         day3_ago = hist.iloc[-4]
         
-        # Calculate live Weekly RSI
-        weekly_closes = hist["Close"].resample('W-FRI').last().dropna()
+        weekly_closes = closes.resample('W-FRI').last().dropna()
         weekly_rsi = compute_rsi(weekly_closes) if len(weekly_closes) > 14 else 50.0
 
         return {
@@ -380,8 +371,15 @@ def get_live_metrics_enhanced(yahoo_ticker: str) -> dict:
             "prev_close": float(yesterday["Close"]),
             "prev_volume": float(yesterday["Volume"]),
             "close_3d_ago": float(day3_ago["Close"]),
-            "rsi": compute_rsi(hist["Close"]),
+            "rsi": compute_rsi(closes),
             "weekly_rsi": weekly_rsi,
+            "ema_10": float(closes.ewm(span=10, adjust=False).mean().iloc[-1]),
+            "ema_20": float(closes.ewm(span=20, adjust=False).mean().iloc[-1]),
+            "ema_21": float(closes.ewm(span=21, adjust=False).mean().iloc[-1]),
+            "ema_50": float(closes.ewm(span=50, adjust=False).mean().iloc[-1]),
+            "ema_200": float(closes.ewm(span=200, adjust=False).mean().iloc[-1]),
+            "sma_50": float(closes.rolling(50).mean().iloc[-1] if len(closes) >= 50 else 0),
+            "sma_200": float(closes.rolling(200).mean().iloc[-1] if len(closes) >= 200 else 0),
         }
     except Exception as e:
         log.warning("Could not fetch extended metrics for %s: %s", yahoo_ticker, e)
@@ -471,7 +469,6 @@ def compute_rs_return(closes: pd.Series, lookback: int = RS_LOOKBACK_DAYS):
     return (end_price / start_price - 1) * 100
 
 def get_market_cap_cr(symbol: str) -> float:
-    """Helper to fetch Market Cap in Crores."""
     try:
         t = yf.Ticker(f"{symbol}.NS")
         mcap = t.fast_info.get("marketCap") or t.fast_info.get("market_cap")
@@ -507,7 +504,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         if len(closes) < 210 or len(volumes) < 50:
             continue
 
-        # --- MARKET CAP FILTER (300 Cr to 31,000 Cr) ---
         mcap_cr = get_market_cap_cr(symbol)
         if mcap_cr is not None:
             if mcap_cr < MIN_MARKET_CAP_CR or mcap_cr > MAX_MARKET_CAP_CR:
@@ -523,12 +519,10 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         base_low = float(lows.iloc[-ZANGER_BASE_LOOKBACK_DAYS - 1:-1].min()) if len(lows) > ZANGER_BASE_LOOKBACK_DAYS else float(lows.min())
         prev_close = float(closes.iloc[-1])
 
-        # Multi-Timeframe RSI baseline metrics
         monthly_closes = closes.resample('ME').last().dropna()
         monthly_rsi = compute_rsi(monthly_closes) if len(monthly_closes) > 14 else 50.0
         yesterday_rsi = compute_rsi(closes)
 
-        # Yesterday's EMAs
         ema_10 = float(closes.ewm(span=10, adjust=False).mean().iloc[-1])
         ema_21 = float(closes.ewm(span=21, adjust=False).mean().iloc[-1])
         ema_50 = float(closes.ewm(span=50, adjust=False).mean().iloc[-1])
@@ -644,7 +638,6 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
 
         live_weekly_rsi = metrics["weekly_rsi"]
         
-        # --- GLOBAL RESTRICTION: SKIP IF WEEKLY RSI >= 57 ---
         if live_weekly_rsi >= MAX_WEEKLY_RSI:
             continue
 
@@ -659,7 +652,7 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
         base_high = entry.get("base_high")
         pct_change = (price - prev_close) / prev_close * 100 if prev_close else None
 
-        # --- 1. Dan Zanger Early Entry Breakout ---
+        # 1. Dan Zanger Early Entry Breakout
         if (not entry.get("zanger_alerted") and base_high and avg_vol50 and pct_change is not None):
             if pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50 and price >= (base_high * 0.95):
                 entry["zanger_alerted"] = True
@@ -670,7 +663,7 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
                 )
                 log.info("ZANGER EARLY breakout: %s @ %.2f", symbol, price)
 
-        # --- 2. Pradeep Bonde 4% Early Entry Mod ---
+        # 2. Pradeep Bonde 4% Early Entry Mod
         if (not entry.get("bonde_alerted") and pct_change is not None and prev_volume is not None and close_3d_ago):
             return_3d = (prev_close - close_3d_ago) / close_3d_ago * 100
             if (entry.get("stage2") and return_3d < 1.0 and volume > prev_volume
@@ -683,7 +676,7 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
                 )
                 log.info("BONDE EARLY trigger: %s move=%.1f%%", symbol, pct_change)
 
-        # --- 3. Horizontal Resistance Proximity Scanner ---
+        # 3. Horizontal Resistance Proximity Scanner
         if not entry.get("resistance_alerted") and base_high:
             if 0 < ((base_high - price) / base_high * 100) <= 4.0:
                 entry["resistance_alerted"] = True
@@ -693,16 +686,16 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
                 )
                 log.info("RESISTANCE Scanner: %s @ %.2f", symbol, price)
 
-        # --- 4. Multi-Timeframe RSI & Key EMA Scanner ---
+        # 4. Multi-Timeframe RSI & Key EMA Scanner
         if not entry.get("mtf_alerted") and live_rsi is not None:
             m_rsi = entry.get("monthly_rsi", 50.0)
             y_rsi = entry.get("yesterday_rsi", 50.0)
 
-            live_ema_10 = (price - entry["ema_10_prev"]) * (2/11) + entry["ema_10_prev"]
-            live_ema_21 = (price - entry["ema_21_prev"]) * (2/22) + entry["ema_21_prev"]
-            live_ema_50 = (price - entry["ema_50_prev"]) * (2/51) + entry["ema_50_prev"]
+            live_ema_10 = metrics["ema_10"]
+            live_ema_21 = metrics["ema_21"]
+            live_ema_50 = metrics["ema_50"]
             live_ema_100 = (price - entry["ema_100_prev"]) * (2/101) + entry["ema_100_prev"]
-            live_ema_200 = (price - entry["ema_200_prev"]) * (2/201) + entry["ema_200_prev"]
+            live_ema_200 = metrics["ema_200"]
 
             ema_condition = (
                 price >= live_ema_200 * 1.03 or
@@ -729,6 +722,50 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
                 log.info("MTF SCANNER: %s @ %.2f", symbol, price)
 
     return momentum_state
+
+# ----------------------------------------------------------------------
+# GOOGLE SHEETS DYNAMIC CUSTOM ALERTS
+# ----------------------------------------------------------------------
+
+def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
+    """Fetches dynamic alerts from published Google Sheet CSV."""
+    if not sheet_url or "docs.google.com" not in sheet_url:
+        return {}
+    try:
+        df = pd.read_csv(sheet_url)
+        df.columns = [str(c).strip().lower() for c in df.columns]
+        
+        required_cols = {"exchange", "symbol", "metric", "condition", "target"}
+        if not required_cols.issubset(set(df.columns)):
+            log.warning("Google Sheet missing required columns: %s", required_cols)
+            return {}
+
+        sheet_alerts = {}
+        for _, row in df.dropna(subset=["symbol", "metric", "condition", "target"]).iterrows():
+            sym = str(row["symbol"]).strip().upper()
+            exchange = str(row["exchange"]).strip().upper()
+            metric = str(row["metric"]).strip().lower()
+            condition = str(row["condition"]).strip().lower()
+            
+            # SMART TARGET PARSING: Is it a fixed number or a dynamic MA name?
+            target_raw = str(row["target"]).strip().lower()
+            try:
+                target = float(target_raw)  # e.g., 35.5 or 1500.0
+            except ValueError:
+                target = target_raw         # e.g., 'ema_50'
+
+            if condition not in ("above", "below"):
+                continue
+
+            prefix = "BSE:" if exchange == "BSE" else ""
+            alert_key = f"{prefix}{sym}"
+            sheet_alerts[alert_key] = {"metric": metric, "condition": condition, "target": target}
+
+        return sheet_alerts
+    except Exception as e:
+        log.warning("Could not fetch alerts from Google Sheet: %s", e)
+        return {}
+
 
 # ----------------------------------------------------------------------
 # MARKET HOURS & POLLING
@@ -784,8 +821,8 @@ def poll_once(state: dict) -> dict:
     # 1. Result Day RSI Breakout Checks
     # -------------------------------------------------------------
     for symbol, entry in state.items():
-        if symbol.startswith("custom_rsi_"):
-            continue # Skip custom alerts in this loop
+        if symbol.startswith("custom_alert_"):
+            continue 
 
         if "day_low" not in entry or "baseline_rsi" not in entry:
             yahoo_ticker = entry.get("yahoo_ticker", f"{symbol}.NS")
@@ -815,7 +852,6 @@ def poll_once(state: dict) -> dict:
         if not metrics:
             continue
         
-        # --- GLOBAL RESTRICTION: SKIP IF WEEKLY RSI >= 57 ---
         if metrics["weekly_rsi"] >= MAX_WEEKLY_RSI:
             continue
 
@@ -857,27 +893,28 @@ def poll_once(state: dict) -> dict:
                 )
 
     # -------------------------------------------------------------
-    # 2. CUSTOM MANUAL RSI ALERTS 
+    # 2. CUSTOM MANUAL ALERTS (Static + Dynamic Google Sheet)
     # -------------------------------------------------------------
-    custom_alerts = {
-        "HINDWAREAP": {"condition": "above", "target_rsi": 32.63},
-        "KOTHARIPET": {"condition": "below", "target_rsi": 36.63},
-        "BSE:PGFOILQ": {"condition": "below", "target_rsi": 34.2},
-        "TITAN":       {"condition": "below", "target_rsi": 42},
-        "BDL":       {"condition": "below", "target_rsi": 33.5},
+    hardcoded_alerts = {
+        "HINDWAREAP": {"metric": "rsi", "condition": "above", "target": 32.63},
+        "KOTHARIPET": {"metric": "rsi", "condition": "below", "target": 36.63},
+        "BSE:PGFOILQ": {"metric": "rsi", "condition": "below", "target": 34.2},
     }
 
+    # Pull dynamic alerts from Google Sheet and merge
+    sheet_alerts = fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)
+    custom_alerts = {**hardcoded_alerts, **sheet_alerts}
+
     for symbol, rules in custom_alerts.items():
-        state_key = f"custom_rsi_{symbol}"
+        # Unique key so Price and RSI trackers don't interfere with each other
+        state_key = f"custom_alert_{symbol}_{rules['metric']}"
         if state_key not in state:
             state[state_key] = {"alerted": False, "last_alert": None}
         
         c_entry = state[state_key]
         
-        # Check if it's time to alert (respects the 30-min cooldown)
         if not c_entry.get("alerted") or cooldown_elapsed(c_entry, "last_alert"):
             
-            # SMART ROUTING: Translate "BSE:SYMBOL" to Yahoo's "SYMBOL.BO"
             clean_symbol = symbol.upper().strip()
             if clean_symbol.startswith("BSE:"):
                 display_name = clean_symbol.split(":")[1]
@@ -890,33 +927,45 @@ def poll_once(state: dict) -> dict:
                 yahoo_ticker = clean_symbol
             else:
                 display_name = clean_symbol
-                yahoo_ticker = f"{clean_symbol}.NS" # Default to NSE
+                yahoo_ticker = f"{clean_symbol}.NS" 
 
             c_metrics = get_live_metrics_enhanced(yahoo_ticker)
             
             if c_metrics:
-                live_rsi = c_metrics["rsi"]
-                live_price = c_metrics["price"]
+                metric_type = rules["metric"]
+                target_rule = rules["target"]
+                cond = rules["condition"]
                 
-                if rules["condition"] == "below" and live_rsi < rules["target_rsi"]:
-                    c_entry["alerted"] = True
-                    c_entry["last_alert"] = datetime.datetime.now().isoformat()
-                    send_telegram_message(
-                        f"🎯 <b>{display_name}</b> Custom Alert!\n"
-                        f"Live RSI ({live_rsi:.1f}) has dropped BELOW {rules['target_rsi']}.\n"
-                        f"Price: \u20b9{live_price:.2f}"
-                    )
-                    log.info("CUSTOM RSI ALERT: %s RSI=%.1f (Target < %s)", display_name, live_rsi, rules["target_rsi"])
+                # 1. Resolve Current Value
+                current_val = c_metrics.get(metric_type)
+                if current_val is None:
+                    continue
                     
-                elif rules["condition"] == "above" and live_rsi > rules["target_rsi"]:
+                # 2. Resolve Target Value (Fixed Float vs Dynamic MA)
+                if isinstance(target_rule, str):
+                    target_val = c_metrics.get(target_rule)
+                    if target_val is None:
+                        continue
+                    target_str = f"{target_rule.upper()} (₹{target_val:.2f})"
+                else:
+                    target_val = target_rule
+                    target_str = f"{target_val:.1f}" if "rsi" in metric_type else f"₹{target_val:.2f}"
+                
+                label_str = metric_type.replace("_", " ").upper()
+                val_str = f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:.2f}"
+                
+                # 3. Evaluate the condition
+                if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
                     c_entry["alerted"] = True
                     c_entry["last_alert"] = datetime.datetime.now().isoformat()
+                    
+                    cross_txt = "dropped BELOW" if cond == "below" else "crossed ABOVE"
                     send_telegram_message(
                         f"🎯 <b>{display_name}</b> Custom Alert!\n"
-                        f"Live RSI ({live_rsi:.1f}) has crossed ABOVE {rules['target_rsi']}.\n"
-                        f"Price: \u20b9{live_price:.2f}"
+                        f"Live {label_str} ({val_str}) has {cross_txt} {target_str}.\n"
+                        f"Current Price: ₹{c_metrics['price']:.2f}"
                     )
-                    log.info("CUSTOM RSI ALERT: %s RSI=%.1f (Target > %s)", display_name, live_rsi, rules["target_rsi"])
+                    log.info("CUSTOM ALERT: %s %s=%s (Target %s %s)", display_name, label_str, val_str, cond, target_str)
 
     return state
 
