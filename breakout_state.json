@@ -134,5 +134,9 @@
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
     "last_alert": null
+  },
+  "custom_alert_BASILIC_price": {
+    "alerted": false,
+    "last_alert": null
   }
 }
