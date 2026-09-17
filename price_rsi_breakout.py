@@ -7,7 +7,7 @@ Includes:
   3. Intraday Dan Zanger & Pradeep Bonde Early Entry Breakout
   4. Intraday Horizontal Resistance & MTF RSI Scanner
   5. Custom Manual Alerts Tracker (Static + Google Sheet Integration)
-     Supports Dynamic Metrics (Price, RSI, EMA, SMA) and BSE: prefix.
+     Supports Dynamic Metrics: Price, RSI, EMA, SMA, Change from Open/Close.
 """
 
 import os
@@ -73,7 +73,7 @@ STATE_FILE = Path(__file__).parent / "breakout_state.json"
 NIFTY500_CACHE_FILE = Path(__file__).parent / "nifty500_symbols.json"
 LOG_FILE = Path(__file__).parent / "breakout_notifier.log"
 
-# Nifty Total Market Index (750 stocks covering Large, Mid, Small & Micro)
+# Nifty Total Market Index
 NSE_CSV_URL = "https://archives.nseindia.com/content/indices/ind_niftytotalmarket_list.csv"
 
 FALLBACK_SYMBOLS = [
@@ -365,14 +365,29 @@ def get_live_metrics_enhanced(yahoo_ticker: str) -> dict:
         weekly_closes = closes.resample('W-FRI').last().dropna()
         weekly_rsi = compute_rsi(weekly_closes) if len(weekly_closes) > 14 else 50.0
 
+        # Calculate Open/Close specific differences
+        price = float(today["Close"])
+        open_price = float(today["Open"])
+        prev_close = float(yesterday["Close"])
+
+        open_change_rs = price - open_price
+        open_change_pct = (open_change_rs / open_price * 100) if open_price else 0.0
+
+        day_change_rs = price - prev_close
+        day_change_pct = (day_change_rs / prev_close * 100) if prev_close else 0.0
+
         return {
-            "price": float(today["Close"]),
+            "price": price,
             "volume": float(today["Volume"]),
-            "prev_close": float(yesterday["Close"]),
+            "prev_close": prev_close,
             "prev_volume": float(yesterday["Volume"]),
             "close_3d_ago": float(day3_ago["Close"]),
             "rsi": compute_rsi(closes),
             "weekly_rsi": weekly_rsi,
+            "open_change_rs": open_change_rs,
+            "open_change_pct": open_change_pct,
+            "day_change_rs": day_change_rs,
+            "day_change_pct": day_change_pct,
             "ema_10": float(closes.ewm(span=10, adjust=False).mean().iloc[-1]),
             "ema_20": float(closes.ewm(span=20, adjust=False).mean().iloc[-1]),
             "ema_21": float(closes.ewm(span=21, adjust=False).mean().iloc[-1]),
@@ -750,7 +765,7 @@ def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
             # SMART TARGET PARSING: Is it a fixed number or a dynamic MA name?
             target_raw = str(row["target"]).strip().lower()
             try:
-                target = float(target_raw)  # e.g., 35.5 or 1500.0
+                target = float(target_raw)  # e.g., 35.5, 1500.0, or -12.0
             except ValueError:
                 target = target_raw         # e.g., 'ema_50'
 
@@ -895,18 +910,14 @@ def poll_once(state: dict) -> dict:
     # -------------------------------------------------------------
     # 2. CUSTOM MANUAL ALERTS (Static + Dynamic Google Sheet)
     # -------------------------------------------------------------
-    hardcoded_alerts = {
-        "HINDWAREAP": {"metric": "rsi", "condition": "above", "target": 32.63},
-        "KOTHARIPET": {"metric": "rsi", "condition": "below", "target": 36.63},
-        "BSE:PGFOILQ": {"metric": "rsi", "condition": "below", "target": 34.2},
-    }
+    hardcoded_alerts = {}
 
     # Pull dynamic alerts from Google Sheet and merge
     sheet_alerts = fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)
     custom_alerts = {**hardcoded_alerts, **sheet_alerts}
 
     for symbol, rules in custom_alerts.items():
-        # Unique key so Price and RSI trackers don't interfere with each other
+        # Unique key so Price, RSI, and Open drops don't interfere with each other
         state_key = f"custom_alert_{symbol}_{rules['metric']}"
         if state_key not in state:
             state[state_key] = {"alerted": False, "last_alert": None}
@@ -941,7 +952,7 @@ def poll_once(state: dict) -> dict:
                 if current_val is None:
                     continue
                     
-                # 2. Resolve Target Value (Fixed Float vs Dynamic MA)
+                # 2. Resolve Target Value
                 if isinstance(target_rule, str):
                     target_val = c_metrics.get(target_rule)
                     if target_val is None:
@@ -949,12 +960,29 @@ def poll_once(state: dict) -> dict:
                     target_str = f"{target_rule.upper()} (₹{target_val:.2f})"
                 else:
                     target_val = target_rule
-                    target_str = f"{target_val:.1f}" if "rsi" in metric_type else f"₹{target_val:.2f}"
+                    # Formatting based on metric type
+                    if "pct" in metric_type:
+                        target_str = f"{target_val:+.2f}%"
+                    elif "rsi" in metric_type:
+                        target_str = f"{target_val:.1f}"
+                    elif "change" in metric_type:
+                        target_str = f"₹{target_val:+.2f}"
+                    else:
+                        target_str = f"₹{target_val:.2f}"
                 
-                label_str = metric_type.replace("_", " ").upper()
-                val_str = f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:.2f}"
+                label_str = metric_type.replace("_", " ").title()
                 
-                # 3. Evaluate the condition
+                # 3. Format the Current Value
+                if "pct" in metric_type:
+                    val_str = f"{current_val:+.2f}%"
+                elif "rsi" in metric_type:
+                    val_str = f"{current_val:.1f}"
+                elif "change" in metric_type:
+                    val_str = f"₹{current_val:+.2f}"
+                else:
+                    val_str = f"₹{current_val:.2f}"
+                
+                # 4. Evaluate the condition
                 if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
                     c_entry["alerted"] = True
                     c_entry["last_alert"] = datetime.datetime.now().isoformat()
@@ -962,7 +990,7 @@ def poll_once(state: dict) -> dict:
                     cross_txt = "dropped BELOW" if cond == "below" else "crossed ABOVE"
                     send_telegram_message(
                         f"🎯 <b>{display_name}</b> Custom Alert!\n"
-                        f"Live {label_str} ({val_str}) has {cross_txt} {target_str}.\n"
+                        f"{label_str} ({val_str}) has {cross_txt} {target_str}.\n"
                         f"Current Price: ₹{c_metrics['price']:.2f}"
                     )
                     log.info("CUSTOM ALERT: %s %s=%s (Target %s %s)", display_name, label_str, val_str, cond, target_str)
