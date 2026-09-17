@@ -898,7 +898,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "APOLLO": {
       "sma50": 393.8220007324219,
@@ -1478,7 +1478,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "AZAD": {
       "sma50": 2602.0580126953123,
@@ -1680,7 +1680,7 @@
       "rs_rank": 45.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BATAINDIA": {
@@ -5248,7 +5248,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "HCC": {
       "sma50": 22.080600090026856,
@@ -6726,7 +6726,7 @@
       "rs_rank": 42.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "JUBLFOOD": {
@@ -9482,7 +9482,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "PRUDENT": {
       "sma50": 3208.707998046875,
@@ -11686,7 +11686,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SURYAROSNI": {
       "sma50": 231.19260131835938,
