@@ -13,11 +13,11 @@
   },
   "custom_rsi_TITAN": {
     "alerted": true,
-    "last_alert": "2026-09-17T05:00:56.906695"
+    "last_alert": "2026-09-17T05:45:43.052236"
   },
   "custom_rsi_BDL": {
     "alerted": true,
-    "last_alert": "2026-09-17T05:01:03.076082"
+    "last_alert": "2026-09-17T05:45:43.657071"
   },
   "BBOX": {
     "result_date": "2026-09-04T00:00:00",
@@ -129,5 +129,16 @@
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-09-16T03:45:39.165917",
     "price_low_last_alert": "2026-09-16T04:00:56.941824"
+  },
+  "CPPLUS": {
+    "result_date": "2026-09-17T00:00:00",
+    "day_high": 3549.39990234375,
+    "day_low": 3440.0,
+    "baseline_rsi": 42.84979886151653,
+    "yahoo_ticker": "CPPLUS.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": false
   }
 }
