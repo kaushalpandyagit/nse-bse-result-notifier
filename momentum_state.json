@@ -2463,7 +2463,7 @@
       "rs_rank": 48.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "CEATLTD": {
@@ -2577,7 +2577,7 @@
       "ema_200_prev": 33.64312941733764,
       "mcap_cr": 27642.980319476537,
       "rs_rank": 17.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -7625,7 +7625,7 @@
       "rs_rank": 39.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "MAHSEAMLES": {
@@ -10293,7 +10293,7 @@
       "rs_rank": 30.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SAGILITY": {
@@ -10990,7 +10990,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SKIPPER": {
       "sma50": 545.2810009765625,
