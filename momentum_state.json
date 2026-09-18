@@ -521,7 +521,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "AGARWALEYE": {
       "sma50": 502.1390002441406,
@@ -1884,7 +1884,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "BIRLACORPN": {
       "sma50": 900.3630041503907,
@@ -2580,7 +2580,7 @@
       "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CENTURYPLY": {
       "sma50": 764.3550012207031,
@@ -2896,7 +2896,7 @@
       "ema_200_prev": 841.8892532050568,
       "mcap_cr": 8915.643230602283,
       "rs_rank": 53.8,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -6379,7 +6379,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JKPAPER": {
       "sma50": 391.08799743652344,
@@ -6640,7 +6640,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JUBLINGREA": {
       "sma50": 711.2179968261719,
@@ -8350,7 +8350,7 @@
       "rs_rank": 34.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "NETWEB": {
@@ -8756,7 +8756,7 @@
       "rs_rank": 30.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "OSWALPUMPS": {
