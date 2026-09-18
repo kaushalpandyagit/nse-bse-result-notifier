@@ -1391,7 +1391,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "AWL": {
       "sma50": 190.4802001953125,
@@ -7623,7 +7623,7 @@
       "ema_200_prev": 13179.537211935867,
       "mcap_cr": 15029.7097768,
       "rs_rank": 39.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -12495,7 +12495,7 @@
       "ema_200_prev": 428.94794966902737,
       "mcap_cr": 9831.82142745,
       "rs_rank": 59.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
