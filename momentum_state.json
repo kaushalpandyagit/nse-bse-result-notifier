@@ -3708,9 +3708,9 @@
       "ema_200_prev": 323.89704886108535,
       "mcap_cr": 19045.46539942599,
       "rs_rank": 36.8,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "ELECON": {
