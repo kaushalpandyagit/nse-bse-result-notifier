@@ -5943,7 +5943,7 @@
       "rs_rank": 27.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "INTELLECT": {
@@ -8670,7 +8670,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "OPTIEMUS": {
       "sma50": 582.3369995117188,
@@ -10322,7 +10322,7 @@
       "rs_rank": 58.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "SAMHI": {
