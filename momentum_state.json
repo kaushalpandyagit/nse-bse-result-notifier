@@ -1941,7 +1941,7 @@
       "rs_rank": 35.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BLS": {
@@ -2898,7 +2898,7 @@
       "rs_rank": 53.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "CMSINFO": {
@@ -4378,7 +4378,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "GABRIEL": {
       "sma50": 1396.9980053710938,
@@ -8669,7 +8669,7 @@
       "rs_rank": 43.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "OPTIEMUS": {
@@ -9945,8 +9945,8 @@
       "rs_rank": 51.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "RENUKA": {
       "sma50": 23.212400054931642,
@@ -10323,7 +10323,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SAMHI": {
       "sma50": 165.33160034179687,
@@ -12497,7 +12497,7 @@
       "rs_rank": 59.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TTML": {
