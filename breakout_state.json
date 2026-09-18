@@ -125,8 +125,8 @@
     "rsi_down_last_alert": "2026-09-17T07:45:37.666795"
   },
   "custom_alert_HINDWAREAP_rsi": {
-    "alerted": false,
-    "last_alert": null
+    "alerted": true,
+    "last_alert": "2026-09-18T04:45:42.868466"
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
