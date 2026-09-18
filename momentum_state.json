@@ -5567,7 +5567,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "IGL": {
       "sma50": 151.50880004882814,
@@ -11918,7 +11918,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TEGA": {
       "sma50": 1642.6919995117187,
@@ -12266,7 +12266,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TITAGARH": {
       "sma50": 841.8759997558594,
