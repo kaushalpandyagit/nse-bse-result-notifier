@@ -112,7 +112,7 @@
   },
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
-    "last_alert": "2026-09-21T09:45:43.584808"
+    "last_alert": "2026-09-21T10:15:46.784900"
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -146,5 +146,16 @@
   "custom_alert_PRADPME_weekly_rsi": {
     "alerted": false,
     "last_alert": null
+  },
+  "LLOYDSME": {
+    "result_date": "2026-09-21T00:00:00",
+    "day_high": 1839.800048828125,
+    "day_low": 1812.699951171875,
+    "baseline_rsi": 47.471919145565245,
+    "yahoo_ticker": "LLOYDSME.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": false
   }
 }
