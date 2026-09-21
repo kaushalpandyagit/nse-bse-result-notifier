@@ -1736,7 +1736,7 @@
       "ema_200_prev": 718.801285796801,
       "mcap_cr": 14406.847726395905,
       "rs_rank": 89.8,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -2983,9 +2983,9 @@
       "ema_200_prev": 494.4991484135662,
       "mcap_cr": 16757.763054,
       "rs_rank": 79.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "CONCORDBIO": {
@@ -10207,7 +10207,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SAFARI": {
       "sma50": 1539.533994140625,
