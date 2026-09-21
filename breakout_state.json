@@ -129,5 +129,16 @@
   "custom_alert_ALLETEC_price": {
     "alerted": true,
     "last_alert": "2026-09-18T10:29:33.741128"
+  },
+  "HSCL": {
+    "result_date": "2026-09-21T00:00:00",
+    "day_high": 692.7999877929688,
+    "day_low": 677.1500244140625,
+    "baseline_rsi": 52.200970973917755,
+    "yahoo_ticker": "HSCL.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": false
   }
 }
