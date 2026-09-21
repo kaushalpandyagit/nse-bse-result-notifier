@@ -138,7 +138,8 @@
     "yahoo_ticker": "HSCL.NS",
     "price_high_alerted": false,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": false
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "rsi_up_last_alert": "2026-09-21T05:00:57.944063"
   }
 }
