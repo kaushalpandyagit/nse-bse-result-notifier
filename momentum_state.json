@@ -4987,7 +4987,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "GRINDWELL": {
       "sma50": 2032.4140161132811,
@@ -7046,7 +7046,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "KPIL": {
       "sma50": 1359.8419921875,
@@ -12207,7 +12207,7 @@
       "rs_rank": 67.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TITAGARH": {
