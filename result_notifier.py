@@ -6,7 +6,7 @@ Covers:
   2. Order & Contract Wins (with Rupee value extraction)
   3. Insider Trading & Promoter Actions (Filters OUT generic Trading Window closures)
   4. NSE Exchange Circulars
-  5. AGMs, E-Voting, and Investor / Analyst Meets
+  5. AGMs, E-Voting, and Investor / Analyst Meets (with Date Extraction)
   6. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
@@ -37,7 +37,6 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
 POLL_INTERVAL_MINUTES = 15
 
-# 1. Financial Results Keywords
 RESULT_KEYWORDS = [
     "financial result", "financial results", "quarterly result",
     "quarterly results", "board meeting outcome", "un-audited",
@@ -46,7 +45,6 @@ RESULT_KEYWORDS = [
     "standalone and consolidated financial", "submitted to the exchange",
 ]
 
-# 2. Order Win Keywords
 ORDER_KEYWORDS = [
     "award of order", "awarded order", "awarded contract", "award of contract",
     "receipt of order", "received order", "receipt of contract", "bagging of order",
@@ -57,7 +55,6 @@ ORDER_KEYWORDS = [
     "order/contract", "order / contract",
 ]
 
-# 3. Insider Trading & Promoter Disclosures Keywords
 INSIDER_PROMOTER_KEYWORDS = [
     "regulation 7(2)", "reg 7(2)", "reg. 7(2)", "form c", "insider trading",
     "prohibition of insider trading", "pit regulations",
@@ -73,7 +70,6 @@ INSIDER_PROMOTER_KEYWORDS = [
     "promoter acquisition", "market purchase by promoter"
 ]
 
-# 4. Exchange Circular Keywords
 CIRCULAR_KEYWORDS = [
     "special call auction",
     "periodic call auction",
@@ -82,7 +78,6 @@ CIRCULAR_KEYWORDS = [
     "price discovery"
 ]
 
-# 5. AGMs, E-Voting & Investor Meets Keywords
 MEETING_KEYWORDS = [
     "annual general meeting", " agm ", "e-voting", "evoting",
     "investor meet", "analyst meet", "earnings call",
@@ -95,7 +90,17 @@ _AMOUNT_UNIT_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
-WATCHLIST = []  # Empty = track entire market
+# Date regex to catch "25-Sep-2026", "25/09/2026", "25th September 2026", etc.
+_DATE_PATTERN = re.compile(
+    r"\b("
+    r"\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s*,?\s*(?:20\d{2})|"
+    r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?\s*,?\s*(?:20\d{2})|"
+    r"\d{1,2}[-./]\d{1,2}[-./](?:20\d{2}|\d{2})"
+    r")\b",
+    re.IGNORECASE
+)
+
+WATCHLIST = []  
 
 SEEN_FILE = Path(__file__).parent / "seen_announcements.json"
 LOG_FILE = Path(__file__).parent / "notifier.log"
@@ -141,10 +146,10 @@ def is_polling_allowed_now() -> bool:
     now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
     weekday = now.weekday()
 
-    if weekday < 5:  # Weekday
+    if weekday < 5:  
         start = now.replace(hour=8, minute=0, second=0, microsecond=0)
         end = now.replace(hour=22, minute=30, second=0, microsecond=0)
-    else:  # Weekend
+    else:  
         start = now.replace(hour=9, minute=0, second=0, microsecond=0)
         end = now.replace(hour=21, minute=0, second=0, microsecond=0)
 
@@ -195,10 +200,17 @@ def extract_order_value(text: str):
         return None
     return f"{match.group(1)} {match.group(2)}"
 
+def extract_meeting_date(text: str):
+    if not text:
+        return None
+    match = _DATE_PATTERN.search(text)
+    if not match:
+        return None
+    return match.group(1).strip()
+
 def classify_announcement(subject: str) -> str:
     subj_lower = f" {subject.lower()} "
     
-    # 🚨 EXCLUSION RULE: Drop all "Trading Window Closure" filings immediately
     if "trading window" in subj_lower:
         return None
         
@@ -364,7 +376,6 @@ def poll_once(seen: set) -> set:
 
     new_alerts = []
     for item in all_items:
-        # 1. Exchange Circulars
         if item.get("category") == "circular":
             fp = fingerprint(item["company"], item["subject"], item["date"])
             if fp not in seen:
@@ -372,7 +383,6 @@ def poll_once(seen: set) -> set:
                 new_alerts.append(item)
             continue
             
-        # 2. Corporate Announcements
         if not item.get("company") or not item.get("subject"):
             continue
         if not matches_watchlist(item["company"], item["symbol"]):
@@ -396,17 +406,23 @@ def poll_once(seen: set) -> set:
         if cat == "circular":
             header = f"🏛️ <b>{item['company']}</b> \u2014 Market Wide Circular"
             body = f"{item['subject']}\n\U0001F550 {item['date']}"
+            
         elif cat == "order":
             order_val = extract_order_value(item["subject"])
             val_line = f"\U0001F4B0 Value: \u20b9{order_val}\n" if order_val else "\U0001F4B0 Value: check filing\n"
             header = f"\U0001F4E6 <b>{item['company']}</b> ({item['source']}) \u2014 Order/Contract Win"
             body = f"{item['subject']}\n{val_line}\U0001F550 {item['date']}"
+            
         elif cat == "insider_promoter":
             header = f"\U0001F50D <b>{item['company']}</b> ({item['source']}) \u2014 Insider / Promoter Action"
             body = f"{item['subject']}\n\U0001F550 {item['date']}"
+            
         elif cat == "meeting":
+            meet_date = extract_meeting_date(item["subject"])
+            date_line = f"🗓️ Scheduled for: <b>{meet_date}</b>\n" if meet_date else "🗓️ Scheduled for: <i>Check attached PDF</i>\n"
             header = f"📅 <b>{item['company']}</b> ({item['source']}) \u2014 AGM / Investor Meet"
-            body = f"{item['subject']}\n\U0001F550 {item['date']}"
+            body = f"{item['subject']}\n{date_line}\U0001F550 {item['date']}"
+            
         else:  # result
             header = f"\U0001F4E2 <b>{item['company']}</b> ({item['source']}) \u2014 Financial Result"
             body = f"{item['subject']}\n\U0001F550 {item['date']}"
