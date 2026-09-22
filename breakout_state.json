@@ -22,10 +22,11 @@
     "yahoo_ticker": "PARKHOSPS.NS",
     "price_high_alerted": false,
     "price_low_alerted": true,
-    "rsi_up_alerted": false,
+    "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "price_low_last_alert": "2026-09-10T10:15:42.310946",
-    "rsi_down_last_alert": "2026-09-10T10:15:43.004192"
+    "rsi_down_last_alert": "2026-09-10T10:15:43.004192",
+    "rsi_up_last_alert": "2026-09-22T05:45:40.748162"
   },
   "LICI": {
     "result_date": "2026-09-09T00:00:00",
@@ -112,7 +113,7 @@
   },
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
-    "last_alert": "2026-09-22T05:00:58.856110"
+    "last_alert": "2026-09-22T05:45:43.467122"
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
