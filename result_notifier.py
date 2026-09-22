@@ -1,12 +1,13 @@
 """
-NSE + BSE Live Result, Order Win, Insider Trade & Circular Notifier -> Telegram
-===================================================================================
+NSE + BSE Live Result, Order Win, Insider Trade, Circular & Meeting Notifier -> Telegram
+==========================================================================================
 Covers:
   1. Financial Results (Regulation 33 / Board outcomes)
   2. Order & Contract Wins (with Rupee value extraction)
-  3. Insider Trading & Promoter Disclosures (SEBI PIT Reg 7(2), SAST Reg 29/31, Pledges)
-  4. NSE Exchange Circulars (Special Call Auctions, Periodic Call Auctions)
-  5. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
+  3. Insider Trading & Promoter Actions (Filters OUT generic Trading Window closures)
+  4. NSE Exchange Circulars
+  5. AGMs, E-Voting, and Investor / Analyst Meets
+  6. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
 import os
@@ -81,6 +82,13 @@ CIRCULAR_KEYWORDS = [
     "price discovery"
 ]
 
+# 5. AGMs, E-Voting & Investor Meets Keywords
+MEETING_KEYWORDS = [
+    "annual general meeting", " agm ", "e-voting", "evoting",
+    "investor meet", "analyst meet", "earnings call",
+    "conference call", "schedule of analyst", "investor presentation"
+]
+
 _AMOUNT_UNIT_PATTERN = re.compile(
     r"(?:rs\.?|inr|₹|usd|\$)\s*([\d,]+(?:\.\d+)?)\s*"
     r"(crore|cr\.?|lakh|lac|million|mn|billion|bn)\b",
@@ -130,13 +138,8 @@ def send_telegram_message(text: str) -> bool:
 # ----------------------------------------------------------------------
 
 def is_polling_allowed_now() -> bool:
-    """
-    Polite Schedule:
-      - Mon to Fri: 08:00 AM - 10:30 PM IST
-      - Sat & Sun:  09:00 AM - 09:00 PM IST
-    """
     now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
-    weekday = now.weekday()  # 0=Mon, 4=Fri, 5=Sat, 6=Sun
+    weekday = now.weekday()
 
     if weekday < 5:  # Weekday
         start = now.replace(hour=8, minute=0, second=0, microsecond=0)
@@ -194,12 +197,20 @@ def extract_order_value(text: str):
 
 def classify_announcement(subject: str) -> str:
     subj_lower = f" {subject.lower()} "
+    
+    # 🚨 EXCLUSION RULE: Drop all "Trading Window Closure" filings immediately
+    if "trading window" in subj_lower:
+        return None
+        
     if any(kw in subj_lower for kw in ORDER_KEYWORDS):
         return "order"
+    if any(kw in subj_lower for kw in MEETING_KEYWORDS):
+        return "meeting"
     if any(kw in subj_lower for kw in INSIDER_PROMOTER_KEYWORDS):
         return "insider_promoter"
     if any(kw in subj_lower for kw in RESULT_KEYWORDS) or ("board meeting" in subj_lower and "result" in subj_lower):
         return "result"
+        
     return None
 
 def matches_watchlist(company: str, symbol: str) -> bool:
@@ -353,7 +364,7 @@ def poll_once(seen: set) -> set:
 
     new_alerts = []
     for item in all_items:
-        # 1. Exchange Circulars (Bypass watchlist & categorization)
+        # 1. Exchange Circulars
         if item.get("category") == "circular":
             fp = fingerprint(item["company"], item["subject"], item["date"])
             if fp not in seen:
@@ -392,6 +403,9 @@ def poll_once(seen: set) -> set:
             body = f"{item['subject']}\n{val_line}\U0001F550 {item['date']}"
         elif cat == "insider_promoter":
             header = f"\U0001F50D <b>{item['company']}</b> ({item['source']}) \u2014 Insider / Promoter Action"
+            body = f"{item['subject']}\n\U0001F550 {item['date']}"
+        elif cat == "meeting":
+            header = f"📅 <b>{item['company']}</b> ({item['source']}) \u2014 AGM / Investor Meet"
             body = f"{item['subject']}\n\U0001F550 {item['date']}"
         else:  # result
             header = f"\U0001F4E2 <b>{item['company']}</b> ({item['source']}) \u2014 Financial Result"
