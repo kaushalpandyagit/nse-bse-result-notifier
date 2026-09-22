@@ -12294,7 +12294,7 @@
       "rs_rank": 5.8,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "TRAVELFOOD": {
