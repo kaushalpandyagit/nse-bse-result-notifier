@@ -144,7 +144,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ABDL": {
       "sma50": 618.6290014648438,
@@ -2290,7 +2290,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CAPLIPOINT": {
       "sma50": 2609.7060107421876,
@@ -7248,7 +7248,7 @@
       "rs_rank": 27.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "KSCL": {
@@ -7364,7 +7364,7 @@
       "rs_rank": 26.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "LLOYDSENGG": {
@@ -7713,7 +7713,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "MARKSANS": {
       "sma50": 299.6080014038086,
@@ -9017,7 +9017,7 @@
       "rs_rank": 49.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "PNBHOUSING": {
@@ -12295,7 +12295,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TRAVELFOOD": {
       "sma50": 1307.4800024414062,
