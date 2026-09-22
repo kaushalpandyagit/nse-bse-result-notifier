@@ -10235,7 +10235,7 @@
       "rs_rank": 21.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "SAGILITY": {
@@ -11656,7 +11656,7 @@
       "rs_rank": 35.6,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TARIL": {
