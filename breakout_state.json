@@ -112,7 +112,7 @@
   },
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
-    "last_alert": "2026-09-21T10:15:46.784900"
+    "last_alert": "2026-09-22T03:45:43.582751"
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -137,11 +137,12 @@
     "baseline_rsi": 52.200970973917755,
     "yahoo_ticker": "HSCL.NS",
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-21T05:00:57.944063",
-    "rsi_down_last_alert": "2026-09-21T05:15:43.760518"
+    "rsi_down_last_alert": "2026-09-21T05:15:43.760518",
+    "price_low_last_alert": "2026-09-22T03:45:41.522381"
   },
   "custom_alert_PRADPME_weekly_rsi": {
     "alerted": false,
