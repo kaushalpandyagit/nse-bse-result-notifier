@@ -6,13 +6,14 @@ Covers:
   2. Order & Contract Wins (with Rupee value extraction)
   3. Insider Trading & Promoter Actions (Filters OUT generic Trading Window closures)
   4. NSE Exchange Circulars
-  5. AGMs, E-Voting, and Investor / Analyst Meets (with Date Extraction)
+  5. AGMs, E-Voting, and Investor / Analyst Meets (with Auto-PDF Date Extraction)
   6. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
 import os
 import re
 import sys
+import io
 import json
 import time
 import random
@@ -21,6 +22,13 @@ import datetime
 from pathlib import Path
 
 import requests
+
+# Graceful import for the new PDF reader
+try:
+    import PyPDF2
+except ImportError:
+    PyPDF2 = None
+    print("WARNING: PyPDF2 is not installed. PDF date extraction will be disabled.")
 
 try:
     import pytz
@@ -90,12 +98,12 @@ _AMOUNT_UNIT_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
-# Date regex to catch "25-Sep-2026", "25/09/2026", "25th September 2026", etc.
+# Advanced Date Pattern to catch: 25-Sep-2026, 25/09/2026, 25th September, 2026
 _DATE_PATTERN = re.compile(
     r"\b("
-    r"\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s*,?\s*(?:20\d{2})|"
-    r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?\s*,?\s*(?:20\d{2})|"
-    r"\d{1,2}[-./]\d{1,2}[-./](?:20\d{2}|\d{2})"
+    r"\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s*,?\s*(?:20\d{2})|"
+    r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?\s*,?\s*(?:20\d{2})|"
+    r"\d{1,2}[-./]\d{1,2}[-./](?:20\d{2})"
     r")\b",
     re.IGNORECASE
 )
@@ -419,6 +427,21 @@ def poll_once(seen: set) -> set:
             
         elif cat == "meeting":
             meet_date = extract_meeting_date(item["subject"])
+            
+            # --- NEW: In-Memory PDF Date Extraction ---
+            if not meet_date and item.get("link") and PyPDF2 is not None:
+                try:
+                    time.sleep(random.uniform(1.0, 2.0))
+                    pdf_resp = requests.get(item["link"], headers=get_browser_headers(), timeout=15)
+                    if pdf_resp.status_code == 200:
+                        with io.BytesIO(pdf_resp.content) as f:
+                            reader = PyPDF2.PdfReader(f)
+                            if len(reader.pages) > 0:
+                                pdf_text = reader.pages[0].extract_text()
+                                meet_date = extract_meeting_date(pdf_text)
+                except Exception as e:
+                    log.warning("PDF extraction failed for %s: %s", item['company'], e)
+            
             date_line = f"🗓️ Scheduled for: <b>{meet_date}</b>\n" if meet_date else "🗓️ Scheduled for: <i>Check attached PDF</i>\n"
             header = f"📅 <b>{item['company']}</b> ({item['source']}) \u2014 AGM / Investor Meet"
             body = f"{item['subject']}\n{date_line}\U0001F550 {item['date']}"
