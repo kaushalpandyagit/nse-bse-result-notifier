@@ -2899,7 +2899,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CLEAN": {
       "sma50": 800.2550012207031,
@@ -3885,7 +3885,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "EMBDL": {
       "sma50": 60.99260002136231,
@@ -4407,7 +4407,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "GABRIEL": {
       "sma50": 1401.0440063476562,
@@ -5711,7 +5711,7 @@
       "rs_rank": 65.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "IMFA": {
@@ -6231,10 +6231,10 @@
       "ema_200_prev": 353.8381018682054,
       "mcap_cr": 9627.8942106,
       "rs_rank": 0.9,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "JAMNAAUTO": {
       "sma50": 128.74300048828124,
