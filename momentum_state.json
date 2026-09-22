@@ -12643,7 +12643,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "UTLSOLAR": {
       "sma50": 415.13799743652345,
