@@ -7,7 +7,7 @@ Bhavcopy and Bulk/Block deal files are finalized, typically by ~6:30 PM IST).
 
 What this covers
 ------------------
-1. ACE INVESTOR / SMART MONEY DEALS (New)
+1. ACE INVESTOR / SMART MONEY DEALS
    Scans the daily NSE Bulk and Block deal feeds for a custom watchlist
    of renowned individuals, institutions, and mutual funds.
 
@@ -45,6 +45,12 @@ import requests
 import pandas as pd
 
 from email_notifier import send_email
+
+try:
+    import pytz
+    IST = pytz.timezone("Asia/Kolkata")
+except ImportError:
+    IST = None
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
@@ -622,4 +628,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Prevent cron from executing on weekends
+    now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
+    if "--date" in sys.argv or now.weekday() < 5: 
+        main()
+    else:
+        logging.info("Weekend detected. Skipping execution.")
