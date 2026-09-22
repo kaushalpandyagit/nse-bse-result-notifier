@@ -4667,7 +4667,7 @@
       "rs_rank": 13.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "GNFC": {
@@ -9015,7 +9015,7 @@
       "ema_200_prev": 181.77610058704153,
       "mcap_cr": 22380.232288324998,
       "rs_rank": 49.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
