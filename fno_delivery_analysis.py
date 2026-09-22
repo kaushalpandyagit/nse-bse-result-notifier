@@ -1,55 +1,32 @@
 """
-Daily F&O + Delivery Data Analysis -> Telegram
-================================================
+Daily F&O, Delivery Data, and Ace Investor Analysis -> Telegram
+================================================================
 
 Runs ONCE per trading day, after market close (when NSE's daily
-Bhavcopy files are finalized, typically available by ~6:30 PM IST).
+Bhavcopy and Bulk/Block deal files are finalized, typically by ~6:30 PM IST).
 
 What this covers
 ------------------
-1. DELIVERY % ANALYSIS (from NSE's equity Bhavcopy)
+1. ACE INVESTOR / SMART MONEY DEALS (New)
+   Scans the daily NSE Bulk and Block deal feeds for a custom watchlist
+   of renowned individuals, institutions, and mutual funds.
+
+2. DELIVERY % ANALYSIS (from NSE's equity Bhavcopy)
    Flags stocks with unusually high delivery percentage combined with
-   a meaningful price move -- high delivery % suggests genuine
-   buying/selling interest rather than pure intraday speculation.
+   a meaningful price move.
 
-2. LONG/SHORT BUILDUP (from NSE's F&O Bhavcopy, near-month futures)
-   Classifies each F&O stock using the standard price-change x
-   OI-change matrix:
-     - Long Buildup     : price UP   + OI UP    (bullish)
-     - Short Buildup     : price DOWN + OI UP    (bearish)
-     - Short Covering    : price UP   + OI DOWN  (bullish, closing shorts)
-     - Long Unwinding     : price DOWN + OI DOWN  (bearish, closing longs)
+3. UNUSUAL VOLUME
+   Flags stocks trading >=2.5x their average volume with minimal price movement,
+   excluding ETFs and stocks that had a Bulk/Block deal that day.
 
-3. PCR (Put-Call Ratio) -- computed per stock and for the overall
-   market, from the same F&O Bhavcopy's options data (Put OI / Call OI).
+4. LONG/SHORT BUILDUP (from NSE's F&O Bhavcopy, near-month futures)
+   Classifies F&O stocks into Long Buildup, Short Buildup, Short Covering,
+   and Long Unwinding based on Price and Open Interest changes.
 
-4. FII AGGREGATE POSITIONING (best-effort) -- long/short ratio in
-   index futures & options from NSE's daily FII derivatives
-   statistics. This is the least certain part of this script since
-   NSE's exact report format/URL for this specific data point could
-   not be verified against live data while building this -- if it
-   fails, everything else in the script still runs and sends its
-   results; check the logs for "FII fetch failed" if this section
-   comes back empty.
+5. PCR (Put-Call Ratio) -- computed per stock and overall market.
 
-Data sources (NSE public archives -- no login required)
-----------------------------------------------------------
-- Equity Bhavcopy (delivery %):
-  https://archives.nseindia.com/products/content/sec_bhavdata_full_DDMMYYYY.csv
-- F&O Bhavcopy (OI, price change, PCR):
-  https://archives.nseindia.com/content/historical/DERIVATIVES/YYYY/MON/foDDMONYYYYbhav.csv.zip
-- FII derivatives statistics:
-  https://archives.nseindia.com/content/fo/fii_stats_DDMMYYYY.csv (best-effort)
-
-One-time setup
----------------
-1. pip install -r requirements_fno.txt
-2. Set TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID (same bot as your other
-   scripts -- env vars or edit CONFIG below).
-3. python3 fno_delivery_analysis.py           (uses today's date)
-   python3 fno_delivery_analysis.py --date 04-08-2026   (specific date, for testing)
-
-Config knobs are in the CONFIG section below.
+6. FII AGGREGATE POSITIONING (best-effort) -- long/short ratio in
+   index futures & options.
 """
 
 import os
@@ -61,6 +38,7 @@ import json
 import zipfile
 import logging
 import datetime
+import time
 from pathlib import Path
 
 import requests
@@ -71,6 +49,37 @@ from email_notifier import send_email
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
+# ----------------------------------------------------------------------
+# ACE INVESTOR & INSTITUTIONAL WATCHLIST
+# ----------------------------------------------------------------------
+ACE_INVESTORS = [
+    # Individuals
+    "ASHISH KACHOLIA", "RADHAKISHAN SHIVKISHAN DAMANI", "DOLLY KHANNA",
+    "MUKUL MAHAVIR AGRAWAL", "ASHA MUKUL AGRAWAL", "SURESH KUMAR AGARWAL",
+    "MANOJ AGARWAL", "MADHUSUDAN MURLIDHAR KELA", "MADHURI MADHUSUDAN KELA",
+    "AKASH BHANSALI", "MANGAL BHANSHALI", "MEENU MANGAL BHANSHALI",
+    "VALLABH ROOPCHAND BHANSHALI", "ASHISH DHAWAN", "AKHIL DHAWAN",
+    "AJAY SHIVNARAIN UPADHYAYA", "NIKHIL KISHORCHANDRA VORA", "ARUN KUMAR MUKHERJEE",
+    "ZAKI ABBAS NASSER", "DHEERAK KUMAR LOHIA", "AMAL PARIKH", "GOVINDLAL M. PARIKH",
+    "SEETHA KUMARI", "MATHURBHAI SHIVARAM PATEL", "VISHWAS AMBALAL PATEL",
+    "RAJASHEKAR S. IYER", "SUNIL GUL BIJLANI", "PANKAJ PRASOON",
+    "RAHUL JAYANTILAL SHAH", "CHETAN JAYANTILAL SHAH", "RAMESH CHIMANLAL SHAH",
+    "SHANKAR SHASHI SHARMA", "GIRISH GULATI", "MANOHAR DEVABHAKTUMI",
+    "MUTHUKRISHNAN DHANDAPANI", "ARPANA SAMIRBHAI MACWAN", "MUTHU SUBRAMANIAN JAGADEESH",
+    "MUTHU MANICKAM", "ADITYA K. HALWASIYA",
+    
+    # Institutions, Funds & Investment Firms
+    "MALABAR INDIA", "ZERODHA BROKING", "AMANSA HOLDINGS", "INDIA EMERGING GIANTS",
+    "ENAM INVESTMENT", "MOTILAL OSWAL NIFTY MIDCAP", "MOTILAL OSWAL MIDCAP",
+    "SBI MUTUAL FUND", "TATA MUTUAL FUND", "CANARA ROBECO MUTUAL FUND",
+    "QUANT MUTUAL FUND", "SUNDARAM MUTUAL FUND", "BANK OF INDIA",
+    "AEQUITAS EQUITY", "SIXTH SENSE INDIA", "AUTHUM INVESTMENT",
+    "GIRIRAJ STOCK BROKING", "3P INDIA EQUITY", "HEM FINLEASE",
+    "ARROW EMERGING OPPORTUNITIES", "MINDPOOL TECHNOLOGIES", "OPALFORCE SOFTWARE",
+    "SAGEONE FLAGSHIP", "BANDHAN SMALL CAP", "360 ONE FLEXICAP",
+    "360 ONE ASSET", "AIRAN LIMITED", "MINARVA VENTURES", "VINEY EQUITY MARKET"
+]
+
 # Minimum delivery % to flag a stock as a "high delivery interest" signal.
 DELIVERY_PCT_THRESHOLD = 60.0
 # Minimum absolute price change % (same day) to pair with delivery % above.
@@ -78,15 +87,17 @@ DELIVERY_PRICE_MOVE_THRESHOLD = 2.0
 
 # Minimum absolute OI change % to count as a meaningful buildup (filters noise).
 OI_CHANGE_THRESHOLD = 5.0
-
-# How many top stocks to show per category in the Telegram summary.
 TOP_N = 10
 
+# Robust Browser Headers (Prevents NSE WAF Blocks)
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
     ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Connection": "keep-alive",
 }
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -110,18 +121,81 @@ def send_telegram_message(text: str) -> bool:
         log.error("Telegram send exception: %s", e)
         return False
 
-
 def strip_html_tags(text: str) -> str:
     return re.sub(r"<[^>]+>", "", text)
-
 
 def get_session():
     session = requests.Session()
     try:
         session.get("https://www.nseindia.com", headers=HEADERS, timeout=15)
+        time.sleep(2)  # Give NSE servers time to register the session cookie
     except Exception as e:
         log.warning("Could not prime NSE session: %s", e)
     return session
+
+
+# ----------------------------------------------------------------------
+# SMART MONEY: BULK & BLOCK DEALS
+# ----------------------------------------------------------------------
+
+def fetch_bulk_block_deals(session) -> tuple:
+    """
+    Fetches the daily bulk and block deal files.
+    Returns:
+      1. A set of symbols that had bulk/block deals (to exclude from Unusual Volume).
+      2. A list of deal dictionaries that matched the ACE_INVESTORS list.
+    """
+    symbols = set()
+    ace_deals = []
+    
+    for report in ("bulk", "block"):
+        url = f"https://archives.nseindia.com/content/equities/{report}.csv"
+        try:
+            resp = session.get(url, headers=HEADERS, timeout=20)
+            resp.raise_for_status()
+            df = pd.read_csv(io.StringIO(resp.text))
+            df.columns = [str(c).strip().upper() for c in df.columns]
+            
+            sym_col = next((c for c in df.columns if "SYMBOL" in c), None)
+            client_col = next((c for c in df.columns if "CLIENT" in c), None)
+            type_col = next((c for c in df.columns if "BUY" in c or "SELL" in c or "BUY/SELL" in c), None)
+            qty_col = next((c for c in df.columns if "QUANTITY" in c or "QTY" in c), None)
+            price_col = next((c for c in df.columns if "PRICE" in c), None)
+            
+            if not (sym_col and client_col and type_col and qty_col and price_col):
+                log.warning("Could not find standard columns in %s deals CSV", report)
+                continue
+
+            for _, row in df.iterrows():
+                symbol = str(row[sym_col]).strip().upper()
+                client_name = str(row[client_col]).strip().upper()
+                deal_type = str(row[type_col]).strip().upper()
+                
+                try:
+                    qty = float(row[qty_col])
+                    price = float(row[price_col])
+                except (ValueError, TypeError):
+                    continue
+                
+                symbols.add(symbol)
+                
+                # Check for Ace Investor match
+                for ace in ACE_INVESTORS:
+                    if ace in client_name:
+                        ace_deals.append({
+                            "symbol": symbol,
+                            "client": client_name,
+                            "type": "BUY" if "BUY" in deal_type else "SELL",
+                            "qty": qty,
+                            "price": price,
+                            "deal_type": report.title()
+                        })
+                        break  # Found a match, move to next row
+                        
+        except Exception as e:
+            log.warning("Could not fetch %s deals: %s", report, e)
+            
+    return symbols, ace_deals
 
 
 # ----------------------------------------------------------------------
@@ -140,20 +214,10 @@ def fetch_delivery_data(session, date: datetime.date) -> pd.DataFrame | None:
         log.error("Delivery data fetch failed for %s: %s", date, e)
         return None
 
-
 EARLY_MOVE_MIN = 2.0
-EARLY_MOVE_MAX = 2.5  # capped tighter -- moves beyond this are already
-                       # played out; risk/reward is no longer favorable
-                       # for a fresh entry at that point.
-
+EARLY_MOVE_MAX = 2.5
 
 def analyze_delivery(df: pd.DataFrame) -> dict:
-    """Returns dict with 'early_movers' (moved 2-2.5%, still early --
-    favorable risk/reward for a fresh entry), filtered on high
-    delivery %. Moves beyond EARLY_MOVE_MAX are intentionally excluded
-    -- once a stock has already run further than that on high
-    delivery, the move is largely played out and the risk/reward for
-    a new entry is no longer favorable."""
     all_signals = []
     try:
         df = df[df["SERIES"].str.strip() == "EQ"]
@@ -181,15 +245,14 @@ def analyze_delivery(df: pd.DataFrame) -> dict:
 
 
 # ----------------------------------------------------------------------
-# UNUSUAL VOLUME (high volume, minimal price move, not a bulk/block deal)
+# UNUSUAL VOLUME 
 # ----------------------------------------------------------------------
 
 VOLUME_HISTORY_FILE = Path(__file__).parent / "volume_history.json"
-VOLUME_HISTORY_DAYS = 20  # rolling window for average volume
-UNUSUAL_VOLUME_RATIO = 2.5  # today's volume vs N-day average
-UNUSUAL_VOLUME_PRICE_CAP = 1.5  # max abs price move % to still count as "unusual"
-MIN_HISTORY_DAYS = 5  # need at least this many days before flagging (avoid noise early on)
-
+VOLUME_HISTORY_DAYS = 20  
+UNUSUAL_VOLUME_RATIO = 2.5  
+UNUSUAL_VOLUME_PRICE_CAP = 1.5  
+MIN_HISTORY_DAYS = 5  
 
 def load_volume_history() -> dict:
     if VOLUME_HISTORY_FILE.exists():
@@ -199,42 +262,13 @@ def load_volume_history() -> dict:
             log.warning("Could not parse volume history, starting fresh.")
     return {}
 
-
 def save_volume_history(history: dict):
     VOLUME_HISTORY_FILE.write_text(json.dumps(history))
-
-
-def fetch_bulk_block_symbols(session, date: datetime.date) -> set:
-    """Fetches today's bulk and block deal symbols, to exclude from
-    the unusual-volume signal (a single large bulk/block trade can
-    spike volume without reflecting genuine broad-based buying)."""
-    symbols = set()
-    for report in ("bulk", "block"):
-        url = f"https://archives.nseindia.com/content/equities/{report}.csv"
-        try:
-            resp = session.get(url, headers=HEADERS, timeout=20)
-            resp.raise_for_status()
-            df = pd.read_csv(io.StringIO(resp.text))
-            df.columns = [c.strip() for c in df.columns]
-            symbol_col = next((c for c in df.columns if "Symbol" in c), None)
-            if symbol_col:
-                symbols.update(str(s).strip().upper() for s in df[symbol_col])
-        except Exception as e:
-            log.warning("Could not fetch %s deals: %s", report, e)
-    return symbols
-
 
 ETF_LIST_CACHE_FILE = Path(__file__).parent / "etf_symbols.json"
 ETF_LIST_URL = "https://archives.nseindia.com/content/equities/eq_etfseclist.csv"
 
-
 def get_etf_symbols(session) -> set:
-    """Returns the set of NSE-listed ETF symbols (Nippon/Motilal
-    Oswal/UTI/ICICI/etc. ETFs, gilt ETFs, gold ETFs, etc.), fetched
-    from NSE's official ETF security list and cached for a week (the
-    list changes rarely). Used to exclude ETFs from stock-picking
-    signals like Unusual Volume, since ETF volume reflects fund flows
-    rather than company-specific activity."""
     if ETF_LIST_CACHE_FILE.exists():
         try:
             cached = json.loads(ETF_LIST_CACHE_FILE.read_text())
@@ -242,7 +276,7 @@ def get_etf_symbols(session) -> set:
             if (datetime.datetime.now() - fetched_at).days < 7:
                 return set(cached["symbols"])
         except Exception:
-            pass  # fall through to refetch
+            pass 
 
     try:
         resp = session.get(ETF_LIST_URL, headers=HEADERS, timeout=20)
@@ -261,16 +295,8 @@ def get_etf_symbols(session) -> set:
         log.warning("Could not fetch ETF list (%s). Unusual-volume signal will not exclude ETFs this run.", e)
         return set()
 
-
-def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date) -> list:
-    """Returns list of (symbol, price_change_pct, volume_ratio) for
-    stocks with volume well above their recent average, but price
-    barely moved -- excludes any symbol with a bulk/block deal today
-    (a single large trade isn't the same signal as broad organic
-    volume) and excludes ETFs entirely (ETF volume reflects fund
-    flows/rebalancing, not company-specific accumulation)."""
+def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date, bulk_block_symbols: set) -> list:
     history = load_volume_history()
-    bulk_block = fetch_bulk_block_symbols(session, date)
     etfs = get_etf_symbols(session)
     results = []
 
@@ -290,7 +316,6 @@ def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date) -> li
                 sym_hist = history.get(symbol, {})
                 past_volumes = [v for d, v in sym_hist.items() if d != today_str]
 
-                # Update history with today's volume, trim to rolling window
                 sym_hist[today_str] = volume
                 if len(sym_hist) > VOLUME_HISTORY_DAYS:
                     oldest = sorted(sym_hist.keys())[0]
@@ -298,11 +323,11 @@ def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date) -> li
                 history[symbol] = sym_hist
 
                 if len(past_volumes) < MIN_HISTORY_DAYS:
-                    continue  # not enough history yet for this symbol
-                if symbol in bulk_block:
-                    continue  # exclude bulk/block-driven volume spikes
+                    continue
+                if symbol in bulk_block_symbols:
+                    continue
                 if symbol in etfs:
-                    continue  # exclude ETFs -- volume reflects fund flows, not stock-specific activity
+                    continue
 
                 avg_volume = sum(past_volumes) / len(past_volumes)
                 if avg_volume <= 0:
@@ -322,15 +347,10 @@ def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date) -> li
 
 
 # ----------------------------------------------------------------------
-# 2 & 3. F&O BHAVCOPY -- LONG/SHORT BUILDUP + PCR
+# F&O BHAVCOPY -- LONG/SHORT BUILDUP + PCR
 # ----------------------------------------------------------------------
 
 def fetch_fo_bhavcopy(session, date: datetime.date) -> pd.DataFrame | None:
-    """NSE switched to the UDiFF Bhavcopy format on a new domain in
-    July 2024 (NSE Circular 62424) -- old archives.nseindia.com format
-    is discontinued. New format uses different column names entirely
-    (TckrSymb, ClsPric, OpnIntrst, etc. instead of SYMBOL, CLOSE,
-    OPEN_INT)."""
     date_str = date.strftime("%Y%m%d")
     url = f"https://nsearchives.nseindia.com/content/fo/BhavCopy_NSE_FO_0_0_0_{date_str}_F_0000.csv.zip"
     try:
@@ -346,11 +366,7 @@ def fetch_fo_bhavcopy(session, date: datetime.date) -> pd.DataFrame | None:
         log.error("F&O Bhavcopy fetch failed for %s: %s", date, e)
         return None
 
-
 def analyze_long_short_buildup(df: pd.DataFrame) -> dict:
-    """Returns dict of category -> list of (symbol, price_chg_pct, oi_chg_pct),
-    using each stock's near-month stock-futures contract (FinInstrmTp
-    == 'STF' in the UDiFF format)."""
     categories = {"Long Buildup": [], "Short Buildup": [], "Short Covering": [], "Long Unwinding": []}
     try:
         fut = df[df["FinInstrmTp"].str.strip() == "STF"].copy()
@@ -391,10 +407,7 @@ def analyze_long_short_buildup(df: pd.DataFrame) -> dict:
 
     return categories
 
-
 def analyze_pcr(df: pd.DataFrame) -> tuple:
-    """Returns (overall_pcr, list of (symbol, pcr)) using stock-options
-    open interest (FinInstrmTp == 'STO', OptnTp == 'CE'/'PE')."""
     per_stock_pcr = []
     try:
         opts = df[df["FinInstrmTp"].str.strip() == "STO"].copy()
@@ -416,16 +429,10 @@ def analyze_pcr(df: pd.DataFrame) -> tuple:
 
 
 # ----------------------------------------------------------------------
-# 4. FII AGGREGATE POSITIONING (best-effort)
+# FII AGGREGATE POSITIONING
 # ----------------------------------------------------------------------
 
 def fetch_fii_stats(session, date: datetime.date) -> pd.DataFrame | None:
-    """Attempts to fetch FII derivatives long/short stats. This is an
-    .xls file (not .csv) at a DD-MMM-YYYY date format. Tries the new
-    nsearchives.nseindia.com domain first, falls back to the older
-    archives.nseindia.com domain in case this specific report wasn't
-    migrated. Returns None on total failure rather than crashing, so
-    the rest of the analysis still gets sent."""
     date_str = date.strftime("%d-%b-%Y")
     urls = [
         f"https://nsearchives.nseindia.com/content/fo/fii_stats_{date_str}.xls",
@@ -435,10 +442,6 @@ def fetch_fii_stats(session, date: datetime.date) -> pd.DataFrame | None:
         try:
             resp = session.get(url, headers=HEADERS, timeout=20)
             resp.raise_for_status()
-            # The report has a multi-row header layout (title row, then
-            # a two-level column header), which confuses pandas' default
-            # single-header-row parsing. Read raw and parse each data
-            # row manually instead.
             df = pd.read_excel(io.BytesIO(resp.content), header=None)
             return df
         except Exception as e:
@@ -446,18 +449,12 @@ def fetch_fii_stats(session, date: datetime.date) -> pd.DataFrame | None:
             continue
     return None
 
-
 def parse_fii_stats(df: pd.DataFrame) -> list:
-    """Parses the raw FII stats sheet into a list of dicts, one per
-    category row (INDEX FUTURES, STOCK FUTURES, etc.):
-    {category, buy_amt, sell_amt, net_amt}. Skips title/header rows
-    that don't match the expected 'name + 6 numbers' pattern."""
     results = []
     for _, row in df.iterrows():
         cells = [str(c).strip() for c in row if pd.notna(c) and str(c).strip()]
         if len(cells) < 7:
             continue
-        # Last 6 cells should be numeric: buy_ct, buy_amt, sell_ct, sell_amt, oi_ct, oi_amt
         nums = cells[-6:]
         name_parts = cells[:-6]
         if not name_parts:
@@ -465,7 +462,7 @@ def parse_fii_stats(df: pd.DataFrame) -> list:
         try:
             nums_clean = [float(n.replace(",", "")) for n in nums]
         except ValueError:
-            continue  # header row or non-numeric row, skip
+            continue 
         category = " ".join(name_parts)
         buy_amt, sell_amt = nums_clean[1], nums_clean[3]
         results.append({
@@ -490,7 +487,6 @@ def format_stock_list(items, comment=None, third_label="OI"):
             symbol, price_chg, extra = entry
             line = f"  {symbol}: price {price_chg:+.1f}%, {third_label} {extra:+.1f}%"
             if comment:
-                # High delivery + price direction -> genuine interest read
                 direction = "buying interest" if price_chg > 0 else "selling pressure"
                 line += f" (high delivery {direction})"
             lines.append(line)
@@ -511,8 +507,26 @@ def main():
     session = get_session()
 
     sections = []
+    
+    # --- Bulk & Block Deal Analysis ---
+    bulk_block_symbols, ace_deals = fetch_bulk_block_deals(session)
+    if ace_deals:
+        lines = [
+            "💎 <b>Smart Money / Ace Investor Deals</b>", 
+            "<i>Bulk & Block deals flagged today</i>"
+        ]
+        for deal in ace_deals:
+            action_color = "🟢 BUY" if deal['type'] == 'BUY' else "🔴 SELL"
+            qty_fmt = f"{int(deal['qty']):,}"
+            val_cr = (deal['qty'] * deal['price']) / 10000000
+            
+            lines.append(f"  {action_color} <b>{deal['symbol']}</b>: {deal['client']} "
+                         f"({qty_fmt} shrs @ ₹{deal['price']:.2f}) \u2014 <b>₹{val_cr:.2f} Cr</b> [{deal['deal_type']}]")
+        
+        sections.append("\n".join(lines))
+        log.info("Found %d smart money deals.", len(ace_deals))
 
-    # --- Delivery analysis (early movers only -- see EARLY_MOVE_MAX note) ---
+    # --- Delivery analysis (early movers only) ---
     deliv_df = fetch_delivery_data(session, date)
     if deliv_df is not None:
         tiers = analyze_delivery(deliv_df)
@@ -525,8 +539,8 @@ def main():
         )
         log.info("Delivery analysis: %d early movers.", len(tiers["early_movers"]))
 
-        # --- Unusual volume (needs the same delivery dataframe) ---
-        unusual = analyze_unusual_volume(deliv_df, session, date)
+        # --- Unusual volume ---
+        unusual = analyze_unusual_volume(deliv_df, session, date, bulk_block_symbols)
         sections.append(
             f"\U0001F50D <b>Unusual Volume, Minimal Price Move</b> (\u2265{UNUSUAL_VOLUME_RATIO:.1f}x avg volume, "
             f"\u2264{UNUSUAL_VOLUME_PRICE_CAP:.1f}% move, bulk/block deals + ETFs excluded)\n"
@@ -570,7 +584,7 @@ def main():
     else:
         sections.append("\U0001F4CA <b>F&O buildup/PCR unavailable</b> (data fetch failed -- see logs)")
 
-    # --- FII stats (best-effort) ---
+    # --- FII stats ---
     fii_df = fetch_fii_stats(session, date)
     if fii_df is not None:
         fii_rows = parse_fii_stats(fii_df)
@@ -598,7 +612,6 @@ def main():
         body=strip_html_tags(message),
     )
 
-    # Telegram has a 4096-char message limit -- split if needed
     if len(message) <= 4000:
         send_telegram_message(message)
     else:
