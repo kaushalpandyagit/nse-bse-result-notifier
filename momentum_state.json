@@ -1738,7 +1738,7 @@
       "rs_rank": 90.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "BBTC": {
@@ -2985,7 +2985,7 @@
       "rs_rank": 83.2,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "CONCORDBIO": {
@@ -3334,7 +3334,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "DBREALTY": {
       "sma50": 107.99719985961914,
@@ -8583,7 +8583,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "ONESOURCE": {
       "sma50": 1587.3199951171875,
@@ -9888,7 +9888,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "RENUKA": {
       "sma50": 23.217200050354005,
