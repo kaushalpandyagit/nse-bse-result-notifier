@@ -39,6 +39,8 @@ except ImportError:
 # CONFIG
 # ----------------------------------------------------------------------
 
+SCRIPT_TAG = "🤖 [result_notifier.py]"
+
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
@@ -106,9 +108,6 @@ _DATE_PATTERN = re.compile(
     re.IGNORECASE
 )
 
-# ----------------------------------------------------------------------
-# E-VOTING / POSTAL BALLOT RESOLUTION PURPOSES
-# ----------------------------------------------------------------------
 RESOLUTION_PURPOSES = [
     ("Bonus Issue", re.compile(r"\b(?:bonus shares|bonus issue|issue of bonus)\b", re.IGNORECASE)),
     ("Stock Split", re.compile(r"\b(?:sub-division|subdivision|stock split|split of equity shares)\b", re.IGNORECASE)),
@@ -151,7 +150,7 @@ def send_telegram_message(text: str) -> bool:
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
-        "text": text,
+        "text": f"{SCRIPT_TAG}\n{text}",
         "parse_mode": "HTML",
         "disable_web_page_preview": True,
     }
@@ -183,7 +182,7 @@ def get_browser_headers() -> dict:
     return {
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-            "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+            "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
         ),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
