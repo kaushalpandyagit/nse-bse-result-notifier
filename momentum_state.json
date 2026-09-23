@@ -953,7 +953,7 @@
       "ema_200_prev": 267.1421132207628,
       "mcap_cr": 12188.204653864252,
       "rs_rank": 51.4,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -4694,7 +4694,7 @@
       "ema_200_prev": 103.1725478470969,
       "mcap_cr": 7435.286637732365,
       "rs_rank": 15.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -8494,7 +8494,7 @@
       "mcap_cr": 30954.38430175781,
       "rs_rank": 83.7,
       "zanger_alerted": false,
-      "bonde_alerted": false,
+      "bonde_alerted": true,
       "resistance_alerted": false,
       "mtf_alerted": false
     },
@@ -13278,7 +13278,7 @@
       "ema_200_prev": 870.9131879639175,
       "mcap_cr": 9183.321118122944,
       "rs_rank": 10.5,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false

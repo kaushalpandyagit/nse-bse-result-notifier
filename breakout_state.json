@@ -84,7 +84,7 @@
   },
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
-    "last_alert": "2026-09-23T06:46:23.734227"
+    "last_alert": "2026-09-23T10:15:46.618116"
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -96,11 +96,11 @@
   },
   "custom_alert_BASILIC_price": {
     "alerted": true,
-    "last_alert": "2026-09-23T06:46:25.168784"
+    "last_alert": "2026-09-23T10:15:47.569695"
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,
-    "last_alert": "2026-09-23T06:46:26.036558"
+    "last_alert": "2026-09-23T10:15:48.162900"
   },
   "HSCL": {
     "result_date": "2026-09-21T00:00:00",
