@@ -6,7 +6,7 @@ Covers:
   2. Order & Contract Wins (with Rupee value extraction)
   3. Insider Trading & Promoter Actions (Filters OUT generic Trading Window closures)
   4. NSE Exchange Circulars
-  5. AGMs, E-Voting, and Investor / Analyst Meets (with Auto-PDF Date Extraction)
+  5. AGMs, E-Voting, and Investor / Analyst Meets (with Auto-PDF Date & Purpose Extraction)
   6. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
@@ -23,7 +23,6 @@ from pathlib import Path
 
 import requests
 
-# Graceful import for the new PDF reader
 try:
     import PyPDF2
 except ImportError:
@@ -98,7 +97,6 @@ _AMOUNT_UNIT_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
-# Advanced Date Pattern to catch: 25-Sep-2026, 25/09/2026, 25th September, 2026
 _DATE_PATTERN = re.compile(
     r"\b("
     r"\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s*,?\s*(?:20\d{2})|"
@@ -107,6 +105,24 @@ _DATE_PATTERN = re.compile(
     r")\b",
     re.IGNORECASE
 )
+
+# ----------------------------------------------------------------------
+# E-VOTING / POSTAL BALLOT RESOLUTION PURPOSES
+# ----------------------------------------------------------------------
+RESOLUTION_PURPOSES = [
+    ("Bonus Issue", re.compile(r"\b(?:bonus shares|bonus issue|issue of bonus)\b", re.IGNORECASE)),
+    ("Stock Split", re.compile(r"\b(?:sub-division|subdivision|stock split|split of equity shares)\b", re.IGNORECASE)),
+    ("Dividend", re.compile(r"\b(?:final dividend|interim dividend|special dividend|declaration of dividend)\b", re.IGNORECASE)),
+    ("Preferential Issue / QIP", re.compile(r"\b(?:preferential allotment|preferential issue|private placement|qip|qualified institutional)\b", re.IGNORECASE)),
+    ("Fund Raising / Borrowing", re.compile(r"\b(?:raising of funds|fund raising|borrowing powers|increase in borrowing|issue of debentures|ncds)\b", re.IGNORECASE)),
+    ("Name Change", re.compile(r"\b(?:change of name|name change)\b", re.IGNORECASE)),
+    ("Capital Increase", re.compile(r"\b(?:increase in authorized|authorised share capital)\b", re.IGNORECASE)),
+    ("ESOP / Sweat Equity", re.compile(r"\b(?:esop|employee stock option|sweat equity)\b", re.IGNORECASE)),
+    ("Buyback", re.compile(r"\b(?:buyback|buy-back of shares)\b", re.IGNORECASE)),
+    ("Director / Auditor Appointment", re.compile(r"\b(?:appointment of|re-appointment of|remuneration of|independent director|statutory auditor)\b", re.IGNORECASE)),
+    ("Related Party Transaction", re.compile(r"\b(?:related party transaction|material related party)\b", re.IGNORECASE)),
+    ("Slump Sale / Business Sale", re.compile(r"\b(?:sale of undertaking|slump sale|transfer of business)\b", re.IGNORECASE)),
+]
 
 WATCHLIST = []  
 
@@ -215,6 +231,17 @@ def extract_meeting_date(text: str):
     if not match:
         return None
     return match.group(1).strip()
+
+def extract_evoting_purpose(text: str) -> str | None:
+    if not text:
+        return None
+    matched = []
+    for label, pattern in RESOLUTION_PURPOSES:
+        if pattern.search(text):
+            matched.append(label)
+    if matched:
+        return ", ".join(matched[:3])
+    return None
 
 def classify_announcement(subject: str) -> str:
     subj_lower = f" {subject.lower()} "
@@ -427,9 +454,9 @@ def poll_once(seen: set) -> set:
             
         elif cat == "meeting":
             meet_date = extract_meeting_date(item["subject"])
+            evoting_purpose = extract_evoting_purpose(item["subject"])
             
-            # --- NEW: In-Memory PDF Date Extraction ---
-            if not meet_date and item.get("link") and PyPDF2 is not None:
+            if (not meet_date or not evoting_purpose) and item.get("link") and PyPDF2 is not None:
                 try:
                     time.sleep(random.uniform(1.0, 2.0))
                     pdf_resp = requests.get(item["link"], headers=get_browser_headers(), timeout=15)
@@ -437,14 +464,22 @@ def poll_once(seen: set) -> set:
                         with io.BytesIO(pdf_resp.content) as f:
                             reader = PyPDF2.PdfReader(f)
                             if len(reader.pages) > 0:
-                                pdf_text = reader.pages[0].extract_text()
-                                meet_date = extract_meeting_date(pdf_text)
+                                pdf_text = reader.pages[0].extract_text() or ""
+                                if len(reader.pages) > 1 and len(pdf_text) < 400:
+                                    pdf_text += " " + (reader.pages[1].extract_text() or "")
+                                
+                                if not meet_date:
+                                    meet_date = extract_meeting_date(pdf_text)
+                                if not evoting_purpose:
+                                    evoting_purpose = extract_evoting_purpose(pdf_text)
                 except Exception as e:
                     log.warning("PDF extraction failed for %s: %s", item['company'], e)
             
-            date_line = f"🗓️ Scheduled for: <b>{meet_date}</b>\n" if meet_date else "🗓️ Scheduled for: <i>Check attached PDF</i>\n"
-            header = f"📅 <b>{item['company']}</b> ({item['source']}) \u2014 AGM / Investor Meet"
-            body = f"{item['subject']}\n{date_line}\U0001F550 {item['date']}"
+            date_line = f"🗓️ Date: <b>{meet_date}</b>\n" if meet_date else "🗓️ Date: <i>Check attached PDF</i>\n"
+            purpose_line = f"🗳️ Purpose: <b>{evoting_purpose}</b>\n" if evoting_purpose else ""
+            
+            header = f"📅 <b>{item['company']}</b> ({item['source']}) \u2014 AGM / E-Voting / Meet"
+            body = f"{item['subject']}\n{purpose_line}{date_line}\U0001F550 {item['date']}"
             
         else:  # result
             header = f"\U0001F4E2 <b>{item['company']}</b> ({item['source']}) \u2014 Financial Result"
