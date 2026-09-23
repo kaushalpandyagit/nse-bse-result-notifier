@@ -130,5 +130,13 @@
     "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": false
+  },
+  "custom_alert_GSMFOILS_news": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_GPIL_news": {
+    "alerted": false,
+    "last_alert": null
   }
 }
