@@ -781,7 +781,7 @@
       "rs_rank": 61.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "ANUP": {
@@ -2927,7 +2927,7 @@
       "rs_rank": 53.8,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "CMSINFO": {
@@ -2986,7 +2986,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "CONCORDBIO": {
       "sma50": 1434.7959985351563,
@@ -3276,7 +3276,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "DATAPATTNS": {
       "sma50": 4532.592021484375,
@@ -3766,7 +3766,7 @@
       "ema_200_prev": 469.378485199272,
       "mcap_cr": 9614.415274775696,
       "rs_rank": 43.2,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false
@@ -3884,7 +3884,7 @@
       "rs_rank": 27.5,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "EMBDL": {
@@ -4377,7 +4377,7 @@
       "rs_rank": 72.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "FORCEMOT": {
@@ -8609,7 +8609,7 @@
       "ema_200_prev": 39.044843592733336,
       "mcap_cr": 17427.27608581855,
       "rs_rank": 88.0,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -11599,7 +11599,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "SWSOLAR": {
       "sma50": 196.16899932861327,
@@ -12352,7 +12352,7 @@
       "rs_rank": 33.1,
       "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "TRAVELFOOD": {
