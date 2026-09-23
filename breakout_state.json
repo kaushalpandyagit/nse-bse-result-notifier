@@ -153,5 +153,15 @@
   "custom_alert_KANYES_rsi": {
     "alerted": false,
     "last_alert": null
+  },
+  "TI": {
+    "result_date": "2026-09-23T00:00:00",
+    "day_high": 607.7999877929688,
+    "day_low": 572.0999755859375,
+    "baseline_rsi": 70.7542741474582,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": false
   }
 }
