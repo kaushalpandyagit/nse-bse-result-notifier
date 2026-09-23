@@ -52,6 +52,8 @@ try:
 except ImportError:
     IST = None
 
+SCRIPT_TAG = "🤖 [fno_delivery_analysis.py]"
+
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
@@ -86,20 +88,16 @@ ACE_INVESTORS = [
     "360 ONE ASSET", "AIRAN LIMITED", "MINARVA VENTURES", "VINEY EQUITY MARKET"
 ]
 
-# Minimum delivery % to flag a stock as a "high delivery interest" signal.
 DELIVERY_PCT_THRESHOLD = 60.0
-# Minimum absolute price change % (same day) to pair with delivery % above.
 DELIVERY_PRICE_MOVE_THRESHOLD = 2.0
 
-# Minimum absolute OI change % to count as a meaningful buildup (filters noise).
 OI_CHANGE_THRESHOLD = 5.0
 TOP_N = 10
 
-# Robust Browser Headers (Prevents NSE WAF Blocks)
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
     ),
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
@@ -115,8 +113,12 @@ def send_telegram_message(text: str) -> bool:
         log.error("Telegram not configured.")
         return False
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    payload = {"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "HTML",
-               "disable_web_page_preview": True}
+    payload = {
+        "chat_id": TELEGRAM_CHAT_ID,
+        "text": f"{SCRIPT_TAG}\n{text}",
+        "parse_mode": "HTML",
+        "disable_web_page_preview": True
+    }
     try:
         resp = requests.post(url, data=payload, timeout=15)
         if resp.status_code != 200:
@@ -134,7 +136,7 @@ def get_session():
     session = requests.Session()
     try:
         session.get("https://www.nseindia.com", headers=HEADERS, timeout=15)
-        time.sleep(2)  # Give NSE servers time to register the session cookie
+        time.sleep(2)
     except Exception as e:
         log.warning("Could not prime NSE session: %s", e)
     return session
@@ -145,12 +147,6 @@ def get_session():
 # ----------------------------------------------------------------------
 
 def fetch_bulk_block_deals(session) -> tuple:
-    """
-    Fetches the daily bulk and block deal files.
-    Returns:
-      1. A set of symbols that had bulk/block deals (to exclude from Unusual Volume).
-      2. A list of deal dictionaries that matched the ACE_INVESTORS list.
-    """
     symbols = set()
     ace_deals = []
     
@@ -185,7 +181,6 @@ def fetch_bulk_block_deals(session) -> tuple:
                 
                 symbols.add(symbol)
                 
-                # Check for Ace Investor match
                 for ace in ACE_INVESTORS:
                     if ace in client_name:
                         ace_deals.append({
@@ -196,7 +191,7 @@ def fetch_bulk_block_deals(session) -> tuple:
                             "price": price,
                             "deal_type": report.title()
                         })
-                        break  # Found a match, move to next row
+                        break
                         
         except Exception as e:
             log.warning("Could not fetch %s deals: %s", report, e)
@@ -628,7 +623,6 @@ def main():
 
 
 if __name__ == "__main__":
-    # Prevent cron from executing on weekends
     now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
     if "--date" in sys.argv or now.weekday() < 5: 
         main()
