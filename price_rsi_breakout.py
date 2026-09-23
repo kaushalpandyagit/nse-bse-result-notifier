@@ -1,5 +1,5 @@
 """
-Nifty Total Market Breakout Notifier -> Telegram + Email
+Nifty Total Market Breakout Notifier -> Telegram
 =========================================================
 Dual-Engine Fyers & Yahoo Finance Edition:
 - Uses Fyers API for live, hyper-accurate intraday prices when run locally.
@@ -20,8 +20,6 @@ from urllib.parse import parse_qs, urlparse
 import requests
 import numpy as np
 import pandas as pd
-
-from email_notifier import send_email
 
 try:
     import yfinance as yf
@@ -47,8 +45,8 @@ except ImportError:
 
 SCRIPT_TAG = "🤖 [price_rsi_breakout.py]"
 
-TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
-TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "8974222959:AAG7S_dPYmDXBOX_ZnDWXMEenwqrmygkC-4")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "1689560854")
 
 GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTicCnhvOb2njwMTaCp4oEnOv3LONbfE796ZVTtvPPA_uRN9C2lNeWXL813jxiW_n7zxf1-4HBG_c1G/pub?output=csv"
 
@@ -84,6 +82,7 @@ RESULT_KEYWORDS = [
 STATE_FILE = Path(__file__).parent / "breakout_state.json"
 NIFTY500_CACHE_FILE = Path(__file__).parent / "nifty500_symbols.json"
 LOG_FILE = Path(__file__).parent / "breakout_notifier.log"
+MOMENTUM_STATE_FILE = Path(__file__).parent / "momentum_state.json"
 
 NSE_CSV_URL = "https://archives.nseindia.com/content/indices/ind_niftytotalmarket_list.csv"
 
@@ -103,7 +102,6 @@ HEADERS = {
     "Connection": "keep-alive",
 }
 
-MOMENTUM_STATE_FILE = Path(__file__).parent / "momentum_state.json"
 HISTORY_PERIOD = "18mo"
 
 NEAR_52W_HIGH_PCT = 25.0
@@ -154,11 +152,8 @@ def send_telegram_message(text: str) -> bool:
         log.error("Telegram send exception: %s", e)
         return False
 
-def strip_html_tags(text: str) -> str:
-    return re.sub(r"<[^>]+>", "", text)
-
 # ----------------------------------------------------------------------
-# FYERS AUTHENTICATION (Optional/Seamless)
+# FYERS AUTHENTICATION
 # ----------------------------------------------------------------------
 
 def get_fyers_access_token():
@@ -176,7 +171,6 @@ def get_fyers_access_token():
                     log.info("🔑 Loaded valid daily Fyers token from %s", TOKEN_FILE)
                     return token
 
-    # Check if running Headless (e.g. GitHub Actions)
     if not sys.stdin.isatty():
         log.info("🌐 Running headless (GitHub). Skipping Fyers Auth, activating Yahoo fallback.")
         return None
@@ -222,7 +216,6 @@ def get_fyers_access_token():
 # ----------------------------------------------------------------------
 
 def rsi_fyers_tradingview(close_prices, period=RSI_PERIOD):
-    """TradingView-aligned Wilder's RMA RSI."""
     if len(close_prices) < period + 1:
         return None
 
@@ -248,10 +241,8 @@ def rsi_fyers_tradingview(close_prices, period=RSI_PERIOD):
 
 
 def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
-    """Fetches live intraday prices and RSI/MA metrics using Fyers (primary) or Yahoo (fallback)."""
-    
     if fyers:
-        time.sleep(0.15) # Prevents hitting Fyers API limit
+        time.sleep(0.15) 
         fyers_sym = f"{exchange}:{symbol}-EQ" if not symbol.isdigit() else f"BSE:{symbol}-EQ"
         data = {
             "symbol": fyers_sym, "resolution": "D", "date_format": "1",
@@ -261,7 +252,6 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
         
         resp = fyers.history(data=data)
         
-        # Automatic SME Fallback routing
         if resp.get("s") != "ok" or "candles" not in resp:
             data["symbol"] = f"{exchange}:{symbol}-SM"
             resp = fyers.history(data=data)
@@ -308,7 +298,6 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                     "sma_200": float(closes.rolling(200).mean().iloc[-1] if len(closes) >= 200 else 0),
                 }
 
-    # --- FALLBACK: YAHOO FINANCE ---
     yahoo_ticker = f"{symbol}.NS" if exchange == "NSE" else f"{symbol}.BO"
     try:
         hist = yf.Ticker(yahoo_ticker).history(period="1y", interval="1d")
@@ -380,7 +369,6 @@ def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"
                         "actual_date": idx,
                     }
 
-    # Fallback to Yahoo
     yahoo_ticker = f"{symbol}.NS" if exchange == "NSE" else f"{symbol}.BO"
     try:
         hist = yf.Ticker(yahoo_ticker).history(start=date - datetime.timedelta(days=365), end=date + datetime.timedelta(days=7))
@@ -406,7 +394,6 @@ def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"
 # ----------------------------------------------------------------------
 
 def fetch_batch_history(tickers: list) -> dict:
-    """Uses Yahoo batch download for entire universe (Fyers doesn't support batch history)"""
     result = {}
     try:
         data = yf.download(
@@ -548,7 +535,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     
     digest = "\n".join(lines)
     send_telegram_message(digest)
-    send_email(subject=f"Daily Momentum Scan \u2014 {today_str}", body=strip_html_tags(digest))
     return momentum_state
 
 def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
@@ -676,6 +662,126 @@ def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
 # MAIN POLLING LOOP
 # ----------------------------------------------------------------------
 
+def normalise_company(name: str) -> str:
+    name = name.upper()
+    name = re.sub(r"\b(LIMITED|LTD|LTD\.|THE)\b", "", name)
+    return re.sub(r"[^A-Z0-9]", "", name).strip()
+
+def is_result_announcement(subject: str) -> bool:
+    subj_lower = subject.lower()
+    if any(kw in subj_lower for kw in RESULT_KEYWORDS):
+        return True
+    return "board meeting" in subj_lower and "result" in subj_lower
+
+def fetch_nse_result_symbols() -> set:
+    session = requests.Session()
+    try:
+        session.get("https://www.nseindia.com", headers=HEADERS, timeout=15)
+        time.sleep(1)
+        resp = session.get(
+            "https://www.nseindia.com/api/corporate-announcements?index=equities",
+            headers=HEADERS, timeout=15,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception:
+        return set()
+
+    if isinstance(data, str):
+        try:
+            data = json.loads(data)
+        except Exception:
+            return set()
+    if not isinstance(data, list):
+        return set()
+
+    hits = set()
+    for item in data:
+        subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}"
+        symbol = (item.get("symbol") or "").strip().upper()
+        if symbol and is_result_announcement(subject):
+            hits.add(symbol)
+    return hits
+
+def fetch_bse_result_companies() -> set:
+    today = datetime.datetime.now().strftime("%Y%m%d")
+    from_date = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime("%Y%m%d")
+    url = (
+        "https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w"
+        f"?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P"
+        f"&strToDate={today}&strType=C&subcategory=-1"
+    )
+    try:
+        resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception:
+        return set()
+
+    if isinstance(data, str):
+        try:
+            data = json.loads(data)
+        except Exception:
+            return set()
+    if not isinstance(data, dict):
+        return set()
+
+    hits = set()
+    for item in data.get("Table", []):
+        subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}"
+        company = item.get("SLONGNAME") or ""
+        if company and is_result_announcement(subject):
+            hits.add(normalise_company(company))
+    return hits
+
+def get_universe_symbols() -> list:
+    if NIFTY500_CACHE_FILE.exists():
+        try:
+            cached = json.loads(NIFTY500_CACHE_FILE.read_text())
+            fetched_at = datetime.datetime.fromisoformat(cached["fetched_at"])
+            if (datetime.datetime.now() - fetched_at).days < 7:
+                return cached["symbols"]
+        except Exception:
+            pass
+
+    try:
+        resp = requests.get(NSE_CSV_URL, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        df = pd.read_csv(io.StringIO(resp.text))
+        symbols = sorted(df["Symbol"].astype(str).str.strip().tolist())
+        NIFTY500_CACHE_FILE.write_text(json.dumps({
+            "fetched_at": datetime.datetime.now().isoformat(),
+            "symbols": symbols,
+        }))
+        return symbols
+    except Exception:
+        return FALLBACK_SYMBOLS
+
+def prune_expired(state: dict) -> dict:
+    cutoff = datetime.datetime.now() - datetime.timedelta(days=TRACK_WINDOW_DAYS)
+    kept = {}
+    for symbol, entry in state.items():
+        if symbol.startswith("custom_alert_"):
+            kept[symbol] = entry
+            continue
+        try:
+            result_date = datetime.datetime.fromisoformat(entry["result_date"])
+            if result_date >= cutoff:
+                kept[symbol] = entry
+        except Exception:
+            continue
+    return kept
+
+def cooldown_elapsed(entry: dict, last_alert_key: str) -> bool:
+    last = entry.get(last_alert_key)
+    if not last:
+        return True
+    try:
+        last_dt = datetime.datetime.fromisoformat(last)
+    except Exception:
+        return True
+    return (datetime.datetime.now() - last_dt) >= datetime.timedelta(minutes=ALERT_COOLDOWN_MINUTES)
+
 def load_state() -> dict:
     if STATE_FILE.exists():
         try:
@@ -683,6 +789,24 @@ def load_state() -> dict:
         except Exception:
             pass
     return {}
+
+def load_momentum_state() -> dict:
+    if MOMENTUM_STATE_FILE.exists():
+        try:
+            return json.loads(MOMENTUM_STATE_FILE.read_text())
+        except Exception:
+            pass
+    return {"last_scan_date": None, "watchlist": {}}
+
+def is_market_hours_now() -> bool:
+    if not POLL_ONLY_MARKET_HOURS:
+        return True
+    now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
+    if now.weekday() >= 5:
+        return False
+    start = now.replace(hour=9, minute=0, second=0, microsecond=0)
+    end = now.replace(hour=16, minute=0, second=0, microsecond=0)
+    return start <= now <= end
 
 def poll_once(state: dict, fyers) -> dict:
     universe = set(get_universe_symbols())
@@ -706,7 +830,6 @@ def poll_once(state: dict, fyers) -> dict:
 
     state = prune_expired(state)
     
-    # 1. Result Day RSI Breakout Checks
     for symbol, entry in state.items():
         if symbol.startswith("custom_alert_"): continue 
         if "day_low" not in entry or "baseline_rsi" not in entry: continue
@@ -734,7 +857,6 @@ def poll_once(state: dict, fyers) -> dict:
                 entry["rsi_down_alerted"], entry["rsi_down_last_alert"] = True, datetime.datetime.now().isoformat()
                 send_telegram_message(f"\U0001F4C9 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: \u20b9{price:.2f}")
 
-    # 2. Custom Manual Alerts
     custom_alerts = {**fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)}
     recent_news = fetch_recent_news_for_alerts()
 
@@ -744,7 +866,6 @@ def poll_once(state: dict, fyers) -> dict:
         c_entry = state[state_key]
         clean_symbol, exchange = symbol.split(":")[-1].upper(), "BSE" if symbol.startswith("BSE:") else "NSE"
 
-        # A. NEWS METRIC
         if rules["metric"] == "news":
             for news_item in recent_news:
                 if news_item["symbol"] == clean_symbol:
@@ -757,7 +878,6 @@ def poll_once(state: dict, fyers) -> dict:
                             send_telegram_message(f"📰 <b>{clean_symbol}</b> Catalyst Alert!\nMatched: <b>'{matched_kw}'</b> (Target: <i>{rules['target_raw']}</i>)\n\n<i>{news_item['subject']}</i>{chr(10) + '🔗 ' + news_item['link'] if news_item.get('link') else ''}")
             continue
 
-        # B. NUMERICAL / TECHNICAL METRIC
         if not c_entry.get("alerted") or cooldown_elapsed(c_entry, "last_alert"):
             c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
             if not c_metrics: continue
