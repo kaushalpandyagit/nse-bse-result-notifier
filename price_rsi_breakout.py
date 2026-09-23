@@ -7,7 +7,8 @@ Includes:
   3. Intraday Dan Zanger & Pradeep Bonde Early Entry Breakout
   4. Intraday Horizontal Resistance & MTF RSI Scanner
   5. Custom Manual Alerts Tracker (Static + Google Sheet Integration)
-     Supports Dynamic Metrics: Price, RSI, EMA, SMA, Change from Open/Close.
+     Supports Dynamic Metrics: Price, RSI, EMA, SMA, Change from Open/Close, and News.
+     Supports comma / OR in Target column (e.g. 'plant, fire' or 'ema_50 OR sma_200').
 """
 
 import os
@@ -41,10 +42,11 @@ except ImportError:
 # CONFIG -- edit these
 # ----------------------------------------------------------------------
 
+SCRIPT_TAG = "🤖 [price_rsi_breakout.py]"
+
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
-# Converted your /pubhtml link to /pub?output=csv so Pandas can read it natively
 GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTicCnhvOb2njwMTaCp4oEnOv3LONbfE796ZVTtvPPA_uRN9C2lNeWXL813jxiW_n7zxf1-4HBG_c1G/pub?output=csv"
 
 POLL_INTERVAL_MINUTES = 15
@@ -54,11 +56,9 @@ RSI_PERIOD = 14
 TRACK_WINDOW_DAYS = 15
 ALERT_COOLDOWN_MINUTES = 30
 
-# Market Cap boundaries in Crores (INR)
 MIN_MARKET_CAP_CR = 300.0
 MAX_MARKET_CAP_CR = 31000.0
 
-# GLOBAL RESTRICTION: No auto-scanners will alert if Weekly RSI is >= this value
 MAX_WEEKLY_RSI = 57.0
 
 RESULT_KEYWORDS = [
@@ -73,7 +73,6 @@ STATE_FILE = Path(__file__).parent / "breakout_state.json"
 NIFTY500_CACHE_FILE = Path(__file__).parent / "nifty500_symbols.json"
 LOG_FILE = Path(__file__).parent / "breakout_notifier.log"
 
-# Nifty Total Market Index
 NSE_CSV_URL = "https://archives.nseindia.com/content/indices/ind_niftytotalmarket_list.csv"
 
 FALLBACK_SYMBOLS = [
@@ -88,9 +87,11 @@ HEADERS = {
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
     ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Connection": "keep-alive",
 }
 
-# --- Momentum/trend screening config ---
 MOMENTUM_STATE_FILE = Path(__file__).parent / "momentum_state.json"
 HISTORY_PERIOD = "18mo"
 
@@ -134,7 +135,7 @@ def send_telegram_message(text: str) -> bool:
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
-        "text": text,
+        "text": f"{SCRIPT_TAG}\n{text}",
         "parse_mode": "HTML",
         "disable_web_page_preview": True,
     }
@@ -365,7 +366,6 @@ def get_live_metrics_enhanced(yahoo_ticker: str) -> dict:
         weekly_closes = closes.resample('W-FRI').last().dropna()
         weekly_rsi = compute_rsi(weekly_closes) if len(weekly_closes) > 14 else 50.0
 
-        # Calculate Open/Close specific differences
         price = float(today["Close"])
         open_price = float(today["Open"])
         prev_close = float(yesterday["Close"])
@@ -739,11 +739,78 @@ def check_intraday_momentum_triggers(momentum_state: dict) -> dict:
     return momentum_state
 
 # ----------------------------------------------------------------------
+# NEWS SCRAPER FOR CUSTOM ALERTS
+# ----------------------------------------------------------------------
+
+def fetch_recent_news_for_alerts() -> list:
+    results = []
+    try:
+        session = requests.Session()
+        session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
+        time.sleep(1)
+        
+        # NSE Equities
+        resp_eq = session.get("https://www.nseindia.com/api/corporate-announcements?index=equities", headers=HEADERS, timeout=15)
+        if resp_eq.status_code == 200:
+            for item in resp_eq.json():
+                results.append({
+                    "symbol": (item.get("symbol") or "").upper(),
+                    "subject": f"{item.get('desc', '')} {item.get('attchmntText', '')}",
+                    "link": item.get("attchmntFile", "")
+                })
+                
+        # NSE SME
+        resp_sme = session.get("https://www.nseindia.com/api/corporate-announcements?index=sme", headers=HEADERS, timeout=15)
+        if resp_sme.status_code == 200:
+            for item in resp_sme.json():
+                results.append({
+                    "symbol": (item.get("symbol") or "").upper(),
+                    "subject": f"{item.get('desc', '')} {item.get('attchmntText', '')}",
+                    "link": item.get("attchmntFile", "")
+                })
+    except Exception as e:
+        log.warning("NSE news fetch failed: %s", e)
+
+    try:
+        today = datetime.datetime.now().strftime("%Y%m%d")
+        from_date = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y%m%d")
+        url = f"https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P&strToDate={today}&strType=C&subcategory=-1"
+        resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=15)
+        if resp.status_code == 200:
+            data = resp.json()
+            if isinstance(data, dict) and "Table" in data:
+                for item in data["Table"]:
+                    results.append({
+                        "symbol": str(item.get("SCRIP_CD", "")),
+                        "subject": f"{item.get('NEWSSUB', '')} {item.get('HEADLINE', '')}",
+                        "link": item.get("ATTACHMENTNAME", "")
+                    })
+    except Exception as e:
+        log.warning("BSE news fetch failed: %s", e)
+        
+    return results
+
+# ----------------------------------------------------------------------
 # GOOGLE SHEETS DYNAMIC CUSTOM ALERTS
 # ----------------------------------------------------------------------
 
+def parse_target_options(target_raw: str, metric: str) -> list:
+    """Splits target string on comma or OR into up to 2 options."""
+    parts = re.split(r",|\s+(?:or|OR)\s+", str(target_raw).strip())
+    options = [p.strip() for p in parts if p.strip()][:2]
+    
+    parsed = []
+    for opt in options:
+        if metric == "news":
+            parsed.append(opt.lower())
+        else:
+            try:
+                parsed.append(float(opt))
+            except ValueError:
+                parsed.append(opt.lower())
+    return parsed
+
 def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
-    """Fetches dynamic alerts from published Google Sheet CSV."""
     if not sheet_url or "docs.google.com" not in sheet_url:
         return {}
     try:
@@ -762,25 +829,26 @@ def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
             metric = str(row["metric"]).strip().lower()
             condition = str(row["condition"]).strip().lower()
             
-            # SMART TARGET PARSING: Is it a fixed number or a dynamic MA name?
-            target_raw = str(row["target"]).strip().lower()
-            try:
-                target = float(target_raw)  # e.g., 35.5, 1500.0, or -12.0
-            except ValueError:
-                target = target_raw         # e.g., 'ema_50'
+            targets = parse_target_options(row["target"], metric)
+            if not targets:
+                continue
 
-            if condition not in ("above", "below"):
+            if condition not in ("above", "below", "contains"):
                 continue
 
             prefix = "BSE:" if exchange == "BSE" else ""
             alert_key = f"{prefix}{sym}"
-            sheet_alerts[alert_key] = {"metric": metric, "condition": condition, "target": target}
+            sheet_alerts[alert_key] = {
+                "metric": metric,
+                "condition": condition,
+                "targets": targets,
+                "target_raw": str(row["target"]).strip()
+            }
 
         return sheet_alerts
     except Exception as e:
         log.warning("Could not fetch alerts from Google Sheet: %s", e)
         return {}
-
 
 # ----------------------------------------------------------------------
 # MARKET HOURS & POLLING
@@ -800,7 +868,6 @@ def poll_once(state: dict) -> dict:
     universe = set(get_universe_symbols())
     universe_normalised = {normalise_company(s): s for s in universe}
 
-    # Detect fresh announcements
     nse_hits = fetch_nse_result_symbols() & universe
     bse_hits_normalised = fetch_bse_result_companies()
     bse_hits = {universe_normalised[n] for n in bse_hits_normalised if n in universe_normalised}
@@ -911,19 +978,44 @@ def poll_once(state: dict) -> dict:
     # 2. CUSTOM MANUAL ALERTS (Static + Dynamic Google Sheet)
     # -------------------------------------------------------------
     hardcoded_alerts = {}
-
-    # Pull dynamic alerts from Google Sheet and merge
     sheet_alerts = fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)
     custom_alerts = {**hardcoded_alerts, **sheet_alerts}
+    
+    recent_news = fetch_recent_news_for_alerts()
 
     for symbol, rules in custom_alerts.items():
-        # Unique key so Price, RSI, and Open drops don't interfere with each other
         state_key = f"custom_alert_{symbol}_{rules['metric']}"
         if state_key not in state:
             state[state_key] = {"alerted": False, "last_alert": None}
         
         c_entry = state[state_key]
-        
+        clean_symbol = symbol.split(":")[-1].upper()
+        display_name = clean_symbol
+
+        # --- A. NEWS METRIC ---
+        if rules["metric"] == "news":
+            for news_item in recent_news:
+                if news_item["symbol"] == clean_symbol:
+                    subj_lower = news_item["subject"].lower()
+                    matched_kw = next((t for t in rules["targets"] if t in subj_lower), None)
+                    
+                    if matched_kw and rules["condition"] == "contains":
+                        news_fingerprint = str(news_item["subject"])[:50]
+                        if c_entry.get("last_news_fingerprint") != news_fingerprint:
+                            c_entry["alerted"] = True
+                            c_entry["last_alert"] = datetime.datetime.now().isoformat()
+                            c_entry["last_news_fingerprint"] = news_fingerprint
+                            
+                            link_str = f"\n🔗 {news_item['link']}" if news_item.get("link") else ""
+                            send_telegram_message(
+                                f"📰 <b>{display_name}</b> Catalyst Alert!\n"
+                                f"Matched: <b>'{matched_kw}'</b> (Target: <i>{rules['target_raw']}</i>)\n\n"
+                                f"<i>{news_item['subject']}</i>{link_str}"
+                            )
+                            log.info("NEWS ALERT: %s matched %s", display_name, matched_kw)
+            continue
+
+        # --- B. NUMERICAL / TECHNICAL METRIC ---
         if not c_entry.get("alerted") or cooldown_elapsed(c_entry, "last_alert"):
             
             clean_symbol = symbol.upper().strip()
@@ -941,18 +1033,16 @@ def poll_once(state: dict) -> dict:
                 yahoo_ticker = f"{clean_symbol}.NS" 
 
             c_metrics = get_live_metrics_enhanced(yahoo_ticker)
-            
-            if c_metrics:
-                metric_type = rules["metric"]
-                target_rule = rules["target"]
-                cond = rules["condition"]
-                
-                # 1. Resolve Current Value
-                current_val = c_metrics.get(metric_type)
-                if current_val is None:
-                    continue
-                    
-                # 2. Resolve Target Value
+            if not c_metrics:
+                continue
+
+            metric_type = rules["metric"]
+            cond = rules["condition"]
+            current_val = c_metrics.get(metric_type)
+            if current_val is None:
+                continue
+
+            for target_rule in rules["targets"]:
                 if isinstance(target_rule, str):
                     target_val = c_metrics.get(target_rule)
                     if target_val is None:
@@ -960,7 +1050,6 @@ def poll_once(state: dict) -> dict:
                     target_str = f"{target_rule.upper()} (₹{target_val:.2f})"
                 else:
                     target_val = target_rule
-                    # Formatting based on metric type
                     if "pct" in metric_type:
                         target_str = f"{target_val:+.2f}%"
                     elif "rsi" in metric_type:
@@ -972,7 +1061,6 @@ def poll_once(state: dict) -> dict:
                 
                 label_str = metric_type.replace("_", " ").title()
                 
-                # 3. Format the Current Value
                 if "pct" in metric_type:
                     val_str = f"{current_val:+.2f}%"
                 elif "rsi" in metric_type:
@@ -982,7 +1070,6 @@ def poll_once(state: dict) -> dict:
                 else:
                     val_str = f"₹{current_val:.2f}"
                 
-                # 4. Evaluate the condition
                 if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
                     c_entry["alerted"] = True
                     c_entry["last_alert"] = datetime.datetime.now().isoformat()
@@ -994,6 +1081,7 @@ def poll_once(state: dict) -> dict:
                         f"Current Price: ₹{c_metrics['price']:.2f}"
                     )
                     log.info("CUSTOM ALERT: %s %s=%s (Target %s %s)", display_name, label_str, val_str, cond, target_str)
+                    break
 
     return state
 
