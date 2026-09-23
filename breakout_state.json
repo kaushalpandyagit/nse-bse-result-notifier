@@ -84,7 +84,7 @@
   },
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
-    "last_alert": "2026-09-23T05:00:56.690086"
+    "last_alert": "2026-09-23T05:45:46.370000"
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -96,11 +96,11 @@
   },
   "custom_alert_BASILIC_price": {
     "alerted": true,
-    "last_alert": "2026-09-23T05:00:57.677084"
+    "last_alert": "2026-09-23T05:45:47.598761"
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,
-    "last_alert": "2026-09-23T05:00:58.267201"
+    "last_alert": "2026-09-23T05:45:48.368861"
   },
   "HSCL": {
     "result_date": "2026-09-21T00:00:00",
@@ -138,5 +138,16 @@
   "custom_alert_GPIL_news": {
     "alerted": false,
     "last_alert": null
+  },
+  "SUPRIYA": {
+    "result_date": "2026-09-23T00:00:00",
+    "day_high": 1005.0,
+    "day_low": 945.0499877929688,
+    "baseline_rsi": 72.44667419296422,
+    "yahoo_ticker": "SUPRIYA.NS",
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": false
   }
 }
