@@ -3914,7 +3914,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "EMIL": {
       "sma50": 168.1432012939453,
@@ -10264,7 +10264,7 @@
       "rs_rank": 52.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "SAFARI": {
