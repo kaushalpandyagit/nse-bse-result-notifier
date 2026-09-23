@@ -149,5 +149,9 @@
     "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": false
+  },
+  "custom_alert_KANYES_rsi": {
+    "alerted": false,
+    "last_alert": null
   }
 }
