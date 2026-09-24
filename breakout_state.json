@@ -224,5 +224,16 @@
   "custom_alert_TECHLABS_price": {
     "alerted": false,
     "last_alert": null
+  },
+  "COALINDIA": {
+    "result_date": "2026-09-24T00:00:00",
+    "day_high": 423.8500061035156,
+    "day_low": 419.5,
+    "baseline_rsi": 53.759531985139866,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "rsi_up_last_alert": "2026-09-24T06:45:48.693776"
   }
 }
