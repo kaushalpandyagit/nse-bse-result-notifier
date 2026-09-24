@@ -389,6 +389,9 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                     "ema_200": float(closes.ewm(span=200, adjust=False).mean().iloc[-1]),
                     "sma_50": float(closes.rolling(50).mean().iloc[-1] if len(closes) >= 50 else 0),
                     "sma_200": float(closes.rolling(200).mean().iloc[-1] if len(closes) >= 200 else 0),
+                    # Added for the 50 EMA Pullback Scanner
+                    "sma_vol_5": float(df["Volume"].rolling(5).mean().iloc[-1]) if len(df) >= 5 else 0.0,
+                    "sma_vol_20": float(df["Volume"].rolling(20).mean().iloc[-1]) if len(df) >= 20 else 0.0,
                 }
 
     # Route to Yahoo after market hours or if Fyers fails
@@ -427,6 +430,9 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
             "ema_200": float(closes.ewm(span=200, adjust=False).mean().iloc[-1]),
             "sma_50": float(closes.rolling(50).mean().iloc[-1] if len(closes) >= 50 else 0),
             "sma_200": float(closes.rolling(200).mean().iloc[-1] if len(closes) >= 200 else 0),
+            # Added for the 50 EMA Pullback Scanner
+            "sma_vol_5": float(hist["Volume"].rolling(5).mean().iloc[-1]) if len(hist) >= 5 else 0.0,
+            "sma_vol_20": float(hist["Volume"].rolling(20).mean().iloc[-1]) if len(hist) >= 20 else 0.0,
         }
     except Exception as e:
         log.warning("Could not fetch Yahoo fallback metrics for %s: %s", yahoo_ticker, e)
@@ -643,8 +649,12 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
         if not metrics or metrics["weekly_rsi"] >= MAX_WEEKLY_RSI:
             continue
 
-        price, volume, prev_close, prev_volume = metrics["price"], metrics["volume"], metrics["prev_close"], metrics["prev_volume"]
-        avg_vol50, base_high = entry.get("avg_volume_50d") or 0, entry.get("base_high")
+        price = metrics["price"]
+        volume = metrics["volume"]
+        prev_close = metrics["prev_close"]
+        prev_volume = metrics["prev_volume"]
+        avg_vol50 = entry.get("avg_volume_50d") or 0
+        base_high = entry.get("base_high")
         pct_change = (price - prev_close) / prev_close * 100 if prev_close else None
 
         if not entry.get("zanger_alerted") and base_high and avg_vol50 and pct_change is not None:
@@ -672,18 +682,42 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                 send_telegram_message(f"\U0001F52E <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice \u20b9{price:.2f} (Spiked \u22653% above key EMA).\nLive Daily RSI: {metrics['rsi']:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}")
         
         # ----------------------------------------------------------------------
-        # NEW HEAD: Near 5% to 50 EMA Scanner
+        # NEW HEAD: Strict 50 EMA Pullback Scanner (Rules 1-8)
         # ----------------------------------------------------------------------
-        if not entry.get("ema50_pullback_alerted") and metrics.get("ema_50"):
-            ema_50 = metrics["ema_50"]
-            distance_to_ema_pct = abs(price - ema_50) / ema_50 * 100
-            
-            if distance_to_ema_pct <= 5.0:
-                entry["ema50_pullback_alerted"] = True
-                send_telegram_message(
-                    f"🧲 <b>{symbol}</b> 50 EMA Pullback Scanner!\n"
-                    f"Price ₹{price:.2f} is consolidating within {distance_to_ema_pct:.1f}% of its 50 EMA (₹{ema_50:.2f})."
-                )
+        if not entry.get("ema50_pullback_alerted"):
+            ema_50 = metrics.get("ema_50")
+            rsi = metrics.get("rsi")
+            y_rsi = entry.get("yesterday_rsi")
+            w_rsi = metrics.get("weekly_rsi")
+            mcap = entry.get("mcap_cr", 0)
+            sma_vol_5 = metrics.get("sma_vol_5")
+            sma_vol_20 = metrics.get("sma_vol_20")
+
+            if ema_50 and rsi and y_rsi and w_rsi:
+                # 1. Price vs EMA: -2.5% to +6%
+                cond_price = (ema_50 * 0.975) <= price <= (ema_50 * 1.06)
+                # 2 & 3. Daily RSI bounds
+                cond_rsi_bounds = 30 <= rsi < 58
+                # 4. Market Cap > 300
+                cond_mcap = mcap > 300
+                # 5. Volume Expanding
+                cond_vol = (sma_vol_20 and sma_vol_20 > 0 and (sma_vol_5 / sma_vol_20) > 1.5)
+                # 6. Close >= yesterday close
+                cond_close = price >= prev_close
+                # 7. RSI expanding daily
+                cond_rsi_daily = rsi > y_rsi
+                # 8. RSI expanding weekly
+                cond_rsi_weekly = rsi > w_rsi
+
+                if (cond_price and cond_rsi_bounds and cond_mcap and cond_vol and 
+                    cond_close and cond_rsi_daily and cond_rsi_weekly):
+                    
+                    entry["ema50_pullback_alerted"] = True
+                    send_telegram_message(
+                        f"🧲 <b>{symbol}</b> Strict 50 EMA Pullback Alert!\n"
+                        f"Price ₹{price:.2f} is hovering near 50 EMA (₹{ema_50:.2f}) with expanding volume.\n"
+                        f"RSI: {rsi:.1f} (Up from {y_rsi:.1f}) | Mcap: ₹{mcap:.0f} Cr"
+                    )
 
     return momentum_state
 
