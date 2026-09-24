@@ -2794,7 +2794,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "CHAMBLFERT": {
       "sma50": 432.0419982910156,
@@ -3828,7 +3829,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": true
+      "mtf_alerted": true,
+      "ema50_pullback_alerted": true
     },
     "ELECTCAST": {
       "sma50": 75.02399993896485,
@@ -7300,7 +7302,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "KRN": {
       "sma50": 1405.3119970703126,
@@ -7800,7 +7803,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "MAPMYINDIA": {
       "sma50": 1016.0619970703125,
@@ -9505,7 +9509,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "PTC": {
       "sma50": 163.54640045166016,
@@ -11123,7 +11128,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "SKYGOLD": {
       "sma50": 755.8439990234375,
