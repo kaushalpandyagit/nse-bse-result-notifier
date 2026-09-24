@@ -1652,7 +1652,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "BATAINDIA": {
       "sma50": 686.4750024414062,
@@ -3914,7 +3914,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "EMIL": {
       "sma50": 169.30000122070314,
@@ -5160,8 +5160,8 @@
       "rs_rank": 56.4,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "HCC": {
       "sma50": 21.93800006866455,
@@ -8582,7 +8582,7 @@
       "rs_rank": 93.7,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": true
     },
     "OLECTRA": {
@@ -9307,7 +9307,7 @@
       "rs_rank": 49.0,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "PRSMJOHNSN": {
@@ -13222,8 +13222,8 @@
       "rs_rank": 33.3,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "YATHARTH": {
       "sma50": 920.6389990234375,
