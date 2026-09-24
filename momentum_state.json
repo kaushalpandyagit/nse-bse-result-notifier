@@ -409,7 +409,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "ADVENZYMES": {
       "sma50": 304.6540002441406,
@@ -2059,7 +2060,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "BLUESTONE": {
       "sma50": 818.0130053710938,
