@@ -577,7 +577,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
 
     for symbol, d in per_symbol_data.items():
         rs_rank = rs_rank_pct.get(symbol)
-        watchlist[symbol] = {**d, "rs_rank": rs_rank, "zanger_alerted": False, "bonde_alerted": False, "resistance_alerted": False, "mtf_alerted": False}
+        watchlist[symbol] = {**d, "rs_rank": rs_rank, "zanger_alerted": False, "bonde_alerted": False, "resistance_alerted": False, "mtf_alerted": False, "ema50_pullback_alerted": False}
         if d["stage2"] and d["vcp_contracting"]: stage2_vcp_list.append((symbol, rs_rank))
         if rs_rank is not None and rs_rank >= MOMENTUM_LEADER_RS_RANK_MIN and d["near_high"]: momentum_leader_list.append((symbol, rs_rank))
 
@@ -604,7 +604,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
     if not watchlist: return momentum_state
 
     for symbol, entry in watchlist.items():
-        if (entry.get("zanger_alerted") and entry.get("bonde_alerted") and entry.get("resistance_alerted") and entry.get("mtf_alerted")):
+        if (entry.get("zanger_alerted") and entry.get("bonde_alerted") and entry.get("resistance_alerted") and entry.get("mtf_alerted") and entry.get("ema50_pullback_alerted")):
             continue
 
         metrics = get_live_metrics(fyers, symbol, "NSE")
@@ -638,6 +638,20 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
             if rsi_condition and ema_condition:
                 entry["mtf_alerted"] = True
                 send_telegram_message(f"\U0001F52E <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice \u20b9{price:.2f} (Spiked \u22653% above key EMA).\nLive Daily RSI: {metrics['rsi']:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}")
+        
+        # ----------------------------------------------------------------------
+        # NEW HEAD: Near 5% to 50 EMA Scanner
+        # ----------------------------------------------------------------------
+        if not entry.get("ema50_pullback_alerted") and metrics.get("ema_50"):
+            ema_50 = metrics["ema_50"]
+            distance_to_ema_pct = abs(price - ema_50) / ema_50 * 100
+            
+            if distance_to_ema_pct <= 5.0:
+                entry["ema50_pullback_alerted"] = True
+                send_telegram_message(
+                    f"🧲 <b>{symbol}</b> 50 EMA Pullback Scanner!\n"
+                    f"Price ₹{price:.2f} is consolidating within {distance_to_ema_pct:.1f}% of its 50 EMA (₹{ema_50:.2f})."
+                )
 
     return momentum_state
 
