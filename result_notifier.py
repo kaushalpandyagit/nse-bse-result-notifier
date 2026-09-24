@@ -24,6 +24,12 @@ from pathlib import Path
 import requests
 
 try:
+    import yfinance as yf
+except ImportError:
+    yf = None
+    print("WARNING: yfinance not installed. Market cap filtering will safely default to passing all SMEs.")
+
+try:
     import PyPDF2
 except ImportError:
     PyPDF2 = None
@@ -90,7 +96,13 @@ CIRCULAR_KEYWORDS = [
 MEETING_KEYWORDS = [
     "annual general meeting", " agm ", "e-voting", "evoting",
     "investor meet", "analyst meet", "earnings call",
-    "conference call", "schedule of analyst", "investor presentation"
+    "conference call", "schedule of analyst", "investor presentation",
+    "institutional investor"
+]
+
+NOISE_KEYWORDS = [
+    "agm", "e-voting", "evoting", "newspaper", "corrigendum", "proceedings", 
+    "annual general meeting", "postal ballot", "notice of", "book closure"
 ]
 
 _AMOUNT_UNIT_PATTERN = re.compile(
@@ -265,6 +277,19 @@ def matches_watchlist(company: str, symbol: str) -> bool:
     norm_watch = {normalise_company(w) for w in WATCHLIST}
     return normalise_company(company) in norm_watch or symbol.upper() in {w.upper() for w in WATCHLIST}
 
+def get_market_cap_cr(symbol: str, exchange: str) -> float:
+    if not yf or not symbol:
+        return None
+    ticker_suffix = ".NS" if exchange.upper() == "NSE" else ".BO"
+    try:
+        t = yf.Ticker(f"{symbol.strip().upper()}{ticker_suffix}")
+        mcap = t.fast_info.get("marketCap") or t.fast_info.get("market_cap")
+        if mcap:
+            return float(mcap) / 1e7
+    except Exception:
+        pass
+    return None
+
 # ----------------------------------------------------------------------
 # EXCHANGE FETCHERS
 # ----------------------------------------------------------------------
@@ -425,6 +450,29 @@ def poll_once(seen: set) -> set:
         category = classify_announcement(item["subject"])
         if not category:
             continue
+
+        # --- CATALYST vs NOISE FILTER ---
+        if category == "meeting":
+            subj_lower = item["subject"].lower()
+            is_catalyst = any(kw in subj_lower for kw in ["analyst", "institutional", "concall", "investor", "earnings call"])
+            is_noise = any(kw in subj_lower for kw in NOISE_KEYWORDS)
+            
+            if is_noise and not is_catalyst:
+                # Market Cap Check: Skip if > 12000 Cr, Keep if < 12000 Cr
+                mcap_cr = get_market_cap_cr(item["symbol"], item["source"])
+                
+                if mcap_cr is not None and mcap_cr >= 12000.0:
+                    fp = fingerprint(item["company"], item["subject"], item["date"])
+                    seen.add(fp)  # Mark as seen so we don't process it repeatedly
+                    continue      # Silently drop the alert
+                
+                # If mcap is < 12000 or unknown SME, allow it through
+                mcap_str = f"~{int(mcap_cr)} Cr" if mcap_cr else "SME/Unknown"
+                item["subject"] = f"📊 SMALLCAP AGM ({mcap_str}): " + item["subject"]
+                
+            elif is_catalyst:
+                item["subject"] = "🔥 CATALYST: " + item["subject"]
+        # --------------------------------
 
         fp = fingerprint(item["company"], item["subject"], item["date"])
         if fp in seen:
