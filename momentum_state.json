@@ -2651,7 +2651,7 @@
       "resistance_alerted": true,
       "mtf_alerted": false,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:16:14.015344"
+      "resistance_last_alert": "2026-09-24T11:01:42.541993"
     },
     "CENTURYPLY": {
       "sma50": 755.6420007324218,
@@ -3183,9 +3183,9 @@
       "resistance_alerted": true,
       "mtf_alerted": true,
       "ema50_pullback_alerted": true,
-      "zanger_last_alert": "2026-09-24T10:16:16.543053",
-      "resistance_last_alert": "2026-09-24T10:16:17.008548",
-      "mtf_last_alert": "2026-09-24T10:16:17.494877"
+      "zanger_last_alert": "2026-09-24T11:01:47.659121",
+      "resistance_last_alert": "2026-09-24T11:01:48.260178",
+      "mtf_last_alert": "2026-09-24T11:01:48.864806"
     },
     "CROMPTON": {
       "sma50": 242.88779907226564,
@@ -3838,8 +3838,8 @@
       "resistance_alerted": true,
       "mtf_alerted": true,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:16:21.695246",
-      "mtf_last_alert": "2026-09-24T10:16:22.186915"
+      "resistance_last_alert": "2026-09-24T11:01:54.738034",
+      "mtf_last_alert": "2026-09-24T11:01:55.350670"
     },
     "ELECTCAST": {
       "sma50": 75.02399993896485,
@@ -4758,8 +4758,8 @@
       "resistance_alerted": true,
       "mtf_alerted": true,
       "ema50_pullback_alerted": true,
-      "zanger_last_alert": "2026-09-24T10:16:27.260622",
-      "mtf_last_alert": "2026-09-24T10:16:27.722953"
+      "zanger_last_alert": "2026-09-24T11:02:03.019676",
+      "mtf_last_alert": "2026-09-24T11:02:03.687912"
     },
     "GNFC": {
       "sma50": 559.7659997558594,
@@ -5259,8 +5259,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:16:30.730997",
-      "mtf_last_alert": "2026-09-24T10:16:31.216619"
+      "resistance_last_alert": "2026-09-24T11:02:08.597849",
+      "mtf_last_alert": "2026-09-24T11:02:09.209436"
     },
     "HCC": {
       "sma50": 21.93800006866455,
@@ -6376,8 +6376,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false,
-      "zanger_last_alert": "2026-09-24T10:16:36.033303",
-      "resistance_last_alert": "2026-09-24T10:16:36.498651"
+      "zanger_last_alert": "2026-09-24T11:02:18.573287",
+      "resistance_last_alert": "2026-09-24T11:02:19.207834"
     },
     "JAYNECOIND": {
       "sma50": 91.52959991455079,
@@ -7409,9 +7409,9 @@
       "resistance_alerted": true,
       "mtf_alerted": true,
       "ema50_pullback_alerted": true,
-      "zanger_last_alert": "2026-09-24T10:16:41.255731",
-      "resistance_last_alert": "2026-09-24T10:16:41.747217",
-      "mtf_last_alert": "2026-09-24T10:16:42.223645"
+      "zanger_last_alert": "2026-09-24T11:02:27.589176",
+      "resistance_last_alert": "2026-09-24T11:02:28.304687",
+      "mtf_last_alert": "2026-09-24T11:02:28.907007"
     },
     "KTKBANK": {
       "sma50": 312.9419989013672,
@@ -7500,7 +7500,7 @@
       "resistance_alerted": true,
       "mtf_alerted": false,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:16:43.046008"
+      "resistance_last_alert": "2026-09-24T11:02:30.164208"
     },
     "LLOYDSENGG": {
       "sma50": 87.94679992675782,
@@ -8737,8 +8737,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "zanger_last_alert": "2026-09-24T10:16:48.845265",
-      "mtf_last_alert": "2026-09-24T10:16:49.330148"
+      "zanger_last_alert": "2026-09-24T11:02:40.166007",
+      "mtf_last_alert": "2026-09-24T11:02:40.770657"
     },
     "OLECTRA": {
       "sma50": 1296.1119995117188,
@@ -8799,7 +8799,7 @@
       "resistance_alerted": true,
       "mtf_alerted": false,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:16:50.076085"
+      "resistance_last_alert": "2026-09-24T11:02:41.820767"
     },
     "OPTIEMUS": {
       "sma50": 590.1269995117187,
@@ -9474,7 +9474,7 @@
       "resistance_alerted": true,
       "mtf_alerted": false,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:16:53.414813"
+      "resistance_last_alert": "2026-09-24T11:02:47.550214"
     },
     "PRSMJOHNSN": {
       "sma50": 110.5497998046875,
@@ -9505,7 +9505,7 @@
       "resistance_alerted": true,
       "mtf_alerted": false,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:16:54.004850"
+      "resistance_last_alert": "2026-09-24T11:02:48.371450"
     },
     "PRUDENT": {
       "sma50": 3265.8760009765624,
@@ -11127,7 +11127,7 @@
       "resistance_alerted": false,
       "mtf_alerted": false,
       "ema50_pullback_alerted": true,
-      "ema50_pullback_last_alert": "2026-09-24T10:17:00.923221"
+      "ema50_pullback_last_alert": "2026-09-24T11:03:01.284668"
     },
     "SKIPPER": {
       "sma50": 546.7290002441406,
@@ -11364,7 +11364,7 @@
       "resistance_alerted": true,
       "mtf_alerted": false,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:17:02.588256"
+      "resistance_last_alert": "2026-09-24T11:03:03.781663"
     },
     "SPLPETRO": {
       "sma50": 744.93,
@@ -11660,8 +11660,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "zanger_last_alert": "2026-09-24T10:17:04.410109",
-      "mtf_last_alert": "2026-09-24T10:17:04.884095"
+      "zanger_last_alert": "2026-09-24T11:03:06.846464",
+      "mtf_last_alert": "2026-09-24T11:03:07.456034"
     },
     "SUPRIYA": {
       "sma50": 860.1280029296875,
@@ -12400,7 +12400,7 @@
       "resistance_alerted": true,
       "mtf_alerted": true,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:17:08.349199"
+      "resistance_last_alert": "2026-09-24T11:03:13.484729"
     },
     "TIPSMUSIC": {
       "sma50": 662.8059997558594,
@@ -12431,7 +12431,7 @@
       "resistance_alerted": true,
       "mtf_alerted": false,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:17:08.992275"
+      "resistance_last_alert": "2026-09-24T11:03:14.323238"
     },
     "TITAGARH": {
       "sma50": 839.7480017089844,
@@ -12669,7 +12669,7 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:17:10.400119"
+      "resistance_last_alert": "2026-09-24T11:03:16.942398"
     },
     "TTML": {
       "sma50": 38.009199905395505,
@@ -12877,7 +12877,7 @@
       "resistance_alerted": true,
       "mtf_alerted": false,
       "ema50_pullback_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:17:11.566174"
+      "resistance_last_alert": "2026-09-24T11:03:19.143806"
     },
     "UTLSOLAR": {
       "sma50": 419.2319982910156,
@@ -13466,8 +13466,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "resistance_last_alert": "2026-09-24T10:17:14.401696",
-      "mtf_last_alert": "2026-09-24T10:17:14.895425"
+      "resistance_last_alert": "2026-09-24T11:03:24.163648",
+      "mtf_last_alert": "2026-09-24T11:03:24.768591"
     },
     "YATHARTH": {
       "sma50": 920.6389990234375,
