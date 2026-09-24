@@ -4152,7 +4152,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "ERIS": {
       "sma50": 1355.0299951171876,
@@ -5447,7 +5448,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "HOMEFIRST": {
       "sma50": 1197.4219995117187,
@@ -6620,7 +6622,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "ema50_pullback_alerted": true
     },
     "JSFB": {
       "sma50": 543.2719952392578,
@@ -12682,7 +12685,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": false,
-      "mtf_alerted": false,
+      "mtf_alerted": true,
       "ema50_pullback_alerted": true
     },
     "UCOBANK": {
