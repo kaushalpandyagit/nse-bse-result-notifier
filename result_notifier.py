@@ -4,9 +4,9 @@ NSE + BSE Live Result, Order Win, Insider Trade, Circular & Meeting Notifier -> 
 Covers:
   1. Financial Results (Regulation 33 / Board outcomes)
   2. Order & Contract Wins (with Rupee value extraction)
-  3. Insider Trading & Promoter Actions (Filters OUT generic Trading Window closures)
+  3. Insider Trading & Promoter Actions (Auto-Extracts Buy/Sell/Pledge from PDFs)
   4. NSE Exchange Circulars
-  5. AGMs, E-Voting, and Investor / Analyst Meets (with Auto-PDF Date & Purpose Extraction)
+  5. AGMs, E-Voting, and Investor / Analyst Meets (with Market Cap filtering & PDF Parsing)
   6. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
@@ -254,6 +254,57 @@ def extract_evoting_purpose(text: str) -> str | None:
         return ", ".join(matched[:3])
     return None
 
+def extract_insider_summary(text: str) -> str:
+    if not text:
+        return ""
+    text_lower = text.lower()
+    
+    # Strip standard legal boilerplate to prevent false positive matches
+    text_stripped = text_lower.replace("substantial acquisition of shares", "")
+    text_stripped = text_stripped.replace("prohibition of insider trading", "")
+    text_stripped = text_stripped.replace("details of acquisition/sale", "")
+    text_stripped = text_stripped.replace("acquired/disposed", "")
+    
+    summaries = []
+    
+    # 1. Pledge Analysis (Reg 31)
+    if "pledge" in text_stripped or "encumbrance" in text_stripped or "31(1)" in text_stripped or "31(2)" in text_stripped:
+        if "creation of" in text_stripped or "created" in text_stripped:
+            summaries.append("Creation of Pledge 🔒")
+        if "release of" in text_stripped or "released" in text_stripped or "revocation" in text_stripped:
+            summaries.append("Release of Pledge 🔓")
+        if "invocation" in text_stripped or "invoked" in text_stripped:
+            summaries.append("Invocation of Pledge ⚠️")
+            
+    # 2. Buy/Sell Analysis (Reg 29 & PIT Form C)
+    if "form c" in text_stripped or "29(2)" in text_stripped or "29(1)" in text_stripped or "7(2)" in text_stripped:
+        if "market purchase" in text_stripped or "open market purchase" in text_stripped:
+            summaries.append("Market Purchase (Buy) 🟢")
+        elif "market sale" in text_stripped or "open market sale" in text_stripped:
+            summaries.append("Market Sale (Sell) 🔴")
+        elif "esop" in text_stripped:
+            summaries.append("ESOP Allotment 🟢")
+        elif "gift" in text_stripped:
+            summaries.append("Gift / Transfer 🎁")
+        else:
+            # Fallback to counting action verbs in the tables
+            acq_c = text_stripped.count("acquired") + text_stripped.count("acquisition") + text_stripped.count("purchase")
+            disp_c = text_stripped.count("disposed") + text_stripped.count("sale") + text_stripped.count("sold")
+            
+            if acq_c > disp_c * 2:
+                summaries.append("Acquisition of Shares 🟢")
+            elif disp_c > acq_c * 2:
+                summaries.append("Disposal of Shares 🔴")
+
+    if not summaries:
+        return ""
+        
+    # Remove duplicates but preserve logical order
+    seen = set()
+    unique_summaries = [x for x in summaries if not (x in seen or seen.add(x))]
+    
+    return " | ".join(unique_summaries)
+
 def classify_announcement(subject: str) -> str:
     subj_lower = f" {subject.lower()} "
     
@@ -496,8 +547,27 @@ def poll_once(seen: set) -> set:
             body = f"{item['subject']}\n{val_line}\U0001F550 {item['date']}"
             
         elif cat == "insider_promoter":
-            header = f"\U0001F50D <b>{item['company']}</b> ({item['source']}) \u2014 Insider / Promoter Action"
-            body = f"{item['subject']}\n\U0001F550 {item['date']}"
+            summary = ""
+            if item.get("link") and PyPDF2 is not None:
+                try:
+                    time.sleep(random.uniform(1.0, 2.0))
+                    pdf_resp = requests.get(item["link"], headers=get_browser_headers(), timeout=15)
+                    if pdf_resp.status_code == 200:
+                        with io.BytesIO(pdf_resp.content) as f:
+                            reader = PyPDF2.PdfReader(f)
+                            if len(reader.pages) > 0:
+                                pdf_text = reader.pages[0].extract_text() or ""
+                                # Scan the first two pages where the tables usually reside
+                                if len(reader.pages) > 1 and len(pdf_text) < 1500:
+                                    pdf_text += " " + (reader.pages[1].extract_text() or "")
+                                
+                                summary = extract_insider_summary(pdf_text)
+                except Exception as e:
+                    log.warning("PDF extraction failed for %s: %s", item['company'], e)
+            
+            sum_line = f"📝 Action: <b>{summary}</b>\n" if summary else ""
+            header = f"🔍 <b>{item['company']}</b> ({item['source']}) \u2014 Insider / Promoter Action"
+            body = f"{item['subject']}\n{sum_line}🕐 {item['date']}"
             
         elif cat == "meeting":
             meet_date = extract_meeting_date(item["subject"])
