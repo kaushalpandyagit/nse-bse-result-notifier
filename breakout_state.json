@@ -231,11 +231,12 @@
     "day_low": 419.5,
     "baseline_rsi": 53.759531985139866,
     "price_high_alerted": false,
-    "price_low_alerted": false,
+    "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-24T06:45:48.693776",
-    "rsi_down_last_alert": "2026-09-24T07:01:03.543091"
+    "rsi_down_last_alert": "2026-09-24T07:01:03.543091",
+    "price_low_last_alert": "2026-09-24T08:01:01.382356"
   },
   "CAPILLARY": {
     "result_date": "2026-09-24T00:00:00",
