@@ -68,11 +68,12 @@ CLIENT_ID = APP_ID if APP_ID.endswith("-100") else f"{APP_ID}-100"
 CACHE_DIR = os.path.expanduser("~/fyers_trading")
 TOKEN_FILE = os.path.join(CACHE_DIR, ".fyers_token.txt")
 
+# Strict 45-minute freeze to prevent notification spam
 POLL_INTERVAL_MINUTES = 15
+ALERT_COOLDOWN_MINUTES = 45
 
 RSI_PERIOD = 14
 TRACK_WINDOW_DAYS = 15
-ALERT_COOLDOWN_MINUTES = 30
 
 MIN_MARKET_CAP_CR = 300.0
 MAX_MARKET_CAP_CR = 31000.0
@@ -314,7 +315,7 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
         
         resp = fyers.history(data=data)
         
-        # Fallbacks for SME and BE series - MUST update fyers_sym for Quotes API!
+        # Fallbacks for SME and BE series
         if resp.get("s") != "ok" or "candles" not in resp:
             fyers_sym = f"{exchange}:{symbol}-SM"
             data["symbol"] = fyers_sym
@@ -331,7 +332,7 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                 df["date"] = pd.to_datetime(df["timestamp"], unit='s', utc=True).dt.tz_convert("Asia/Kolkata")
                 df.set_index("date", inplace=True)
                 
-                # --- FIX: Fetch real-time tick data via Quotes API to override delayed daily candle ---
+                # --- Real-time tick data override ---
                 try:
                     q_resp = fyers.quotes(data={"symbols": fyers_sym})
                     if q_resp.get("s") == "ok" and q_resp.get("d"):
@@ -344,7 +345,6 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                         
                         last_idx = df.index[-1]
                         
-                        # If the last candle is today, update it with live data
                         if last_idx.date() == datetime.date.today():
                             df.loc[last_idx, "Close"] = live_price
                             df.loc[last_idx, "Open"] = live_open
@@ -352,12 +352,10 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                             df.loc[last_idx, "High"] = live_high
                             df.loc[last_idx, "Low"] = live_low
                         else:
-                            # If today's candle hasn't formed yet at all, append it
                             new_idx = pd.Timestamp.now(tz="Asia/Kolkata")
                             df.loc[new_idx] = {"Open": live_open, "High": live_high, "Low": live_low, "Close": live_price, "Volume": live_vol, "timestamp": int(time.time())}
-                except Exception as e:
+                except Exception:
                     pass
-                # --------------------------------------------------------------------------------------
 
                 closes = df["Close"]
                 today = df.iloc[-1]
@@ -389,12 +387,11 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                     "ema_200": float(closes.ewm(span=200, adjust=False).mean().iloc[-1]),
                     "sma_50": float(closes.rolling(50).mean().iloc[-1] if len(closes) >= 50 else 0),
                     "sma_200": float(closes.rolling(200).mean().iloc[-1] if len(closes) >= 200 else 0),
-                    # Added for the 50 EMA Pullback Scanner
                     "sma_vol_5": float(df["Volume"].rolling(5).mean().iloc[-1]) if len(df) >= 5 else 0.0,
                     "sma_vol_20": float(df["Volume"].rolling(20).mean().iloc[-1]) if len(df) >= 20 else 0.0,
                 }
 
-    # Route to Yahoo after market hours or if Fyers fails
+    # Route to Yahoo after market hours
     yahoo_ticker = f"{symbol}.NS" if exchange == "NSE" else f"{symbol}.BO"
     try:
         hist = yf.Ticker(yahoo_ticker).history(period="1y", interval="1d")
@@ -430,7 +427,6 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
             "ema_200": float(closes.ewm(span=200, adjust=False).mean().iloc[-1]),
             "sma_50": float(closes.rolling(50).mean().iloc[-1] if len(closes) >= 50 else 0),
             "sma_200": float(closes.rolling(200).mean().iloc[-1] if len(closes) >= 200 else 0),
-            # Added for the 50 EMA Pullback Scanner
             "sma_vol_5": float(hist["Volume"].rolling(5).mean().iloc[-1]) if len(hist) >= 5 else 0.0,
             "sma_vol_20": float(hist["Volume"].rolling(20).mean().iloc[-1]) if len(hist) >= 20 else 0.0,
         }
@@ -615,7 +611,9 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
 
     for symbol, d in per_symbol_data.items():
         rs_rank = rs_rank_pct.get(symbol)
-        watchlist[symbol] = {**d, "rs_rank": rs_rank, "zanger_alerted": False, "bonde_alerted": False, "resistance_alerted": False, "mtf_alerted": False, "ema50_pullback_alerted": False}
+        # We no longer need to initialize booleans here, cooldown_elapsed handles it dynamically
+        watchlist[symbol] = {**d, "rs_rank": rs_rank}
+        
         if d["stage2"] and d["vcp_contracting"]: stage2_vcp_list.append((symbol, rs_rank))
         if rs_rank is not None and rs_rank >= MOMENTUM_LEADER_RS_RANK_MIN and d["near_high"]: momentum_leader_list.append((symbol, rs_rank))
 
@@ -637,16 +635,23 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     send_telegram_message(digest)
     return momentum_state
 
+def cooldown_elapsed(entry: dict, last_alert_key: str) -> bool:
+    last = entry.get(last_alert_key)
+    if not last:
+        return True
+    try:
+        last_dt = datetime.datetime.fromisoformat(last)
+    except Exception:
+        return True
+    return (datetime.datetime.now() - last_dt) >= datetime.timedelta(minutes=ALERT_COOLDOWN_MINUTES)
+
 def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
     watchlist = momentum_state.get("watchlist", {})
     if not watchlist: return momentum_state
 
     for symbol, entry in watchlist.items():
-        if (entry.get("zanger_alerted") and entry.get("bonde_alerted") and entry.get("resistance_alerted") and entry.get("mtf_alerted") and entry.get("ema50_pullback_alerted")):
-            continue
-
         metrics = get_live_metrics(fyers, symbol, "NSE")
-        if not metrics or metrics["weekly_rsi"] >= MAX_WEEKLY_RSI:
+        if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI:
             continue
 
         price = metrics["price"]
@@ -657,34 +662,34 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
         base_high = entry.get("base_high")
         pct_change = (price - prev_close) / prev_close * 100 if prev_close else None
 
-        if not entry.get("zanger_alerted") and base_high and avg_vol50 and pct_change is not None:
+        if cooldown_elapsed(entry, "zanger_last_alert") and base_high and avg_vol50 and pct_change is not None:
             if pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50 and price >= (base_high * 0.95):
-                entry["zanger_alerted"] = True
+                entry["zanger_last_alert"] = datetime.datetime.now().isoformat()
                 send_telegram_message(f"\U0001F4A5 <b>{symbol}</b> Zanger Early Entry Setup!\nPrice \u20b9{price:.2f} (up {pct_change:+.1f}%) near {ZANGER_BASE_LOOKBACK_DAYS}-day base high \u20b9{base_high:.2f} on {volume / avg_vol50:.1f}x avg volume.")
 
-        if not entry.get("bonde_alerted") and pct_change is not None and prev_volume is not None and metrics["close_3d_ago"]:
+        if cooldown_elapsed(entry, "bonde_last_alert") and pct_change is not None and prev_volume is not None and metrics.get("close_3d_ago"):
             return_3d = (prev_close - metrics["close_3d_ago"]) / metrics["close_3d_ago"] * 100
             if entry.get("stage2") and return_3d < 1.0 and volume > prev_volume and volume >= BONDE_MIN_VOLUME and pct_change >= BONDE_MIN_MOVE_PCT:
-                entry["bonde_alerted"] = True
+                entry["bonde_last_alert"] = datetime.datetime.now().isoformat()
                 send_telegram_message(f"\u26A1 <b>{symbol}</b> Bonde Early Entry Model Trigger!\nConsolidated ({return_3d:+.1f}%), moved {pct_change:+.1f}% today. Vol ({volume:,.0f}) > Yesterday, in Stage 2. Price \u20b9{price:.2f}")
 
-        if not entry.get("resistance_alerted") and base_high:
+        if cooldown_elapsed(entry, "resistance_last_alert") and base_high:
             if 0 < ((base_high - price) / base_high * 100) <= 4.0:
-                entry["resistance_alerted"] = True
+                entry["resistance_last_alert"] = datetime.datetime.now().isoformat()
                 send_telegram_message(f"\U0001F3AF <b>{symbol}</b> Horizontal Resistance Scanner!\nPrice \u20b9{price:.2f} is within 4% below the recent base high (\u20b9{base_high:.2f}).")
 
-        if not entry.get("mtf_alerted") and metrics["rsi"] is not None:
+        if cooldown_elapsed(entry, "mtf_last_alert") and metrics.get("rsi") is not None:
             m_rsi, y_rsi = entry.get("monthly_rsi", 50.0), entry.get("yesterday_rsi", 50.0)
             ema_condition = price >= metrics["ema_200"] * 1.03 or price >= metrics["ema_50"] * 1.03 or price >= metrics["ema_21"] * 1.03
             rsi_condition = metrics["rsi"] > y_rsi and metrics["rsi"] > 30 and m_rsi <= 56 and metrics["weekly_rsi"] <= metrics["rsi"]
             if rsi_condition and ema_condition:
-                entry["mtf_alerted"] = True
+                entry["mtf_last_alert"] = datetime.datetime.now().isoformat()
                 send_telegram_message(f"\U0001F52E <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice \u20b9{price:.2f} (Spiked \u22653% above key EMA).\nLive Daily RSI: {metrics['rsi']:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}")
         
         # ----------------------------------------------------------------------
-        # NEW HEAD: Strict 50 EMA Pullback Scanner (Rules 1-8)
+        # Strict 50 EMA Pullback Scanner (Rules 1-8) with 45 Min Freeze
         # ----------------------------------------------------------------------
-        if not entry.get("ema50_pullback_alerted"):
+        if cooldown_elapsed(entry, "ema50_pullback_last_alert"):
             ema_50 = metrics.get("ema_50")
             rsi = metrics.get("rsi")
             y_rsi = entry.get("yesterday_rsi")
@@ -712,7 +717,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                 if (cond_price and cond_rsi_bounds and cond_mcap and cond_vol and 
                     cond_close and cond_rsi_daily and cond_rsi_weekly):
                     
-                    entry["ema50_pullback_alerted"] = True
+                    entry["ema50_pullback_last_alert"] = datetime.datetime.now().isoformat()
                     send_telegram_message(
                         f"🧲 <b>{symbol}</b> Strict 50 EMA Pullback Alert!\n"
                         f"Price ₹{price:.2f} is hovering near 50 EMA (₹{ema_50:.2f}) with expanding volume.\n"
@@ -914,16 +919,6 @@ def prune_expired(state: dict) -> dict:
             continue
     return kept
 
-def cooldown_elapsed(entry: dict, last_alert_key: str) -> bool:
-    last = entry.get(last_alert_key)
-    if not last:
-        return True
-    try:
-        last_dt = datetime.datetime.fromisoformat(last)
-    except Exception:
-        return True
-    return (datetime.datetime.now() - last_dt) >= datetime.timedelta(minutes=ALERT_COOLDOWN_MINUTES)
-
 def load_state() -> dict:
     if STATE_FILE.exists():
         try:
@@ -955,7 +950,6 @@ def poll_once(state: dict, fyers) -> dict:
         state[symbol] = {
             "result_date": datetime.datetime.combine(metrics["actual_date"], datetime.time()).isoformat(),
             "day_high": metrics["day_high"], "day_low": metrics["day_low"], "baseline_rsi": metrics["baseline_rsi"],
-            "price_high_alerted": False, "price_low_alerted": False, "rsi_up_alerted": False, "rsi_down_alerted": False,
         }
         rsi_line = f"Result-day RSI({RSI_PERIOD}): {metrics['baseline_rsi']:.1f}\n" if metrics["baseline_rsi"] else ""
         send_telegram_message(f"\U0001F4CC <b>{symbol}</b> result filed today.\nResult-day High: \u20b9{metrics['day_high']:.2f} | Low: \u20b9{metrics['day_low']:.2f}\n{rsi_line}Will alert if price breaks this High/Low or RSI crosses.")
@@ -965,28 +959,27 @@ def poll_once(state: dict, fyers) -> dict:
     for symbol, entry in state.items():
         if symbol.startswith("custom_alert_"): continue 
         if "day_low" not in entry or "baseline_rsi" not in entry: continue
-        if entry.get("price_high_alerted") and entry.get("price_low_alerted") and entry.get("rsi_up_alerted") and entry.get("rsi_down_alerted"): continue
 
         metrics = get_live_metrics(fyers, symbol, "NSE")
-        if not metrics or metrics["weekly_rsi"] >= MAX_WEEKLY_RSI: continue
+        if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI: continue
 
         price, rsi = metrics["price"], metrics["rsi"]
 
-        if not entry["price_high_alerted"] and price > entry["day_high"] and cooldown_elapsed(entry, "price_high_last_alert"):
-            entry["price_high_alerted"], entry["price_high_last_alert"] = True, datetime.datetime.now().isoformat()
+        if price > entry["day_high"] and cooldown_elapsed(entry, "price_high_last_alert"):
+            entry["price_high_last_alert"] = datetime.datetime.now().isoformat()
             send_telegram_message(f"\U0001F680 <b>{symbol}</b> price broke ABOVE result-day High!\nCurrent: \u20b9{price:.2f} | Result-day High: \u20b9{entry['day_high']:.2f}")
 
-        if not entry["price_low_alerted"] and price < entry["day_low"] and cooldown_elapsed(entry, "price_low_last_alert"):
-            entry["price_low_alerted"], entry["price_low_last_alert"] = True, datetime.datetime.now().isoformat()
+        if price < entry["day_low"] and cooldown_elapsed(entry, "price_low_last_alert"):
+            entry["price_low_last_alert"] = datetime.datetime.now().isoformat()
             send_telegram_message(f"\U0001F53B <b>{symbol}</b> price broke BELOW result-day Low!\nCurrent: \u20b9{price:.2f} | Result-day Low: \u20b9{entry['day_low']:.2f}")
 
         if rsi is not None and entry.get("baseline_rsi") is not None:
-            if not entry["rsi_up_alerted"] and rsi > entry["baseline_rsi"] and cooldown_elapsed(entry, "rsi_up_last_alert"):
-                entry["rsi_up_alerted"], entry["rsi_up_last_alert"] = True, datetime.datetime.now().isoformat()
+            if rsi > entry["baseline_rsi"] and cooldown_elapsed(entry, "rsi_up_last_alert"):
+                entry["rsi_up_last_alert"] = datetime.datetime.now().isoformat()
                 send_telegram_message(f"\U0001F4C8 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: \u20b9{price:.2f}")
 
-            if not entry["rsi_down_alerted"] and rsi < entry["baseline_rsi"] and cooldown_elapsed(entry, "rsi_down_last_alert"):
-                entry["rsi_down_alerted"], entry["rsi_down_last_alert"] = True, datetime.datetime.now().isoformat()
+            if rsi < entry["baseline_rsi"] and cooldown_elapsed(entry, "rsi_down_last_alert"):
+                entry["rsi_down_last_alert"] = datetime.datetime.now().isoformat()
                 send_telegram_message(f"\U0001F4C9 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: \u20b9{price:.2f}")
 
     custom_alerts = {**fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)}
@@ -1010,7 +1003,7 @@ def poll_once(state: dict, fyers) -> dict:
                             send_telegram_message(f"📰 <b>{clean_symbol}</b> Catalyst Alert!\nMatched: <b>'{matched_kw}'</b> (Target: <i>{rules['target_raw']}</i>)\n\n<i>{news_item['subject']}</i>{chr(10) + '🔗 ' + news_item['link'] if news_item.get('link') else ''}")
             continue
 
-        if not c_entry.get("alerted") or cooldown_elapsed(c_entry, "last_alert"):
+        if cooldown_elapsed(c_entry, "last_alert"):
             c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
             if not c_metrics: continue
 
@@ -1022,7 +1015,7 @@ def poll_once(state: dict, fyers) -> dict:
                 if target_val is None: continue
                 
                 if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
-                    c_entry["alerted"], c_entry["last_alert"] = True, datetime.datetime.now().isoformat()
+                    c_entry["last_alert"] = datetime.datetime.now().isoformat()
                     t_str = f"{target_rule.upper()} (₹{target_val:.2f})" if isinstance(target_rule, str) else (f"{target_val:+.2f}%" if "pct" in metric_type else f"{target_val:.1f}" if "rsi" in metric_type else f"₹{target_val:+.2f}" if "change" in metric_type else f"₹{target_val:.2f}")
                     v_str = f"{current_val:+.2f}%" if "pct" in metric_type else f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:+.2f}" if "change" in metric_type else f"₹{current_val:.2f}"
                     send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{c_metrics['price']:.2f}")
