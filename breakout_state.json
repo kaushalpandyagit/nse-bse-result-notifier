@@ -57,7 +57,7 @@
   },
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
-    "last_alert": "2026-09-24T06:30:15.223987"
+    "last_alert": "2026-09-24T07:01:10.029087"
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -69,7 +69,7 @@
   },
   "custom_alert_BASILIC_price": {
     "alerted": true,
-    "last_alert": "2026-09-24T06:30:16.158158"
+    "last_alert": "2026-09-24T07:01:07.837853"
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,
@@ -147,7 +147,7 @@
   },
   "custom_alert_EMMIL_price": {
     "alerted": true,
-    "last_alert": "2026-09-24T06:30:17.596114"
+    "last_alert": "2026-09-24T07:01:09.379095"
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
@@ -233,7 +233,18 @@
     "price_high_alerted": false,
     "price_low_alerted": false,
     "rsi_up_alerted": true,
-    "rsi_down_alerted": false,
-    "rsi_up_last_alert": "2026-09-24T06:45:48.693776"
+    "rsi_down_alerted": true,
+    "rsi_up_last_alert": "2026-09-24T06:45:48.693776",
+    "rsi_down_last_alert": "2026-09-24T07:01:03.543091"
+  },
+  "CAPILLARY": {
+    "result_date": "2026-09-24T00:00:00",
+    "day_high": 572.5,
+    "day_low": 523.1500244140625,
+    "baseline_rsi": 71.03117006567263,
+    "price_high_alerted": false,
+    "price_low_alerted": false,
+    "rsi_up_alerted": false,
+    "rsi_down_alerted": false
   }
 }
