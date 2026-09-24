@@ -12179,7 +12179,7 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": true
     },
     "TIPSMUSIC": {
       "sma50": 662.8059997558594,
@@ -12439,7 +12439,7 @@
       "rs_rank": 63.9,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "TTML": {
