@@ -611,7 +611,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
 
     for symbol, d in per_symbol_data.items():
         rs_rank = rs_rank_pct.get(symbol)
-        # We no longer need to initialize booleans here, cooldown_elapsed handles it dynamically
         watchlist[symbol] = {**d, "rs_rank": rs_rank}
         
         if d["stage2"] and d["vcp_contracting"]: stage2_vcp_list.append((symbol, rs_rank))
@@ -648,6 +647,19 @@ def cooldown_elapsed(entry: dict, last_alert_key: str) -> bool:
 def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
     watchlist = momentum_state.get("watchlist", {})
     if not watchlist: return momentum_state
+
+    # --- TIME LOCK: Completely stop technical scanners after 3:40 PM ---
+    now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
+    if now.weekday() >= 5:  
+        return momentum_state  # Skip weekends entirely for intraday triggers
+    
+    current_time = now.time()
+    start_time = datetime.time(9, 0)
+    end_time = datetime.time(15, 40)
+    
+    if not (start_time <= current_time <= end_time):
+        return momentum_state
+    # -------------------------------------------------------------------
 
     for symbol, entry in watchlist.items():
         metrics = get_live_metrics(fyers, symbol, "NSE")
