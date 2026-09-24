@@ -3,7 +3,7 @@ NSE + BSE Live Result, Order Win, Insider Trade, Circular & Meeting Notifier -> 
 ==========================================================================================
 Covers:
   1. Financial Results (Regulation 33 / Board outcomes)
-  2. Order & Contract Wins (with Rupee value extraction)
+  2. Order & Contract Wins (with Rupee value extraction & SME Support)
   3. Insider Trading & Promoter Actions (Auto-Extracts Buy/Sell/Pledge from PDFs)
   4. NSE Exchange Circulars
   5. AGMs, E-Voting, and Investor / Analyst Meets (with Market Cap filtering & PDF Parsing)
@@ -68,6 +68,8 @@ ORDER_KEYWORDS = [
     "letter of intent", "l.o.i.", " loi ", "letter of award",
     "l.o.a.", " loa ", "purchase order", "work order",
     "order/contract", "order / contract",
+    # --- Catch NSE SME formatting quirks ---
+    "award_of_order", "receipt_of_order", "orders/contracts", "bagging/receiving"
 ]
 
 INSIDER_PROMOTER_KEYWORDS = [
@@ -259,7 +261,6 @@ def extract_insider_summary(text: str) -> str:
         return ""
     text_lower = text.lower()
     
-    # Strip standard legal boilerplate to prevent false positive matches
     text_stripped = text_lower.replace("substantial acquisition of shares", "")
     text_stripped = text_stripped.replace("prohibition of insider trading", "")
     text_stripped = text_stripped.replace("details of acquisition/sale", "")
@@ -267,7 +268,6 @@ def extract_insider_summary(text: str) -> str:
     
     summaries = []
     
-    # 1. Pledge Analysis (Reg 31)
     if "pledge" in text_stripped or "encumbrance" in text_stripped or "31(1)" in text_stripped or "31(2)" in text_stripped:
         if "creation of" in text_stripped or "created" in text_stripped:
             summaries.append("Creation of Pledge 🔒")
@@ -276,7 +276,6 @@ def extract_insider_summary(text: str) -> str:
         if "invocation" in text_stripped or "invoked" in text_stripped:
             summaries.append("Invocation of Pledge ⚠️")
             
-    # 2. Buy/Sell Analysis (Reg 29 & PIT Form C)
     if "form c" in text_stripped or "29(2)" in text_stripped or "29(1)" in text_stripped or "7(2)" in text_stripped:
         if "market purchase" in text_stripped or "open market purchase" in text_stripped:
             summaries.append("Market Purchase (Buy) 🟢")
@@ -287,7 +286,6 @@ def extract_insider_summary(text: str) -> str:
         elif "gift" in text_stripped:
             summaries.append("Gift / Transfer 🎁")
         else:
-            # Fallback to counting action verbs in the tables
             acq_c = text_stripped.count("acquired") + text_stripped.count("acquisition") + text_stripped.count("purchase")
             disp_c = text_stripped.count("disposed") + text_stripped.count("sale") + text_stripped.count("sold")
             
@@ -299,7 +297,6 @@ def extract_insider_summary(text: str) -> str:
     if not summaries:
         return ""
         
-    # Remove duplicates but preserve logical order
     seen = set()
     unique_summaries = [x for x in summaries if not (x in seen or seen.add(x))]
     
@@ -351,38 +348,46 @@ def fetch_nse_announcements() -> list:
     try:
         session.get("https://www.nseindia.com", headers=headers, timeout=12)
         time.sleep(random.uniform(1.2, 2.0))
-        resp = session.get(
-            "https://www.nseindia.com/api/corporate-announcements?index=equities",
-            headers={**headers, "Accept": "application/json"},
-            timeout=15,
-        )
-        resp.raise_for_status()
-        data = resp.json()
     except Exception as e:
-        log.warning("NSE announcements unavailable: %s", e)
-        return []
-
-    if isinstance(data, str):
-        try:
-            data = json.loads(data)
-        except Exception:
-            return []
-    if not isinstance(data, list):
+        log.warning("NSE init failed: %s", e)
         return []
 
     results = []
-    for item in data:
-        company = item.get("sm_name") or item.get("symbol", "")
-        subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}".strip()
-        date_str = item.get("an_dt") or item.get("attchmntFile", "") or ""
-        results.append({
-            "company": company,
-            "symbol": item.get("symbol", ""),
-            "subject": subject,
-            "date": date_str,
-            "source": "NSE",
-            "link": item.get("attchmntFile", ""),
-        })
+    # Loops through both Mainboard and SME announcements
+    for idx in ["equities", "sme"]:
+        try:
+            resp = session.get(
+                f"https://www.nseindia.com/api/corporate-announcements?index={idx}",
+                headers={**headers, "Accept": "application/json"},
+                timeout=15,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            
+            if isinstance(data, str):
+                try:
+                    data = json.loads(data)
+                except Exception:
+                    continue
+                    
+            if isinstance(data, list):
+                for item in data:
+                    company = item.get("sm_name") or item.get("symbol", "")
+                    subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}".strip()
+                    date_str = item.get("an_dt") or item.get("attchmntFile", "") or ""
+                    results.append({
+                        "company": company,
+                        "symbol": item.get("symbol", ""),
+                        "subject": subject,
+                        "date": date_str,
+                        "source": "NSE",
+                        "link": item.get("attchmntFile", ""),
+                    })
+        except Exception as e:
+            log.warning("NSE announcements unavailable for %s: %s", idx, e)
+        
+        time.sleep(random.uniform(1.0, 1.5))  # Sleep between API calls to prevent IP blocks
+        
     return results
 
 def fetch_bse_announcements() -> list:
@@ -509,15 +514,13 @@ def poll_once(seen: set) -> set:
             is_noise = any(kw in subj_lower for kw in NOISE_KEYWORDS)
             
             if is_noise and not is_catalyst:
-                # Market Cap Check: Skip if > 12000 Cr, Keep if < 12000 Cr
                 mcap_cr = get_market_cap_cr(item["symbol"], item["source"])
                 
                 if mcap_cr is not None and mcap_cr >= 12000.0:
                     fp = fingerprint(item["company"], item["subject"], item["date"])
-                    seen.add(fp)  # Mark as seen so we don't process it repeatedly
-                    continue      # Silently drop the alert
+                    seen.add(fp)  
+                    continue      
                 
-                # If mcap is < 12000 or unknown SME, allow it through
                 mcap_str = f"~{int(mcap_cr)} Cr" if mcap_cr else "SME/Unknown"
                 item["subject"] = f"📊 SMALLCAP AGM ({mcap_str}): " + item["subject"]
                 
@@ -557,7 +560,6 @@ def poll_once(seen: set) -> set:
                             reader = PyPDF2.PdfReader(f)
                             if len(reader.pages) > 0:
                                 pdf_text = reader.pages[0].extract_text() or ""
-                                # Scan the first two pages where the tables usually reside
                                 if len(reader.pages) > 1 and len(pdf_text) < 1500:
                                     pdf_text += " " + (reader.pages[1].extract_text() or "")
                                 
