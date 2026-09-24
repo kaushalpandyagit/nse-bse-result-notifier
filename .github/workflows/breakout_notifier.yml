@@ -21,14 +21,15 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: pip install -r requirements_breakout.txt
+        run: |
+          pip install -r requirements_breakout.txt
+          pip install pyotp fyers_apiv3
       - name: Run breakout notifier (single poll)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}
+          FYERS_TOTP_KEY: ${{ secrets.FYERS_TOTP_KEY }}
+          FYERS_PIN: ${{ secrets.FYERS_PIN }}
         run: python3 price_rsi_breakout.py --once
       - name: Commit updated state
         run: |
