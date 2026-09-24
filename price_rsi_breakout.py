@@ -4,6 +4,7 @@ Nifty Total Market Breakout Notifier -> Telegram
 Dual-Engine Fyers & Yahoo Finance Edition:
 - Fully Automated Headless TOTP Login via GitHub Secrets.
 - Time-based routing: Fyers (9:15-3:30) -> Yahoo Finance (After Hours).
+- Real-Time LTP override using Fyers Quotes API for zero-delay SME alerts.
 """
 
 import os
@@ -313,11 +314,14 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
         
         resp = fyers.history(data=data)
         
+        # Fallbacks for SME and BE series - MUST update fyers_sym for Quotes API!
         if resp.get("s") != "ok" or "candles" not in resp:
-            data["symbol"] = f"{exchange}:{symbol}-SM"
+            fyers_sym = f"{exchange}:{symbol}-SM"
+            data["symbol"] = fyers_sym
             resp = fyers.history(data=data)
             if resp.get("s") != "ok" or "candles" not in resp:
-                data["symbol"] = f"{exchange}:{symbol}-BE"
+                fyers_sym = f"{exchange}:{symbol}-BE"
+                data["symbol"] = fyers_sym
                 resp = fyers.history(data=data)
                 
         if resp.get("s") == "ok" and "candles" in resp:
@@ -327,6 +331,34 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                 df["date"] = pd.to_datetime(df["timestamp"], unit='s', utc=True).dt.tz_convert("Asia/Kolkata")
                 df.set_index("date", inplace=True)
                 
+                # --- FIX: Fetch real-time tick data via Quotes API to override delayed daily candle ---
+                try:
+                    q_resp = fyers.quotes(data={"symbols": fyers_sym})
+                    if q_resp.get("s") == "ok" and q_resp.get("d"):
+                        v = q_resp["d"][0]["v"]
+                        live_price = float(v["lp"])
+                        live_open = float(v["open_price"])
+                        live_vol = float(v["volume"])
+                        live_high = float(v["high_price"])
+                        live_low = float(v["low_price"])
+                        
+                        last_idx = df.index[-1]
+                        
+                        # If the last candle is today, update it with live data
+                        if last_idx.date() == datetime.date.today():
+                            df.loc[last_idx, "Close"] = live_price
+                            df.loc[last_idx, "Open"] = live_open
+                            df.loc[last_idx, "Volume"] = live_vol
+                            df.loc[last_idx, "High"] = live_high
+                            df.loc[last_idx, "Low"] = live_low
+                        else:
+                            # If today's candle hasn't formed yet at all, append it
+                            new_idx = pd.Timestamp.now(tz="Asia/Kolkata")
+                            df.loc[new_idx] = {"Open": live_open, "High": live_high, "Low": live_low, "Close": live_price, "Volume": live_vol, "timestamp": int(time.time())}
+                except Exception as e:
+                    pass
+                # --------------------------------------------------------------------------------------
+
                 closes = df["Close"]
                 today = df.iloc[-1]
                 yesterday = df.iloc[-2]
