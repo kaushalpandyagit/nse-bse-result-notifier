@@ -2,8 +2,8 @@
 Nifty Total Market Breakout Notifier -> Telegram
 =========================================================
 Dual-Engine Fyers & Yahoo Finance Edition:
-- Uses Fyers API for live, hyper-accurate intraday prices when run locally.
-- Silently falls back to Yahoo Finance when run headless on GitHub Actions.
+- Fully Automated Headless TOTP Login via GitHub Secrets.
+- Time-based routing: Fyers (9:15-3:30) -> Yahoo Finance (After Hours).
 """
 
 import os
@@ -12,6 +12,7 @@ import io
 import sys
 import json
 import time
+import base64
 import logging
 import datetime
 from pathlib import Path
@@ -20,6 +21,12 @@ from urllib.parse import parse_qs, urlparse
 import requests
 import numpy as np
 import pandas as pd
+
+try:
+    import pyotp
+except ImportError:
+    pyotp = None
+    print("pyotp is recommended for headless login: pip install pyotp")
 
 try:
     import yfinance as yf
@@ -61,7 +68,6 @@ CACHE_DIR = os.path.expanduser("~/fyers_trading")
 TOKEN_FILE = os.path.join(CACHE_DIR, ".fyers_token.txt")
 
 POLL_INTERVAL_MINUTES = 15
-POLL_ONLY_MARKET_HOURS = True
 
 RSI_PERIOD = 14
 TRACK_WINDOW_DAYS = 15
@@ -153,7 +159,7 @@ def send_telegram_message(text: str) -> bool:
         return False
 
 # ----------------------------------------------------------------------
-# FYERS AUTHENTICATION
+# FYERS AUTHENTICATION (Automated TOTP)
 # ----------------------------------------------------------------------
 
 def get_fyers_access_token():
@@ -171,8 +177,54 @@ def get_fyers_access_token():
                     log.info("🔑 Loaded valid daily Fyers token from %s", TOKEN_FILE)
                     return token
 
+    # --- AUTOMATED CLOUD LOGIN ---
+    totp_key = os.environ.get("FYERS_TOTP_KEY")
+    pin = os.environ.get("FYERS_PIN")
+    
+    if totp_key and pin and pyotp:
+        log.info("🤖 FYERS_TOTP_KEY found! Initiating fully automated headless login...")
+        try:
+            b64_fyers_id = base64.b64encode(LOGIN_ID.encode()).decode()
+            b64_pin = base64.b64encode(str(pin).encode()).decode()
+            
+            s = requests.Session()
+            res1 = s.post("https://api-t2.fyers.in/vagator/v2/send_login_otp_v2", json={"fy_id": b64_fyers_id, "app_id": "2"})
+            req_key = res1.json()["request_key"]
+            
+            otp = pyotp.TOTP(totp_key).now()
+            res2 = s.post("https://api-t2.fyers.in/vagator/v2/verify_otp", json={"request_key": req_key, "otp": otp})
+            req_key2 = res2.json()["request_key"]
+            
+            res3 = s.post("https://api-t2.fyers.in/vagator/v2/verify_pin_v2", json={"request_key": req_key2, "identity_type": "pin", "identifier": b64_pin})
+            access_token = res3.json()["data"]["access_token"]
+            
+            headers = {"authorization": f"Bearer {access_token}", "content-type": "application/json"}
+            payload = {
+                "fyers_id": LOGIN_ID, "app_id": CLIENT_ID[:-4], "redirect_uri": REDIRECT_URI,
+                "appType": "100", "code_challenge": "", "state": "abcdefg", "scope": "", 
+                "nonce": "", "response_type": "code", "create_cookie": True
+            }
+            res4 = s.post("https://api.fyers.in/api/v2/generate-authcode", json=payload, headers=headers)
+            auth_code = res4.json()["data"]["code"]
+            
+            session = fyersModel.SessionModel(client_id=CLIENT_ID, secret_key=SECRET_KEY, redirect_uri=REDIRECT_URI, response_type="code", grant_type="authorization_code")
+            session.set_token(auth_code)
+            response = session.generate_token()
+            
+            if response.get("s") == "ok":
+                final_token = response["access_token"]
+                with open(TOKEN_FILE, "w") as f:
+                    f.write(final_token)
+                log.info("✅ Headless Fyers token generated successfully!")
+                return final_token
+            else:
+                log.error("Headless token gen failed: %s", response)
+        except Exception as e:
+            log.error("Exception during headless login: %s", e)
+
+    # --- FALLBACK FOR LOCAL / NO-TOTP ---
     if not sys.stdin.isatty():
-        log.info("🌐 Running headless (GitHub). Skipping Fyers Auth, activating Yahoo fallback.")
+        log.info("🌐 Running headless without FYERS_TOTP_KEY. Activating Yahoo fallback.")
         return None
 
     print(f"\n--- 🔐 FYERS AUTHENTICATION REQUIRED (User: {LOGIN_ID}) ---")
@@ -215,6 +267,14 @@ def get_fyers_access_token():
 # TECHNICAL MATH & LIVE ENGINE
 # ----------------------------------------------------------------------
 
+def is_market_hours_now() -> bool:
+    now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
+    if now.weekday() >= 5:
+        return False
+    start = now.replace(hour=9, minute=0, second=0, microsecond=0)
+    end = now.replace(hour=15, minute=30, second=0, microsecond=0)
+    return start <= now <= end
+
 def rsi_fyers_tradingview(close_prices, period=RSI_PERIOD):
     if len(close_prices) < period + 1:
         return None
@@ -241,7 +301,8 @@ def rsi_fyers_tradingview(close_prices, period=RSI_PERIOD):
 
 
 def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
-    if fyers:
+    # Route to Fyers ONLY during market hours
+    if fyers and is_market_hours_now():
         time.sleep(0.15) 
         fyers_sym = f"{exchange}:{symbol}-EQ" if not symbol.isdigit() else f"BSE:{symbol}-EQ"
         data = {
@@ -298,6 +359,7 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                     "sma_200": float(closes.rolling(200).mean().iloc[-1] if len(closes) >= 200 else 0),
                 }
 
+    # Route to Yahoo after market hours or if Fyers fails
     yahoo_ticker = f"{symbol}.NS" if exchange == "NSE" else f"{symbol}.BO"
     try:
         hist = yf.Ticker(yahoo_ticker).history(period="1y", interval="1d")
@@ -339,7 +401,7 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
         return None
 
 def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"):
-    if fyers:
+    if fyers and is_market_hours_now():
         time.sleep(0.15)
         fyers_sym = f"{exchange}:{symbol}-EQ" if not symbol.isdigit() else f"BSE:{symbol}-EQ"
         data = {
@@ -798,16 +860,6 @@ def load_momentum_state() -> dict:
             pass
     return {"last_scan_date": None, "watchlist": {}}
 
-def is_market_hours_now() -> bool:
-    if not POLL_ONLY_MARKET_HOURS:
-        return True
-    now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
-    if now.weekday() >= 5:
-        return False
-    start = now.replace(hour=9, minute=0, second=0, microsecond=0)
-    end = now.replace(hour=16, minute=0, second=0, microsecond=0)
-    return start <= now <= end
-
 def poll_once(state: dict, fyers) -> dict:
     universe = set(get_universe_symbols())
     universe_normalised = {normalise_company(s): s for s in universe}
@@ -912,31 +964,28 @@ def main():
     fyers = fyersModel.FyersModel(client_id=CLIENT_ID, token=fyers_token, log_path="/tmp") if fyers_token else None
 
     if one_shot:
-        if is_market_hours_now():
-            try:
-                state = poll_once(state, fyers)
-                STATE_FILE.write_text(json.dumps(state, indent=2))
-            except Exception as e: log.exception("Error during poll: %s", e)
-            try:
-                momentum_state = run_daily_momentum_scan(momentum_state)
-                momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
-                MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
-            except Exception as e: log.exception("Error during momentum scan: %s", e)
+        try:
+            state = poll_once(state, fyers)
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: log.exception("Error during poll: %s", e)
+        try:
+            momentum_state = run_daily_momentum_scan(momentum_state)
+            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
+        except Exception as e: log.exception("Error during momentum scan: %s", e)
         return
 
     while True:
-        if is_market_hours_now():
-            try:
-                state = poll_once(state, fyers)
-                STATE_FILE.write_text(json.dumps(state, indent=2))
-            except Exception as e: log.exception("Error during poll: %s", e)
-            try:
-                momentum_state = run_daily_momentum_scan(momentum_state)
-                momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
-                MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
-            except Exception as e: log.exception("Error during momentum scan: %s", e)
-        else:
-            log.info("Outside market hours -- skipping this cycle.")
+        try:
+            state = poll_once(state, fyers)
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: log.exception("Error during poll: %s", e)
+        try:
+            momentum_state = run_daily_momentum_scan(momentum_state)
+            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
+        except Exception as e: log.exception("Error during momentum scan: %s", e)
+        
         time.sleep(POLL_INTERVAL_MINUTES * 60)
 
 if __name__ == "__main__":
