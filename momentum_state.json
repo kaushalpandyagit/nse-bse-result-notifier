@@ -6262,7 +6262,7 @@
       "rs_rank": 47.1,
       "zanger_alerted": false,
       "bonde_alerted": false,
-      "resistance_alerted": false,
+      "resistance_alerted": true,
       "mtf_alerted": false
     },
     "JAYNECOIND": {
@@ -8580,7 +8580,7 @@
       "ema_200_prev": 39.0984742203358,
       "mcap_cr": 18823.579120542832,
       "rs_rank": 93.7,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
@@ -11451,7 +11451,7 @@
       "ema_200_prev": 526.8286722576768,
       "mcap_cr": 19229.359513960328,
       "rs_rank": 4.1,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true
