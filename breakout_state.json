@@ -57,7 +57,7 @@
   },
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
-    "last_alert": "2026-09-24T04:15:47.465653"
+    "last_alert": "2026-09-24T05:00:58.594278"
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -69,7 +69,7 @@
   },
   "custom_alert_BASILIC_price": {
     "alerted": true,
-    "last_alert": "2026-09-24T04:15:48.520750"
+    "last_alert": "2026-09-24T05:00:59.526806"
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,
@@ -136,5 +136,17 @@
     "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": false
+  },
+  "custom_alert_ESFL_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_AERON_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_EMMIL_price": {
+    "alerted": true,
+    "last_alert": "2026-09-24T05:01:01.172932"
   }
 }
