@@ -148,5 +148,57 @@
   "custom_alert_EMMIL_price": {
     "alerted": true,
     "last_alert": "2026-09-24T05:01:01.172932"
+  },
+  "custom_alert_BSE:PGFOILQ_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_LAKSHYA_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_ACLD_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_BEACON_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_RAVELCARE_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_CNINFOTECH-_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_DELAPLEX_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_METAINFO_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_DENEERS_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_EMAPARTNERS_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_PRESSTONIC_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_SPCL_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_SSEGL_price": {
+    "alerted": false,
+    "last_alert": null
   }
 }
