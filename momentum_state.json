@@ -2650,7 +2650,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:16:14.015344"
     },
     "CENTURYPLY": {
       "sma50": 755.6420007324218,
@@ -3181,7 +3182,10 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "zanger_last_alert": "2026-09-24T10:16:16.543053",
+      "resistance_last_alert": "2026-09-24T10:16:17.008548",
+      "mtf_last_alert": "2026-09-24T10:16:17.494877"
     },
     "CROMPTON": {
       "sma50": 242.88779907226564,
@@ -3833,7 +3837,9 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:16:21.695246",
+      "mtf_last_alert": "2026-09-24T10:16:22.186915"
     },
     "ELECTCAST": {
       "sma50": 75.02399993896485,
@@ -4751,7 +4757,9 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "zanger_last_alert": "2026-09-24T10:16:27.260622",
+      "mtf_last_alert": "2026-09-24T10:16:27.722953"
     },
     "GNFC": {
       "sma50": 559.7659997558594,
@@ -5250,7 +5258,9 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": true
+      "mtf_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:16:30.730997",
+      "mtf_last_alert": "2026-09-24T10:16:31.216619"
     },
     "HCC": {
       "sma50": 21.93800006866455,
@@ -6365,7 +6375,9 @@
       "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": false
+      "mtf_alerted": false,
+      "zanger_last_alert": "2026-09-24T10:16:36.033303",
+      "resistance_last_alert": "2026-09-24T10:16:36.498651"
     },
     "JAYNECOIND": {
       "sma50": 91.52959991455079,
@@ -7396,7 +7408,10 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "zanger_last_alert": "2026-09-24T10:16:41.255731",
+      "resistance_last_alert": "2026-09-24T10:16:41.747217",
+      "mtf_last_alert": "2026-09-24T10:16:42.223645"
     },
     "KTKBANK": {
       "sma50": 312.9419989013672,
@@ -7484,7 +7499,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:16:43.046008"
     },
     "LLOYDSENGG": {
       "sma50": 87.94679992675782,
@@ -8720,7 +8736,9 @@
       "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": true
+      "mtf_alerted": true,
+      "zanger_last_alert": "2026-09-24T10:16:48.845265",
+      "mtf_last_alert": "2026-09-24T10:16:49.330148"
     },
     "OLECTRA": {
       "sma50": 1296.1119995117188,
@@ -8780,7 +8798,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:16:50.076085"
     },
     "OPTIEMUS": {
       "sma50": 590.1269995117187,
@@ -9454,7 +9473,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:16:53.414813"
     },
     "PRSMJOHNSN": {
       "sma50": 110.5497998046875,
@@ -9484,7 +9504,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:16:54.004850"
     },
     "PRUDENT": {
       "sma50": 3265.8760009765624,
@@ -11105,7 +11126,8 @@
       "bonde_alerted": false,
       "resistance_alerted": false,
       "mtf_alerted": false,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "ema50_pullback_last_alert": "2026-09-24T10:17:00.923221"
     },
     "SKIPPER": {
       "sma50": 546.7290002441406,
@@ -11341,7 +11363,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:17:02.588256"
     },
     "SPLPETRO": {
       "sma50": 744.93,
@@ -11636,7 +11659,9 @@
       "zanger_alerted": true,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": true
+      "mtf_alerted": true,
+      "zanger_last_alert": "2026-09-24T10:17:04.410109",
+      "mtf_last_alert": "2026-09-24T10:17:04.884095"
     },
     "SUPRIYA": {
       "sma50": 860.1280029296875,
@@ -12374,7 +12399,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": true,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:17:08.349199"
     },
     "TIPSMUSIC": {
       "sma50": 662.8059997558594,
@@ -12404,7 +12430,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:17:08.992275"
     },
     "TITAGARH": {
       "sma50": 839.7480017089844,
@@ -12641,7 +12668,8 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": true
+      "mtf_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:17:10.400119"
     },
     "TTML": {
       "sma50": 38.009199905395505,
@@ -12848,7 +12876,8 @@
       "bonde_alerted": false,
       "resistance_alerted": true,
       "mtf_alerted": false,
-      "ema50_pullback_alerted": true
+      "ema50_pullback_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:17:11.566174"
     },
     "UTLSOLAR": {
       "sma50": 419.2319982910156,
@@ -13436,7 +13465,9 @@
       "zanger_alerted": false,
       "bonde_alerted": false,
       "resistance_alerted": true,
-      "mtf_alerted": true
+      "mtf_alerted": true,
+      "resistance_last_alert": "2026-09-24T10:17:14.401696",
+      "mtf_last_alert": "2026-09-24T10:17:14.895425"
     },
     "YATHARTH": {
       "sma50": 920.6389990234375,
