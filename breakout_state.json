@@ -69,7 +69,7 @@
   },
   "custom_alert_BASILIC_price": {
     "alerted": true,
-    "last_alert": "2026-09-24T07:45:59.154690"
+    "last_alert": "2026-09-24T08:29:46.657464"
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,
@@ -101,8 +101,9 @@
     "yahoo_ticker": "LLOYDSME.NS",
     "price_high_alerted": false,
     "price_low_alerted": false,
-    "rsi_up_alerted": false,
-    "rsi_down_alerted": false
+    "rsi_up_alerted": true,
+    "rsi_down_alerted": false,
+    "rsi_up_last_alert": "2026-09-24T08:29:38.044878"
   },
   "custom_alert_GSMFOILS_news": {
     "alerted": false,
@@ -147,7 +148,7 @@
   },
   "custom_alert_EMMIL_price": {
     "alerted": true,
-    "last_alert": "2026-09-24T07:46:00.631325"
+    "last_alert": "2026-09-24T08:29:50.421354"
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
