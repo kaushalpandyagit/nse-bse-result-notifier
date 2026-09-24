@@ -7275,10 +7275,10 @@
       "ema_200_prev": 877.9440122599912,
       "mcap_cr": 3628.7506438607484,
       "rs_rank": 7.6,
-      "zanger_alerted": false,
+      "zanger_alerted": true,
       "bonde_alerted": false,
-      "resistance_alerted": false,
-      "mtf_alerted": false
+      "resistance_alerted": true,
+      "mtf_alerted": true
     },
     "KTKBANK": {
       "sma50": 312.9419989013672,
