@@ -5,7 +5,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - Fully Automated Headless TOTP Login via GitHub Secrets.
 - Time-based routing: Fyers (9:15-3:30) -> Yahoo Finance (After Hours).
 - Real-Time LTP override using Fyers Quotes API for zero-delay SME alerts.
-- Near 21% 52W High / ATH Scanner integrated with 45-min cooldown.
+- 17% to 22% 52W High / ATH Scanner integrated with 45-min cooldown.
 """
 
 import os
@@ -767,14 +767,14 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     )
 
         # ----------------------------------------------------------------------
-        # NEW HEAD: Within 21% of Yearly High / ATH Scanner
+        # NEW HEAD: Within 17% to 22% of Yearly High / ATH Scanner
         # ----------------------------------------------------------------------
-        if cooldown_elapsed(entry, "near_high_21_last_alert"):
+        if cooldown_elapsed(entry, "near_high_17_22_last_alert"):
             ref_high = max(entry.get("fifty2w_high") or 0.0, entry.get("ath_high") or 0.0)
             if ref_high > 0:
                 pct_from_high = ((ref_high - price) / ref_high) * 100
-                if -2.0 <= pct_from_high <= 21.0:
-                    entry["near_high_21_last_alert"] = datetime.datetime.now().isoformat()
+                if 17.0 <= pct_from_high <= 22.0:
+                    entry["near_high_17_22_last_alert"] = datetime.datetime.now().isoformat()
                     send_telegram_message(
                         f"🏔️ <b>{symbol}</b> Near Yearly High / ATH Scanner!\n"
                         f"Price ₹{price:.2f} is within {pct_from_high:.1f}% of its 52W/ATH High (₹{ref_high:.2f})."
