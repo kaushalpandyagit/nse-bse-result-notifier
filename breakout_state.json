@@ -40,7 +40,7 @@
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-09-25T06:01:03.022722",
     "price_low_last_alert": "2026-09-25T06:01:02.540815",
-    "rsi_up_last_alert": "2026-09-24T11:01:04.594206"
+    "rsi_up_last_alert": "2026-09-25T06:29:32.659773"
   },
   "CPPLUS": {
     "result_date": "2026-09-17T00:00:00",
@@ -57,7 +57,9 @@
   },
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
-    "last_alert": "2026-09-25T06:01:11.681222"
+    "last_alert": "2026-09-25T06:01:11.681222",
+    "custom_last_alert": "2026-09-25T06:29:41.266824",
+    "custom_last_price": 170.9600067138672
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -69,7 +71,9 @@
   },
   "custom_alert_BASILIC_price": {
     "alerted": true,
-    "last_alert": "2026-09-25T06:01:09.819945"
+    "last_alert": "2026-09-25T06:01:09.819945",
+    "custom_last_alert": "2026-09-25T06:29:38.857370",
+    "custom_last_price": 172.5
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,
@@ -264,5 +268,17 @@
     "rsi_up_last_alert": "2026-09-25T06:15:45.637056",
     "price_high_last_alert": "2026-09-25T05:45:48.789172",
     "rsi_down_last_alert": "2026-09-25T05:15:48.228275"
+  },
+  "custom_alert_CIRCULAR_news": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_BSE:CIRCULAR_news": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_PHOENIXLTD_price": {
+    "alerted": false,
+    "last_alert": null
   }
 }
