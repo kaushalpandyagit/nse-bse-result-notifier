@@ -238,7 +238,8 @@
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-25T04:15:55.230271",
     "rsi_down_last_alert": "2026-09-24T07:01:03.543091",
-    "price_low_last_alert": "2026-09-24T08:01:01.382356"
+    "price_low_last_alert": "2026-09-24T08:01:01.382356",
+    "price_high_last_alert": "2026-09-25T04:29:47.261664"
   },
   "CAPILLARY": {
     "result_date": "2026-09-24T00:00:00",
@@ -262,6 +263,6 @@
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-25T04:15:56.107025",
     "price_high_last_alert": "2026-09-24T07:29:41.689905",
-    "rsi_down_last_alert": "2026-09-24T11:01:08.978200"
+    "rsi_down_last_alert": "2026-09-25T04:29:48.115352"
   }
 }
