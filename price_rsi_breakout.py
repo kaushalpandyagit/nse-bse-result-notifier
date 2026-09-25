@@ -5,6 +5,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - Fully Automated Headless TOTP Login via GitHub Secrets.
 - Time-based routing: Fyers (9:15-3:30) -> Yahoo Finance (After Hours).
 - Real-Time LTP override using Fyers Quotes API for zero-delay SME alerts.
+- Near 21% 52W High / ATH Scanner integrated with 45-min cooldown.
 """
 
 import os
@@ -179,7 +180,6 @@ def get_fyers_access_token():
                     log.info("🔑 Loaded valid daily Fyers token from %s", TOKEN_FILE)
                     return token
 
-    # --- AUTOMATED CLOUD LOGIN ---
     totp_key = os.environ.get("FYERS_TOTP_KEY")
     pin = os.environ.get("FYERS_PIN")
     
@@ -224,7 +224,6 @@ def get_fyers_access_token():
         except Exception as e:
             log.error("Exception during headless login: %s", e)
 
-    # --- FALLBACK FOR LOCAL / NO-TOTP ---
     if not sys.stdin.isatty():
         log.info("🌐 Running headless without FYERS_TOTP_KEY. Activating Yahoo fallback.")
         return None
@@ -303,7 +302,6 @@ def rsi_fyers_tradingview(close_prices, period=RSI_PERIOD):
 
 
 def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
-    # Route to Fyers ONLY during market hours
     if fyers and is_market_hours_now():
         time.sleep(0.15) 
         fyers_sym = f"{exchange}:{symbol}-EQ" if not symbol.isdigit() else f"BSE:{symbol}-EQ"
@@ -315,7 +313,6 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
         
         resp = fyers.history(data=data)
         
-        # Fallbacks for SME and BE series
         if resp.get("s") != "ok" or "candles" not in resp:
             fyers_sym = f"{exchange}:{symbol}-SM"
             data["symbol"] = fyers_sym
@@ -332,7 +329,6 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                 df["date"] = pd.to_datetime(df["timestamp"], unit='s', utc=True).dt.tz_convert("Asia/Kolkata")
                 df.set_index("date", inplace=True)
                 
-                # --- Real-time tick data override ---
                 try:
                     q_resp = fyers.quotes(data={"symbols": fyers_sym})
                     if q_resp.get("s") == "ok" and q_resp.get("d"):
@@ -353,14 +349,17 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                             df.loc[last_idx, "Low"] = live_low
                         else:
                             new_idx = pd.Timestamp.now(tz="Asia/Kolkata")
-                            df.loc[new_idx] = {"Open": live_open, "High": live_high, "Low": live_low, "Close": live_price, "Volume": live_vol, "timestamp": int(time.time())}
+                            df.loc[new_idx] = {
+                                "Open": live_open, "High": live_high, "Low": live_low,
+                                "Close": live_price, "Volume": live_vol, "timestamp": int(time.time())
+                            }
                 except Exception:
                     pass
 
                 closes = df["Close"]
                 today = df.iloc[-1]
                 yesterday = df.iloc[-2]
-                day3_ago = df.iloc[-4] if len(df) >=4 else yesterday
+                day3_ago = df.iloc[-4] if len(df) >= 4 else yesterday
                 
                 weekly_closes = closes.resample('W-FRI').last().dropna()
                 weekly_rsi = rsi_fyers_tradingview(weekly_closes.tolist(), RSI_PERIOD) if len(weekly_closes) > 14 else 50.0
@@ -394,16 +393,16 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                 }
                 return metrics_dict
 
-    # Route to Yahoo after market hours
     yahoo_ticker = f"{symbol}.NS" if exchange == "NSE" else f"{symbol}.BO"
     try:
         hist = yf.Ticker(yahoo_ticker).history(period="1y", interval="1d")
-        if hist.empty or len(hist) < 5: return None
+        if hist.empty or len(hist) < 5: 
+            return None
         
         closes = hist["Close"]
         today = hist.iloc[-1]
         yesterday = hist.iloc[-2]
-        day3_ago = hist.iloc[-4] if len(hist) >=4 else yesterday
+        day3_ago = hist.iloc[-4] if len(hist) >= 4 else yesterday
         
         weekly_closes = closes.resample('W-FRI').last().dropna()
         weekly_rsi = rsi_fyers_tradingview(weekly_closes.tolist(), RSI_PERIOD) if len(weekly_closes) > 14 else 50.0
@@ -475,7 +474,8 @@ def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"
     yahoo_ticker = f"{symbol}.NS" if exchange == "NSE" else f"{symbol}.BO"
     try:
         hist = yf.Ticker(yahoo_ticker).history(start=date - datetime.timedelta(days=365), end=date + datetime.timedelta(days=7))
-        if hist.empty: return None
+        if hist.empty: 
+            return None
 
         hist_dates = [d.date() if hasattr(d, "date") else d for d in hist.index]
         idx_dt = next((d for d in hist_dates if d >= date), None)
@@ -524,7 +524,8 @@ def fetch_batch_history(tickers: list) -> dict:
     return result
 
 def get_trend_template_status(closes: pd.Series) -> dict:
-    if len(closes) < 210: return None
+    if len(closes) < 210: 
+        return None
     sma50 = closes.rolling(50).mean()
     sma150 = closes.rolling(150).mean()
     sma200 = closes.rolling(200).mean()
@@ -553,13 +554,15 @@ def get_trend_template_status(closes: pd.Series) -> dict:
     return status_dict
 
 def detect_vcp(highs: pd.Series, lows: pd.Series, lookback: int = VCP_LOOKBACK_DAYS) -> bool:
-    if len(highs) < lookback or len(lows) < lookback: return False
+    if len(highs) < lookback or len(lows) < lookback: 
+        return False
     h, l = highs[-lookback:], lows[-lookback:]
     third = lookback // 3
     ranges = []
     for i in range(3):
         seg_h, seg_l = h[i * third:(i + 1) * third], l[i * third:(i + 1) * third]
-        if seg_l.empty or float(seg_l.min()) <= 0: return False
+        if seg_l.empty or float(seg_l.min()) <= 0: 
+            return False
         ranges.append((float(seg_h.max()) - float(seg_l.min())) / float(seg_l.min()) * 100)
     return ranges[0] > ranges[1] > ranges[2]
 
@@ -567,7 +570,8 @@ def get_market_cap_cr(symbol: str) -> float:
     try:
         t = yf.Ticker(f"{symbol}.NS")
         mcap = t.fast_info.get("marketCap") or t.fast_info.get("market_cap")
-        if mcap: return float(mcap) / 1e7
+        if mcap: 
+            return float(mcap) / 1e7
     except Exception:
         pass
     return None
@@ -587,20 +591,31 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
 
     for symbol in symbols:
         df = hist_map.get(f"{symbol}.NS")
-        if df is None or df.empty or "Close" not in df.columns: continue
-        closes, highs, lows, volumes = df["Close"].dropna(), df["High"].dropna(), df["Low"].dropna(), df["Volume"].dropna()
-        if len(closes) < 210 or len(volumes) < 50: continue
+        if df is None or df.empty or "Close" not in df.columns: 
+            continue
+        closes = df["Close"].dropna()
+        highs = df["High"].dropna()
+        lows = df["Low"].dropna()
+        volumes = df["Volume"].dropna()
+        
+        if len(closes) < 210 or len(volumes) < 50: 
+            continue
 
         mcap_cr = get_market_cap_cr(symbol)
-        if mcap_cr is not None and (mcap_cr < MIN_MARKET_CAP_CR or mcap_cr > MAX_MARKET_CAP_CR): continue
+        if mcap_cr is not None and (mcap_cr < MIN_MARKET_CAP_CR or mcap_cr > MAX_MARKET_CAP_CR): 
+            continue
 
         trend = get_trend_template_status(closes)
-        if trend is None: continue
+        if trend is None: 
+            continue
         
         rs_return = (float(closes.iloc[-1]) / float(closes.iloc[-RS_LOOKBACK_DAYS]) - 1) * 100 if len(closes) > RS_LOOKBACK_DAYS and float(closes.iloc[-RS_LOOKBACK_DAYS]) > 0 else None
         
+        ath_high = float(highs.max()) if len(highs) > 0 else float(closes.max())
+        
         symbol_data_dict = {
             **trend,
+            "ath_high": ath_high,
             "vcp_contracting": detect_vcp(highs, lows),
             "rs_return_6m": rs_return,
             "avg_volume_50d": float(volumes[-50:].mean()),
@@ -617,7 +632,8 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             "mcap_cr": mcap_cr,
         }
         per_symbol_data[symbol] = symbol_data_dict
-        if rs_return is not None: returns_6m[symbol] = rs_return
+        if rs_return is not None: 
+            returns_6m[symbol] = rs_return
 
     sorted_syms = sorted(returns_6m.keys(), key=lambda s: returns_6m[s], reverse=True)
     rs_rank_pct = {s: round(100 * (1 - i / (len(sorted_syms) or 1)), 1) for i, s in enumerate(sorted_syms)}
@@ -629,8 +645,10 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         rs_rank = rs_rank_pct.get(symbol)
         watchlist[symbol] = {**d, "rs_rank": rs_rank}
         
-        if d["stage2"] and d["vcp_contracting"]: stage2_vcp_list.append((symbol, rs_rank))
-        if rs_rank is not None and rs_rank >= MOMENTUM_LEADER_RS_RANK_MIN and d["near_high"]: momentum_leader_list.append((symbol, rs_rank))
+        if d["stage2"] and d["vcp_contracting"]: 
+            stage2_vcp_list.append((symbol, rs_rank))
+        if rs_rank is not None and rs_rank >= MOMENTUM_LEADER_RS_RANK_MIN and d["near_high"]: 
+            momentum_leader_list.append((symbol, rs_rank))
 
     stage2_vcp_list.sort(key=lambda x: (x[1] or 0), reverse=True)
     momentum_leader_list.sort(key=lambda x: (x[1] or 0), reverse=True)
@@ -642,9 +660,11 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         f"<i>Universe: {len(per_symbol_data)} stocks within ₹{MIN_MARKET_CAP_CR:,.0f} Cr \u2013 ₹{MAX_MARKET_CAP_CR:,.0f} Cr.</i>", "",
         f"\U0001F7E2 <b>Minervini Stage 2 + VCP</b> ({len(stage2_vcp_list)} stocks)",
     ]
-    for s, r in stage2_vcp_list[:TOP_N_MOMENTUM]: lines.append(f"  {s} (RS rank {r})")
+    for s, r in stage2_vcp_list[:TOP_N_MOMENTUM]: 
+        lines.append(f"  {s} (RS rank {r})")
     lines += ["", f"\U0001F31F <b>Momentum Leaders</b> ({len(momentum_leader_list)} stocks)"]
-    for s, r in momentum_leader_list[:TOP_N_MOMENTUM]: lines.append(f"  {s} (RS rank {r})")
+    for s, r in momentum_leader_list[:TOP_N_MOMENTUM]: 
+        lines.append(f"  {s} (RS rank {r})")
     
     digest = "\n".join(lines)
     send_telegram_message(digest)
@@ -662,7 +682,8 @@ def cooldown_elapsed(entry: dict, last_alert_key: str) -> bool:
 
 def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
     watchlist = momentum_state.get("watchlist", {})
-    if not watchlist: return momentum_state
+    if not watchlist: 
+        return momentum_state
 
     # --- TIME LOCK: Completely stop technical scanners after 3:40 PM ---
     now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
@@ -745,6 +766,20 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                         f"RSI: {rsi:.1f} (Up from {y_rsi:.1f}) | Mcap: ₹{mcap:.0f} Cr"
                     )
 
+        # ----------------------------------------------------------------------
+        # NEW HEAD: Within 21% of Yearly High / ATH Scanner
+        # ----------------------------------------------------------------------
+        if cooldown_elapsed(entry, "near_high_21_last_alert"):
+            ref_high = max(entry.get("fifty2w_high") or 0.0, entry.get("ath_high") or 0.0)
+            if ref_high > 0:
+                pct_from_high = ((ref_high - price) / ref_high) * 100
+                if -2.0 <= pct_from_high <= 21.0:
+                    entry["near_high_21_last_alert"] = datetime.datetime.now().isoformat()
+                    send_telegram_message(
+                        f"🏔️ <b>{symbol}</b> Near Yearly High / ATH Scanner!\n"
+                        f"Price ₹{price:.2f} is within {pct_from_high:.1f}% of its 52W/ATH High (₹{ref_high:.2f})."
+                    )
+
     return momentum_state
 
 # ----------------------------------------------------------------------
@@ -806,7 +841,8 @@ def parse_target_options(target_raw: str, metric: str) -> list:
     return parsed
 
 def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
-    if not sheet_url or "docs.google.com" not in sheet_url: return {}
+    if not sheet_url or "docs.google.com" not in sheet_url: 
+        return {}
     try:
         df = pd.read_csv(sheet_url)
         df.columns = [str(c).strip().lower() for c in df.columns]
@@ -815,12 +851,19 @@ def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
 
         sheet_alerts = {}
         for _, row in df.dropna(subset=["symbol", "metric", "condition", "target"]).iterrows():
-            sym, exchange, metric, condition = str(row["symbol"]).strip().upper(), str(row["exchange"]).strip().upper(), str(row["metric"]).strip().lower(), str(row["condition"]).strip().lower()
+            sym = str(row["symbol"]).strip().upper()
+            exchange = str(row["exchange"]).strip().upper()
+            metric = str(row["metric"]).strip().lower()
+            condition = str(row["condition"]).strip().lower()
             targets = parse_target_options(row["target"], metric)
-            if not targets or condition not in ("above", "below", "contains"): continue
+            if not targets or condition not in ("above", "below", "contains"): 
+                continue
 
             sheet_alerts[f"{'BSE:' if exchange == 'BSE' else ''}{sym}"] = {
-                "metric": metric, "condition": condition, "targets": targets, "target_raw": str(row["target"]).strip()
+                "metric": metric, 
+                "condition": condition, 
+                "targets": targets, 
+                "target_raw": str(row["target"]).strip()
             }
         return sheet_alerts
     except Exception:
@@ -967,7 +1010,8 @@ def poll_once(state: dict, fyers) -> dict:
     today = datetime.date.today()
     for symbol in new_result_symbols:
         metrics = get_baseline_metrics(fyers, symbol, today, "NSE")
-        if metrics is None: continue
+        if metrics is None: 
+            continue
         state_dict = {
             "result_date": datetime.datetime.combine(metrics["actual_date"], datetime.time()).isoformat(),
             "day_high": metrics["day_high"], 
@@ -982,11 +1026,14 @@ def poll_once(state: dict, fyers) -> dict:
     state = prune_expired(state)
     
     for symbol, entry in state.items():
-        if symbol.startswith("custom_alert_"): continue 
-        if "day_low" not in entry or "baseline_rsi" not in entry: continue
+        if symbol.startswith("custom_alert_"): 
+            continue 
+        if "day_low" not in entry or "baseline_rsi" not in entry: 
+            continue
 
         metrics = get_live_metrics(fyers, symbol, "NSE")
-        if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI: continue
+        if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI: 
+            continue
 
         price, rsi = metrics["price"], metrics["rsi"]
 
@@ -1012,7 +1059,8 @@ def poll_once(state: dict, fyers) -> dict:
 
     for symbol, rules in custom_alerts.items():
         state_key = f"custom_alert_{symbol}_{rules['metric']}"
-        if state_key not in state: state[state_key] = {"alerted": False, "last_alert": None}
+        if state_key not in state: 
+            state[state_key] = {"alerted": False, "last_alert": None}
         c_entry = state[state_key]
         clean_symbol, exchange = symbol.split(":")[-1].upper(), "BSE" if symbol.startswith("BSE:") else "NSE"
 
@@ -1030,14 +1078,17 @@ def poll_once(state: dict, fyers) -> dict:
 
         if cooldown_elapsed(c_entry, "last_alert"):
             c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
-            if not c_metrics: continue
+            if not c_metrics: 
+                continue
 
             metric_type, cond, current_val = rules["metric"], rules["condition"], c_metrics.get(rules["metric"])
-            if current_val is None: continue
+            if current_val is None: 
+                continue
 
             for target_rule in rules["targets"]:
                 target_val = c_metrics.get(target_rule) if isinstance(target_rule, str) else target_rule
-                if target_val is None: continue
+                if target_val is None: 
+                    continue
                 
                 if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
                     c_entry["last_alert"] = datetime.datetime.now().isoformat()
@@ -1065,24 +1116,28 @@ def main():
         try:
             state = poll_once(state, fyers)
             STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: log.exception("Error during poll: %s", e)
+        except Exception as e: 
+            log.exception("Error during poll: %s", e)
         try:
             momentum_state = run_daily_momentum_scan(momentum_state)
             momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
             MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
-        except Exception as e: log.exception("Error during momentum scan: %s", e)
+        except Exception as e: 
+            log.exception("Error during momentum scan: %s", e)
         return
 
     while True:
         try:
             state = poll_once(state, fyers)
             STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: log.exception("Error during poll: %s", e)
+        except Exception as e: 
+            log.exception("Error during poll: %s", e)
         try:
             momentum_state = run_daily_momentum_scan(momentum_state)
             momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
             MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
-        except Exception as e: log.exception("Error during momentum scan: %s", e)
+        except Exception as e: 
+            log.exception("Error during momentum scan: %s", e)
         
         time.sleep(POLL_INTERVAL_MINUTES * 60)
 
