@@ -41,7 +41,7 @@
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-09-25T07:01:03.579362",
     "price_low_last_alert": "2026-09-25T07:01:03.054979",
-    "rsi_up_last_alert": "2026-09-25T06:29:32.659773",
+    "rsi_up_last_alert": "2026-09-25T07:29:47.556370",
     "price_low_last_price": 417.3999938964844
   },
   "CPPLUS": {
@@ -93,7 +93,8 @@
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-21T05:00:57.944063",
     "rsi_down_last_alert": "2026-09-25T07:01:04.286796",
-    "price_low_last_alert": "2026-09-24T11:01:05.758257"
+    "price_low_last_alert": "2026-09-25T07:29:48.531889",
+    "price_low_last_price": 676.5999755859375
   },
   "custom_alert_PRADPME_weekly_rsi": {
     "alerted": false,
