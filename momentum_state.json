@@ -2911,8 +2911,8 @@
       "rs_rank": 55.5,
       "near_high_21_last_alert": "2026-09-25T05:01:38.167459",
       "mtf_last_alert": "2026-09-25T07:01:26.443985",
-      "near_high_17_22_last_alert": "2026-09-25T06:46:09.596725",
-      "near_high_17_22_last_price": 799.0,
+      "near_high_17_22_last_alert": "2026-09-25T07:46:07.872021",
+      "near_high_17_22_last_price": 807.5499877929688,
       "mtf_last_price": 803.5
     },
     "DATAPATTNS": {
@@ -6299,7 +6299,8 @@
       "ema_200_prev": 387.8276644322029,
       "mcap_cr": 6585.441493270606,
       "rs_rank": 7.1,
-      "mtf_last_alert": "2026-09-25T06:01:46.212209"
+      "mtf_last_alert": "2026-09-25T07:46:22.049057",
+      "mtf_last_price": 333.0
     },
     "KPIL": {
       "sma50": 1366.4879956054688,
@@ -8849,8 +8850,10 @@
       "ema_200_prev": 403.23737152085414,
       "mcap_cr": 7867.7043306,
       "rs_rank": 45.8,
-      "ema50_pullback_last_alert": "2026-09-25T06:01:58.987870",
-      "near_high_17_22_last_alert": "2026-09-25T06:01:59.471118"
+      "ema50_pullback_last_alert": "2026-09-25T07:46:32.687850",
+      "near_high_17_22_last_alert": "2026-09-25T07:46:33.206619",
+      "ema50_pullback_last_price": 384.8500061035156,
+      "near_high_17_22_last_price": 384.8500061035156
     },
     "RITES": {
       "sma50": 215.8122006225586,
@@ -9232,7 +9235,8 @@
       "ema_200_prev": 4490.341083673835,
       "mcap_cr": 9109.846899890625,
       "rs_rank": 21.4,
-      "near_high_17_22_last_alert": "2026-09-25T06:02:01.466271"
+      "near_high_17_22_last_alert": "2026-09-25T07:46:34.992251",
+      "near_high_17_22_last_price": 3938.39990234375
     },
     "SANSERA": {
       "sma50": 3829.9499951171874,
@@ -11884,8 +11888,8 @@
       "mcap_cr": 14715.514456373487,
       "rs_rank": 56.1,
       "near_high_21_last_alert": "2026-09-25T05:02:54.977330",
-      "near_high_17_22_last_alert": "2026-09-25T06:47:04.778921",
-      "near_high_17_22_last_price": 1633.0
+      "near_high_17_22_last_alert": "2026-09-25T07:46:46.035954",
+      "near_high_17_22_last_price": 1615.5999755859375
     },
     "ZFCVINDIA": {
       "sma50": 2504.149990234375,
