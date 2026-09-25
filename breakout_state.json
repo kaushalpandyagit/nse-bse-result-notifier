@@ -12,8 +12,8 @@
     "rsi_up_last_alert": "2026-09-25T08:01:05.545819",
     "rsi_down_last_alert": "2026-09-15T09:30:02.484125",
     "price_low_last_alert": "2026-09-15T09:45:40.945817",
-    "price_high_last_alert": "2026-09-25T07:01:01.273468",
-    "price_high_last_price": 2499.5
+    "price_high_last_alert": "2026-09-25T08:45:46.246634",
+    "price_high_last_price": 2528.699951171875
   },
   "INDIASHLTR": {
     "result_date": "2026-09-15T00:00:00",
@@ -74,8 +74,8 @@
   "custom_alert_BASILIC_price": {
     "alerted": true,
     "last_alert": "2026-09-25T06:01:09.819945",
-    "custom_last_alert": "2026-09-25T06:29:38.857370",
-    "custom_last_price": 172.5
+    "custom_last_alert": "2026-09-25T08:45:52.865392",
+    "custom_last_price": 165.89999389648438
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,

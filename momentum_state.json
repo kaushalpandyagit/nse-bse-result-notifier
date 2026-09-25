@@ -1472,7 +1472,9 @@
       "rs_rank": 58.7,
       "mtf_last_alert": "2026-09-25T07:16:01.923760",
       "near_high_21_last_alert": "2026-09-25T05:01:25.041850",
-      "mtf_last_price": 184.58999633789062
+      "mtf_last_price": 184.58999633789062,
+      "resistance_last_alert": "2026-09-25T08:46:04.145624",
+      "resistance_last_price": 186.2100067138672
     },
     "BATAINDIA": {
       "sma50": 684.972001953125,
@@ -2656,7 +2658,9 @@
       "ema_100_prev": 442.8017038462446,
       "ema_200_prev": 492.19068706777495,
       "mcap_cr": 17371.831301612245,
-      "rs_rank": 82.9
+      "rs_rank": 82.9,
+      "ema50_pullback_last_alert": "2026-09-25T08:46:10.902616",
+      "ema50_pullback_last_price": 457.5
     },
     "CONCORDBIO": {
       "sma50": 1444.1880004882812,
@@ -3121,7 +3125,9 @@
       "ema_100_prev": 128.81777940946648,
       "ema_200_prev": 129.50343721406543,
       "mcap_cr": 16684.142154844074,
-      "rs_rank": 73.2
+      "rs_rank": 73.2,
+      "near_high_17_22_last_alert": "2026-09-25T08:46:13.999360",
+      "near_high_17_22_last_price": 135.66000366210938
     },
     "DIACABS": {
       "sma50": 339.9031991577148,
@@ -4141,9 +4147,11 @@
       "mcap_cr": 7802.3652338838165,
       "rs_rank": 30.4,
       "resistance_last_alert": "2026-09-25T07:01:33.448289",
-      "mtf_last_alert": "2026-09-25T06:46:16.643698",
-      "mtf_last_price": 101.97000122070312,
-      "resistance_last_price": 102.62999725341797
+      "mtf_last_alert": "2026-09-25T08:46:19.959132",
+      "mtf_last_price": 103.5999984741211,
+      "resistance_last_price": 102.62999725341797,
+      "near_high_17_22_last_alert": "2026-09-25T08:46:20.624333",
+      "near_high_17_22_last_price": 103.5999984741211
     },
     "GNFC": {
       "sma50": 559.96,
@@ -5902,7 +5910,9 @@
       "near_high_21_last_alert": "2026-09-25T05:02:03.430138",
       "resistance_last_price": 3199.89990234375,
       "mtf_last_alert": "2026-09-25T08:01:51.772809",
-      "mtf_last_price": 3199.89990234375
+      "mtf_last_price": 3199.89990234375,
+      "zanger_last_alert": "2026-09-25T08:46:29.989066",
+      "zanger_last_price": 3201.5
     },
     "JUBLINGREA": {
       "sma50": 702.5579968261719,
@@ -6540,7 +6550,9 @@
       "ema_100_prev": 111.64209159943377,
       "ema_200_prev": 119.19338594296485,
       "mcap_cr": 8345.282050466456,
-      "rs_rank": 22.7
+      "rs_rank": 22.7,
+      "resistance_last_alert": "2026-09-25T08:46:33.887670",
+      "resistance_last_price": 106.12999725341797
     },
     "LICHSGFIN": {
       "sma50": 533.4650018310547,
@@ -8729,7 +8741,9 @@
       "ema_100_prev": 125.9989842325378,
       "ema_200_prev": 128.16490405083607,
       "mcap_cr": 6655.803588351746,
-      "rs_rank": 42.8
+      "rs_rank": 42.8,
+      "near_high_17_22_last_alert": "2026-09-25T08:46:45.414403",
+      "near_high_17_22_last_price": 120.47000122070312
     },
     "REFEX": {
       "sma50": 292.0309997558594,
@@ -8861,7 +8875,9 @@
       "ema50_pullback_last_alert": "2026-09-25T07:46:32.687850",
       "near_high_17_22_last_alert": "2026-09-25T07:46:33.206619",
       "ema50_pullback_last_price": 384.8500061035156,
-      "near_high_17_22_last_price": 384.8500061035156
+      "near_high_17_22_last_price": 384.8500061035156,
+      "resistance_last_alert": "2026-09-25T08:47:01.379066",
+      "resistance_last_price": 385.6499938964844
     },
     "RITES": {
       "sma50": 215.8122006225586,
@@ -10252,8 +10268,10 @@
       "ema_200_prev": 241.9559654521001,
       "mcap_cr": 4715.299402436645,
       "rs_rank": 34.3,
-      "resistance_last_alert": "2026-09-25T06:46:53.516703",
-      "resistance_last_price": 221.02000427246094
+      "resistance_last_alert": "2026-09-25T08:47:17.678617",
+      "resistance_last_price": 225.2899932861328,
+      "mtf_last_alert": "2026-09-25T08:47:18.363449",
+      "mtf_last_price": 225.2899932861328
     },
     "SWANCORP": {
       "sma50": 300.73,
