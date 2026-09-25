@@ -510,4 +510,136 @@ def main():
     sections = []
     
     # --- Bulk & Block Deal Analysis ---
-   
+    bulk_block_symbols, ace_deals = fetch_bulk_block_deals(session)
+    if ace_deals:
+        lines = [
+            "💎 <b>Smart Money / Ace Investor Deals</b>", 
+            "<i>Bulk & Block deals flagged today</i>"
+        ]
+        for deal in ace_deals:
+            action_color = "🟢 BUY" if deal['type'] == 'BUY' else "🔴 SELL"
+            qty_fmt = f"{int(deal['qty']):,}"
+            val_cr = (deal['qty'] * deal['price']) / 10000000
+            
+            lines.append(f"  {action_color} <b>{deal['symbol']}</b>: {deal['client']} "
+                         f"({qty_fmt} shrs @ ₹{deal['price']:.2f}) \u2014 <b>₹{val_cr:.2f} Cr</b> [{deal['deal_type']}]")
+        
+        sections.append("\n".join(lines))
+        log.info("Found %d smart money deals.", len(ace_deals))
+
+    # --- Delivery analysis (early movers only) ---
+    deliv_df = fetch_delivery_data(session, date)
+    if deliv_df is not None:
+        tiers = analyze_delivery(deliv_df)
+        sections.append(
+            f"\U0001F331 <b>High Delivery % \u2014 Early Movers</b> "
+            f"(>{DELIVERY_PCT_THRESHOLD:.0f}% delivery, {EARLY_MOVE_MIN:.1f}-{EARLY_MOVE_MAX:.1f}% move)\n"
+            f"<i>Kept tight to moves still early \u2014 beyond {EARLY_MOVE_MAX:.1f}% the move is "
+            f"largely played out and risk/reward for a fresh entry is no longer favorable</i>\n" +
+            format_stock_list([(s, p, d) for s, p, d, v in tiers["early_movers"]], comment=True, third_label="Delivery")
+        )
+        log.info("Delivery analysis: %d early movers.", len(tiers["early_movers"]))
+
+        # --- Unusual volume ---
+        unusual = analyze_unusual_volume(deliv_df, session, date, bulk_block_symbols)
+        sections.append(
+            f"\U0001F50D <b>Unusual Volume, Minimal Price Move</b> (\u2265{UNUSUAL_VOLUME_RATIO:.1f}x avg volume, "
+            f"\u2264{UNUSUAL_VOLUME_PRICE_CAP:.1f}% move, bulk/block deals + ETFs excluded)\n"
+            f"<i>High volume without a price move can signal quiet accumulation or distribution "
+            f"before the move shows up in price</i>\n" +
+            format_stock_list([(s, round(v, 1)) for s, p, v in unusual])
+        )
+        log.info("Unusual volume signals: %d found.", len(unusual))
+    else:
+        sections.append("\U0001F4E6 <b>Delivery analysis unavailable</b> (data fetch failed -- see logs)")
+
+    # --- F&O buildup + PCR ---
+    fo_df = fetch_fo_bhavcopy(session, date)
+    if fo_df is not None:
+        buildup = analyze_long_short_buildup(fo_df)
+        buildup_notes = {
+            "Long Buildup": "Price + OI both rising \u2014 commonly read as fresh long positioning (bullish)",
+            "Short Buildup": "Price falling + OI rising \u2014 commonly read as fresh short positioning (bearish)",
+            "Short Covering": "Price rising + OI falling \u2014 shorts being closed out (bullish reversal)",
+            "Long Unwinding": "Price falling + OI falling \u2014 longs being closed out (bearish reversal)",
+        }
+        for cat, emoji in [("Long Buildup", "\U0001F7E2"), ("Short Buildup", "\U0001F534"),
+                             ("Short Covering", "\U0001F7E1"), ("Long Unwinding", "\U0001F7E0")]:
+            sections.append(
+                f"{emoji} <b>{cat}</b>\n<i>{buildup_notes[cat]}</i>\n" + format_stock_list(buildup[cat])
+            )
+        log.info("Long/Short buildup: %s", {k: len(v) for k, v in buildup.items()})
+
+        overall_pcr, stock_pcr = analyze_pcr(fo_df)
+        stock_pcr.sort(key=lambda x: x[1], reverse=True)
+        pcr_line = f"Overall Market PCR: {overall_pcr}\n" if overall_pcr else ""
+        sections.append(
+            f"\U0001F4CA <b>Put-Call Ratio</b>\n{pcr_line}"
+            f"<i>PCR &gt;1 = more Put OI than Call OI (heavier downside hedging/bets); "
+            f"PCR &lt;1 = more Call OI (heavier upside bets). Many traders read extremes as "
+            f"contrarian -- very high PCR is sometimes viewed as oversold, very low as overbought.</i>\n"
+            f"Highest PCR:\n" + format_stock_list(stock_pcr[:5]) +
+            f"\nLowest PCR:\n" + format_stock_list(stock_pcr[-5:])
+        )
+        log.info("PCR analysis: overall=%s, %d stocks", overall_pcr, len(stock_pcr))
+    else:
+        sections.append("\U0001F4CA <b>F&O buildup/PCR unavailable</b> (data fetch failed -- see logs)")
+
+    # --- FII stats ---
+    fii_df = fetch_fii_stats(session, date)
+    if fii_df is not None:
+        fii_rows = parse_fii_stats(fii_df)
+        if fii_rows:
+            lines = [
+                "\U0001F3E6 <b>FII Derivatives Stats</b> (Net = Buy \u2212 Sell, \u20b9 Cr)",
+                "<i>Net positive = FII net buyers in that category (bullish tilt); "
+                "net negative = FII net sellers (bearish tilt)</i>",
+            ]
+            for row in fii_rows:
+                tilt = "bullish tilt" if row["net_amt"] > 0 else "bearish tilt" if row["net_amt"] < 0 else "neutral"
+                lines.append(f"  {row['category']}: Net {row['net_amt']:+.1f} Cr ({tilt})")
+            sections.append("\n".join(lines))
+            log.info("FII stats parsed: %d categories.", len(fii_rows))
+        else:
+            sections.append("\U0001F3E6 <b>FII stats fetched but could not be parsed</b> -- see logs")
+            log.warning("FII stats dataframe fetched but parse_fii_stats found no valid rows.")
+    else:
+        sections.append("\U0001F3E6 <b>FII stats unavailable</b> (best-effort source -- see logs)")
+
+    # --- EMAIL DISPATCH (Ironclad Isolation) ---
+    try:
+        full_email_message = f"\U0001F4C8 <b>F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}</b>\n\n" + "\n\n".join(sections)
+        send_email(
+            subject=f"F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}",
+            body=strip_html_tags(full_email_message),
+        )
+        log.info("Email dispatched successfully.")
+    except Exception as e:
+        log.error("CRITICAL: Email dispatch failed. Exception: %s", e)
+        # We do NOT return or exit here. We let Telegram continue.
+
+    # --- TELEGRAM DISPATCH (Ironclad Isolation & Anti-Flood) ---
+    try:
+        send_telegram_message(f"\U0001F4C8 <b>F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}</b>")
+        for section in sections:
+            # Safety net: If a single section is somehow larger than Telegram's limit, chunk it further
+            if len(section) > 3800:
+                for i in range(0, len(section), 3800):
+                    send_telegram_message(section[i:i + 3800])
+                    time.sleep(1.5)
+            else:
+                send_telegram_message(section)
+                time.sleep(1.5)
+        log.info("Telegram dispatched successfully.")
+    except Exception as e:
+        log.error("CRITICAL: Telegram dispatch failed. Exception: %s", e)
+
+    log.info("Run completed.")
+
+
+if __name__ == "__main__":
+    now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
+    if "--date" in sys.argv or now.weekday() < 5: 
+        main()
+    else:
+        logging.info("Weekend detected. Skipping execution.")
