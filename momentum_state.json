@@ -1728,8 +1728,8 @@
       "mcap_cr": 10747.647936375,
       "rs_rank": 32.1,
       "near_high_21_last_alert": "2026-09-25T05:01:26.723195",
-      "near_high_17_22_last_alert": "2026-09-25T06:46:00.746683",
-      "near_high_17_22_last_price": 591.2999877929688
+      "near_high_17_22_last_alert": "2026-09-25T09:16:09.460149",
+      "near_high_17_22_last_price": 598.25
     },
     "BLS": {
       "sma50": 243.27219970703126,
@@ -5622,8 +5622,8 @@
       "mcap_cr": 13892.855827369287,
       "rs_rank": 47.5,
       "near_high_21_last_alert": "2026-09-25T05:02:00.182917",
-      "near_high_17_22_last_alert": "2026-09-25T08:16:24.880917",
-      "near_high_17_22_last_price": 579.8499755859375
+      "near_high_17_22_last_alert": "2026-09-25T09:16:29.179582",
+      "near_high_17_22_last_price": 587.0999755859375
     },
     "JINDALSAW": {
       "sma50": 282.6510006713867,
@@ -6473,9 +6473,9 @@
       "mcap_cr": 4181.2680507857485,
       "rs_rank": 35.3,
       "zanger_last_alert": "2026-09-25T07:01:44.759368",
-      "resistance_last_alert": "2026-09-25T07:01:45.276907",
+      "resistance_last_alert": "2026-09-25T09:16:33.849722",
       "zanger_last_price": 802.7000122070312,
-      "resistance_last_price": 802.7000122070312
+      "resistance_last_price": 788.0
     },
     "KTKBANK": {
       "sma50": 312.91899841308594,

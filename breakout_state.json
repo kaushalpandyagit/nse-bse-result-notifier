@@ -41,7 +41,7 @@
     "rsi_down_alerted": true,
     "rsi_down_last_alert": "2026-09-25T08:01:07.168709",
     "price_low_last_alert": "2026-09-25T07:01:03.054979",
-    "rsi_up_last_alert": "2026-09-25T08:29:28.338085",
+    "rsi_up_last_alert": "2026-09-25T09:15:49.494475",
     "price_low_last_price": 417.3999938964844
   },
   "CPPLUS": {
@@ -60,8 +60,8 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
     "last_alert": "2026-09-25T06:01:11.681222",
-    "custom_last_alert": "2026-09-25T06:29:41.266824",
-    "custom_last_price": 170.9600067138672
+    "custom_last_alert": "2026-09-25T09:15:58.227097",
+    "custom_last_price": 173.07000732421875
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -271,7 +271,7 @@
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-25T08:01:10.868929",
     "price_high_last_alert": "2026-09-25T05:45:48.789172",
-    "rsi_down_last_alert": "2026-09-25T08:29:30.279112"
+    "rsi_down_last_alert": "2026-09-25T09:15:51.242224"
   },
   "custom_alert_CIRCULAR_news": {
     "alerted": false,
