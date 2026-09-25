@@ -83,12 +83,13 @@ MIN_MARKET_CAP_CR = 300.0
 MAX_MARKET_CAP_CR = 31000.0
 MAX_WEEKLY_RSI = 57.0
 
+# --- FIXED: Tightened keywords to prevent fake administrative filings from anchoring the RSI ---
 RESULT_KEYWORDS = [
     "financial result", "financial results", "quarterly result",
-    "quarterly results", "board meeting outcome", "un-audited",
-    "unaudited", "audited financial", "results for the quarter",
-    "results for the year", "regulation 33", "reg. 33", "reg 33",
-    "standalone and consolidated financial", "submitted to the exchange",
+    "quarterly results", "un-audited", "unaudited", "audited financial", 
+    "results for the quarter", "results for the year", 
+    "regulation 33", "reg. 33", "reg 33",
+    "standalone and consolidated financial"
 ]
 
 STATE_FILE = Path(__file__).parent / "breakout_state.json"
@@ -813,131 +814,11 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
 
     return momentum_state
 
-# ----------------------------------------------------------------------
-# NEWS & SPECIAL PRICE DISCOVERY CIRCULARS SCRAPER
-# ----------------------------------------------------------------------
-
-def fetch_recent_news_for_alerts() -> list:
-    results = []
-    session = requests.Session()
-    
-    # 1. NSE Announcements (Equities + SME)
-    try:
-        session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
-        time.sleep(1)
-        
-        for idx in ["equities", "sme"]:
-            resp = session.get(f"https://www.nseindia.com/api/corporate-announcements?index={idx}", headers=HEADERS, timeout=15)
-            if resp.status_code == 200:
-                for item in resp.json():
-                    results.append({
-                        "symbol": (item.get("symbol") or "").upper(),
-                        "subject": f"{item.get('desc', '')} {item.get('attchmntText', '')}",
-                        "link": item.get("attchmntFile", "")
-                    })
-    except Exception:
-        pass
-
-    # 2. NSE Exchange Circulars (For Special Call Auction / Price Discovery Sessions)
-    try:
-        time.sleep(1)
-        circ_resp = session.get("https://www.nseindia.com/api/circulars", headers=HEADERS, timeout=15)
-        if circ_resp.status_code == 200:
-            data = circ_resp.json()
-            items = data.get("data", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
-            for item in items:
-                subject = f"{item.get('circNo', '')} {item.get('sub', '')}"
-                circ_file = item.get("circFile", "")
-                link = f"https://archives.nseindia.com/content/circulars/{circ_file}" if circ_file else ""
-                
-                # Tagged under CIRCULAR to match Google Sheet entries
-                results.append({
-                    "symbol": "CIRCULAR",
-                    "subject": subject,
-                    "link": link
-                })
-    except Exception:
-        pass
-
-    # 3. BSE Announcements & Notices
-    try:
-        today = datetime.datetime.now().strftime("%Y%m%d")
-        from_date = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y%m%d")
-        url = f"https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P&strToDate={today}&strType=C&subcategory=-1"
-        resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=15)
-        if resp.status_code == 200 and "Table" in resp.json():
-            for item in resp.json()["Table"]:
-                results.append({
-                    "symbol": str(item.get("SCRIP_CD", "")),
-                    "subject": f"{item.get('NEWSSUB', '')} {item.get('HEADLINE', '')}",
-                    "link": item.get("ATTACHMENTNAME", "")
-                })
-    except Exception:
-        pass
-        
-    return results
-
-# ----------------------------------------------------------------------
-# GOOGLE SHEETS DYNAMIC CUSTOM ALERTS
-# ----------------------------------------------------------------------
-
-def parse_target_options(target_raw: str, metric: str) -> list:
-    parts = re.split(r",|\s+(?:or|OR)\s+", str(target_raw).strip())
-    options = [p.strip() for p in parts if p.strip()][:3]
-    parsed = []
-    for opt in options:
-        if metric == "news":
-            parsed.append(opt.lower())
-        else:
-            try:
-                parsed.append(float(opt))
-            except ValueError:
-                parsed.append(opt.lower())
-    return parsed
-
-def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
-    if not sheet_url or "docs.google.com" not in sheet_url: 
-        return {}
-    try:
-        df = pd.read_csv(sheet_url)
-        df.columns = [str(c).strip().lower() for c in df.columns]
-        if not {"exchange", "symbol", "metric", "condition", "target"}.issubset(set(df.columns)):
-            return {}
-
-        sheet_alerts = {}
-        for _, row in df.dropna(subset=["symbol", "metric", "condition", "target"]).iterrows():
-            sym = str(row["symbol"]).strip().upper()
-            exchange = str(row["exchange"]).strip().upper()
-            metric = str(row["metric"]).strip().lower()
-            condition = str(row["condition"]).strip().lower()
-            targets = parse_target_options(row["target"], metric)
-            if not targets or condition not in ("above", "below", "contains"): 
-                continue
-
-            sheet_alerts[f"{'BSE:' if exchange == 'BSE' else ''}{sym}"] = {
-                "metric": metric, 
-                "condition": condition, 
-                "targets": targets, 
-                "target_raw": str(row["target"]).strip()
-            }
-        return sheet_alerts
-    except Exception:
-        return {}
-
-# ----------------------------------------------------------------------
-# MAIN POLLING LOOP
-# ----------------------------------------------------------------------
-
-def normalise_company(name: str) -> str:
-    name = name.upper()
-    name = re.sub(r"\b(LIMITED|LTD|LTD\.|THE)\b", "", name)
-    return re.sub(r"[^A-Z0-9]", "", name).strip()
-
 def is_result_announcement(subject: str) -> bool:
     subj_lower = subject.lower()
     if any(kw in subj_lower for kw in RESULT_KEYWORDS):
         return True
-    return "board meeting" in subj_lower and "result" in subj_lower
+    return "board meeting" in subj_lower and ("result" in subj_lower or "financial" in subj_lower)
 
 def fetch_nse_result_symbols() -> set:
     session = requests.Session()
@@ -1000,59 +881,69 @@ def fetch_bse_result_companies() -> set:
             hits.add(normalise_company(company))
     return hits
 
-def get_universe_symbols() -> list:
-    if NIFTY500_CACHE_FILE.exists():
-        try:
-            cached = json.loads(NIFTY500_CACHE_FILE.read_text())
-            fetched_at = datetime.datetime.fromisoformat(cached["fetched_at"])
-            if (datetime.datetime.now() - fetched_at).days < 7:
-                return cached["symbols"]
-        except Exception:
-            pass
+# ----------------------------------------------------------------------
+# NEWS & SPECIAL PRICE DISCOVERY CIRCULARS SCRAPER
+# ----------------------------------------------------------------------
 
+def fetch_recent_news_for_alerts() -> list:
+    results = []
+    session = requests.Session()
+    
+    # 1. NSE Announcements (Equities + SME)
     try:
-        resp = requests.get(NSE_CSV_URL, headers=HEADERS, timeout=20)
-        resp.raise_for_status()
-        df = pd.read_csv(io.StringIO(resp.text))
-        symbols = sorted(df["Symbol"].astype(str).str.strip().tolist())
-        NIFTY500_CACHE_FILE.write_text(json.dumps({
-            "fetched_at": datetime.datetime.now().isoformat(),
-            "symbols": symbols,
-        }))
-        return symbols
+        session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
+        time.sleep(1)
+        
+        for idx in ["equities", "sme"]:
+            resp = session.get(f"https://www.nseindia.com/api/corporate-announcements?index={idx}", headers=HEADERS, timeout=15)
+            if resp.status_code == 200:
+                for item in resp.json():
+                    results.append({
+                        "symbol": (item.get("symbol") or "").upper(),
+                        "subject": f"{item.get('desc', '')} {item.get('attchmntText', '')}",
+                        "link": item.get("attchmntFile", "")
+                    })
     except Exception:
-        return FALLBACK_SYMBOLS
+        pass
 
-def prune_expired(state: dict) -> dict:
-    cutoff = datetime.datetime.now() - datetime.timedelta(days=TRACK_WINDOW_DAYS)
-    kept = {}
-    for symbol, entry in state.items():
-        if symbol.startswith("custom_alert_"):
-            kept[symbol] = entry
-            continue
-        try:
-            result_date = datetime.datetime.fromisoformat(entry["result_date"])
-            if result_date >= cutoff:
-                kept[symbol] = entry
-        except Exception:
-            continue
-    return kept
+    # 2. NSE Exchange Circulars (For Special Call Auction / Price Discovery Sessions)
+    try:
+        time.sleep(1)
+        circ_resp = session.get("https://www.nseindia.com/api/circulars", headers=HEADERS, timeout=15)
+        if circ_resp.status_code == 200:
+            data = circ_resp.json()
+            items = data.get("data", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+            for item in items:
+                subject = f"[{item.get('circNo', '')}] {item.get('sub', '')}"
+                circ_file = item.get("circFile", "")
+                link = f"https://archives.nseindia.com/content/circulars/{circ_file}" if circ_file else ""
+                
+                # Tagged under CIRCULAR to match Google Sheet entries
+                results.append({
+                    "symbol": "CIRCULAR",
+                    "subject": subject,
+                    "link": link
+                })
+    except Exception:
+        pass
 
-def load_state() -> dict:
-    if STATE_FILE.exists():
-        try:
-            return json.loads(STATE_FILE.read_text())
-        except Exception:
-            pass
-    return {}
-
-def load_momentum_state() -> dict:
-    if MOMENTUM_STATE_FILE.exists():
-        try:
-            return json.loads(MOMENTUM_STATE_FILE.read_text())
-        except Exception:
-            pass
-    return {"last_scan_date": None, "watchlist": {}}
+    # 3. BSE Announcements & Notices
+    try:
+        today = datetime.datetime.now().strftime("%Y%m%d")
+        from_date = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y%m%d")
+        url = f"https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P&strToDate={today}&strType=C&subcategory=-1"
+        resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=15)
+        if resp.status_code == 200 and "Table" in resp.json():
+            for item in resp.json()["Table"]:
+                results.append({
+                    "symbol": str(item.get("SCRIP_CD", "")),
+                    "subject": f"{item.get('NEWSSUB', '')} {item.get('HEADLINE', '')}",
+                    "link": item.get("ATTACHMENTNAME", "")
+                })
+    except Exception:
+        pass
+        
+    return results
 
 def poll_once(state: dict, fyers) -> dict:
     universe = set(get_universe_symbols())
@@ -1133,7 +1024,7 @@ def poll_once(state: dict, fyers) -> dict:
                             c_entry["last_alert"] = datetime.datetime.now().isoformat()
                             c_entry["last_news_fingerprint"] = news_fp
                             
-                            header_title = "🏛️ Exchange Circular / Price Discovery" if news_item["symbol"] == "CIRCULAR" else f"📰 {clean_symbol} Catalyst Alert"
+                            header_title = "🏛️ Exchange Circular" if news_item["symbol"] == "CIRCULAR" else f"📰 {clean_symbol} Catalyst Alert"
                             link_str = f"\n🔗 {news_item['link']}" if news_item.get("link") else ""
                             
                             send_telegram_message(
