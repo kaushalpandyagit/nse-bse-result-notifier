@@ -2910,10 +2910,10 @@
       "mcap_cr": 4555.329472381354,
       "rs_rank": 55.5,
       "near_high_21_last_alert": "2026-09-25T05:01:38.167459",
-      "mtf_last_alert": "2026-09-25T07:01:26.443985",
+      "mtf_last_alert": "2026-09-25T08:01:34.117609",
       "near_high_17_22_last_alert": "2026-09-25T07:46:07.872021",
       "near_high_17_22_last_price": 807.5499877929688,
-      "mtf_last_price": 803.5
+      "mtf_last_price": 816.0
     },
     "DATAPATTNS": {
       "sma50": 4536.64001953125,
@@ -3345,10 +3345,10 @@
       "ema_200_prev": 468.6445333664687,
       "mcap_cr": 10095.752713737153,
       "rs_rank": 61.5,
-      "mtf_last_alert": "2026-09-25T07:01:29.261568",
+      "mtf_last_alert": "2026-09-25T08:01:36.942548",
       "resistance_last_alert": "2026-09-25T07:01:28.757180",
       "resistance_last_price": 460.6499938964844,
-      "mtf_last_price": 460.6499938964844
+      "mtf_last_price": 454.5
     },
     "ELECTCAST": {
       "sma50": 74.97399993896484,
@@ -3628,8 +3628,8 @@
       "mcap_cr": 7940.240978559912,
       "rs_rank": 68.7,
       "near_high_21_last_alert": "2026-09-25T05:01:45.142290",
-      "near_high_17_22_last_alert": "2026-09-25T07:01:30.882193",
-      "near_high_17_22_last_price": 68.91999816894531
+      "near_high_17_22_last_alert": "2026-09-25T08:01:39.100075",
+      "near_high_17_22_last_price": 66.80999755859375
     },
     "ERIS": {
       "sma50": 1350.6999951171874,
@@ -5895,8 +5895,11 @@
       "ema_200_prev": 3112.2463984264687,
       "mcap_cr": 14326.072200484814,
       "rs_rank": 43.7,
-      "resistance_last_alert": "2026-09-25T06:01:44.061627",
-      "near_high_21_last_alert": "2026-09-25T05:02:03.430138"
+      "resistance_last_alert": "2026-09-25T08:01:51.141110",
+      "near_high_21_last_alert": "2026-09-25T05:02:03.430138",
+      "resistance_last_price": 3199.89990234375,
+      "mtf_last_alert": "2026-09-25T08:01:51.772809",
+      "mtf_last_price": 3199.89990234375
     },
     "JUBLINGREA": {
       "sma50": 702.5579968261719,
@@ -6428,8 +6431,8 @@
       "rs_rank": 30.8,
       "resistance_last_alert": "2026-09-25T07:01:44.138877",
       "near_high_21_last_alert": "2026-09-25T05:02:07.406503",
-      "near_high_17_22_last_alert": "2026-09-25T06:46:29.298625",
-      "near_high_17_22_last_price": 810.8499755859375,
+      "near_high_17_22_last_alert": "2026-09-25T08:01:55.110560",
+      "near_high_17_22_last_price": 820.0499877929688,
       "resistance_last_price": 817.25
     },
     "KSCL": {
