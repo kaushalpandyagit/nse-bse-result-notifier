@@ -5,7 +5,9 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - Fully Automated Headless TOTP Login via GitHub Secrets.
 - Time-based routing: Fyers (9:15-3:30) -> Yahoo Finance (After Hours).
 - Real-Time LTP override using Fyers Quotes API for zero-delay SME alerts.
-- 17% to 22% 52W High / ATH Scanner integrated with 45-min cooldown.
+- 45-minute hibernation + >1% price change requirement for repeats.
+- Special Price Discovery / Call Auction Circular & News Scraper from Google Sheet.
+- 17% to 22% 52W High / ATH Scanner.
 """
 
 import os
@@ -69,9 +71,10 @@ CLIENT_ID = APP_ID if APP_ID.endswith("-100") else f"{APP_ID}-100"
 CACHE_DIR = os.path.expanduser("~/fyers_trading")
 TOKEN_FILE = os.path.join(CACHE_DIR, ".fyers_token.txt")
 
-# Strict 45-minute freeze to prevent notification spam
+# Strict 45-minute freeze and minimum 1% price change
 POLL_INTERVAL_MINUTES = 15
 ALERT_COOLDOWN_MINUTES = 45
+MIN_PRICE_CHANGE_FOR_REPEAT_PCT = 1.0
 
 RSI_PERIOD = 14
 TRACK_WINDOW_DAYS = 15
@@ -670,15 +673,43 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     send_telegram_message(digest)
     return momentum_state
 
-def cooldown_elapsed(entry: dict, last_alert_key: str) -> bool:
-    last = entry.get(last_alert_key)
-    if not last:
+# ----------------------------------------------------------------------
+# COOLDOWN & 1% PRICE CHANGE HIBERNATION ENGINE
+# ----------------------------------------------------------------------
+
+def alert_allowed(entry: dict, alert_key_prefix: str, current_price: float = None) -> bool:
+    last_time_str = entry.get(f"{alert_key_prefix}_last_alert")
+    if not last_time_str:
         return True
     try:
-        last_dt = datetime.datetime.fromisoformat(last)
+        last_dt = datetime.datetime.fromisoformat(last_time_str)
     except Exception:
         return True
-    return (datetime.datetime.now() - last_dt) >= datetime.timedelta(minutes=ALERT_COOLDOWN_MINUTES)
+    
+    # 1. Check 45-minute hibernation
+    if (datetime.datetime.now() - last_dt) < datetime.timedelta(minutes=ALERT_COOLDOWN_MINUTES):
+        return False
+    
+    # 2. Check > 1% price change condition
+    last_price = entry.get(f"{alert_key_prefix}_last_price")
+    if current_price is not None and last_price is not None:
+        try:
+            pct_diff = abs(current_price - float(last_price)) / float(last_price) * 100.0
+            if pct_diff < MIN_PRICE_CHANGE_FOR_REPEAT_PCT:
+                return False
+        except ZeroDivisionError:
+            pass
+            
+    return True
+
+def record_alert(entry: dict, alert_key_prefix: str, current_price: float = None):
+    entry[f"{alert_key_prefix}_last_alert"] = datetime.datetime.now().isoformat()
+    if current_price is not None:
+        entry[f"{alert_key_prefix}_last_price"] = float(current_price)
+
+# ----------------------------------------------------------------------
+# INTRADAY MOMENTUM SCANNER HEADS
+# ----------------------------------------------------------------------
 
 def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
     watchlist = momentum_state.get("watchlist", {})
@@ -711,34 +742,34 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
         base_high = entry.get("base_high")
         pct_change = (price - prev_close) / prev_close * 100 if prev_close else None
 
-        if cooldown_elapsed(entry, "zanger_last_alert") and base_high and avg_vol50 and pct_change is not None:
+        if alert_allowed(entry, "zanger", price) and base_high and avg_vol50 and pct_change is not None:
             if pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50 and price >= (base_high * 0.95):
-                entry["zanger_last_alert"] = datetime.datetime.now().isoformat()
+                record_alert(entry, "zanger", price)
                 send_telegram_message(f"\U0001F4A5 <b>{symbol}</b> Zanger Early Entry Setup!\nPrice \u20b9{price:.2f} (up {pct_change:+.1f}%) near {ZANGER_BASE_LOOKBACK_DAYS}-day base high \u20b9{base_high:.2f} on {volume / avg_vol50:.1f}x avg volume.")
 
-        if cooldown_elapsed(entry, "bonde_last_alert") and pct_change is not None and prev_volume is not None and metrics.get("close_3d_ago"):
+        if alert_allowed(entry, "bonde", price) and pct_change is not None and prev_volume is not None and metrics.get("close_3d_ago"):
             return_3d = (prev_close - metrics["close_3d_ago"]) / metrics["close_3d_ago"] * 100
             if entry.get("stage2") and return_3d < 1.0 and volume > prev_volume and volume >= BONDE_MIN_VOLUME and pct_change >= BONDE_MIN_MOVE_PCT:
-                entry["bonde_last_alert"] = datetime.datetime.now().isoformat()
+                record_alert(entry, "bonde", price)
                 send_telegram_message(f"\u26A1 <b>{symbol}</b> Bonde Early Entry Model Trigger!\nConsolidated ({return_3d:+.1f}%), moved {pct_change:+.1f}% today. Vol ({volume:,.0f}) > Yesterday, in Stage 2. Price \u20b9{price:.2f}")
 
-        if cooldown_elapsed(entry, "resistance_last_alert") and base_high:
+        if alert_allowed(entry, "resistance", price) and base_high:
             if 0 < ((base_high - price) / base_high * 100) <= 4.0:
-                entry["resistance_last_alert"] = datetime.datetime.now().isoformat()
+                record_alert(entry, "resistance", price)
                 send_telegram_message(f"\U0001F3AF <b>{symbol}</b> Horizontal Resistance Scanner!\nPrice \u20b9{price:.2f} is within 4% below the recent base high (\u20b9{base_high:.2f}).")
 
-        if cooldown_elapsed(entry, "mtf_last_alert") and metrics.get("rsi") is not None:
+        if alert_allowed(entry, "mtf", price) and metrics.get("rsi") is not None:
             m_rsi, y_rsi = entry.get("monthly_rsi", 50.0), entry.get("yesterday_rsi", 50.0)
             ema_condition = price >= metrics["ema_200"] * 1.03 or price >= metrics["ema_50"] * 1.03 or price >= metrics["ema_21"] * 1.03
             rsi_condition = metrics["rsi"] > y_rsi and metrics["rsi"] > 30 and m_rsi <= 56 and metrics["weekly_rsi"] <= metrics["rsi"]
             if rsi_condition and ema_condition:
-                entry["mtf_last_alert"] = datetime.datetime.now().isoformat()
+                record_alert(entry, "mtf", price)
                 send_telegram_message(f"\U0001F52E <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice \u20b9{price:.2f} (Spiked \u22653% above key EMA).\nLive Daily RSI: {metrics['rsi']:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}")
         
         # ----------------------------------------------------------------------
-        # Strict 50 EMA Pullback Scanner (Rules 1-8) with 45 Min Freeze
+        # Strict 50 EMA Pullback Scanner (Rules 1-8)
         # ----------------------------------------------------------------------
-        if cooldown_elapsed(entry, "ema50_pullback_last_alert"):
+        if alert_allowed(entry, "ema50_pullback", price):
             ema_50 = metrics.get("ema_50")
             rsi = metrics.get("rsi")
             y_rsi = entry.get("yesterday_rsi")
@@ -759,7 +790,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                 if (cond_price and cond_rsi_bounds and cond_mcap and cond_vol and 
                     cond_close and cond_rsi_daily and cond_rsi_weekly):
                     
-                    entry["ema50_pullback_last_alert"] = datetime.datetime.now().isoformat()
+                    record_alert(entry, "ema50_pullback", price)
                     send_telegram_message(
                         f"🧲 <b>{symbol}</b> Strict 50 EMA Pullback Alert!\n"
                         f"Price ₹{price:.2f} is hovering near 50 EMA (₹{ema_50:.2f}) with expanding volume.\n"
@@ -767,14 +798,14 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     )
 
         # ----------------------------------------------------------------------
-        # NEW HEAD: Within 17% to 22% of Yearly High / ATH Scanner
+        # Within 17% to 22% of Yearly High / ATH Scanner
         # ----------------------------------------------------------------------
-        if cooldown_elapsed(entry, "near_high_17_22_last_alert"):
+        if alert_allowed(entry, "near_high_17_22", price):
             ref_high = max(entry.get("fifty2w_high") or 0.0, entry.get("ath_high") or 0.0)
             if ref_high > 0:
                 pct_from_high = ((ref_high - price) / ref_high) * 100
                 if 17.0 <= pct_from_high <= 22.0:
-                    entry["near_high_17_22_last_alert"] = datetime.datetime.now().isoformat()
+                    record_alert(entry, "near_high_17_22", price)
                     send_telegram_message(
                         f"🏔️ <b>{symbol}</b> Near Yearly High / ATH Scanner!\n"
                         f"Price ₹{price:.2f} is within {pct_from_high:.1f}% of its 52W/ATH High (₹{ref_high:.2f})."
@@ -783,13 +814,15 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
     return momentum_state
 
 # ----------------------------------------------------------------------
-# NEWS SCRAPER FOR CUSTOM ALERTS
+# NEWS & SPECIAL PRICE DISCOVERY CIRCULARS SCRAPER
 # ----------------------------------------------------------------------
 
 def fetch_recent_news_for_alerts() -> list:
     results = []
+    session = requests.Session()
+    
+    # 1. NSE Announcements (Equities + SME)
     try:
-        session = requests.Session()
         session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
         time.sleep(1)
         
@@ -805,6 +838,28 @@ def fetch_recent_news_for_alerts() -> list:
     except Exception:
         pass
 
+    # 2. NSE Exchange Circulars (For Special Call Auction / Price Discovery Sessions)
+    try:
+        time.sleep(1)
+        circ_resp = session.get("https://www.nseindia.com/api/circulars", headers=HEADERS, timeout=15)
+        if circ_resp.status_code == 200:
+            data = circ_resp.json()
+            items = data.get("data", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+            for item in items:
+                subject = f"{item.get('circNo', '')} {item.get('sub', '')}"
+                circ_file = item.get("circFile", "")
+                link = f"https://archives.nseindia.com/content/circulars/{circ_file}" if circ_file else ""
+                
+                # Tagged under CIRCULAR to match Google Sheet entries
+                results.append({
+                    "symbol": "CIRCULAR",
+                    "subject": subject,
+                    "link": link
+                })
+    except Exception:
+        pass
+
+    # 3. BSE Announcements & Notices
     try:
         today = datetime.datetime.now().strftime("%Y%m%d")
         from_date = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y%m%d")
@@ -828,7 +883,7 @@ def fetch_recent_news_for_alerts() -> list:
 
 def parse_target_options(target_raw: str, metric: str) -> list:
     parts = re.split(r",|\s+(?:or|OR)\s+", str(target_raw).strip())
-    options = [p.strip() for p in parts if p.strip()][:2]
+    options = [p.strip() for p in parts if p.strip()][:3]
     parsed = []
     for opt in options:
         if metric == "news":
@@ -1037,21 +1092,21 @@ def poll_once(state: dict, fyers) -> dict:
 
         price, rsi = metrics["price"], metrics["rsi"]
 
-        if price > entry["day_high"] and cooldown_elapsed(entry, "price_high_last_alert"):
-            entry["price_high_last_alert"] = datetime.datetime.now().isoformat()
+        if price > entry["day_high"] and alert_allowed(entry, "price_high", price):
+            record_alert(entry, "price_high", price)
             send_telegram_message(f"\U0001F680 <b>{symbol}</b> price broke ABOVE result-day High!\nCurrent: \u20b9{price:.2f} | Result-day High: \u20b9{entry['day_high']:.2f}")
 
-        if price < entry["day_low"] and cooldown_elapsed(entry, "price_low_last_alert"):
-            entry["price_low_last_alert"] = datetime.datetime.now().isoformat()
+        if price < entry["day_low"] and alert_allowed(entry, "price_low", price):
+            record_alert(entry, "price_low", price)
             send_telegram_message(f"\U0001F53B <b>{symbol}</b> price broke BELOW result-day Low!\nCurrent: \u20b9{price:.2f} | Result-day Low: \u20b9{entry['day_low']:.2f}")
 
         if rsi is not None and entry.get("baseline_rsi") is not None:
-            if rsi > entry["baseline_rsi"] and cooldown_elapsed(entry, "rsi_up_last_alert"):
-                entry["rsi_up_last_alert"] = datetime.datetime.now().isoformat()
+            if rsi > entry["baseline_rsi"] and alert_allowed(entry, "rsi_up"):
+                record_alert(entry, "rsi_up")
                 send_telegram_message(f"\U0001F4C8 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: \u20b9{price:.2f}")
 
-            if rsi < entry["baseline_rsi"] and cooldown_elapsed(entry, "rsi_down_last_alert"):
-                entry["rsi_down_last_alert"] = datetime.datetime.now().isoformat()
+            if rsi < entry["baseline_rsi"] and alert_allowed(entry, "rsi_down"):
+                record_alert(entry, "rsi_down")
                 send_telegram_message(f"\U0001F4C9 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: \u20b9{price:.2f}")
 
     custom_alerts = {**fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)}
@@ -1064,37 +1119,51 @@ def poll_once(state: dict, fyers) -> dict:
         c_entry = state[state_key]
         clean_symbol, exchange = symbol.split(":")[-1].upper(), "BSE" if symbol.startswith("BSE:") else "NSE"
 
+        # Special News & Price Discovery / Call Auction Circular Matcher
         if rules["metric"] == "news":
             for news_item in recent_news:
-                if news_item["symbol"] == clean_symbol:
+                match_symbol = (news_item["symbol"] == clean_symbol) or (clean_symbol in ("CIRCULAR", "ALL", "*"))
+                if match_symbol:
                     subj_lower = news_item["subject"].lower()
                     matched_kw = next((t for t in rules["targets"] if t in subj_lower), None)
                     if matched_kw and rules["condition"] == "contains":
-                        news_fp = str(news_item["subject"])[:50]
+                        news_fp = str(news_item["subject"])[:60]
                         if c_entry.get("last_news_fingerprint") != news_fp:
-                            c_entry["alerted"], c_entry["last_alert"], c_entry["last_news_fingerprint"] = True, datetime.datetime.now().isoformat(), news_fp
-                            send_telegram_message(f"📰 <b>{clean_symbol}</b> Catalyst Alert!\nMatched: <b>'{matched_kw}'</b> (Target: <i>{rules['target_raw']}</i>)\n\n<i>{news_item['subject']}</i>{chr(10) + '🔗 ' + news_item['link'] if news_item.get('link') else ''}")
+                            c_entry["alerted"] = True
+                            c_entry["last_alert"] = datetime.datetime.now().isoformat()
+                            c_entry["last_news_fingerprint"] = news_fp
+                            
+                            header_title = "🏛️ Exchange Circular / Price Discovery" if news_item["symbol"] == "CIRCULAR" else f"📰 {clean_symbol} Catalyst Alert"
+                            link_str = f"\n🔗 {news_item['link']}" if news_item.get("link") else ""
+                            
+                            send_telegram_message(
+                                f"<b>{header_title}</b>!\n"
+                                f"Matched: <b>'{matched_kw}'</b> (Target: <i>{rules['target_raw']}</i>)\n\n"
+                                f"<i>{news_item['subject']}</i>{link_str}"
+                            )
             continue
 
-        if cooldown_elapsed(c_entry, "last_alert"):
-            c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
-            if not c_metrics: 
-                continue
+        # Numeric / Price Alerts with 45-Min + 1% Price Change Rule
+        c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
+        if not c_metrics: 
+            continue
 
-            metric_type, cond, current_val = rules["metric"], rules["condition"], c_metrics.get(rules["metric"])
-            if current_val is None: 
-                continue
+        metric_type, cond, current_val = rules["metric"], rules["condition"], c_metrics.get(rules["metric"])
+        if current_val is None: 
+            continue
 
+        current_price = c_metrics.get("price")
+        if alert_allowed(c_entry, "custom", current_price):
             for target_rule in rules["targets"]:
                 target_val = c_metrics.get(target_rule) if isinstance(target_rule, str) else target_rule
                 if target_val is None: 
                     continue
                 
                 if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
-                    c_entry["last_alert"] = datetime.datetime.now().isoformat()
+                    record_alert(c_entry, "custom", current_price)
                     t_str = f"{target_rule.upper()} (₹{target_val:.2f})" if isinstance(target_rule, str) else (f"{target_val:+.2f}%" if "pct" in metric_type else f"{target_val:.1f}" if "rsi" in metric_type else f"₹{target_val:+.2f}" if "change" in metric_type else f"₹{target_val:.2f}")
                     v_str = f"{current_val:+.2f}%" if "pct" in metric_type else f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:+.2f}" if "change" in metric_type else f"₹{current_val:.2f}"
-                    send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{c_metrics['price']:.2f}")
+                    send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{current_price:.2f}")
                     break
 
     return state
