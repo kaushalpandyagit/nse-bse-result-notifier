@@ -168,8 +168,9 @@ def send_telegram_message(text: str) -> bool:
 # ----------------------------------------------------------------------
 
 def get_ist_now():
-    """Forces IST timezone (UTC + 5:30) unconditionally to bypass GitHub Actions UTC bug."""
-    return datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
+    """Forces IST timezone (UTC + 5:30) unconditionally, avoiding deprecation warnings."""
+    # Use timezone-aware UTC now, then add 5:30 for IST
+    return datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=5, minutes=30)
 
 def is_polling_allowed_now() -> bool:
     # TEMPORARY BYPASS: Always return True to force execution right now
