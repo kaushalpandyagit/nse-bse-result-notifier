@@ -509,4 +509,152 @@ def poll_once(seen: set) -> set:
 
         # --- CATALYST vs NOISE FILTER ---
         if category == "meeting":
-           
+            subj_lower = item["subject"].lower()
+            is_catalyst = any(kw in subj_lower for kw in ["analyst", "institutional", "concall", "investor", "earnings call"])
+            is_noise = any(kw in subj_lower for kw in NOISE_KEYWORDS)
+            
+            if is_noise and not is_catalyst:
+                mcap_cr = get_market_cap_cr(item["symbol"], item["source"])
+                
+                if mcap_cr is not None and mcap_cr >= 12000.0:
+                    fp = fingerprint(item["company"], item["subject"], item["date"])
+                    seen.add(fp)  
+                    continue      
+                
+                mcap_str = f"~{int(mcap_cr)} Cr" if mcap_cr else "SME/Unknown"
+                item["subject"] = f"📊 SMALLCAP AGM ({mcap_str}): " + item["subject"]
+                
+            elif is_catalyst:
+                item["subject"] = "🔥 CATALYST: " + item["subject"]
+        # --------------------------------
+
+        fp = fingerprint(item["company"], item["subject"], item["date"])
+        if fp in seen:
+            continue
+
+        seen.add(fp)
+        item["category"] = category
+        new_alerts.append(item)
+
+    for item in new_alerts:
+        cat = item["category"]
+        sentiment_marker = ""
+        
+        # HTML Escape strings so companies with '&' (e.g. Larsen & Toubro) do not crash Telegram
+        safe_comp = html.escape(item['company'])
+        safe_subj = html.escape(item['subject'])
+        
+        if cat == "circular":
+            header = f"🏛️ <b>{safe_comp}</b> \u2014 Market Wide Circular"
+            body = f"{safe_subj}\n\U0001F550 {item['date']}"
+            
+        elif cat == "order":
+            order_val = extract_order_value(item["subject"])
+            val_line = f"\U0001F4B0 Value: \u20b9{order_val}\n" if order_val else "\U0001F4B0 Value: check filing\n"
+            header = f"\U0001F4E6 <b>{safe_comp}</b> ({item['source']}) \u2014 Order/Contract Win"
+            body = f"{safe_subj}\n{val_line}\U0001F550 {item['date']}"
+            sentiment_marker = " 🟢"
+            
+        elif cat == "insider_promoter":
+            summary = ""
+            if item.get("link") and PyPDF2 is not None:
+                try:
+                    time.sleep(random.uniform(1.0, 2.0))
+                    pdf_resp = requests.get(item["link"], headers=get_browser_headers(), timeout=15)
+                    if pdf_resp.status_code == 200:
+                        with io.BytesIO(pdf_resp.content) as f:
+                            reader = PyPDF2.PdfReader(f)
+                            if len(reader.pages) > 0:
+                                pdf_text = reader.pages[0].extract_text() or ""
+                                if len(reader.pages) > 1 and len(pdf_text) < 1500:
+                                    pdf_text += " " + (reader.pages[1].extract_text() or "")
+                                
+                                summary = extract_insider_summary(pdf_text)
+                except Exception as e:
+                    log.warning("PDF extraction failed for %s: %s", item['company'], e)
+            
+            sum_line = f"📝 Action: <b>{summary}</b>\n" if summary else ""
+            header = f"🔍 <b>{safe_comp}</b> ({item['source']}) \u2014 Insider / Promoter Action"
+            body = f"{safe_subj}\n{sum_line}🕐 {item['date']}"
+            
+            # Auto-assign Positive/Negative sentiment for Insiders
+            if any(x in summary for x in ["🟢", "🔓", "Buy", "Acquisition"]):
+                sentiment_marker = " 🟢"
+            elif any(x in summary for x in ["🔴", "🔒", "⚠️", "Sell", "Disposal", "Invocation"]):
+                sentiment_marker = " 🔴"
+            
+        elif cat == "meeting":
+            meet_date = extract_meeting_date(item["subject"])
+            evoting_purpose = extract_evoting_purpose(item["subject"])
+            
+            if (not meet_date or not evoting_purpose) and item.get("link") and PyPDF2 is not None:
+                try:
+                    time.sleep(random.uniform(1.0, 2.0))
+                    pdf_resp = requests.get(item["link"], headers=get_browser_headers(), timeout=15)
+                    if pdf_resp.status_code == 200:
+                        with io.BytesIO(pdf_resp.content) as f:
+                            reader = PyPDF2.PdfReader(f)
+                            if len(reader.pages) > 0:
+                                pdf_text = reader.pages[0].extract_text() or ""
+                                if len(reader.pages) > 1 and len(pdf_text) < 400:
+                                    pdf_text += " " + (reader.pages[1].extract_text() or "")
+                                
+                                if not meet_date:
+                                    meet_date = extract_meeting_date(pdf_text)
+                                if not evoting_purpose:
+                                    evoting_purpose = extract_evoting_purpose(pdf_text)
+                except Exception as e:
+                    log.warning("PDF extraction failed for %s: %s", item['company'], e)
+            
+            date_line = f"🗓️ Date: <b>{meet_date}</b>\n" if meet_date else "🗓️ Date: <i>Check attached PDF</i>\n"
+            purpose_line = f"🗳️ Purpose: <b>{evoting_purpose}</b>\n" if evoting_purpose else ""
+            
+            header = f"📅 <b>{safe_comp}</b> ({item['source']}) \u2014 AGM / E-Voting / Meet"
+            body = f"{safe_subj}\n{purpose_line}{date_line}\U0001F550 {item['date']}"
+            
+        else:  # result
+            header = f"\U0001F4E2 <b>{safe_comp}</b> ({item['source']}) \u2014 Financial Result"
+            body = f"{safe_subj}\n\U0001F550 {item['date']}"
+
+        msg = f"{header}\n{body}"
+        if item.get("link"):
+            msg += f"\n\U0001F517 {item['link']}"
+            
+        if sentiment_marker:
+            msg += sentiment_marker
+
+        send_telegram_message(msg)
+        log.info("Alert dispatched [%s]: %s", cat.upper(), item["company"])
+        time.sleep(1.0)
+
+    return seen
+
+def main():
+    one_shot = "--once" in sys.argv
+    log.info("Starting Notifier.%s", " (single-shot mode)" if one_shot else "")
+    seen = load_seen()
+
+    if one_shot:
+        if is_polling_allowed_now():
+            try:
+                seen = poll_once(seen)
+                save_seen(seen)
+            except Exception as e:
+                log.exception("Error during single poll: %s", e)
+        else:
+            log.info("Outside allowed operating schedule -- skipping.")
+        return
+
+    while True:
+        if is_polling_allowed_now():
+            try:
+                seen = poll_once(seen)
+                save_seen(seen)
+            except Exception as e:
+                log.exception("Error during cycle: %s", e)
+        else:
+            log.info("Outside allowed operating schedule -- sleeping.")
+        time.sleep(POLL_INTERVAL_MINUTES * 60)
+
+if __name__ == "__main__":
+    main()
