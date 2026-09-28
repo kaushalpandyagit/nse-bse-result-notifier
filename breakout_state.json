@@ -9,7 +9,7 @@
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-09-25T09:01:08.465179",
+    "rsi_up_last_alert": "2026-09-28T04:01:02.636339",
     "rsi_down_last_alert": "2026-09-15T09:30:02.484125",
     "price_low_last_alert": "2026-09-15T09:45:40.945817",
     "price_high_last_alert": "2026-09-25T08:45:46.246634",
@@ -25,7 +25,7 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-09-25T09:01:09.177246",
+    "rsi_up_last_alert": "2026-09-28T04:01:03.803503",
     "rsi_down_last_alert": "2026-09-16T04:15:45.484394",
     "price_high_last_alert": "2026-09-16T09:45:43.423375"
   },
@@ -39,7 +39,7 @@
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-09-25T08:01:07.168709",
+    "rsi_down_last_alert": "2026-09-28T04:01:04.474839",
     "price_low_last_alert": "2026-09-25T07:01:03.054979",
     "rsi_up_last_alert": "2026-09-25T09:15:49.494475",
     "price_low_last_price": 417.3999938964844
@@ -92,7 +92,7 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-21T05:00:57.944063",
-    "rsi_down_last_alert": "2026-09-25T09:01:10.054755",
+    "rsi_down_last_alert": "2026-09-28T04:01:05.221776",
     "price_low_last_alert": "2026-09-25T07:29:48.531889",
     "price_low_last_price": 676.5999755859375
   },
@@ -111,7 +111,7 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-25T08:01:08.905128",
-    "rsi_down_last_alert": "2026-09-25T06:01:04.435830"
+    "rsi_down_last_alert": "2026-09-28T04:01:05.857796"
   },
   "custom_alert_GSMFOILS_news": {
     "alerted": false,
@@ -243,7 +243,7 @@
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-09-25T09:01:11.113611",
+    "rsi_up_last_alert": "2026-09-28T04:01:06.815988",
     "rsi_down_last_alert": "2026-09-24T07:01:03.543091",
     "price_low_last_alert": "2026-09-24T08:01:01.382356",
     "price_high_last_alert": "2026-09-25T07:01:05.208460",
@@ -271,7 +271,9 @@
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-25T08:01:10.868929",
     "price_high_last_alert": "2026-09-25T05:45:48.789172",
-    "rsi_down_last_alert": "2026-09-25T09:15:51.242224"
+    "rsi_down_last_alert": "2026-09-28T04:01:08.079792",
+    "price_low_last_alert": "2026-09-28T04:01:07.590629",
+    "price_low_last_price": 1625.9000244140625
   },
   "custom_alert_CIRCULAR_news": {
     "alerted": false,
