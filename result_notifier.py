@@ -3,12 +3,12 @@ NSE + BSE Live Result, Order Win, Insider Trade, Circular & Meeting Notifier -> 
 ==========================================================================================
 Covers:
   1. Financial Results (Regulation 33 / Board outcomes)
-  2. Order & Contract Wins (with Rupee value extraction & SME Support)
-  3. Insider Trading & Promoter Actions (Auto-Extracts Buy/Sell/Pledge from PDFs)
-  4. NSE Exchange Circulars
-  5. AGMs, E-Voting, and Investor / Analyst Meets (with Market Cap filtering & PDF Parsing)
-  6. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
-  7. Sentiment Emojis (Green/Red) appended to positive/negative catalysts.
+  2. Order Wins + Order-to-Market-Cap ASYMMETRY Triggers (>= 20% of MCap)
+  3. Asset Commissioning (Commercial Production / CWIP)
+  4. Multi-Modal Logistics & Terminals (Gati Shakti, Railway Sidings)
+  5. Insider Trading & Promoter Actions
+  6. NSE Exchange Circulars
+  7. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
 import os
@@ -65,6 +65,17 @@ ORDER_KEYWORDS = [
     "l.o.a.", " loa ", "purchase order", "work order",
     "order/contract", "order / contract",
     "award_of_order", "receipt_of_order", "orders/contracts", "bagging/receiving"
+]
+
+COMMISSIONING_KEYWORDS = [
+    "commercial production", "commissioning", "commencement of commercial",
+    "commences commercial", "cwip", "capital work-in-progress", "brownfield",
+    "commercial operations", "commencement of operation"
+]
+
+LOGISTICS_KEYWORDS = [
+    "railway siding", "gati shakti", "cargo terminal", "logistics park", 
+    "multi-modal", "multimodal"
 ]
 
 INSIDER_PROMOTER_KEYWORDS = [
@@ -236,6 +247,24 @@ def extract_order_value(text: str):
         return None
     return f"{match.group(1)} {match.group(2)}"
 
+def parse_to_crores(amount_str: str) -> float:
+    """Converts a string like '150 crore' or '2.5 billion' into Crores math value."""
+    if not amount_str:
+        return 0.0
+    match = re.search(r"([\d,]+(?:\.\d+)?)\s*(crore|cr\.?|lakh|lac|million|mn|billion|bn)\b", amount_str, re.IGNORECASE)
+    if not match:
+        return 0.0
+    try:
+        val = float(match.group(1).replace(",", ""))
+        unit = match.group(2).lower().replace(".", "")
+        if unit in ["crore", "cr"]: return val
+        if unit in ["lakh", "lac"]: return val / 100.0
+        if unit in ["million", "mn"]: return val / 10.0
+        if unit in ["billion", "bn"]: return val * 100.0
+    except ValueError:
+        pass
+    return 0.0
+
 def extract_meeting_date(text: str):
     if not text:
         return None
@@ -309,6 +338,10 @@ def classify_announcement(subject: str) -> str:
         
     if any(kw in subj_lower for kw in ORDER_KEYWORDS):
         return "order"
+    if any(kw in subj_lower for kw in COMMISSIONING_KEYWORDS):
+        return "commissioning"
+    if any(kw in subj_lower for kw in LOGISTICS_KEYWORDS):
+        return "logistics"
     if any(kw in subj_lower for kw in MEETING_KEYWORDS):
         return "meeting"
     if any(kw in subj_lower for kw in INSIDER_PROMOTER_KEYWORDS):
@@ -544,12 +577,37 @@ def poll_once(seen: set) -> set:
             header = f"🏛️ <b>{safe_comp}</b> \u2014 Market Wide Circular"
             body = f"{safe_subj}\n\U0001F550 {item['date']}"
             
+        elif cat == "commissioning":
+            header = f"🏭 <b>{safe_comp}</b> ({item['source']}) \u2014 Asset Commissioning"
+            body = f"{safe_subj}\n\U0001F550 {item['date']}"
+            sentiment_marker = " 🟢"
+
+        elif cat == "logistics":
+            header = f"🚂 <b>{safe_comp}</b> ({item['source']}) \u2014 Logistics / Terminal Infra"
+            body = f"{safe_subj}\n\U0001F550 {item['date']}"
+            sentiment_marker = " 🟢"
+            
         elif cat == "order":
             order_val = extract_order_value(item["subject"])
             val_line = f"\U0001F4B0 Value: \u20b9{order_val}\n" if order_val else "\U0001F4B0 Value: check filing\n"
-            header = f"\U0001F4E6 <b>{safe_comp}</b> ({item['source']}) \u2014 Order/Contract Win"
-            body = f"{safe_subj}\n{val_line}\U0001F550 {item['date']}"
+            
+            # --- ASYMMETRY TRIGGER CHECK (>= 20% of Market Cap) ---
+            asymmetry_tag = ""
             sentiment_marker = " 🟢"
+            if order_val:
+                order_cr = parse_to_crores(order_val)
+                mcap_cr = get_market_cap_cr(item["symbol"], item["source"])
+                if order_cr > 0 and mcap_cr and mcap_cr > 0:
+                    pct_mcap = (order_cr / mcap_cr) * 100.0
+                    if pct_mcap >= 100.0:
+                        asymmetry_tag = f"🔥 <b>MEGA ASYMMETRY TRIGGER:</b> Order (\u20b9{order_cr:.1f}Cr) is <b>{int(pct_mcap)}%</b> of MCap (\u20b9{int(mcap_cr)}Cr)!\n"
+                        sentiment_marker = " 🟢🟢"
+                    elif pct_mcap >= 20.0:
+                        asymmetry_tag = f"⚡ <b>ASYMMETRY TRIGGER:</b> Order (\u20b9{order_cr:.1f}Cr) is <b>{int(pct_mcap)}%</b> of MCap (\u20b9{int(mcap_cr)}Cr)!\n"
+                        sentiment_marker = " 🟢"
+            
+            header = f"\U0001F4E6 <b>{safe_comp}</b> ({item['source']}) \u2014 Order/Contract Win"
+            body = f"{safe_subj}\n{val_line}{asymmetry_tag}\U0001F550 {item['date']}"
             
         elif cat == "insider_promoter":
             summary = ""
@@ -651,4 +709,4 @@ def main():
             log.info("Outside allowed operating schedule -- sleeping.")
         time.sleep(POLL_INTERVAL_MINUTES * 60)
 
-if __name__ == "__main__": main()
+main()
