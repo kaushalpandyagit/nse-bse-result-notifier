@@ -4364,12 +4364,12 @@
       "rs_rank": 3.6,
       "resistance_last_alert": "2026-09-28T08:30:09.904761",
       "resistance_last_price": 265.20001220703125,
-      "ema50_pullback_last_alert": "2026-09-28T07:01:41.049255",
-      "ema50_pullback_last_price": 260.1499938964844,
-      "mtf_last_alert": "2026-09-28T08:01:32.293707",
-      "mtf_last_price": 266.45001220703125,
-      "zanger_last_alert": "2026-09-28T08:01:31.787497",
-      "zanger_last_price": 266.45001220703125
+      "ema50_pullback_last_alert": "2026-09-28T09:16:13.945531",
+      "ema50_pullback_last_price": 263.70001220703125,
+      "mtf_last_alert": "2026-09-28T09:16:13.316918",
+      "mtf_last_price": 263.70001220703125,
+      "zanger_last_alert": "2026-09-28T09:16:12.610359",
+      "zanger_last_price": 263.70001220703125
     },
     "GODREJAGRO": {
       "sma50": 609.8749951171875,
@@ -4632,8 +4632,8 @@
       "ema_200_prev": 1858.034310115167,
       "mcap_cr": 21490.752,
       "rs_rank": 76.4,
-      "near_high_17_22_last_alert": "2026-09-28T04:03:39.603152",
-      "near_high_17_22_last_price": 1942.9000244140625
+      "near_high_17_22_last_alert": "2026-09-28T09:16:15.534926",
+      "near_high_17_22_last_price": 1921.5
     },
     "GRSE": {
       "sma50": 2528.56400390625,
@@ -8934,8 +8934,8 @@
       "ema_200_prev": 761.2168196780979,
       "mcap_cr": 9702.60590430755,
       "rs_rank": 90.2,
-      "near_high_17_22_last_alert": "2026-09-28T04:04:01.391750",
-      "near_high_17_22_last_price": 819.2000122070312
+      "near_high_17_22_last_alert": "2026-09-28T09:16:31.261530",
+      "near_high_17_22_last_price": 829.5
     },
     "RATNAMANI": {
       "sma50": 2550.586005859375,
@@ -9200,8 +9200,8 @@
       "ema_200_prev": 404.05714788388855,
       "mcap_cr": 7873.899121303064,
       "rs_rank": 39.4,
-      "resistance_last_alert": "2026-09-28T05:16:52.275118",
-      "resistance_last_price": 390.0,
+      "resistance_last_alert": "2026-09-28T09:16:33.334774",
+      "resistance_last_price": 385.95001220703125,
       "mtf_last_alert": "2026-09-28T04:46:29.379840",
       "mtf_last_price": 389.1499938964844
     },
@@ -11169,7 +11169,9 @@
       "ema_100_prev": 543.2629279655814,
       "ema_200_prev": 499.699260548454,
       "mcap_cr": 8920.217166384173,
-      "rs_rank": 84.5
+      "rs_rank": 84.5,
+      "near_high_17_22_last_alert": "2026-09-28T09:16:40.320084",
+      "near_high_17_22_last_price": 547.7999877929688
     },
     "TI": {
       "sma50": 529.4429992675781,
