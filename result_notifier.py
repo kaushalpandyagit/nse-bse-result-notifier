@@ -20,6 +20,7 @@ import time
 import random
 import logging
 import datetime
+import html
 from pathlib import Path
 
 import requests
@@ -35,12 +36,6 @@ try:
 except ImportError:
     PyPDF2 = None
     print("WARNING: PyPDF2 is not installed. PDF date extraction will be disabled.")
-
-try:
-    import pytz
-    IST = pytz.timezone("Asia/Kolkata")
-except ImportError:
-    IST = None
 
 # ----------------------------------------------------------------------
 # CONFIG
@@ -69,7 +64,6 @@ ORDER_KEYWORDS = [
     "letter of intent", "l.o.i.", " loi ", "letter of award",
     "l.o.a.", " loa ", "purchase order", "work order",
     "order/contract", "order / contract",
-    # --- Catch NSE SME formatting quirks ---
     "award_of_order", "receipt_of_order", "orders/contracts", "bagging/receiving"
 ]
 
@@ -180,8 +174,12 @@ def send_telegram_message(text: str) -> bool:
 # TIME & ANTI-BLOCKING UTILITIES
 # ----------------------------------------------------------------------
 
+def get_ist_now():
+    """Forces IST timezone (UTC + 5:30) unconditionally to bypass GitHub Actions UTC bug."""
+    return datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
+
 def is_polling_allowed_now() -> bool:
-    now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
+    now = get_ist_now()
     weekday = now.weekday()
 
     if weekday < 5:  
@@ -397,8 +395,9 @@ def fetch_bse_announcements() -> list:
         "Accept": "application/json",
         "Referer": "https://www.bseindia.com/corporates/ann.html",
     }
-    today = datetime.datetime.now().strftime("%Y%m%d")
-    from_date = (datetime.datetime.now() - datetime.timedelta(days=2)).strftime("%Y%m%d")
+    now_ist = get_ist_now()
+    today = now_ist.strftime("%Y%m%d")
+    from_date = (now_ist - datetime.timedelta(days=2)).strftime("%Y%m%d")
     url = (
         "https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w"
         f"?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P"
@@ -468,7 +467,7 @@ def fetch_nse_circulars() -> list:
                 "company": "NSE EXCHANGE",
                 "symbol": "CIRCULAR",
                 "subject": f"[{circ_no}] {subject}",
-                "date": item.get("circDt", datetime.date.today().isoformat()),
+                "date": item.get("circDt", get_ist_now().date().isoformat()),
                 "source": "NSE",
                 "link": link,
                 "category": "circular"
@@ -510,4 +509,4 @@ def poll_once(seen: set) -> set:
 
         # --- CATALYST vs NOISE FILTER ---
         if category == "meeting":
-            subj_lo
+           
