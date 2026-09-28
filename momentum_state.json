@@ -4366,8 +4366,10 @@
       "resistance_last_price": 260.1499938964844,
       "ema50_pullback_last_alert": "2026-09-28T07:01:41.049255",
       "ema50_pullback_last_price": 260.1499938964844,
-      "mtf_last_alert": "2026-09-28T07:16:24.418076",
-      "mtf_last_price": 262.3999938964844
+      "mtf_last_alert": "2026-09-28T08:01:32.293707",
+      "mtf_last_price": 266.45001220703125,
+      "zanger_last_alert": "2026-09-28T08:01:31.787497",
+      "zanger_last_price": 266.45001220703125
     },
     "GODREJAGRO": {
       "sma50": 609.8749951171875,
@@ -9669,7 +9671,9 @@
       "ema_100_prev": 514.7835146779241,
       "ema_200_prev": 518.2716432866308,
       "mcap_cr": 17206.776983947082,
-      "rs_rank": 19.1
+      "rs_rank": 19.1,
+      "near_high_17_22_last_alert": "2026-09-28T08:01:54.907215",
+      "near_high_17_22_last_price": 501.1499938964844
     },
     "SAREGAMA": {
       "sma50": 507.22999877929686,
@@ -11990,8 +11994,8 @@
       "ema_200_prev": 561.4311464475254,
       "mcap_cr": 15889.327368728027,
       "rs_rank": 36.4,
-      "near_high_17_22_last_alert": "2026-09-28T04:04:17.753893",
-      "near_high_17_22_last_price": 548.7000122070312
+      "near_high_17_22_last_alert": "2026-09-28T08:02:05.119292",
+      "near_high_17_22_last_price": 543.0499877929688
     },
     "WAAREERTL": {
       "sma50": 877.8240026855469,
