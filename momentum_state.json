@@ -3730,8 +3730,8 @@
       "ema_200_prev": 69.82888414775695,
       "mcap_cr": 7471.149117169825,
       "rs_rank": 60.0,
-      "near_high_17_22_last_alert": "2026-09-28T04:30:12.892724",
-      "near_high_17_22_last_price": 65.52999877929688
+      "near_high_17_22_last_alert": "2026-09-28T07:16:19.206163",
+      "near_high_17_22_last_price": 66.33000183105469
     },
     "ERIS": {
       "sma50": 1342.5259936523437,
@@ -4280,8 +4280,10 @@
       "ema_200_prev": 103.09669217079536,
       "mcap_cr": 7858.598591310871,
       "rs_rank": 35.5,
-      "resistance_last_alert": "2026-09-28T05:01:29.774075",
-      "resistance_last_price": 99.58000183105469
+      "resistance_last_alert": "2026-09-28T07:16:22.850512",
+      "resistance_last_price": 101.02999877929688,
+      "mtf_last_alert": "2026-09-28T07:16:23.400827",
+      "mtf_last_price": 101.02999877929688
     },
     "GNFC": {
       "sma50": 564.7699981689453,
@@ -4363,7 +4365,9 @@
       "resistance_last_alert": "2026-09-28T07:01:40.388143",
       "resistance_last_price": 260.1499938964844,
       "ema50_pullback_last_alert": "2026-09-28T07:01:41.049255",
-      "ema50_pullback_last_price": 260.1499938964844
+      "ema50_pullback_last_price": 260.1499938964844,
+      "mtf_last_alert": "2026-09-28T07:16:24.418076",
+      "mtf_last_price": 262.3999938964844
     },
     "GODREJAGRO": {
       "sma50": 609.8749951171875,
