@@ -651,4 +651,4 @@ def main():
             log.info("Outside allowed operating schedule -- sleeping.")
         time.sleep(POLL_INTERVAL_MINUTES * 60)
 
-if __name__ == "__main__": main()
+main()
