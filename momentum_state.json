@@ -4489,7 +4489,9 @@
       "ema_100_prev": 158.90475323034588,
       "ema_200_prev": 159.2163712030194,
       "mcap_cr": 7819.261871205872,
-      "rs_rank": 47.0
+      "rs_rank": 47.0,
+      "near_high_17_22_last_alert": "2026-09-28T05:16:28.366262",
+      "near_high_17_22_last_price": 160.7899932861328
     },
     "GRANULES": {
       "sma50": 855.635,
@@ -9176,8 +9178,8 @@
       "ema_200_prev": 404.05714788388855,
       "mcap_cr": 7873.899121303064,
       "rs_rank": 39.4,
-      "resistance_last_alert": "2026-09-28T04:30:43.559804",
-      "resistance_last_price": 385.45001220703125,
+      "resistance_last_alert": "2026-09-28T05:16:52.275118",
+      "resistance_last_price": 390.0,
       "mtf_last_alert": "2026-09-28T04:46:29.379840",
       "mtf_last_price": 389.1499938964844
     },
@@ -11912,8 +11914,8 @@
       "ema_200_prev": 737.0956983473313,
       "mcap_cr": 5968.15425,
       "rs_rank": 86.2,
-      "near_high_17_22_last_alert": "2026-09-28T04:04:17.111857",
-      "near_high_17_22_last_price": 749.4500122070312
+      "near_high_17_22_last_alert": "2026-09-28T05:17:06.624724",
+      "near_high_17_22_last_price": 761.3499755859375
     },
     "VOLTAMP": {
       "sma50": 10406.92,
