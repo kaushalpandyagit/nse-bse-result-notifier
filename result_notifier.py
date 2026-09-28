@@ -1,7 +1,14 @@
 """
 NSE + BSE Live Result, Order Win, Insider Trade, Circular & Meeting Notifier -> Telegram
 ==========================================================================================
-TEMPORARY BYPASS VERSION: Time limits are disabled to allow immediate backlog retrieval.
+Covers:
+  1. Financial Results (Regulation 33 / Board outcomes)
+  2. Order & Contract Wins (with Rupee value extraction & SME Support)
+  3. Insider Trading & Promoter Actions (Auto-Extracts Buy/Sell/Pledge from PDFs)
+  4. NSE Exchange Circulars
+  5. AGMs, E-Voting, and Investor / Analyst Meets (with Market Cap filtering & PDF Parsing)
+  6. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
+  7. Sentiment Emojis (Green/Red) appended to positive/negative catalysts.
 """
 
 import os
@@ -169,12 +176,20 @@ def send_telegram_message(text: str) -> bool:
 
 def get_ist_now():
     """Forces IST timezone (UTC + 5:30) unconditionally, avoiding deprecation warnings."""
-    # Use timezone-aware UTC now, then add 5:30 for IST
     return datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=5, minutes=30)
 
 def is_polling_allowed_now() -> bool:
-    # TEMPORARY BYPASS: Always return True to force execution right now
-    return True
+    now = get_ist_now()
+    weekday = now.weekday()
+
+    if weekday < 5:  
+        start = now.replace(hour=8, minute=0, second=0, microsecond=0)
+        end = now.replace(hour=22, minute=30, second=0, microsecond=0)
+    else:  
+        start = now.replace(hour=9, minute=0, second=0, microsecond=0)
+        end = now.replace(hour=21, minute=0, second=0, microsecond=0)
+
+    return start <= now <= end
 
 def get_browser_headers() -> dict:
     return {
@@ -636,4 +651,4 @@ def main():
             log.info("Outside allowed operating schedule -- sleeping.")
         time.sleep(POLL_INTERVAL_MINUTES * 60)
 
-main()
+if __name__ == "__main__": main()
