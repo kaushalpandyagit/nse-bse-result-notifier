@@ -1701,7 +1701,9 @@
       "ema_100_prev": 1891.1018178570039,
       "ema_200_prev": 1852.4428228342492,
       "mcap_cr": 16633.645986657713,
-      "rs_rank": 73.0
+      "rs_rank": 73.0,
+      "near_high_17_22_last_alert": "2026-09-28T05:01:15.647454",
+      "near_high_17_22_last_price": 1988.800048828125
     },
     "BIKAJI": {
       "sma50": 602.6450036621094,
@@ -1780,8 +1782,8 @@
       "ema_200_prev": 575.623189747184,
       "mcap_cr": 10869.749457986847,
       "rs_rank": 38.1,
-      "near_high_17_22_last_alert": "2026-09-28T04:03:27.089935",
-      "near_high_17_22_last_price": 597.1500244140625
+      "near_high_17_22_last_alert": "2026-09-28T05:01:16.509165",
+      "near_high_17_22_last_price": 605.5499877929688
     },
     "BLS": {
       "sma50": 243.02479949951172,
@@ -3432,10 +3434,12 @@
       "ema_200_prev": 468.7711358316247,
       "mcap_cr": 10209.075089275695,
       "rs_rank": 56.2,
-      "resistance_last_alert": "2026-09-28T04:03:34.906747",
-      "resistance_last_price": 459.8500061035156,
-      "mtf_last_alert": "2026-09-28T04:03:35.401380",
-      "mtf_last_price": 459.8500061035156
+      "resistance_last_alert": "2026-09-28T05:01:24.962366",
+      "resistance_last_price": 475.79998779296875,
+      "mtf_last_alert": "2026-09-28T05:01:25.562060",
+      "mtf_last_price": 475.79998779296875,
+      "zanger_last_alert": "2026-09-28T05:01:24.460397",
+      "zanger_last_price": 475.79998779296875
     },
     "ELECTCAST": {
       "sma50": 74.92719985961914,
@@ -4272,8 +4276,8 @@
       "ema_200_prev": 103.09669217079536,
       "mcap_cr": 7858.598591310871,
       "rs_rank": 35.5,
-      "resistance_last_alert": "2026-09-28T04:03:38.170155",
-      "resistance_last_price": 100.68000030517578
+      "resistance_last_alert": "2026-09-28T05:01:29.774075",
+      "resistance_last_price": 99.58000183105469
     },
     "GNFC": {
       "sma50": 564.7699981689453,
@@ -6528,10 +6532,12 @@
       "ema_200_prev": 387.1708749314144,
       "mcap_cr": 6968.924990541211,
       "rs_rank": 15.1,
-      "mtf_last_alert": "2026-09-28T04:03:48.008285",
-      "mtf_last_price": 357.54998779296875,
+      "mtf_last_alert": "2026-09-28T05:01:40.829716",
+      "mtf_last_price": 365.29998779296875,
       "resistance_last_alert": "2026-09-28T04:16:54.410839",
-      "resistance_last_price": 353.8999938964844
+      "resistance_last_price": 353.8999938964844,
+      "zanger_last_alert": "2026-09-28T05:01:40.322904",
+      "zanger_last_price": 365.29998779296875
     },
     "KPIL": {
       "sma50": 1369.2859936523437,
@@ -8586,8 +8592,8 @@
       "ema_200_prev": 121.3384357908527,
       "mcap_cr": 5921.486776397553,
       "rs_rank": 21.9,
-      "resistance_last_alert": "2026-09-28T04:03:59.060410",
-      "resistance_last_price": 118.0,
+      "resistance_last_alert": "2026-09-28T05:01:50.313837",
+      "resistance_last_price": 115.69000244140625,
       "mtf_last_alert": "2026-09-28T04:03:59.539227",
       "mtf_last_price": 118.0
     },
@@ -10558,8 +10564,8 @@
       "rs_rank": 11.1,
       "resistance_last_alert": "2026-09-28T04:04:08.299588",
       "resistance_last_price": 519.9000244140625,
-      "mtf_last_alert": "2026-09-28T04:04:08.789615",
-      "mtf_last_price": 519.9000244140625
+      "mtf_last_alert": "2026-09-28T05:01:59.199010",
+      "mtf_last_price": 529.75
     },
     "SUPRIYA": {
       "sma50": 865.3750036621094,
