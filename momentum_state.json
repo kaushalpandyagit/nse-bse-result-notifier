@@ -3436,10 +3436,10 @@
       "rs_rank": 56.2,
       "resistance_last_alert": "2026-09-28T05:01:24.962366",
       "resistance_last_price": 475.79998779296875,
-      "mtf_last_alert": "2026-09-28T05:01:25.562060",
-      "mtf_last_price": 475.79998779296875,
-      "zanger_last_alert": "2026-09-28T05:01:24.460397",
-      "zanger_last_price": 475.79998779296875
+      "mtf_last_alert": "2026-09-28T06:01:30.899959",
+      "mtf_last_price": 485.95001220703125,
+      "zanger_last_alert": "2026-09-28T06:01:30.416978",
+      "zanger_last_price": 485.95001220703125
     },
     "ELECTCAST": {
       "sma50": 74.92719985961914,
@@ -6088,10 +6088,10 @@
       "ema_200_prev": 3119.5813960729333,
       "mcap_cr": 14547.39745943037,
       "rs_rank": 42.6,
-      "resistance_last_alert": "2026-09-28T04:03:45.368090",
-      "resistance_last_price": 3194.60009765625,
-      "near_high_17_22_last_alert": "2026-09-28T04:03:45.865976",
-      "near_high_17_22_last_price": 3194.60009765625
+      "resistance_last_alert": "2026-09-28T06:01:43.473378",
+      "resistance_last_price": 3155.60009765625,
+      "near_high_17_22_last_alert": "2026-09-28T06:01:43.963615",
+      "near_high_17_22_last_price": 3155.60009765625
     },
     "JUBLINGREA": {
       "sma50": 699.3279956054688,
@@ -6536,12 +6536,12 @@
       "ema_200_prev": 387.1708749314144,
       "mcap_cr": 6968.924990541211,
       "rs_rank": 15.1,
-      "mtf_last_alert": "2026-09-28T05:01:40.829716",
-      "mtf_last_price": 365.29998779296875,
+      "mtf_last_alert": "2026-09-28T06:01:46.827137",
+      "mtf_last_price": 359.8500061035156,
       "resistance_last_alert": "2026-09-28T04:16:54.410839",
       "resistance_last_price": 353.8999938964844,
-      "zanger_last_alert": "2026-09-28T05:01:40.322904",
-      "zanger_last_price": 365.29998779296875
+      "zanger_last_alert": "2026-09-28T06:01:46.339090",
+      "zanger_last_price": 359.8500061035156
     },
     "KPIL": {
       "sma50": 1369.2859936523437,
@@ -10570,8 +10570,8 @@
       "rs_rank": 11.1,
       "resistance_last_alert": "2026-09-28T04:04:08.299588",
       "resistance_last_price": 519.9000244140625,
-      "mtf_last_alert": "2026-09-28T05:01:59.199010",
-      "mtf_last_price": 529.75
+      "mtf_last_alert": "2026-09-28T06:02:04.993430",
+      "mtf_last_price": 522.0
     },
     "SUPRIYA": {
       "sma50": 865.3750036621094,
