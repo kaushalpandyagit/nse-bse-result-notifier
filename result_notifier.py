@@ -352,7 +352,6 @@ def fetch_nse_announcements() -> list:
         return []
 
     results = []
-    # Loops through both Mainboard and SME announcements
     for idx in ["equities", "sme"]:
         try:
             resp = session.get(
@@ -385,7 +384,7 @@ def fetch_nse_announcements() -> list:
         except Exception as e:
             log.warning("NSE announcements unavailable for %s: %s", idx, e)
         
-        time.sleep(random.uniform(1.0, 1.5))  # Sleep between API calls to prevent IP blocks
+        time.sleep(random.uniform(1.0, 1.5))
         
     return results
 
@@ -507,7 +506,6 @@ def poll_once(seen: set) -> set:
         if not category:
             continue
 
-        # --- CATALYST vs NOISE FILTER ---
         if category == "meeting":
             subj_lower = item["subject"].lower()
             is_catalyst = any(kw in subj_lower for kw in ["analyst", "institutional", "concall", "investor", "earnings call"])
@@ -526,7 +524,6 @@ def poll_once(seen: set) -> set:
                 
             elif is_catalyst:
                 item["subject"] = "🔥 CATALYST: " + item["subject"]
-        # --------------------------------
 
         fp = fingerprint(item["company"], item["subject"], item["date"])
         if fp in seen:
@@ -540,7 +537,6 @@ def poll_once(seen: set) -> set:
         cat = item["category"]
         sentiment_marker = ""
         
-        # HTML Escape strings so companies with '&' (e.g. Larsen & Toubro) do not crash Telegram
         safe_comp = html.escape(item['company'])
         safe_subj = html.escape(item['subject'])
         
@@ -577,7 +573,6 @@ def poll_once(seen: set) -> set:
             header = f"🔍 <b>{safe_comp}</b> ({item['source']}) \u2014 Insider / Promoter Action"
             body = f"{safe_subj}\n{sum_line}🕐 {item['date']}"
             
-            # Auto-assign Positive/Negative sentiment for Insiders
             if any(x in summary for x in ["🟢", "🔓", "Buy", "Acquisition"]):
                 sentiment_marker = " 🟢"
             elif any(x in summary for x in ["🔴", "🔒", "⚠️", "Sell", "Disposal", "Invocation"]):
@@ -612,7 +607,7 @@ def poll_once(seen: set) -> set:
             header = f"📅 <b>{safe_comp}</b> ({item['source']}) \u2014 AGM / E-Voting / Meet"
             body = f"{safe_subj}\n{purpose_line}{date_line}\U0001F550 {item['date']}"
             
-        else:  # result
+        else:
             header = f"\U0001F4E2 <b>{safe_comp}</b> ({item['source']}) \u2014 Financial Result"
             body = f"{safe_subj}\n\U0001F550 {item['date']}"
 
@@ -658,3 +653,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# --- END OF SCRIPT ---
