@@ -1,14 +1,7 @@
 """
 NSE + BSE Live Result, Order Win, Insider Trade, Circular & Meeting Notifier -> Telegram
 ==========================================================================================
-Covers:
-  1. Financial Results (Regulation 33 / Board outcomes)
-  2. Order & Contract Wins (with Rupee value extraction & SME Support)
-  3. Insider Trading & Promoter Actions (Auto-Extracts Buy/Sell/Pledge from PDFs)
-  4. NSE Exchange Circulars
-  5. AGMs, E-Voting, and Investor / Analyst Meets (with Market Cap filtering & PDF Parsing)
-  6. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
-  7. Sentiment Emojis (Green/Red) appended to positive/negative catalysts.
+TEMPORARY BYPASS VERSION: Time limits are disabled to allow immediate backlog retrieval.
 """
 
 import os
@@ -179,17 +172,8 @@ def get_ist_now():
     return datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
 
 def is_polling_allowed_now() -> bool:
-    now = get_ist_now()
-    weekday = now.weekday()
-
-    if weekday < 5:  
-        start = now.replace(hour=8, minute=0, second=0, microsecond=0)
-        end = now.replace(hour=22, minute=30, second=0, microsecond=0)
-    else:  
-        start = now.replace(hour=9, minute=0, second=0, microsecond=0)
-        end = now.replace(hour=21, minute=0, second=0, microsecond=0)
-
-    return start <= now <= end
+    # TEMPORARY BYPASS: Always return True to force execution right now
+    return True
 
 def get_browser_headers() -> dict:
     return {
