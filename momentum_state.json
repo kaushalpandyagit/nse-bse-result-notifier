@@ -679,7 +679,9 @@
       "ema_100_prev": 7367.876574385286,
       "ema_200_prev": 7359.410387112228,
       "mcap_cr": 24422.9286475,
-      "rs_rank": 45.7
+      "rs_rank": 45.7,
+      "near_high_17_22_last_alert": "2026-09-28T06:45:58.666342",
+      "near_high_17_22_last_price": 7004.0
     },
     "ANANTRAJ": {
       "sma50": 612.78,
@@ -4756,8 +4758,8 @@
       "ema_200_prev": 745.1967836979933,
       "mcap_cr": 22664.845436435473,
       "rs_rank": 62.1,
-      "resistance_last_alert": "2026-09-28T05:46:13.070440",
-      "resistance_last_price": 806.0
+      "resistance_last_alert": "2026-09-28T06:46:17.914107",
+      "resistance_last_price": 795.5
     },
     "HCC": {
       "sma50": 21.875000038146972,
@@ -5752,8 +5754,8 @@
       "ema_200_prev": 123.45323921076881,
       "mcap_cr": 5406.199231138931,
       "rs_rank": 56.0,
-      "resistance_last_alert": "2026-09-28T04:03:43.955384",
-      "resistance_last_price": 135.0800018310547
+      "resistance_last_alert": "2026-09-28T06:46:22.677868",
+      "resistance_last_price": 138.30999755859375
     },
     "JAYNECOIND": {
       "sma50": 91.52720001220703,
@@ -7027,7 +7029,9 @@
       "ema_100_prev": 328.49212996761526,
       "ema_200_prev": 313.75363243258045,
       "mcap_cr": 30735.078404090516,
-      "rs_rank": 66.4
+      "rs_rank": 66.4,
+      "near_high_17_22_last_alert": "2026-09-28T06:46:28.976279",
+      "near_high_17_22_last_price": 316.45001220703125
     },
     "MANORAMA": {
       "sma50": 1823.1640014648438,
