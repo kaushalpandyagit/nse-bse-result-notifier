@@ -2097,7 +2097,9 @@
       "ema_100_prev": 514.8673068695865,
       "ema_200_prev": 535.401267843675,
       "mcap_cr": 4519.969033125,
-      "rs_rank": 56.2
+      "rs_rank": 56.2,
+      "mtf_last_alert": "2026-09-29T08:01:24.034354",
+      "mtf_last_price": 573.9500122070312
     },
     "CAPLIPOINT": {
       "sma50": 2626.038017578125,
@@ -2729,7 +2731,9 @@
       "mcap_cr": 17534.435166862244,
       "rs_rank": 82.9,
       "mtf_last_alert": "2026-09-29T06:01:24.188210",
-      "mtf_last_price": 461.3999938964844
+      "mtf_last_price": 461.3999938964844,
+      "resistance_last_alert": "2026-09-29T08:01:27.872084",
+      "resistance_last_price": 464.6499938964844
     },
     "CONCORDBIO": {
       "sma50": 1446.5839990234374,
@@ -4022,8 +4026,8 @@
       "rs_rank": 5.5,
       "ema50_pullback_last_alert": "2026-09-29T05:16:11.580042",
       "ema50_pullback_last_price": 185.17999267578125,
-      "mtf_last_alert": "2026-09-29T06:16:35.834798",
-      "mtf_last_price": 188.42999267578125
+      "mtf_last_alert": "2026-09-29T08:01:35.012049",
+      "mtf_last_price": 186.4600067138672
     },
     "FIVESTAR": {
       "sma50": 537.1540002441407,
@@ -4818,8 +4822,8 @@
       "ema_200_prev": 746.1926171109437,
       "mcap_cr": 21884.5409867,
       "rs_rank": 56.8,
-      "resistance_last_alert": "2026-09-29T05:46:25.200320",
-      "resistance_last_price": 798.75
+      "resistance_last_alert": "2026-09-29T08:01:39.540942",
+      "resistance_last_price": 808.9000244140625
     },
     "HCC": {
       "sma50": 21.824200019836425,
@@ -5867,7 +5871,9 @@
       "ema_100_prev": 90.93755681302218,
       "ema_200_prev": 85.74294901928623,
       "mcap_cr": 8562.262545224516,
-      "rs_rank": 49.7
+      "rs_rank": 49.7,
+      "near_high_17_22_last_alert": "2026-09-29T08:01:45.057231",
+      "near_high_17_22_last_price": 94.0
     },
     "JBMA": {
       "sma50": 629.7959936523438,
@@ -6652,8 +6658,8 @@
       "ema_200_prev": 387.25450909217363,
       "mcap_cr": 7039.098901129394,
       "rs_rank": 17.9,
-      "mtf_last_alert": "2026-09-29T03:49:46.016828",
-      "mtf_last_price": 357.0,
+      "mtf_last_alert": "2026-09-29T08:01:49.561389",
+      "mtf_last_price": 362.8999938964844,
       "resistance_last_alert": "2026-09-29T04:02:23.746284",
       "resistance_last_price": 352.8500061035156
     },
@@ -9321,7 +9327,9 @@
       "mcap_cr": 7906.939475501532,
       "rs_rank": 42.3,
       "resistance_last_alert": "2026-09-29T07:30:23.239599",
-      "resistance_last_price": 385.3500061035156
+      "resistance_last_price": 385.3500061035156,
+      "mtf_last_alert": "2026-09-29T08:02:05.440303",
+      "mtf_last_price": 392.75
     },
     "RITES": {
       "sma50": 214.84260040283203,
@@ -9873,7 +9881,9 @@
       "ema_100_prev": 1225.0259219068475,
       "ema_200_prev": 1127.0782773457272,
       "mcap_cr": 28553.802692199828,
-      "rs_rank": 70.9
+      "rs_rank": 70.9,
+      "near_high_17_22_last_alert": "2026-09-29T08:02:08.671762",
+      "near_high_17_22_last_price": 1210.199951171875
     },
     "SCI": {
       "sma50": 286.21100036621095,
