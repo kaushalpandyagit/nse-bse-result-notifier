@@ -260,8 +260,8 @@
       "ema_200_prev": 987.3112765760214,
       "mcap_cr": 28546.85706775,
       "rs_rank": 41.3,
-      "near_high_17_22_last_alert": "2026-09-29T05:46:03.670120",
-      "near_high_17_22_last_price": 979.2000122070312
+      "near_high_17_22_last_alert": "2026-09-29T07:29:43.550425",
+      "near_high_17_22_last_price": 969.4000244140625
     },
     "ACC": {
       "sma50": 1303.0020043945312,
@@ -4552,8 +4552,8 @@
       "ema_200_prev": 159.25660814280258,
       "mcap_cr": 7757.357825538226,
       "rs_rank": 48.6,
-      "near_high_17_22_last_alert": "2026-09-29T04:46:25.558733",
-      "near_high_17_22_last_price": 158.57000732421875
+      "near_high_17_22_last_alert": "2026-09-29T07:30:01.671045",
+      "near_high_17_22_last_price": 160.25
     },
     "GRANULES": {
       "sma50": 855.4759997558593,
@@ -6788,8 +6788,8 @@
       "ema_200_prev": 823.6869641296033,
       "mcap_cr": 13919.65660314978,
       "rs_rank": 26.3,
-      "near_high_17_22_last_alert": "2026-09-29T05:01:42.172245",
-      "near_high_17_22_last_price": 816.5,
+      "near_high_17_22_last_alert": "2026-09-29T07:30:11.973243",
+      "near_high_17_22_last_price": 805.6500244140625,
       "resistance_last_alert": "2026-09-29T04:16:20.000976",
       "resistance_last_price": 809.2999877929688
     },
@@ -9317,7 +9317,9 @@
       "ema_100_prev": 387.987975835018,
       "ema_200_prev": 404.5367078494127,
       "mcap_cr": 7906.939475501532,
-      "rs_rank": 42.3
+      "rs_rank": 42.3,
+      "resistance_last_alert": "2026-09-29T07:30:23.239599",
+      "resistance_last_price": 385.3500061035156
     },
     "RITES": {
       "sma50": 214.84260040283203,
@@ -10418,8 +10420,8 @@
       "ema_200_prev": 184.30659257975228,
       "mcap_cr": 6762.705352524774,
       "rs_rank": 91.2,
-      "resistance_last_alert": "2026-09-29T06:17:08.166335",
-      "resistance_last_price": 206.6999969482422
+      "resistance_last_alert": "2026-09-29T07:30:28.361977",
+      "resistance_last_price": 208.86000061035156
     },
     "SPLPETRO": {
       "sma50": 755.3130004882812,
