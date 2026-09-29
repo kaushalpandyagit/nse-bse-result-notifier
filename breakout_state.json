@@ -65,7 +65,9 @@
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,
-    "last_alert": "2026-09-23T10:15:48.162900"
+    "last_alert": "2026-09-23T10:15:48.162900",
+    "custom_last_alert": "2026-09-29T09:01:07.158010",
+    "custom_last_price": 121.05000305175781
   },
   "HSCL": {
     "result_date": "2026-09-21T00:00:00",
@@ -229,7 +231,7 @@
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-09-29T08:01:04.311618",
+    "rsi_up_last_alert": "2026-09-29T09:01:01.012299",
     "rsi_down_last_alert": "2026-09-29T05:01:01.880668",
     "price_low_last_alert": "2026-09-24T08:01:01.382356",
     "price_high_last_alert": "2026-09-25T07:01:05.208460",
