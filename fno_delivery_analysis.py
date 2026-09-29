@@ -398,7 +398,7 @@ def analyze_pcr(df: pd.DataFrame) -> tuple:
 def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
     date_str = date.strftime("%d%m%Y")
     
-    # Try both nsearchives and regular archives (NSE frequently routes between these)
+    # Try both nsearchives and regular archives
     urls = [
         f"https://nsearchives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv",
         f"https://archives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv"
@@ -407,9 +407,20 @@ def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
     for url in urls:
         try:
             resp = session.get(url, headers=HEADERS, timeout=20)
-            # NSE sometimes returns 200 OK but the content is an HTML error page. We block that here.
+            # Ensure it is actually CSV data and not an HTML error page
             if resp.status_code == 200 and "<html" not in resp.text.lower():
-                df = pd.read_csv(io.StringIO(resp.text))
+                lines = resp.text.splitlines()
+                
+                # --- BULLETPROOF HEADER SLICER ---
+                # NSE puts a fake title in row 1. This scans down to find the real column headers.
+                header_idx = 0
+                for i, line in enumerate(lines):
+                    if "Client Type" in line or "ClientType" in line or "client type" in line.lower():
+                        header_idx = i
+                        break
+                        
+                csv_data = "\n".join(lines[header_idx:])
+                df = pd.read_csv(io.StringIO(csv_data))
                 df.columns = [str(c).strip() for c in df.columns]
                 return df
         except Exception as e:
@@ -423,7 +434,7 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     
     data = {}
     
-    # Fuzzy match the "Client Type" column (handles "Client Type", "ClientType", "Client", etc.)
+    # Fuzzy match the "Client Type" column 
     c_col = next((c for c in df.columns if "client" in c.lower()), None)
     if not c_col:
         return ""
@@ -489,7 +500,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         prediction = "Bearish Tilt 🔻"
 
     # Expiry Day Prediction (Trending vs Sideways)
-    # Advanced date handling: If today is Friday, "next trading day" is Monday
     next_day = date + datetime.timedelta(days=1)
     while next_day.weekday() >= 5: # 5=Sat, 6=Sun
         next_day += datetime.timedelta(days=1)
@@ -522,7 +532,7 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         elif net_written_puts > 50000:
             expiry_pred = f"📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
         else:
-            expiry_pred = "⚖️ No extreme option writing detected by Smart Money."
+            expiry_pred = "⚖️️ No extreme option writing detected by Smart Money."
 
     def fmt_num(n): return f"{n:+,}"
 
