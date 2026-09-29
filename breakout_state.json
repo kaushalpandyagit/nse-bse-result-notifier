@@ -10,7 +10,7 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-28T11:01:03.990754",
-    "rsi_down_last_alert": "2026-09-29T04:45:44.037270",
+    "rsi_down_last_alert": "2026-09-29T05:45:42.701355",
     "price_high_last_alert": "2026-09-16T09:45:43.423375",
     "price_low_last_alert": "2026-09-29T05:00:59.738045",
     "price_low_last_price": 624.0
@@ -25,10 +25,10 @@
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-09-29T04:45:45.296813",
-    "price_low_last_alert": "2026-09-29T04:45:44.770000",
+    "rsi_down_last_alert": "2026-09-29T05:45:43.942211",
+    "price_low_last_alert": "2026-09-29T05:45:43.399709",
     "rsi_up_last_alert": "2026-09-25T09:15:49.494475",
-    "price_low_last_price": 397.54998779296875
+    "price_low_last_price": 402.1499938964844
   },
   "CPPLUS": {
     "result_date": "2026-09-17T00:00:00",
@@ -78,7 +78,7 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-21T05:00:57.944063",
-    "rsi_down_last_alert": "2026-09-29T04:45:46.115056",
+    "rsi_down_last_alert": "2026-09-29T05:45:44.751738",
     "price_low_last_alert": "2026-09-28T05:15:53.228177",
     "price_low_last_price": 667.7999877929688
   },
@@ -244,7 +244,7 @@
     "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-09-29T04:45:47.305372"
+    "rsi_down_last_alert": "2026-09-29T05:45:45.806123"
   },
   "NUVAMA": {
     "result_date": "2026-09-24T00:00:00",
@@ -257,7 +257,7 @@
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-25T08:01:10.868929",
     "price_high_last_alert": "2026-09-25T05:45:48.789172",
-    "rsi_down_last_alert": "2026-09-29T04:45:48.041915",
+    "rsi_down_last_alert": "2026-09-29T05:45:46.437119",
     "price_low_last_alert": "2026-09-28T05:45:49.023887",
     "price_low_last_price": 1643.699951171875
   },
