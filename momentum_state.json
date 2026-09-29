@@ -3488,8 +3488,8 @@
       "ema_200_prev": 469.0095893713501,
       "mcap_cr": 10635.434956275696,
       "rs_rank": 62.3,
-      "resistance_last_alert": "2026-09-29T03:49:26.171444",
-      "resistance_last_price": 473.6000061035156,
+      "resistance_last_alert": "2026-09-29T06:46:13.704712",
+      "resistance_last_price": 482.20001220703125,
       "mtf_last_alert": "2026-09-29T06:16:32.895394",
       "mtf_last_price": 475.45001220703125
     },
@@ -3519,7 +3519,9 @@
       "mcap_cr": 4408.2741674970275,
       "rs_rank": 14.3,
       "mtf_last_alert": "2026-09-29T06:29:59.429632",
-      "mtf_last_price": 78.06999969482422
+      "mtf_last_price": 78.06999969482422,
+      "ema50_pullback_last_alert": "2026-09-29T06:46:14.321632",
+      "ema50_pullback_last_price": 78.0
     },
     "ELGIEQUIP": {
       "sma50": 604.8389978027344,
@@ -5836,8 +5838,8 @@
       "ema_200_prev": 123.48806240561748,
       "mcap_cr": 5540.594260912087,
       "rs_rank": 60.4,
-      "resistance_last_alert": "2026-09-29T04:46:33.492990",
-      "resistance_last_price": 135.52000427246094
+      "resistance_last_alert": "2026-09-29T06:46:24.646022",
+      "resistance_last_price": 137.6999969482422
     },
     "JAYNECOIND": {
       "sma50": 91.53440002441407,
@@ -8550,8 +8552,8 @@
       "ema_200_prev": 596.6110872121552,
       "mcap_cr": 8619.447184984345,
       "rs_rank": 37.7,
-      "near_high_17_22_last_alert": "2026-09-29T03:49:57.454382",
-      "near_high_17_22_last_price": 584.25
+      "near_high_17_22_last_alert": "2026-09-29T06:46:36.343233",
+      "near_high_17_22_last_price": 591.1500244140625
     },
     "POLYMED": {
       "sma50": 1725.3959936523438,
@@ -10706,8 +10708,8 @@
       "rs_rank": 11.8,
       "resistance_last_alert": "2026-09-29T03:50:10.105756",
       "resistance_last_price": 515.4000244140625,
-      "mtf_last_alert": "2026-09-29T05:46:53.468885",
-      "mtf_last_price": 528.9500122070312
+      "mtf_last_alert": "2026-09-29T06:46:45.647873",
+      "mtf_last_price": 539.25
     },
     "SUPRIYA": {
       "sma50": 865.68900390625,
