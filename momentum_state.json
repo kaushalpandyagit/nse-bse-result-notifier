@@ -1601,7 +1601,9 @@
       "mcap_cr": 13998.369554895904,
       "rs_rank": 90.9,
       "resistance_last_alert": "2026-09-29T06:01:18.579443",
-      "resistance_last_price": 813.0999755859375
+      "resistance_last_price": 813.0999755859375,
+      "zanger_last_alert": "2026-09-29T09:46:20.088957",
+      "zanger_last_price": 816.5
     },
     "BBTC": {
       "sma50": 1475.349990234375,
@@ -2258,8 +2260,8 @@
       "ema_200_prev": 1064.6035305883918,
       "mcap_cr": 13709.119343892578,
       "rs_rank": 23.8,
-      "near_high_17_22_last_alert": "2026-09-29T03:49:18.360780",
-      "near_high_17_22_last_price": 1026.800048828125
+      "near_high_17_22_last_alert": "2026-09-29T09:46:25.179262",
+      "near_high_17_22_last_price": 1004.0
     },
     "CDSL": {
       "sma50": 1353.557998046875,
@@ -4136,8 +4138,8 @@
       "ema_200_prev": 1188.624466012722,
       "mcap_cr": 25830.377925187,
       "rs_rank": 84.8,
-      "near_high_17_22_last_alert": "2026-09-29T04:46:22.166678",
-      "near_high_17_22_last_price": 1323.4000244140625
+      "near_high_17_22_last_alert": "2026-09-29T09:46:38.676644",
+      "near_high_17_22_last_price": 1302.199951171875
     },
     "GAEL": {
       "sma50": 166.5833999633789,
@@ -5848,8 +5850,8 @@
       "ema_200_prev": 123.48806240561748,
       "mcap_cr": 5540.594260912087,
       "rs_rank": 60.4,
-      "resistance_last_alert": "2026-09-29T06:46:24.646022",
-      "resistance_last_price": 137.6999969482422
+      "resistance_last_alert": "2026-09-29T09:46:50.904143",
+      "resistance_last_price": 136.07000732421875
     },
     "JAYNECOIND": {
       "sma50": 91.53440002441407,
@@ -6559,7 +6561,11 @@
       "ema_100_prev": 1815.035266006938,
       "ema_200_prev": 1784.9331206897496,
       "mcap_cr": 13856.857587,
-      "rs_rank": 61.9
+      "rs_rank": 61.9,
+      "mtf_last_alert": "2026-09-29T09:46:56.262127",
+      "mtf_last_price": 1865.800048828125,
+      "ema50_pullback_last_alert": "2026-09-29T09:46:56.849579",
+      "ema50_pullback_last_price": 1865.800048828125
     },
     "KIRLPNU": {
       "sma50": 736.1990014648437,
@@ -6802,10 +6808,12 @@
       "ema_200_prev": 823.6869641296033,
       "mcap_cr": 13919.65660314978,
       "rs_rank": 26.3,
-      "near_high_17_22_last_alert": "2026-09-29T07:30:11.973243",
-      "near_high_17_22_last_price": 805.6500244140625,
-      "resistance_last_alert": "2026-09-29T04:16:20.000976",
-      "resistance_last_price": 809.2999877929688
+      "near_high_17_22_last_alert": "2026-09-29T09:47:00.322914",
+      "near_high_17_22_last_price": 821.0,
+      "resistance_last_alert": "2026-09-29T09:46:59.760249",
+      "resistance_last_price": 821.0,
+      "zanger_last_alert": "2026-09-29T09:46:59.199103",
+      "zanger_last_price": 821.0
     },
     "KSCL": {
       "sma50": 764.4969958496093,
@@ -8568,8 +8576,8 @@
       "ema_200_prev": 596.6110872121552,
       "mcap_cr": 8619.447184984345,
       "rs_rank": 37.7,
-      "near_high_17_22_last_alert": "2026-09-29T06:46:36.343233",
-      "near_high_17_22_last_price": 591.1500244140625
+      "near_high_17_22_last_alert": "2026-09-29T09:47:12.607481",
+      "near_high_17_22_last_price": 584.0
     },
     "POLYMED": {
       "sma50": 1725.3959936523438,
@@ -11398,8 +11406,8 @@
       "ema_200_prev": 3254.4861851311425,
       "mcap_cr": 23781.15567599795,
       "rs_rank": 25.5,
-      "near_high_17_22_last_alert": "2026-09-29T04:47:08.456252",
-      "near_high_17_22_last_price": 3108.39990234375
+      "near_high_17_22_last_alert": "2026-09-29T09:47:32.282257",
+      "near_high_17_22_last_price": 3077.10009765625
     },
     "TIPSMUSIC": {
       "sma50": 661.5629992675781,
@@ -12086,8 +12094,8 @@
       "ema_200_prev": 737.3939933076972,
       "mcap_cr": 6027.040232875855,
       "rs_rank": 87.2,
-      "near_high_17_22_last_alert": "2026-09-29T08:47:04.983784",
-      "near_high_17_22_last_price": 766.1500244140625
+      "near_high_17_22_last_alert": "2026-09-29T09:47:37.472077",
+      "near_high_17_22_last_price": 758.2999877929688
     },
     "VOLTAMP": {
       "sma50": 10423.78,
@@ -12535,7 +12543,9 @@
       "ema_100_prev": 524.8287970907949,
       "ema_200_prev": 498.7344948035033,
       "mcap_cr": 16523.676216440428,
-      "rs_rank": 58.5
+      "rs_rank": 58.5,
+      "near_high_17_22_last_alert": "2026-09-29T09:47:41.249849",
+      "near_high_17_22_last_price": 504.29998779296875
     }
   }
 }
