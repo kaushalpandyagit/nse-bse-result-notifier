@@ -397,37 +397,60 @@ def analyze_pcr(df: pd.DataFrame) -> tuple:
 # ----------------------------------------------------------------------
 def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
     date_str = date.strftime("%d%m%Y")
-    url = f"https://archives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv"
-    try:
-        resp = session.get(url, headers=HEADERS, timeout=20)
-        resp.raise_for_status()
-        df = pd.read_csv(io.StringIO(resp.text))
-        df.columns = [c.strip() for c in df.columns]
-        return df
-    except Exception as e:
-        log.warning("Participant OI fetch failed for %s: %s", date_str, e)
-        return None
+    
+    # Try both nsearchives and regular archives (NSE frequently routes between these)
+    urls = [
+        f"https://nsearchives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv",
+        f"https://archives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv"
+    ]
+    
+    for url in urls:
+        try:
+            resp = session.get(url, headers=HEADERS, timeout=20)
+            # NSE sometimes returns 200 OK but the content is an HTML error page. We block that here.
+            if resp.status_code == 200 and "<html" not in resp.text.lower():
+                df = pd.read_csv(io.StringIO(resp.text))
+                df.columns = [str(c).strip() for c in df.columns]
+                return df
+        except Exception as e:
+            log.warning("Participant OI fetch failed for %s: %s", url, e)
+            
+    return None
 
 def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     if df is None or df.empty:
         return ""
     
-    # Extract data for FII, Pro, Client
     data = {}
+    
+    # Fuzzy match the "Client Type" column (handles "Client Type", "ClientType", "Client", etc.)
+    c_col = next((c for c in df.columns if "client" in c.lower()), None)
+    if not c_col:
+        return ""
+
     for _, row in df.iterrows():
-        client_type = str(row.get("Client Type", "")).strip()
-        if client_type in ["FII", "Pro", "Client"]:
-            try:
-                data[client_type] = {
-                    "idx_fut_long": int(row.get("Future Index Long", 0)),
-                    "idx_fut_short": int(row.get("Future Index Short", 0)),
-                    "idx_call_long": int(row.get("Option Index Call Long", 0)),
-                    "idx_call_short": int(row.get("Option Index Call Short", 0)),
-                    "idx_put_long": int(row.get("Option Index Put Long", 0)),
-                    "idx_put_short": int(row.get("Option Index Put Short", 0)),
-                }
-            except ValueError:
-                continue
+        client_type = str(row[c_col]).strip().upper()
+        if client_type == "FII": key = "FII"
+        elif client_type == "PRO": key = "Pro"
+        elif client_type == "CLIENT": key = "Client"
+        else: continue
+        
+        try:
+            # Fuzzy match the specific OI columns regardless of exact naming
+            def get_val(keywords):
+                col = next((c for c in df.columns if all(k.lower() in c.lower() for k in keywords)), None)
+                return int(row[col]) if col and pd.notna(row[col]) else 0
+
+            data[key] = {
+                "idx_fut_long": get_val(["future", "index", "long"]),
+                "idx_fut_short": get_val(["future", "index", "short"]),
+                "idx_call_long": get_val(["option", "index", "call", "long"]),
+                "idx_call_short": get_val(["option", "index", "call", "short"]),
+                "idx_put_long": get_val(["option", "index", "put", "long"]),
+                "idx_put_short": get_val(["option", "index", "put", "short"]),
+            }
+        except Exception:
+            continue
 
     if not data:
         return ""
@@ -466,8 +489,12 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         prediction = "Bearish Tilt 🔻"
 
     # Expiry Day Prediction (Trending vs Sideways)
-    tomorrow = date + datetime.timedelta(days=1)
-    weekday = tomorrow.weekday() # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri
+    # Advanced date handling: If today is Friday, "next trading day" is Monday
+    next_day = date + datetime.timedelta(days=1)
+    while next_day.weekday() >= 5: # 5=Sat, 6=Sun
+        next_day += datetime.timedelta(days=1)
+        
+    weekday = next_day.weekday() # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri
     
     expiry_map = {0: "MidcapNifty", 1: "FinNifty", 2: "BankNifty", 3: "Nifty"}
     expiry_pred = ""
@@ -510,11 +537,11 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         f" • Index Futures: {fmt_num(retail_net['net_fut'])}",
         f" • Index Calls: {fmt_num(retail_net['net_call'])}",
         f" • Index Puts: {fmt_num(retail_net['net_put'])}\n",
-        f"🔮 <b>NEXT DAY DIRECTION:</b>\n{prediction}\n"
+        f"🔮 <b>NEXT TRADING DAY DIRECTION:</b>\n{prediction}\n"
     ]
     
     if expiry_pred:
-        lines.append(f"📅 <b>TOMORROW'S EXPIRY ({expiry_map[weekday]}):</b>\n{expiry_pred}")
+        lines.append(f"📅 <b>TOMORROW'S EXPIRY ({idx_name}):</b>\n{expiry_pred}")
         
     return "\n".join(lines)
 
@@ -633,7 +660,7 @@ def main():
         else:
             log.warning("Participant OI file fetched but empty/format changed.")
     else:
-        sections.append("🧠 <b>Smart Money Engine unavailable</b> (NSE Participant OI fetch failed)")
+        sections.append("🧠 <b>Smart Money Engine unavailable</b> (NSE Participant OI file not yet published)")
 
     # --- EMAIL DISPATCH ---
     try:
