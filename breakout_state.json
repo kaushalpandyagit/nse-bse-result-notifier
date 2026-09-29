@@ -12,8 +12,8 @@
     "rsi_up_last_alert": "2026-09-28T11:01:03.990754",
     "rsi_down_last_alert": "2026-09-29T05:45:42.701355",
     "price_high_last_alert": "2026-09-16T09:45:43.423375",
-    "price_low_last_alert": "2026-09-29T05:00:59.738045",
-    "price_low_last_price": 624.0
+    "price_low_last_alert": "2026-09-29T06:01:01.753595",
+    "price_low_last_price": 635.7999877929688
   },
   "GHCL": {
     "result_date": "2026-09-15T00:00:00",
@@ -229,7 +229,7 @@
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-09-29T05:15:46.189322",
+    "rsi_up_last_alert": "2026-09-29T06:01:03.153928",
     "rsi_down_last_alert": "2026-09-29T05:01:01.880668",
     "price_low_last_alert": "2026-09-24T08:01:01.382356",
     "price_high_last_alert": "2026-09-25T07:01:05.208460",
