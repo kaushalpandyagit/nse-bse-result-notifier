@@ -12,8 +12,8 @@
     "rsi_up_last_alert": "2026-09-28T11:01:03.990754",
     "rsi_down_last_alert": "2026-09-29T03:45:48.126332",
     "price_high_last_alert": "2026-09-16T09:45:43.423375",
-    "price_low_last_alert": "2026-09-28T06:15:48.242459",
-    "price_low_last_price": 637.5499877929688
+    "price_low_last_alert": "2026-09-29T04:00:59.310865",
+    "price_low_last_price": 631.0499877929688
   },
   "GHCL": {
     "result_date": "2026-09-15T00:00:00",
@@ -46,8 +46,8 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": true,
     "last_alert": "2026-09-25T06:01:11.681222",
-    "custom_last_alert": "2026-09-28T05:16:03.338476",
-    "custom_last_price": 170.75
+    "custom_last_alert": "2026-09-29T04:01:13.249323",
+    "custom_last_price": 168.6999969482422
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -96,7 +96,7 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-09-28T09:01:06.168607",
+    "rsi_up_last_alert": "2026-09-29T04:01:00.956481",
     "rsi_down_last_alert": "2026-09-28T07:45:45.782519"
   },
   "custom_alert_GSMFOILS_news": {
@@ -229,7 +229,7 @@
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-09-28T11:01:06.716906",
+    "rsi_up_last_alert": "2026-09-29T04:01:02.444334",
     "rsi_down_last_alert": "2026-09-29T03:45:51.686407",
     "price_low_last_alert": "2026-09-24T08:01:01.382356",
     "price_high_last_alert": "2026-09-25T07:01:05.208460",
