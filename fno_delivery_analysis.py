@@ -7,26 +7,13 @@ Bhavcopy and Bulk/Block deal files are finalized, typically by ~6:30 PM IST).
 
 What this covers
 ------------------
-1. ACE INVESTOR / SMART MONEY DEALS
-   Scans the daily NSE Bulk and Block deal feeds for a custom watchlist
-   of renowned individuals, institutions, and mutual funds.
-
-2. DELIVERY % ANALYSIS (from NSE's equity Bhavcopy)
-   Flags stocks with unusually high delivery percentage combined with
-   a meaningful price move.
-
-3. UNUSUAL VOLUME
-   Flags stocks trading >=2.5x their average volume with minimal price movement,
-   excluding ETFs and stocks that had a Bulk/Block deal that day.
-
-4. LONG/SHORT BUILDUP (from NSE's F&O Bhavcopy, near-month futures)
-   Classifies F&O stocks into Long Buildup, Short Buildup, Short Covering,
-   and Long Unwinding based on Price and Open Interest changes.
-
-5. PCR (Put-Call Ratio) -- computed per stock and overall market.
-
-6. FII AGGREGATE POSITIONING (best-effort) -- long/short ratio in
-   index futures & options.
+1. ACE INVESTOR / SMART MONEY DEALS (Bulk/Block)
+2. DELIVERY % ANALYSIS (Early Movers)
+3. UNUSUAL VOLUME 
+4. LONG/SHORT BUILDUP (F&O Bhavcopy)
+5. PCR (Put-Call Ratio)
+6. SMART vs DUMB MONEY F&O POSITIONING (Pro/Client/FII Participant OI)
+7. EXPIRY DAY & NEXT-DAY DIRECTIONAL PREDICTIONS
 """
 
 import os
@@ -90,7 +77,6 @@ ACE_INVESTORS = [
 
 DELIVERY_PCT_THRESHOLD = 60.0
 DELIVERY_PRICE_MOVE_THRESHOLD = 2.0
-
 OI_CHANGE_THRESHOLD = 5.0
 TOP_N = 10
 
@@ -145,7 +131,6 @@ def get_session():
 # ----------------------------------------------------------------------
 # SMART MONEY: BULK & BLOCK DEALS
 # ----------------------------------------------------------------------
-
 def fetch_bulk_block_deals(session) -> tuple:
     symbols = set()
     ace_deals = []
@@ -165,7 +150,6 @@ def fetch_bulk_block_deals(session) -> tuple:
             price_col = next((c for c in df.columns if "PRICE" in c), None)
             
             if not (sym_col and client_col and type_col and qty_col and price_col):
-                log.warning("Could not find standard columns in %s deals CSV", report)
                 continue
 
             for _, row in df.iterrows():
@@ -200,9 +184,8 @@ def fetch_bulk_block_deals(session) -> tuple:
 
 
 # ----------------------------------------------------------------------
-# 1. DELIVERY % ANALYSIS
+# DELIVERY % ANALYSIS
 # ----------------------------------------------------------------------
-
 def fetch_delivery_data(session, date: datetime.date) -> pd.DataFrame | None:
     url = f"https://archives.nseindia.com/products/content/sec_bhavdata_full_{date.strftime('%d%m%Y')}.csv"
     try:
@@ -229,8 +212,7 @@ def analyze_delivery(df: pd.DataFrame) -> dict:
                 prev_close = float(row["PREV_CLOSE"])
                 deliv_pct = float(row["DELIV_PER"])
                 volume = float(row["TTL_TRD_QNTY"])
-                if prev_close == 0:
-                    continue
+                if prev_close == 0: continue
                 price_change_pct = ((close - prev_close) / prev_close) * 100
                 if deliv_pct >= DELIVERY_PCT_THRESHOLD and abs(price_change_pct) >= EARLY_MOVE_MIN:
                     all_signals.append((symbol, price_change_pct, deliv_pct, volume))
@@ -241,14 +223,12 @@ def analyze_delivery(df: pd.DataFrame) -> dict:
 
     early_movers = [s for s in all_signals if EARLY_MOVE_MIN <= abs(s[1]) <= EARLY_MOVE_MAX]
     early_movers.sort(key=lambda x: abs(x[1]), reverse=True)
-
     return {"early_movers": early_movers[:TOP_N]}
 
 
 # ----------------------------------------------------------------------
 # UNUSUAL VOLUME 
 # ----------------------------------------------------------------------
-
 VOLUME_HISTORY_FILE = Path(__file__).parent / "volume_history.json"
 VOLUME_HISTORY_DAYS = 20  
 UNUSUAL_VOLUME_RATIO = 2.5  
@@ -257,10 +237,8 @@ MIN_HISTORY_DAYS = 5
 
 def load_volume_history() -> dict:
     if VOLUME_HISTORY_FILE.exists():
-        try:
-            return json.loads(VOLUME_HISTORY_FILE.read_text())
-        except Exception:
-            log.warning("Could not parse volume history, starting fresh.")
+        try: return json.loads(VOLUME_HISTORY_FILE.read_text())
+        except Exception: pass
     return {}
 
 def save_volume_history(history: dict):
@@ -276,9 +254,7 @@ def get_etf_symbols(session) -> set:
             fetched_at = datetime.datetime.fromisoformat(cached["fetched_at"])
             if (datetime.datetime.now() - fetched_at).days < 7:
                 return set(cached["symbols"])
-        except Exception:
-            pass 
-
+        except Exception: pass 
     try:
         resp = session.get(ETF_LIST_URL, headers=HEADERS, timeout=20)
         resp.raise_for_status()
@@ -290,10 +266,8 @@ def get_etf_symbols(session) -> set:
             "fetched_at": datetime.datetime.now().isoformat(),
             "symbols": sorted(symbols),
         }))
-        log.info("Refreshed ETF list: %d symbols.", len(symbols))
         return symbols
-    except Exception as e:
-        log.warning("Could not fetch ETF list (%s). Unusual-volume signal will not exclude ETFs this run.", e)
+    except Exception:
         return set()
 
 def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date, bulk_block_symbols: set) -> list:
@@ -310,8 +284,7 @@ def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date, bulk_
                 close = float(row["CLOSE_PRICE"])
                 prev_close = float(row["PREV_CLOSE"])
                 volume = float(row["TTL_TRD_QNTY"])
-                if prev_close == 0:
-                    continue
+                if prev_close == 0: continue
                 price_change_pct = ((close - prev_close) / prev_close) * 100
 
                 sym_hist = history.get(symbol, {})
@@ -323,16 +296,12 @@ def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date, bulk_
                     del sym_hist[oldest]
                 history[symbol] = sym_hist
 
-                if len(past_volumes) < MIN_HISTORY_DAYS:
-                    continue
-                if symbol in bulk_block_symbols:
-                    continue
-                if symbol in etfs:
-                    continue
+                if len(past_volumes) < MIN_HISTORY_DAYS: continue
+                if symbol in bulk_block_symbols: continue
+                if symbol in etfs: continue
 
                 avg_volume = sum(past_volumes) / len(past_volumes)
-                if avg_volume <= 0:
-                    continue
+                if avg_volume <= 0: continue
                 volume_ratio = volume / avg_volume
 
                 if volume_ratio >= UNUSUAL_VOLUME_RATIO and abs(price_change_pct) <= UNUSUAL_VOLUME_PRICE_CAP:
@@ -350,7 +319,6 @@ def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date, bulk_
 # ----------------------------------------------------------------------
 # F&O BHAVCOPY -- LONG/SHORT BUILDUP + PCR
 # ----------------------------------------------------------------------
-
 def fetch_fo_bhavcopy(session, date: datetime.date) -> pd.DataFrame | None:
     date_str = date.strftime("%Y%m%d")
     url = f"https://nsearchives.nseindia.com/content/fo/BhavCopy_NSE_FO_0_0_0_{date_str}_F_0000.csv.zip"
@@ -381,13 +349,11 @@ def analyze_long_short_buildup(df: pd.DataFrame) -> dict:
                 prev_close = float(row["PrvsClsgPric"])
                 oi = float(row["OpnIntrst"])
                 chg_oi = float(row["ChngInOpnIntrst"])
-                if prev_close == 0 or (oi - chg_oi) == 0:
-                    continue
+                if prev_close == 0 or (oi - chg_oi) == 0: continue
                 price_chg_pct = ((close - prev_close) / prev_close) * 100
                 oi_chg_pct = (chg_oi / (oi - chg_oi)) * 100
 
-                if abs(oi_chg_pct) < OI_CHANGE_THRESHOLD:
-                    continue
+                if abs(oi_chg_pct) < OI_CHANGE_THRESHOLD: continue
 
                 if price_chg_pct > 0 and oi_chg_pct > 0:
                     categories["Long Buildup"].append((symbol, price_chg_pct, oi_chg_pct))
@@ -399,8 +365,7 @@ def analyze_long_short_buildup(df: pd.DataFrame) -> dict:
                     categories["Long Unwinding"].append((symbol, price_chg_pct, oi_chg_pct))
             except (ValueError, KeyError, TypeError):
                 continue
-    except Exception as e:
-        log.error("Long/Short buildup analysis failed: %s", e)
+    except Exception: pass
 
     for cat in categories:
         categories[cat].sort(key=lambda x: abs(x[2]), reverse=True)
@@ -422,57 +387,136 @@ def analyze_pcr(df: pd.DataFrame) -> tuple:
             pe = row.get("PE", 0)
             if ce > 0:
                 per_stock_pcr.append((symbol, round(pe / ce, 2)))
-    except Exception as e:
-        log.error("PCR analysis failed: %s", e)
+    except Exception:
         return None, []
-
     return overall_pcr, per_stock_pcr
 
 
 # ----------------------------------------------------------------------
-# FII AGGREGATE POSITIONING
+# SMART VS DUMB MONEY (PRO, CLIENT, FII PARTICIPANT OI)
 # ----------------------------------------------------------------------
+def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
+    date_str = date.strftime("%d%m%Y")
+    url = f"https://archives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv"
+    try:
+        resp = session.get(url, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        df = pd.read_csv(io.StringIO(resp.text))
+        df.columns = [c.strip() for c in df.columns]
+        return df
+    except Exception as e:
+        log.warning("Participant OI fetch failed for %s: %s", date_str, e)
+        return None
 
-def fetch_fii_stats(session, date: datetime.date) -> pd.DataFrame | None:
-    date_str = date.strftime("%d-%b-%Y")
-    urls = [
-        f"https://nsearchives.nseindia.com/content/fo/fii_stats_{date_str}.xls",
-        f"https://archives.nseindia.com/content/fo/fii_stats_{date_str}.xls",
-    ]
-    for url in urls:
-        try:
-            resp = session.get(url, headers=HEADERS, timeout=20)
-            resp.raise_for_status()
-            df = pd.read_excel(io.BytesIO(resp.content), header=None)
-            return df
-        except Exception as e:
-            log.warning("FII stats fetch failed for %s: %s", url, e)
-            continue
-    return None
-
-def parse_fii_stats(df: pd.DataFrame) -> list:
-    results = []
+def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
+    if df is None or df.empty:
+        return ""
+    
+    # Extract data for FII, Pro, Client
+    data = {}
     for _, row in df.iterrows():
-        cells = [str(c).strip() for c in row if pd.notna(c) and str(c).strip()]
-        if len(cells) < 7:
-            continue
-        nums = cells[-6:]
-        name_parts = cells[:-6]
-        if not name_parts:
-            continue
-        try:
-            nums_clean = [float(n.replace(",", "")) for n in nums]
-        except ValueError:
-            continue 
-        category = " ".join(name_parts)
-        buy_amt, sell_amt = nums_clean[1], nums_clean[3]
-        results.append({
-            "category": category,
-            "buy_amt": buy_amt,
-            "sell_amt": sell_amt,
-            "net_amt": round(buy_amt - sell_amt, 2),
-        })
-    return results
+        client_type = str(row.get("Client Type", "")).strip()
+        if client_type in ["FII", "Pro", "Client"]:
+            try:
+                data[client_type] = {
+                    "idx_fut_long": int(row.get("Future Index Long", 0)),
+                    "idx_fut_short": int(row.get("Future Index Short", 0)),
+                    "idx_call_long": int(row.get("Option Index Call Long", 0)),
+                    "idx_call_short": int(row.get("Option Index Call Short", 0)),
+                    "idx_put_long": int(row.get("Option Index Put Long", 0)),
+                    "idx_put_short": int(row.get("Option Index Put Short", 0)),
+                }
+            except ValueError:
+                continue
+
+    if not data:
+        return ""
+
+    # Aggregate Smart Money (FII + Pro)
+    smart_money = {
+        k: data.get("FII", {}).get(k, 0) + data.get("Pro", {}).get(k, 0)
+        for k in ["idx_fut_long", "idx_fut_short", "idx_call_long", "idx_call_short", "idx_put_long", "idx_put_short"]
+    }
+    retail = data.get("Client", {})
+
+    # Calculate Nets
+    def calc_net(d):
+        return {
+            "net_fut": d.get("idx_fut_long", 0) - d.get("idx_fut_short", 0),
+            "net_call": d.get("idx_call_long", 0) - d.get("idx_call_short", 0),
+            "net_put": d.get("idx_put_long", 0) - d.get("idx_put_short", 0),
+        }
+    
+    smart_net = calc_net(smart_money)
+    retail_net = calc_net(retail)
+
+    # Bullish Score = Net Futures + Net Calls - Net Puts
+    smart_score = smart_net["net_fut"] + smart_net["net_call"] - smart_net["net_put"]
+    retail_score = retail_net["net_fut"] + retail_net["net_call"] - retail_net["net_put"]
+
+    # Direction Prediction Logic
+    prediction = "Mixed / Unclear ⚖️"
+    if smart_score > 50000 and retail_score < -50000:
+        prediction = "Highly Bullish 🚀 (Smart money is heavily long, Retail is trapped short)"
+    elif smart_score < -50000 and retail_score > 50000:
+        prediction = "Highly Bearish 🔴 (Retail is heavily long, Smart money is dumping/fading)"
+    elif smart_score > 20000 and retail_score < 0:
+        prediction = "Bullish Tilt 🟢"
+    elif smart_score < -20000 and retail_score > 0:
+        prediction = "Bearish Tilt 🔻"
+
+    # Expiry Day Prediction (Trending vs Sideways)
+    tomorrow = date + datetime.timedelta(days=1)
+    weekday = tomorrow.weekday() # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri
+    
+    expiry_map = {0: "MidcapNifty", 1: "FinNifty", 2: "BankNifty", 3: "Nifty"}
+    expiry_pred = ""
+    
+    if weekday in expiry_map:
+        idx_name = expiry_map[weekday]
+        short_calls = smart_money["idx_call_short"]
+        short_puts = smart_money["idx_put_short"]
+        long_calls = smart_money["idx_call_long"]
+        long_puts = smart_money["idx_put_long"]
+        
+        net_written_calls = short_calls - long_calls
+        net_written_puts = short_puts - long_puts
+        
+        if net_written_calls > 50000 and net_written_puts > 50000:
+            ratio = net_written_calls / net_written_puts if net_written_puts else 1
+            if 0.6 <= ratio <= 1.4:
+                expiry_pred = f"🧲 <b>Sideways / Theta Decay Expected</b> (Smart money is heavily writing BOTH Calls and Puts to eat premium)."
+            elif ratio > 1.4:
+                expiry_pred = f"📉 <b>Trending Down / Capped Upside Expected</b> (Smart money is aggressively writing Calls)."
+            else:
+                expiry_pred = f"📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
+        elif net_written_calls > 50000:
+            expiry_pred = f"📉 <b>Trending Down / Capped Upside Expected</b> (Smart money is aggressively writing Calls)."
+        elif net_written_puts > 50000:
+            expiry_pred = f"📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
+        else:
+            expiry_pred = "⚖️ No extreme option writing detected by Smart Money."
+
+    def fmt_num(n): return f"{n:+,}"
+
+    lines = [
+        "🧠 <b>SMART vs DUMB MONEY (Derivatives)</b>",
+        "<i>Based on Net Contract Positions (FII + PRO vs Retail)</i>\n",
+        f"<b>Smart Money (FII + PRO):</b>",
+        f" • Index Futures: {fmt_num(smart_net['net_fut'])}",
+        f" • Index Calls: {fmt_num(smart_net['net_call'])}",
+        f" • Index Puts: {fmt_num(smart_net['net_put'])}\n",
+        f"<b>Retail (CLIENT):</b>",
+        f" • Index Futures: {fmt_num(retail_net['net_fut'])}",
+        f" • Index Calls: {fmt_num(retail_net['net_call'])}",
+        f" • Index Puts: {fmt_num(retail_net['net_put'])}\n",
+        f"🔮 <b>NEXT DAY DIRECTION:</b>\n{prediction}\n"
+    ]
+    
+    if expiry_pred:
+        lines.append(f"📅 <b>TOMORROW'S EXPIRY ({expiry_map[weekday]}):</b>\n{expiry_pred}")
+        
+    return "\n".join(lines)
 
 
 # ----------------------------------------------------------------------
@@ -538,7 +582,6 @@ def main():
             f"largely played out and risk/reward for a fresh entry is no longer favorable</i>\n" +
             format_stock_list([(s, p, d) for s, p, d, v in tiers["early_movers"]], comment=True, third_label="Delivery")
         )
-        log.info("Delivery analysis: %d early movers.", len(tiers["early_movers"]))
 
         # --- Unusual volume ---
         unusual = analyze_unusual_volume(deliv_df, session, date, bulk_block_symbols)
@@ -549,7 +592,6 @@ def main():
             f"before the move shows up in price</i>\n" +
             format_stock_list([(s, round(v, 1)) for s, p, v in unusual])
         )
-        log.info("Unusual volume signals: %d found.", len(unusual))
     else:
         sections.append("\U0001F4E6 <b>Delivery analysis unavailable</b> (data fetch failed -- see logs)")
 
@@ -564,65 +606,49 @@ def main():
             "Long Unwinding": "Price falling + OI falling \u2014 longs being closed out (bearish reversal)",
         }
         for cat, emoji in [("Long Buildup", "\U0001F7E2"), ("Short Buildup", "\U0001F534"),
-                             ("Short Covering", "\U0001F7E1"), ("Long Unwinding", "\U0001F7E0")]:
+                           ("Short Covering", "\U0001F7E1"), ("Long Unwinding", "\U0001F7E0")]:
             sections.append(
                 f"{emoji} <b>{cat}</b>\n<i>{buildup_notes[cat]}</i>\n" + format_stock_list(buildup[cat])
             )
-        log.info("Long/Short buildup: %s", {k: len(v) for k, v in buildup.items()})
 
         overall_pcr, stock_pcr = analyze_pcr(fo_df)
         stock_pcr.sort(key=lambda x: x[1], reverse=True)
         pcr_line = f"Overall Market PCR: {overall_pcr}\n" if overall_pcr else ""
         sections.append(
             f"\U0001F4CA <b>Put-Call Ratio</b>\n{pcr_line}"
-            f"<i>PCR &gt;1 = more Put OI than Call OI (heavier downside hedging/bets); "
-            f"PCR &lt;1 = more Call OI (heavier upside bets). Many traders read extremes as "
-            f"contrarian -- very high PCR is sometimes viewed as oversold, very low as overbought.</i>\n"
+            f"<i>PCR &gt;1 = heavier downside hedging; PCR &lt;1 = heavier upside bets.</i>\n"
             f"Highest PCR:\n" + format_stock_list(stock_pcr[:5]) +
             f"\nLowest PCR:\n" + format_stock_list(stock_pcr[-5:])
         )
-        log.info("PCR analysis: overall=%s, %d stocks", overall_pcr, len(stock_pcr))
     else:
-        sections.append("\U0001F4CA <b>F&O buildup/PCR unavailable</b> (data fetch failed -- see logs)")
+        sections.append("\U0001F4CA <b>F&O buildup/PCR unavailable</b>")
 
-    # --- FII stats ---
-    fii_df = fetch_fii_stats(session, date)
-    if fii_df is not None:
-        fii_rows = parse_fii_stats(fii_df)
-        if fii_rows:
-            lines = [
-                "\U0001F3E6 <b>FII Derivatives Stats</b> (Net = Buy \u2212 Sell, \u20b9 Cr)",
-                "<i>Net positive = FII net buyers in that category (bullish tilt); "
-                "net negative = FII net sellers (bearish tilt)</i>",
-            ]
-            for row in fii_rows:
-                tilt = "bullish tilt" if row["net_amt"] > 0 else "bearish tilt" if row["net_amt"] < 0 else "neutral"
-                lines.append(f"  {row['category']}: Net {row['net_amt']:+.1f} Cr ({tilt})")
-            sections.append("\n".join(lines))
-            log.info("FII stats parsed: %d categories.", len(fii_rows))
+    # --- NEW: SMART VS DUMB MONEY AI ENGINE ---
+    part_oi_df = fetch_participant_oi(session, date)
+    if part_oi_df is not None:
+        oi_analysis_text = analyze_participant_oi(part_oi_df, date)
+        if oi_analysis_text:
+            sections.append(oi_analysis_text)
+            log.info("Smart Money AI engine executed successfully.")
         else:
-            sections.append("\U0001F3E6 <b>FII stats fetched but could not be parsed</b> -- see logs")
-            log.warning("FII stats dataframe fetched but parse_fii_stats found no valid rows.")
+            log.warning("Participant OI file fetched but empty/format changed.")
     else:
-        sections.append("\U0001F3E6 <b>FII stats unavailable</b> (best-effort source -- see logs)")
+        sections.append("🧠 <b>Smart Money Engine unavailable</b> (NSE Participant OI fetch failed)")
 
-    # --- EMAIL DISPATCH (Ironclad Isolation) ---
+    # --- EMAIL DISPATCH ---
     try:
         full_email_message = f"\U0001F4C8 <b>F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}</b>\n\n" + "\n\n".join(sections)
         send_email(
             subject=f"F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}",
             body=strip_html_tags(full_email_message),
         )
-        log.info("Email dispatched successfully.")
     except Exception as e:
         log.error("CRITICAL: Email dispatch failed. Exception: %s", e)
-        # We do NOT return or exit here. We let Telegram continue.
 
-    # --- TELEGRAM DISPATCH (Ironclad Isolation & Anti-Flood) ---
+    # --- TELEGRAM DISPATCH ---
     try:
         send_telegram_message(f"\U0001F4C8 <b>F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}</b>")
         for section in sections:
-            # Safety net: If a single section is somehow larger than Telegram's limit, chunk it further
             if len(section) > 3800:
                 for i in range(0, len(section), 3800):
                     send_telegram_message(section[i:i + 3800])
