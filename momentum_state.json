@@ -3489,7 +3489,9 @@
       "mcap_cr": 10635.434956275696,
       "rs_rank": 62.3,
       "resistance_last_alert": "2026-09-29T03:49:26.171444",
-      "resistance_last_price": 473.6000061035156
+      "resistance_last_price": 473.6000061035156,
+      "mtf_last_alert": "2026-09-29T06:16:32.895394",
+      "mtf_last_price": 475.45001220703125
     },
     "ELECTCAST": {
       "sma50": 74.9231999206543,
@@ -4014,8 +4016,8 @@
       "rs_rank": 5.5,
       "ema50_pullback_last_alert": "2026-09-29T05:16:11.580042",
       "ema50_pullback_last_price": 185.17999267578125,
-      "mtf_last_alert": "2026-09-29T05:30:00.698074",
-      "mtf_last_price": 185.7100067138672
+      "mtf_last_alert": "2026-09-29T06:16:35.834798",
+      "mtf_last_price": 188.42999267578125
     },
     "FIVESTAR": {
       "sma50": 537.1540002441407,
@@ -10410,8 +10412,8 @@
       "ema_200_prev": 184.30659257975228,
       "mcap_cr": 6762.705352524774,
       "rs_rank": 91.2,
-      "resistance_last_alert": "2026-09-29T04:47:02.906570",
-      "resistance_last_price": 204.14999389648438
+      "resistance_last_alert": "2026-09-29T06:17:08.166335",
+      "resistance_last_price": 206.6999969482422
     },
     "SPLPETRO": {
       "sma50": 755.3130004882812,
@@ -10757,7 +10759,9 @@
       "mcap_cr": 4787.7721956549685,
       "rs_rank": 40.6,
       "resistance_last_alert": "2026-09-29T05:46:54.199632",
-      "resistance_last_price": 223.02999877929688
+      "resistance_last_price": 223.02999877929688,
+      "mtf_last_alert": "2026-09-29T06:17:10.291468",
+      "mtf_last_price": 224.66000366210938
     },
     "SWANCORP": {
       "sma50": 300.2629998779297,
@@ -11467,7 +11471,9 @@
       "ema_100_prev": 478.75385642978375,
       "ema_200_prev": 512.7279490033694,
       "mcap_cr": 6034.13720751175,
-      "rs_rank": 18.3
+      "rs_rank": 18.3,
+      "mtf_last_alert": "2026-09-29T06:17:14.339637",
+      "mtf_last_price": 456.1499938964844
     },
     "TRAVELFOOD": {
       "sma50": 1294.7440014648437,
