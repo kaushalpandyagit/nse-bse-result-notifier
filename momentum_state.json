@@ -1784,8 +1784,8 @@
       "ema_200_prev": 575.6936926238683,
       "mcap_cr": 10969.070886473693,
       "rs_rank": 42.1,
-      "near_high_17_22_last_alert": "2026-09-29T05:29:50.419652",
-      "near_high_17_22_last_price": 612.3499755859375
+      "near_high_17_22_last_alert": "2026-09-29T07:16:19.379703",
+      "near_high_17_22_last_price": 619.5999755859375
     },
     "BLS": {
       "sma50": 242.72879974365233,
@@ -2518,8 +2518,8 @@
       "ema_200_prev": 840.6473759641733,
       "mcap_cr": 18638.58961431637,
       "rs_rank": 57.1,
-      "near_high_17_22_last_alert": "2026-09-29T03:49:20.519046",
-      "near_high_17_22_last_price": 848.9000244140625
+      "near_high_17_22_last_alert": "2026-09-29T07:16:24.668245",
+      "near_high_17_22_last_price": 858.1500244140625
     },
     "CHAMBLFERT": {
       "sma50": 430.0219995117188,
@@ -6760,8 +6760,8 @@
       "ema_200_prev": 1175.8709647177427,
       "mcap_cr": 9078.437583150757,
       "rs_rank": 88.2,
-      "near_high_17_22_last_alert": "2026-09-29T05:01:41.556193",
-      "near_high_17_22_last_price": 1367.9000244140625
+      "near_high_17_22_last_alert": "2026-09-29T07:16:46.640986",
+      "near_high_17_22_last_price": 1382.9000244140625
     },
     "KSB": {
       "sma50": 815.8149963378906,
@@ -6921,7 +6921,9 @@
       "ema_100_prev": 540.6579507916151,
       "ema_200_prev": 542.4261202988481,
       "mcap_cr": 30946.543037072755,
-      "rs_rank": 45.7
+      "rs_rank": 45.7,
+      "resistance_last_alert": "2026-09-29T07:16:49.006639",
+      "resistance_last_price": 557.75
     },
     "LLOYDSENGG": {
       "sma50": 88.34440002441406,
@@ -7028,8 +7030,8 @@
       "ema_200_prev": 408.17339635655304,
       "mcap_cr": 14174.865597972754,
       "rs_rank": 42.7,
-      "near_high_17_22_last_alert": "2026-09-29T06:30:16.204054",
-      "near_high_17_22_last_price": 411.79998779296875
+      "near_high_17_22_last_alert": "2026-09-29T07:16:50.128007",
+      "near_high_17_22_last_price": 407.5
     },
     "LUMAXTECH": {
       "sma50": 1875.0400048828126,
@@ -10709,7 +10711,11 @@
       "resistance_last_alert": "2026-09-29T03:50:10.105756",
       "resistance_last_price": 515.4000244140625,
       "mtf_last_alert": "2026-09-29T06:46:45.647873",
-      "mtf_last_price": 539.25
+      "mtf_last_price": 539.25,
+      "zanger_last_alert": "2026-09-29T07:17:09.324953",
+      "zanger_last_price": 539.8499755859375,
+      "near_high_17_22_last_alert": "2026-09-29T07:17:10.034323",
+      "near_high_17_22_last_price": 539.8499755859375
     },
     "SUPRIYA": {
       "sma50": 865.68900390625,
@@ -10762,8 +10768,8 @@
       "ema_200_prev": 241.74518225766082,
       "mcap_cr": 4787.7721956549685,
       "rs_rank": 40.6,
-      "resistance_last_alert": "2026-09-29T05:46:54.199632",
-      "resistance_last_price": 223.02999877929688,
+      "resistance_last_alert": "2026-09-29T07:17:10.916268",
+      "resistance_last_price": 220.72000122070312,
       "mtf_last_alert": "2026-09-29T06:17:10.291468",
       "mtf_last_price": 224.66000366210938
     },
