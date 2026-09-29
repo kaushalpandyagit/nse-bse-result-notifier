@@ -260,8 +260,8 @@
       "ema_200_prev": 987.3112765760214,
       "mcap_cr": 28546.85706775,
       "rs_rank": 41.3,
-      "near_high_17_22_last_alert": "2026-09-29T07:29:43.550425",
-      "near_high_17_22_last_price": 969.4000244140625
+      "near_high_17_22_last_alert": "2026-09-29T10:01:24.895170",
+      "near_high_17_22_last_price": 957.0999755859375
     },
     "ACC": {
       "sma50": 1303.0020043945312,
@@ -863,7 +863,9 @@
       "ema_100_prev": 426.4756815194644,
       "ema_200_prev": 436.2644715952304,
       "mcap_cr": 24676.998225437004,
-      "rs_rank": 27.6
+      "rs_rank": 27.6,
+      "ema50_pullback_last_alert": "2026-09-29T10:01:29.856138",
+      "ema50_pullback_last_price": 415.0
     },
     "APTUS": {
       "sma50": 257.6362005615234,
@@ -1255,7 +1257,9 @@
       "ema_100_prev": 595.5221991585537,
       "ema_200_prev": 563.8899672223853,
       "mcap_cr": 7647.555478639221,
-      "rs_rank": 69.1
+      "rs_rank": 69.1,
+      "near_high_17_22_last_alert": "2026-09-29T10:01:33.250501",
+      "near_high_17_22_last_price": 585.0
     },
     "AWFIS": {
       "sma50": 268.52699951171877,
@@ -3027,7 +3031,9 @@
       "mtf_last_alert": "2026-09-29T08:46:17.079361",
       "mtf_last_price": 819.4500122070312,
       "resistance_last_alert": "2026-09-29T09:29:55.429705",
-      "resistance_last_price": 829.5499877929688
+      "resistance_last_price": 829.5499877929688,
+      "zanger_last_alert": "2026-09-29T10:01:48.562934",
+      "zanger_last_price": 821.4000244140625
     },
     "DATAPATTNS": {
       "sma50": 4548.866015625,
@@ -6673,7 +6679,9 @@
       "mtf_last_alert": "2026-09-29T09:01:45.081921",
       "mtf_last_price": 369.79998779296875,
       "resistance_last_alert": "2026-09-29T04:02:23.746284",
-      "resistance_last_price": 352.8500061035156
+      "resistance_last_price": 352.8500061035156,
+      "zanger_last_alert": "2026-09-29T10:02:16.332202",
+      "zanger_last_price": 371.25
     },
     "KPIL": {
       "sma50": 1369.783994140625,
@@ -6813,7 +6821,9 @@
       "resistance_last_alert": "2026-09-29T09:46:59.760249",
       "resistance_last_price": 821.0,
       "zanger_last_alert": "2026-09-29T09:46:59.199103",
-      "zanger_last_price": 821.0
+      "zanger_last_price": 821.0,
+      "ema50_pullback_last_alert": "2026-09-29T10:02:17.941800",
+      "ema50_pullback_last_price": 824.7999877929688
     },
     "KSCL": {
       "sma50": 764.4969958496093,
@@ -7184,8 +7194,8 @@
       "ema_200_prev": 313.55636196171724,
       "mcap_cr": 29166.3859671,
       "rs_rank": 60.6,
-      "near_high_17_22_last_alert": "2026-09-29T07:02:03.506841",
-      "near_high_17_22_last_price": 311.6000061035156
+      "near_high_17_22_last_alert": "2026-09-29T10:02:21.207543",
+      "near_high_17_22_last_price": 316.45001220703125
     },
     "MANORAMA": {
       "sma50": 1828.4040014648438,
