@@ -4303,7 +4303,9 @@
       "mcap_cr": 7929.6708765979465,
       "rs_rank": 40.0,
       "resistance_last_alert": "2026-09-30T03:49:33.378337",
-      "resistance_last_price": 101.30000305175781
+      "resistance_last_price": 101.30000305175781,
+      "mtf_last_alert": "2026-09-30T04:16:16.662286",
+      "mtf_last_price": 102.25
     },
     "GNFC": {
       "sma50": 569.1429992675781,
@@ -7557,7 +7559,9 @@
       "ema_100_prev": 576.5789189693858,
       "ema_200_prev": 582.5677169123863,
       "mcap_cr": 15770.596403686144,
-      "rs_rank": 32.3
+      "rs_rank": 32.3,
+      "resistance_last_alert": "2026-09-30T04:16:33.366169",
+      "resistance_last_price": 564.2000122070312
     },
     "NAZARA": {
       "sma50": 355.59599853515624,
