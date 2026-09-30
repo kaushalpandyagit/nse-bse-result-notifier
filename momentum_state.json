@@ -5628,10 +5628,10 @@
       "ema_200_prev": 136.28502416943653,
       "mcap_cr": 9822.7466181781,
       "rs_rank": 8.9,
-      "mtf_last_alert": "2026-09-30T07:17:02.518892",
-      "mtf_last_price": 117.19999694824219,
-      "ema50_pullback_last_alert": "2026-09-30T07:17:03.010493",
-      "ema50_pullback_last_price": 117.19999694824219
+      "mtf_last_alert": "2026-09-30T08:46:27.817962",
+      "mtf_last_price": 114.93000030517578,
+      "ema50_pullback_last_alert": "2026-09-30T08:46:28.469529",
+      "ema50_pullback_last_price": 114.93000030517578
     },
     "ITI": {
       "sma50": 270.25000152587893,
@@ -6612,8 +6612,8 @@
       "rs_rank": 32.1,
       "mtf_last_alert": "2026-09-30T03:49:46.075130",
       "mtf_last_price": 382.54998779296875,
-      "resistance_last_alert": "2026-09-30T07:46:34.317328",
-      "resistance_last_price": 368.25
+      "resistance_last_alert": "2026-09-30T08:46:33.267665",
+      "resistance_last_price": 362.5
     },
     "KPIL": {
       "sma50": 1369.9159936523438,
@@ -8573,7 +8573,9 @@
       "mcap_cr": 7843.685573527148,
       "rs_rank": 69.3,
       "zanger_last_alert": "2026-09-30T05:30:27.475775",
-      "zanger_last_price": 2478.89990234375
+      "zanger_last_price": 2478.89990234375,
+      "ema50_pullback_last_alert": "2026-09-30T08:46:42.443601",
+      "ema50_pullback_last_price": 2488.60009765625
     },
     "PPLPHARMA": {
       "sma50": 207.4406002807617,
@@ -9322,8 +9324,8 @@
       "ema_200_prev": 218.5103080941959,
       "mcap_cr": 9378.02167673181,
       "rs_rank": 37.0,
-      "ema50_pullback_last_alert": "2026-09-30T07:46:48.311827",
-      "ema50_pullback_last_price": 213.75,
+      "ema50_pullback_last_alert": "2026-09-30T08:46:46.375069",
+      "ema50_pullback_last_price": 209.10000610351562,
       "zanger_last_alert": "2026-09-30T08:16:40.157948",
       "zanger_last_price": 215.7100067138672,
       "mtf_last_alert": "2026-09-30T08:16:40.639048",
@@ -10978,8 +10980,8 @@
       "ema_200_prev": 710.7852931853874,
       "mcap_cr": 28628.683778481263,
       "rs_rank": 67.0,
-      "near_high_17_22_last_alert": "2026-09-30T06:01:55.004176",
-      "near_high_17_22_last_price": 703.2999877929688
+      "near_high_17_22_last_alert": "2026-09-30T08:46:54.203176",
+      "near_high_17_22_last_price": 710.7000122070312
     },
     "TBOTEK": {
       "sma50": 1641.869990234375,
@@ -11462,8 +11464,8 @@
       "mtf_last_price": 477.1000061035156,
       "resistance_last_alert": "2026-09-30T08:16:50.149982",
       "resistance_last_price": 477.1000061035156,
-      "zanger_last_alert": "2026-09-30T07:47:00.022857",
-      "zanger_last_price": 481.8500061035156
+      "zanger_last_alert": "2026-09-30T08:46:56.793803",
+      "zanger_last_price": 475.79998779296875
     },
     "TRAVELFOOD": {
       "sma50": 1294.7760009765625,
@@ -12308,8 +12310,8 @@
       "ema_200_prev": 874.1252855843866,
       "mcap_cr": 11270.5262808,
       "rs_rank": 45.2,
-      "mtf_last_alert": "2026-09-30T07:30:35.088923",
-      "mtf_last_price": 903.25
+      "mtf_last_alert": "2026-09-30T08:47:01.127962",
+      "mtf_last_price": 889.0999755859375
     },
     "YATHARTH": {
       "sma50": 947.3089978027343,
