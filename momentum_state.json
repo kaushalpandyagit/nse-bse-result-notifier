@@ -4306,8 +4306,8 @@
       "ema_200_prev": 103.11829803076871,
       "mcap_cr": 7929.6708765979465,
       "rs_rank": 40.0,
-      "resistance_last_alert": "2026-09-30T05:01:30.150992",
-      "resistance_last_price": 103.11000061035156,
+      "resistance_last_alert": "2026-09-30T06:16:20.416186",
+      "resistance_last_price": 102.0,
       "mtf_last_alert": "2026-09-30T04:16:16.662286",
       "mtf_last_price": 102.25
     },
@@ -9025,7 +9025,9 @@
       "ema_100_prev": 2584.227317687869,
       "ema_200_prev": 2532.6961259944947,
       "mcap_cr": 19828.325195507812,
-      "rs_rank": 66.6
+      "rs_rank": 66.6,
+      "near_high_17_22_last_alert": "2026-09-30T06:16:45.726266",
+      "near_high_17_22_last_price": 2747.199951171875
     },
     "RAYMONDLSL": {
       "sma50": 699.9050012207031,
