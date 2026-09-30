@@ -5774,8 +5774,8 @@
       "ema_200_prev": 123.77286861180418,
       "mcap_cr": 5649.790031875,
       "rs_rank": 60.9,
-      "resistance_last_alert": "2026-09-30T04:30:24.084281",
-      "resistance_last_price": 138.77999877929688
+      "resistance_last_alert": "2026-09-30T05:30:12.356569",
+      "resistance_last_price": 137.0500030517578
     },
     "JAYNECOIND": {
       "sma50": 91.84480026245117,
@@ -5802,8 +5802,8 @@
       "ema_200_prev": 85.90276320370806,
       "mcap_cr": 9131.267575473545,
       "rs_rank": 61.7,
-      "near_high_17_22_last_alert": "2026-09-30T03:49:41.290668",
-      "near_high_17_22_last_price": 95.48999786376953
+      "near_high_17_22_last_alert": "2026-09-30T05:30:13.073831",
+      "near_high_17_22_last_price": 94.4000015258789
     },
     "JBMA": {
       "sma50": 627.603994140625,
@@ -6857,7 +6857,9 @@
       "mcap_cr": 30858.5343,
       "rs_rank": 47.4,
       "resistance_last_alert": "2026-09-30T04:02:25.348328",
-      "resistance_last_price": 556.4000244140625
+      "resistance_last_price": 556.4000244140625,
+      "near_high_17_22_last_alert": "2026-09-30T05:30:18.605642",
+      "near_high_17_22_last_price": 535.1500244140625
     },
     "LLOYDSENGG": {
       "sma50": 88.7966000366211,
@@ -7938,8 +7940,8 @@
       "ema_200_prev": 1587.4718224306146,
       "mcap_cr": 30766.146434337756,
       "rs_rank": 80.8,
-      "near_high_17_22_last_alert": "2026-09-30T03:49:56.453188",
-      "near_high_17_22_last_price": 1671.800048828125
+      "near_high_17_22_last_alert": "2026-09-30T05:30:24.039567",
+      "near_high_17_22_last_price": 1654.699951171875
     },
     "NUVOCO": {
       "sma50": 335.41500061035157,
@@ -8541,7 +8543,9 @@
       "ema_100_prev": 2477.0984235126957,
       "ema_200_prev": 2483.560399754718,
       "mcap_cr": 7843.685573527148,
-      "rs_rank": 69.3
+      "rs_rank": 69.3,
+      "zanger_last_alert": "2026-09-30T05:30:27.475775",
+      "zanger_last_price": 2478.89990234375
     },
     "PPLPHARMA": {
       "sma50": 207.4406002807617,
