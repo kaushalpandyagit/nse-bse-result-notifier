@@ -1252,8 +1252,8 @@
       "ema_200_prev": 564.1782631282638,
       "mcap_cr": 7591.379953971557,
       "rs_rank": 68.1,
-      "near_high_17_22_last_alert": "2026-09-30T04:01:27.478390",
-      "near_high_17_22_last_price": 584.6500244140625
+      "near_high_17_22_last_alert": "2026-09-30T05:01:16.483676",
+      "near_high_17_22_last_price": 578.5999755859375
     },
     "AWFIS": {
       "sma50": 267.74399932861326,
@@ -1516,8 +1516,8 @@
       "ema_200_prev": 178.0919471807944,
       "mcap_cr": 29627.38848403537,
       "rs_rank": 63.4,
-      "near_high_17_22_last_alert": "2026-09-30T03:49:14.022717",
-      "near_high_17_22_last_price": 182.89999389648438
+      "near_high_17_22_last_alert": "2026-09-30T05:01:18.190962",
+      "near_high_17_22_last_price": 180.3699951171875
     },
     "BATAINDIA": {
       "sma50": 682.027001953125,
@@ -4302,8 +4302,8 @@
       "ema_200_prev": 103.11829803076871,
       "mcap_cr": 7929.6708765979465,
       "rs_rank": 40.0,
-      "resistance_last_alert": "2026-09-30T03:49:33.378337",
-      "resistance_last_price": 101.30000305175781,
+      "resistance_last_alert": "2026-09-30T05:01:30.150992",
+      "resistance_last_price": 103.11000061035156,
       "mtf_last_alert": "2026-09-30T04:16:16.662286",
       "mtf_last_price": 102.25
     },
@@ -9250,8 +9250,8 @@
       "ema_200_prev": 404.5414365906255,
       "mcap_cr": 8156.806327,
       "rs_rank": 45.9,
-      "resistance_last_alert": "2026-09-30T03:50:05.259227",
-      "resistance_last_price": 396.1499938964844,
+      "resistance_last_alert": "2026-09-30T05:01:50.508324",
+      "resistance_last_price": 388.45001220703125,
       "mtf_last_alert": "2026-09-30T03:50:05.836217",
       "mtf_last_price": 396.1499938964844
     },
@@ -10928,8 +10928,8 @@
       "ema_200_prev": 710.7852931853874,
       "mcap_cr": 28628.683778481263,
       "rs_rank": 67.0,
-      "near_high_17_22_last_alert": "2026-09-30T03:50:15.310377",
-      "near_high_17_22_last_price": 706.0
+      "near_high_17_22_last_alert": "2026-09-30T05:01:57.654341",
+      "near_high_17_22_last_price": 715.3499755859375
     },
     "TBOTEK": {
       "sma50": 1641.869990234375,
@@ -11407,7 +11407,9 @@
       "ema_100_prev": 477.78984132477643,
       "ema_200_prev": 511.5686992756983,
       "mcap_cr": 6115.36193875,
-      "rs_rank": 15.9
+      "rs_rank": 15.9,
+      "mtf_last_alert": "2026-09-30T05:02:00.068977",
+      "mtf_last_price": 460.5
     },
     "TRAVELFOOD": {
       "sma50": 1294.7760009765625,
