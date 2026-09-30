@@ -783,7 +783,9 @@
       "ema_100_prev": 1241.617727572033,
       "ema_200_prev": 1230.7684356899595,
       "mcap_cr": 13454.774765287426,
-      "rs_rank": 21.6
+      "rs_rank": 21.6,
+      "near_high_17_22_last_alert": "2026-09-30T06:46:03.040398",
+      "near_high_17_22_last_price": 1170.699951171875
     },
     "APLLTD": {
       "sma50": 823.5990014648437,
@@ -4387,7 +4389,9 @@
       "ema_100_prev": 277.3083613164589,
       "ema_200_prev": 295.4588831675731,
       "mcap_cr": 23496.142308595572,
-      "rs_rank": 5.3
+      "rs_rank": 5.3,
+      "resistance_last_alert": "2026-09-30T06:46:21.682986",
+      "resistance_last_price": 257.29998779296875
     },
     "GODREJAGRO": {
       "sma50": 610.9769946289063,
@@ -7732,8 +7736,8 @@
       "ema_200_prev": 4141.986874438487,
       "mcap_cr": 27613.3874395,
       "rs_rank": 81.4,
-      "near_high_17_22_last_alert": "2026-09-30T03:49:53.955732",
-      "near_high_17_22_last_price": 4640.5
+      "near_high_17_22_last_alert": "2026-09-30T06:46:38.460766",
+      "near_high_17_22_last_price": 4587.5
     },
     "NETWORK18": {
       "sma50": 28.19439987182617,
@@ -8869,7 +8873,9 @@
       "mcap_cr": 8397.353223269742,
       "rs_rank": 30.2,
       "mtf_last_alert": "2026-09-30T06:30:22.071072",
-      "mtf_last_price": 277.6000061035156
+      "mtf_last_price": 277.6000061035156,
+      "ema50_pullback_last_alert": "2026-09-30T06:46:44.058115",
+      "ema50_pullback_last_price": 272.0
     },
     "RAIN": {
       "sma50": 213.77840087890624,
@@ -9002,8 +9008,8 @@
       "ema_200_prev": 762.0940496466015,
       "mcap_cr": 9890.3108490099,
       "rs_rank": 90.7,
-      "near_high_17_22_last_alert": "2026-09-30T05:46:43.754796",
-      "near_high_17_22_last_price": 838.6500244140625
+      "near_high_17_22_last_alert": "2026-09-30T06:46:45.360103",
+      "near_high_17_22_last_price": 848.2999877929688
     },
     "RATNAMANI": {
       "sma50": 2563.4520068359375,
@@ -9299,7 +9305,11 @@
       "mcap_cr": 9378.02167673181,
       "rs_rank": 37.0,
       "ema50_pullback_last_alert": "2026-09-30T06:30:24.291056",
-      "ema50_pullback_last_price": 211.1999969482422
+      "ema50_pullback_last_price": 211.1999969482422,
+      "zanger_last_alert": "2026-09-30T06:46:47.226601",
+      "zanger_last_price": 213.3000030517578,
+      "mtf_last_alert": "2026-09-30T06:46:47.761994",
+      "mtf_last_price": 213.3000030517578
     },
     "RKFORGE": {
       "sma50": 707.1659985351563,
