@@ -4308,8 +4308,8 @@
       "ema_200_prev": 103.11829803076871,
       "mcap_cr": 7929.6708765979465,
       "rs_rank": 40.0,
-      "resistance_last_alert": "2026-09-30T06:16:20.416186",
-      "resistance_last_price": 102.0,
+      "resistance_last_alert": "2026-09-30T07:01:30.537025",
+      "resistance_last_price": 103.0999984741211,
       "mtf_last_alert": "2026-09-30T04:16:16.662286",
       "mtf_last_price": 102.25
     },
@@ -6259,7 +6259,9 @@
       "ema_100_prev": 253.9757475983661,
       "ema_200_prev": 272.3115391673462,
       "mcap_cr": 9475.229181449804,
-      "rs_rank": 9.1
+      "rs_rank": 9.1,
+      "ema50_pullback_last_alert": "2026-09-30T07:01:40.225749",
+      "ema50_pullback_last_price": 237.60000610351562
     },
     "JYOTHYLAB": {
       "sma50": 200.91740020751953,
@@ -7977,7 +7979,9 @@
       "ema_100_prev": 330.2077439111355,
       "ema_200_prev": 334.3367853004389,
       "mcap_cr": 12030.805231795815,
-      "rs_rank": 53.7
+      "rs_rank": 53.7,
+      "resistance_last_alert": "2026-09-30T07:01:47.827593",
+      "resistance_last_price": 340.79998779296875
     },
     "OLAELEC": {
       "sma50": 38.50379997253418,
@@ -9309,7 +9313,9 @@
       "zanger_last_alert": "2026-09-30T06:46:47.226601",
       "zanger_last_price": 213.3000030517578,
       "mtf_last_alert": "2026-09-30T06:46:47.761994",
-      "mtf_last_price": 213.3000030517578
+      "mtf_last_price": 213.3000030517578,
+      "resistance_last_alert": "2026-09-30T07:01:53.725487",
+      "resistance_last_price": 216.74000549316406
     },
     "RKFORGE": {
       "sma50": 707.1659985351563,
@@ -12018,8 +12024,8 @@
       "ema_200_prev": 737.730287810842,
       "mcap_cr": 6087.517335,
       "rs_rank": 78.4,
-      "near_high_17_22_last_alert": "2026-09-30T03:50:22.876255",
-      "near_high_17_22_last_price": 764.6500244140625
+      "near_high_17_22_last_alert": "2026-09-30T07:02:06.115094",
+      "near_high_17_22_last_price": 747.0499877929688
     },
     "VOLTAMP": {
       "sma50": 10428.66,
