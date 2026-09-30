@@ -6264,8 +6264,12 @@
       "ema_200_prev": 272.3115391673462,
       "mcap_cr": 9475.229181449804,
       "rs_rank": 9.1,
-      "ema50_pullback_last_alert": "2026-09-30T07:01:40.225749",
-      "ema50_pullback_last_price": 237.60000610351562
+      "ema50_pullback_last_alert": "2026-09-30T08:02:04.074141",
+      "ema50_pullback_last_price": 242.72000122070312,
+      "zanger_last_alert": "2026-09-30T08:02:02.818569",
+      "zanger_last_price": 242.72000122070312,
+      "mtf_last_alert": "2026-09-30T08:02:03.495563",
+      "mtf_last_price": 242.72000122070312
     },
     "JYOTHYLAB": {
       "sma50": 200.91740020751953,
@@ -8886,8 +8890,8 @@
       "rs_rank": 30.2,
       "mtf_last_alert": "2026-09-30T07:30:20.024382",
       "mtf_last_price": 273.45001220703125,
-      "ema50_pullback_last_alert": "2026-09-30T06:46:44.058115",
-      "ema50_pullback_last_price": 272.0
+      "ema50_pullback_last_alert": "2026-09-30T08:02:21.824926",
+      "ema50_pullback_last_price": 275.3999938964844
     },
     "RAIN": {
       "sma50": 213.77840087890624,
