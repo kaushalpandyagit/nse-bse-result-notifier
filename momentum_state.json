@@ -704,8 +704,8 @@
       "ema_200_prev": 564.9006215880208,
       "mcap_cr": 21855.325519597107,
       "rs_rank": 72.1,
-      "near_high_17_22_last_alert": "2026-09-30T03:49:09.804912",
-      "near_high_17_22_last_price": 608.5499877929688
+      "near_high_17_22_last_alert": "2026-09-30T09:01:21.018564",
+      "near_high_17_22_last_price": 601.5
     },
     "ANGELONE": {
       "sma50": 294.2479992675781,
@@ -1520,8 +1520,8 @@
       "ema_200_prev": 178.0919471807944,
       "mcap_cr": 29627.38848403537,
       "rs_rank": 63.4,
-      "near_high_17_22_last_alert": "2026-09-30T05:01:18.190962",
-      "near_high_17_22_last_price": 180.3699951171875
+      "near_high_17_22_last_alert": "2026-09-30T09:01:24.521161",
+      "near_high_17_22_last_price": 177.64999389648438
     },
     "BATAINDIA": {
       "sma50": 682.027001953125,
@@ -4393,7 +4393,9 @@
       "mcap_cr": 23496.142308595572,
       "rs_rank": 5.3,
       "resistance_last_alert": "2026-09-30T07:46:22.010858",
-      "resistance_last_price": 260.3500061035156
+      "resistance_last_price": 260.3500061035156,
+      "ema50_pullback_last_alert": "2026-09-30T09:01:35.366499",
+      "ema50_pullback_last_price": 259.95001220703125
     },
     "GODREJAGRO": {
       "sma50": 610.9769946289063,
@@ -6052,8 +6054,8 @@
       "ema_200_prev": 481.48471926781093,
       "mcap_cr": 5332.904657097363,
       "rs_rank": 75.7,
-      "near_high_17_22_last_alert": "2026-09-30T05:16:34.627922",
-      "near_high_17_22_last_price": 495.29998779296875
+      "near_high_17_22_last_alert": "2026-09-30T09:01:41.726364",
+      "near_high_17_22_last_price": 490.1499938964844
     },
     "JSLL": {
       "sma50": 526.7700006103515,
@@ -8894,8 +8896,8 @@
       "rs_rank": 30.2,
       "mtf_last_alert": "2026-09-30T07:30:20.024382",
       "mtf_last_price": 273.45001220703125,
-      "ema50_pullback_last_alert": "2026-09-30T08:02:21.824926",
-      "ema50_pullback_last_price": 275.3999938964844
+      "ema50_pullback_last_alert": "2026-09-30T09:01:52.059480",
+      "ema50_pullback_last_price": 269.5
     },
     "RAIN": {
       "sma50": 213.77840087890624,

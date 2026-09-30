@@ -29,8 +29,8 @@
   "custom_alert_BASILIC_price": {
     "alerted": true,
     "last_alert": "2026-09-25T06:01:09.819945",
-    "custom_last_alert": "2026-09-25T08:45:52.865392",
-    "custom_last_price": 165.89999389648438
+    "custom_last_alert": "2026-09-30T09:01:15.118873",
+    "custom_last_price": 175.0500030517578
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,
@@ -49,7 +49,7 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-30T08:29:41.111160",
-    "rsi_down_last_alert": "2026-09-30T08:15:47.770640",
+    "rsi_down_last_alert": "2026-09-30T09:01:05.365660",
     "price_low_last_alert": "2026-09-30T04:15:45.705573",
     "price_low_last_price": 676.4000244140625
   },
@@ -105,7 +105,9 @@
   },
   "custom_alert_ESFL_price": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "custom_last_alert": "2026-09-30T09:01:16.703759",
+    "custom_last_price": 113.75
   },
   "custom_alert_AERON_price": {
     "alerted": false,
@@ -203,8 +205,8 @@
     "rsi_up_last_alert": "2026-09-30T08:45:50.507564",
     "rsi_down_last_alert": "2026-09-29T05:01:01.880668",
     "price_low_last_alert": "2026-09-24T08:01:01.382356",
-    "price_high_last_alert": "2026-09-30T04:29:41.562046",
-    "price_high_last_price": 430.0
+    "price_high_last_alert": "2026-09-30T09:01:06.521045",
+    "price_high_last_price": 425.45001220703125
   },
   "CAPILLARY": {
     "result_date": "2026-09-24T00:00:00",
