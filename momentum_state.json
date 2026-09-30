@@ -5771,7 +5771,9 @@
       "ema_100_prev": 128.25327159721346,
       "ema_200_prev": 123.77286861180418,
       "mcap_cr": 5649.790031875,
-      "rs_rank": 60.9
+      "rs_rank": 60.9,
+      "resistance_last_alert": "2026-09-30T04:30:24.084281",
+      "resistance_last_price": 138.77999877929688
     },
     "JAYNECOIND": {
       "sma50": 91.84480026245117,
@@ -10687,7 +10689,9 @@
       "mcap_cr": 4864.1622756,
       "rs_rank": 43.1,
       "resistance_last_alert": "2026-09-30T03:50:13.735247",
-      "resistance_last_price": 223.3800048828125
+      "resistance_last_price": 223.3800048828125,
+      "mtf_last_alert": "2026-09-30T04:30:49.077850",
+      "mtf_last_price": 224.63999938964844
     },
     "SWANCORP": {
       "sma50": 299.33399963378906,
