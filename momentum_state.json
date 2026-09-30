@@ -3437,7 +3437,9 @@
       "ema_100_prev": 310.00468001484336,
       "ema_200_prev": 322.2904141732287,
       "mcap_cr": 18932.90061005,
-      "rs_rank": 37.8
+      "rs_rank": 37.8,
+      "ema50_pullback_last_alert": "2026-09-30T07:46:16.444214",
+      "ema50_pullback_last_price": 302.79998779296875
     },
     "ELECON": {
       "sma50": 431.73700134277345,
@@ -4390,8 +4392,8 @@
       "ema_200_prev": 295.4588831675731,
       "mcap_cr": 23496.142308595572,
       "rs_rank": 5.3,
-      "resistance_last_alert": "2026-09-30T06:46:21.682986",
-      "resistance_last_price": 257.29998779296875
+      "resistance_last_alert": "2026-09-30T07:46:22.010858",
+      "resistance_last_price": 260.3500061035156
     },
     "GODREJAGRO": {
       "sma50": 610.9769946289063,
@@ -5440,8 +5442,8 @@
       "ema_200_prev": 1051.7568009137203,
       "mcap_cr": 5194.265325270483,
       "rs_rank": 79.3,
-      "near_high_17_22_last_alert": "2026-09-30T05:16:31.053507",
-      "near_high_17_22_last_price": 1076.800048828125
+      "near_high_17_22_last_alert": "2026-09-30T07:46:28.082991",
+      "near_high_17_22_last_price": 1089.4000244140625
     },
     "INOXGREEN": {
       "sma50": 176.4981997680664,
@@ -6603,7 +6605,9 @@
       "mcap_cr": 7477.930308141211,
       "rs_rank": 32.1,
       "mtf_last_alert": "2026-09-30T03:49:46.075130",
-      "mtf_last_price": 382.54998779296875
+      "mtf_last_price": 382.54998779296875,
+      "resistance_last_alert": "2026-09-30T07:46:34.317328",
+      "resistance_last_price": 368.25
     },
     "KPIL": {
       "sma50": 1369.9159936523438,
@@ -9312,8 +9316,8 @@
       "ema_200_prev": 218.5103080941959,
       "mcap_cr": 9378.02167673181,
       "rs_rank": 37.0,
-      "ema50_pullback_last_alert": "2026-09-30T06:30:24.291056",
-      "ema50_pullback_last_price": 211.1999969482422,
+      "ema50_pullback_last_alert": "2026-09-30T07:46:48.311827",
+      "ema50_pullback_last_price": 213.75,
       "zanger_last_alert": "2026-09-30T06:46:47.226601",
       "zanger_last_price": 213.3000030517578,
       "mtf_last_alert": "2026-09-30T06:46:47.761994",
@@ -11260,8 +11264,8 @@
       "ema_200_prev": 500.86219085397806,
       "mcap_cr": 8740.364649843346,
       "rs_rank": 81.8,
-      "near_high_17_22_last_alert": "2026-09-30T04:03:09.206176",
-      "near_high_17_22_last_price": 542.25
+      "near_high_17_22_last_alert": "2026-09-30T07:46:58.539546",
+      "near_high_17_22_last_price": 536.4000244140625
     },
     "TI": {
       "sma50": 533.6309991455078,
@@ -11451,7 +11455,9 @@
       "mtf_last_alert": "2026-09-30T07:30:31.116461",
       "mtf_last_price": 491.8999938964844,
       "resistance_last_alert": "2026-09-30T07:30:30.553973",
-      "resistance_last_price": 491.8999938964844
+      "resistance_last_price": 491.8999938964844,
+      "zanger_last_alert": "2026-09-30T07:47:00.022857",
+      "zanger_last_price": 481.8500061035156
     },
     "TRAVELFOOD": {
       "sma50": 1294.7760009765625,
@@ -12480,8 +12486,8 @@
       "ema_200_prev": 498.9703680930734,
       "mcap_cr": 16226.19672,
       "rs_rank": 40.8,
-      "near_high_17_22_last_alert": "2026-09-30T04:47:48.469717",
-      "near_high_17_22_last_price": 500.8500061035156
+      "near_high_17_22_last_alert": "2026-09-30T07:47:05.984596",
+      "near_high_17_22_last_price": 506.75
     }
   }
 }
