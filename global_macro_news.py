@@ -2,7 +2,8 @@
 Global Macro Pulse (9:00 AM IST) & Live Geopolitical Shock Radar
 ================================================================
 1. Sends a comprehensive global macro summary every morning at ~9:00 AM IST.
-2. Polls global news RSS feeds every 15 mins for high-impact geopolitical triggers.
+2. Includes a 7-Day Forward Calendar for RBI/Fed meets, CPI/PMI, and Market Holidays.
+3. Polls global news RSS feeds every 15 mins for high-impact geopolitical triggers.
 """
 
 import os
@@ -71,6 +72,22 @@ MACRO_TICKERS = {
     "🇸🇬 Singapore (STI)": "^STI"
 }
 
+# ----------------------------------------------------------------------
+# MACRO EVENT CALENDAR (Next 7 Days Scanner)
+# ----------------------------------------------------------------------
+MACRO_CALENDAR = [
+    {"date": "2026-10-02", "event": "NSE/BSE Holiday (Mahatma Gandhi Jayanti)", "type": "Holiday 🛑"},
+    {"date": "2026-10-05", "event": "RBI MPC Meeting Begins", "type": "Central Bank 🏛️"},
+    {"date": "2026-10-07", "event": "RBI MPC Policy Decision (Repo Rate)", "type": "Central Bank 🏛️"},
+    {"date": "2026-10-14", "event": "US CPI (Inflation Data Release)", "type": "Data Release 📊"},
+    {"date": "2026-10-20", "event": "NSE/BSE Holiday (Dussehra)", "type": "Holiday 🛑"},
+    {"date": "2026-10-27", "event": "US Fed FOMC Meeting Begins", "type": "Central Bank 🏛️"},
+    {"date": "2026-10-28", "event": "US Fed FOMC Policy Decision", "type": "Central Bank 🏛️"},
+    {"date": "2026-11-10", "event": "NSE/BSE Holiday (Diwali-Balipratipada)", "type": "Holiday 🛑"},
+    {"date": "2026-12-08", "event": "US Fed FOMC Policy Decision", "type": "Central Bank 🏛️"}
+    # You can safely add future dates (like PM state visits or CPI dates) to this list anytime!
+]
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 log = logging.getLogger("macro_news")
 
@@ -112,8 +129,25 @@ def get_ist_now():
     return datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=5, minutes=30)
 
 # ----------------------------------------------------------------------
-# 9:00 AM MACRO PULSE ENGINE
+# 9:00 AM MACRO PULSE & CALENDAR ENGINE
 # ----------------------------------------------------------------------
+def get_upcoming_events(days_ahead=7) -> str:
+    today_ist = get_ist_now().date()
+    end_date = today_ist + datetime.timedelta(days=days_ahead)
+    
+    upcoming = []
+    for item in MACRO_CALENDAR:
+        evt_date = datetime.date.fromisoformat(item["date"])
+        if today_ist <= evt_date <= end_date:
+            diff = (evt_date - today_ist).days
+            day_str = "Today" if diff == 0 else "Tomorrow" if diff == 1 else f"In {diff} days"
+            upcoming.append(f"• <b>{evt_date.strftime('%d %b')}</b> ({day_str}): {item['type']} - {item['event']}")
+            
+    if not upcoming:
+        return ""
+        
+    return "\n🗓️ <b>7-Day Macro Event Calendar:</b>\n" + "\n".join(upcoming)
+
 def fetch_macros() -> str:
     if not yf:
         return "⚠️ yfinance not installed."
@@ -121,23 +155,42 @@ def fetch_macros() -> str:
     lines = ["📊 <b>9:00 AM Global Macro Pulse</b>\n"]
     
     for name, ticker in MACRO_TICKERS.items():
+        # --- BTC Bulletproof Bypass ---
+        if ticker == "BTC-USD":
+            try:
+                # Direct API pull bypasses Yahoo Finance timezone/weekend crypto issues
+                res = requests.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT", timeout=5).json()
+                current = float(res['lastPrice'])
+                chg_pct = float(res['priceChangePercent'])
+                sign = "+" if chg_pct > 0 else ""
+                color = "🟢" if chg_pct > 0 else "🔴" if chg_pct < 0 else "⚪"
+                lines.append(f"{color} {name}: <b>${current:,.0f}</b> ({sign}{chg_pct:.2f}%)")
+                continue
+            except Exception:
+                pass # If Binance fails, safely fall back to Yahoo Finance logic below
+                
         try:
             t = yf.Ticker(ticker)
-            # Use fast_info or fallback to history to get live/previous close
-            hist = t.history(period="2d")
+            # Expand to 5 days to ensure we always hit historical data despite weekends/holidays
+            hist = t.history(period="5d") 
+            
             if len(hist) < 2:
-                lines.append(f"• {name}: <i>No data</i>")
-                continue
-                
-            prev_close = hist["Close"].iloc[-2]
-            current = hist["Close"].iloc[-1]
-            chg_pct = ((current - prev_close) / prev_close) * 100
+                # Final absolute fallback if no history exists
+                current = t.fast_info.get("lastPrice", 0)
+                if current == 0:
+                    lines.append(f"• {name}: <i>No data</i>")
+                    continue
+                chg_pct = 0.0 # Can't calculate % without history, but we still display current price
+            else:
+                prev_close = hist["Close"].iloc[-2]
+                current = hist["Close"].iloc[-1]
+                chg_pct = ((current - prev_close) / prev_close) * 100
             
             # Format nicely
             sign = "+" if chg_pct > 0 else ""
             color = "🟢" if chg_pct > 0 else "🔴" if chg_pct < 0 else "⚪"
             
-            # If it's a yield, limit decimals differently
+            # Formatting rules based on asset class
             if ticker == "^TNX":
                 lines.append(f"{color} {name}: <b>{current:.3f}%</b> ({sign}{chg_pct:.2f}%)")
             elif ticker == "BTC-USD":
@@ -149,12 +202,17 @@ def fetch_macros() -> str:
             log.warning("Failed to fetch %s: %s", name, e)
             lines.append(f"• {name}: <i>Data error</i>")
             
+    # Append the Event Calendar
+    calendar_text = get_upcoming_events(days_ahead=7)
+    if calendar_text:
+        lines.append(f"\n{calendar_text}")
+        
     return "\n".join(lines)
 
 def run_macro_pulse_if_needed():
     now = get_ist_now()
-    # We want to run between 8:50 AM and 9:15 AM
-    if True:
+    # Runs strictly between 8:50 AM and 9:15 AM
+    if (now.hour == 8 and now.minute >= 50) or (now.hour == 9 and now.minute <= 15):
         state = load_json(STATE_FILE, {})
         today_str = now.strftime("%Y-%m-%d")
         
@@ -181,7 +239,7 @@ def check_breaking_news():
                 continue
                 
             root = ET.fromstring(resp.text)
-            for item in root.findall(".//item")[:15]: # Check top 15 news items per feed
+            for item in root.findall(".//item")[:15]: 
                 title = item.find("title").text
                 link = item.find("link").text
                 pub_date = item.find("pubDate").text if item.find("pubDate") is not None else ""
