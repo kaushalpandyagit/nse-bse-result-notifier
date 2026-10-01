@@ -6822,8 +6822,8 @@
       "rs_rank": 32.6,
       "resistance_last_alert": "2026-10-01T06:30:35.711596",
       "resistance_last_price": 108.4800033569336,
-      "zanger_last_alert": "2026-10-01T06:46:31.335904",
-      "zanger_last_price": 108.83999633789062,
+      "zanger_last_alert": "2026-10-01T07:46:34.397776",
+      "zanger_last_price": 107.62000274658203,
       "mtf_last_alert": "2026-10-01T05:01:43.407736",
       "mtf_last_price": 110.25,
       "ema50_pullback_last_alert": "2026-10-01T06:30:36.326292",
@@ -6854,8 +6854,8 @@
       "ema_200_prev": 542.032574399939,
       "mcap_cr": 29054.328331463625,
       "rs_rank": 40.4,
-      "near_high_17_22_last_alert": "2026-10-01T06:46:31.945180",
-      "near_high_17_22_last_price": 515.75
+      "near_high_17_22_last_alert": "2026-10-01T07:46:35.061983",
+      "near_high_17_22_last_price": 508.95001220703125
     },
     "LLOYDSENGG": {
       "sma50": 88.90700012207031,
@@ -8988,8 +8988,8 @@
       "ema_200_prev": 763.028984107007,
       "mcap_cr": 10163.873601175,
       "rs_rank": 92.8,
-      "near_high_17_22_last_alert": "2026-10-01T06:46:41.479028",
-      "near_high_17_22_last_price": 846.75
+      "near_high_17_22_last_alert": "2026-10-01T07:46:45.149302",
+      "near_high_17_22_last_price": 837.9500122070312
     },
     "RATNAMANI": {
       "sma50": 2561.1280078125,
@@ -9808,8 +9808,10 @@
       "rs_rank": 69.8,
       "resistance_last_alert": "2026-10-01T06:01:55.527518",
       "resistance_last_price": 1262.0,
-      "near_high_17_22_last_alert": "2026-10-01T06:01:56.018221",
-      "near_high_17_22_last_price": 1262.0
+      "near_high_17_22_last_alert": "2026-10-01T07:46:49.550623",
+      "near_high_17_22_last_price": 1281.199951171875,
+      "zanger_last_alert": "2026-10-01T07:46:49.054539",
+      "zanger_last_price": 1281.199951171875
     },
     "SCI": {
       "sma50": 286.2850006103516,
@@ -10942,8 +10944,8 @@
       "ema_200_prev": 710.809364553173,
       "mcap_cr": 28628.683778481263,
       "rs_rank": 72.1,
-      "near_high_17_22_last_alert": "2026-10-01T06:21:03.035553",
-      "near_high_17_22_last_price": 705.8499755859375
+      "near_high_17_22_last_alert": "2026-10-01T07:46:55.201955",
+      "near_high_17_22_last_price": 696.4000244140625
     },
     "TBOTEK": {
       "sma50": 1646.48798828125,
