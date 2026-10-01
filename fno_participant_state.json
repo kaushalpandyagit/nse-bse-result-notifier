@@ -1,13 +1,1 @@
-{
-  "date": "2026-09-30",
-  "smart_net": {
-    "net_fut": -274476,
-    "net_call": -439329,
-    "net_put": 796035
-  },
-  "retail_net": {
-    "net_fut": 242426,
-    "net_call": 433777,
-    "net_put": -842693
-  }
-}
+{"date": "2026-10-01", "smart_net": {"net_fut": -283069, "net_call": -300460, "net_put": 803622}, "retail_net": {"net_fut": 249812, "net_call": 295484, "net_put": -843148}}
