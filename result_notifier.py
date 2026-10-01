@@ -6,7 +6,7 @@ Covers:
   2. Order Wins + Order-to-Market-Cap ASYMMETRY Triggers (>= 20% of MCap)
   3. Asset Commissioning (Commercial Production / CWIP)
   4. Multi-Modal Logistics & Terminals (Gati Shakti, Railway Sidings)
-  5. Insider Trading & Promoter Actions
+  5. Insider Trading & Promoter Actions (with 🟢 Buy / 🔴 Sell logic)
   6. NSE Exchange Circulars
   7. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
@@ -627,14 +627,26 @@ def poll_once(seen: set) -> set:
                 except Exception as e:
                     log.warning("PDF extraction failed for %s: %s", item['company'], e)
             
-            sum_line = f"📝 Action: <b>{summary}</b>\n" if summary else ""
-            header = f"🔍 <b>{safe_comp}</b> ({item['source']}) \u2014 Insider / Promoter Action"
-            body = f"{safe_subj}\n{sum_line}🕐 {item['date']}"
+            # --- DYNAMIC PROMOTER EMOJI LOGIC ---
+            dynamic_emoji = "🔍"
+            if summary:
+                if any(x in summary for x in ["🟢", "Buy", "Acquisition", "ESOP", "Release"]):
+                    dynamic_emoji = "🟢"
+                    sentiment_marker = " 🟢"
+                elif any(x in summary for x in ["🔴", "Sell", "Disposal", "Creation", "Invocation"]):
+                    dynamic_emoji = "🔴"
+                    sentiment_marker = " 🔴"
+            else:
+                # Fallback text check if PDF extraction failed or yielded no summary
+                sub_low = item["subject"].lower()
+                if any(kw in sub_low for kw in ["acquisit", "buy", "purchase"]):
+                    dynamic_emoji = "🟢"
+                elif any(kw in sub_low for kw in ["sale", "disposal", "sell"]):
+                    dynamic_emoji = "🔴"
             
-            if any(x in summary for x in ["🟢", "🔓", "Buy", "Acquisition"]):
-                sentiment_marker = " 🟢"
-            elif any(x in summary for x in ["🔴", "🔒", "⚠️", "Sell", "Disposal", "Invocation"]):
-                sentiment_marker = " 🔴"
+            sum_line = f"📝 Action: <b>{summary}</b>\n" if summary else ""
+            header = f"{dynamic_emoji} <b>{safe_comp}</b> ({item['source']}) \u2014 Insider / Promoter Action"
+            body = f"{safe_subj}\n{sum_line}🕐 {item['date']}"
             
         elif cat == "meeting":
             meet_date = extract_meeting_date(item["subject"])
