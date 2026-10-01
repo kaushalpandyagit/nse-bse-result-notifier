@@ -1,12 +1,11 @@
 """
-Global Macro Pulse (9:00 AM IST), Global Bellwether Earnings & Geopolitical Shock Radar
-========================================================================================
+Global Macro Pulse (9:00 AM IST), Global Bellwether Earnings, ADR Radar & Geopolitical Shocks
+==============================================================================================
 1. Sends a comprehensive global macro summary every morning at ~9:00 AM IST.
-2. Includes a 7-Day Forward Calendar for RBI/Fed meets, CPI/PMI, and Market Holidays.
-3. Curated Radar for US/Global Sector Leader Earnings & Guidance (Accenture, TSMC, Intel, etc.).
-   - Filtered strictly to Tier-1 financial sources (Bloomberg, Reuters, Barron's, CNBC, WSJ, etc.).
-   - Hard capped at max 2 distinct alerts per company per 24 hours to prevent flooding.
-4. Polls global news RSS feeds every 15 mins for high-impact geopolitical shocks.
+2. 7-Day Forward Calendar: Dynamically tracks 1st-of-month (Auto/GST) + RBI/Fed/Holidays.
+3. Live ADR Radar: Scans INFY, HDB, WIT, IBN in US markets; alerts if move exceeds 2%.
+4. Curated Radar: US/Global Sector Leader Earnings & Guidance (TSMC, Intel, etc.).
+5. Polls global news RSS feeds every 15 mins for high-impact geopolitical shocks.
 """
 
 import os
@@ -25,7 +24,7 @@ try:
     import yfinance as yf
 except ImportError:
     yf = None
-    print("WARNING: yfinance not installed. Macro pulse will fail without it.")
+    print("WARNING: yfinance not installed. Macro pulse and ADR radar will fail without it.")
 
 try:
     import pytz
@@ -47,8 +46,9 @@ POLL_INTERVAL_MINUTES = 15
 STATE_FILE = Path(__file__).parent / "macro_state.json"
 SEEN_NEWS_FILE = Path(__file__).parent / "seen_news.json"
 
-# Max earnings alerts per company within a rolling 24-hour window
+# Max earnings/ADR alerts per company within a rolling 24-hour window
 MAX_ALERTS_PER_COMPANY_24H = 2
+ADR_ALERT_COOLDOWN_24H = 1
 
 # ----------------------------------------------------------------------
 # 1. TIER-1 TRUSTED FINANCIAL NEWS SOURCES
@@ -69,48 +69,51 @@ SHOCK_KEYWORDS = [
 ]
 
 # ----------------------------------------------------------------------
-# 3. GLOBAL SECTOR LEADERS & EARNINGS TRIGGERS
+# 3. GLOBAL SECTOR LEADERS & INDIAN ADRs
 # ----------------------------------------------------------------------
 GLOBAL_LEADERS = {
-    # IT Services & Enterprise Tech (Direct Indian IT Proxies)
-    "accenture": {"name": "Accenture (ACN)", "impact": "Direct primary bellwether for Indian IT (TCS, INFY, HCLTECH, WIPRO)"},
-    "cognizant": {"name": "Cognizant (CTSH)", "impact": "Direct peer benchmark for Indian IT offshore delivery & billing rates"},
-    "epam": {"name": "EPAM Systems (EPAM)", "impact": "Direct peer to Indian IT; benchmark for global offshore software engineering demand"},
-    "capgemini": {"name": "Capgemini", "impact": "European & global IT services demand benchmark"},
+    # IT Services & Enterprise Tech
+    "accenture": {"name": "Accenture (ACN)", "impact": "Direct primary bellwether for Indian IT"},
+    "cognizant": {"name": "Cognizant (CTSH)", "impact": "Direct peer benchmark for Indian IT offshore delivery"},
+    "epam": {"name": "EPAM Systems (EPAM)", "impact": "Direct peer to Indian IT; benchmark for offshore engineering"},
     "ibm": {"name": "IBM", "impact": "Enterprise IT infrastructure & consulting budget indicator"},
     
     # AI, Cloud & Mega-Cap Tech
-    "nvidia": {"name": "Nvidia (NVDA)", "impact": "Global AI hardware infrastructure anchor & market liquidity driver"},
-    "microsoft": {"name": "Microsoft (MSFT)", "impact": "Enterprise cloud (Azure) & commercial AI capex indicator"},
-    "amazon": {"name": "Amazon (AMZN)", "impact": "AWS cloud spending & global consumer demand benchmark"},
-    "google": {"name": "Alphabet / Google (GOOGL)", "impact": "Digital ad spend & cloud infrastructure capex bellwether"},
-    "alphabet": {"name": "Alphabet / Google (GOOGL)", "impact": "Digital ad spend & cloud infrastructure capex bellwether"},
-    "meta": {"name": "Meta Platforms (META)", "impact": "AI capex cycle & digital ad revenue benchmark"},
-    "apple": {"name": "Apple (AAPL)", "impact": "Global consumer electronics & electronics manufacturing supply chain driver"},
+    "nvidia": {"name": "Nvidia (NVDA)", "impact": "Global AI hardware infrastructure anchor"},
+    "microsoft": {"name": "Microsoft (MSFT)", "impact": "Enterprise cloud (Azure) & commercial AI capex"},
+    "amazon": {"name": "Amazon (AMZN)", "impact": "AWS cloud spending & global consumer demand"},
+    "google": {"name": "Alphabet (GOOGL)", "impact": "Digital ad spend & cloud infrastructure capex"},
+    "meta": {"name": "Meta Platforms (META)", "impact": "AI capex cycle & digital ad revenue"},
+    "apple": {"name": "Apple (AAPL)", "impact": "Global consumer electronics supply chain driver"},
     
     # Semiconductors & Hardware Cycle
-    "amd": {"name": "AMD", "impact": "Data center compute & enterprise PC demand barometer"},
-    "micron": {"name": "Micron Technology (MU)", "impact": "Memory chip cycle (DRAM/NAND) & tech hardware early indicator"},
-    "tsmc": {"name": "TSMC", "impact": "World's largest chip foundry; earliest indicator of global tech demand"},
-    "broadcom": {"name": "Broadcom (AVGO)", "impact": "Custom AI silicon & enterprise networking infrastructure driver"},
-    "asml": {"name": "ASML", "impact": "Lithography equipment monopoly; forward indicator of global chip capex"},
-    "sandisk": {"name": "SanDisk / Western Digital (WDC)", "impact": "Memory, NAND flash cycle, and tech hardware supply chain indicator"},
-    "western digital": {"name": "SanDisk / Western Digital (WDC)", "impact": "Memory, NAND flash cycle, and tech hardware supply chain indicator"},
-    "wdc": {"name": "SanDisk / Western Digital (WDC)", "impact": "Memory, NAND flash cycle, and tech hardware supply chain indicator"},
-    "intel": {"name": "Intel Corporation (INTC)", "impact": "Global semiconductor bellwether; PC demand and enterprise server capex indicator"},
-    "intc": {"name": "Intel Corporation (INTC)", "impact": "Global semiconductor bellwether; PC demand and enterprise server capex indicator"},
-    "tesla": {"name": "Tesla (TSLA)", "impact": "EV sector sentiment, battery metals & global auto tech barometer"},
+    "amd": {"name": "AMD", "impact": "Data center compute & enterprise PC demand"},
+    "micron": {"name": "Micron (MU)", "impact": "Memory chip cycle (DRAM/NAND)"},
+    "tsmc": {"name": "TSMC", "impact": "World's largest chip foundry; global tech demand anchor"},
+    "broadcom": {"name": "Broadcom (AVGO)", "impact": "Custom AI silicon & enterprise networking"},
+    "asml": {"name": "ASML", "impact": "Lithography equipment; forward indicator of chip capex"},
+    "sandisk": {"name": "SanDisk / WDC", "impact": "Memory & tech hardware supply chain indicator"},
+    "western digital": {"name": "SanDisk / WDC", "impact": "Memory & tech hardware supply chain indicator"},
+    "intel": {"name": "Intel (INTC)", "impact": "Global semiconductor bellwether"},
+    "tesla": {"name": "Tesla (TSLA)", "impact": "EV sector sentiment & battery metals"},
 
-    # Asian Giants & Telecom
-    "alibaba": {"name": "Alibaba Group (BABA)", "impact": "Chinese consumer consumption barometer & Asian emerging tech liquidity"},
-    "baba": {"name": "Alibaba Group (BABA)", "impact": "Chinese consumer consumption barometer & Asian emerging tech liquidity"},
-    "huawei": {"name": "Huawei Technologies", "impact": "Global telecom infrastructure & independent Chinese hardware substitution benchmark"}
+    # Asian Giants
+    "alibaba": {"name": "Alibaba (BABA)", "impact": "Chinese consumer consumption barometer"},
+    "huawei": {"name": "Huawei", "impact": "Global telecom infrastructure benchmark"}
+}
+
+INDIAN_ADRS = {
+    "INFY": "Infosys (IT Proxy)",
+    "WIT": "Wipro (IT Proxy)",
+    "HDB": "HDFC Bank (BankNifty Proxy)",
+    "IBN": "ICICI Bank (BankNifty Proxy)",
+    "RDY": "Dr. Reddy's (Pharma Proxy)",
+    "MMYT": "MakeMyTrip (Consumption Proxy)"
 }
 
 EARNINGS_KEYWORDS = [
     "earnings", "revenue", "guidance", "profit", "quarterly result", "q1", "q2", "q3", "q4",
     "forecast", "outlook", "slashes", "raises outlook", "cuts outlook", "beats", "misses",
-    "top-line", "bottom-line", "fiscal result"
 ]
 
 NEWS_FEEDS = [
@@ -133,13 +136,10 @@ MACRO_TICKERS = {
     "₿ Bitcoin": "BTC-USD",
     "🇯🇵 Japan (Nikkei 225)": "^N225",
     "🇨🇳 China (Shanghai)": "000001.SS",
-    "🇰🇷 Korea (KOSPI)": "^KS11",
-    "🇹🇼 Taiwan (TAIEX)": "^TWII",
-    "🇸🇬 Singapore (STI)": "^STI"
 }
 
 # ----------------------------------------------------------------------
-# 5. MACRO EVENT CALENDAR (Next 7 Days Scanner)
+# 5. STATIC MACRO EVENT CALENDAR (Auto/GST injected dynamically)
 # ----------------------------------------------------------------------
 MACRO_CALENDAR = [
     {"date": "2026-10-02", "event": "NSE/BSE Holiday (Mahatma Gandhi Jayanti)", "type": "Holiday 🛑"},
@@ -149,8 +149,6 @@ MACRO_CALENDAR = [
     {"date": "2026-10-20", "event": "NSE/BSE Holiday (Dussehra)", "type": "Holiday 🛑"},
     {"date": "2026-10-27", "event": "US Fed FOMC Meeting Begins", "type": "Central Bank 🏛️"},
     {"date": "2026-10-28", "event": "US Fed FOMC Policy Decision", "type": "Central Bank 🏛️"},
-    {"date": "2026-11-10", "event": "NSE/BSE Holiday (Diwali-Balipratipada)", "type": "Holiday 🛑"},
-    {"date": "2026-12-08", "event": "US Fed FOMC Policy Decision", "type": "Central Bank 🏛️"}
 ]
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -161,7 +159,6 @@ log = logging.getLogger("macro_news")
 # ----------------------------------------------------------------------
 def send_telegram_message(text: str) -> bool:
     if "PUT_YOUR" in TELEGRAM_BOT_TOKEN or not TELEGRAM_BOT_TOKEN:
-        log.error("Telegram credentials not configured.")
         return False
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
@@ -171,103 +168,101 @@ def send_telegram_message(text: str) -> bool:
         "disable_web_page_preview": True
     }
     try:
-        resp = requests.post(url, data=payload, timeout=15)
-        if resp.status_code != 200:
-            log.error("Telegram failed [%s]: %s", resp.status_code, resp.text)
-            return False
+        requests.post(url, data=payload, timeout=15)
         return True
-    except Exception as e:
-        log.error("Telegram send exception: %s", e)
+    except Exception:
         return False
 
 def load_json(filepath: Path, default):
     if filepath.exists():
-        try:
-            return json.loads(filepath.read_text())
-        except Exception:
-            pass
+        try: return json.loads(filepath.read_text())
+        except Exception: pass
     return default
 
 def save_json(filepath: Path, data):
     filepath.write_text(json.dumps(data))
 
 def get_ist_now():
-    if IST:
-        return datetime.datetime.now(IST)
+    if IST: return datetime.datetime.now(IST)
     return datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=5, minutes=30)
 
 # ----------------------------------------------------------------------
-# 9:00 AM MACRO PULSE & CALENDAR ENGINE
+# 9:00 AM MACRO PULSE & DYNAMIC CALENDAR
 # ----------------------------------------------------------------------
 def get_upcoming_events(days_ahead=7) -> str:
     today_ist = get_ist_now().date()
     end_date = today_ist + datetime.timedelta(days=days_ahead)
     
-    upcoming = []
+    events_list = []
+    
+    # 1. Inject Dynamic 1st-of-the-month (Auto Sales & GST)
+    curr_date = today_ist
+    while curr_date <= end_date:
+        if curr_date.day == 1:
+            events_list.append({
+                "date_obj": curr_date,
+                "type": "Data Release 📊",
+                "event": "Indian Auto Sales & GST Collections"
+            })
+        curr_date += datetime.timedelta(days=1)
+        
+    # 2. Inject Static Events
     for item in MACRO_CALENDAR:
         evt_date = datetime.date.fromisoformat(item["date"])
         if today_ist <= evt_date <= end_date:
-            diff = (evt_date - today_ist).days
-            day_str = "Today" if diff == 0 else "Tomorrow" if diff == 1 else f"In {diff} days"
-            upcoming.append(f"• <b>{evt_date.strftime('%d %b')}</b> ({day_str}): {item['type']} — {item['event']}")
+            events_list.append({
+                "date_obj": evt_date,
+                "type": item["type"],
+                "event": item["event"]
+            })
             
-    if not upcoming:
+    # Sort chronologically
+    events_list.sort(key=lambda x: x["date_obj"])
+    
+    if not events_list:
         return ""
+        
+    upcoming = []
+    for evt in events_list:
+        diff = (evt["date_obj"] - today_ist).days
+        day_str = "Today" if diff == 0 else "Tomorrow" if diff == 1 else f"In {diff} days"
+        upcoming.append(f"• <b>{evt['date_obj'].strftime('%d %b')}</b> ({day_str}): {evt['type']} — {evt['event']}")
         
     return "\n🗓️ <b>7-Day Macro Event Calendar:</b>\n" + "\n".join(upcoming)
 
 def fetch_macros() -> str:
-    if not yf:
-        return "⚠️ yfinance library not installed."
+    if not yf: return "⚠️ yfinance library not installed."
     
     lines = ["📊 <b>9:00 AM Global Macro Pulse</b>\n"]
-    
     for name, ticker in MACRO_TICKERS.items():
         if ticker == "BTC-USD":
             try:
                 res = requests.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT", timeout=5).json()
-                current = float(res['lastPrice'])
-                chg_pct = float(res['priceChangePercent'])
-                sign = "+" if chg_pct > 0 else ""
-                color = "🟢" if chg_pct > 0 else "🔴" if chg_pct < 0 else "⚪"
+                current, chg_pct = float(res['lastPrice']), float(res['priceChangePercent'])
+                sign, color = ("+", "🟢") if chg_pct > 0 else ("", "🔴") if chg_pct < 0 else ("", "⚪")
                 lines.append(f"{color} {name}: <b>${current:,.0f}</b> ({sign}{chg_pct:.2f}%)")
                 continue
-            except Exception:
-                pass
+            except Exception: pass
                 
         try:
             t = yf.Ticker(ticker)
             hist = t.history(period="5d")
-            
             if len(hist) < 2:
                 current = t.fast_info.get("lastPrice", 0)
-                if current == 0:
-                    lines.append(f"• {name}: <i>No data</i>")
-                    continue
+                if current == 0: continue
                 chg_pct = 0.0
             else:
-                prev_close = hist["Close"].iloc[-2]
-                current = hist["Close"].iloc[-1]
+                prev_close, current = hist["Close"].iloc[-2], hist["Close"].iloc[-1]
                 chg_pct = ((current - prev_close) / prev_close) * 100
             
-            sign = "+" if chg_pct > 0 else ""
-            color = "🟢" if chg_pct > 0 else "🔴" if chg_pct < 0 else "⚪"
-            
-            if ticker == "^TNX":
-                lines.append(f"{color} {name}: <b>{current:.3f}%</b> ({sign}{chg_pct:.2f}%)")
-            elif ticker == "BTC-USD":
-                lines.append(f"{color} {name}: <b>${current:,.0f}</b> ({sign}{chg_pct:.2f}%)")
-            else:
-                lines.append(f"{color} {name}: <b>{current:,.2f}</b> ({sign}{chg_pct:.2f}%)")
-                
-        except Exception as e:
-            log.warning("Failed to fetch %s: %s", name, e)
-            lines.append(f"• {name}: <i>Data error</i>")
+            sign, color = ("+", "🟢") if chg_pct > 0 else ("", "🔴") if chg_pct < 0 else ("", "⚪")
+            if ticker == "^TNX": lines.append(f"{color} {name}: <b>{current:.3f}%</b> ({sign}{chg_pct:.2f}%)")
+            else: lines.append(f"{color} {name}: <b>{current:,.2f}</b> ({sign}{chg_pct:.2f}%)")
+        except Exception:
+            pass
             
     calendar_text = get_upcoming_events(days_ahead=7)
-    if calendar_text:
-        lines.append(f"\n{calendar_text}")
-        
+    if calendar_text: lines.append(f"\n{calendar_text}")
     return "\n".join(lines)
 
 def run_macro_pulse_if_needed():
@@ -275,134 +270,116 @@ def run_macro_pulse_if_needed():
     if (now.hour == 8 and now.minute >= 50) or (now.hour == 9 and now.minute <= 15):
         state = load_json(STATE_FILE, {})
         today_str = now.strftime("%Y-%m-%d")
-        
         if state.get("last_pulse_date") != today_str:
-            log.info("Triggering 9:00 AM Macro Pulse...")
-            msg = fetch_macros()
-            send_telegram_message(msg)
-            
+            send_telegram_message(fetch_macros())
             state["last_pulse_date"] = today_str
             save_json(STATE_FILE, state)
-            log.info("Macro Pulse dispatched.")
 
 # ----------------------------------------------------------------------
-# LIVE BREAKING RADAR: GEOPOLITICAL SHOCKS & GLOBAL EARNINGS
+# LIVE BREAKING RADAR: ADRs, EARNINGS & SHOCKS
 # ----------------------------------------------------------------------
 def check_breaking_news():
     seen_links = set(load_json(SEEN_NEWS_FILE, []))
     state = load_json(STATE_FILE, {})
-    
-    # Format of company_history: {"company_key": [{"time": timestamp, "source": "Reuters"}]}
     company_history = state.get("company_alerts", {})
     now_epoch = time.time()
     day_seconds = 24 * 3600
     
-    # Prune alert history older than 24 hours
+    # Prune alerts older than 24h
     for c_key in list(company_history.keys()):
-        company_history[c_key] = [
-            item for item in company_history[c_key]
-            if (now_epoch - item.get("time", 0)) < day_seconds
-        ]
-        if not company_history[c_key]:
-            del company_history[c_key]
+        company_history[c_key] = [item for item in company_history[c_key] if (now_epoch - item.get("time", 0)) < day_seconds]
+        if not company_history[c_key]: del company_history[c_key]
 
+    # --- 1. INDIAN ADR LIVE VOLATILITY RADAR ---
+    adr_alerts = []
+    if yf:
+        for ticker, name in INDIAN_ADRS.items():
+            recent_adr_alerts = [a for a in company_history.get(ticker, []) if a.get("type") == "ADR_VOLATILITY"]
+            if len(recent_adr_alerts) >= ADR_ALERT_COOLDOWN_24H:
+                continue # Already alerted for this ADR today
+                
+            try:
+                t = yf.Ticker(ticker)
+                hist = t.history(period="2d")
+                if len(hist) >= 2:
+                    prev_close = float(hist["Close"].iloc[-2])
+                    current = float(hist["Close"].iloc[-1])
+                    chg_pct = ((current - prev_close) / prev_close) * 100
+                    
+                    if abs(chg_pct) >= 2.0:
+                        adr_alerts.append((name, current, chg_pct))
+                        if ticker not in company_history: company_history[ticker] = []
+                        company_history[ticker].append({"time": now_epoch, "type": "ADR_VOLATILITY"})
+            except Exception:
+                pass
+                
+    for name, current, chg in adr_alerts:
+        sign, color = ("+", "🟢") if chg > 0 else ("", "🔴")
+        msg = (f"🚨 <b>MAJOR ADR MOVE DETECTED</b> 🇮🇳🇺🇸\n\n"
+               f"<b>{name}</b> is trading with high volatility in US markets right now.\n\n"
+               f"Current US Price: <b>${current:.2f}</b>\n"
+               f"Move: <b>{color} {sign}{chg:.2f}%</b>\n\n"
+               f"<i>*Direct precursor for Nifty/BankNifty opening gap.</i>")
+        send_telegram_message(msg)
+        time.sleep(1.2)
+
+    # --- 2. GLOBAL RSS SCANNER (Earnings & Shocks) ---
     shock_alerts = []
     earnings_alerts = []
     
     for feed_url in NEWS_FEEDS:
         try:
             resp = requests.get(feed_url, timeout=12)
-            if resp.status_code != 200:
-                continue
-                
+            if resp.status_code != 200: continue
             root = ET.fromstring(resp.text)
             for item in root.findall(".//item")[:20]:
                 raw_title = item.find("title").text if item.find("title") is not None else ""
                 link = item.find("link").text if item.find("link") is not None else ""
                 pub_date = item.find("pubDate").text if item.find("pubDate") is not None else ""
                 
-                if not raw_title or not link or link in seen_links:
-                    continue
-                    
-                title_lower = raw_title.lower()
-                clean_title = html.escape(raw_title)
-                
-                # Extract publisher name from Google RSS (Google titles end with " - Publisher")
+                if not raw_title or not link or link in seen_links: continue
+                title_lower, clean_title = raw_title.lower(), html.escape(raw_title)
                 source_name = raw_title.split(" - ")[-1].strip() if " - " in raw_title else ""
                 source_lower = source_name.lower()
                 
-                # Check for Global Sector Leader Earnings / Guidance
-                matched_key = None
-                matched_meta = None
+                # Check Global Earnings
+                matched_key, matched_meta = None, None
                 for key, meta in GLOBAL_LEADERS.items():
                     if re.search(rf"\b{key}\b", title_lower):
-                        matched_key = key
-                        matched_meta = meta
+                        matched_key, matched_meta = key, meta
                         break
                         
                 if matched_key and any(re.search(rf"\b{kw}\b", title_lower) for kw in EARNINGS_KEYWORDS):
-                    # 1. Filter: Must be from a trusted financial source
-                    is_trusted = any(ts in source_lower for ts in TRUSTED_FINANCIAL_SOURCES)
-                    if not is_trusted:
+                    if not any(ts in source_lower for ts in TRUSTED_FINANCIAL_SOURCES):
+                        seen_links.add(link)
+                        continue
+                    recent_alerts = [a for a in company_history.get(matched_key, []) if a.get("type") == "EARNINGS"]
+                    if len(recent_alerts) >= MAX_ALERTS_PER_COMPANY_24H or source_lower in [a.get("source", "").lower() for a in recent_alerts]:
                         seen_links.add(link)
                         continue
                         
-                    # 2. Filter: Max 2 alerts per company in 24 hours
-                    recent_alerts = company_history.get(matched_key, [])
-                    if len(recent_alerts) >= MAX_ALERTS_PER_COMPANY_24H:
-                        seen_links.add(link)
-                        continue
-                        
-                    # 3. Filter: Avoid repeating the same source for the same company
-                    past_sources = [a.get("source", "").lower() for a in recent_alerts]
-                    if source_lower in past_sources:
-                        seen_links.add(link)
-                        continue
-                        
-                    # Valid alert accepted
                     earnings_alerts.append((clean_title, link, pub_date, matched_meta, source_name))
                     seen_links.add(link)
-                    
-                    if matched_key not in company_history:
-                        company_history[matched_key] = []
-                    company_history[matched_key].append({"time": now_epoch, "source": source_name})
+                    if matched_key not in company_history: company_history[matched_key] = []
+                    company_history[matched_key].append({"time": now_epoch, "type": "EARNINGS", "source": source_name})
                     continue
 
-                # Check for Geopolitical Shock Keywords
+                # Check Geopolitical Shocks
                 if any(re.search(rf"\b{kw}\b", title_lower) for kw in SHOCK_KEYWORDS):
                     shock_alerts.append((clean_title, link, pub_date))
                     seen_links.add(link)
                     
-        except Exception as e:
-            log.warning("News fetch failed for feed %s: %s", feed_url, e)
+        except Exception: pass
             
-    # Dispatch Geopolitical Shocks
     for title, link, date in shock_alerts:
-        msg = (
-            f"🚨 <b>BREAKING MACRO SHOCK</b> 🚨\n\n"
-            f"<b>{title}</b>\n\n"
-            f"🕐 {date}\n"
-            f"🔗 <a href='{link}'>Read Full Report</a>"
-        )
-        send_telegram_message(msg)
+        send_telegram_message(f"🚨 <b>BREAKING MACRO SHOCK</b> 🚨\n\n<b>{title}</b>\n\n🕐 {date}\n🔗 <a href='{link}'>Read Report</a>")
         time.sleep(1.2)
         
-    # Dispatch Global Bellwether Results / Guidance Alerts
     for title, link, date, comp, source in earnings_alerts:
-        msg = (
-            f"📢 <b>GLOBAL BELLWETHER RESULTS / GUIDANCE</b> 🇺🇸\n\n"
-            f"<b>{title}</b>\n\n"
-            f"🏢 <b>Entity:</b> {comp['name']}\n"
-            f"📰 <b>Source:</b> {source if source else 'Tier-1 Wire'}\n"
-            f"🎯 <b>Indian Market Impact:</b> {comp['impact']}\n"
-            f"🕐 {date}\n"
-            f"🔗 <a href='{link}'>Read Detailed Breakdown</a>"
-        )
-        send_telegram_message(msg)
+        send_telegram_message(f"📢 <b>GLOBAL BELLWETHER RESULTS / GUIDANCE</b> 🇺🇸\n\n<b>{title}</b>\n\n🏢 <b>Entity:</b> {comp['name']}\n📰 <b>Source:</b> {source if source else 'Wire'}\n🎯 <b>Indian Impact:</b> {comp['impact']}\n🕐 {date}\n🔗 <a href='{link}'>Read Breakdown</a>")
         time.sleep(1.2)
         
-    # Persist updated memory state
-    if shock_alerts or earnings_alerts or seen_links:
+    if shock_alerts or earnings_alerts or adr_alerts or seen_links:
         state["company_alerts"] = company_history
         save_json(STATE_FILE, state)
         save_json(SEEN_NEWS_FILE, list(seen_links)[-500:])
@@ -411,10 +388,7 @@ def check_breaking_news():
 # MAIN EXECUTION
 # ----------------------------------------------------------------------
 def main():
-    one_shot = "--once" in sys.argv
-    log.info("Starting Global Macro, Earnings & News Radar.")
-    
-    if one_shot:
+    if "--once" in sys.argv:
         run_macro_pulse_if_needed()
         check_breaking_news()
         return
@@ -425,7 +399,6 @@ def main():
             check_breaking_news()
         except Exception as e:
             log.exception("Error in main loop: %s", e)
-            
         time.sleep(POLL_INTERVAL_MINUTES * 60)
 
 if __name__ == "__main__":
