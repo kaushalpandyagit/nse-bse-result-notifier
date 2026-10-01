@@ -1,23 +1,30 @@
 name: Daily FnO and Delivery Analysis
+
 on:
   workflow_dispatch: {}
+
 concurrency:
   group: fno-analysis
   cancel-in-progress: false
+
 permissions:
   contents: write
+
 jobs:
   analyze:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
       - name: Install dependencies
         run: pip install -r requirements_fno.txt
+
       - name: Run FnO + Delivery analysis
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -26,22 +33,29 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}
         run: python3 fno_delivery_analysis.py
-      - name: Commit updated volume history
+
+      - name: Commit updated state files
         run: |
           git config user.name "fno-analysis-bot"
           git config user.email "actions@github.com"
-          if [ -f volume_history.json ]; then
-            git add volume_history.json
-            git diff --quiet --cached || git commit -m "Update volume history [skip ci]"
-            for i in 1 2 3 4 5; do
-              if git push; then
-                echo "Push succeeded."
-                break
-              fi
-              echo "Push rejected (attempt $i/5) -- pulling and retrying..."
-              git pull --rebase origin main
-              sleep 2
-            done
-          else
-            echo "No volume history file yet -- nothing to commit."
-          fi
+          
+          # Safely add any state files that have been generated
+          for file in volume_history.json fno_participant_state.json etf_symbols.json; do
+            if [ -f "$file" ]; then
+              git add "$file"
+            fi
+          done
+          
+          # Check if there are any staged changes to commit
+          git diff --quiet --cached || git commit -m "Update F&O state files [skip ci]"
+          
+          # Push with retry/rebase logic
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "Push succeeded."
+              break
+            fi
+            echo "Push rejected (attempt $i/5) -- pulling and retrying..."
+            git pull --rebase origin main
+            sleep 2
+          done
