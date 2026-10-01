@@ -4,13 +4,13 @@ Daily F&O, Delivery Data, and Ace Investor Analysis -> Telegram
 
 Runs ONCE per trading day, after market close (when NSE's daily
 Bhavcopy and Bulk/Block deal files are finalized, typically by ~6:30 PM IST).
+Includes automated Day-over-Day Delta & Directional Shift tracking.
 """
 
 import os
 import io
 import re
 import sys
-import csv
 import json
 import zipfile
 import logging
@@ -34,11 +34,13 @@ SCRIPT_TAG = "🤖 [fno_delivery_analysis.py]"
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
+PARTICIPANT_STATE_FILE = Path(__file__).parent / "fno_participant_state.json"
+
 # ----------------------------------------------------------------------
 # ACE INVESTOR & INSTITUTIONAL WATCHLIST
 # ----------------------------------------------------------------------
 ACE_INVESTORS = [
-    # --- Top Ace Individuals & Family Offices ---
+    # Top Ace Individuals & Family Offices
     "ASHISH KACHOLIA", "RADHAKISHAN SHIVKISHAN DAMANI", "DOLLY KHANNA",
     "MUKUL MAHAVIR AGRAWAL", "ASHA MUKUL AGRAWAL", "SURESH KUMAR AGARWAL",
     "MANOJ AGARWAL", "MADHUSUDAN MURLIDHAR KELA", "MADHURI MADHUSUDAN KELA",
@@ -55,7 +57,7 @@ ACE_INVESTORS = [
     "REKHA JHUNJHUNWALA", "RARE ENTERPRISES", "VIJAY KEDIA", "KEDIA SECURITIES",
     "NEMISH SHAH", "ANIL KUMAR GOEL", "RAMESH DAMANI", "PORINJU VELIYATH",
     
-    # --- Top Indian Institutions (DIIs), MFs, & PMS ---
+    # Top Indian Institutions (DIIs), MFs, & PMS
     "LIFE INSURANCE CORPORATION OF INDIA", "LIC OF INDIA", "SBI MUTUAL FUND", 
     "HDFC MUTUAL FUND", "ICICI PRUDENTIAL", "NIPPON INDIA", "KOTAK MUTUAL FUND", 
     "AXIS MUTUAL FUND", "ADITYA BIRLA SUN LIFE", "DSP MUTUAL FUND", 
@@ -67,7 +69,7 @@ ACE_INVESTORS = [
     "ZERODHA BROKING", "AIRAN LIMITED", "MINARVA VENTURES", "VINEY EQUITY MARKET",
     "MINDPOOL TECHNOLOGIES", "OPALFORCE SOFTWARE",
     
-    # --- Top Foreign Institutional Investors (FIIs) & Sovereign Funds ---
+    # Top Foreign Institutional Investors (FIIs) & Sovereign Funds
     "GOVERNMENT OF SINGAPORE", "MONETARY AUTHORITY OF SINGAPORE",
     "ABU DHABI INVESTMENT AUTHORITY", "ADIA", "NORGES BANK", "CARMIGNAC",
     "VANGUARD", "BLACKROCK", "ISHARES", "DIMENSIONAL FUND",
@@ -394,7 +396,7 @@ def analyze_pcr(df: pd.DataFrame) -> tuple:
 
 
 # ----------------------------------------------------------------------
-# SMART VS DUMB MONEY (PRO, CLIENT, FII PARTICIPANT OI)
+# SMART VS DUMB MONEY (PRO, CLIENT, FII PARTICIPANT OI & DELTA TRACKER)
 # ----------------------------------------------------------------------
 def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
     date_str = date.strftime("%d%m%Y")
@@ -477,6 +479,33 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     smart_net = calc_net(smart_money)
     retail_net = calc_net(retail)
 
+    # ------------------------------------------------------------------
+    # DAY-OVER-DAY DELTA TRACKING (Compares with previous trading session)
+    # ------------------------------------------------------------------
+    prev_state = {}
+    if PARTICIPANT_STATE_FILE.exists():
+        try:
+            prev_state = json.loads(PARTICIPANT_STATE_FILE.read_text())
+        except Exception:
+            pass
+
+    smart_delta = None
+    retail_delta = None
+    if "smart_net" in prev_state and "retail_net" in prev_state:
+        smart_delta = {k: smart_net[k] - prev_state["smart_net"].get(k, 0) for k in smart_net}
+        retail_delta = {k: retail_net[k] - prev_state["retail_net"].get(k, 0) for k in retail_net}
+
+    # Save today's net positions for tomorrow's comparison
+    current_state_payload = {
+        "date": date.isoformat(),
+        "smart_net": smart_net,
+        "retail_net": retail_net
+    }
+    try:
+        PARTICIPANT_STATE_FILE.write_text(json.dumps(current_state_payload))
+    except Exception as e:
+        log.warning("Could not persist participant state: %s", e)
+
     smart_score = smart_net["net_fut"] + smart_net["net_call"] - smart_net["net_put"]
     retail_score = retail_net["net_fut"] + retail_net["net_call"] - retail_net["net_put"]
 
@@ -490,16 +519,38 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     elif smart_score < -20000 and retail_score > 0:
         prediction = "Bearish Tilt 🔻"
 
+    # Automated Directional Shift Interpretation based on 1-day Delta
+    delta_commentary = []
+    if smart_delta:
+        # Check Futures shift
+        if smart_delta["net_fut"] < -5000:
+            delta_commentary.append("• <b>Smart Money added FRESH Short Futures</b>: Institutional pressure remains active.")
+        elif smart_delta["net_fut"] > 5000:
+            delta_commentary.append("• <b>Smart Money COVERED Short Futures</b>: Short-covering momentum detected.")
+        else:
+            delta_commentary.append("• <b>Smart Money Futures flat</b>: Core positional futures stance unchanged.")
+
+        # Check Calls shift
+        if smart_delta["net_call"] < -20000:
+            delta_commentary.append("• <b>Aggressive Call Writing Added</b>: Upper levels are heavily capped.")
+        elif smart_delta["net_call"] > 20000:
+            delta_commentary.append("• <b>Call Shorts Reduced / Closed</b>: Overhead resistance loosened (often contract expiry effect).")
+
+        # Check Puts shift
+        if smart_delta["net_put"] > 10000:
+            delta_commentary.append("• <b>Smart Money added LONG Puts</b>: Accumulating downside payoff inventory.")
+        elif smart_delta["net_put"] < -10000:
+            delta_commentary.append("• <b>Smart Money BOOKED Put Profits</b>: Downside hedges trimmed.")
+
     # --- SEBI RATIONALIZATION EXPIRY LOGIC (Nifty Weekly = Tuesday) ---
     next_day = date + datetime.timedelta(days=1)
     while next_day.weekday() >= 5: # Skip weekends
         next_day += datetime.timedelta(days=1)
         
-    is_tuesday = (next_day.weekday() == 1) # Tuesday is the new expiry day
+    is_tuesday = (next_day.weekday() == 1)
     is_last_tuesday = False
     
     if is_tuesday:
-        # Determine if this Tuesday is the last Tuesday of the month
         next_week = next_day + datetime.timedelta(days=7)
         if next_week.month != next_day.month:
             is_last_tuesday = True
@@ -508,7 +559,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     idx_name = ""
     
     if is_tuesday:
-        # BankNifty, FinNifty, MidcapNifty are now Monthly contracts on the last Tuesday.
         idx_name = "Nifty (Weekly) + BankNifty/FinNifty (Monthly)" if is_last_tuesday else "Nifty (Weekly)"
         
         short_calls = smart_money["idx_call_short"]
@@ -522,33 +572,40 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         if net_written_calls > 50000 and net_written_puts > 50000:
             ratio = net_written_calls / net_written_puts if net_written_puts else 1
             if 0.6 <= ratio <= 1.4:
-                expiry_pred = f"🧲 <b>Sideways / Theta Decay Expected</b> (Smart money is heavily writing BOTH Calls and Puts to eat premium)."
+                expiry_pred = "🧲 <b>Sideways / Theta Decay Expected</b> (Smart money is heavily writing BOTH Calls and Puts)."
             elif ratio > 1.4:
-                expiry_pred = f"📉 <b>Trending Down / Capped Upside Expected</b> (Smart money is aggressively writing Calls)."
+                expiry_pred = "📉 <b>Trending Down / Capped Upside Expected</b> (Smart money is aggressively writing Calls)."
             else:
-                expiry_pred = f"📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
+                expiry_pred = "📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
         elif net_written_calls > 50000:
-            expiry_pred = f"📉 <b>Trending Down / Capped Upside Expected</b> (Smart money is aggressively writing Calls)."
+            expiry_pred = "📉 <b>Trending Down / Capped Upside Expected</b> (Smart money is aggressively writing Calls)."
         elif net_written_puts > 50000:
-            expiry_pred = f"📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
+            expiry_pred = "📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
         else:
             expiry_pred = "⚖ No extreme option writing detected by Smart Money."
 
     def fmt_num(n): return f"{n:+,}"
+    def fmt_delta(n): return f" ({n:+,} 1D)" if n is not None else ""
 
     lines = [
         "🧠 <b>SMART vs DUMB MONEY (Derivatives)</b>",
-        "<i>Based on Net Contract Positions (FII + PRO vs Retail)</i>\n",
-        f"<b>Smart Money (FII + PRO):</b>",
-        f" • Index Futures: {fmt_num(smart_net['net_fut'])}",
-        f" • Index Calls: {fmt_num(smart_net['net_call'])}",
-        f" • Index Puts: {fmt_num(smart_net['net_put'])}\n",
-        f"<b>Retail (CLIENT):</b>",
-        f" • Index Futures: {fmt_num(retail_net['net_fut'])}",
-        f" • Index Calls: {fmt_num(retail_net['net_call'])}",
-        f" • Index Puts: {fmt_num(retail_net['net_put'])}\n",
-        f"🔮 <b>NEXT TRADING DAY DIRECTION:</b>\n{prediction}\n"
+        "<i>Net Contract Positions (FII + PRO vs Retail) with 1-Day Change</i>\n",
+        "<b>Smart Money (FII + PRO):</b>",
+        f" • Index Futures: {fmt_num(smart_net['net_fut'])}{fmt_delta(smart_delta['net_fut'] if smart_delta else None)}",
+        f" • Index Calls: {fmt_num(smart_net['net_call'])}{fmt_delta(smart_delta['net_call'] if smart_delta else None)}",
+        f" • Index Puts: {fmt_num(smart_net['net_put'])}{fmt_delta(smart_delta['net_put'] if smart_delta else None)}\n",
+        "<b>Retail (CLIENT):</b>",
+        f" • Index Futures: {fmt_num(retail_net['net_fut'])}{fmt_delta(retail_delta['net_fut'] if retail_delta else None)}",
+        f" • Index Calls: {fmt_num(retail_net['net_call'])}{fmt_delta(retail_delta['net_call'] if retail_delta else None)}",
+        f" • Index Puts: {fmt_num(retail_net['net_put'])}{fmt_delta(retail_delta['net_put'] if retail_delta else None)}\n"
     ]
+
+    if delta_commentary:
+        lines.append("📊 <b>DAY-OVER-DAY SHIFT ANALYSIS:</b>")
+        lines.extend(delta_commentary)
+        lines.append("")
+
+    lines.append(f"🔮 <b>NEXT TRADING DAY DIRECTION:</b>\n{prediction}\n")
     
     if expiry_pred:
         lines.append(f"📅 <b>TOMORROW'S EXPIRY ({idx_name}):</b>\n{expiry_pred}")
