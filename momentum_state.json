@@ -1232,8 +1232,8 @@
       "ema_200_prev": 564.2982240989945,
       "mcap_cr": 7483.5499975,
       "rs_rank": 71.9,
-      "near_high_17_22_last_alert": "2026-10-01T03:47:34.905266",
-      "near_high_17_22_last_price": 577.1500244140625
+      "near_high_17_22_last_alert": "2026-10-01T06:01:15.709445",
+      "near_high_17_22_last_price": 571.0999755859375
     },
     "AWFIS": {
       "sma50": 266.9629998779297,
@@ -1390,8 +1390,8 @@
       "ema_200_prev": 1833.011215110062,
       "mcap_cr": 6834.018761791992,
       "rs_rank": 97.5,
-      "near_high_17_22_last_alert": "2026-10-01T03:47:35.945302",
-      "near_high_17_22_last_price": 2107.0
+      "near_high_17_22_last_alert": "2026-10-01T06:01:16.830079",
+      "near_high_17_22_last_price": 2060.300048828125
     },
     "BALRAMCHIN": {
       "sma50": 661.312998046875,
@@ -1576,8 +1576,8 @@
       "ema_200_prev": 724.7869108911425,
       "mcap_cr": 14166.20102041681,
       "rs_rank": 93.0,
-      "resistance_last_alert": "2026-10-01T05:16:03.839414",
-      "resistance_last_price": 813.0499877929688
+      "resistance_last_alert": "2026-10-01T06:01:18.383366",
+      "resistance_last_price": 823.0
     },
     "BBTC": {
       "sma50": 1469.73798828125,
@@ -4278,8 +4278,8 @@
       "ema_200_prev": 103.14468103998293,
       "mcap_cr": 8159.290220802054,
       "rs_rank": 40.6,
-      "resistance_last_alert": "2026-10-01T03:47:49.393367",
-      "resistance_last_price": 104.61000061035156,
+      "resistance_last_alert": "2026-10-01T06:01:30.587194",
+      "resistance_last_price": 103.5,
       "mtf_last_alert": "2026-10-01T03:47:50.090111",
       "mtf_last_price": 104.61000061035156
     },
@@ -6174,8 +6174,8 @@
       "ema_200_prev": 974.1974567374289,
       "mcap_cr": 15984.43318790371,
       "rs_rank": 63.6,
-      "near_high_17_22_last_alert": "2026-10-01T04:46:26.253343",
-      "near_high_17_22_last_price": 990.5999755859375
+      "near_high_17_22_last_alert": "2026-10-01T06:01:39.388835",
+      "near_high_17_22_last_price": 1001.2999877929688
     },
     "JUSTDIAL": {
       "sma50": 684.915,
@@ -6698,8 +6698,8 @@
       "ema_200_prev": 824.2693302677988,
       "mcap_cr": 14619.29448,
       "rs_rank": 39.3,
-      "near_high_17_22_last_alert": "2026-10-01T03:48:02.607207",
-      "near_high_17_22_last_price": 835.9000244140625,
+      "near_high_17_22_last_alert": "2026-10-01T06:01:42.006847",
+      "near_high_17_22_last_price": 827.2999877929688,
       "mtf_last_alert": "2026-10-01T04:01:41.836957",
       "mtf_last_price": 846.6500244140625
     },
@@ -8543,7 +8543,9 @@
       "ema_100_prev": 194.2467076619029,
       "ema_200_prev": 187.11289970075168,
       "mcap_cr": 26982.675594199292,
-      "rs_rank": 83.3
+      "rs_rank": 83.3,
+      "near_high_17_22_last_alert": "2026-10-01T06:01:49.903587",
+      "near_high_17_22_last_price": 199.8800048828125
     },
     "PRAJIND": {
       "sma50": 326.37199768066404,
@@ -9784,10 +9786,10 @@
       "ema_200_prev": 1129.243567345485,
       "mcap_cr": 28783.34490080017,
       "rs_rank": 69.8,
-      "resistance_last_alert": "2026-10-01T05:01:55.498994",
-      "resistance_last_price": 1240.9000244140625,
-      "near_high_17_22_last_alert": "2026-10-01T05:01:56.002354",
-      "near_high_17_22_last_price": 1240.9000244140625
+      "resistance_last_alert": "2026-10-01T06:01:55.527518",
+      "resistance_last_price": 1262.0,
+      "near_high_17_22_last_alert": "2026-10-01T06:01:56.018221",
+      "near_high_17_22_last_price": 1262.0
     },
     "SCI": {
       "sma50": 286.2850006103516,
@@ -10836,8 +10838,8 @@
       "rs_rank": 37.6,
       "mtf_last_alert": "2026-10-01T05:16:45.152671",
       "mtf_last_price": 296.29998779296875,
-      "ema50_pullback_last_alert": "2026-10-01T05:16:45.624441",
-      "ema50_pullback_last_price": 296.29998779296875
+      "ema50_pullback_last_alert": "2026-10-01T06:02:00.921180",
+      "ema50_pullback_last_price": 291.75
     },
     "TATACHEM": {
       "sma50": 655.4300012207032,
