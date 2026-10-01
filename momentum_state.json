@@ -6822,14 +6822,14 @@
       "ema_200_prev": 118.77496252578332,
       "mcap_cr": 8302.52220632864,
       "rs_rank": 32.6,
-      "resistance_last_alert": "2026-10-01T06:30:35.711596",
-      "resistance_last_price": 108.4800033569336,
+      "resistance_last_alert": "2026-10-01T08:46:29.502580",
+      "resistance_last_price": 107.2300033569336,
       "zanger_last_alert": "2026-10-01T07:46:34.397776",
       "zanger_last_price": 107.62000274658203,
       "mtf_last_alert": "2026-10-01T05:01:43.407736",
       "mtf_last_price": 110.25,
-      "ema50_pullback_last_alert": "2026-10-01T06:30:36.326292",
-      "ema50_pullback_last_price": 108.4800033569336
+      "ema50_pullback_last_alert": "2026-10-01T08:46:29.983303",
+      "ema50_pullback_last_price": 107.2300033569336
     },
     "LICHSGFIN": {
       "sma50": 533.4940032958984,
@@ -8302,8 +8302,8 @@
       "ema_200_prev": 263.46493028498884,
       "mcap_cr": 24687.131996,
       "rs_rank": 26.2,
-      "near_high_17_22_last_alert": "2026-10-01T07:30:26.282765",
-      "near_high_17_22_last_price": 302.95001220703125
+      "near_high_17_22_last_alert": "2026-10-01T08:46:36.545153",
+      "near_high_17_22_last_price": 298.6499938964844
     },
     "PGEL": {
       "sma50": 570.312001953125,
@@ -9810,10 +9810,10 @@
       "rs_rank": 69.8,
       "resistance_last_alert": "2026-10-01T06:01:55.527518",
       "resistance_last_price": 1262.0,
-      "near_high_17_22_last_alert": "2026-10-01T07:46:49.550623",
-      "near_high_17_22_last_price": 1281.199951171875,
-      "zanger_last_alert": "2026-10-01T07:46:49.054539",
-      "zanger_last_price": 1281.199951171875
+      "near_high_17_22_last_alert": "2026-10-01T08:46:43.630350",
+      "near_high_17_22_last_price": 1259.9000244140625,
+      "zanger_last_alert": "2026-10-01T08:46:43.154609",
+      "zanger_last_price": 1259.9000244140625
     },
     "SCI": {
       "sma50": 286.2850006103516,

@@ -29,8 +29,8 @@
   "custom_alert_BASILIC_price": {
     "alerted": true,
     "last_alert": "2026-09-25T06:01:09.819945",
-    "custom_last_alert": "2026-09-30T09:01:15.118873",
-    "custom_last_price": 175.0500030517578
+    "custom_last_alert": "2026-10-01T08:45:56.316225",
+    "custom_last_price": 171.64999389648438
   },
   "custom_alert_ALLETEC_price": {
     "alerted": true,
@@ -49,7 +49,7 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-30T08:29:41.111160",
-    "rsi_down_last_alert": "2026-10-01T07:45:50.210837",
+    "rsi_down_last_alert": "2026-10-01T08:45:49.826151",
     "price_low_last_alert": "2026-10-01T07:29:32.324634",
     "price_low_last_price": 661.0999755859375
   },
@@ -225,7 +225,7 @@
     "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-10-01T07:45:51.868315",
+    "rsi_down_last_alert": "2026-10-01T08:45:50.901650",
     "price_high_last_alert": "2026-09-29T08:01:05.098023",
     "price_high_last_price": 573.9500122070312
   },
@@ -262,6 +262,6 @@
     "day_high": 2303.89990234375,
     "day_low": 2269.699951171875,
     "baseline_rsi": 37.116740665482084,
-    "rsi_down_last_alert": "2026-10-01T07:45:52.608582"
+    "rsi_down_last_alert": "2026-10-01T08:45:51.613693"
   }
 }
