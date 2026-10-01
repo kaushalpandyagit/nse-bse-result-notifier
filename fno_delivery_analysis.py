@@ -4,7 +4,7 @@ Daily F&O, Delivery Data, and Ace Investor Analysis -> Telegram
 
 Runs ONCE per trading day, after market close (when NSE's daily
 Bhavcopy and Bulk/Block deal files are finalized, typically by ~6:30 PM IST).
-Includes automated Day-over-Day Delta & Directional Shift tracking.
+Includes automated Day-over-Day Delta & Percentage Directional Shift tracking.
 """
 
 import os
@@ -480,7 +480,7 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     retail_net = calc_net(retail)
 
     # ------------------------------------------------------------------
-    # DAY-OVER-DAY DELTA TRACKING (Compares with previous trading session)
+    # DAY-OVER-DAY DELTA TRACKING (Absolute + Percentage)
     # ------------------------------------------------------------------
     prev_state = {}
     if PARTICIPANT_STATE_FILE.exists():
@@ -491,9 +491,22 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
 
     smart_delta = None
     retail_delta = None
+    smart_pct = None
+    retail_pct = None
+
     if "smart_net" in prev_state and "retail_net" in prev_state:
         smart_delta = {k: smart_net[k] - prev_state["smart_net"].get(k, 0) for k in smart_net}
         retail_delta = {k: retail_net[k] - prev_state["retail_net"].get(k, 0) for k in retail_net}
+        
+        smart_pct = {}
+        for k in smart_net:
+            p_val = prev_state["smart_net"].get(k, 0)
+            smart_pct[k] = (smart_delta[k] / abs(p_val) * 100) if p_val != 0 else 0.0
+            
+        retail_pct = {}
+        for k in retail_net:
+            p_val = prev_state["retail_net"].get(k, 0)
+            retail_pct[k] = (retail_delta[k] / abs(p_val) * 100) if p_val != 0 else 0.0
 
     # Save today's net positions for tomorrow's comparison
     current_state_payload = {
@@ -522,7 +535,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     # Automated Directional Shift Interpretation based on 1-day Delta
     delta_commentary = []
     if smart_delta:
-        # Check Futures shift
         if smart_delta["net_fut"] < -5000:
             delta_commentary.append("• <b>Smart Money added FRESH Short Futures</b>: Institutional pressure remains active.")
         elif smart_delta["net_fut"] > 5000:
@@ -530,13 +542,11 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         else:
             delta_commentary.append("• <b>Smart Money Futures flat</b>: Core positional futures stance unchanged.")
 
-        # Check Calls shift
         if smart_delta["net_call"] < -20000:
             delta_commentary.append("• <b>Aggressive Call Writing Added</b>: Upper levels are heavily capped.")
         elif smart_delta["net_call"] > 20000:
             delta_commentary.append("• <b>Call Shorts Reduced / Closed</b>: Overhead resistance loosened (often contract expiry effect).")
 
-        # Check Puts shift
         if smart_delta["net_put"] > 10000:
             delta_commentary.append("• <b>Smart Money added LONG Puts</b>: Accumulating downside payoff inventory.")
         elif smart_delta["net_put"] < -10000:
@@ -585,19 +595,25 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
             expiry_pred = "⚖ No extreme option writing detected by Smart Money."
 
     def fmt_num(n): return f"{n:+,}"
-    def fmt_delta(n): return f" ({n:+,} 1D)" if n is not None else ""
+    
+    def fmt_delta(delta, pct):
+        if delta is None: 
+            return ""
+        if pct and pct != 0.0:
+            return f" ({delta:+,} | {pct:+.1f}%)"
+        return f" ({delta:+,})"
 
     lines = [
         "🧠 <b>SMART vs DUMB MONEY (Derivatives)</b>",
         "<i>Net Contract Positions (FII + PRO vs Retail) with 1-Day Change</i>\n",
         "<b>Smart Money (FII + PRO):</b>",
-        f" • Index Futures: {fmt_num(smart_net['net_fut'])}{fmt_delta(smart_delta['net_fut'] if smart_delta else None)}",
-        f" • Index Calls: {fmt_num(smart_net['net_call'])}{fmt_delta(smart_delta['net_call'] if smart_delta else None)}",
-        f" • Index Puts: {fmt_num(smart_net['net_put'])}{fmt_delta(smart_delta['net_put'] if smart_delta else None)}\n",
+        f" • Index Futures: {fmt_num(smart_net['net_fut'])}{fmt_delta(smart_delta['net_fut'] if smart_delta else None, smart_pct['net_fut'] if smart_pct else None)}",
+        f" • Index Calls: {fmt_num(smart_net['net_call'])}{fmt_delta(smart_delta['net_call'] if smart_delta else None, smart_pct['net_call'] if smart_pct else None)}",
+        f" • Index Puts: {fmt_num(smart_net['net_put'])}{fmt_delta(smart_delta['net_put'] if smart_delta else None, smart_pct['net_put'] if smart_pct else None)}\n",
         "<b>Retail (CLIENT):</b>",
-        f" • Index Futures: {fmt_num(retail_net['net_fut'])}{fmt_delta(retail_delta['net_fut'] if retail_delta else None)}",
-        f" • Index Calls: {fmt_num(retail_net['net_call'])}{fmt_delta(retail_delta['net_call'] if retail_delta else None)}",
-        f" • Index Puts: {fmt_num(retail_net['net_put'])}{fmt_delta(retail_delta['net_put'] if retail_delta else None)}\n"
+        f" • Index Futures: {fmt_num(retail_net['net_fut'])}{fmt_delta(retail_delta['net_fut'] if retail_delta else None, retail_pct['net_fut'] if retail_pct else None)}",
+        f" • Index Calls: {fmt_num(retail_net['net_call'])}{fmt_delta(retail_delta['net_call'] if retail_delta else None, retail_pct['net_call'] if retail_pct else None)}",
+        f" • Index Puts: {fmt_num(retail_net['net_put'])}{fmt_delta(retail_delta['net_put'] if retail_delta else None, retail_pct['net_put'] if retail_pct else None)}\n"
     ]
 
     if delta_commentary:
