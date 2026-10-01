@@ -1678,8 +1678,8 @@
       "ema_200_prev": 1855.1944373914077,
       "mcap_cr": 16153.068863342285,
       "rs_rank": 68.3,
-      "near_high_17_22_last_alert": "2026-10-01T03:47:37.944893",
-      "near_high_17_22_last_price": 1948.0
+      "near_high_17_22_last_alert": "2026-10-01T05:01:21.550624",
+      "near_high_17_22_last_price": 1971.800048828125
     },
     "BIKAJI": {
       "sma50": 597.7450048828125,
@@ -6802,10 +6802,12 @@
       "ema_200_prev": 118.77496252578332,
       "mcap_cr": 8302.52220632864,
       "rs_rank": 32.6,
-      "resistance_last_alert": "2026-10-01T04:01:42.707518",
-      "resistance_last_price": 106.4000015258789,
+      "resistance_last_alert": "2026-10-01T05:01:42.898042",
+      "resistance_last_price": 110.25,
       "zanger_last_alert": "2026-10-01T04:46:30.225462",
-      "zanger_last_price": 108.69999694824219
+      "zanger_last_price": 108.69999694824219,
+      "mtf_last_alert": "2026-10-01T05:01:43.407736",
+      "mtf_last_price": 110.25
     },
     "LICHSGFIN": {
       "sma50": 533.4940032958984,
@@ -9778,10 +9780,10 @@
       "ema_200_prev": 1129.243567345485,
       "mcap_cr": 28783.34490080017,
       "rs_rank": 69.8,
-      "resistance_last_alert": "2026-10-01T04:01:59.028268",
-      "resistance_last_price": 1228.300048828125,
-      "near_high_17_22_last_alert": "2026-10-01T04:01:59.495531",
-      "near_high_17_22_last_price": 1228.300048828125
+      "resistance_last_alert": "2026-10-01T05:01:55.498994",
+      "resistance_last_price": 1240.9000244140625,
+      "near_high_17_22_last_alert": "2026-10-01T05:01:56.002354",
+      "near_high_17_22_last_price": 1240.9000244140625
     },
     "SCI": {
       "sma50": 286.2850006103516,
