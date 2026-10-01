@@ -680,8 +680,8 @@
       "ema_200_prev": 565.1338002240147,
       "mcap_cr": 21486.451666347108,
       "rs_rank": 68.9,
-      "near_high_17_22_last_alert": "2026-10-01T05:15:59.440910",
-      "near_high_17_22_last_price": 589.7000122070312
+      "near_high_17_22_last_alert": "2026-10-01T06:46:05.118098",
+      "near_high_17_22_last_price": 583.0999755859375
     },
     "ANGELONE": {
       "sma50": 293.58799926757814,
@@ -6018,8 +6018,8 @@
       "ema_200_prev": 481.6013226364557,
       "mcap_cr": 5164.1182848,
       "rs_rank": 70.0,
-      "near_high_17_22_last_alert": "2026-10-01T05:16:23.872676",
-      "near_high_17_22_last_price": 483.20001220703125
+      "near_high_17_22_last_alert": "2026-10-01T06:46:27.704090",
+      "near_high_17_22_last_price": 478.1000061035156
     },
     "JSLL": {
       "sma50": 526.4940002441406,
@@ -6810,8 +6810,8 @@
       "rs_rank": 32.6,
       "resistance_last_alert": "2026-10-01T06:30:35.711596",
       "resistance_last_price": 108.4800033569336,
-      "zanger_last_alert": "2026-10-01T05:46:28.885643",
-      "zanger_last_price": 111.01000213623047,
+      "zanger_last_alert": "2026-10-01T06:46:31.335904",
+      "zanger_last_price": 108.83999633789062,
       "mtf_last_alert": "2026-10-01T05:01:43.407736",
       "mtf_last_price": 110.25,
       "ema50_pullback_last_alert": "2026-10-01T06:30:36.326292",
@@ -6842,8 +6842,8 @@
       "ema_200_prev": 542.032574399939,
       "mcap_cr": 29054.328331463625,
       "rs_rank": 40.4,
-      "near_high_17_22_last_alert": "2026-10-01T05:16:27.628491",
-      "near_high_17_22_last_price": 521.5
+      "near_high_17_22_last_alert": "2026-10-01T06:46:31.945180",
+      "near_high_17_22_last_price": 515.75
     },
     "LLOYDSENGG": {
       "sma50": 88.90700012207031,
@@ -8181,7 +8181,9 @@
       "ema_100_prev": 1230.9758957985814,
       "ema_200_prev": 1061.5084305026958,
       "mcap_cr": 10569.834006053588,
-      "rs_rank": 96.8
+      "rs_rank": 96.8,
+      "near_high_17_22_last_alert": "2026-10-01T06:46:37.710231",
+      "near_high_17_22_last_price": 1275.800048828125
     },
     "PCBL": {
       "sma50": 325.9909991455078,
@@ -8972,8 +8974,8 @@
       "ema_200_prev": 763.028984107007,
       "mcap_cr": 10163.873601175,
       "rs_rank": 92.8,
-      "near_high_17_22_last_alert": "2026-10-01T05:46:38.041112",
-      "near_high_17_22_last_price": 858.0
+      "near_high_17_22_last_alert": "2026-10-01T06:46:41.479028",
+      "near_high_17_22_last_price": 846.75
     },
     "RATNAMANI": {
       "sma50": 2561.1280078125,
@@ -9000,8 +9002,8 @@
       "ema_200_prev": 2531.5399075748737,
       "mcap_cr": 18963.3906,
       "rs_rank": 67.0,
-      "near_high_17_22_last_alert": "2026-10-01T04:46:40.481172",
-      "near_high_17_22_last_price": 2659.199951171875
+      "near_high_17_22_last_alert": "2026-10-01T06:46:42.064145",
+      "near_high_17_22_last_price": 2623.60009765625
     },
     "RAYMONDLSL": {
       "sma50": 696.8229992675781,
@@ -12036,8 +12038,8 @@
       "ema_200_prev": 9581.047162570176,
       "mcap_cr": 10532.933632,
       "rs_rank": 59.8,
-      "near_high_17_22_last_alert": "2026-10-01T03:48:29.465736",
-      "near_high_17_22_last_price": 10431.0
+      "near_high_17_22_last_alert": "2026-10-01T06:46:54.508354",
+      "near_high_17_22_last_price": 10319.0
     },
     "VTL": {
       "sma50": 584.5399987792969,
