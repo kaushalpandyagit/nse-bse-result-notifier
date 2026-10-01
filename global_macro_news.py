@@ -3,7 +3,7 @@ Global Macro Pulse (9:00 AM IST), Global Bellwether Earnings & Geopolitical Shoc
 ========================================================================================
 1. Sends a comprehensive global macro summary every morning at ~9:00 AM IST.
 2. Includes a 7-Day Forward Calendar for RBI/Fed meets, CPI/PMI, and Market Holidays.
-3. Curated Radar for US/Global Sector Leader Earnings & Guidance (Accenture, Nvidia, Micron, etc.).
+3. Curated Radar for US/Global Sector Leader Earnings & Guidance (Accenture, TSMC, Intel, etc.).
    - Filtered strictly to Tier-1 financial sources (Bloomberg, Reuters, Barron's, CNBC, WSJ, etc.).
    - Hard capped at max 2 distinct alerts per company per 24 hours to prevent flooding.
 4. Polls global news RSS feeds every 15 mins for high-impact geopolitical shocks.
@@ -75,6 +75,7 @@ GLOBAL_LEADERS = {
     # IT Services & Enterprise Tech (Direct Indian IT Proxies)
     "accenture": {"name": "Accenture (ACN)", "impact": "Direct primary bellwether for Indian IT (TCS, INFY, HCLTECH, WIPRO)"},
     "cognizant": {"name": "Cognizant (CTSH)", "impact": "Direct peer benchmark for Indian IT offshore delivery & billing rates"},
+    "epam": {"name": "EPAM Systems (EPAM)", "impact": "Direct peer to Indian IT; benchmark for global offshore software engineering demand"},
     "capgemini": {"name": "Capgemini", "impact": "European & global IT services demand benchmark"},
     "ibm": {"name": "IBM", "impact": "Enterprise IT infrastructure & consulting budget indicator"},
     
@@ -93,7 +94,17 @@ GLOBAL_LEADERS = {
     "tsmc": {"name": "TSMC", "impact": "World's largest chip foundry; earliest indicator of global tech demand"},
     "broadcom": {"name": "Broadcom (AVGO)", "impact": "Custom AI silicon & enterprise networking infrastructure driver"},
     "asml": {"name": "ASML", "impact": "Lithography equipment monopoly; forward indicator of global chip capex"},
-    "tesla": {"name": "Tesla (TSLA)", "impact": "EV sector sentiment, battery metals & global auto tech barometer"}
+    "sandisk": {"name": "SanDisk / Western Digital (WDC)", "impact": "Memory, NAND flash cycle, and tech hardware supply chain indicator"},
+    "western digital": {"name": "SanDisk / Western Digital (WDC)", "impact": "Memory, NAND flash cycle, and tech hardware supply chain indicator"},
+    "wdc": {"name": "SanDisk / Western Digital (WDC)", "impact": "Memory, NAND flash cycle, and tech hardware supply chain indicator"},
+    "intel": {"name": "Intel Corporation (INTC)", "impact": "Global semiconductor bellwether; PC demand and enterprise server capex indicator"},
+    "intc": {"name": "Intel Corporation (INTC)", "impact": "Global semiconductor bellwether; PC demand and enterprise server capex indicator"},
+    "tesla": {"name": "Tesla (TSLA)", "impact": "EV sector sentiment, battery metals & global auto tech barometer"},
+
+    # Asian Giants & Telecom
+    "alibaba": {"name": "Alibaba Group (BABA)", "impact": "Chinese consumer consumption barometer & Asian emerging tech liquidity"},
+    "baba": {"name": "Alibaba Group (BABA)", "impact": "Chinese consumer consumption barometer & Asian emerging tech liquidity"},
+    "huawei": {"name": "Huawei Technologies", "impact": "Global telecom infrastructure & independent Chinese hardware substitution benchmark"}
 }
 
 EARNINGS_KEYWORDS = [
@@ -106,7 +117,7 @@ NEWS_FEEDS = [
     "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=when%3A4h%20(Accenture%20OR%20Cognizant%20OR%20Nvidia%20OR%20Microsoft%20OR%20Apple%20OR%20Amazon%20OR%20Google%20OR%20Meta%20OR%20AMD%20OR%20Micron%20OR%20TSMC%20OR%20Tesla)%20(earnings%20OR%20guidance%20OR%20revenue%20OR%20results)&hl=en-US&gl=US&ceid=US:en"
+    "https://news.google.com/rss/search?q=when%3A4h%20(Accenture%20OR%20Cognizant%20OR%20Nvidia%20OR%20Microsoft%20OR%20Apple%20OR%20Amazon%20OR%20Google%20OR%20Meta%20OR%20AMD%20OR%20Micron%20OR%20TSMC%20OR%20Tesla%20OR%20Alibaba%20OR%20Huawei%20OR%20EPAM%20OR%20SanDisk%20OR%20Western%20Digital%20OR%20Intel)%20(earnings%20OR%20guidance%20OR%20revenue%20OR%20results)&hl=en-US&gl=US&ceid=US:en"
 ]
 
 # ----------------------------------------------------------------------
