@@ -49,7 +49,7 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-30T08:29:41.111160",
-    "rsi_down_last_alert": "2026-10-01T04:45:51.166164",
+    "rsi_down_last_alert": "2026-10-01T05:45:46.252117",
     "price_low_last_alert": "2026-09-30T04:15:45.705573",
     "price_low_last_price": 676.4000244140625
   },
@@ -67,7 +67,7 @@
     "price_low_alerted": false,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-10-01T04:45:52.077934",
+    "rsi_up_last_alert": "2026-10-01T05:45:47.065608",
     "rsi_down_last_alert": "2026-10-01T04:01:02.353639",
     "price_low_last_alert": "2026-10-01T04:01:01.816964",
     "price_low_last_price": 1811.699951171875
@@ -205,7 +205,7 @@
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-09-30T10:45:46.779544",
-    "rsi_down_last_alert": "2026-10-01T04:45:52.961253",
+    "rsi_down_last_alert": "2026-10-01T05:45:48.118078",
     "price_low_last_alert": "2026-10-01T04:15:52.390459",
     "price_high_last_alert": "2026-09-30T09:01:06.521045",
     "price_high_last_price": 425.45001220703125,
@@ -220,7 +220,7 @@
     "price_low_alerted": false,
     "rsi_up_alerted": false,
     "rsi_down_alerted": true,
-    "rsi_down_last_alert": "2026-10-01T04:45:53.734493",
+    "rsi_down_last_alert": "2026-10-01T05:45:48.896944",
     "price_high_last_alert": "2026-09-29T08:01:05.098023",
     "price_high_last_price": 573.9500122070312
   },
