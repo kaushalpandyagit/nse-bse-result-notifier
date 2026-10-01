@@ -4,16 +4,6 @@ Daily F&O, Delivery Data, and Ace Investor Analysis -> Telegram
 
 Runs ONCE per trading day, after market close (when NSE's daily
 Bhavcopy and Bulk/Block deal files are finalized, typically by ~6:30 PM IST).
-
-What this covers
-------------------
-1. ACE INVESTOR / SMART MONEY DEALS (Bulk/Block)
-2. DELIVERY % ANALYSIS (Early Movers)
-3. UNUSUAL VOLUME 
-4. LONG/SHORT BUILDUP (F&O Bhavcopy)
-5. PCR (Put-Call Ratio)
-6. SMART vs DUMB MONEY F&O POSITIONING (Pro/Client/FII Participant OI)
-7. EXPIRY DAY & NEXT-DAY DIRECTIONAL PREDICTIONS
 """
 
 import os
@@ -44,9 +34,6 @@ SCRIPT_TAG = "🤖 [fno_delivery_analysis.py]"
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
-# ----------------------------------------------------------------------
-# ACE INVESTOR & INSTITUTIONAL WATCHLIST
-# ----------------------------------------------------------------------
 # ----------------------------------------------------------------------
 # ACE INVESTOR & INSTITUTIONAL WATCHLIST
 # ----------------------------------------------------------------------
@@ -88,6 +75,7 @@ ACE_INVESTORS = [
     "CITIGROUP", "BNP PARIBAS", "BOFA SECURITIES", "MERRILL LYNCH",
     "COPTHALL MAURITIUS", "ELARA INDIA"
 ]
+
 DELIVERY_PCT_THRESHOLD = 60.0
 DELIVERY_PRICE_MOVE_THRESHOLD = 2.0
 OI_CHANGE_THRESHOLD = 5.0
@@ -411,7 +399,6 @@ def analyze_pcr(df: pd.DataFrame) -> tuple:
 def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
     date_str = date.strftime("%d%m%Y")
     
-    # Try both nsearchives and regular archives
     urls = [
         f"https://nsearchives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv",
         f"https://archives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv"
@@ -420,12 +407,9 @@ def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
     for url in urls:
         try:
             resp = session.get(url, headers=HEADERS, timeout=20)
-            # Ensure it is actually CSV data and not an HTML error page
             if resp.status_code == 200 and "<html" not in resp.text.lower():
                 lines = resp.text.splitlines()
                 
-                # --- BULLETPROOF HEADER SLICER ---
-                # NSE puts a fake title in row 1. This scans down to find the real column headers.
                 header_idx = 0
                 for i, line in enumerate(lines):
                     if "Client Type" in line or "ClientType" in line or "client type" in line.lower():
@@ -446,8 +430,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         return ""
     
     data = {}
-    
-    # Fuzzy match the "Client Type" column 
     c_col = next((c for c in df.columns if "client" in c.lower()), None)
     if not c_col:
         return ""
@@ -460,7 +442,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         else: continue
         
         try:
-            # Fuzzy match the specific OI columns regardless of exact naming
             def get_val(keywords):
                 col = next((c for c in df.columns if all(k.lower() in c.lower() for k in keywords)), None)
                 return int(row[col]) if col and pd.notna(row[col]) else 0
@@ -486,7 +467,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     }
     retail = data.get("Client", {})
 
-    # Calculate Nets
     def calc_net(d):
         return {
             "net_fut": d.get("idx_fut_long", 0) - d.get("idx_fut_short", 0),
@@ -497,11 +477,9 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     smart_net = calc_net(smart_money)
     retail_net = calc_net(retail)
 
-    # Bullish Score = Net Futures + Net Calls - Net Puts
     smart_score = smart_net["net_fut"] + smart_net["net_call"] - smart_net["net_put"]
     retail_score = retail_net["net_fut"] + retail_net["net_call"] - retail_net["net_put"]
 
-    # Direction Prediction Logic
     prediction = "Mixed / Unclear ⚖️"
     if smart_score > 50000 and retail_score < -50000:
         prediction = "Highly Bullish 🚀 (Smart money is heavily long, Retail is trapped short)"
@@ -512,18 +490,27 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     elif smart_score < -20000 and retail_score > 0:
         prediction = "Bearish Tilt 🔻"
 
-    # Expiry Day Prediction (Trending vs Sideways)
+    # --- SEBI RATIONALIZATION EXPIRY LOGIC (Nifty Weekly = Tuesday) ---
     next_day = date + datetime.timedelta(days=1)
-    while next_day.weekday() >= 5: # 5=Sat, 6=Sun
+    while next_day.weekday() >= 5: # Skip weekends
         next_day += datetime.timedelta(days=1)
         
-    weekday = next_day.weekday() # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri
+    is_tuesday = (next_day.weekday() == 1) # Tuesday is the new expiry day
+    is_last_tuesday = False
     
-    expiry_map = {0: "MidcapNifty", 1: "FinNifty", 2: "BankNifty", 3: "Nifty"}
+    if is_tuesday:
+        # Determine if this Tuesday is the last Tuesday of the month
+        next_week = next_day + datetime.timedelta(days=7)
+        if next_week.month != next_day.month:
+            is_last_tuesday = True
+
     expiry_pred = ""
+    idx_name = ""
     
-    if weekday in expiry_map:
-        idx_name = expiry_map[weekday]
+    if is_tuesday:
+        # BankNifty, FinNifty, MidcapNifty are now Monthly contracts on the last Tuesday.
+        idx_name = "Nifty (Weekly) + BankNifty/FinNifty (Monthly)" if is_last_tuesday else "Nifty (Weekly)"
+        
         short_calls = smart_money["idx_call_short"]
         short_puts = smart_money["idx_put_short"]
         long_calls = smart_money["idx_call_long"]
@@ -545,7 +532,7 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         elif net_written_puts > 50000:
             expiry_pred = f"📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
         else:
-            expiry_pred = "⚖️️ No extreme option writing detected by Smart Money."
+            expiry_pred = "⚖ No extreme option writing detected by Smart Money."
 
     def fmt_num(n): return f"{n:+,}"
 
@@ -633,7 +620,6 @@ def main():
             format_stock_list([(s, p, d) for s, p, d, v in tiers["early_movers"]], comment=True, third_label="Delivery")
         )
 
-        # --- Unusual volume ---
         unusual = analyze_unusual_volume(deliv_df, session, date, bulk_block_symbols)
         sections.append(
             f"\U0001F50D <b>Unusual Volume, Minimal Price Move</b> (\u2265{UNUSUAL_VOLUME_RATIO:.1f}x avg volume, "
@@ -673,7 +659,7 @@ def main():
     else:
         sections.append("\U0001F4CA <b>F&O buildup/PCR unavailable</b>")
 
-    # --- NEW: SMART VS DUMB MONEY AI ENGINE ---
+    # --- SMART VS DUMB MONEY AI ENGINE ---
     part_oi_df = fetch_participant_oi(session, date)
     if part_oi_df is not None:
         oi_analysis_text = analyze_participant_oi(part_oi_df, date)
