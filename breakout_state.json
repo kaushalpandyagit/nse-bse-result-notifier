@@ -69,8 +69,8 @@
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-10-01T05:45:47.065608",
     "rsi_down_last_alert": "2026-10-01T08:01:04.869161",
-    "price_low_last_alert": "2026-10-01T06:45:52.471385",
-    "price_low_last_price": 1792.0
+    "price_low_last_alert": "2026-10-01T08:15:48.734445",
+    "price_low_last_price": 1769.199951171875
   },
   "custom_alert_GSMFOILS_news": {
     "alerted": false,
@@ -92,7 +92,7 @@
     "rsi_down_alerted": false,
     "price_low_last_alert": "2026-10-01T07:29:33.108466",
     "price_low_last_price": 914.3499755859375,
-    "rsi_down_last_alert": "2026-10-01T07:29:33.656604"
+    "rsi_down_last_alert": "2026-10-01T08:15:49.313699"
   },
   "custom_alert_KANYES_rsi": {
     "alerted": false,
@@ -240,7 +240,7 @@
     "rsi_down_alerted": true,
     "rsi_up_last_alert": "2026-10-01T08:01:06.811088",
     "price_high_last_alert": "2026-10-01T06:20:03.569040",
-    "rsi_down_last_alert": "2026-10-01T03:45:52.365097",
+    "rsi_down_last_alert": "2026-10-01T08:15:50.191470",
     "price_low_last_alert": "2026-09-30T05:45:47.507248",
     "price_low_last_price": 1651.800048828125,
     "price_high_last_price": 1716.199951171875
