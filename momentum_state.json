@@ -1071,7 +1071,9 @@
       "ema_100_prev": 1575.9023743008643,
       "ema_200_prev": 1404.4558671523946,
       "mcap_cr": 15380.142077719336,
-      "rs_rank": 90.7
+      "rs_rank": 90.7,
+      "near_high_17_22_last_alert": "2026-10-01T05:29:51.551760",
+      "near_high_17_22_last_price": 1621.0
     },
     "ATLANTAELE": {
       "sma50": 1693.9980078125,
@@ -3462,8 +3464,8 @@
       "ema_200_prev": 78.90578675807627,
       "mcap_cr": 4642.566184082517,
       "rs_rank": 23.7,
-      "ema50_pullback_last_alert": "2026-10-01T03:47:45.749720",
-      "ema50_pullback_last_price": 76.4800033569336
+      "ema50_pullback_last_alert": "2026-10-01T05:30:06.161955",
+      "ema50_pullback_last_price": 75.66000366210938
     },
     "ELGIEQUIP": {
       "sma50": 605.5179968261718,
