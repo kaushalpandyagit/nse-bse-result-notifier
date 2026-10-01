@@ -209,7 +209,7 @@
     "price_low_alerted": true,
     "rsi_up_alerted": true,
     "rsi_down_alerted": true,
-    "rsi_up_last_alert": "2026-10-01T07:45:51.264188",
+    "rsi_up_last_alert": "2026-10-01T09:15:49.671935",
     "rsi_down_last_alert": "2026-10-01T09:01:06.330480",
     "price_low_last_alert": "2026-10-01T04:15:52.390459",
     "price_high_last_alert": "2026-09-30T09:01:06.521045",
@@ -262,6 +262,9 @@
     "day_high": 2303.89990234375,
     "day_low": 2269.699951171875,
     "baseline_rsi": 37.116740665482084,
-    "rsi_down_last_alert": "2026-10-01T08:45:51.613693"
+    "rsi_down_last_alert": "2026-10-01T08:45:51.613693",
+    "price_high_last_alert": "2026-10-01T09:15:50.624946",
+    "price_high_last_price": 2304.5,
+    "rsi_up_last_alert": "2026-10-01T09:15:51.330340"
   }
 }
