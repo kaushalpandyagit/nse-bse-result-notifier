@@ -177,7 +177,9 @@
   },
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "custom_last_alert": "2026-10-01T06:29:43.182648",
+    "custom_last_price": 140.0
   },
   "custom_alert_BSE:RAVELCARE_price": {
     "alerted": false,
@@ -251,5 +253,11 @@
   "custom_alert_PHOENIXLTD_price": {
     "alerted": false,
     "last_alert": null
+  },
+  "HDFCAMC": {
+    "result_date": "2026-10-01T00:00:00",
+    "day_high": 2303.89990234375,
+    "day_low": 2269.699951171875,
+    "baseline_rsi": 37.116740665482084
   }
 }
