@@ -3,7 +3,9 @@ Global Macro Pulse (9:00 AM IST), Global Bellwether Earnings & Geopolitical Shoc
 ========================================================================================
 1. Sends a comprehensive global macro summary every morning at ~9:00 AM IST.
 2. Includes a 7-Day Forward Calendar for RBI/Fed meets, CPI/PMI, and Market Holidays.
-3. Live Radar for US/Global Sector Leader Earnings & Guidance (Accenture, Nvidia, etc.).
+3. Curated Radar for US/Global Sector Leader Earnings & Guidance (Accenture, Nvidia, Micron, etc.).
+   - Filtered strictly to Tier-1 financial sources (Bloomberg, Reuters, Barron's, CNBC, WSJ, etc.).
+   - Hard capped at max 2 distinct alerts per company per 24 hours to prevent flooding.
 4. Polls global news RSS feeds every 15 mins for high-impact geopolitical shocks.
 """
 
@@ -45,8 +47,20 @@ POLL_INTERVAL_MINUTES = 15
 STATE_FILE = Path(__file__).parent / "macro_state.json"
 SEEN_NEWS_FILE = Path(__file__).parent / "seen_news.json"
 
+# Max earnings alerts per company within a rolling 24-hour window
+MAX_ALERTS_PER_COMPANY_24H = 2
+
 # ----------------------------------------------------------------------
-# 1. GEOPOLITICAL SHOCK KEYWORDS
+# 1. TIER-1 TRUSTED FINANCIAL NEWS SOURCES
+# ----------------------------------------------------------------------
+TRUSTED_FINANCIAL_SOURCES = [
+    "reuters", "bloomberg", "cnbc", "barron's", "barrons",
+    "wall street journal", "wsj", "financial times", "marketwatch",
+    "investor's business daily", "yahoo finance", "associated press"
+]
+
+# ----------------------------------------------------------------------
+# 2. GEOPOLITICAL SHOCK KEYWORDS
 # ----------------------------------------------------------------------
 SHOCK_KEYWORDS = [
     "war", "assassinat", "missile", "nuclear", "strike", "attack", 
@@ -55,7 +69,7 @@ SHOCK_KEYWORDS = [
 ]
 
 # ----------------------------------------------------------------------
-# 2. GLOBAL SECTOR LEADERS & EARNINGS TRIGGERS
+# 3. GLOBAL SECTOR LEADERS & EARNINGS TRIGGERS
 # ----------------------------------------------------------------------
 GLOBAL_LEADERS = {
     # IT Services & Enterprise Tech (Direct Indian IT Proxies)
@@ -88,7 +102,6 @@ EARNINGS_KEYWORDS = [
     "top-line", "bottom-line", "fiscal result"
 ]
 
-# RSS Feeds: World Headlines, Business (India + US), and Search Feed for US Leaders
 NEWS_FEEDS = [
     "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-IN&gl=IN&ceid=IN:en",
@@ -97,7 +110,7 @@ NEWS_FEEDS = [
 ]
 
 # ----------------------------------------------------------------------
-# 3. MACRO ASSETS (9:00 AM PULSE)
+# 4. MACRO ASSETS (9:00 AM PULSE)
 # ----------------------------------------------------------------------
 MACRO_TICKERS = {
     "🇺🇸 Nasdaq 100 Futures": "NQ=F",
@@ -115,7 +128,7 @@ MACRO_TICKERS = {
 }
 
 # ----------------------------------------------------------------------
-# 4. MACRO EVENT CALENDAR (Next 7 Days Scanner)
+# 5. MACRO EVENT CALENDAR (Next 7 Days Scanner)
 # ----------------------------------------------------------------------
 MACRO_CALENDAR = [
     {"date": "2026-10-02", "event": "NSE/BSE Holiday (Mahatma Gandhi Jayanti)", "type": "Holiday 🛑"},
@@ -199,7 +212,6 @@ def fetch_macros() -> str:
     lines = ["📊 <b>9:00 AM Global Macro Pulse</b>\n"]
     
     for name, ticker in MACRO_TICKERS.items():
-        # BTC Bulletproof Bypass via Binance API
         if ticker == "BTC-USD":
             try:
                 res = requests.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT", timeout=5).json()
@@ -266,7 +278,23 @@ def run_macro_pulse_if_needed():
 # LIVE BREAKING RADAR: GEOPOLITICAL SHOCKS & GLOBAL EARNINGS
 # ----------------------------------------------------------------------
 def check_breaking_news():
-    seen = set(load_json(SEEN_NEWS_FILE, []))
+    seen_links = set(load_json(SEEN_NEWS_FILE, []))
+    state = load_json(STATE_FILE, {})
+    
+    # Format of company_history: {"company_key": [{"time": timestamp, "source": "Reuters"}]}
+    company_history = state.get("company_alerts", {})
+    now_epoch = time.time()
+    day_seconds = 24 * 3600
+    
+    # Prune alert history older than 24 hours
+    for c_key in list(company_history.keys()):
+        company_history[c_key] = [
+            item for item in company_history[c_key]
+            if (now_epoch - item.get("time", 0)) < day_seconds
+        ]
+        if not company_history[c_key]:
+            del company_history[c_key]
+
     shock_alerts = []
     earnings_alerts = []
     
@@ -282,29 +310,57 @@ def check_breaking_news():
                 link = item.find("link").text if item.find("link") is not None else ""
                 pub_date = item.find("pubDate").text if item.find("pubDate") is not None else ""
                 
-                if not raw_title or not link or link in seen:
+                if not raw_title or not link or link in seen_links:
                     continue
                     
                 title_lower = raw_title.lower()
                 clean_title = html.escape(raw_title)
                 
+                # Extract publisher name from Google RSS (Google titles end with " - Publisher")
+                source_name = raw_title.split(" - ")[-1].strip() if " - " in raw_title else ""
+                source_lower = source_name.lower()
+                
                 # Check for Global Sector Leader Earnings / Guidance
-                matched_company = None
+                matched_key = None
+                matched_meta = None
                 for key, meta in GLOBAL_LEADERS.items():
                     if re.search(rf"\b{key}\b", title_lower):
-                        matched_company = meta
+                        matched_key = key
+                        matched_meta = meta
                         break
                         
-                if matched_company:
-                    if any(re.search(rf"\b{kw}\b", title_lower) for kw in EARNINGS_KEYWORDS):
-                        earnings_alerts.append((clean_title, link, pub_date, matched_company))
-                        seen.add(link)
+                if matched_key and any(re.search(rf"\b{kw}\b", title_lower) for kw in EARNINGS_KEYWORDS):
+                    # 1. Filter: Must be from a trusted financial source
+                    is_trusted = any(ts in source_lower for ts in TRUSTED_FINANCIAL_SOURCES)
+                    if not is_trusted:
+                        seen_links.add(link)
                         continue
+                        
+                    # 2. Filter: Max 2 alerts per company in 24 hours
+                    recent_alerts = company_history.get(matched_key, [])
+                    if len(recent_alerts) >= MAX_ALERTS_PER_COMPANY_24H:
+                        seen_links.add(link)
+                        continue
+                        
+                    # 3. Filter: Avoid repeating the same source for the same company
+                    past_sources = [a.get("source", "").lower() for a in recent_alerts]
+                    if source_lower in past_sources:
+                        seen_links.add(link)
+                        continue
+                        
+                    # Valid alert accepted
+                    earnings_alerts.append((clean_title, link, pub_date, matched_meta, source_name))
+                    seen_links.add(link)
+                    
+                    if matched_key not in company_history:
+                        company_history[matched_key] = []
+                    company_history[matched_key].append({"time": now_epoch, "source": source_name})
+                    continue
 
                 # Check for Geopolitical Shock Keywords
                 if any(re.search(rf"\b{kw}\b", title_lower) for kw in SHOCK_KEYWORDS):
                     shock_alerts.append((clean_title, link, pub_date))
-                    seen.add(link)
+                    seen_links.add(link)
                     
         except Exception as e:
             log.warning("News fetch failed for feed %s: %s", feed_url, e)
@@ -321,11 +377,12 @@ def check_breaking_news():
         time.sleep(1.2)
         
     # Dispatch Global Bellwether Results / Guidance Alerts
-    for title, link, date, comp in earnings_alerts:
+    for title, link, date, comp, source in earnings_alerts:
         msg = (
             f"📢 <b>GLOBAL BELLWETHER RESULTS / GUIDANCE</b> 🇺🇸\n\n"
             f"<b>{title}</b>\n\n"
             f"🏢 <b>Entity:</b> {comp['name']}\n"
+            f"📰 <b>Source:</b> {source if source else 'Tier-1 Wire'}\n"
             f"🎯 <b>Indian Market Impact:</b> {comp['impact']}\n"
             f"🕐 {date}\n"
             f"🔗 <a href='{link}'>Read Detailed Breakdown</a>"
@@ -333,8 +390,11 @@ def check_breaking_news():
         send_telegram_message(msg)
         time.sleep(1.2)
         
-    if shock_alerts or earnings_alerts:
-        save_json(SEEN_NEWS_FILE, list(seen)[-500:])
+    # Persist updated memory state
+    if shock_alerts or earnings_alerts or seen_links:
+        state["company_alerts"] = company_history
+        save_json(STATE_FILE, state)
+        save_json(SEEN_NEWS_FILE, list(seen_links)[-500:])
 
 # ----------------------------------------------------------------------
 # MAIN EXECUTION
