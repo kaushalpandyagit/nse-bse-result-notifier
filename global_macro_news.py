@@ -154,7 +154,7 @@ def fetch_macros() -> str:
 def run_macro_pulse_if_needed():
     now = get_ist_now()
     # We want to run between 8:50 AM and 9:15 AM
-    if TRUE:
+    if True:
         state = load_json(STATE_FILE, {})
         today_str = now.strftime("%Y-%m-%d")
         
