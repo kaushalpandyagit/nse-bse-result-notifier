@@ -6,6 +6,7 @@ Global Macro Pulse (9:00 AM IST), Global Bellwether Earnings, ADR Radar & Geopol
 3. Live ADR Radar: Scans INFY, HDB, WIT, IBN in US markets; alerts if move exceeds 2%.
 4. Curated Radar: US/Global Sector Leader Earnings & Guidance (TSMC, Intel, etc.).
 5. Polls global news RSS feeds every 15 mins for high-impact geopolitical shocks.
+   (Filtered to remove local/domestic non-macro noise).
 """
 
 import os
@@ -60,12 +61,18 @@ TRUSTED_FINANCIAL_SOURCES = [
 ]
 
 # ----------------------------------------------------------------------
-# 2. GEOPOLITICAL SHOCK KEYWORDS
+# 2. GEOPOLITICAL SHOCK KEYWORDS & NOISE FILTERS
 # ----------------------------------------------------------------------
 SHOCK_KEYWORDS = [
-    "war", "assassinat", "missile", "nuclear", "strike", "attack", 
-    "invasion", "invades", "terrorist", "geopolitical", "emergency", 
-    "martial law", "coup", "bombing", "airstrike"
+    "assassinat", "missile strike", "nuclear", "airstrike", 
+    "military invasion", "invades", "martial law", "coup d'etat", 
+    "terrorist attack", "geopolitical"
+]
+
+NON_MACRO_NOISE = [
+    "school", "bus", "medical", "patient", "hospital", "crash", 
+    "traffic", "murder", "domestic", "tornado", "hurricane", "police",
+    "county", "local", "district"
 ]
 
 # ----------------------------------------------------------------------
@@ -366,8 +373,10 @@ def check_breaking_news():
 
                 # Check Geopolitical Shocks
                 if any(re.search(rf"\b{kw}\b", title_lower) for kw in SHOCK_KEYWORDS):
-                    shock_alerts.append((clean_title, link, pub_date))
-                    seen_links.add(link)
+                    # APPLY LOCAL NOISE FILTER
+                    if not any(re.search(rf"\b{noise}\b", title_lower) for noise in NON_MACRO_NOISE):
+                        shock_alerts.append((clean_title, link, pub_date))
+                        seen_links.add(link)
                     
         except Exception: pass
             
