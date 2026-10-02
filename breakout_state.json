@@ -105,7 +105,9 @@
   },
   "custom_alert_TECHLABS_price": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "custom_last_alert": "2026-10-02T08:45:56.506113",
+    "custom_last_price": 110.44999694824219
   },
   "custom_alert_CIRCULAR_news": {
     "alerted": false,
