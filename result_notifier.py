@@ -8,7 +8,8 @@ Covers:
   4. Multi-Modal Logistics & Terminals (Gati Shakti, Railway Sidings)
   5. Insider Trading & Promoter Actions (with 🟢 Buy / 🔴 Sell logic)
   6. NSE Exchange Circulars
-  7. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
+  7. Automated Catalyst History Logger (company_catalyst_history.json)
+  8. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
 import os
@@ -146,6 +147,7 @@ RESOLUTION_PURPOSES = [
 WATCHLIST = []  
 
 SEEN_FILE = Path(__file__).parent / "seen_announcements.json"
+CATALYST_FILE = Path(__file__).parent / "company_catalyst_history.json"
 LOG_FILE = Path(__file__).parent / "notifier.log"
 
 # ----------------------------------------------------------------------
@@ -228,6 +230,17 @@ def load_seen() -> set:
 def save_seen(seen: set):
     trimmed = list(seen)[-6000:]
     SEEN_FILE.write_text(json.dumps(trimmed))
+
+def load_catalyst_history() -> dict:
+    if CATALYST_FILE.exists():
+        try:
+            return json.loads(CATALYST_FILE.read_text())
+        except Exception:
+            pass
+    return {}
+
+def save_catalyst_history(data: dict):
+    CATALYST_FILE.write_text(json.dumps(data, indent=2))
 
 def normalise_company(name: str) -> str:
     name = name.upper()
@@ -566,9 +579,14 @@ def poll_once(seen: set) -> set:
         item["category"] = category
         new_alerts.append(item)
 
+    catalyst_history = load_catalyst_history()
+    dirty_history = False
+
     for item in new_alerts:
         cat = item["category"]
         sentiment_marker = ""
+        order_val = None
+        summary = ""
         
         safe_comp = html.escape(item['company'])
         safe_subj = html.escape(item['subject'])
@@ -641,8 +659,10 @@ def poll_once(seen: set) -> set:
                 sub_low = item["subject"].lower()
                 if any(kw in sub_low for kw in ["acquisit", "buy", "purchase"]):
                     dynamic_emoji = "🟢"
+                    sentiment_marker = " 🟢"
                 elif any(kw in sub_low for kw in ["sale", "disposal", "sell"]):
                     dynamic_emoji = "🔴"
+                    sentiment_marker = " 🔴"
             
             sum_line = f"📝 Action: <b>{summary}</b>\n" if summary else ""
             header = f"{dynamic_emoji} <b>{safe_comp}</b> ({item['source']}) \u2014 Insider / Promoter Action"
@@ -691,6 +711,47 @@ def poll_once(seen: set) -> set:
         send_telegram_message(msg)
         log.info("Alert dispatched [%s]: %s", cat.upper(), item["company"])
         time.sleep(1.0)
+        
+        # ------------------------------------------------------------------
+        # RECORD POSITIVE / NEGATIVE NEWS FOR FUTURE ANALYSIS
+        # ------------------------------------------------------------------
+        sentiment = "neutral"
+        if "🟢" in sentiment_marker:
+            sentiment = "positive"
+        elif "🔴" in sentiment_marker:
+            sentiment = "negative"
+            
+        if sentiment in ["positive", "negative"]:
+            symbol = item.get("symbol", "").upper()
+            if symbol and symbol != "UNKNOWN":
+                if symbol not in catalyst_history:
+                    catalyst_history[symbol] = {"positive": [], "negative": []}
+                
+                event_record = {
+                    "date": item["date"],
+                    "category": cat,
+                    "subject": item["subject"],
+                    "link": item.get("link", ""),
+                }
+                
+                # Attach extra financial context if available
+                if cat == "order" and order_val:
+                    event_record["value_raw"] = order_val
+                    order_cr = parse_to_crores(order_val)
+                    if order_cr > 0:
+                        event_record["value_cr"] = order_cr
+                        
+                if cat == "insider_promoter" and summary:
+                    event_record["action"] = summary
+                    
+                catalyst_history[symbol][sentiment].append(event_record)
+                
+                # Keep history lean: store up to 50 latest events per sentiment per company
+                catalyst_history[symbol][sentiment] = catalyst_history[symbol][sentiment][-50:]
+                dirty_history = True
+
+    if dirty_history:
+        save_catalyst_history(catalyst_history)
 
     return seen
 
