@@ -1,1 +1,122 @@
-{}
+{
+  "custom_alert_BSE:ACLD_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_AERON_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_ALLETEC_price": {
+    "alerted": false,
+    "last_alert": null,
+    "custom_last_alert": "2026-10-02T03:45:48.035920",
+    "custom_last_price": 122.25
+  },
+  "custom_alert_BASILIC_price": {
+    "alerted": false,
+    "last_alert": null,
+    "custom_last_alert": "2026-10-02T03:45:48.803070",
+    "custom_last_price": 171.64999389648438
+  },
+  "custom_alert_BEACON_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_CNINFOTECH_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_DELAPLEX_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_DENEERS_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_EMAPARTNERS_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_EMMIL_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_ESFL_price": {
+    "alerted": false,
+    "last_alert": null,
+    "custom_last_alert": "2026-10-02T03:45:51.627764",
+    "custom_last_price": 113.0999984741211
+  },
+  "custom_alert_GPIL_news": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_GSMFOILS_news": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_HINDWAREAP_rsi": {
+    "alerted": false,
+    "last_alert": null,
+    "custom_last_alert": "2026-10-02T03:45:52.408750",
+    "custom_last_price": 169.97000122070312
+  },
+  "custom_alert_KAYNES_rsi": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_KOTHARIPET_rsi": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_LAKSHYA_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_BSE:METAINFO_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_BSE:PGFOILQ_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_PRADPME_weekly_rsi": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_PRESSTONIC_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_BSE:RAVELCARE_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_SPCL_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_SSEGL_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_TECHLABS_price": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_CIRCULAR_news": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_BSE:CIRCULAR_news": {
+    "alerted": false,
+    "last_alert": null
+  },
+  "custom_alert_PHOENIXLTD_price": {
+    "alerted": false,
+    "last_alert": null
+  }
+}
