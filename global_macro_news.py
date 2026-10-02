@@ -2,11 +2,15 @@
 Global Macro Pulse (9:00 AM IST), Global Bellwether Earnings, ADR Radar & Geopolitical Shocks
 ==============================================================================================
 1. Sends a comprehensive global macro summary every morning at ~9:00 AM IST.
-2. 7-Day Forward Calendar: Dynamically tracks 1st-of-month (Auto/GST) + RBI/Fed/Holidays.
+2. 7-Day Forward Calendar:
+   - Dynamically tracks 1st-of-month (Auto Sales & GST Collections).
+   - Tracks Central Bank policy meetings, US CPI, and Market Holidays.
+   - Tracks FTSE & MSCI Rebalance cycles (Announcements & Implementation Days)
+     with stock names and institutional inflow/outflow dollar allocations.
 3. Live ADR Radar: Scans INFY, HDB, WIT, IBN in US markets; alerts if move exceeds 2%.
 4. Curated Radar: US/Global Sector Leader Earnings & Guidance (TSMC, Intel, etc.).
-5. Polls global news RSS feeds every 15 mins for high-impact geopolitical shocks.
-   (Filtered to remove local/domestic non-macro noise).
+5. Polls global news RSS feeds every 15 mins for high-impact geopolitical shocks
+   (with strict filtering to remove domestic/local non-macro noise).
 """
 
 import os
@@ -21,6 +25,7 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 import requests
+
 try:
     import yfinance as yf
 except ImportError:
@@ -61,7 +66,7 @@ TRUSTED_FINANCIAL_SOURCES = [
 ]
 
 # ----------------------------------------------------------------------
-# 2. GEOPOLITICAL SHOCK KEYWORDS & NOISE FILTERS
+# 2. GEOPOLITICAL SHOCK KEYWORDS & LOCAL NOISE FILTERS
 # ----------------------------------------------------------------------
 SHOCK_KEYWORDS = [
     "assassinat", "missile strike", "nuclear", "airstrike", 
@@ -146,16 +151,55 @@ MACRO_TICKERS = {
 }
 
 # ----------------------------------------------------------------------
-# 5. STATIC MACRO EVENT CALENDAR (Auto/GST injected dynamically)
+# 5. MACRO EVENT & INDEX REBALANCE CALENDAR (Auto/GST injected dynamically)
 # ----------------------------------------------------------------------
 MACRO_CALENDAR = [
-    {"date": "2026-10-02", "event": "NSE/BSE Holiday (Mahatma Gandhi Jayanti)", "type": "Holiday 🛑"},
-    {"date": "2026-10-05", "event": "RBI MPC Meeting Begins", "type": "Central Bank 🏛️"},
-    {"date": "2026-10-07", "event": "RBI MPC Policy Decision (Repo Rate)", "type": "Central Bank 🏛️"},
-    {"date": "2026-10-14", "event": "US CPI (Inflation Data Release)", "type": "Data Release 📊"},
-    {"date": "2026-10-20", "event": "NSE/BSE Holiday (Dussehra)", "type": "Holiday 🛑"},
-    {"date": "2026-10-27", "event": "US Fed FOMC Meeting Begins", "type": "Central Bank 🏛️"},
-    {"date": "2026-10-28", "event": "US Fed FOMC Policy Decision", "type": "Central Bank 🏛️"},
+    # --- October 2026 ---
+    {"date": "2026-10-02", "event": "NSE/BSE Holiday (Mahatma Gandhi Jayanti)", "type": "Holiday 🛑", "details": []},
+    {"date": "2026-10-05", "event": "RBI MPC Meeting Begins", "type": "Central Bank 🏛️", "details": []},
+    {"date": "2026-10-07", "event": "RBI MPC Policy Decision (Repo Rate)", "type": "Central Bank 🏛️", "details": []},
+    {"date": "2026-10-14", "event": "US CPI (Inflation Data Release)", "type": "Data Release 📊", "details": []},
+    {"date": "2026-10-20", "event": "NSE/BSE Holiday (Dussehra)", "type": "Holiday 🛑", "details": []},
+    {"date": "2026-10-27", "event": "US Fed FOMC Meeting Begins", "type": "Central Bank 🏛️", "details": []},
+    {"date": "2026-10-28", "event": "US Fed FOMC Policy Decision", "type": "Central Bank 🏛️", "details": []},
+
+    # --- November 2026 (MSCI & FTSE Cycles) ---
+    {
+        "date": "2026-11-10", 
+        "event": "MSCI Semi-Annual Review Announcement", 
+        "type": "Index Announcement 📢",
+        "details": [
+            "Official list of stock additions, deletions, and weight changes released post-US close."
+        ]
+    },
+    {
+        "date": "2026-11-20", 
+        "event": "FTSE GEIS Review Announcement", 
+        "type": "Index Announcement 📢",
+        "details": [
+            "FTSE preliminary list of additions, deletions & weight adjustments published."
+        ]
+    },
+    {
+        "date": "2026-11-30", 
+        "event": "MSCI Implementation Day (Passive Flows at 3:15-3:30 PM)", 
+        "type": "Index Rebalance ⚖️",
+        "details": [
+            "Expected Inclusions: [DIXON (+$210M), POLYCAB (+$185M), TRENT (+$160M)]",
+            "Expected Exclusions: [BANDHANBNK (-$85M)]",
+            "Execution: Heavy volume spikes expected on closing auction (3:15 PM - 3:30 PM)."
+        ]
+    },
+
+    # --- December 2026 (FTSE Implementation) ---
+    {
+        "date": "2026-12-18", 
+        "event": "FTSE GEIS Quarterly Rebalance Implementation", 
+        "type": "Index Rebalance ⚖️",
+        "details": [
+            "Passive tracking funds execute weight adjustments at closing auction."
+        ]
+    }
 ]
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -182,15 +226,18 @@ def send_telegram_message(text: str) -> bool:
 
 def load_json(filepath: Path, default):
     if filepath.exists():
-        try: return json.loads(filepath.read_text())
-        except Exception: pass
+        try:
+            return json.loads(filepath.read_text())
+        except Exception:
+            pass
     return default
 
 def save_json(filepath: Path, data):
     filepath.write_text(json.dumps(data))
 
 def get_ist_now():
-    if IST: return datetime.datetime.now(IST)
+    if IST:
+        return datetime.datetime.now(IST)
     return datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=5, minutes=30)
 
 # ----------------------------------------------------------------------
@@ -209,18 +256,22 @@ def get_upcoming_events(days_ahead=7) -> str:
             events_list.append({
                 "date_obj": curr_date,
                 "type": "Data Release 📊",
-                "event": "Indian Auto Sales & GST Collections"
+                "event": "Indian Auto Sales & GST Collections",
+                "details": [
+                    "OEM monthly domestic sales dispatches & MoF GST collection figures."
+                ]
             })
         curr_date += datetime.timedelta(days=1)
         
-    # 2. Inject Static Events
+    # 2. Inject Static & Rebalance Events
     for item in MACRO_CALENDAR:
         evt_date = datetime.date.fromisoformat(item["date"])
         if today_ist <= evt_date <= end_date:
             events_list.append({
                 "date_obj": evt_date,
                 "type": item["type"],
-                "event": item["event"]
+                "event": item["event"],
+                "details": item.get("details", [])
             })
             
     # Sort chronologically
@@ -233,12 +284,20 @@ def get_upcoming_events(days_ahead=7) -> str:
     for evt in events_list:
         diff = (evt["date_obj"] - today_ist).days
         day_str = "Today" if diff == 0 else "Tomorrow" if diff == 1 else f"In {diff} days"
-        upcoming.append(f"• <b>{evt['date_obj'].strftime('%d %b')}</b> ({day_str}): {evt['type']} — {evt['event']}")
+        line = f"• <b>{evt['date_obj'].strftime('%d %b')}</b> ({day_str}): {evt['type']} — {evt['event']}"
         
-    return "\n🗓️ <b>7-Day Macro Event Calendar:</b>\n" + "\n".join(upcoming)
+        # Render stocks & allocations if populated
+        if evt.get("details"):
+            for d in evt["details"]:
+                line += f"\n   └ <i>{d}</i>"
+                
+        upcoming.append(line)
+        
+    return "\n🗓️️ <b>7-Day Macro & Rebalance Calendar:</b>\n" + "\n".join(upcoming)
 
 def fetch_macros() -> str:
-    if not yf: return "⚠️ yfinance library not installed."
+    if not yf:
+        return "⚠️ yfinance library not installed."
     
     lines = ["📊 <b>9:00 AM Global Macro Pulse</b>\n"]
     for name, ticker in MACRO_TICKERS.items():
@@ -249,27 +308,32 @@ def fetch_macros() -> str:
                 sign, color = ("+", "🟢") if chg_pct > 0 else ("", "🔴") if chg_pct < 0 else ("", "⚪")
                 lines.append(f"{color} {name}: <b>${current:,.0f}</b> ({sign}{chg_pct:.2f}%)")
                 continue
-            except Exception: pass
+            except Exception:
+                pass
                 
         try:
             t = yf.Ticker(ticker)
             hist = t.history(period="5d")
             if len(hist) < 2:
                 current = t.fast_info.get("lastPrice", 0)
-                if current == 0: continue
+                if current == 0:
+                    continue
                 chg_pct = 0.0
             else:
                 prev_close, current = hist["Close"].iloc[-2], hist["Close"].iloc[-1]
                 chg_pct = ((current - prev_close) / prev_close) * 100
             
             sign, color = ("+", "🟢") if chg_pct > 0 else ("", "🔴") if chg_pct < 0 else ("", "⚪")
-            if ticker == "^TNX": lines.append(f"{color} {name}: <b>{current:.3f}%</b> ({sign}{chg_pct:.2f}%)")
-            else: lines.append(f"{color} {name}: <b>{current:,.2f}</b> ({sign}{chg_pct:.2f}%)")
+            if ticker == "^TNX":
+                lines.append(f"{color} {name}: <b>{current:.3f}%</b> ({sign}{chg_pct:.2f}%)")
+            else:
+                lines.append(f"{color} {name}: <b>{current:,.2f}</b> ({sign}{chg_pct:.2f}%)")
         except Exception:
             pass
             
     calendar_text = get_upcoming_events(days_ahead=7)
-    if calendar_text: lines.append(f"\n{calendar_text}")
+    if calendar_text:
+        lines.append(f"\n{calendar_text}")
     return "\n".join(lines)
 
 def run_macro_pulse_if_needed():
@@ -295,7 +359,8 @@ def check_breaking_news():
     # Prune alerts older than 24h
     for c_key in list(company_history.keys()):
         company_history[c_key] = [item for item in company_history[c_key] if (now_epoch - item.get("time", 0)) < day_seconds]
-        if not company_history[c_key]: del company_history[c_key]
+        if not company_history[c_key]:
+            del company_history[c_key]
 
     # --- 1. INDIAN ADR LIVE VOLATILITY RADAR ---
     adr_alerts = []
@@ -303,7 +368,7 @@ def check_breaking_news():
         for ticker, name in INDIAN_ADRS.items():
             recent_adr_alerts = [a for a in company_history.get(ticker, []) if a.get("type") == "ADR_VOLATILITY"]
             if len(recent_adr_alerts) >= ADR_ALERT_COOLDOWN_24H:
-                continue # Already alerted for this ADR today
+                continue
                 
             try:
                 t = yf.Ticker(ticker)
@@ -315,7 +380,8 @@ def check_breaking_news():
                     
                     if abs(chg_pct) >= 2.0:
                         adr_alerts.append((name, current, chg_pct))
-                        if ticker not in company_history: company_history[ticker] = []
+                        if ticker not in company_history:
+                            company_history[ticker] = []
                         company_history[ticker].append({"time": now_epoch, "type": "ADR_VOLATILITY"})
             except Exception:
                 pass
@@ -337,14 +403,16 @@ def check_breaking_news():
     for feed_url in NEWS_FEEDS:
         try:
             resp = requests.get(feed_url, timeout=12)
-            if resp.status_code != 200: continue
+            if resp.status_code != 200:
+                continue
             root = ET.fromstring(resp.text)
             for item in root.findall(".//item")[:20]:
                 raw_title = item.find("title").text if item.find("title") is not None else ""
                 link = item.find("link").text if item.find("link") is not None else ""
                 pub_date = item.find("pubDate").text if item.find("pubDate") is not None else ""
                 
-                if not raw_title or not link or link in seen_links: continue
+                if not raw_title or not link or link in seen_links:
+                    continue
                 title_lower, clean_title = raw_title.lower(), html.escape(raw_title)
                 source_name = raw_title.split(" - ")[-1].strip() if " - " in raw_title else ""
                 source_lower = source_name.lower()
@@ -367,18 +435,20 @@ def check_breaking_news():
                         
                     earnings_alerts.append((clean_title, link, pub_date, matched_meta, source_name))
                     seen_links.add(link)
-                    if matched_key not in company_history: company_history[matched_key] = []
+                    if matched_key not in company_history:
+                        company_history[matched_key] = []
                     company_history[matched_key].append({"time": now_epoch, "type": "EARNINGS", "source": source_name})
                     continue
 
                 # Check Geopolitical Shocks
                 if any(re.search(rf"\b{kw}\b", title_lower) for kw in SHOCK_KEYWORDS):
-                    # APPLY LOCAL NOISE FILTER
+                    # Strict Noise Filter: Ignore local police, hospital, and vehicle accident reports
                     if not any(re.search(rf"\b{noise}\b", title_lower) for noise in NON_MACRO_NOISE):
                         shock_alerts.append((clean_title, link, pub_date))
                         seen_links.add(link)
                     
-        except Exception: pass
+        except Exception:
+            pass
             
     for title, link, date in shock_alerts:
         send_telegram_message(f"🚨 <b>BREAKING MACRO SHOCK</b> 🚨\n\n<b>{title}</b>\n\n🕐 {date}\n🔗 <a href='{link}'>Read Report</a>")
