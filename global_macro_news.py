@@ -12,8 +12,8 @@ Global Macro Pulse (9:00 AM IST), Bellwethers, ADR Radar, USFDA, PLI & Tariff Ne
 5. Polls global news RSS feeds every 15 mins for:
    - High-impact geopolitical shocks (filtered against local non-macro noise).
    - USFDA Inspections, Form 483, Warning Letters, Import Alerts & EIR Clearances for Indian Pharma.
-   - Central & State Govt PLI Schemes, Cabinet Subsidies & Sectoral Incentives.
-   - Global Commodity Tariffs, Import/Export Duties, and Anti-Dumping actions.
+   - Central & State Govt PLI Schemes with listed beneficiary mapping.
+   - Global Commodity Tariffs, Import/Export Duties & Anti-Dumping actions with listed beneficiary mapping.
 """
 
 import os
@@ -108,7 +108,7 @@ USFDA_POSITIVE_KEYWORDS = [
 ]
 
 # ----------------------------------------------------------------------
-# 4. GOVT PLI & SECTOR SCHEMES RADAR
+# 4. GOVT PLI & SECTOR SCHEMES RADAR WITH BENEFICIARIES
 # ----------------------------------------------------------------------
 GOVT_SCHEME_KEYWORDS = [
     "pli scheme", "production linked incentive", "production-linked incentive",
@@ -117,19 +117,51 @@ GOVT_SCHEME_KEYWORDS = [
     "solar pli", "battery pli", "state industrial policy", "industrial incentive scheme"
 ]
 
+PLI_SECTOR_BENEFICIARIES = {
+    "electronics": "Dixon Tech (DIXON), Amber Enterprises (AMBER), Kaynes Tech (KAYNES), Syrma SGS (SYRMA)",
+    "semiconductor": "Tata Elxsi (TATAELXSI), CG Power (CGPOWER), Kaynes Tech (KAYNES), Moschip (MOSCHIP)",
+    "solar": "Tata Power (TATAPOWER), Premier Energies (PREMIERENE), Waaree Energies (WAAREEENER), Websol (WEBELSOLAR)",
+    "battery": "Exide Industries (EXIDEIND), Amara Raja (ARE&M)",
+    "textile": "KPR Mill (KPRMILL), Gokaldas Exports (GOKEX), Welspun Living (WELSPUNLIV)",
+    "auto": "Tata Motors (TATAMOTORS), Mahindra & Mahindra (M&M), Sona BLW (SONACOMS), Uno Minda (UNOMINDA)",
+    "ev": "Tata Motors (TATAMOTORS), Olectra Greentech (OLECTRA), JBM Auto (JBMA)",
+    "telecom": "HFCL (HFCL), Tejas Networks (TEJASNET), ITI (ITI)",
+    "pharma": "Divi's (DIVISLAB), Laurus Labs (LAURUSLABS), Granules (GRANULES)",
+}
+
 # ----------------------------------------------------------------------
-# 5. COMMODITY IMPORT/EXPORT DUTIES & TARIFF RADAR
+# 5. COMMODITY IMPORT/EXPORT DUTIES & BENEFICIARIES MAPPING
 # ----------------------------------------------------------------------
 TRADE_TARIFF_KEYWORDS = [
     "import duty", "export duty", "customs duty", "anti-dumping", 
     "anti dumping", "tariffs", "imposes duty", "removes duty", 
-    "slashes duty", "hikes duty", "duty hike", "duty cut", "levies duty"
+    "slashes duty", "hikes duty", "duty hike", "duty cut", "levies duty",
+    "scraps duty", "abolishes duty", "cuts duty", "duty reduction"
 ]
 
 COMMODITY_KEYWORDS = [
     "commodity", "metal", "steel", "gold", "silver", "copper", "aluminium", "aluminum",
-    "wheat", "sugar", "palm oil", "edible oil", "iron ore", "coal", "cotton", "crude"
+    "zinc", "wheat", "sugar", "palm oil", "edible oil", "iron ore", "coal", "cotton", "crude"
 ]
+
+COMMODITY_BENEFICIARIES = {
+    "gold": "Titan (TITAN), Kalyan Jewellers (KALYANKJIL), Rajesh Exports (RAJESHEXPO), Senco Gold (SENCO), PC Jeweller (PCJEWELLER)",
+    "silver": "Hindustan Zinc (HINDZINC)",
+    "steel": "Tata Steel (TATASTEEL), JSW Steel (JSWSTEEL), Jindal Steel (JINDALSTEL), SAIL (SAIL), Shyam Metalics (SMEL)",
+    "iron ore": "NMDC (NMDC), Vedanta (VEDL), KIOCL (KIOCL)",
+    "aluminium": "Hindalco (HINDALCO), NALCO (NATIONALUM), Vedanta (VEDL)",
+    "aluminum": "Hindalco (HINDALCO), NALCO (NATIONALUM), Vedanta (VEDL)",
+    "copper": "Hindustan Copper (HINDCOPPER), Hindalco (HINDALCO), Vedanta (VEDL)",
+    "zinc": "Hindustan Zinc (HINDZINC), Vedanta (VEDL)",
+    "metal": "Tata Steel (TATASTEEL), JSW Steel (JSWSTEEL), Hindalco (HINDALCO), Vedanta (VEDL), NALCO (NATIONALUM)",
+    "sugar": "Balrampur Chini (BALRAMCHIN), Shree Renuka (RENUKA), Triveni Eng (TRIVENI), Praj Ind (PRAJIND), Dwarikesh (DWARKESH)",
+    "palm oil": "Adani Wilmar (AWL), Patanjali Foods (PATANJALI), Godrej Agrovet (GODREJAGRO)",
+    "edible oil": "Adani Wilmar (AWL), Patanjali Foods (PATANJALI), Godrej Agrovet (GODREJAGRO)",
+    "crude": "ONGC (ONGC), Oil India (OIL), Reliance (RELIANCE), IOC (IOC), BPCL (BPCL), HPCL (HPCL)",
+    "coal": "Coal India (COALINDIA)",
+    "wheat": "ITC (ITC), Britannia (BRITANNIA)",
+    "cotton": "Vardhman Textiles (VTL), Welspun Living (WELSPUNLIV), KPR Mill (KPRMILL)",
+}
 
 # ----------------------------------------------------------------------
 # 6. GLOBAL SECTOR LEADERS & INDIAN ADRs
@@ -486,18 +518,31 @@ def check_breaking_news():
                     seen_links.add(link)
                     continue
 
-                # --- 2B. GOVT POLICY & PLI SCHEME CATALYSTS ---
+                # --- 2B. GOVT POLICY & PLI SCHEME CATALYSTS WITH BENEFICIARIES ---
                 if any(k in title_lower for k in GOVT_SCHEME_KEYWORDS):
-                    pli_alerts.append((clean_title, link, pub_date, source_name))
+                    # Check sector beneficiary match
+                    matched_pli_beneficiaries = []
+                    for sector_key, ben_stocks in PLI_SECTOR_BENEFICIARIES.items():
+                        if re.search(rf"\b{sector_key}\b", title_lower):
+                            matched_pli_beneficiaries.append(ben_stocks)
+                    
+                    beneficiary_str = " | ".join(matched_pli_beneficiaries) if matched_pli_beneficiaries else ""
+                    pli_alerts.append((clean_title, link, pub_date, source_name, beneficiary_str))
                     seen_links.add(link)
                     continue
 
-                # --- 2C. COMMODITY IMPORT/EXPORT DUTIES & TARIFFS ---
+                # --- 2C. COMMODITY IMPORT/EXPORT DUTIES & TARIFFS WITH BENEFICIARIES ---
                 has_tariff_kw = any(k in title_lower for k in TRADE_TARIFF_KEYWORDS)
                 has_commodity_kw = any(c in title_lower for c in COMMODITY_KEYWORDS)
                 
                 if has_tariff_kw and has_commodity_kw:
-                    tariff_alerts.append((clean_title, link, pub_date, source_name))
+                    matched_beneficiaries = []
+                    for comm_key, ben_stocks in COMMODITY_BENEFICIARIES.items():
+                        if re.search(rf"\b{comm_key}\b", title_lower):
+                            matched_beneficiaries.append(ben_stocks)
+                    
+                    beneficiary_str = " | ".join(matched_beneficiaries) if matched_beneficiaries else ""
+                    tariff_alerts.append((clean_title, link, pub_date, source_name, beneficiary_str))
                     seen_links.add(link)
                     continue
 
@@ -539,29 +584,33 @@ def check_breaking_news():
             f"💊 <b>USFDA REGULATORY ACTION / CLEARANCE</b>\n\n"
             f"<b>{title}</b>\n\n"
             f"🏢 <b>Target:</b> {comp}\n"
-            f"⚖️ <b>Status:</b> {action_type}\n"
+            f"⚖️️ <b>Status:</b> {action_type}\n"
             f"📰 <b>Source:</b> {source if source else 'Regulatory Wire'}\n"
             f"🕐 {date}\n"
             f"🔗 <a href='{link}'>Read Filing / Report</a>"
         )
         time.sleep(1.2)
 
-    for title, link, date, source in pli_alerts:
+    for title, link, date, source, beneficiaries in pli_alerts:
+        ben_block = f"🎯 <b>Likely Beneficiaries:</b>\n• {beneficiaries}\n\n" if beneficiaries else ""
         send_telegram_message(
             f"🏛️ <b>GOVT POLICY & PLI SCHEME CATALYST</b> 🇮🇳\n\n"
             f"<b>{title}</b>\n\n"
             f"📌 <b>Category:</b> Central / State Industrial Incentive Scheme\n"
+            f"{ben_block}"
             f"📰 <b>Source:</b> {source if source else 'Govt / Media Wire'}\n"
             f"🕐 {date}\n"
             f"🔗 <a href='{link}'>Read Policy Update</a>"
         )
         time.sleep(1.2)
 
-    for title, link, date, source in tariff_alerts:
+    for title, link, date, source, beneficiaries in tariff_alerts:
+        ben_block = f"🎯 <b>Likely Impact / Beneficiaries:</b>\n• {beneficiaries}\n\n" if beneficiaries else ""
         send_telegram_message(
             f"⚖️ <b>COMMODITY TARIFF / DUTY ALERT</b> 🌍\n\n"
             f"<b>{title}</b>\n\n"
             f"📌 <b>Category:</b> Import/Export Duty / Anti-Dumping\n"
+            f"{ben_block}"
             f"📰 <b>Source:</b> {source if source else 'Wire'}\n"
             f"🕐 {date}\n"
             f"🔗 <a href='{link}'>Read Report</a>"
