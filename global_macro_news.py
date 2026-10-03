@@ -1,5 +1,5 @@
 """
-Global Macro Pulse (9:00 AM IST), Global Bellwether Earnings, ADR Radar & Geopolitical Shocks
+Global Macro Pulse (9:00 AM IST), Bellwethers, ADR Radar, USFDA, PLI & Tariff News
 ==============================================================================================
 1. Sends a comprehensive global macro summary every morning at ~9:00 AM IST.
 2. 7-Day Forward Calendar:
@@ -9,8 +9,11 @@ Global Macro Pulse (9:00 AM IST), Global Bellwether Earnings, ADR Radar & Geopol
      with stock names and institutional inflow/outflow dollar allocations.
 3. Live ADR Radar: Scans INFY, HDB, WIT, IBN in US markets; alerts if move exceeds 2%.
 4. Curated Radar: US/Global Sector Leader Earnings & Guidance (TSMC, Intel, etc.).
-5. Polls global news RSS feeds every 15 mins for high-impact geopolitical shocks
-   (with strict filtering to remove domestic/local non-macro noise).
+5. Polls global news RSS feeds every 15 mins for:
+   - High-impact geopolitical shocks (filtered against local non-macro noise).
+   - USFDA Inspections, Form 483, Warning Letters, Import Alerts & EIR Clearances for Indian Pharma.
+   - Central & State Govt PLI Schemes, Cabinet Subsidies & Sectoral Incentives.
+   - Global Commodity Tariffs, Import/Export Duties, and Anti-Dumping actions.
 """
 
 import os
@@ -52,7 +55,7 @@ POLL_INTERVAL_MINUTES = 15
 STATE_FILE = Path(__file__).parent / "macro_state.json"
 SEEN_NEWS_FILE = Path(__file__).parent / "seen_news.json"
 
-# Max earnings/ADR alerts per company within a rolling 24-hour window
+# Max alerts per entity within rolling 24-hour window
 MAX_ALERTS_PER_COMPANY_24H = 2
 ADR_ALERT_COOLDOWN_24H = 1
 
@@ -62,7 +65,9 @@ ADR_ALERT_COOLDOWN_24H = 1
 TRUSTED_FINANCIAL_SOURCES = [
     "reuters", "bloomberg", "cnbc", "barron's", "barrons",
     "wall street journal", "wsj", "financial times", "marketwatch",
-    "investor's business daily", "yahoo finance", "associated press"
+    "investor's business daily", "yahoo finance", "associated press",
+    "moneycontrol", "economic times", "livemint", "business standard",
+    "cnbc-tv18", "zee business", "ndtv profit", "financial express"
 ]
 
 # ----------------------------------------------------------------------
@@ -81,7 +86,53 @@ NON_MACRO_NOISE = [
 ]
 
 # ----------------------------------------------------------------------
-# 3. GLOBAL SECTOR LEADERS & INDIAN ADRs
+# 3. PHARMA & USFDA REGULATORY RADAR
+# ----------------------------------------------------------------------
+INDIAN_PHARMA_COMPANIES = [
+    "sun pharma", "dr. reddy", "dr reddy", "cipla", "lupin", "aurobindo", 
+    "zydus", "alkem", "glenmark", "torrent pharma", "biocon", "granules", 
+    "natco", "gland pharma", "divi's", "divis lab", "laurus labs", "ipca", 
+    "jubilant pharmova", "alembic", "marksans", "strides pharma", 
+    "shilpa medicare", "wockhardt", "suven", "neuland", "caplin point"
+]
+
+USFDA_NEGATIVE_KEYWORDS = [
+    "warning letter", "import alert", "form 483", "oai", 
+    "official action indicated", "withheld approval", "data integrity"
+]
+
+USFDA_POSITIVE_KEYWORDS = [
+    "establishment inspection report", "eir", "voluntary action indicated", 
+    "vai", "no action indicated", "nai", "inspection closed", "clearance", 
+    "clears facility", "inspection successful", "tentative approval", "final approval"
+]
+
+# ----------------------------------------------------------------------
+# 4. GOVT PLI & SECTOR SCHEMES RADAR
+# ----------------------------------------------------------------------
+GOVT_SCHEME_KEYWORDS = [
+    "pli scheme", "production linked incentive", "production-linked incentive",
+    "cabinet approves pli", "cabinet approves scheme", "semiconductor incentive",
+    "capex subsidy", "electronics manufacturing scheme", "textile pli", 
+    "solar pli", "battery pli", "state industrial policy", "industrial incentive scheme"
+]
+
+# ----------------------------------------------------------------------
+# 5. COMMODITY IMPORT/EXPORT DUTIES & TARIFF RADAR
+# ----------------------------------------------------------------------
+TRADE_TARIFF_KEYWORDS = [
+    "import duty", "export duty", "customs duty", "anti-dumping", 
+    "anti dumping", "tariffs", "imposes duty", "removes duty", 
+    "slashes duty", "hikes duty", "duty hike", "duty cut", "levies duty"
+]
+
+COMMODITY_KEYWORDS = [
+    "commodity", "metal", "steel", "gold", "silver", "copper", "aluminium", "aluminum",
+    "wheat", "sugar", "palm oil", "edible oil", "iron ore", "coal", "cotton", "crude"
+]
+
+# ----------------------------------------------------------------------
+# 6. GLOBAL SECTOR LEADERS & INDIAN ADRs
 # ----------------------------------------------------------------------
 GLOBAL_LEADERS = {
     # IT Services & Enterprise Tech
@@ -132,11 +183,14 @@ NEWS_FEEDS = [
     "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-IN&gl=IN&ceid=IN:en",
     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=when%3A4h%20(Accenture%20OR%20Cognizant%20OR%20Nvidia%20OR%20Microsoft%20OR%20Apple%20OR%20Amazon%20OR%20Google%20OR%20Meta%20OR%20AMD%20OR%20Micron%20OR%20TSMC%20OR%20Tesla%20OR%20Alibaba%20OR%20Huawei%20OR%20EPAM%20OR%20SanDisk%20OR%20Western%20Digital%20OR%20Intel)%20(earnings%20OR%20guidance%20OR%20revenue%20OR%20results)&hl=en-US&gl=US&ceid=US:en"
+    "https://news.google.com/rss/search?q=when%3A4h%20(Accenture%20OR%20Cognizant%20OR%20Nvidia%20OR%20Microsoft%20OR%20Apple%20OR%20Amazon%20OR%20Google%20OR%20Meta%20OR%20AMD%20OR%20Micron%20OR%20TSMC%20OR%20Tesla%20OR%20Alibaba%20OR%20Huawei%20OR%20EPAM%20OR%20SanDisk%20OR%20Western%20Digital%20OR%20Intel)%20(earnings%20OR%20guidance%20OR%20revenue%20OR%20results)&hl=en-US&gl=US&ceid=US:en",
+    "https://news.google.com/rss/search?q=when%3A4h%20(USFDA%20OR%20%22US%20FDA%22%20OR%20%22Form%20483%22%20OR%20%22warning%20letter%22%20OR%20%22import%20alert%22%20OR%20%22EIR%22%20OR%20clearance)%20(pharma%20OR%20facility%20OR%20plant)&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=when%3A6h%20(%22PLI%20scheme%22%20OR%20%22production%20linked%20incentive%22%20OR%20%22cabinet%20approves%22%20OR%20%22subsidy%20scheme%22)&hl=en-IN&gl=IN&ceid=IN:en",
+    "https://news.google.com/rss/search?q=when%3A12h%20(%22import%20duty%22%20OR%20%22export%20duty%22%20OR%20%22customs%20duty%22%20OR%20%22anti-dumping%22%20OR%20tariff)%20(metal%20OR%20steel%20OR%20gold%20OR%20silver%20OR%20copper%20OR%20aluminum%20OR%20wheat%20OR%20sugar%20OR%20oil%20OR%20commodity)&hl=en-IN&gl=IN&ceid=IN:en"
 ]
 
 # ----------------------------------------------------------------------
-# 4. MACRO ASSETS (9:00 AM PULSE)
+# 7. MACRO ASSETS (9:00 AM PULSE)
 # ----------------------------------------------------------------------
 MACRO_TICKERS = {
     "🇺🇸 Nasdaq 100 Futures": "NQ=F",
@@ -151,7 +205,7 @@ MACRO_TICKERS = {
 }
 
 # ----------------------------------------------------------------------
-# 5. MACRO EVENT & INDEX REBALANCE CALENDAR (Auto/GST injected dynamically)
+# 8. MACRO EVENT & INDEX REBALANCE CALENDAR (Auto/GST injected dynamically)
 # ----------------------------------------------------------------------
 MACRO_CALENDAR = [
     # --- October 2026 ---
@@ -249,7 +303,7 @@ def get_upcoming_events(days_ahead=7) -> str:
     
     events_list = []
     
-    # 1. Inject Dynamic 1st-of-the-month (Auto Sales & GST)
+    # 1. Dynamic 1st-of-month (Auto Sales & GST)
     curr_date = today_ist
     while curr_date <= end_date:
         if curr_date.day == 1:
@@ -263,7 +317,7 @@ def get_upcoming_events(days_ahead=7) -> str:
             })
         curr_date += datetime.timedelta(days=1)
         
-    # 2. Inject Static & Rebalance Events
+    # 2. Static & Rebalance Events
     for item in MACRO_CALENDAR:
         evt_date = datetime.date.fromisoformat(item["date"])
         if today_ist <= evt_date <= end_date:
@@ -274,7 +328,6 @@ def get_upcoming_events(days_ahead=7) -> str:
                 "details": item.get("details", [])
             })
             
-    # Sort chronologically
     events_list.sort(key=lambda x: x["date_obj"])
     
     if not events_list:
@@ -286,14 +339,13 @@ def get_upcoming_events(days_ahead=7) -> str:
         day_str = "Today" if diff == 0 else "Tomorrow" if diff == 1 else f"In {diff} days"
         line = f"• <b>{evt['date_obj'].strftime('%d %b')}</b> ({day_str}): {evt['type']} — {evt['event']}"
         
-        # Render stocks & allocations if populated
         if evt.get("details"):
             for d in evt["details"]:
                 line += f"\n   └ <i>{d}</i>"
                 
         upcoming.append(line)
         
-    return "\n🗓️️ <b>7-Day Macro & Rebalance Calendar:</b>\n" + "\n".join(upcoming)
+    return "\n🗓️ <b>7-Day Macro & Rebalance Calendar:</b>\n" + "\n".join(upcoming)
 
 def fetch_macros() -> str:
     if not yf:
@@ -347,7 +399,7 @@ def run_macro_pulse_if_needed():
             save_json(STATE_FILE, state)
 
 # ----------------------------------------------------------------------
-# LIVE BREAKING RADAR: ADRs, EARNINGS & SHOCKS
+# LIVE BREAKING RADAR: ADRs, EARNINGS, USFDA, PLI, TARIFFS & SHOCKS
 # ----------------------------------------------------------------------
 def check_breaking_news():
     seen_links = set(load_json(SEEN_NEWS_FILE, []))
@@ -396,9 +448,12 @@ def check_breaking_news():
         send_telegram_message(msg)
         time.sleep(1.2)
 
-    # --- 2. GLOBAL RSS SCANNER (Earnings & Shocks) ---
+    # --- 2. GLOBAL RSS SCANNER ---
     shock_alerts = []
     earnings_alerts = []
+    usfda_alerts = []
+    pli_alerts = []
+    tariff_alerts = []
     
     for feed_url in NEWS_FEEDS:
         try:
@@ -416,8 +471,37 @@ def check_breaking_news():
                 title_lower, clean_title = raw_title.lower(), html.escape(raw_title)
                 source_name = raw_title.split(" - ")[-1].strip() if " - " in raw_title else ""
                 source_lower = source_name.lower()
+
+                # --- 2A. USFDA REGULATORY ACTIONS & CLEARANCES FOR PHARMA ---
+                is_fda_topic = any(k in title_lower for k in ["usfda", "us fda", "fda "])
+                matched_pharma = next((p for p in INDIAN_PHARMA_COMPANIES if p in title_lower), None)
                 
-                # Check Global Earnings
+                if (is_fda_topic or matched_pharma) and any(w in title_lower for w in USFDA_NEGATIVE_KEYWORDS + USFDA_POSITIVE_KEYWORDS):
+                    action_type = "🔴 Warning / Regulatory Action"
+                    if any(pos in title_lower for pos in USFDA_POSITIVE_KEYWORDS) and not any(neg in title_lower for neg in USFDA_NEGATIVE_KEYWORDS):
+                        action_type = "🟢 Clearance / EIR / Approval"
+                    
+                    comp_name = matched_pharma.title() if matched_pharma else "Indian Pharma Sector"
+                    usfda_alerts.append((clean_title, link, pub_date, comp_name, action_type, source_name))
+                    seen_links.add(link)
+                    continue
+
+                # --- 2B. GOVT POLICY & PLI SCHEME CATALYSTS ---
+                if any(k in title_lower for k in GOVT_SCHEME_KEYWORDS):
+                    pli_alerts.append((clean_title, link, pub_date, source_name))
+                    seen_links.add(link)
+                    continue
+
+                # --- 2C. COMMODITY IMPORT/EXPORT DUTIES & TARIFFS ---
+                has_tariff_kw = any(k in title_lower for k in TRADE_TARIFF_KEYWORDS)
+                has_commodity_kw = any(c in title_lower for c in COMMODITY_KEYWORDS)
+                
+                if has_tariff_kw and has_commodity_kw:
+                    tariff_alerts.append((clean_title, link, pub_date, source_name))
+                    seen_links.add(link)
+                    continue
+
+                # --- 2D. GLOBAL BELLWETHER EARNINGS ---
                 matched_key, matched_meta = None, None
                 for key, meta in GLOBAL_LEADERS.items():
                     if re.search(rf"\b{key}\b", title_lower):
@@ -440,16 +524,50 @@ def check_breaking_news():
                     company_history[matched_key].append({"time": now_epoch, "type": "EARNINGS", "source": source_name})
                     continue
 
-                # Check Geopolitical Shocks
+                # --- 2E. GEOPOLITICAL SHOCKS ---
                 if any(re.search(rf"\b{kw}\b", title_lower) for kw in SHOCK_KEYWORDS):
-                    # Strict Noise Filter: Ignore local police, hospital, and vehicle accident reports
                     if not any(re.search(rf"\b{noise}\b", title_lower) for noise in NON_MACRO_NOISE):
                         shock_alerts.append((clean_title, link, pub_date))
                         seen_links.add(link)
                     
         except Exception:
             pass
-            
+
+    # --- DISPATCH ALERTS ---
+    for title, link, date, comp, action_type, source in usfda_alerts:
+        send_telegram_message(
+            f"💊 <b>USFDA REGULATORY ACTION / CLEARANCE</b>\n\n"
+            f"<b>{title}</b>\n\n"
+            f"🏢 <b>Target:</b> {comp}\n"
+            f"⚖️ <b>Status:</b> {action_type}\n"
+            f"📰 <b>Source:</b> {source if source else 'Regulatory Wire'}\n"
+            f"🕐 {date}\n"
+            f"🔗 <a href='{link}'>Read Filing / Report</a>"
+        )
+        time.sleep(1.2)
+
+    for title, link, date, source in pli_alerts:
+        send_telegram_message(
+            f"🏛️ <b>GOVT POLICY & PLI SCHEME CATALYST</b> 🇮🇳\n\n"
+            f"<b>{title}</b>\n\n"
+            f"📌 <b>Category:</b> Central / State Industrial Incentive Scheme\n"
+            f"📰 <b>Source:</b> {source if source else 'Govt / Media Wire'}\n"
+            f"🕐 {date}\n"
+            f"🔗 <a href='{link}'>Read Policy Update</a>"
+        )
+        time.sleep(1.2)
+
+    for title, link, date, source in tariff_alerts:
+        send_telegram_message(
+            f"⚖️ <b>COMMODITY TARIFF / DUTY ALERT</b> 🌍\n\n"
+            f"<b>{title}</b>\n\n"
+            f"📌 <b>Category:</b> Import/Export Duty / Anti-Dumping\n"
+            f"📰 <b>Source:</b> {source if source else 'Wire'}\n"
+            f"🕐 {date}\n"
+            f"🔗 <a href='{link}'>Read Report</a>"
+        )
+        time.sleep(1.2)
+
     for title, link, date in shock_alerts:
         send_telegram_message(f"🚨 <b>BREAKING MACRO SHOCK</b> 🚨\n\n<b>{title}</b>\n\n🕐 {date}\n🔗 <a href='{link}'>Read Report</a>")
         time.sleep(1.2)
@@ -458,7 +576,7 @@ def check_breaking_news():
         send_telegram_message(f"📢 <b>GLOBAL BELLWETHER RESULTS / GUIDANCE</b> 🇺🇸\n\n<b>{title}</b>\n\n🏢 <b>Entity:</b> {comp['name']}\n📰 <b>Source:</b> {source if source else 'Wire'}\n🎯 <b>Indian Impact:</b> {comp['impact']}\n🕐 {date}\n🔗 <a href='{link}'>Read Breakdown</a>")
         time.sleep(1.2)
         
-    if shock_alerts or earnings_alerts or adr_alerts or seen_links:
+    if shock_alerts or earnings_alerts or adr_alerts or usfda_alerts or pli_alerts or tariff_alerts or seen_links:
         state["company_alerts"] = company_history
         save_json(STATE_FILE, state)
         save_json(SEEN_NEWS_FILE, list(seen_links)[-500:])
