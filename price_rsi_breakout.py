@@ -9,6 +9,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - Special Price Discovery / Call Auction Circular & News Scraper from Google Sheet.
 - 17% to 22% 52W High / ATH Scanner.
 - Open=Low (>9:45 AM) momentum tag injection.
+- Uncapped Result-Day RSI recording for ALL companies > 50 Cr Market Cap.
 """
 
 import os
@@ -80,9 +81,13 @@ MIN_PRICE_CHANGE_FOR_REPEAT_PCT = 1.0
 RSI_PERIOD = 14
 TRACK_WINDOW_DAYS = 15
 
+# Momentum Universe Filters
 MIN_MARKET_CAP_CR = 300.0
 MAX_MARKET_CAP_CR = 31000.0
 MAX_WEEKLY_RSI = 57.0
+
+# General Result-Day RSI recording filter
+MIN_RSI_RECORDING_MCAP_CR = 50.0
 
 RESULT_KEYWORDS = [
     "financial result", "financial results", "quarterly result",
@@ -402,7 +407,7 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                 }
                 return metrics_dict
 
-    yahoo_ticker = f"{symbol}.NS" if exchange == "NSE" else f"{symbol}.BO"
+    yahoo_ticker = f"{symbol}.NS" if exchange.upper() == "NSE" else f"{symbol}.BO"
     try:
         hist = yf.Ticker(yahoo_ticker).history(period="1y", interval="1d")
         if hist.empty or len(hist) < 5: 
@@ -482,7 +487,7 @@ def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"
                     }
                     return baseline_dict
 
-    yahoo_ticker = f"{symbol}.NS" if exchange == "NSE" else f"{symbol}.BO"
+    yahoo_ticker = f"{symbol}.NS" if exchange.upper() == "NSE" else f"{symbol}.BO"
     try:
         hist = yf.Ticker(yahoo_ticker).history(start=date - datetime.timedelta(days=365), end=date + datetime.timedelta(days=7))
         if hist.empty: 
@@ -577,9 +582,10 @@ def detect_vcp(highs: pd.Series, lows: pd.Series, lookback: int = VCP_LOOKBACK_D
         ranges.append((float(seg_h.max()) - float(seg_l.min())) / float(seg_l.min()) * 100)
     return ranges[0] > ranges[1] > ranges[2]
 
-def get_market_cap_cr(symbol: str) -> float:
+def get_market_cap_cr(symbol: str, exchange: str = "NSE") -> float:
     try:
-        t = yf.Ticker(f"{symbol}.NS")
+        ticker_suffix = ".NS" if exchange.upper() == "NSE" else ".BO"
+        t = yf.Ticker(f"{symbol.strip().upper()}{ticker_suffix}")
         mcap = t.fast_info.get("marketCap") or t.fast_info.get("market_cap")
         if mcap: 
             return float(mcap) / 1e7
@@ -612,7 +618,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         if len(closes) < 210 or len(volumes) < 50: 
             continue
 
-        mcap_cr = get_market_cap_cr(symbol)
+        mcap_cr = get_market_cap_cr(symbol, "NSE")
         if mcap_cr is not None and (mcap_cr < MIN_MARKET_CAP_CR or mcap_cr > MAX_MARKET_CAP_CR): 
             continue
 
@@ -999,11 +1005,6 @@ def load_momentum_state() -> dict:
             pass
     return {"last_scan_date": None, "watchlist": {}}
 
-def normalise_company(name: str) -> str:
-    name = name.upper()
-    name = re.sub(r"\b(LIMITED|LTD|LTD\.|THE)\b", "", name)
-    return re.sub(r"[^A-Z0-9]", "", name).strip()
-
 def is_result_announcement(subject: str) -> bool:
     subj_lower = subject.lower()
     if any(kw in subj_lower for kw in RESULT_KEYWORDS):
@@ -1040,7 +1041,7 @@ def fetch_nse_result_symbols() -> set:
             hits.add(symbol)
     return hits
 
-def fetch_bse_result_companies() -> set:
+def fetch_bse_result_symbols() -> set:
     today = datetime.datetime.now().strftime("%Y%m%d")
     from_date = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime("%Y%m%d")
     url = (
@@ -1066,9 +1067,9 @@ def fetch_bse_result_companies() -> set:
     hits = set()
     for item in data.get("Table", []):
         subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}"
-        company = item.get("SLONGNAME") or ""
-        if company and is_result_announcement(subject):
-            hits.add(normalise_company(company))
+        scrip_cd = str(item.get("SCRIP_CD", ""))
+        if scrip_cd and is_result_announcement(subject):
+            hits.add(scrip_cd)
     return hits
 
 # ----------------------------------------------------------------------
@@ -1076,40 +1077,41 @@ def fetch_bse_result_companies() -> set:
 # ----------------------------------------------------------------------
 
 def poll_once(state: dict, fyers) -> dict:
-    universe = set(get_universe_symbols())
-    universe_normalised = {normalise_company(s): s for s in universe}
-
-    nse_hits = fetch_nse_result_symbols() & universe
-    bse_hits = {universe_normalised[n] for n in fetch_bse_result_companies() if n in universe_normalised}
+    # 1. Fetch ALL results from NSE & BSE (Uncapped, no universe limits)
+    nse_hits = fetch_nse_result_symbols()
+    bse_hits = fetch_bse_result_symbols()
+    
     new_result_symbols = (nse_hits | bse_hits) - set(state.keys())
 
     today = datetime.date.today()
     for symbol in new_result_symbols:
-        metrics = get_baseline_metrics(fyers, symbol, today, "NSE")
+        exchange = "BSE" if symbol.isdigit() else "NSE"
+        
+        # --- MARKET CAP FILTER (> 50 Crore) ---
+        mcap_cr = get_market_cap_cr(symbol, exchange)
+        if mcap_cr is None or mcap_cr < MIN_RSI_RECORDING_MCAP_CR:
+            continue
+        # --------------------------------------
+            
+        metrics = get_baseline_metrics(fyers, symbol, today, exchange)
         if metrics is None: 
             continue
+            
         state_dict = {
             "result_date": datetime.datetime.combine(metrics["actual_date"], datetime.time()).isoformat(),
             "day_high": metrics["day_high"], 
             "day_low": metrics["day_low"], 
             "baseline_rsi": metrics["baseline_rsi"],
+            "mcap_cr": mcap_cr,
+            "exchange": exchange
         }
         state[symbol] = state_dict
         
         rsi_line = f"Result-day RSI({RSI_PERIOD}): {metrics['baseline_rsi']:.1f}\n" if metrics["baseline_rsi"] else ""
-        send_telegram_message(f"\U0001F4CC <b>{symbol}</b> result filed today.\nResult-day High: \u20b9{metrics['day_high']:.2f} | Low: \u20b9{metrics['day_low']:.2f}\n{rsi_line}Will alert if price breaks this High/Low or RSI crosses.")
+        mcap_line = f"Market Cap: ₹{mcap_cr:.0f} Cr\n"
+        send_telegram_message(f"\U0001F4CC <b>{symbol}</b> result filed today.\n{mcap_line}Result-day High: \u20b9{metrics['day_high']:.2f} | Low: \u20b9{metrics['day_low']:.2f}\n{rsi_line}Will alert if price breaks this High/Low or RSI crosses.")
 
     state = prune_expired(state)
-    
-    # --- OPEN=LOW LOGIC (> 9:45 AM) ---
-    open_low_tag = ""
-    now_ist = get_ist_now()
-    if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
-        d_open = metrics.get("open_price") if metrics else None
-        d_low = metrics.get("low_price") if metrics else None
-        if d_open and d_low and (d_low >= d_open * 0.999):
-            open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
-    # ----------------------------------
     
     for symbol, entry in state.items():
         if symbol.startswith("custom_alert_"): 
@@ -1117,11 +1119,22 @@ def poll_once(state: dict, fyers) -> dict:
         if "day_low" not in entry or "baseline_rsi" not in entry: 
             continue
 
-        metrics = get_live_metrics(fyers, symbol, "NSE")
+        exchange = entry.get("exchange", "BSE" if symbol.isdigit() else "NSE")
+        metrics = get_live_metrics(fyers, symbol, exchange)
         if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI: 
             continue
 
         price, rsi = metrics["price"], metrics["rsi"]
+
+        # --- OPEN=LOW LOGIC (> 9:45 AM) ---
+        open_low_tag = ""
+        now_ist = get_ist_now()
+        if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
+            d_open = metrics.get("open_price")
+            d_low = metrics.get("low_price")
+            if d_open and d_low and (d_low >= d_open * 0.999):
+                open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
+        # ----------------------------------
 
         if price > entry["day_high"] and alert_allowed(entry, "price_high", price):
             record_alert(entry, "price_high", price)
@@ -1150,7 +1163,6 @@ def poll_once(state: dict, fyers) -> dict:
         c_entry = state[state_key]
         clean_symbol, exchange = symbol.split(":")[-1].upper(), "BSE" if symbol.startswith("BSE:") else "NSE"
 
-        # Special News & Price Discovery / Call Auction Circular Matcher
         if rules["metric"] == "news":
             for news_item in recent_news:
                 match_symbol = (news_item["symbol"] == clean_symbol) or (clean_symbol in ("CIRCULAR", "ALL", "*"))
@@ -1174,7 +1186,6 @@ def poll_once(state: dict, fyers) -> dict:
                             )
             continue
 
-        # Numeric / Price Alerts with 45-Min + 1% Price Change Rule
         c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
         if not c_metrics: 
             continue
@@ -1185,11 +1196,10 @@ def poll_once(state: dict, fyers) -> dict:
 
         current_price = c_metrics.get("price")
         
-        # Calculate individual open=low tag for this specific stock
         c_open = c_metrics.get("open_price")
         c_low = c_metrics.get("low_price")
         custom_open_low_tag = ""
-        if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
+        if get_ist_now().hour > 9 or (get_ist_now().hour == 9 and get_ist_now().minute >= 45):
             if c_open and c_low and (c_low >= c_open * 0.999):
                 custom_open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
         
