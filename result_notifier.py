@@ -1,15 +1,16 @@
 """
-NSE + BSE Live Result, Order Win, Insider Trade, Circular & Meeting Notifier -> Telegram
+NSE + BSE Live Result, Order Win, Insider Trade, Circular, Meeting & Business Update Notifier
 ==========================================================================================
 Covers:
   1. Financial Results (Regulation 33 / Board outcomes)
   2. Order Wins + Order-to-Market-Cap ASYMMETRY Triggers (>= 20% of MCap)
-  3. Asset Commissioning (Commercial Production / CWIP)
+  3. Asset Commissioning & Capacity Expansion (Commercial Production / CWIP)
   4. Multi-Modal Logistics & Terminals (Gati Shakti, Railway Sidings)
-  5. Insider Trading & Promoter Actions (with 🟢 Buy / 🔴 Sell logic)
-  6. NSE Exchange Circulars
-  7. Automated Catalyst History Logger (company_catalyst_history.json)
-  8. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
+  5. Pre-Earnings Quarterly Business / Operational Updates (Provisional Numbers)
+  6. Insider Trading & Promoter Actions (with 🟢 Buy / 🔴 Sell logic)
+  7. NSE Exchange Circulars
+  8. Automated Catalyst History Logger (company_catalyst_history.json)
+  9. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
 import os
@@ -57,6 +58,13 @@ RESULT_KEYWORDS = [
     "standalone and consolidated financial", "submitted to the exchange",
 ]
 
+BUSINESS_UPDATE_KEYWORDS = [
+    "business update", "operational update", "quarterly update",
+    "provisional data", "provisional figures", "provisional numbers",
+    "provisional update", "performance update", "key operational",
+    "business highlights", "updates on operational", "update on operations"
+]
+
 ORDER_KEYWORDS = [
     "award of order", "awarded order", "awarded contract", "award of contract",
     "receipt of order", "received order", "receipt of contract", "bagging of order",
@@ -71,7 +79,7 @@ ORDER_KEYWORDS = [
 COMMISSIONING_KEYWORDS = [
     "commercial production", "commissioning", "commencement of commercial",
     "commences commercial", "cwip", "capital work-in-progress", "brownfield",
-    "commercial operations", "commencement of operation"
+    "commercial operations", "commencement of operation", "capacity expansion"
 ]
 
 LOGISTICS_KEYWORDS = [
@@ -349,6 +357,10 @@ def classify_announcement(subject: str) -> str:
     if "trading window" in subj_lower:
         return None
         
+    # Catch Business Updates *before* it gets caught by routine Meeting/Result logic
+    if any(kw in subj_lower for kw in BUSINESS_UPDATE_KEYWORDS):
+        return "business_update"
+        
     if any(kw in subj_lower for kw in ORDER_KEYWORDS):
         return "order"
     if any(kw in subj_lower for kw in COMMISSIONING_KEYWORDS):
@@ -595,6 +607,11 @@ def poll_once(seen: set) -> set:
             header = f"🏛️ <b>{safe_comp}</b> \u2014 Market Wide Circular"
             body = f"{safe_subj}\n\U0001F550 {item['date']}"
             
+        elif cat == "business_update":
+            header = f"📊 <b>{safe_comp}</b> ({item['source']}) \u2014 Quarterly Business / Operational Update"
+            body = f"{safe_subj}\n\U0001F550 {item['date']}"
+            sentiment_marker = " ⚡"
+            
         elif cat == "commissioning":
             header = f"🏭 <b>{safe_comp}</b> ({item['source']}) \u2014 Asset Commissioning"
             body = f"{safe_subj}\n\U0001F550 {item['date']}"
@@ -713,19 +730,25 @@ def poll_once(seen: set) -> set:
         time.sleep(1.0)
         
         # ------------------------------------------------------------------
-        # RECORD POSITIVE / NEGATIVE NEWS FOR FUTURE ANALYSIS
+        # RECORD POSITIVE / NEGATIVE / UPDATES NEWS FOR FUTURE ANALYSIS
         # ------------------------------------------------------------------
         sentiment = "neutral"
         if "🟢" in sentiment_marker:
             sentiment = "positive"
         elif "🔴" in sentiment_marker:
             sentiment = "negative"
+        elif cat == "business_update":
+            sentiment = "business_updates"
             
-        if sentiment in ["positive", "negative"]:
+        if sentiment in ["positive", "negative", "business_updates"]:
             symbol = item.get("symbol", "").upper()
-            if symbol and symbol != "UNKNOWN":
+            if symbol and symbol != "UNKNOWN" and symbol != "CIRCULAR":
                 if symbol not in catalyst_history:
-                    catalyst_history[symbol] = {"positive": [], "negative": []}
+                    catalyst_history[symbol] = {"positive": [], "negative": [], "business_updates": []}
+                
+                # Ensure existing records have the new array structure gracefully
+                if "business_updates" not in catalyst_history[symbol]:
+                    catalyst_history[symbol]["business_updates"] = []
                 
                 event_record = {
                     "date": item["date"],
@@ -734,7 +757,6 @@ def poll_once(seen: set) -> set:
                     "link": item.get("link", ""),
                 }
                 
-                # Attach extra financial context if available
                 if cat == "order" and order_val:
                     event_record["value_raw"] = order_val
                     order_cr = parse_to_crores(order_val)
@@ -782,4 +804,5 @@ def main():
             log.info("Outside allowed operating schedule -- sleeping.")
         time.sleep(POLL_INTERVAL_MINUTES * 60)
 
-main()
+if __name__ == "__main__":
+    main()
