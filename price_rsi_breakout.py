@@ -10,7 +10,8 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - 17% to 22% 52W High / ATH Scanner.
 - Open=Low (>9:45 AM) momentum tag injection.
 - Uncapped Result-Day RSI recording for ALL companies > 50 Cr Market Cap.
-- NEW: 60-Day Major Structural Sweep & RSI Retest (Wyckoff Spring) Scanner.
+- 60-Day Major Structural Sweep & RSI Retest (Wyckoff Spring) Scanner.
+- NEW: Early Momentum Ignition Scanner (RSI Breakout 1-2% below price resistance).
 """
 
 import os
@@ -632,18 +633,18 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         if trend is None: 
             continue
         
-        # Calculate full RSI series to extract historical anchor RSI points
         rsi_series = get_rsi_series(closes, RSI_PERIOD)
         
-        # --- 60-DAY MACRO PIVOT IDENTIFICATION ---
-        macro_low = None
-        macro_low_rsi = None
+        # --- 60-DAY MACRO PIVOT IDENTIFICATION (Low & High) ---
+        macro_low, macro_low_rsi = None, None
+        macro_high, macro_high_rsi = None, None
+        minor_high, minor_high_rsi = None, None
+        
         if len(lows) >= MACRO_PIVOT_LOOKBACK_DAYS:
+            # Macro Low
             window_lows = lows.iloc[-MACRO_PIVOT_LOOKBACK_DAYS:]
             m_low = float(window_lows.min())
             m_idx = window_lows.idxmin()
-            
-            # Ensure price actually rallied at least 5% away from it (confirming it's a structural pivot)
             if m_idx in highs.index:
                 idx_pos = highs.index.get_loc(m_idx)
                 subsequent_highs = highs.iloc[idx_pos:]
@@ -651,7 +652,32 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
                     macro_low = m_low
                     rsi_val = rsi_series.loc[m_idx]
                     macro_low_rsi = float(rsi_val) if pd.notna(rsi_val) else 50.0
-        # ----------------------------------------
+
+            # Macro High
+            window_highs = highs.iloc[-MACRO_PIVOT_LOOKBACK_DAYS:]
+            m_high = float(window_highs.max())
+            m_idx_high = window_highs.idxmax()
+            if m_idx_high in lows.index:
+                idx_pos = lows.index.get_loc(m_idx_high)
+                subsequent_lows = lows.iloc[idx_pos:]
+                if float(subsequent_lows.min()) <= m_high * 0.95:
+                    macro_high = m_high
+                    rsi_val = rsi_series.loc[m_idx_high]
+                    macro_high_rsi = float(rsi_val) if pd.notna(rsi_val) else 60.0
+
+        # Minor High (Last 20 days)
+        if len(highs) >= 20:
+            window_highs_20 = highs.iloc[-20:]
+            min_h = float(window_highs_20.max())
+            min_idx_high = window_highs_20.idxmax()
+            if min_idx_high in lows.index:
+                idx_pos = lows.index.get_loc(min_idx_high)
+                subsequent_lows = lows.iloc[idx_pos:]
+                if float(subsequent_lows.min()) <= min_h * 0.97:
+                    minor_high = min_h
+                    rsi_val = rsi_series.loc[min_idx_high]
+                    minor_high_rsi = float(rsi_val) if pd.notna(rsi_val) else 60.0
+        # ------------------------------------------------------
         
         rs_return = (float(closes.iloc[-1]) / float(closes.iloc[-RS_LOOKBACK_DAYS]) - 1) * 100 if len(closes) > RS_LOOKBACK_DAYS and float(closes.iloc[-RS_LOOKBACK_DAYS]) > 0 else None
         
@@ -675,7 +701,11 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             "ema_200_prev": float(closes.ewm(span=200, adjust=False).mean().iloc[-1]),
             "mcap_cr": mcap_cr,
             "macro_low": macro_low,
-            "macro_low_rsi": macro_low_rsi
+            "macro_low_rsi": macro_low_rsi,
+            "macro_high": macro_high,
+            "macro_high_rsi": macro_high_rsi,
+            "minor_high": minor_high,
+            "minor_high_rsi": minor_high_rsi
         }
         per_symbol_data[symbol] = symbol_data_dict
         if rs_return is not None: 
@@ -792,36 +822,26 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                 open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
         # ----------------------------------
 
+        c_low = metrics["low_price"]
+        c_high = metrics["high_price"]
+        c_open = metrics["open_price"]
+        c_rsi = metrics["rsi"]
+        c_vol = metrics["volume"]
+        sma_vol_20 = metrics["sma_vol_20"]
+
         # ----------------------------------------------------------------------
-        # 1. NEW: LIQUIDITY SWEEP & WYCKOFF SPRING SCANNER
+        # 1. LIQUIDITY SWEEP & WYCKOFF SPRING SCANNER
         # ----------------------------------------------------------------------
         macro_low = entry.get("macro_low")
         macro_low_rsi = entry.get("macro_low_rsi")
         
         if alert_allowed(entry, "liquidity_sweep", price) and macro_low and macro_low_rsi:
-            c_low = metrics["low_price"]
-            c_high = metrics["high_price"]
-            c_open = metrics["open_price"]
-            c_rsi = metrics["rsi"]
-            c_vol = metrics["volume"]
-            sma_vol_20 = metrics["sma_vol_20"]
-            
-            # Proximity: Current price must be within -1.5% to +2.5% of the macro pivot floor
             cond_proximity = (macro_low * 0.985) <= price <= (macro_low * 1.025)
-            
-            # RSI Setup: Exact Retest OR Bullish Divergence
-            cond_rsi_retest = abs(c_rsi - macro_low_rsi) <= 3.5
-            cond_rsi_div = (c_low <= macro_low) and (c_rsi > macro_low_rsi + 3.0)
-            cond_rsi = cond_rsi_retest or cond_rsi_div
-            
-            # Sweep & Capitulation Wick Logic
+            cond_rsi = (abs(c_rsi - macro_low_rsi) <= 3.5) or ((c_low <= macro_low) and (c_rsi > macro_low_rsi + 3.0))
             cond_sweep = c_low <= (macro_low * 1.005)
             cond_reclaim = price > macro_low
-            
             range_hl = c_high - c_low
-            wick_ratio = ((min(c_open, price) - c_low) / range_hl) if range_hl > 0 else 0
-            cond_wick = wick_ratio >= 0.40
-            
+            cond_wick = (((min(c_open, price) - c_low) / range_hl) if range_hl > 0 else 0) >= 0.40
             cond_vol = (c_vol >= 1.2 * sma_vol_20) if sma_vol_20 else False
             
             if cond_proximity and cond_rsi and cond_sweep and cond_reclaim and cond_wick and cond_vol:
@@ -829,13 +849,58 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                 send_telegram_message(
                     f"🧲 <b>{symbol}</b> Major Structural Sweep & RSI Retest!\n"
                     f"• <b>Current Price:</b> ₹{price:.2f} (Reclaimed above Major Pivot: ₹{macro_low:.2f})\n"
-                    f"• <b>Setup:</b> Liquidity Sweep Spring / Capitulation Wick (Lower shadow: {int(wick_ratio*100)}%)\n"
+                    f"• <b>Setup:</b> Liquidity Sweep Spring / Capitulation Wick\n"
                     f"• <b>RSI Test:</b> Current Daily RSI: {c_rsi:.1f} vs Base Pivot RSI: {macro_low_rsi:.1f}\n"
                     f"• <b>Volume:</b> {c_vol/sma_vol_20:.1f}x 20-day avg (Absorption detected){open_low_tag}"
                 )
 
         # ----------------------------------------------------------------------
-        # 2. STANDARD SCANNERS (ZANGER, BONDE, EMA PULLBACK, ATH)
+        # 2. NEW: EARLY MOMENTUM IGNITION SCANNER (1-2% BELOW RESISTANCE)
+        # ----------------------------------------------------------------------
+        macro_high = entry.get("macro_high")
+        macro_high_rsi = entry.get("macro_high_rsi")
+        minor_high = entry.get("minor_high")
+        minor_high_rsi = entry.get("minor_high_rsi")
+        
+        if alert_allowed(entry, "momentum_ignition", price):
+            target_high = None
+            target_rsi = None
+            anchor_type = ""
+            
+            # Check Minor High first (Last Wave Peak)
+            if minor_high and minor_high_rsi and (minor_high * 0.98 <= price <= minor_high * 0.995):
+                if c_rsi >= minor_high_rsi - 1.0:
+                    target_high = minor_high
+                    target_rsi = minor_high_rsi
+                    anchor_type = "Minor Wave Peak"
+                    
+            # Or Check Macro High (60-Day Peak)
+            elif macro_high and macro_high_rsi and (macro_high * 0.98 <= price <= macro_high * 0.995):
+                if c_rsi >= macro_high_rsi - 1.5 and c_rsi >= 60.0:
+                    target_high = macro_high
+                    target_rsi = macro_high_rsi
+                    anchor_type = "60-Day Macro Peak"
+                    
+            if target_high and target_rsi:
+                range_hl = c_high - c_low
+                upper_wick_ratio = ((c_high - max(c_open, price)) / range_hl) if range_hl > 0 else 0
+                cond_wick_high = upper_wick_ratio <= 0.35 
+                cond_vol_high = (c_vol >= 1.2 * sma_vol_20) if sma_vol_20 else False
+                
+                if cond_wick_high and cond_vol_high:
+                    record_alert(entry, "momentum_ignition", price)
+                    dist_pct = ((target_high - price) / target_high) * 100
+                    send_telegram_message(
+                        f"🚀 <b>{symbol}</b> Early Momentum Ignition Alert!\n"
+                        f"• <b>Current Price:</b> ₹{price:.2f} ({dist_pct:.1f}% below {anchor_type}: ₹{target_high:.2f})\n"
+                        f"• <b>Setup:</b> RSI Breakout *before* Price Breakout (Sign of Strength)\n"
+                        f"• <b>RSI Test:</b> Current RSI: {c_rsi:.1f} (vs Peak RSI: {target_rsi:.1f})\n"
+                        f"• <b>Volume:</b> {c_vol/sma_vol_20:.1f}x 20-day avg\n"
+                        f"• <b>Note:</b> Watch for price to break resistance soon!{open_low_tag}"
+                    )
+
+        # ----------------------------------------------------------------------
+        # 3. STANDARD SCANNERS (ZANGER, BONDE, EMA PULLBACK, ATH)
         # ----------------------------------------------------------------------
         if alert_allowed(entry, "zanger", price) and base_high and avg_vol50 and pct_change is not None:
             if pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50 and price >= (base_high * 0.95):
@@ -863,30 +928,28 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
         
         if alert_allowed(entry, "ema50_pullback", price):
             ema_50 = metrics.get("ema_50")
-            rsi = metrics.get("rsi")
             y_rsi = entry.get("yesterday_rsi")
             w_rsi = metrics.get("weekly_rsi")
             mcap = entry.get("mcap_cr", 0)
             sma_vol_5 = metrics.get("sma_vol_5")
-            sma_vol_20 = metrics.get("sma_vol_20")
 
-            if ema_50 and rsi and y_rsi and w_rsi:
+            if ema_50 and c_rsi and y_rsi and w_rsi:
                 cond_price = (ema_50 * 0.975) <= price <= (ema_50 * 1.06)
-                cond_rsi_bounds = 30 <= rsi < 58
+                cond_rsi_bounds = 30 <= c_rsi < 58
                 cond_mcap = mcap > 300
-                cond_vol = (sma_vol_20 and sma_vol_20 > 0 and (sma_vol_5 / sma_vol_20) > 1.5)
+                cond_vol_ema = (sma_vol_20 and sma_vol_20 > 0 and (sma_vol_5 / sma_vol_20) > 1.5)
                 cond_close = price >= prev_close
-                cond_rsi_daily = rsi > y_rsi
-                cond_rsi_weekly = rsi > w_rsi
+                cond_rsi_daily = c_rsi > y_rsi
+                cond_rsi_weekly = c_rsi > w_rsi
 
-                if (cond_price and cond_rsi_bounds and cond_mcap and cond_vol and 
+                if (cond_price and cond_rsi_bounds and cond_mcap and cond_vol_ema and 
                     cond_close and cond_rsi_daily and cond_rsi_weekly):
                     
                     record_alert(entry, "ema50_pullback", price)
                     send_telegram_message(
                         f"🧲 <b>{symbol}</b> Strict 50 EMA Pullback Alert!\n"
                         f"Price ₹{price:.2f} is hovering near 50 EMA (₹{ema_50:.2f}) with expanding volume.\n"
-                        f"RSI: {rsi:.1f} (Up from {y_rsi:.1f}) | Mcap: ₹{mcap:.0f} Cr{open_low_tag}"
+                        f"RSI: {c_rsi:.1f} (Up from {y_rsi:.1f}) | Mcap: ₹{mcap:.0f} Cr{open_low_tag}"
                     )
 
         if alert_allowed(entry, "near_high_17_22", price):
@@ -910,7 +973,6 @@ def fetch_recent_news_for_alerts() -> list:
     results = []
     session = requests.Session()
     
-    # 1. NSE Announcements (Equities + SME)
     try:
         session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
         time.sleep(1)
@@ -927,7 +989,6 @@ def fetch_recent_news_for_alerts() -> list:
     except Exception:
         pass
 
-    # 2. NSE Exchange Circulars (For Special Call Auction / Price Discovery Sessions)
     try:
         time.sleep(1)
         circ_resp = session.get("https://www.nseindia.com/api/circulars", headers=HEADERS, timeout=15)
@@ -947,7 +1008,6 @@ def fetch_recent_news_for_alerts() -> list:
     except Exception:
         pass
 
-    # 3. BSE Announcements & Notices
     try:
         today = datetime.datetime.now().strftime("%Y%m%d")
         from_date = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y%m%d")
