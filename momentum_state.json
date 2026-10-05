@@ -5514,8 +5514,8 @@
       "sos_thrust_peak_price": 259.5,
       "sos_thrust_peak_rsi": 74.69960658664013,
       "rs_rank": 51.7,
-      "near_high_17_22_last_alert": "2026-10-05T05:01:25.070396",
-      "near_high_17_22_last_price": 208.9499969482422
+      "near_high_17_22_last_alert": "2026-10-05T06:16:13.884146",
+      "near_high_17_22_last_price": 206.50999450683594
     },
     "GPIL": {
       "sma50": 239.74339996337892,
@@ -10096,8 +10096,8 @@
       "sos_thrust_peak_price": 1528.0,
       "sos_thrust_peak_rsi": 73.56157828655225,
       "rs_rank": 97.0,
-      "near_high_17_22_last_alert": "2026-10-05T04:16:43.457025",
-      "near_high_17_22_last_price": 1274.0
+      "near_high_17_22_last_alert": "2026-10-05T06:16:27.879174",
+      "near_high_17_22_last_price": 1256.699951171875
     },
     "PCBL": {
       "sma50": 326.0219995117188,
@@ -10226,8 +10226,8 @@
       "sos_thrust_peak_price": 362.0,
       "sos_thrust_peak_rsi": 77.69720031442331,
       "rs_rank": 35.0,
-      "near_high_17_22_last_alert": "2026-10-05T04:46:24.493718",
-      "near_high_17_22_last_price": 291.1499938964844
+      "near_high_17_22_last_alert": "2026-10-05T06:16:28.947211",
+      "near_high_17_22_last_price": 287.8500061035156
     },
     "PGEL": {
       "sma50": 568.462001953125,
@@ -12065,7 +12065,9 @@
       "sos_thrust_peak_rsi": null,
       "rs_rank": 78.5,
       "resistance_last_alert": "2026-10-05T03:50:02.088856",
-      "resistance_last_price": 1291.4000244140625
+      "resistance_last_price": 1291.4000244140625,
+      "near_high_17_22_last_alert": "2026-10-05T06:16:34.724987",
+      "near_high_17_22_last_price": 1282.0
     },
     "SCI": {
       "sma50": 286.2479998779297,
@@ -13130,8 +13132,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 88.4,
-      "near_high_17_22_last_alert": "2026-10-05T05:01:50.830803",
-      "near_high_17_22_last_price": 898.7999877929688
+      "near_high_17_22_last_alert": "2026-10-05T06:16:38.565560",
+      "near_high_17_22_last_price": 887.5
     },
     "SURYAROSNI": {
       "sma50": 223.7796014404297,
