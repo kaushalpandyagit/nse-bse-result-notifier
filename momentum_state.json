@@ -3000,8 +3000,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 25.9,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:16.418371",
-      "near_high_17_22_last_price": 671.6500244140625
+      "near_high_17_22_last_alert": "2026-10-05T09:01:59.529675",
+      "near_high_17_22_last_price": 679.4500122070312
     },
     "CERA": {
       "sma50": 5750.32,
@@ -11084,8 +11084,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 89.7,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:57.947434",
-      "near_high_17_22_last_price": 844.4500122070312
+      "near_high_17_22_last_alert": "2026-10-05T09:03:29.235833",
+      "near_high_17_22_last_price": 857.0
     },
     "RATNAMANI": {
       "sma50": 2569.6720068359373,
@@ -12119,7 +12119,11 @@
       "sos_thrust_peak_rsi": null,
       "rs_rank": 63.3,
       "ema50_pullback_last_alert": "2026-10-05T08:18:01.383028",
-      "ema50_pullback_last_price": 286.95001220703125
+      "ema50_pullback_last_price": 286.95001220703125,
+      "zanger_last_alert": "2026-10-05T09:03:41.056798",
+      "zanger_last_price": 288.8999938964844,
+      "near_high_17_22_last_alert": "2026-10-05T09:03:41.626264",
+      "near_high_17_22_last_price": 288.8999938964844
     },
     "SENCO": {
       "sma50": 358.07599853515626,
@@ -12796,8 +12800,8 @@
       "sos_thrust_peak_price": 831.0999755859375,
       "sos_thrust_peak_rsi": 75.7623389393521,
       "rs_rank": 53.0,
-      "near_high_17_22_last_alert": "2026-10-05T05:46:55.082536",
-      "near_high_17_22_last_price": 782.1500244140625
+      "near_high_17_22_last_alert": "2026-10-05T09:03:49.293994",
+      "near_high_17_22_last_price": 792.9500122070312
     },
     "STAR": {
       "sma50": 1076.6780017089843,
@@ -12894,8 +12898,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 88.2,
-      "near_high_17_22_last_alert": "2026-10-05T04:46:34.807154",
-      "near_high_17_22_last_price": 363.0
+      "near_high_17_22_last_alert": "2026-10-05T09:03:51.087485",
+      "near_high_17_22_last_price": 358.04998779296875
     },
     "STYRENIX": {
       "sma50": 2158.7700073242186,

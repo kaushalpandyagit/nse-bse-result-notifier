@@ -122,5 +122,9 @@
   "custom_alert_PHOENIXLTD_price": {
     "alerted": false,
     "last_alert": null
+  },
+  "custom_alert_PHOENIXLTD_rsi": {
+    "alerted": false,
+    "last_alert": null
   }
 }
