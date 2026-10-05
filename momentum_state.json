@@ -2098,8 +2098,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 71.9,
-      "near_high_17_22_last_alert": "2026-10-05T05:46:09.953015",
-      "near_high_17_22_last_price": 1947.0999755859375
+      "near_high_17_22_last_alert": "2026-10-05T08:46:39.496792",
+      "near_high_17_22_last_price": 1974.0
     },
     "BIKAJI": {
       "sma50": 592.9200042724609,
@@ -8629,7 +8629,9 @@
       "macro_high_rsi": 76.35420038637415,
       "sos_thrust_peak_price": 490.70001220703125,
       "sos_thrust_peak_rsi": 76.35420038637415,
-      "rs_rank": 41.6
+      "rs_rank": 41.6,
+      "near_high_17_22_last_alert": "2026-10-05T08:48:31.102098",
+      "near_high_17_22_last_price": 405.70001220703125
     },
     "LUMAXTECH": {
       "sma50": 1919.5880029296875,
@@ -10758,8 +10760,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 34.8,
-      "resistance_last_alert": "2026-10-05T06:30:46.892458",
-      "resistance_last_price": 155.39999389648438
+      "resistance_last_alert": "2026-10-05T08:49:06.092571",
+      "resistance_last_price": 157.1300048828125
     },
     "PURVA": {
       "sma50": 214.19839965820313,
@@ -11981,7 +11983,9 @@
       "macro_high_rsi": 62.547738580180145,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 29.5
+      "rs_rank": 29.5,
+      "near_high_17_22_last_alert": "2026-10-05T08:49:26.938675",
+      "near_high_17_22_last_price": 500.6000061035156
     },
     "SAREGAMA": {
       "sma50": 507.1589990234375,
@@ -12598,8 +12602,8 @@
       "sos_thrust_peak_price": 555.0,
       "sos_thrust_peak_rsi": 75.14621735433475,
       "rs_rank": 74.1,
-      "near_high_17_22_last_alert": "2026-10-05T03:50:04.244079",
-      "near_high_17_22_last_price": 507.95001220703125
+      "near_high_17_22_last_alert": "2026-10-05T08:49:37.291427",
+      "near_high_17_22_last_price": 498.70001220703125
     },
     "SMLMAH": {
       "sma50": 5734.412006835937,
@@ -13994,8 +13998,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 62.2,
-      "near_high_17_22_last_alert": "2026-10-05T06:31:05.203367",
-      "near_high_17_22_last_price": 797.0
+      "near_high_17_22_last_alert": "2026-10-05T08:50:00.422074",
+      "near_high_17_22_last_price": 806.4000244140625
     },
     "TMB": {
       "sma50": 884.1189990234375,
