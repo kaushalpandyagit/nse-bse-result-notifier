@@ -1,16 +1,19 @@
 """
 NSE + BSE Live Result, Order Win, Insider Trade, Circular, Meeting & Business Update Notifier
 ==========================================================================================
-Covers:
+File: result_notifier.py
+
+Coverage:
   1. Financial Results (Regulation 33 / Board outcomes)
-  2. Order Wins + Order-to-Market-Cap ASYMMETRY Triggers (>= 20% of MCap)
+  2. Order Wins + Order-to-Market-Cap Asymmetry Triggers (>= 20% of MCap)
   3. Asset Commissioning & Capacity Expansion (Commercial Production / CWIP)
   4. Multi-Modal Logistics & Terminals (Gati Shakti, Railway Sidings)
-  5. Pre-Earnings Quarterly Business / Operational Updates (Provisional Numbers)
-  6. Insider Trading & Promoter Actions (with 🟢 Buy / 🔴 Sell logic)
+  5. Pre-Earnings Quarterly Business / Operational Updates (Provisional Numbers,
+     Advances & Deposits, AUM updates, Standalone Revenue)
+  6. Insider Trading & Promoter Actions (with Buy / Sell classification)
   7. NSE Exchange Circulars
   8. Automated Catalyst History Logger (company_catalyst_history.json)
-  9. Extended Timings: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
+  9. Operating Schedule: Weekdays 08:00-22:30 IST, Weekends 09:00-21:00 IST
 """
 
 import os
@@ -37,10 +40,10 @@ try:
     import PyPDF2
 except ImportError:
     PyPDF2 = None
-    print("WARNING: PyPDF2 is not installed. PDF date extraction will be disabled.")
+    print("WARNING: PyPDF2 is not installed. PDF text extraction will be disabled.")
 
 # ----------------------------------------------------------------------
-# CONFIG
+# CONFIGURATION
 # ----------------------------------------------------------------------
 
 SCRIPT_TAG = "🤖 [result_notifier.py]"
@@ -58,7 +61,7 @@ RESULT_KEYWORDS = [
     "standalone and consolidated financial", "submitted to the exchange",
 ]
 
-# EXPANDED: Now catches DMart, HDFC, Bajaj Finance, and PSU Bank specific phrasing
+# Catches DMart, HDFC Bank, Bank of Baroda, Bajaj Finance, Trent, GCPL phrasing
 BUSINESS_UPDATE_KEYWORDS = [
     "business update", "operational update", "quarterly update",
     "provisional data", "provisional figures", "provisional numbers",
@@ -67,7 +70,8 @@ BUSINESS_UPDATE_KEYWORDS = [
     "standalone revenue", "revenue from operations", "key business parameters",
     "provisional business", "business parameters", "business performance",
     "advances and deposits", "deposits and advances", "update on advances",
-    "aum update", "update on aum", "provisional key"
+    "aum update", "update on aum", "provisional key", "sales volume",
+    "quarterly sales", "gross advances", "operating performance"
 ]
 
 ORDER_KEYWORDS = [
@@ -157,7 +161,7 @@ RESOLUTION_PURPOSES = [
     ("Slump Sale / Business Sale", re.compile(r"\b(?:sale of undertaking|slump sale|transfer of business)\b", re.IGNORECASE)),
 ]
 
-WATCHLIST = []  
+WATCHLIST = []
 
 SEEN_FILE = Path(__file__).parent / "seen_announcements.json"
 CATALYST_FILE = Path(__file__).parent / "company_catalyst_history.json"
@@ -175,7 +179,7 @@ logging.basicConfig(
 log = logging.getLogger("result_notifier")
 
 # ----------------------------------------------------------------------
-# TELEGRAM
+# TELEGRAM DISPATCHER
 # ----------------------------------------------------------------------
 
 def send_telegram_message(text: str) -> bool:
@@ -197,21 +201,20 @@ def send_telegram_message(text: str) -> bool:
         return False
 
 # ----------------------------------------------------------------------
-# TIME & ANTI-BLOCKING UTILITIES
+# SCHEDULE & UTILITIES
 # ----------------------------------------------------------------------
 
 def get_ist_now():
-    """Forces IST timezone (UTC + 5:30) unconditionally, avoiding deprecation warnings."""
     return datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=5, minutes=30)
 
 def is_polling_allowed_now() -> bool:
     now = get_ist_now()
     weekday = now.weekday()
 
-    if weekday < 5:  
+    if weekday < 5:
         start = now.replace(hour=8, minute=0, second=0, microsecond=0)
         end = now.replace(hour=22, minute=30, second=0, microsecond=0)
-    else:  
+    else:
         start = now.replace(hour=9, minute=0, second=0, microsecond=0)
         end = now.replace(hour=21, minute=0, second=0, microsecond=0)
 
@@ -229,7 +232,7 @@ def get_browser_headers() -> dict:
     }
 
 # ----------------------------------------------------------------------
-# ANNOUNCEMENT STORE & PARSING
+# ANNOUNCEMENT STORAGE & PARSERS
 # ----------------------------------------------------------------------
 
 def load_seen() -> set:
@@ -274,7 +277,6 @@ def extract_order_value(text: str):
     return f"{match.group(1)} {match.group(2)}"
 
 def parse_to_crores(amount_str: str) -> float:
-    """Converts a string like '150 crore' or '2.5 billion' into Crores math value."""
     if not amount_str:
         return 0.0
     match = re.search(r"([\d,]+(?:\.\d+)?)\s*(crore|cr\.?|lakh|lac|million|mn|billion|bn)\b", amount_str, re.IGNORECASE)
@@ -314,14 +316,12 @@ def extract_insider_summary(text: str) -> str:
     if not text:
         return ""
     text_lower = text.lower()
-    
     text_stripped = text_lower.replace("substantial acquisition of shares", "")
     text_stripped = text_stripped.replace("prohibition of insider trading", "")
     text_stripped = text_stripped.replace("details of acquisition/sale", "")
     text_stripped = text_stripped.replace("acquired/disposed", "")
     
     summaries = []
-    
     if "pledge" in text_stripped or "encumbrance" in text_stripped or "31(1)" in text_stripped or "31(2)" in text_stripped:
         if "creation of" in text_stripped or "created" in text_stripped:
             summaries.append("Creation of Pledge 🔒")
@@ -342,469 +342,10 @@ def extract_insider_summary(text: str) -> str:
         else:
             acq_c = text_stripped.count("acquired") + text_stripped.count("acquisition") + text_stripped.count("purchase")
             disp_c = text_stripped.count("disposed") + text_stripped.count("sale") + text_stripped.count("sold")
-            
             if acq_c > disp_c * 2:
                 summaries.append("Acquisition of Shares 🟢")
             elif disp_c > acq_c * 2:
                 summaries.append("Disposal of Shares 🔴")
 
     if not summaries:
-        return ""
-        
-    seen = set()
-    unique_summaries = [x for x in summaries if not (x in seen or seen.add(x))]
-    
-    return " | ".join(unique_summaries)
-
-def classify_announcement(subject: str) -> str:
-    subj_lower = f" {subject.lower()} "
-    
-    if "trading window" in subj_lower:
-        return None
-        
-    # Catch Business Updates *before* it gets caught by routine Meeting/Result logic
-    if any(kw in subj_lower for kw in BUSINESS_UPDATE_KEYWORDS):
-        return "business_update"
-        
-    if any(kw in subj_lower for kw in ORDER_KEYWORDS):
-        return "order"
-    if any(kw in subj_lower for kw in COMMISSIONING_KEYWORDS):
-        return "commissioning"
-    if any(kw in subj_lower for kw in LOGISTICS_KEYWORDS):
-        return "logistics"
-    if any(kw in subj_lower for kw in MEETING_KEYWORDS):
-        return "meeting"
-    if any(kw in subj_lower for kw in INSIDER_PROMOTER_KEYWORDS):
-        return "insider_promoter"
-    if any(kw in subj_lower for kw in RESULT_KEYWORDS) or ("board meeting" in subj_lower and "result" in subj_lower):
-        return "result"
-        
-    return None
-
-def matches_watchlist(company: str, symbol: str) -> bool:
-    if not WATCHLIST:
-        return True
-    norm_watch = {normalise_company(w) for w in WATCHLIST}
-    return normalise_company(company) in norm_watch or symbol.upper() in {w.upper() for w in WATCHLIST}
-
-def get_market_cap_cr(symbol: str, exchange: str) -> float:
-    if not yf or not symbol:
-        return None
-    ticker_suffix = ".NS" if exchange.upper() == "NSE" else ".BO"
-    try:
-        t = yf.Ticker(f"{symbol.strip().upper()}{ticker_suffix}")
-        mcap = t.fast_info.get("marketCap") or t.fast_info.get("market_cap")
-        if mcap:
-            return float(mcap) / 1e7
-    except Exception:
-        pass
-    return None
-
-# ----------------------------------------------------------------------
-# EXCHANGE FETCHERS
-# ----------------------------------------------------------------------
-
-def fetch_nse_announcements() -> list:
-    session = requests.Session()
-    headers = get_browser_headers()
-    try:
-        session.get("https://www.nseindia.com", headers=headers, timeout=12)
-        time.sleep(random.uniform(1.2, 2.0))
-    except Exception as e:
-        log.warning("NSE init failed: %s", e)
-        return []
-
-    results = []
-    for idx in ["equities", "sme"]:
-        try:
-            resp = session.get(
-                f"https://www.nseindia.com/api/corporate-announcements?index={idx}",
-                headers={**headers, "Accept": "application/json"},
-                timeout=15,
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            
-            if isinstance(data, str):
-                try:
-                    data = json.loads(data)
-                except Exception:
-                    continue
-                    
-            if isinstance(data, list):
-                for item in data:
-                    company = item.get("sm_name") or item.get("symbol", "")
-                    subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}".strip()
-                    date_str = item.get("an_dt") or item.get("attchmntFile", "") or ""
-                    results.append({
-                        "company": company,
-                        "symbol": item.get("symbol", ""),
-                        "subject": subject,
-                        "date": date_str,
-                        "source": "NSE",
-                        "link": item.get("attchmntFile", ""),
-                    })
-        except Exception as e:
-            log.warning("NSE announcements unavailable for %s: %s", idx, e)
-        
-        time.sleep(random.uniform(1.0, 1.5))
-        
-    return results
-
-def fetch_bse_announcements() -> list:
-    headers = {
-        **get_browser_headers(),
-        "Accept": "application/json",
-        "Referer": "https://www.bseindia.com/corporates/ann.html",
-    }
-    now_ist = get_ist_now()
-    today = now_ist.strftime("%Y%m%d")
-    from_date = (now_ist - datetime.timedelta(days=2)).strftime("%Y%m%d")
-    url = (
-        "https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w"
-        f"?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P"
-        f"&strToDate={today}&strType=C&subcategory=-1"
-    )
-    try:
-        resp = requests.get(url, headers=headers, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception as e:
-        log.warning("BSE announcements unavailable: %s", e)
-        return []
-
-    if isinstance(data, str):
-        try:
-            data = json.loads(data)
-        except Exception:
-            return []
-    if not isinstance(data, dict) or "Table" not in data:
-        return []
-
-    results = []
-    for item in data.get("Table", []):
-        company = item.get("SLONGNAME") or item.get("SCRIP_CD", "")
-        subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}".strip()
-        date_str = item.get("NEWS_DT") or item.get("DissemDT", "") or ""
-        results.append({
-            "company": company,
-            "symbol": str(item.get("SCRIP_CD", "")),
-            "subject": subject,
-            "date": date_str,
-            "source": "BSE",
-            "link": item.get("ATTACHMENTNAME", ""),
-        })
-    return results
-
-def fetch_nse_circulars() -> list:
-    session = requests.Session()
-    headers = get_browser_headers()
-    try:
-        session.get("https://www.nseindia.com", headers=headers, timeout=12)
-        time.sleep(random.uniform(1.2, 2.0))
-        resp = session.get(
-            "https://www.nseindia.com/api/circulars",
-            headers={**headers, "Accept": "application/json"},
-            timeout=15,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception as e:
-        log.warning("NSE Circulars unavailable: %s", e)
-        return []
-
-    items = data.get("data", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
-    
-    results = []
-    for item in items:
-        subject = item.get("sub", "")
-        subj_lower = subject.lower()
-        
-        if any(kw in subj_lower for kw in CIRCULAR_KEYWORDS):
-            circ_no = item.get("circNo", "Unknown")
-            circ_file = item.get("circFile", "")
-            link = f"https://archives.nseindia.com/content/circulars/{circ_file}" if circ_file else ""
-            
-            results.append({
-                "company": "NSE EXCHANGE",
-                "symbol": "CIRCULAR",
-                "subject": f"[{circ_no}] {subject}",
-                "date": item.get("circDt", get_ist_now().date().isoformat()),
-                "source": "NSE",
-                "link": link,
-                "category": "circular"
-            })
-    return results
-
-# ----------------------------------------------------------------------
-# MAIN POLLING LOOP
-# ----------------------------------------------------------------------
-
-def poll_once(seen: set) -> set:
-    nse_items = fetch_nse_announcements()
-    time.sleep(random.uniform(1.0, 2.0))
-    bse_items = fetch_bse_announcements()
-    time.sleep(random.uniform(1.0, 2.0))
-    nse_circulars = fetch_nse_circulars()
-
-    all_items = nse_items + bse_items + nse_circulars
-    log.info("Fetched %d raw filings (NSE: %d, BSE: %d, Circ: %d).", 
-             len(all_items), len(nse_items), len(bse_items), len(nse_circulars))
-
-    new_alerts = []
-    for item in all_items:
-        if item.get("category") == "circular":
-            fp = fingerprint(item["company"], item["subject"], item["date"])
-            if fp not in seen:
-                seen.add(fp)
-                new_alerts.append(item)
-            continue
-            
-        if not item.get("company") or not item.get("subject"):
-            continue
-        if not matches_watchlist(item["company"], item["symbol"]):
-            continue
-
-        category = classify_announcement(item["subject"])
-        if not category:
-            continue
-
-        if category == "meeting":
-            subj_lower = item["subject"].lower()
-            is_catalyst = any(kw in subj_lower for kw in ["analyst", "institutional", "concall", "investor", "earnings call"])
-            is_noise = any(kw in subj_lower for kw in NOISE_KEYWORDS)
-            
-            if is_noise and not is_catalyst:
-                mcap_cr = get_market_cap_cr(item["symbol"], item["source"])
-                
-                if mcap_cr is not None and mcap_cr >= 12000.0:
-                    fp = fingerprint(item["company"], item["subject"], item["date"])
-                    seen.add(fp)  
-                    continue      
-                
-                mcap_str = f"~{int(mcap_cr)} Cr" if mcap_cr else "SME/Unknown"
-                item["subject"] = f"📊 SMALLCAP AGM ({mcap_str}): " + item["subject"]
-                
-            elif is_catalyst:
-                item["subject"] = "🔥 CATALYST: " + item["subject"]
-
-        fp = fingerprint(item["company"], item["subject"], item["date"])
-        if fp in seen:
-            continue
-
-        seen.add(fp)
-        item["category"] = category
-        new_alerts.append(item)
-
-    catalyst_history = load_catalyst_history()
-    dirty_history = False
-
-    for item in new_alerts:
-        cat = item["category"]
-        sentiment_marker = ""
-        order_val = None
-        summary = ""
-        
-        safe_comp = html.escape(item['company'])
-        safe_subj = html.escape(item['subject'])
-        
-        if cat == "circular":
-            header = f"🏛️ <b>{safe_comp}</b> \u2014 Market Wide Circular"
-            body = f"{safe_subj}\n\U0001F550 {item['date']}"
-            
-        elif cat == "business_update":
-            header = f"📊 <b>{safe_comp}</b> ({item['source']}) \u2014 Quarterly Business / Operational Update"
-            body = f"{safe_subj}\n\U0001F550 {item['date']}"
-            sentiment_marker = " ⚡"
-            
-        elif cat == "commissioning":
-            header = f"🏭 <b>{safe_comp}</b> ({item['source']}) \u2014 Asset Commissioning"
-            body = f"{safe_subj}\n\U0001F550 {item['date']}"
-            sentiment_marker = " 🟢"
-
-        elif cat == "logistics":
-            header = f"🚂 <b>{safe_comp}</b> ({item['source']}) \u2014 Logistics / Terminal Infra"
-            body = f"{safe_subj}\n\U0001F550 {item['date']}"
-            sentiment_marker = " 🟢"
-            
-        elif cat == "order":
-            order_val = extract_order_value(item["subject"])
-            val_line = f"\U0001F4B0 Value: \u20b9{order_val}\n" if order_val else "\U0001F4B0 Value: check filing\n"
-            
-            # --- ASYMMETRY TRIGGER CHECK (>= 20% of Market Cap) ---
-            asymmetry_tag = ""
-            sentiment_marker = " 🟢"
-            if order_val:
-                order_cr = parse_to_crores(order_val)
-                mcap_cr = get_market_cap_cr(item["symbol"], item["source"])
-                if order_cr > 0 and mcap_cr and mcap_cr > 0:
-                    pct_mcap = (order_cr / mcap_cr) * 100.0
-                    if pct_mcap >= 100.0:
-                        asymmetry_tag = f"🔥 <b>MEGA ASYMMETRY TRIGGER:</b> Order (\u20b9{order_cr:.1f}Cr) is <b>{int(pct_mcap)}%</b> of MCap (\u20b9{int(mcap_cr)}Cr)!\n"
-                        sentiment_marker = " 🟢🟢"
-                    elif pct_mcap >= 20.0:
-                        asymmetry_tag = f"⚡ <b>ASYMMETRY TRIGGER:</b> Order (\u20b9{order_cr:.1f}Cr) is <b>{int(pct_mcap)}%</b> of MCap (\u20b9{int(mcap_cr)}Cr)!\n"
-                        sentiment_marker = " 🟢"
-            
-            header = f"\U0001F4E6 <b>{safe_comp}</b> ({item['source']}) \u2014 Order/Contract Win"
-            body = f"{safe_subj}\n{val_line}{asymmetry_tag}\U0001F550 {item['date']}"
-            
-        elif cat == "insider_promoter":
-            summary = ""
-            if item.get("link") and PyPDF2 is not None:
-                try:
-                    time.sleep(random.uniform(1.0, 2.0))
-                    pdf_resp = requests.get(item["link"], headers=get_browser_headers(), timeout=15)
-                    if pdf_resp.status_code == 200:
-                        with io.BytesIO(pdf_resp.content) as f:
-                            reader = PyPDF2.PdfReader(f)
-                            if len(reader.pages) > 0:
-                                pdf_text = reader.pages[0].extract_text() or ""
-                                if len(reader.pages) > 1 and len(pdf_text) < 1500:
-                                    pdf_text += " " + (reader.pages[1].extract_text() or "")
-                                
-                                summary = extract_insider_summary(pdf_text)
-                except Exception as e:
-                    log.warning("PDF extraction failed for %s: %s", item['company'], e)
-            
-            # --- DYNAMIC PROMOTER EMOJI LOGIC ---
-            dynamic_emoji = "🔍"
-            if summary:
-                if any(x in summary for x in ["🟢", "Buy", "Acquisition", "ESOP", "Release"]):
-                    dynamic_emoji = "🟢"
-                    sentiment_marker = " 🟢"
-                elif any(x in summary for x in ["🔴", "Sell", "Disposal", "Creation", "Invocation"]):
-                    dynamic_emoji = "🔴"
-                    sentiment_marker = " 🔴"
-            else:
-                sub_low = item["subject"].lower()
-                if any(kw in sub_low for kw in ["acquisit", "buy", "purchase"]):
-                    dynamic_emoji = "🟢"
-                    sentiment_marker = " 🟢"
-                elif any(kw in sub_low for kw in ["sale", "disposal", "sell"]):
-                    dynamic_emoji = "🔴"
-                    sentiment_marker = " 🔴"
-            
-            sum_line = f"📝 Action: <b>{summary}</b>\n" if summary else ""
-            header = f"{dynamic_emoji} <b>{safe_comp}</b> ({item['source']}) \u2014 Insider / Promoter Action"
-            body = f"{safe_subj}\n{sum_line}🕐 {item['date']}"
-            
-        elif cat == "meeting":
-            meet_date = extract_meeting_date(item["subject"])
-            evoting_purpose = extract_evoting_purpose(item["subject"])
-            
-            if (not meet_date or not evoting_purpose) and item.get("link") and PyPDF2 is not None:
-                try:
-                    time.sleep(random.uniform(1.0, 2.0))
-                    pdf_resp = requests.get(item["link"], headers=get_browser_headers(), timeout=15)
-                    if pdf_resp.status_code == 200:
-                        with io.BytesIO(pdf_resp.content) as f:
-                            reader = PyPDF2.PdfReader(f)
-                            if len(reader.pages) > 0:
-                                pdf_text = reader.pages[0].extract_text() or ""
-                                if len(reader.pages) > 1 and len(pdf_text) < 400:
-                                    pdf_text += " " + (reader.pages[1].extract_text() or "")
-                                
-                                if not meet_date:
-                                    meet_date = extract_meeting_date(pdf_text)
-                                if not evoting_purpose:
-                                    evoting_purpose = extract_evoting_purpose(pdf_text)
-                except Exception as e:
-                    log.warning("PDF extraction failed for %s: %s", item['company'], e)
-            
-            date_line = f"🗓️ Date: <b>{meet_date}</b>\n" if meet_date else "🗓️ Date: <i>Check attached PDF</i>\n"
-            purpose_line = f"🗳️ Purpose: <b>{evoting_purpose}</b>\n" if evoting_purpose else ""
-            
-            header = f"📅 <b>{safe_comp}</b> ({item['source']}) \u2014 AGM / E-Voting / Meet"
-            body = f"{safe_subj}\n{purpose_line}{date_line}\U0001F550 {item['date']}"
-            
-        else:
-            header = f"\U0001F4E2 <b>{safe_comp}</b> ({item['source']}) \u2014 Financial Result"
-            body = f"{safe_subj}\n\U0001F550 {item['date']}"
-
-        msg = f"{header}\n{body}"
-        if item.get("link"):
-            msg += f"\n\U0001F517 {item['link']}"
-            
-        if sentiment_marker:
-            msg += sentiment_marker
-
-        send_telegram_message(msg)
-        log.info("Alert dispatched [%s]: %s", cat.upper(), item["company"])
-        time.sleep(1.0)
-        
-        # ------------------------------------------------------------------
-        # RECORD POSITIVE / NEGATIVE / UPDATES NEWS FOR FUTURE ANALYSIS
-        # ------------------------------------------------------------------
-        sentiment = "neutral"
-        if "🟢" in sentiment_marker:
-            sentiment = "positive"
-        elif "🔴" in sentiment_marker:
-            sentiment = "negative"
-        elif cat == "business_update":
-            sentiment = "business_updates"
-            
-        if sentiment in ["positive", "negative", "business_updates"]:
-            symbol = item.get("symbol", "").upper()
-            if symbol and symbol != "UNKNOWN" and symbol != "CIRCULAR":
-                if symbol not in catalyst_history:
-                    catalyst_history[symbol] = {"positive": [], "negative": [], "business_updates": []}
-                
-                if "business_updates" not in catalyst_history[symbol]:
-                    catalyst_history[symbol]["business_updates"] = []
-                
-                event_record = {
-                    "date": item["date"],
-                    "category": cat,
-                    "subject": item["subject"],
-                    "link": item.get("link", ""),
-                }
-                
-                if cat == "order" and order_val:
-                    event_record["value_raw"] = order_val
-                    order_cr = parse_to_crores(order_val)
-                    if order_cr > 0:
-                        event_record["value_cr"] = order_cr
-                        
-                if cat == "insider_promoter" and summary:
-                    event_record["action"] = summary
-                    
-                catalyst_history[symbol][sentiment].append(event_record)
-                
-                catalyst_history[symbol][sentiment] = catalyst_history[symbol][sentiment][-50:]
-                dirty_history = True
-
-    if dirty_history:
-        save_catalyst_history(catalyst_history)
-
-    return seen
-
-def main():
-    one_shot = "--once" in sys.argv
-    log.info("Starting Notifier.%s", " (single-shot mode)" if one_shot else "")
-    seen = load_seen()
-
-    if one_shot:
-        if is_polling_allowed_now():
-            try:
-                seen = poll_once(seen)
-                save_seen(seen)
-            except Exception as e:
-                log.exception("Error during single poll: %s", e)
-        else:
-            log.info("Outside allowed operating schedule -- skipping.")
         return
-
-    while True:
-        if is_polling_allowed_now():
-            try:
-                seen = poll_once(seen)
-                save_seen(seen)
-            except Exception as e:
-                log.exception("Error during cycle: %s", e)
-        else:
-            log.info("Outside allowed operating schedule -- sleeping.")
-        time.sleep(POLL_INTERVAL_MINUTES * 60)
-
-if __name__ == "__main__":
-    main()
