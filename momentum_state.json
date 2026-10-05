@@ -4738,8 +4738,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 57.6,
-      "near_high_17_22_last_alert": "2026-10-05T06:01:26.535643",
-      "near_high_17_22_last_price": 2565.10009765625
+      "near_high_17_22_last_alert": "2026-10-05T07:30:05.157564",
+      "near_high_17_22_last_price": 2596.10009765625
     },
     "EUREKAFORB": {
       "sma50": 415.7880004882812,
@@ -5707,7 +5707,9 @@
       "macro_high_rsi": 79.85863905592166,
       "sos_thrust_peak_price": 235.63999938964844,
       "sos_thrust_peak_rsi": 77.73200777054004,
-      "rs_rank": 91.1
+      "rs_rank": 91.1,
+      "near_high_17_22_last_alert": "2026-10-05T07:30:09.449926",
+      "near_high_17_22_last_price": 219.9499969482422
     },
     "GRINDWELL": {
       "sma50": 2011.6720092773437,
@@ -8778,8 +8780,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 66.9,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:46.133429",
-      "near_high_17_22_last_price": 312.95001220703125
+      "near_high_17_22_last_alert": "2026-10-05T07:30:20.966158",
+      "near_high_17_22_last_price": 309.6499938964844
     },
     "MANORAMA": {
       "sma50": 1847.1000024414063,
@@ -12068,8 +12070,8 @@
       "rs_rank": 78.5,
       "resistance_last_alert": "2026-10-05T06:47:08.831340",
       "resistance_last_price": 1277.199951171875,
-      "near_high_17_22_last_alert": "2026-10-05T06:16:34.724987",
-      "near_high_17_22_last_price": 1282.0
+      "near_high_17_22_last_alert": "2026-10-05T07:30:32.970964",
+      "near_high_17_22_last_price": 1269.0
     },
     "SCI": {
       "sma50": 286.2479998779297,
@@ -14760,8 +14762,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 68.4,
-      "near_high_17_22_last_alert": "2026-10-05T04:46:43.365367",
-      "near_high_17_22_last_price": 760.4000244140625
+      "near_high_17_22_last_alert": "2026-10-05T07:30:42.866534",
+      "near_high_17_22_last_price": 768.0999755859375
     },
     "VOLTAMP": {
       "sma50": 10496.84,
