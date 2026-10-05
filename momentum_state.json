@@ -5514,8 +5514,8 @@
       "sos_thrust_peak_price": 259.5,
       "sos_thrust_peak_rsi": 74.69960658664013,
       "rs_rank": 51.7,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:27.834864",
-      "near_high_17_22_last_price": 211.3800048828125
+      "near_high_17_22_last_alert": "2026-10-05T05:01:25.070396",
+      "near_high_17_22_last_price": 208.9499969482422
     },
     "GPIL": {
       "sma50": 239.74339996337892,
@@ -5967,7 +5967,9 @@
       "macro_high_rsi": 60.610577432894,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 70.7
+      "rs_rank": 70.7,
+      "near_high_17_22_last_alert": "2026-10-05T05:01:27.172446",
+      "near_high_17_22_last_price": 660.4000244140625
     },
     "HEGAM": {
       "sma50": 514.0191995239257,
@@ -7672,8 +7674,8 @@
       "sos_thrust_peak_price": 1086.0,
       "sos_thrust_peak_rsi": 75.15021251261781,
       "rs_rank": 62.9,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:38.536418",
-      "near_high_17_22_last_price": 996.0
+      "near_high_17_22_last_alert": "2026-10-05T05:01:33.034363",
+      "near_high_17_22_last_price": 980.7000122070312
     },
     "JUSTDIAL": {
       "sma50": 683.36,
@@ -13123,7 +13125,9 @@
       "macro_high_rsi": 65.24007237109473,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 88.4
+      "rs_rank": 88.4,
+      "near_high_17_22_last_alert": "2026-10-05T05:01:50.830803",
+      "near_high_17_22_last_price": 898.7999877929688
     },
     "SURYAROSNI": {
       "sma50": 223.7796014404297,
@@ -13352,8 +13356,8 @@
       "rs_rank": 50.8,
       "mtf_last_alert": "2026-10-05T04:02:00.646054",
       "mtf_last_price": 295.75,
-      "ema50_pullback_last_alert": "2026-10-05T04:02:01.168003",
-      "ema50_pullback_last_price": 295.75
+      "ema50_pullback_last_alert": "2026-10-05T05:01:52.313489",
+      "ema50_pullback_last_price": 289.6000061035156
     },
     "TATACHEM": {
       "sma50": 653.9450012207031,
@@ -15040,8 +15044,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 83.8,
-      "near_high_17_22_last_alert": "2026-10-05T03:50:19.468133",
-      "near_high_17_22_last_price": 659.0
+      "near_high_17_22_last_alert": "2026-10-05T05:01:58.218922",
+      "near_high_17_22_last_price": 651.8499755859375
     },
     "WHIRLPOOL": {
       "sma50": 800.3400048828125,
