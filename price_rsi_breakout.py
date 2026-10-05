@@ -12,7 +12,8 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 1: 60-Day Major Structural Sweep & RSI Retest (Wyckoff Spring).
 - SETUP 2: Momentum Ignition (1% to 2.5% below Macro High).
 - SETUP 3: Wyckoff SOS + Range Shift Pullback Curl (Electrosteel Type).
-- NEW: EoD Sector RSI Calculation & Persistent Local Sector Cache.
+- EoD Sector RSI Calculation & Persistent Local Sector Cache.
+- NEW: NSE-BSE Delivery Arbitrage & Spread Scanner (>= 2.5% Spread).
 """
 
 import os
@@ -89,6 +90,14 @@ MAX_WEEKLY_RSI = 57.0
 
 MIN_RSI_RECORDING_MCAP_CR = 50.0
 MACRO_PIVOT_LOOKBACK_DAYS = 60
+
+# --- ARBITRAGE SCANNER CONFIG ---
+ARBITRAGE_MIN_SPREAD_PCT = 2.5
+DEFAULT_ARBITRAGE_CANDIDATES = [
+    "BENGALASM", "PILANIINVS", "MAHSCOOTER", "BAJAJHLDNG", 
+    "KICL", "SUMEDHA", "STEL", "BHAGYAPROP", "KAMATHOTEL", 
+    "SILVEROAK", "NESCO", "GICRE", "SUNDARMFIN"
+]
 
 RESULT_KEYWORDS = [
     "financial result", "financial results", "quarterly result",
@@ -543,7 +552,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     if momentum_state.get("last_scan_date") == today_str:
         return momentum_state
 
-    # 1. Fetch Baseline Sector RSIs (Once daily on closing basis)
     log.info("Fetching Baseline Sector RSIs...")
     sector_rsis = {}
     try:
@@ -559,7 +567,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     except Exception as e:
         log.warning(f"Sector RSI fetch failed: {e}")
 
-    # 2. Main Universe Scan
     symbols = get_universe_symbols()
     tickers = [f"{s}.NS" for s in symbols]
     log.info("Running daily momentum universe scan for %d symbols...", len(tickers))
@@ -692,6 +699,79 @@ def record_alert(entry: dict, alert_key_prefix: str, current_price: float = None
     entry[f"{alert_key_prefix}_last_alert"] = datetime.datetime.now().isoformat()
     if current_price is not None:
         entry[f"{alert_key_prefix}_last_price"] = float(current_price)
+
+# ----------------------------------------------------------------------
+# NSE-BSE DUAL LISTING ARBITRAGE SCANNER
+# ----------------------------------------------------------------------
+
+def check_nse_bse_arbitrage(momentum_state: dict, state: dict, fyers):
+    now_ist = get_ist_now()
+    if now_ist.weekday() >= 5: return
+    current_time = now_ist.time()
+    if not (datetime.time(9, 15) <= current_time <= datetime.time(15, 30)):
+        return
+
+    watchlist = momentum_state.get("watchlist", {})
+    custom_alerts = fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)
+    
+    # Pool: Dedicated candidates + Watchlist stocks + Sheet stocks
+    candidates = set(DEFAULT_ARBITRAGE_CANDIDATES)
+    candidates.update([s.split(":")[-1].upper() for s in custom_alerts.keys()])
+    candidates.update(list(watchlist.keys())[:50])
+
+    for symbol in candidates:
+        nse_p, bse_p = None, None
+        
+        # 1. Try Fyers Quotes batch call
+        if fyers:
+            try:
+                q_resp = fyers.quotes(data={"symbols": f"NSE:{symbol}-EQ,BSE:{symbol}-EQ"})
+                if q_resp.get("s") == "ok" and q_resp.get("d"):
+                    for item in q_resp["d"]:
+                        sym_n = item.get("n", "")
+                        lp = item.get("v", {}).get("lp")
+                        if lp and float(lp) > 0:
+                            if "NSE:" in sym_n: nse_p = float(lp)
+                            elif "BSE:" in sym_n: bse_p = float(lp)
+            except Exception:
+                pass
+
+        # 2. Yahoo Finance fallback
+        if not nse_p or not bse_p:
+            try:
+                t_nse = yf.Ticker(f"{symbol}.NS").fast_info
+                t_bse = yf.Ticker(f"{symbol}.BO").fast_info
+                nse_p = t_nse.get("lastPrice") or t_nse.get("last_price")
+                bse_p = t_bse.get("lastPrice") or t_bse.get("last_price")
+            except Exception:
+                continue
+
+        if not nse_p or not bse_p or nse_p <= 0 or bse_p <= 0:
+            continue
+
+        min_p = min(nse_p, bse_p)
+        max_p = max(nse_p, bse_p)
+        spread_pct = ((max_p - min_p) / min_p) * 100.0
+
+        if spread_pct >= ARBITRAGE_MIN_SPREAD_PCT:
+            state_key = f"arb_{symbol}"
+            if state_key not in state:
+                state[state_key] = {}
+                
+            if alert_allowed(state[state_key], "spread", spread_pct):
+                record_alert(state[state_key], "spread", spread_pct)
+                
+                cheaper_ex, higher_ex = ("NSE", "BSE") if nse_p < bse_p else ("BSE", "NSE")
+                cheap_p, high_p = (nse_p, bse_p) if nse_p < bse_p else (bse_p, nse_p)
+                diff_rs = high_p - cheap_p
+
+                send_telegram_message(
+                    f"⚖️ <b>{symbol} — NSE/BSE Arbitrage & Spread Opportunity!</b>\n\n"
+                    f"• <b>Spread:</b> <b>+{spread_pct:.2f}%</b> (₹{diff_rs:.2f} difference)\n"
+                    f"• <b>Cheaper on {cheaper_ex}:</b> ₹{cheap_p:.2f}\n"
+                    f"• <b>Higher on {higher_ex}:</b> ₹{high_p:.2f}\n\n"
+                    f"📌 <i>Action: Buy CNC on {cheaper_ex} (cheaper), sell on {higher_ex} on delivery / next day when spread narrows.</i>"
+                )
 
 # ----------------------------------------------------------------------
 # INTRADAY MOMENTUM SCANNER HEADS
@@ -1021,7 +1101,7 @@ def prune_expired(state: dict) -> dict:
     cutoff = datetime.datetime.now() - datetime.timedelta(days=TRACK_WINDOW_DAYS)
     kept = {}
     for symbol, entry in state.items():
-        if symbol.startswith("custom_alert_"):
+        if symbol.startswith("custom_alert_") or symbol.startswith("arb_"):
             kept[symbol] = entry
             continue
         try:
@@ -1135,7 +1215,7 @@ def poll_once(state: dict, fyers) -> dict:
     state = prune_expired(state)
     
     for symbol, entry in state.items():
-        if symbol.startswith("custom_alert_") or "day_low" not in entry or "baseline_rsi" not in entry:
+        if symbol.startswith("custom_alert_") or symbol.startswith("arb_") or "day_low" not in entry or "baseline_rsi" not in entry:
             continue
 
         exchange = entry.get("exchange", "BSE" if symbol.isdigit() else "NSE")
@@ -1242,7 +1322,9 @@ def main():
         try:
             momentum_state = run_daily_momentum_scan(momentum_state)
             momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+            check_nse_bse_arbitrage(momentum_state, state, fyers)
             MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
+            STATE_FILE.write_text(json.dumps(state, indent=2))
         except Exception as e: 
             log.exception("Error during momentum scan: %s", e)
         return
@@ -1256,7 +1338,9 @@ def main():
         try:
             momentum_state = run_daily_momentum_scan(momentum_state)
             momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+            check_nse_bse_arbitrage(momentum_state, state, fyers)
             MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
+            STATE_FILE.write_text(json.dumps(state, indent=2))
         except Exception as e: 
             log.exception("Error during momentum scan: %s", e)
         
