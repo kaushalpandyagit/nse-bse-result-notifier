@@ -7480,8 +7480,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 69.0,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:37.365652",
-      "near_high_17_22_last_price": 492.1000061035156
+      "near_high_17_22_last_alert": "2026-10-05T06:46:38.431521",
+      "near_high_17_22_last_price": 497.25
     },
     "JSLL": {
       "sma50": 523.501000366211,
@@ -7995,7 +7995,9 @@
       "macro_high_rsi": 52.67561538039887,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 59.5
+      "rs_rank": 59.5,
+      "near_high_17_22_last_alert": "2026-10-05T06:46:42.100223",
+      "near_high_17_22_last_price": 711.9000244140625
     },
     "KIRLOSBROS": {
       "sma50": 1856.722001953125,
@@ -8320,8 +8322,8 @@
       "rs_rank": 34.0,
       "ema50_pullback_last_alert": "2026-10-05T03:49:41.756187",
       "ema50_pullback_last_price": 815.2999877929688,
-      "near_high_17_22_last_alert": "2026-10-05T06:01:39.427231",
-      "near_high_17_22_last_price": 819.2000122070312
+      "near_high_17_22_last_alert": "2026-10-05T06:46:44.799473",
+      "near_high_17_22_last_price": 808.0
     },
     "KSCL": {
       "sma50": 756.9169958496094,
@@ -12064,8 +12066,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 78.5,
-      "resistance_last_alert": "2026-10-05T03:50:02.088856",
-      "resistance_last_price": 1291.4000244140625,
+      "resistance_last_alert": "2026-10-05T06:47:08.831340",
+      "resistance_last_price": 1277.199951171875,
       "near_high_17_22_last_alert": "2026-10-05T06:16:34.724987",
       "near_high_17_22_last_price": 1282.0
     },
@@ -12197,7 +12199,9 @@
       "macro_high_rsi": 71.97037495562246,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 89.5
+      "rs_rank": 89.5,
+      "near_high_17_22_last_alert": "2026-10-05T06:47:10.145221",
+      "near_high_17_22_last_price": 2994.0
     },
     "SHAKTIPUMP": {
       "sma50": 490.23100036621094,
