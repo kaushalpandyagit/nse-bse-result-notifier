@@ -483,7 +483,9 @@
       "macro_high_rsi": 66.13425055450921,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 81.6
+      "rs_rank": 81.6,
+      "near_high_17_22_last_alert": "2026-10-05T09:29:46.078640",
+      "near_high_17_22_last_price": 3102.60009765625
     },
     "ADVENZYMES": {
       "sma50": 299.6210003662109,
@@ -2196,8 +2198,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 55.5,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:12.709563",
-      "near_high_17_22_last_price": 613.0
+      "near_high_17_22_last_alert": "2026-10-05T09:29:58.703920",
+      "near_high_17_22_last_price": 600.75
     },
     "BLS": {
       "sma50": 241.89419921875,
@@ -9762,8 +9764,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 42.6,
-      "near_high_17_22_last_alert": "2026-10-05T07:47:01.360952",
-      "near_high_17_22_last_price": 76.5
+      "near_high_17_22_last_alert": "2026-10-05T09:30:54.223327",
+      "near_high_17_22_last_price": 75.5999984741211
     },
     "NSLNISP": {
       "sma50": 43.141800003051756,
@@ -15112,8 +15114,8 @@
       "sos_thrust_peak_price": 960.0,
       "sos_thrust_peak_rsi": 72.05091777237757,
       "rs_rank": 51.5,
-      "mtf_last_alert": "2026-10-05T05:47:05.795738",
-      "mtf_last_price": 881.8499755859375
+      "mtf_last_alert": "2026-10-05T09:31:34.052836",
+      "mtf_last_price": 869.6500244140625
     },
     "YATHARTH": {
       "sma50": 953.552998046875,
