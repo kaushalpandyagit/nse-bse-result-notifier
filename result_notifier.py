@@ -58,11 +58,16 @@ RESULT_KEYWORDS = [
     "standalone and consolidated financial", "submitted to the exchange",
 ]
 
+# EXPANDED: Now catches DMart, HDFC, Bajaj Finance, and PSU Bank specific phrasing
 BUSINESS_UPDATE_KEYWORDS = [
     "business update", "operational update", "quarterly update",
     "provisional data", "provisional figures", "provisional numbers",
     "provisional update", "performance update", "key operational",
-    "business highlights", "updates on operational", "update on operations"
+    "business highlights", "updates on operational", "update on operations",
+    "standalone revenue", "revenue from operations", "key business parameters",
+    "provisional business", "business parameters", "business performance",
+    "advances and deposits", "deposits and advances", "update on advances",
+    "aum update", "update on aum", "provisional key"
 ]
 
 ORDER_KEYWORDS = [
@@ -672,7 +677,6 @@ def poll_once(seen: set) -> set:
                     dynamic_emoji = "🔴"
                     sentiment_marker = " 🔴"
             else:
-                # Fallback text check if PDF extraction failed or yielded no summary
                 sub_low = item["subject"].lower()
                 if any(kw in sub_low for kw in ["acquisit", "buy", "purchase"]):
                     dynamic_emoji = "🟢"
@@ -746,7 +750,6 @@ def poll_once(seen: set) -> set:
                 if symbol not in catalyst_history:
                     catalyst_history[symbol] = {"positive": [], "negative": [], "business_updates": []}
                 
-                # Ensure existing records have the new array structure gracefully
                 if "business_updates" not in catalyst_history[symbol]:
                     catalyst_history[symbol]["business_updates"] = []
                 
@@ -768,7 +771,6 @@ def poll_once(seen: set) -> set:
                     
                 catalyst_history[symbol][sentiment].append(event_record)
                 
-                # Keep history lean: store up to 50 latest events per sentiment per company
                 catalyst_history[symbol][sentiment] = catalyst_history[symbol][sentiment][-50:]
                 dirty_history = True
 
