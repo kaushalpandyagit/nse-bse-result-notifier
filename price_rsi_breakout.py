@@ -13,7 +13,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 2: Momentum Ignition (1% to 2.5% below Macro High).
 - SETUP 3: Wyckoff SOS + Range Shift Pullback Curl (Electrosteel Type).
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
-- NEW: NSE-BSE Delivery Arbitrage & Spread Scanner (>= 2.5% Spread).
+- NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
 """
 
 import os
@@ -94,9 +94,11 @@ MACRO_PIVOT_LOOKBACK_DAYS = 60
 # --- ARBITRAGE SCANNER CONFIG ---
 ARBITRAGE_MIN_SPREAD_PCT = 2.5
 DEFAULT_ARBITRAGE_CANDIDATES = [
-    "BENGALASM", "PILANIINVS", "MAHSCOOTER", "BAJAJHLDNG", 
-    "KICL", "SUMEDHA", "STEL", "BHAGYAPROP", "KAMATHOTEL", 
-    "SILVEROAK", "NESCO", "GICRE", "SUNDARMFIN"
+    "BENGALASM", "KAMAHOLD", "JSWHL", "PILANIINVS", "STEL", "BAJAJHLDNG", 
+    "BBTC", "DHUNINV", "GANGESSECU", "GFLLIMITED", "JINDALPHOT", "JPOLYINVST", 
+    "KICL", "MAHSCOOTER", "NSIL", "RANEHOLDIN", "RPSGVENT", "SILINV", 
+    "SUMMITSEC", "TATACAP", "TATAINVEST", "TSFINV", "TVSHLTD", "VHL", 
+    "ADANIENT", "WELINV"
 ]
 
 RESULT_KEYWORDS = [
@@ -714,7 +716,6 @@ def check_nse_bse_arbitrage(momentum_state: dict, state: dict, fyers):
     watchlist = momentum_state.get("watchlist", {})
     custom_alerts = fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)
     
-    # Pool: Dedicated candidates + Watchlist stocks + Sheet stocks
     candidates = set(DEFAULT_ARBITRAGE_CANDIDATES)
     candidates.update([s.split(":")[-1].upper() for s in custom_alerts.keys()])
     candidates.update(list(watchlist.keys())[:50])
@@ -722,7 +723,6 @@ def check_nse_bse_arbitrage(momentum_state: dict, state: dict, fyers):
     for symbol in candidates:
         nse_p, bse_p = None, None
         
-        # 1. Try Fyers Quotes batch call
         if fyers:
             try:
                 q_resp = fyers.quotes(data={"symbols": f"NSE:{symbol}-EQ,BSE:{symbol}-EQ"})
@@ -736,7 +736,6 @@ def check_nse_bse_arbitrage(momentum_state: dict, state: dict, fyers):
             except Exception:
                 pass
 
-        # 2. Yahoo Finance fallback
         if not nse_p or not bse_p:
             try:
                 t_nse = yf.Ticker(f"{symbol}.NS").fast_info
