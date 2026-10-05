@@ -4738,8 +4738,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 57.6,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:23.610452",
-      "near_high_17_22_last_price": 2534.800048828125
+      "near_high_17_22_last_alert": "2026-10-05T06:01:26.535643",
+      "near_high_17_22_last_price": 2565.10009765625
     },
     "EUREKAFORB": {
       "sma50": 415.7880004882812,
@@ -8320,8 +8320,8 @@
       "rs_rank": 34.0,
       "ema50_pullback_last_alert": "2026-10-05T03:49:41.756187",
       "ema50_pullback_last_price": 815.2999877929688,
-      "near_high_17_22_last_alert": "2026-10-05T05:16:29.467656",
-      "near_high_17_22_last_price": 805.0
+      "near_high_17_22_last_alert": "2026-10-05T06:01:39.427231",
+      "near_high_17_22_last_price": 819.2000122070312
     },
     "KSCL": {
       "sma50": 756.9169958496094,
@@ -9741,7 +9741,9 @@
       "macro_high_rsi": 55.37780320804145,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 42.6
+      "rs_rank": 42.6,
+      "near_high_17_22_last_alert": "2026-10-05T06:01:44.610866",
+      "near_high_17_22_last_price": 74.55000305175781
     },
     "NSLNISP": {
       "sma50": 43.141800003051756,
@@ -13810,8 +13812,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 81.4,
-      "near_high_17_22_last_alert": "2026-10-05T03:50:10.404444",
-      "near_high_17_22_last_price": 536.9500122070312
+      "near_high_17_22_last_alert": "2026-10-05T06:01:58.484177",
+      "near_high_17_22_last_price": 542.5999755859375
     },
     "TI": {
       "sma50": 537.598999633789,
