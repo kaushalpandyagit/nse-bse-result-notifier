@@ -1035,7 +1035,9 @@
       "macro_high_rsi": 70.19793635529331,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 93.9
+      "rs_rank": 93.9,
+      "bonde_last_alert": "2026-10-05T10:01:20.467385",
+      "bonde_last_price": 402.3999938964844
     },
     "APOLLOTYRE": {
       "sma50": 425.9210009765625,
@@ -8305,7 +8307,9 @@
       "macro_high_rsi": 62.27098996406933,
       "sos_thrust_peak_price": 1612.0999755859375,
       "sos_thrust_peak_rsi": 75.33894352428328,
-      "rs_rank": 87.1
+      "rs_rank": 87.1,
+      "near_high_17_22_last_alert": "2026-10-05T10:02:42.704191",
+      "near_high_17_22_last_price": 1392.699951171875
     },
     "KSB": {
       "sma50": 811.1139965820313,
