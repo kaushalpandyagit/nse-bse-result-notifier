@@ -5753,7 +5753,11 @@
       "sos_thrust_peak_rsi": null,
       "rs_rank": 78.7,
       "near_high_17_22_last_alert": "2026-10-05T03:49:29.143373",
-      "near_high_17_22_last_price": 1999.4000244140625
+      "near_high_17_22_last_price": 1999.4000244140625,
+      "zanger_last_alert": "2026-10-05T09:16:36.845553",
+      "zanger_last_price": 2018.0,
+      "resistance_last_alert": "2026-10-05T09:16:37.331784",
+      "resistance_last_price": 2018.0
     },
     "GRSE": {
       "sma50": 2493.786005859375,
@@ -13190,8 +13194,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 47.0,
-      "resistance_last_alert": "2026-10-05T08:18:12.281619",
-      "resistance_last_price": 223.8800048828125
+      "resistance_last_alert": "2026-10-05T09:17:31.977536",
+      "resistance_last_price": 221.27999877929688
     },
     "SWANCORP": {
       "sma50": 297.8009997558594,
