@@ -5417,7 +5417,11 @@
       "macro_high_rsi": 44.67105683393119,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 10.8
+      "rs_rank": 10.8,
+      "resistance_last_alert": "2026-10-05T07:46:35.633610",
+      "resistance_last_price": 256.6499938964844,
+      "ema50_pullback_last_alert": "2026-10-05T07:46:36.231265",
+      "ema50_pullback_last_price": 256.6499938964844
     },
     "GODREJAGRO": {
       "sma50": 614.5649951171876,
@@ -9198,8 +9202,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 34.2,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:48.124492",
-      "near_high_17_22_last_price": 167.36000061035156
+      "near_high_17_22_last_alert": "2026-10-05T07:46:57.176860",
+      "near_high_17_22_last_price": 170.61000061035156
     },
     "MSTCLTD": {
       "sma50": 687.9869982910157,
@@ -9552,8 +9556,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 81.9,
-      "near_high_17_22_last_alert": "2026-10-05T07:01:57.315993",
-      "near_high_17_22_last_price": 4678.2001953125
+      "near_high_17_22_last_alert": "2026-10-05T07:46:59.741674",
+      "near_high_17_22_last_price": 4754.7001953125
     },
     "NETWORK18": {
       "sma50": 28.07679988861084,
@@ -9746,8 +9750,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 42.6,
-      "near_high_17_22_last_alert": "2026-10-05T07:01:58.642462",
-      "near_high_17_22_last_price": 75.5199966430664
+      "near_high_17_22_last_alert": "2026-10-05T07:47:01.360952",
+      "near_high_17_22_last_price": 76.5
     },
     "NSLNISP": {
       "sma50": 43.141800003051756,
@@ -15318,8 +15322,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 46.4,
-      "near_high_17_22_last_alert": "2026-10-05T06:31:13.732566",
-      "near_high_17_22_last_price": 491.79998779296875
+      "near_high_17_22_last_alert": "2026-10-05T07:47:32.051310",
+      "near_high_17_22_last_price": 486.6000061035156
     }
   }
 }
