@@ -8320,8 +8320,8 @@
       "rs_rank": 34.0,
       "ema50_pullback_last_alert": "2026-10-05T03:49:41.756187",
       "ema50_pullback_last_price": 815.2999877929688,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:42.316335",
-      "near_high_17_22_last_price": 815.2999877929688
+      "near_high_17_22_last_alert": "2026-10-05T05:16:29.467656",
+      "near_high_17_22_last_price": 805.0
     },
     "KSCL": {
       "sma50": 756.9169958496094,
@@ -8486,8 +8486,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 38.8,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:44.587901",
-      "near_high_17_22_last_price": 513.7000122070312
+      "near_high_17_22_last_alert": "2026-10-05T05:16:30.631129",
+      "near_high_17_22_last_price": 508.1000061035156
     },
     "LLOYDSENGG": {
       "sma50": 89.13580001831055,
@@ -12095,7 +12095,9 @@
       "macro_high_rsi": 60.88426435941352,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 63.3
+      "rs_rank": 63.3,
+      "ema50_pullback_last_alert": "2026-10-05T05:16:41.819341",
+      "ema50_pullback_last_price": 280.5
     },
     "SENCO": {
       "sma50": 358.07599853515626,
