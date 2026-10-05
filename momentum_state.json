@@ -3865,7 +3865,13 @@
       "macro_high_rsi": 55.81307267729215,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 14.3
+      "rs_rank": 14.3,
+      "zanger_last_alert": "2026-10-05T08:01:32.405774",
+      "zanger_last_price": 1088.199951171875,
+      "resistance_last_alert": "2026-10-05T08:01:33.022257",
+      "resistance_last_price": 1088.199951171875,
+      "mtf_last_alert": "2026-10-05T08:01:33.526730",
+      "mtf_last_price": 1088.199951171875
     },
     "DEEPAKFERT": {
       "sma50": 1433.5020043945312,
