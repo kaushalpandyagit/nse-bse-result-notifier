@@ -1,1 +1,1 @@
-{"company_alerts": {"INFY": [{"time": 1791144526.4093792, "type": "ADR_VOLATILITY"}], "WIT": [{"time": 1791144526.4093792, "type": "ADR_VOLATILITY"}], "HDB": [{"time": 1791144526.4093792, "type": "ADR_VOLATILITY"}], "MMYT": [{"time": 1791144526.4093792, "type": "ADR_VOLATILITY"}], "broadcom": [{"time": 1791165442.7104318, "type": "EARNINGS", "source": "Yahoo Finance"}]}}
+{"company_alerts": {"broadcom": [{"time": 1791165442.7104318, "type": "EARNINGS", "source": "Yahoo Finance"}], "INFY": [{"time": 1791241738.3318148, "type": "ADR_VOLATILITY"}]}}
