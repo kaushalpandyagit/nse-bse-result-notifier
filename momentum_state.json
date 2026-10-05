@@ -867,7 +867,9 @@
       "macro_high_rsi": 64.20187262210158,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 69.6
+      "rs_rank": 69.6,
+      "near_high_17_22_last_alert": "2026-10-05T04:01:11.995621",
+      "near_high_17_22_last_price": 584.2999877929688
     },
     "ANGELONE": {
       "sma50": 292.96799926757814,
@@ -4245,7 +4247,9 @@
       "macro_high_rsi": 63.18557545330649,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 39.2
+      "rs_rank": 39.2,
+      "ema50_pullback_last_alert": "2026-10-05T04:01:25.631321",
+      "ema50_pullback_last_price": 298.8500061035156
     },
     "ELECON": {
       "sma50": 432.8010009765625,
@@ -4633,7 +4637,9 @@
       "macro_high_rsi": 58.15620916757155,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 65.8
+      "rs_rank": 65.8,
+      "near_high_17_22_last_alert": "2026-10-05T04:01:27.713501",
+      "near_high_17_22_last_price": 69.0
     },
     "ERIS": {
       "sma50": 1324.1659985351562,
@@ -13335,7 +13341,11 @@
       "macro_high_rsi": 56.32726603703981,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 50.8
+      "rs_rank": 50.8,
+      "mtf_last_alert": "2026-10-05T04:02:00.646054",
+      "mtf_last_price": 295.75,
+      "ema50_pullback_last_alert": "2026-10-05T04:02:01.168003",
+      "ema50_pullback_last_price": 295.75
     },
     "TATACHEM": {
       "sma50": 653.9450012207031,
