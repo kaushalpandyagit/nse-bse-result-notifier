@@ -322,8 +322,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 48.3,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:02.833559",
-      "near_high_17_22_last_price": 988.9500122070312
+      "near_high_17_22_last_alert": "2026-10-05T04:45:48.202998",
+      "near_high_17_22_last_price": 1015.0
     },
     "ACC": {
       "sma50": 1290.4140014648438,
@@ -901,7 +901,9 @@
       "macro_high_rsi": 47.967222362595855,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 39.9
+      "rs_rank": 39.9,
+      "near_high_17_22_last_alert": "2026-10-05T04:45:50.635804",
+      "near_high_17_22_last_price": 282.8999938964844
     },
     "ANUP": {
       "sma50": 1813.1800024414063,
@@ -2096,8 +2098,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 71.9,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:11.855214",
-      "near_high_17_22_last_price": 1988.5
+      "near_high_17_22_last_alert": "2026-10-05T04:45:55.437486",
+      "near_high_17_22_last_price": 1968.199951171875
     },
     "BIKAJI": {
       "sma50": 592.9200042724609,
@@ -4508,8 +4510,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 79.7,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:22.365614",
-      "near_high_17_22_last_price": 302.8999938964844
+      "near_high_17_22_last_alert": "2026-10-05T04:46:04.560613",
+      "near_high_17_22_last_price": 297.6000061035156
     },
     "ENGINERSIN": {
       "sma50": 262.1708013916016,
@@ -10220,8 +10222,8 @@
       "sos_thrust_peak_price": 362.0,
       "sos_thrust_peak_rsi": 77.69720031442331,
       "rs_rank": 35.0,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:52.457389",
-      "near_high_17_22_last_price": 298.6000061035156
+      "near_high_17_22_last_alert": "2026-10-05T04:46:24.493718",
+      "near_high_17_22_last_price": 291.1499938964844
     },
     "PGEL": {
       "sma50": 568.462001953125,
@@ -10446,8 +10448,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 34.4,
-      "near_high_17_22_last_alert": "2026-10-05T03:49:53.675044",
-      "near_high_17_22_last_price": 584.0499877929688
+      "near_high_17_22_last_alert": "2026-10-05T04:46:25.702832",
+      "near_high_17_22_last_price": 576.9000244140625
     },
     "POLYMED": {
       "sma50": 1724.8519897460938,
@@ -12766,8 +12768,8 @@
       "sos_thrust_peak_price": 831.0999755859375,
       "sos_thrust_peak_rsi": 75.7623389393521,
       "rs_rank": 53.0,
-      "near_high_17_22_last_alert": "2026-10-05T03:50:05.511627",
-      "near_high_17_22_last_price": 782.4000244140625
+      "near_high_17_22_last_alert": "2026-10-05T04:46:33.961347",
+      "near_high_17_22_last_price": 798.9000244140625
     },
     "STAR": {
       "sma50": 1076.6780017089843,
@@ -12863,7 +12865,9 @@
       "macro_high_rsi": 68.30287606778182,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 88.2
+      "rs_rank": 88.2,
+      "near_high_17_22_last_alert": "2026-10-05T04:46:34.807154",
+      "near_high_17_22_last_price": 363.0
     },
     "STYRENIX": {
       "sma50": 2158.7700073242186,
@@ -13152,8 +13156,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 47.0,
-      "resistance_last_alert": "2026-10-05T03:50:07.279962",
-      "resistance_last_price": 224.5399932861328
+      "resistance_last_alert": "2026-10-05T04:46:36.376044",
+      "resistance_last_price": 221.47999572753906
     },
     "SWANCORP": {
       "sma50": 297.8009997558594,
@@ -13446,8 +13450,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 73.8,
-      "near_high_17_22_last_alert": "2026-10-05T03:50:08.764959",
-      "near_high_17_22_last_price": 704.0499877929688
+      "near_high_17_22_last_alert": "2026-10-05T04:46:37.936038",
+      "near_high_17_22_last_price": 713.7000122070312
     },
     "TBOTEK": {
       "sma50": 1655.47798828125,
@@ -14481,7 +14485,9 @@
       "macro_high_rsi": 49.8573645167993,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 24.3
+      "rs_rank": 24.3,
+      "liquidity_sweep_last_alert": "2026-10-05T04:46:41.971895",
+      "liquidity_sweep_last_price": 176.61000061035156
     },
     "VAIBHAVGBL": {
       "sma50": 226.31660095214843,
@@ -14740,8 +14746,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 68.4,
-      "near_high_17_22_last_alert": "2026-10-05T03:50:16.838272",
-      "near_high_17_22_last_price": 748.0999755859375
+      "near_high_17_22_last_alert": "2026-10-05T04:46:43.365367",
+      "near_high_17_22_last_price": 760.4000244140625
     },
     "VOLTAMP": {
       "sma50": 10496.84,
