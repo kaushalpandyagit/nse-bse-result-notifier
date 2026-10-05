@@ -10744,8 +10744,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 34.8,
-      "resistance_last_alert": "2026-10-05T03:49:55.813644",
-      "resistance_last_price": 157.07000732421875
+      "resistance_last_alert": "2026-10-05T06:30:46.892458",
+      "resistance_last_price": 155.39999389648438
     },
     "PURVA": {
       "sma50": 214.19839965820313,
@@ -13978,8 +13978,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 62.2,
-      "near_high_17_22_last_alert": "2026-10-05T03:50:12.067698",
-      "near_high_17_22_last_price": 806.5
+      "near_high_17_22_last_alert": "2026-10-05T06:31:05.203367",
+      "near_high_17_22_last_price": 797.0
     },
     "TMB": {
       "sma50": 884.1189990234375,
@@ -15213,7 +15213,9 @@
       "macro_high_rsi": 61.23687435345231,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 8.6
+      "rs_rank": 8.6,
+      "mtf_last_alert": "2026-10-05T06:31:12.585123",
+      "mtf_last_price": 455.70001220703125
     },
     "ZENTEC": {
       "sma50": 1745.8539990234376,
@@ -15310,8 +15312,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 46.4,
-      "near_high_17_22_last_alert": "2026-10-05T03:50:21.488487",
-      "near_high_17_22_last_price": 498.20001220703125
+      "near_high_17_22_last_alert": "2026-10-05T06:31:13.732566",
+      "near_high_17_22_last_price": 491.79998779296875
     }
   }
 }
