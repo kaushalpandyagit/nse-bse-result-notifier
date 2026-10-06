@@ -4916,10 +4916,10 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 37.8,
-      "resistance_last_alert": "2026-10-06T06:30:19.245552",
-      "resistance_last_price": 103.76000213623047,
-      "mtf_last_alert": "2026-10-06T06:30:19.755169",
-      "mtf_last_price": 103.76000213623047
+      "resistance_last_alert": "2026-10-06T07:46:27.256930",
+      "resistance_last_price": 102.70999908447266,
+      "mtf_last_alert": "2026-10-06T07:46:28.071936",
+      "mtf_last_price": 102.70999908447266
     },
     "GNFC": {
       "sma50": 575.3909997558594,
@@ -8742,8 +8742,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 44.5,
-      "near_high_17_22_last_alert": "2026-10-06T06:47:07.401083",
-      "near_high_17_22_last_price": 175.72999572753906
+      "near_high_17_22_last_alert": "2026-10-06T07:46:50.779914",
+      "near_high_17_22_last_price": 171.99000549316406
     },
     "MSTCLTD": {
       "sma50": 687.8899987792969,
@@ -14083,7 +14083,11 @@
       "macro_high_rsi": 49.59208515065594,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 16.8
+      "rs_rank": 16.8,
+      "mtf_last_alert": "2026-10-06T07:47:20.821645",
+      "mtf_last_price": 421.8500061035156,
+      "ema50_pullback_last_alert": "2026-10-06T07:47:21.551819",
+      "ema50_pullback_last_price": 421.8500061035156
     },
     "VGUARD": {
       "sma50": 322.50800048828125,
