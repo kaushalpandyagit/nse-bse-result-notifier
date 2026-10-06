@@ -2596,8 +2596,8 @@
       "resistance_last_price": 365.5,
       "mtf_last_alert": "2026-10-06T07:01:34.233519",
       "mtf_last_price": 365.5,
-      "zanger_last_alert": "2026-10-06T05:46:12.735266",
-      "zanger_last_price": 366.25
+      "zanger_last_alert": "2026-10-06T07:16:10.252264",
+      "zanger_last_price": 370.3500061035156
     },
     "CEMPRO": {
       "sma50": 1272.7480029296876,
@@ -10199,7 +10199,9 @@
       "macro_high_rsi": 58.4240168139138,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 62.9
+      "rs_rank": 62.9,
+      "resistance_last_alert": "2026-10-06T07:17:09.650878",
+      "resistance_last_price": 3560.199951171875
     },
     "PTC": {
       "sma50": 161.55260009765624,
