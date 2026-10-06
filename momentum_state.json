@@ -1967,7 +1967,9 @@
       "macro_high_rsi": 67.49252768297032,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 18.3
+      "rs_rank": 18.3,
+      "resistance_last_alert": "2026-10-06T04:01:31.539220",
+      "resistance_last_price": 1547.0999755859375
     },
     "BLUESTONE": {
       "sma50": 828.3380053710938,
@@ -3191,7 +3193,9 @@
       "macro_high_rsi": 61.81249000533876,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 45.6
+      "rs_rank": 45.6,
+      "near_high_17_22_last_alert": "2026-10-06T04:01:38.675200",
+      "near_high_17_22_last_price": 1282.300048828125
     },
     "CROMPTON": {
       "sma50": 235.8895993041992,
@@ -6733,7 +6737,9 @@
       "macro_high_rsi": 66.34261239548067,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 54.1
+      "rs_rank": 54.1,
+      "resistance_last_alert": "2026-10-06T04:01:58.394326",
+      "resistance_last_price": 137.11000061035156
     },
     "JAYNECOIND": {
       "sma50": 92.04000030517578,
@@ -9549,7 +9555,9 @@
       "macro_high_rsi": 72.16491696363876,
       "sos_thrust_peak_price": 1528.0,
       "sos_thrust_peak_rsi": 73.56157828655225,
-      "rs_rank": 96.5
+      "rs_rank": 96.5,
+      "near_high_17_22_last_alert": "2026-10-06T04:02:13.507402",
+      "near_high_17_22_last_price": 1278.800048828125
     },
     "PCBL": {
       "sma50": 325.90399963378906,
@@ -10127,7 +10135,9 @@
       "macro_high_rsi": 73.72755805367939,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 65.7
+      "rs_rank": 65.7,
+      "near_high_17_22_last_alert": "2026-10-06T04:02:17.365103",
+      "near_high_17_22_last_price": 682.5499877929688
     },
     "PRIVISCL": {
       "sma50": 3519.528017578125,
@@ -11417,7 +11427,9 @@
       "resistance_last_alert": "2026-10-06T03:50:48.427762",
       "resistance_last_price": 1280.0999755859375,
       "near_high_17_22_last_alert": "2026-10-06T03:50:48.994941",
-      "near_high_17_22_last_price": 1280.0999755859375
+      "near_high_17_22_last_price": 1280.0999755859375,
+      "ema50_pullback_last_alert": "2026-10-06T04:02:24.940350",
+      "ema50_pullback_last_price": 1270.9000244140625
     },
     "SCI": {
       "sma50": 286.4270001220703,
@@ -13545,7 +13557,9 @@
       "macro_high_rsi": 49.0098472542116,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 22.5
+      "rs_rank": 22.5,
+      "resistance_last_alert": "2026-10-06T04:02:36.518459",
+      "resistance_last_price": 479.5
     },
     "TRIDENT": {
       "sma50": 23.991199913024904,
@@ -14251,7 +14265,9 @@
       "macro_high_rsi": 75.3139409590291,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 57.2
+      "rs_rank": 57.2,
+      "near_high_17_22_last_alert": "2026-10-06T04:02:41.250639",
+      "near_high_17_22_last_price": 10593.0
     },
     "VTL": {
       "sma50": 583.0269982910156,

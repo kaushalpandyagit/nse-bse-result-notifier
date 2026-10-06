@@ -170,5 +170,25 @@
   "arb_BALRAMCHIN": {
     "spread_last_alert": "2026-10-06T03:51:55.290909",
     "spread_last_price": 2.5998229871379683
+  },
+  "arb_JPOLYINVST": {
+    "spread_last_alert": "2026-10-06T04:02:54.901090",
+    "spread_last_price": 7.476428175263447
+  },
+  "arb_DHUNINV": {
+    "spread_last_alert": "2026-10-06T04:02:56.083313",
+    "spread_last_price": 2.7684563758389236
+  },
+  "arb_BALAMINES": {
+    "spread_last_alert": "2026-10-06T04:03:04.611265",
+    "spread_last_price": 3.1530028224117803
+  },
+  "arb_JSWHL": {
+    "spread_last_alert": "2026-10-06T04:03:05.635296",
+    "spread_last_price": 2.8563226503966503
+  },
+  "arb_RPSGVENT": {
+    "spread_last_alert": "2026-10-06T04:03:08.385141",
+    "spread_last_price": 9.423581277520837
   }
 }
