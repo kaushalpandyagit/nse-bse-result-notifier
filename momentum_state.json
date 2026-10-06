@@ -2604,10 +2604,10 @@
       "rs_rank": 12.7,
       "resistance_last_alert": "2026-10-06T07:01:33.648415",
       "resistance_last_price": 365.5,
-      "mtf_last_alert": "2026-10-06T09:01:41.212646",
-      "mtf_last_price": 383.8500061035156,
-      "zanger_last_alert": "2026-10-06T09:01:40.497256",
-      "zanger_last_price": 383.8500061035156
+      "mtf_last_alert": "2026-10-06T10:01:42.884599",
+      "mtf_last_price": 369.1499938964844,
+      "zanger_last_alert": "2026-10-06T10:01:42.193680",
+      "zanger_last_price": 369.1499938964844
     },
     "CEMPRO": {
       "sma50": 1272.7480029296876,
@@ -6809,7 +6809,9 @@
       "sos_thrust_peak_rsi": 72.88554267977845,
       "rs_rank": 55.2,
       "near_high_17_22_last_alert": "2026-10-06T09:46:57.138836",
-      "near_high_17_22_last_price": 94.43000030517578
+      "near_high_17_22_last_price": 94.43000030517578,
+      "ema50_pullback_last_alert": "2026-10-06T10:02:32.112594",
+      "ema50_pullback_last_price": 94.44999694824219
     },
     "JBMA": {
       "sma50": 622.8709948730469,
