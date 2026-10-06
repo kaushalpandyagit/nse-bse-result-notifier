@@ -1,19 +1,13 @@
 """
-Global Macro Pulse (9:00 AM IST), Bellwethers, ADR Radar, USFDA, PLI & Tariff News
-==============================================================================================
-1. Sends a comprehensive global macro summary every morning at ~9:00 AM IST.
-2. 7-Day Forward Calendar:
-   - Dynamically tracks 1st-of-month (Auto Sales & GST Collections).
-   - Tracks Central Bank policy meetings, US CPI, and Market Holidays.
-   - Tracks FTSE & MSCI Rebalance cycles (Announcements & Implementation Days)
-     with stock names and institutional inflow/outflow dollar allocations.
-3. Live ADR Radar: Scans INFY, HDB, WIT, IBN in US markets; alerts if move exceeds 2%.
-4. Curated Radar: US/Global Sector Leader Earnings & Guidance (TSMC, Intel, etc.).
-5. Polls global news RSS feeds every 15 mins for:
-   - High-impact geopolitical shocks (filtered against local non-macro noise).
-   - USFDA Inspections, Form 483, Warning Letters, Import Alerts & EIR Clearances for Indian Pharma.
-   - Central & State Govt PLI Schemes with listed beneficiary mapping.
-   - Global Commodity Tariffs, Import/Export Duties & Anti-Dumping actions with listed beneficiary mapping.
+Global Macro & Geopolitical News Radar
+================================================================
+File: global_macro_news.py
+
+Features:
+  1. 9:00 AM IST Macro Pulse (US Futures, 10Y Yield, DXY, Crude, Gold, BTC).
+  2. Live Geopolitical & Global Bellwether News Polling.
+  3. USFDA, PLI Scheme, and Tariff/Duty News Tracking.
+  4. Robust Continuous Loop (Sleep-proof Morning Trigger).
 """
 
 import os
@@ -21,11 +15,10 @@ import re
 import sys
 import json
 import time
-import html
-import datetime
 import logging
+import datetime
 from pathlib import Path
-import xml.etree.ElementTree as ET
+import html
 
 import requests
 
@@ -33,619 +26,223 @@ try:
     import yfinance as yf
 except ImportError:
     yf = None
-    print("WARNING: yfinance not installed. Macro pulse and ADR radar will fail without it.")
+    print("WARNING: yfinance not installed. Macro data will be limited.")
 
 try:
-    import pytz
-    IST = pytz.timezone("Asia/Kolkata")
+    import feedparser
 except ImportError:
-    IST = None
+    feedparser = None
+    print("WARNING: feedparser not installed. News fetching will be limited.")
 
 # ----------------------------------------------------------------------
-# CONFIG
+# CONFIGURATION
 # ----------------------------------------------------------------------
-SCRIPT_TAG = "🌍 [global_macro_news.py]"
+SCRIPT_TAG = "🤖 [global_macro_news.py]"
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
 POLL_INTERVAL_MINUTES = 15
 
-# Memory Files
-STATE_FILE = Path(__file__).parent / "macro_state.json"
-SEEN_NEWS_FILE = Path(__file__).parent / "seen_news.json"
+STATE_FILE = Path(__file__).parent / "global_macro_state.json"
+LOG_FILE = Path(__file__).parent / "global_macro.log"
 
-# Max alerts per entity within rolling 24-hour window
-MAX_ALERTS_PER_COMPANY_24H = 2
-ADR_ALERT_COOLDOWN_24H = 1
-
-# ----------------------------------------------------------------------
-# 1. TIER-1 TRUSTED FINANCIAL NEWS SOURCES
-# ----------------------------------------------------------------------
-TRUSTED_FINANCIAL_SOURCES = [
-    "reuters", "bloomberg", "cnbc", "barron's", "barrons",
-    "wall street journal", "wsj", "financial times", "marketwatch",
-    "investor's business daily", "yahoo finance", "associated press",
-    "moneycontrol", "economic times", "livemint", "business standard",
-    "cnbc-tv18", "zee business", "ndtv profit", "financial express"
-]
-
-# ----------------------------------------------------------------------
-# 2. GEOPOLITICAL SHOCK KEYWORDS & LOCAL NOISE FILTERS
-# ----------------------------------------------------------------------
-SHOCK_KEYWORDS = [
-    "assassinat", "missile strike", "nuclear", "airstrike", 
-    "military invasion", "invades", "martial law", "coup d'etat", 
-    "terrorist attack", "geopolitical"
-]
-
-NON_MACRO_NOISE = [
-    "school", "bus", "medical", "patient", "hospital", "crash", 
-    "traffic", "murder", "domestic", "tornado", "hurricane", "police",
-    "county", "local", "district"
-]
-
-# ----------------------------------------------------------------------
-# 3. PHARMA & USFDA REGULATORY RADAR
-# ----------------------------------------------------------------------
-INDIAN_PHARMA_COMPANIES = [
-    "sun pharma", "dr. reddy", "dr reddy", "cipla", "lupin", "aurobindo", 
-    "zydus", "alkem", "glenmark", "torrent pharma", "biocon", "granules", 
-    "natco", "gland pharma", "divi's", "divis lab", "laurus labs", "ipca", 
-    "jubilant pharmova", "alembic", "marksans", "strides pharma", 
-    "shilpa medicare", "wockhardt", "suven", "neuland", "caplin point"
-]
-
-USFDA_NEGATIVE_KEYWORDS = [
-    "warning letter", "import alert", "form 483", "oai", 
-    "official action indicated", "withheld approval", "data integrity"
-]
-
-USFDA_POSITIVE_KEYWORDS = [
-    "establishment inspection report", "eir", "voluntary action indicated", 
-    "vai", "no action indicated", "nai", "inspection closed", "clearance", 
-    "clears facility", "inspection successful", "tentative approval", "final approval"
-]
-
-# ----------------------------------------------------------------------
-# 4. GOVT PLI & SECTOR SCHEMES RADAR WITH BENEFICIARIES
-# ----------------------------------------------------------------------
-GOVT_SCHEME_KEYWORDS = [
-    "pli scheme", "production linked incentive", "production-linked incentive",
-    "cabinet approves pli", "cabinet approves scheme", "semiconductor incentive",
-    "capex subsidy", "electronics manufacturing scheme", "textile pli", 
-    "solar pli", "battery pli", "state industrial policy", "industrial incentive scheme"
-]
-
-PLI_SECTOR_BENEFICIARIES = {
-    "electronics": "Dixon Tech (DIXON), Amber Enterprises (AMBER), Kaynes Tech (KAYNES), Syrma SGS (SYRMA)",
-    "semiconductor": "Tata Elxsi (TATAELXSI), CG Power (CGPOWER), Kaynes Tech (KAYNES), Moschip (MOSCHIP)",
-    "solar": "Tata Power (TATAPOWER), Premier Energies (PREMIERENE), Waaree Energies (WAAREEENER), Websol (WEBELSOLAR)",
-    "battery": "Exide Industries (EXIDEIND), Amara Raja (ARE&M)",
-    "textile": "KPR Mill (KPRMILL), Gokaldas Exports (GOKEX), Welspun Living (WELSPUNLIV)",
-    "auto": "Tata Motors (TATAMOTORS), Mahindra & Mahindra (M&M), Sona BLW (SONACOMS), Uno Minda (UNOMINDA)",
-    "ev": "Tata Motors (TATAMOTORS), Olectra Greentech (OLECTRA), JBM Auto (JBMA)",
-    "telecom": "HFCL (HFCL), Tejas Networks (TEJASNET), ITI (ITI)",
-    "pharma": "Divi's (DIVISLAB), Laurus Labs (LAURUSLABS), Granules (GRANULES)",
+MACRO_SYMBOLS = {
+    "S&P 500 Futures": "ES=F",
+    "Nasdaq 100 Futures": "NQ=F",
+    "Dollar Index (DXY)": "DX-Y.NYB",
+    "US 10Y Bond Yield": "^TNX",
+    "Brent Crude": "BZ=F",
+    "Spot Gold": "GC=F",
+    "USD / INR": "INR=X",
+    "Nikkei 225": "^N225",
+    "Shanghai Comp": "000001.SS"
 }
 
-# ----------------------------------------------------------------------
-# 5. COMMODITY IMPORT/EXPORT DUTIES & BENEFICIARIES MAPPING
-# ----------------------------------------------------------------------
-TRADE_TARIFF_KEYWORDS = [
-    "import duty", "export duty", "customs duty", "anti-dumping", 
-    "anti dumping", "tariffs", "imposes duty", "removes duty", 
-    "slashes duty", "hikes duty", "duty hike", "duty cut", "levies duty",
-    "scraps duty", "abolishes duty", "cuts duty", "duty reduction"
+# RSS feeds for Global Macro, USFDA, and Market News
+RSS_FEEDS = [
+    "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",           # WSJ Markets
+    "https://search.cnbc.com/rs/search/combinedcms/view.xml?id=10000664", # CNBC Finance
+    "https://feeds.bloomberg.com/markets/news.rss"             # Bloomberg Markets (if available)
 ]
 
-COMMODITY_KEYWORDS = [
-    "commodity", "metal", "steel", "gold", "silver", "copper", "aluminium", "aluminum",
-    "zinc", "wheat", "sugar", "palm oil", "edible oil", "iron ore", "coal", "cotton", "crude"
-]
+# Keywords to filter breaking impact news
+BELLWETHER_KEYWORDS = ["nvidia", "apple", "tesla", "microsoft", "tsmc", "guidance", "revenue booms", "earnings", "ai demand"]
+GEOPOLITICAL_KEYWORDS = ["war", "strike", "missile", "sanctions", "geopolitical", "opec", "fed", "federal reserve", "rate cut", "rbi"]
+REGULATORY_KEYWORDS = ["usfda", "fda", "pli scheme", "tariff", "duty", "import tax", "export ban", "anti-dumping"]
 
-COMMODITY_BENEFICIARIES = {
-    "gold": "Titan (TITAN), Kalyan Jewellers (KALYANKJIL), Rajesh Exports (RAJESHEXPO), Senco Gold (SENCO), PC Jeweller (PCJEWELLER)",
-    "silver": "Hindustan Zinc (HINDZINC)",
-    "steel": "Tata Steel (TATASTEEL), JSW Steel (JSWSTEEL), Jindal Steel (JINDALSTEL), SAIL (SAIL), Shyam Metalics (SMEL)",
-    "iron ore": "NMDC (NMDC), Vedanta (VEDL), KIOCL (KIOCL)",
-    "aluminium": "Hindalco (HINDALCO), NALCO (NATIONALUM), Vedanta (VEDL)",
-    "aluminum": "Hindalco (HINDALCO), NALCO (NATIONALUM), Vedanta (VEDL)",
-    "copper": "Hindustan Copper (HINDCOPPER), Hindalco (HINDALCO), Vedanta (VEDL)",
-    "zinc": "Hindustan Zinc (HINDZINC), Vedanta (VEDL)",
-    "metal": "Tata Steel (TATASTEEL), JSW Steel (JSWSTEEL), Hindalco (HINDALCO), Vedanta (VEDL), NALCO (NATIONALUM)",
-    "sugar": "Balrampur Chini (BALRAMCHIN), Shree Renuka (RENUKA), Triveni Eng (TRIVENI), Praj Ind (PRAJIND), Dwarikesh (DWARKESH)",
-    "palm oil": "Adani Wilmar (AWL), Patanjali Foods (PATANJALI), Godrej Agrovet (GODREJAGRO)",
-    "edible oil": "Adani Wilmar (AWL), Patanjali Foods (PATANJALI), Godrej Agrovet (GODREJAGRO)",
-    "crude": "ONGC (ONGC), Oil India (OIL), Reliance (RELIANCE), IOC (IOC), BPCL (BPCL), HPCL (HPCL)",
-    "coal": "Coal India (COALINDIA)",
-    "wheat": "ITC (ITC), Britannia (BRITANNIA)",
-    "cotton": "Vardhman Textiles (VTL), Welspun Living (WELSPUNLIV), KPR Mill (KPRMILL)",
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
 }
 
-# ----------------------------------------------------------------------
-# 6. GLOBAL SECTOR LEADERS & INDIAN ADRs
-# ----------------------------------------------------------------------
-GLOBAL_LEADERS = {
-    # IT Services & Enterprise Tech
-    "accenture": {"name": "Accenture (ACN)", "impact": "Direct primary bellwether for Indian IT"},
-    "cognizant": {"name": "Cognizant (CTSH)", "impact": "Direct peer benchmark for Indian IT offshore delivery"},
-    "epam": {"name": "EPAM Systems (EPAM)", "impact": "Direct peer to Indian IT; benchmark for offshore engineering"},
-    "ibm": {"name": "IBM", "impact": "Enterprise IT infrastructure & consulting budget indicator"},
-    
-    # AI, Cloud & Mega-Cap Tech
-    "nvidia": {"name": "Nvidia (NVDA)", "impact": "Global AI hardware infrastructure anchor"},
-    "microsoft": {"name": "Microsoft (MSFT)", "impact": "Enterprise cloud (Azure) & commercial AI capex"},
-    "amazon": {"name": "Amazon (AMZN)", "impact": "AWS cloud spending & global consumer demand"},
-    "google": {"name": "Alphabet (GOOGL)", "impact": "Digital ad spend & cloud infrastructure capex"},
-    "meta": {"name": "Meta Platforms (META)", "impact": "AI capex cycle & digital ad revenue"},
-    "apple": {"name": "Apple (AAPL)", "impact": "Global consumer electronics supply chain driver"},
-    
-    # Semiconductors & Hardware Cycle
-    "amd": {"name": "AMD", "impact": "Data center compute & enterprise PC demand"},
-    "micron": {"name": "Micron (MU)", "impact": "Memory chip cycle (DRAM/NAND)"},
-    "tsmc": {"name": "TSMC", "impact": "World's largest chip foundry; global tech demand anchor"},
-    "broadcom": {"name": "Broadcom (AVGO)", "impact": "Custom AI silicon & enterprise networking"},
-    "asml": {"name": "ASML", "impact": "Lithography equipment; forward indicator of chip capex"},
-    "sandisk": {"name": "SanDisk / WDC", "impact": "Memory & tech hardware supply chain indicator"},
-    "western digital": {"name": "SanDisk / WDC", "impact": "Memory & tech hardware supply chain indicator"},
-    "intel": {"name": "Intel (INTC)", "impact": "Global semiconductor bellwether"},
-    "tesla": {"name": "Tesla (TSLA)", "impact": "EV sector sentiment & battery metals"},
-
-    # Asian Giants
-    "alibaba": {"name": "Alibaba (BABA)", "impact": "Chinese consumer consumption barometer"},
-    "huawei": {"name": "Huawei", "impact": "Global telecom infrastructure benchmark"}
-}
-
-INDIAN_ADRS = {
-    "INFY": "Infosys (IT Proxy)",
-    "WIT": "Wipro (IT Proxy)",
-    "HDB": "HDFC Bank (BankNifty Proxy)",
-    "IBN": "ICICI Bank (BankNifty Proxy)",
-    "RDY": "Dr. Reddy's (Pharma Proxy)",
-    "MMYT": "MakeMyTrip (Consumption Proxy)"
-}
-
-EARNINGS_KEYWORDS = [
-    "earnings", "revenue", "guidance", "profit", "quarterly result", "q1", "q2", "q3", "q4",
-    "forecast", "outlook", "slashes", "raises outlook", "cuts outlook", "beats", "misses",
-]
-
-NEWS_FEEDS = [
-    "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=when%3A4h%20(Accenture%20OR%20Cognizant%20OR%20Nvidia%20OR%20Microsoft%20OR%20Apple%20OR%20Amazon%20OR%20Google%20OR%20Meta%20OR%20AMD%20OR%20Micron%20OR%20TSMC%20OR%20Tesla%20OR%20Alibaba%20OR%20Huawei%20OR%20EPAM%20OR%20SanDisk%20OR%20Western%20Digital%20OR%20Intel)%20(earnings%20OR%20guidance%20OR%20revenue%20OR%20results)&hl=en-US&gl=US&ceid=US:en",
-    "https://news.google.com/rss/search?q=when%3A4h%20(USFDA%20OR%20%22US%20FDA%22%20OR%20%22Form%20483%22%20OR%20%22warning%20letter%22%20OR%20%22import%20alert%22%20OR%20%22EIR%22%20OR%20clearance)%20(pharma%20OR%20facility%20OR%20plant)&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=when%3A6h%20(%22PLI%20scheme%22%20OR%20%22production%20linked%20incentive%22%20OR%20%22cabinet%20approves%22%20OR%20%22subsidy%20scheme%22)&hl=en-IN&gl=IN&ceid=IN:en",
-    "https://news.google.com/rss/search?q=when%3A12h%20(%22import%20duty%22%20OR%20%22export%20duty%22%20OR%20%22customs%20duty%22%20OR%20%22anti-dumping%22%20OR%20tariff)%20(metal%20OR%20steel%20OR%20gold%20OR%20silver%20OR%20copper%20OR%20aluminum%20OR%20wheat%20OR%20sugar%20OR%20oil%20OR%20commodity)&hl=en-IN&gl=IN&ceid=IN:en"
-]
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[logging.FileHandler(LOG_FILE), logging.StreamHandler()],
+)
+log = logging.getLogger("global_macro")
 
 # ----------------------------------------------------------------------
-# 7. MACRO ASSETS (9:00 AM PULSE)
-# ----------------------------------------------------------------------
-MACRO_TICKERS = {
-    "🇺🇸 Nasdaq 100 Futures": "NQ=F",
-    "🇺🇸 S&P 500 Futures": "ES=F",
-    "🛢️ Brent Crude Oil": "BZ=F",
-    "🪙 Spot Gold": "GC=F",
-    "💱 USD / INR": "INR=X",
-    "🇺🇸 US 10Y Bond Yield": "^TNX",
-    "₿ Bitcoin": "BTC-USD",
-    "🇯🇵 Japan (Nikkei 225)": "^N225",
-    "🇨🇳 China (Shanghai)": "000001.SS",
-}
-
-# ----------------------------------------------------------------------
-# 8. MACRO EVENT & INDEX REBALANCE CALENDAR (Auto/GST injected dynamically)
-# ----------------------------------------------------------------------
-MACRO_CALENDAR = [
-    # --- October 2026 ---
-    {"date": "2026-10-02", "event": "NSE/BSE Holiday (Mahatma Gandhi Jayanti)", "type": "Holiday 🛑", "details": []},
-    {"date": "2026-10-05", "event": "RBI MPC Meeting Begins", "type": "Central Bank 🏛️", "details": []},
-    {"date": "2026-10-07", "event": "RBI MPC Policy Decision (Repo Rate)", "type": "Central Bank 🏛️", "details": []},
-    {"date": "2026-10-14", "event": "US CPI (Inflation Data Release)", "type": "Data Release 📊", "details": []},
-    {"date": "2026-10-20", "event": "NSE/BSE Holiday (Dussehra)", "type": "Holiday 🛑", "details": []},
-    {"date": "2026-10-27", "event": "US Fed FOMC Meeting Begins", "type": "Central Bank 🏛️", "details": []},
-    {"date": "2026-10-28", "event": "US Fed FOMC Policy Decision", "type": "Central Bank 🏛️", "details": []},
-
-    # --- November 2026 (MSCI & FTSE Cycles) ---
-    {
-        "date": "2026-11-10", 
-        "event": "MSCI Semi-Annual Review Announcement", 
-        "type": "Index Announcement 📢",
-        "details": [
-            "Official list of stock additions, deletions, and weight changes released post-US close."
-        ]
-    },
-    {
-        "date": "2026-11-20", 
-        "event": "FTSE GEIS Review Announcement", 
-        "type": "Index Announcement 📢",
-        "details": [
-            "FTSE preliminary list of additions, deletions & weight adjustments published."
-        ]
-    },
-    {
-        "date": "2026-11-30", 
-        "event": "MSCI Implementation Day (Passive Flows at 3:15-3:30 PM)", 
-        "type": "Index Rebalance ⚖️",
-        "details": [
-            "Expected Inclusions: [DIXON (+$210M), POLYCAB (+$185M), TRENT (+$160M)]",
-            "Expected Exclusions: [BANDHANBNK (-$85M)]",
-            "Execution: Heavy volume spikes expected on closing auction (3:15 PM - 3:30 PM)."
-        ]
-    },
-
-    # --- December 2026 (FTSE Implementation) ---
-    {
-        "date": "2026-12-18", 
-        "event": "FTSE GEIS Quarterly Rebalance Implementation", 
-        "type": "Index Rebalance ⚖️",
-        "details": [
-            "Passive tracking funds execute weight adjustments at closing auction."
-        ]
-    }
-]
-
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-log = logging.getLogger("macro_news")
-
-# ----------------------------------------------------------------------
-# TELEGRAM & STORAGE HELPERS
+# TELEGRAM DISPATCHER
 # ----------------------------------------------------------------------
 def send_telegram_message(text: str) -> bool:
-    if "PUT_YOUR" in TELEGRAM_BOT_TOKEN or not TELEGRAM_BOT_TOKEN:
+    if "PUT_YOUR" in TELEGRAM_BOT_TOKEN or "PUT_YOUR" in TELEGRAM_CHAT_ID:
+        log.error("Telegram credentials not configured.")
         return False
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
         "text": f"{SCRIPT_TAG}\n{text}",
         "parse_mode": "HTML",
-        "disable_web_page_preview": True
+        "disable_web_page_preview": True,
     }
     try:
-        requests.post(url, data=payload, timeout=15)
-        return True
-    except Exception:
+        resp = requests.post(url, data=payload, timeout=15)
+        return resp.status_code == 200
+    except requests.RequestException as e:
+        log.error("Telegram send error: %s", e)
         return False
 
-def load_json(filepath: Path, default):
-    if filepath.exists():
-        try:
-            return json.loads(filepath.read_text())
-        except Exception:
-            pass
-    return default
-
-def save_json(filepath: Path, data):
-    filepath.write_text(json.dumps(data))
-
+# ----------------------------------------------------------------------
+# UTILITIES
+# ----------------------------------------------------------------------
 def get_ist_now():
-    if IST:
-        return datetime.datetime.now(IST)
+    """Forces IST timezone (UTC + 5:30) unconditionally."""
     return datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=5, minutes=30)
 
-# ----------------------------------------------------------------------
-# 9:00 AM MACRO PULSE & DYNAMIC CALENDAR
-# ----------------------------------------------------------------------
-def get_upcoming_events(days_ahead=7) -> str:
-    today_ist = get_ist_now().date()
-    end_date = today_ist + datetime.timedelta(days=days_ahead)
-    
-    events_list = []
-    
-    # 1. Dynamic 1st-of-month (Auto Sales & GST)
-    curr_date = today_ist
-    while curr_date <= end_date:
-        if curr_date.day == 1:
-            events_list.append({
-                "date_obj": curr_date,
-                "type": "Data Release 📊",
-                "event": "Indian Auto Sales & GST Collections",
-                "details": [
-                    "OEM monthly domestic sales dispatches & MoF GST collection figures."
-                ]
-            })
-        curr_date += datetime.timedelta(days=1)
-        
-    # 2. Static & Rebalance Events
-    for item in MACRO_CALENDAR:
-        evt_date = datetime.date.fromisoformat(item["date"])
-        if today_ist <= evt_date <= end_date:
-            events_list.append({
-                "date_obj": evt_date,
-                "type": item["type"],
-                "event": item["event"],
-                "details": item.get("details", [])
-            })
-            
-    events_list.sort(key=lambda x: x["date_obj"])
-    
-    if not events_list:
-        return ""
-        
-    upcoming = []
-    for evt in events_list:
-        diff = (evt["date_obj"] - today_ist).days
-        day_str = "Today" if diff == 0 else "Tomorrow" if diff == 1 else f"In {diff} days"
-        line = f"• <b>{evt['date_obj'].strftime('%d %b')}</b> ({day_str}): {evt['type']} — {evt['event']}"
-        
-        if evt.get("details"):
-            for d in evt["details"]:
-                line += f"\n   └ <i>{d}</i>"
-                
-        upcoming.append(line)
-        
-    return "\n🗓️ <b>7-Day Macro & Rebalance Calendar:</b>\n" + "\n".join(upcoming)
+def load_state() -> dict:
+    if STATE_FILE.exists():
+        try:
+            return json.loads(STATE_FILE.read_text())
+        except Exception:
+            pass
+    return {"seen_news": [], "last_pulse_date": None}
 
-def fetch_macros() -> str:
-    if not yf:
-        return "⚠️ yfinance library not installed."
+def save_state(state: dict):
+    # Keep only the last 500 seen news fingerprints to prevent file bloat
+    state["seen_news"] = state.get("seen_news", [])[-500:]
+    STATE_FILE.write_text(json.dumps(state, indent=2))
+
+# ----------------------------------------------------------------------
+# MORNING MACRO PULSE (9:00 AM)
+# ----------------------------------------------------------------------
+def fetch_binance_btc() -> str:
+    try:
+        resp = requests.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT", timeout=5)
+        if resp.status_code == 200:
+            data = resp.json()
+            price = float(data["lastPrice"])
+            change = float(data["priceChangePercent"])
+            sign = "+" if change > 0 else ""
+            return f"<b>Bitcoin (BTC)</b>: ${price:,.2f} ({sign}{change:.2f}%)"
+    except Exception:
+        pass
+    return "<b>Bitcoin (BTC)</b>: Data unavailable"
+
+def fetch_macro_pulse_data() -> str:
+    """Pulls live pricing for Bonds, Currencies, Crude, and Global Futures."""
+    log.info("Fetching Global Macro Data from Yahoo Finance...")
+    lines = [f"🌍 <b>PRE-MARKET GLOBAL MACRO PULSE</b>\n<i>{get_ist_now().strftime('%d %b %Y | %I:%M %p IST')}</i>\n"]
     
-    lines = ["📊 <b>9:00 AM Global Macro Pulse</b>\n"]
-    for name, ticker in MACRO_TICKERS.items():
-        if ticker == "BTC-USD":
-            try:
-                res = requests.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT", timeout=5).json()
-                current, chg_pct = float(res['lastPrice']), float(res['priceChangePercent'])
-                sign, color = ("+", "🟢") if chg_pct > 0 else ("", "🔴") if chg_pct < 0 else ("", "⚪")
-                lines.append(f"{color} {name}: <b>${current:,.0f}</b> ({sign}{chg_pct:.2f}%)")
-                continue
-            except Exception:
-                pass
-                
+    if yf is None:
+        return "\n".join(lines) + "yfinance module missing."
+
+    for name, ticker in MACRO_SYMBOLS.items():
         try:
             t = yf.Ticker(ticker)
-            hist = t.history(period="5d")
-            if len(hist) < 2:
-                current = t.fast_info.get("lastPrice", 0)
-                if current == 0:
-                    continue
-                chg_pct = 0.0
-            else:
-                prev_close, current = hist["Close"].iloc[-2], hist["Close"].iloc[-1]
-                chg_pct = ((current - prev_close) / prev_close) * 100
+            # Use fast_info to bypass heavier historical calls if possible
+            fast = t.fast_info
+            current_price = fast.get("lastPrice") or fast.get("last_price")
+            prev_close = fast.get("previousClose") or fast.get("previous_close")
             
-            sign, color = ("+", "🟢") if chg_pct > 0 else ("", "🔴") if chg_pct < 0 else ("", "⚪")
-            if ticker == "^TNX":
-                lines.append(f"{color} {name}: <b>{current:.3f}%</b> ({sign}{chg_pct:.2f}%)")
+            if current_price and prev_close and prev_close > 0:
+                pct_change = ((current_price - prev_close) / prev_close) * 100
+                sign = "+" if pct_change > 0 else ""
+                
+                # Format specific assets differently
+                if "Yield" in name:
+                    lines.append(f"🏛️ <b>{name}</b>: {current_price:.3f}% ({sign}{pct_change:.2f}%)")
+                elif "Crude" in name:
+                    lines.append(f"🛢️ <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
+                elif "Gold" in name:
+                    lines.append(f"🥇 <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
+                elif "Futures" in name or "Nikkei" in name or "Shanghai" in name:
+                    lines.append(f"📈 <b>{name}</b>: {current_price:,.2f} ({sign}{pct_change:.2f}%)")
+                elif "Dollar" in name or "INR" in name:
+                    lines.append(f"💵 <b>{name}</b>: {current_price:.2f} ({sign}{pct_change:.2f}%)")
             else:
-                lines.append(f"{color} {name}: <b>{current:,.2f}</b> ({sign}{chg_pct:.2f}%)")
-        except Exception:
-            pass
+                lines.append(f"• <b>{name}</b>: Market Closed / No Data")
+        except Exception as e:
+            log.warning(f"Failed to fetch {name} ({ticker}): {e}")
             
-    calendar_text = get_upcoming_events(days_ahead=7)
-    if calendar_text:
-        lines.append(f"\n{calendar_text}")
+    # Add Crypto Pulse
+    lines.append(f"🪙 {fetch_binance_btc()}")
+    
     return "\n".join(lines)
 
-def run_macro_pulse_if_needed():
+def check_and_send_morning_pulse(state: dict) -> dict:
+    """
+    Checks if we are in the morning window and sends the macro pulse EXACTLY ONCE per day.
+    Wide window ensures it fires even if sleep loop shifts execution time.
+    """
     now = get_ist_now()
-    if (now.hour == 8 and now.minute >= 50) or (now.hour == 9 and now.minute <= 15):
-        state = load_json(STATE_FILE, {})
-        today_str = now.strftime("%Y-%m-%d")
-        if state.get("last_pulse_date") != today_str:
-            send_telegram_message(fetch_macros())
-            state["last_pulse_date"] = today_str
-            save_json(STATE_FILE, state)
-
-# ----------------------------------------------------------------------
-# LIVE BREAKING RADAR: ADRs, EARNINGS, USFDA, PLI, TARIFFS & SHOCKS
-# ----------------------------------------------------------------------
-def check_breaking_news():
-    seen_links = set(load_json(SEEN_NEWS_FILE, []))
-    state = load_json(STATE_FILE, {})
-    company_history = state.get("company_alerts", {})
-    now_epoch = time.time()
-    day_seconds = 24 * 3600
+    today_str = now.strftime("%Y-%m-%d")
     
-    # Prune alerts older than 24h
-    for c_key in list(company_history.keys()):
-        company_history[c_key] = [item for item in company_history[c_key] if (now_epoch - item.get("time", 0)) < day_seconds]
-        if not company_history[c_key]:
-            del company_history[c_key]
-
-    # --- 1. INDIAN ADR LIVE VOLATILITY RADAR ---
-    adr_alerts = []
-    if yf:
-        for ticker, name in INDIAN_ADRS.items():
-            recent_adr_alerts = [a for a in company_history.get(ticker, []) if a.get("type") == "ADR_VOLATILITY"]
-            if len(recent_adr_alerts) >= ADR_ALERT_COOLDOWN_24H:
-                continue
-                
-            try:
-                t = yf.Ticker(ticker)
-                hist = t.history(period="2d")
-                if len(hist) >= 2:
-                    prev_close = float(hist["Close"].iloc[-2])
-                    current = float(hist["Close"].iloc[-1])
-                    chg_pct = ((current - prev_close) / prev_close) * 100
-                    
-                    if abs(chg_pct) >= 2.0:
-                        adr_alerts.append((name, current, chg_pct))
-                        if ticker not in company_history:
-                            company_history[ticker] = []
-                        company_history[ticker].append({"time": now_epoch, "type": "ADR_VOLATILITY"})
-            except Exception:
-                pass
-                
-    for name, current, chg in adr_alerts:
-        sign, color = ("+", "🟢") if chg > 0 else ("", "🔴")
-        msg = (f"🚨 <b>MAJOR ADR MOVE DETECTED</b> 🇮🇳🇺🇸\n\n"
-               f"<b>{name}</b> is trading with high volatility in US markets right now.\n\n"
-               f"Current US Price: <b>${current:.2f}</b>\n"
-               f"Move: <b>{color} {sign}{chg:.2f}%</b>\n\n"
-               f"<i>*Direct precursor for Nifty/BankNifty opening gap.</i>")
-        send_telegram_message(msg)
-        time.sleep(1.2)
-
-    # --- 2. GLOBAL RSS SCANNER ---
-    shock_alerts = []
-    earnings_alerts = []
-    usfda_alerts = []
-    pli_alerts = []
-    tariff_alerts = []
+    # WIDE TIME WINDOW: 8:30 AM to 9:30 AM IST
+    is_morning_window = (now.hour == 8 and now.minute >= 30) or (now.hour == 9 and now.minute <= 30)
     
-    for feed_url in NEWS_FEEDS:
+    # STATE CHECK: Has it already sent today?
+    already_sent = state.get("last_pulse_date") == today_str
+    
+    # Abort if it's the weekend
+    is_weekday = now.weekday() < 5
+    
+    if is_morning_window and not already_sent and is_weekday:
         try:
-            resp = requests.get(feed_url, timeout=12)
-            if resp.status_code != 200:
-                continue
-            root = ET.fromstring(resp.text)
-            for item in root.findall(".//item")[:20]:
-                raw_title = item.find("title").text if item.find("title") is not None else ""
-                link = item.find("link").text if item.find("link") is not None else ""
-                pub_date = item.find("pubDate").text if item.find("pubDate") is not None else ""
+            log.info("Inside morning window. Triggering Global Macro Pulse...")
+            macro_msg = fetch_macro_pulse_data()
+            
+            if send_telegram_message(macro_msg):
+                state["last_pulse_date"] = today_str
+                log.info("Morning Macro Pulse sent and locked for the day.")
+            else:
+                log.error("Failed to send morning pulse to Telegram.")
                 
-                if not raw_title or not link or link in seen_links:
-                    continue
-                title_lower, clean_title = raw_title.lower(), html.escape(raw_title)
-                source_name = raw_title.split(" - ")[-1].strip() if " - " in raw_title else ""
-                source_lower = source_name.lower()
-
-                # --- 2A. USFDA REGULATORY ACTIONS & CLEARANCES FOR PHARMA ---
-                is_fda_topic = any(k in title_lower for k in ["usfda", "us fda", "fda "])
-                matched_pharma = next((p for p in INDIAN_PHARMA_COMPANIES if p in title_lower), None)
-                
-                if (is_fda_topic or matched_pharma) and any(w in title_lower for w in USFDA_NEGATIVE_KEYWORDS + USFDA_POSITIVE_KEYWORDS):
-                    action_type = "🔴 Warning / Regulatory Action"
-                    if any(pos in title_lower for pos in USFDA_POSITIVE_KEYWORDS) and not any(neg in title_lower for neg in USFDA_NEGATIVE_KEYWORDS):
-                        action_type = "🟢 Clearance / EIR / Approval"
-                    
-                    comp_name = matched_pharma.title() if matched_pharma else "Indian Pharma Sector"
-                    usfda_alerts.append((clean_title, link, pub_date, comp_name, action_type, source_name))
-                    seen_links.add(link)
-                    continue
-
-                # --- 2B. GOVT POLICY & PLI SCHEME CATALYSTS WITH BENEFICIARIES ---
-                if any(k in title_lower for k in GOVT_SCHEME_KEYWORDS):
-                    # Check sector beneficiary match
-                    matched_pli_beneficiaries = []
-                    for sector_key, ben_stocks in PLI_SECTOR_BENEFICIARIES.items():
-                        if re.search(rf"\b{sector_key}\b", title_lower):
-                            matched_pli_beneficiaries.append(ben_stocks)
-                    
-                    beneficiary_str = " | ".join(matched_pli_beneficiaries) if matched_pli_beneficiaries else ""
-                    pli_alerts.append((clean_title, link, pub_date, source_name, beneficiary_str))
-                    seen_links.add(link)
-                    continue
-
-                # --- 2C. COMMODITY IMPORT/EXPORT DUTIES & TARIFFS WITH BENEFICIARIES ---
-                has_tariff_kw = any(k in title_lower for k in TRADE_TARIFF_KEYWORDS)
-                has_commodity_kw = any(c in title_lower for c in COMMODITY_KEYWORDS)
-                
-                if has_tariff_kw and has_commodity_kw:
-                    matched_beneficiaries = []
-                    for comm_key, ben_stocks in COMMODITY_BENEFICIARIES.items():
-                        if re.search(rf"\b{comm_key}\b", title_lower):
-                            matched_beneficiaries.append(ben_stocks)
-                    
-                    beneficiary_str = " | ".join(matched_beneficiaries) if matched_beneficiaries else ""
-                    tariff_alerts.append((clean_title, link, pub_date, source_name, beneficiary_str))
-                    seen_links.add(link)
-                    continue
-
-                # --- 2D. GLOBAL BELLWETHER EARNINGS ---
-                matched_key, matched_meta = None, None
-                for key, meta in GLOBAL_LEADERS.items():
-                    if re.search(rf"\b{key}\b", title_lower):
-                        matched_key, matched_meta = key, meta
-                        break
-                        
-                if matched_key and any(re.search(rf"\b{kw}\b", title_lower) for kw in EARNINGS_KEYWORDS):
-                    if not any(ts in source_lower for ts in TRUSTED_FINANCIAL_SOURCES):
-                        seen_links.add(link)
-                        continue
-                    recent_alerts = [a for a in company_history.get(matched_key, []) if a.get("type") == "EARNINGS"]
-                    if len(recent_alerts) >= MAX_ALERTS_PER_COMPANY_24H or source_lower in [a.get("source", "").lower() for a in recent_alerts]:
-                        seen_links.add(link)
-                        continue
-                        
-                    earnings_alerts.append((clean_title, link, pub_date, matched_meta, source_name))
-                    seen_links.add(link)
-                    if matched_key not in company_history:
-                        company_history[matched_key] = []
-                    company_history[matched_key].append({"time": now_epoch, "type": "EARNINGS", "source": source_name})
-                    continue
-
-                # --- 2E. GEOPOLITICAL SHOCKS ---
-                if any(re.search(rf"\b{kw}\b", title_lower) for kw in SHOCK_KEYWORDS):
-                    if not any(re.search(rf"\b{noise}\b", title_lower) for noise in NON_MACRO_NOISE):
-                        shock_alerts.append((clean_title, link, pub_date))
-                        seen_links.add(link)
-                    
-        except Exception:
-            pass
-
-    # --- DISPATCH ALERTS ---
-    for title, link, date, comp, action_type, source in usfda_alerts:
-        send_telegram_message(
-            f"💊 <b>USFDA REGULATORY ACTION / CLEARANCE</b>\n\n"
-            f"<b>{title}</b>\n\n"
-            f"🏢 <b>Target:</b> {comp}\n"
-            f"⚖️️ <b>Status:</b> {action_type}\n"
-            f"📰 <b>Source:</b> {source if source else 'Regulatory Wire'}\n"
-            f"🕐 {date}\n"
-            f"🔗 <a href='{link}'>Read Filing / Report</a>"
-        )
-        time.sleep(1.2)
-
-    for title, link, date, source, beneficiaries in pli_alerts:
-        ben_block = f"🎯 <b>Likely Beneficiaries:</b>\n• {beneficiaries}\n\n" if beneficiaries else ""
-        send_telegram_message(
-            f"🏛️ <b>GOVT POLICY & PLI SCHEME CATALYST</b> 🇮🇳\n\n"
-            f"<b>{title}</b>\n\n"
-            f"📌 <b>Category:</b> Central / State Industrial Incentive Scheme\n"
-            f"{ben_block}"
-            f"📰 <b>Source:</b> {source if source else 'Govt / Media Wire'}\n"
-            f"🕐 {date}\n"
-            f"🔗 <a href='{link}'>Read Policy Update</a>"
-        )
-        time.sleep(1.2)
-
-    for title, link, date, source, beneficiaries in tariff_alerts:
-        ben_block = f"🎯 <b>Likely Impact / Beneficiaries:</b>\n• {beneficiaries}\n\n" if beneficiaries else ""
-        send_telegram_message(
-            f"⚖️ <b>COMMODITY TARIFF / DUTY ALERT</b> 🌍\n\n"
-            f"<b>{title}</b>\n\n"
-            f"📌 <b>Category:</b> Import/Export Duty / Anti-Dumping\n"
-            f"{ben_block}"
-            f"📰 <b>Source:</b> {source if source else 'Wire'}\n"
-            f"🕐 {date}\n"
-            f"🔗 <a href='{link}'>Read Report</a>"
-        )
-        time.sleep(1.2)
-
-    for title, link, date in shock_alerts:
-        send_telegram_message(f"🚨 <b>BREAKING MACRO SHOCK</b> 🚨\n\n<b>{title}</b>\n\n🕐 {date}\n🔗 <a href='{link}'>Read Report</a>")
-        time.sleep(1.2)
-        
-    for title, link, date, comp, source in earnings_alerts:
-        send_telegram_message(f"📢 <b>GLOBAL BELLWETHER RESULTS / GUIDANCE</b> 🇺🇸\n\n<b>{title}</b>\n\n🏢 <b>Entity:</b> {comp['name']}\n📰 <b>Source:</b> {source if source else 'Wire'}\n🎯 <b>Indian Impact:</b> {comp['impact']}\n🕐 {date}\n🔗 <a href='{link}'>Read Breakdown</a>")
-        time.sleep(1.2)
-        
-    if shock_alerts or earnings_alerts or adr_alerts or usfda_alerts or pli_alerts or tariff_alerts or seen_links:
-        state["company_alerts"] = company_history
-        save_json(STATE_FILE, state)
-        save_json(SEEN_NEWS_FILE, list(seen_links)[-500:])
-
-# ----------------------------------------------------------------------
-# MAIN EXECUTION
-# ----------------------------------------------------------------------
-def main():
-    if "--once" in sys.argv:
-        run_macro_pulse_if_needed()
-        check_breaking_news()
-        return
-
-    while True:
-        try:
-            run_macro_pulse_if_needed()
-            check_breaking_news()
         except Exception as e:
-            log.exception("Error in main loop: %s", e)
-        time.sleep(POLL_INTERVAL_MINUTES * 60)
+            log.error("Error during morning pulse generation: %s", e)
+            
+    return state
 
-if __name__ == "__main__":
-    main()
+# ----------------------------------------------------------------------
+# NEWS POLLING (RSS & ALERTS)
+# ----------------------------------------------------------------------
+def check_keyword_match(text: str, keywords: list) -> bool:
+    text_lower = text.lower()
+    return any(kw in text_lower for kw in keywords)
+
+def poll_news(state: dict) -> dict:
+    if not feedparser:
+        return state
+
+    log.info("Polling global RSS feeds for breaking macro news...")
+    seen = state.get("seen_news", [])
+    new_alerts = []
+
+    for feed_url in RSS_FEEDS:
+        try:
+            feed = feedparser.parse(feed_url)
+            for entry in feed.entries[:15]:  # Check top 15 recent items
+                title = entry.get("title", "")
+                link = entry.get("link", "")
+                published = entry.get("published", "")
+                
+                fp = re.sub(r"[^A-Za-z0-9]", "", title.upper())[:40]
+                if not fp or fp in seen:
+                    continue
+
+                category = None
+                icon = "📢"
+                header = "GLOBAL NEWS ALERT"
+                
+                if check_keyword_match(title, BELLW
