@@ -4387,7 +4387,9 @@
       "macro_high_rsi": 65.44818615518176,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 23.8
+      "rs_rank": 23.8,
+      "ema50_pullback_last_alert": "2026-10-06T04:30:18.624797",
+      "ema50_pullback_last_price": 2829.800048828125
     },
     "FEDFINA": {
       "sma50": 153.9522006225586,
@@ -8009,7 +8011,9 @@
       "macro_high_rsi": 69.49962516739555,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 34.1
+      "rs_rank": 34.1,
+      "near_high_17_22_last_alert": "2026-10-06T04:30:49.131421",
+      "near_high_17_22_last_price": 505.0
     },
     "LLOYDSENGG": {
       "sma50": 89.56499984741211,
@@ -10883,7 +10887,9 @@
       "macro_high_rsi": 63.908914913064486,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 42.6
+      "rs_rank": 42.6,
+      "ema50_pullback_last_alert": "2026-10-06T04:31:11.165368",
+      "ema50_pullback_last_price": 206.2899932861328
     },
     "RKFORGE": {
       "sma50": 711.5059985351562,
@@ -12497,7 +12503,9 @@
       "macro_high_rsi": 66.57802835446219,
       "sos_thrust_peak_price": 1240.0,
       "sos_thrust_peak_rsi": 78.07988861158934,
-      "rs_rank": 81.0
+      "rs_rank": 81.0,
+      "near_high_17_22_last_alert": "2026-10-06T04:31:23.208378",
+      "near_high_17_22_last_price": 1107.300048828125
     },
     "SUNFLAG": {
       "sma50": 369.7099975585937,
