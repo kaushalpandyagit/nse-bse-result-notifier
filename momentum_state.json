@@ -1689,7 +1689,9 @@
       "resistance_last_alert": "2026-10-06T09:16:19.990619",
       "resistance_last_price": 837.8499755859375,
       "bonde_last_alert": "2026-10-06T09:16:19.378935",
-      "bonde_last_price": 837.8499755859375
+      "bonde_last_price": 837.8499755859375,
+      "zanger_last_alert": "2026-10-06T09:46:14.532266",
+      "zanger_last_price": 837.7000122070312
     },
     "BECTORFOOD": {
       "sma50": 228.84600036621094,
@@ -3539,7 +3541,9 @@
       "sos_thrust_peak_rsi": null,
       "rs_rank": 68.8,
       "ema50_pullback_last_alert": "2026-10-06T09:30:05.278145",
-      "ema50_pullback_last_price": 1376.199951171875
+      "ema50_pullback_last_price": 1376.199951171875,
+      "near_high_17_22_last_alert": "2026-10-06T09:46:30.864459",
+      "near_high_17_22_last_price": 1388.0
     },
     "DEEPAKNTR": {
       "sma50": 1668.446015625,
@@ -6804,8 +6808,8 @@
       "sos_thrust_peak_price": 104.69999694824219,
       "sos_thrust_peak_rsi": 72.88554267977845,
       "rs_rank": 55.2,
-      "near_high_17_22_last_alert": "2026-10-06T06:46:51.031714",
-      "near_high_17_22_last_price": 92.7699966430664
+      "near_high_17_22_last_alert": "2026-10-06T09:46:57.138836",
+      "near_high_17_22_last_price": 94.43000030517578
     },
     "JBMA": {
       "sma50": 622.8709948730469,
@@ -8754,8 +8758,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 44.5,
-      "near_high_17_22_last_alert": "2026-10-06T07:46:50.779914",
-      "near_high_17_22_last_price": 171.99000549316406
+      "near_high_17_22_last_alert": "2026-10-06T09:47:14.737447",
+      "near_high_17_22_last_price": 175.30999755859375
     },
     "MSTCLTD": {
       "sma50": 687.8899987792969,
@@ -8921,7 +8925,9 @@
       "mtf_last_alert": "2026-10-06T04:17:05.306118",
       "mtf_last_price": 573.0,
       "near_high_17_22_last_alert": "2026-10-06T08:17:09.672671",
-      "near_high_17_22_last_price": 576.75
+      "near_high_17_22_last_price": 576.75,
+      "zanger_last_alert": "2026-10-06T09:47:16.447853",
+      "zanger_last_price": 575.0499877929688
     },
     "NAZARA": {
       "sma50": 358.8309991455078,
@@ -9797,7 +9803,9 @@
       "macro_high_rsi": 73.73819680143136,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 53.3
+      "rs_rank": 53.3,
+      "liquidity_sweep_last_alert": "2026-10-06T09:47:23.617043",
+      "liquidity_sweep_last_price": 5305.5
     },
     "PGIL": {
       "sma50": 1172.94,
@@ -13032,8 +13040,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 70.7,
-      "near_high_17_22_last_alert": "2026-10-06T08:03:35.899543",
-      "near_high_17_22_last_price": 696.0999755859375
+      "near_high_17_22_last_alert": "2026-10-06T09:47:48.668297",
+      "near_high_17_22_last_price": 703.9000244140625
     },
     "TBOTEK": {
       "sma50": 1662.779990234375,
@@ -14368,8 +14376,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 38.4,
-      "near_high_17_22_last_alert": "2026-10-06T03:51:15.662433",
-      "near_high_17_22_last_price": 537.9000244140625
+      "near_high_17_22_last_alert": "2026-10-06T09:47:59.548735",
+      "near_high_17_22_last_price": 544.5
     },
     "WAAREERTL": {
       "sma50": 864.8530017089844,
