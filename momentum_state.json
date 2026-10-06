@@ -2592,10 +2592,10 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 12.7,
-      "resistance_last_alert": "2026-10-06T05:16:20.755145",
-      "resistance_last_price": 357.79998779296875,
-      "mtf_last_alert": "2026-10-06T06:01:46.198535",
-      "mtf_last_price": 370.45001220703125,
+      "resistance_last_alert": "2026-10-06T07:01:33.648415",
+      "resistance_last_price": 365.5,
+      "mtf_last_alert": "2026-10-06T07:01:34.233519",
+      "mtf_last_price": 365.5,
       "zanger_last_alert": "2026-10-06T05:46:12.735266",
       "zanger_last_price": 366.25
     },
@@ -6341,7 +6341,9 @@
       "macro_high_rsi": 64.34935595850745,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 72.9
+      "rs_rank": 72.9,
+      "near_high_17_22_last_alert": "2026-10-06T07:02:02.296577",
+      "near_high_17_22_last_price": 1056.0
     },
     "INOXINDIA": {
       "sma50": 2050.2119970703125,
@@ -10164,8 +10166,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 65.7,
-      "near_high_17_22_last_alert": "2026-10-06T06:17:25.595383",
-      "near_high_17_22_last_price": 682.6500244140625
+      "near_high_17_22_last_alert": "2026-10-06T07:02:30.303927",
+      "near_high_17_22_last_price": 673.4000244140625
     },
     "PRIVISCL": {
       "sma50": 3519.528017578125,
