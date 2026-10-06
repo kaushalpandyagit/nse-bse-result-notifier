@@ -1553,7 +1553,9 @@
       "macro_high_rsi": 74.08364882820663,
       "sos_thrust_peak_price": 646.5499877929688,
       "sos_thrust_peak_rsi": 78.42856225261657,
-      "rs_rank": 55.5
+      "rs_rank": 55.5,
+      "mtf_last_alert": "2026-10-06T08:16:10.831895",
+      "mtf_last_price": 527.2999877929688
     },
     "BANCOINDIA": {
       "sma50": 620.7419995117187,
@@ -8904,10 +8906,12 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 33.6,
-      "resistance_last_alert": "2026-10-06T03:50:25.283520",
-      "resistance_last_price": 569.0499877929688,
+      "resistance_last_alert": "2026-10-06T08:17:09.102590",
+      "resistance_last_price": 576.75,
       "mtf_last_alert": "2026-10-06T04:17:05.306118",
-      "mtf_last_price": 573.0
+      "mtf_last_price": 573.0,
+      "near_high_17_22_last_alert": "2026-10-06T08:17:09.672671",
+      "near_high_17_22_last_price": 576.75
     },
     "NAZARA": {
       "sma50": 358.8309991455078,
