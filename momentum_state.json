@@ -1555,7 +1555,9 @@
       "sos_thrust_peak_rsi": 78.42856225261657,
       "rs_rank": 55.5,
       "mtf_last_alert": "2026-10-06T08:16:10.831895",
-      "mtf_last_price": 527.2999877929688
+      "mtf_last_price": 527.2999877929688,
+      "sos_pullback_curl_last_alert": "2026-10-06T08:29:56.520782",
+      "sos_pullback_curl_last_price": 526.9000244140625
     },
     "BANCOINDIA": {
       "sma50": 620.7419995117187,
@@ -1685,7 +1687,9 @@
       "sos_thrust_peak_rsi": null,
       "rs_rank": 92.6,
       "resistance_last_alert": "2026-10-06T03:49:01.719150",
-      "resistance_last_price": 825.7000122070312
+      "resistance_last_price": 825.7000122070312,
+      "bonde_last_alert": "2026-10-06T08:29:58.270614",
+      "bonde_last_price": 826.1500244140625
     },
     "BECTORFOOD": {
       "sma50": 228.84600036621094,
