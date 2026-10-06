@@ -7789,7 +7789,9 @@
       "sos_thrust_peak_rsi": 75.2160988484311,
       "rs_rank": 61.4,
       "near_high_17_22_last_alert": "2026-10-06T04:47:34.485665",
-      "near_high_17_22_last_price": 396.70001220703125
+      "near_high_17_22_last_price": 396.70001220703125,
+      "sos_pullback_curl_last_alert": "2026-10-06T05:30:56.973120",
+      "sos_pullback_curl_last_price": 395.0
     },
     "KRN": {
       "sma50": 1431.7259936523437,
@@ -10158,8 +10160,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 65.7,
-      "near_high_17_22_last_alert": "2026-10-06T04:02:17.365103",
-      "near_high_17_22_last_price": 682.5499877929688
+      "near_high_17_22_last_alert": "2026-10-06T05:31:16.593095",
+      "near_high_17_22_last_price": 670.0
     },
     "PRIVISCL": {
       "sma50": 3519.528017578125,
@@ -12905,7 +12907,9 @@
       "macro_high_rsi": 51.36357294950091,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 35.6
+      "rs_rank": 35.6,
+      "ema50_pullback_last_alert": "2026-10-06T05:31:39.739583",
+      "ema50_pullback_last_price": 287.6000061035156
     },
     "TATACHEM": {
       "sma50": 651.1150012207031,
@@ -13356,8 +13360,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 79.0,
-      "near_high_17_22_last_alert": "2026-10-06T03:51:05.944797",
-      "near_high_17_22_last_price": 541.4000244140625
+      "near_high_17_22_last_alert": "2026-10-06T05:31:44.155312",
+      "near_high_17_22_last_price": 535.8499755859375
     },
     "TI": {
       "sma50": 537.5769989013672,
