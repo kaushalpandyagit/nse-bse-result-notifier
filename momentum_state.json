@@ -3593,7 +3593,9 @@
       "macro_high_rsi": 55.01625220763773,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 17.0
+      "rs_rank": 17.0,
+      "near_high_17_22_last_alert": "2026-10-06T06:46:24.599837",
+      "near_high_17_22_last_price": 409.79998779296875
     },
     "DEVYANI": {
       "sma50": 135.4955989074707,
@@ -6790,8 +6792,8 @@
       "sos_thrust_peak_price": 104.69999694824219,
       "sos_thrust_peak_rsi": 72.88554267977845,
       "rs_rank": 55.2,
-      "near_high_17_22_last_alert": "2026-10-06T03:49:56.839558",
-      "near_high_17_22_last_price": 91.73999786376953
+      "near_high_17_22_last_alert": "2026-10-06T06:46:51.031714",
+      "near_high_17_22_last_price": 92.7699966430664
     },
     "JBMA": {
       "sma50": 622.8709948730469,
@@ -8738,8 +8740,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 44.5,
-      "near_high_17_22_last_alert": "2026-10-06T05:17:14.509421",
-      "near_high_17_22_last_price": 173.25
+      "near_high_17_22_last_alert": "2026-10-06T06:47:07.401083",
+      "near_high_17_22_last_price": 175.72999572753906
     },
     "MSTCLTD": {
       "sma50": 687.8899987792969,
@@ -13493,7 +13495,9 @@
       "macro_high_rsi": 60.481892171642215,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 64.4
+      "rs_rank": 64.4,
+      "resistance_last_alert": "2026-10-06T06:47:44.167945",
+      "resistance_last_price": 657.4000244140625
     },
     "TITAGARH": {
       "sma50": 836.5460009765625,
