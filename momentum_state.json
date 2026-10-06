@@ -1819,7 +1819,9 @@
       "macro_high_rsi": 65.64619729094449,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 43.4
+      "rs_rank": 43.4,
+      "resistance_last_alert": "2026-10-06T08:46:08.876788",
+      "resistance_last_price": 333.1099853515625
     },
     "BIRLACORPN": {
       "sma50": 868.3350024414062,
@@ -2276,8 +2278,8 @@
       "sos_thrust_peak_price": 608.7999877929688,
       "sos_thrust_peak_rsi": 75.54254196058636,
       "rs_rank": 42.1,
-      "mtf_last_alert": "2026-10-06T06:01:42.595770",
-      "mtf_last_price": 571.7999877929688
+      "mtf_last_alert": "2026-10-06T08:46:13.423404",
+      "mtf_last_price": 580.0499877929688
     },
     "CAPLIPOINT": {
       "sma50": 2639.4420068359377,
@@ -9757,7 +9759,9 @@
       "macro_high_rsi": 65.88459375384323,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 40.8
+      "rs_rank": 40.8,
+      "ema50_pullback_last_alert": "2026-10-06T08:47:11.825986",
+      "ema50_pullback_last_price": 531.0999755859375
     },
     "PGHL": {
       "sma50": 5812.28,
@@ -14096,8 +14100,8 @@
       "rs_rank": 16.8,
       "mtf_last_alert": "2026-10-06T07:47:20.821645",
       "mtf_last_price": 421.8500061035156,
-      "ema50_pullback_last_alert": "2026-10-06T07:47:21.551819",
-      "ema50_pullback_last_price": 421.8500061035156
+      "ema50_pullback_last_alert": "2026-10-06T08:47:44.758386",
+      "ema50_pullback_last_price": 416.8999938964844
     },
     "VGUARD": {
       "sma50": 322.50800048828125,
