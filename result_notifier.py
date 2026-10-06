@@ -61,7 +61,7 @@ RESULT_KEYWORDS = [
     "standalone and consolidated financial", "submitted to the exchange",
 ]
 
-# Catches DMart, HDFC Bank, Bank of Baroda, Bajaj Finance, Trent, GCPL phrasing
+# Catches DMart, HDFC Bank, Bank of Baroda, Bajaj Finance, Trent, GCPL, Mamaearth phrasing
 BUSINESS_UPDATE_KEYWORDS = [
     "business update", "operational update", "quarterly update",
     "provisional data", "provisional figures", "provisional numbers",
@@ -348,4 +348,49 @@ def extract_insider_summary(text: str) -> str:
                 summaries.append("Disposal of Shares 🔴")
 
     if not summaries:
-        return
+        return ""
+    seen = set()
+    return " | ".join([x for x in summaries if not (x in seen or seen.add(x))])
+
+def classify_announcement(subject: str) -> str:
+    subj_lower = f" {subject.lower()} "
+    if "trading window" in subj_lower:
+        return None
+    if any(kw in subj_lower for kw in BUSINESS_UPDATE_KEYWORDS):
+        return "business_update"
+    if any(kw in subj_lower for kw in ORDER_KEYWORDS):
+        return "order"
+    if any(kw in subj_lower for kw in COMMISSIONING_KEYWORDS):
+        return "commissioning"
+    if any(kw in subj_lower for kw in LOGISTICS_KEYWORDS):
+        return "logistics"
+    if any(kw in subj_lower for kw in MEETING_KEYWORDS):
+        return "meeting"
+    if any(kw in subj_lower for kw in INSIDER_PROMOTER_KEYWORDS):
+        return "insider_promoter"
+    if any(kw in subj_lower for kw in RESULT_KEYWORDS) or ("board meeting" in subj_lower and "result" in subj_lower):
+        return "result"
+    return None
+
+def matches_watchlist(company: str, symbol: str) -> bool:
+    if not WATCHLIST:
+        return True
+    norm_watch = {normalise_company(w) for w in WATCHLIST}
+    return normalise_company(company) in norm_watch or symbol.upper() in {w.upper() for w in WATCHLIST}
+
+def get_market_cap_cr(symbol: str, exchange: str) -> float:
+    if not yf or not symbol:
+        return None
+    ticker_suffix = ".NS" if exchange.upper() == "NSE" else ".BO"
+    try:
+        t = yf.Ticker(f"{symbol.strip().upper()}{ticker_suffix}")
+        mcap = t.fast_info.get("marketCap") or t.fast_info.get("market_cap")
+        if mcap:
+            return float(mcap) / 1e7
+    except Exception:
+        pass
+    return None
+
+# ----------------------------------------------------------------------
+# EXCHANGE CRAWLERS
+# ----------------------------------------------------------------------
