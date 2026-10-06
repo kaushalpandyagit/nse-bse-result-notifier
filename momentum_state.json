@@ -2595,7 +2595,9 @@
       "resistance_last_alert": "2026-10-06T05:16:20.755145",
       "resistance_last_price": 357.79998779296875,
       "mtf_last_alert": "2026-10-06T05:16:21.319733",
-      "mtf_last_price": 357.79998779296875
+      "mtf_last_price": 357.79998779296875,
+      "zanger_last_alert": "2026-10-06T05:46:12.735266",
+      "zanger_last_price": 366.25
     },
     "CEMPRO": {
       "sma50": 1272.7480029296876,
@@ -7988,8 +7990,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 36.0,
-      "resistance_last_alert": "2026-10-06T03:50:15.300895",
-      "resistance_last_price": 107.9800033569336,
+      "resistance_last_alert": "2026-10-06T05:46:56.802021",
+      "resistance_last_price": 109.31999969482422,
       "ema50_pullback_last_alert": "2026-10-06T03:50:15.825922",
       "ema50_pullback_last_price": 107.9800033569336
     },
@@ -8154,8 +8156,8 @@
       "sos_thrust_peak_price": 490.70001220703125,
       "sos_thrust_peak_rsi": 76.35420038637415,
       "rs_rank": 42.4,
-      "near_high_17_22_last_alert": "2026-10-06T04:47:38.783566",
-      "near_high_17_22_last_price": 415.1000061035156
+      "near_high_17_22_last_alert": "2026-10-06T05:46:58.209231",
+      "near_high_17_22_last_price": 410.8999938964844
     },
     "LUMAXIND": {
       "sma50": 5810.98,
