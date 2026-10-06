@@ -2592,10 +2592,10 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 12.7,
-      "resistance_last_alert": "2026-10-06T03:49:12.110159",
-      "resistance_last_price": 353.0,
-      "mtf_last_alert": "2026-10-06T03:49:12.679705",
-      "mtf_last_price": 353.0
+      "resistance_last_alert": "2026-10-06T05:16:20.755145",
+      "resistance_last_price": 357.79998779296875,
+      "mtf_last_alert": "2026-10-06T05:16:21.319733",
+      "mtf_last_price": 357.79998779296875
     },
     "CEMPRO": {
       "sma50": 1272.7480029296876,
@@ -8734,8 +8734,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 44.5,
-      "near_high_17_22_last_alert": "2026-10-06T03:50:23.657994",
-      "near_high_17_22_last_price": 175.39999389648438
+      "near_high_17_22_last_alert": "2026-10-06T05:17:14.509421",
+      "near_high_17_22_last_price": 173.25
     },
     "MSTCLTD": {
       "sma50": 687.8899987792969,
@@ -9705,7 +9705,9 @@
       "macro_high_rsi": 62.264697462513986,
       "sos_thrust_peak_price": 362.0,
       "sos_thrust_peak_rsi": 77.69720031442331,
-      "rs_rank": 14.0
+      "rs_rank": 14.0,
+      "near_high_17_22_last_alert": "2026-10-06T05:17:23.030467",
+      "near_high_17_22_last_price": 286.6000061035156
     },
     "PGEL": {
       "sma50": 564.311001586914,
@@ -14227,7 +14229,9 @@
       "macro_high_rsi": 54.56820696734461,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 55.7
+      "rs_rank": 55.7,
+      "near_high_17_22_last_alert": "2026-10-06T05:18:01.696972",
+      "near_high_17_22_last_price": 232.6699981689453
     },
     "VMART": {
       "sma50": 800.675,
