@@ -164,7 +164,7 @@ def fetch_macro_pulse_data() -> str:
                 if "Yield" in name:
                     lines.append(f"🏛️ <b>{name}</b>: {current_price:.3f}% ({sign}{pct_change:.2f}%)")
                 elif "Crude" in name:
-                    lines.append(f"🛢️ <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
+                    lines.append(f"🛢️️ <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
                 elif "Gold" in name:
                     lines.append(f"🥇 <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
                 elif "Futures" in name or "Nikkei" in name or "Shanghai" in name:
@@ -245,4 +245,76 @@ def poll_news(state: dict) -> dict:
                 icon = "📢"
                 header = "GLOBAL NEWS ALERT"
                 
-                if check_keyword_match(title, BELLW
+                if check_keyword_match(title, BELLWETHER_KEYWORDS):
+                    category = "bellwether"
+                    icon = "📢"
+                    header = "GLOBAL BELLWETHER RESULTS / GUIDANCE 🇺🇸"
+                elif check_keyword_match(title, GEOPOLITICAL_KEYWORDS):
+                    category = "geopolitical"
+                    icon = "⚠️"
+                    header = "GEOPOLITICAL / MACRO SHOCK ALERT 🌍"
+                elif check_keyword_match(title, REGULATORY_KEYWORDS):
+                    category = "regulatory"
+                    icon = "🏛️"
+                    header = "REGULATORY / TRADE DUTY ALERT ⚖️"
+
+                if category:
+                    seen.append(fp)
+                    safe_title = html.escape(title)
+                    
+                    msg = (
+                        f"{icon} <b>{header}</b>\n\n"
+                        f"{safe_title}\n\n"
+                        f"🕐 {published}\n"
+                        f"🔗 <a href='{link}'>Read Breakdown</a>"
+                    )
+                    new_alerts.append(msg)
+                    
+        except Exception as e:
+            log.warning(f"Error parsing feed {feed_url}: {e}")
+
+    for alert in new_alerts:
+        send_telegram_message(alert)
+        time.sleep(1)
+
+    state["seen_news"] = seen
+    return state
+
+# ----------------------------------------------------------------------
+# MAIN EXECUTION LOOP
+# ----------------------------------------------------------------------
+def main():
+    one_shot = "--once" in sys.argv
+    log.info("Starting Global Macro News Radar%s", " (single-shot mode)" if one_shot else "")
+    
+    state = load_state()
+
+    if one_shot:
+        try:
+            state = poll_news(state)
+            state = check_and_send_morning_pulse(state)
+            save_state(state)
+        except Exception as e:
+            log.exception("Error during single poll: %s", e)
+        return
+
+    # Continuous execution
+    while True:
+        try:
+            # 1. Check for breaking global news
+            state = poll_news(state)
+            
+            # 2. Check if we need to send the 9:00 AM Macro Pulse
+            state = check_and_send_morning_pulse(state)
+            
+            # 3. Save state to disk immediately
+            save_state(state)
+            
+        except Exception as e:
+            log.exception("Error during cycle: %s", e)
+            
+        log.info(f"Cycle complete. Sleeping for {POLL_INTERVAL_MINUTES} minutes...")
+        time.sleep(POLL_INTERVAL_MINUTES * 60)
+
+if __name__ == "__main__":
+    main()
