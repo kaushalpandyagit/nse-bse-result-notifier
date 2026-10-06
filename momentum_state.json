@@ -3485,7 +3485,9 @@
       "macro_high_rsi": 72.4685288075571,
       "sos_thrust_peak_price": 234.8000030517578,
       "sos_thrust_peak_rsi": 72.4685288075571,
-      "rs_rank": 52.4
+      "rs_rank": 52.4,
+      "near_high_17_22_last_alert": "2026-10-06T04:46:38.026511",
+      "near_high_17_22_last_price": 194.1999969482422
     },
     "DEEPAKFERT": {
       "sma50": 1433.26400390625,
@@ -4902,10 +4904,10 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 37.8,
-      "resistance_last_alert": "2026-10-06T03:49:36.129936",
-      "resistance_last_price": 103.73999786376953,
-      "mtf_last_alert": "2026-10-06T03:49:36.655190",
-      "mtf_last_price": 103.73999786376953
+      "resistance_last_alert": "2026-10-06T04:46:56.288124",
+      "resistance_last_price": 104.87999725341797,
+      "mtf_last_alert": "2026-10-06T04:46:56.932224",
+      "mtf_last_price": 104.87999725341797
     },
     "GNFC": {
       "sma50": 575.3909997558594,
@@ -7778,8 +7780,8 @@
       "sos_thrust_peak_price": 452.79998779296875,
       "sos_thrust_peak_rsi": 75.2160988484311,
       "rs_rank": 61.4,
-      "near_high_17_22_last_alert": "2026-10-06T03:50:11.956815",
-      "near_high_17_22_last_price": 386.8999938964844
+      "near_high_17_22_last_alert": "2026-10-06T04:47:34.485665",
+      "near_high_17_22_last_price": 396.70001220703125
     },
     "KRN": {
       "sma50": 1431.7259936523437,
@@ -8142,8 +8144,8 @@
       "sos_thrust_peak_price": 490.70001220703125,
       "sos_thrust_peak_rsi": 76.35420038637415,
       "rs_rank": 42.4,
-      "near_high_17_22_last_alert": "2026-10-06T03:50:18.006256",
-      "near_high_17_22_last_price": 409.70001220703125
+      "near_high_17_22_last_alert": "2026-10-06T04:47:38.783566",
+      "near_high_17_22_last_price": 415.1000061035156
     },
     "LUMAXIND": {
       "sma50": 5810.98,
@@ -13575,7 +13577,9 @@
       "sos_thrust_peak_rsi": null,
       "rs_rank": 22.5,
       "resistance_last_alert": "2026-10-06T04:02:36.518459",
-      "resistance_last_price": 479.5
+      "resistance_last_price": 479.5,
+      "mtf_last_alert": "2026-10-06T04:48:44.176580",
+      "mtf_last_price": 483.79998779296875
     },
     "TRIDENT": {
       "sma50": 23.991199913024904,
@@ -14542,8 +14546,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 78.8,
-      "near_high_17_22_last_alert": "2026-10-06T03:51:17.508523",
-      "near_high_17_22_last_price": 647.6500244140625
+      "near_high_17_22_last_alert": "2026-10-06T04:48:56.365496",
+      "near_high_17_22_last_price": 656.7000122070312
     },
     "WHIRLPOOL": {
       "sma50": 803.6940051269531,
@@ -14802,8 +14806,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 41.7,
-      "near_high_17_22_last_alert": "2026-10-06T03:51:20.765863",
-      "near_high_17_22_last_price": 490.3500061035156
+      "near_high_17_22_last_alert": "2026-10-06T04:49:00.232900",
+      "near_high_17_22_last_price": 496.45001220703125
     }
   },
   "sector_rsis": {
