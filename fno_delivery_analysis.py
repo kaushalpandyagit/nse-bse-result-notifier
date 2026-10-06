@@ -214,3 +214,572 @@ def analyze_delivery(df: pd.DataFrame) -> dict:
                 close = float(row["CLOSE_PRICE"])
                 prev_close = float(row["PREV_CLOSE"])
                 deliv_pct = float(row["DELIV_PER"])
+                volume = float(row["TTL_TRD_QNTY"])
+                if prev_close == 0: continue
+                price_change_pct = ((close - prev_close) / prev_close) * 100
+                if deliv_pct >= DELIVERY_PCT_THRESHOLD and abs(price_change_pct) >= EARLY_MOVE_MIN:
+                    all_signals.append((symbol, price_change_pct, deliv_pct, volume))
+            except (ValueError, KeyError):
+                continue
+    except Exception as e:
+        log.error("Delivery analysis failed: %s", e)
+
+    early_movers = [s for s in all_signals if EARLY_MOVE_MIN <= abs(s[1]) <= EARLY_MOVE_MAX]
+    early_movers.sort(key=lambda x: abs(x[1]), reverse=True)
+    return {"early_movers": early_movers[:TOP_N]}
+
+
+# ----------------------------------------------------------------------
+# UNUSUAL VOLUME 
+# ----------------------------------------------------------------------
+VOLUME_HISTORY_FILE = Path(__file__).parent / "volume_history.json"
+VOLUME_HISTORY_DAYS = 20  
+UNUSUAL_VOLUME_RATIO = 2.5  
+UNUSUAL_VOLUME_PRICE_CAP = 1.5  
+MIN_HISTORY_DAYS = 5  
+
+def load_volume_history() -> dict:
+    if VOLUME_HISTORY_FILE.exists():
+        try: return json.loads(VOLUME_HISTORY_FILE.read_text())
+        except Exception: pass
+    return {}
+
+def save_volume_history(history: dict):
+    VOLUME_HISTORY_FILE.write_text(json.dumps(history))
+
+ETF_LIST_CACHE_FILE = Path(__file__).parent / "etf_symbols.json"
+ETF_LIST_URL = "https://archives.nseindia.com/content/equities/eq_etfseclist.csv"
+
+def get_etf_symbols(session) -> set:
+    if ETF_LIST_CACHE_FILE.exists():
+        try:
+            cached = json.loads(ETF_LIST_CACHE_FILE.read_text())
+            fetched_at = datetime.datetime.fromisoformat(cached["fetched_at"])
+            if (datetime.datetime.now() - fetched_at).days < 7:
+                return set(cached["symbols"])
+        except Exception: pass 
+    try:
+        resp = session.get(ETF_LIST_URL, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        df = pd.read_csv(io.StringIO(resp.text))
+        df.columns = [c.strip() for c in df.columns]
+        symbol_col = next((c for c in df.columns if "Symbol" in c), df.columns[0])
+        symbols = {str(s).strip().upper() for s in df[symbol_col] if str(s).strip()}
+        ETF_LIST_CACHE_FILE.write_text(json.dumps({
+            "fetched_at": datetime.datetime.now().isoformat(),
+            "symbols": sorted(symbols),
+        }))
+        return symbols
+    except Exception:
+        return set()
+
+def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date, bulk_block_symbols: set) -> list:
+    history = load_volume_history()
+    etfs = get_etf_symbols(session)
+    results = []
+
+    try:
+        df = df[df["SERIES"].str.strip() == "EQ"]
+        today_str = date.isoformat()
+        for _, row in df.iterrows():
+            try:
+                symbol = str(row["SYMBOL"]).strip()
+                close = float(row["CLOSE_PRICE"])
+                prev_close = float(row["PREV_CLOSE"])
+                volume = float(row["TTL_TRD_QNTY"])
+                if prev_close == 0: continue
+                price_change_pct = ((close - prev_close) / prev_close) * 100
+
+                sym_hist = history.get(symbol, {})
+                past_volumes = [v for d, v in sym_hist.items() if d != today_str]
+
+                sym_hist[today_str] = volume
+                if len(sym_hist) > VOLUME_HISTORY_DAYS:
+                    oldest = sorted(sym_hist.keys())[0]
+                    del sym_hist[oldest]
+                history[symbol] = sym_hist
+
+                if len(past_volumes) < MIN_HISTORY_DAYS: continue
+                if symbol in bulk_block_symbols: continue
+                if symbol in etfs: continue
+
+                avg_volume = sum(past_volumes) / len(past_volumes)
+                if avg_volume <= 0: continue
+                volume_ratio = volume / avg_volume
+
+                if volume_ratio >= UNUSUAL_VOLUME_RATIO and abs(price_change_pct) <= UNUSUAL_VOLUME_PRICE_CAP:
+                    results.append((symbol, price_change_pct, volume_ratio))
+            except (ValueError, KeyError):
+                continue
+    except Exception as e:
+        log.error("Unusual volume analysis failed: %s", e)
+
+    save_volume_history(history)
+    results.sort(key=lambda x: x[2], reverse=True)
+    return results[:TOP_N]
+
+
+# ----------------------------------------------------------------------
+# F&O BHAVCOPY -- LONG/SHORT BUILDUP + PCR
+# ----------------------------------------------------------------------
+def fetch_fo_bhavcopy(session, date: datetime.date) -> pd.DataFrame | None:
+    date_str = date.strftime("%Y%m%d")
+    url = f"https://nsearchives.nseindia.com/content/fo/BhavCopy_NSE_FO_0_0_0_{date_str}_F_0000.csv.zip"
+    try:
+        resp = session.get(url, headers=HEADERS, timeout=30)
+        resp.raise_for_status()
+        with zipfile.ZipFile(io.BytesIO(resp.content)) as z:
+            csv_name = z.namelist()[0]
+            with z.open(csv_name) as f:
+                df = pd.read_csv(f)
+        df.columns = [c.strip() for c in df.columns]
+        return df
+    except Exception as e:
+        log.error("F&O Bhavcopy fetch failed for %s: %s", date, e)
+        return None
+
+def analyze_long_short_buildup(df: pd.DataFrame) -> dict:
+    categories = {"Long Buildup": [], "Short Buildup": [], "Short Covering": [], "Long Unwinding": []}
+    try:
+        fut = df[df["FinInstrmTp"].str.strip() == "STF"].copy()
+        fut["XpryDt"] = pd.to_datetime(fut["XpryDt"], errors="coerce")
+        fut = fut.sort_values("XpryDt").groupby("TckrSymb").first().reset_index()
+
+        for _, row in fut.iterrows():
+            try:
+                symbol = str(row["TckrSymb"]).strip()
+                close = float(row["ClsPric"])
+                prev_close = float(row["PrvsClsgPric"])
+                oi = float(row["OpnIntrst"])
+                chg_oi = float(row["ChngInOpnIntrst"])
+                if prev_close == 0 or (oi - chg_oi) == 0: continue
+                price_chg_pct = ((close - prev_close) / prev_close) * 100
+                oi_chg_pct = (chg_oi / (oi - chg_oi)) * 100
+
+                if abs(oi_chg_pct) < OI_CHANGE_THRESHOLD: continue
+
+                if price_chg_pct > 0 and oi_chg_pct > 0:
+                    categories["Long Buildup"].append((symbol, price_chg_pct, oi_chg_pct))
+                elif price_chg_pct < 0 and oi_chg_pct > 0:
+                    categories["Short Buildup"].append((symbol, price_chg_pct, oi_chg_pct))
+                elif price_chg_pct > 0 and oi_chg_pct < 0:
+                    categories["Short Covering"].append((symbol, price_chg_pct, oi_chg_pct))
+                elif price_chg_pct < 0 and oi_chg_pct < 0:
+                    categories["Long Unwinding"].append((symbol, price_chg_pct, oi_chg_pct))
+            except (ValueError, KeyError, TypeError):
+                continue
+    except Exception: pass
+
+    for cat in categories:
+        categories[cat].sort(key=lambda x: abs(x[2]), reverse=True)
+        categories[cat] = categories[cat][:TOP_N]
+
+    return categories
+
+def analyze_pcr(df: pd.DataFrame) -> tuple:
+    per_stock_pcr = []
+    try:
+        opts = df[df["FinInstrmTp"].str.strip() == "STO"].copy()
+        grouped = opts.groupby(["TckrSymb", "OptnTp"])["OpnIntrst"].sum().unstack(fill_value=0)
+        total_ce = grouped["CE"].sum() if "CE" in grouped else 0
+        total_pe = grouped["PE"].sum() if "PE" in grouped else 0
+        overall_pcr = round(total_pe / total_ce, 2) if total_ce else None
+
+        for symbol, row in grouped.iterrows():
+            ce = row.get("CE", 0)
+            pe = row.get("PE", 0)
+            if ce > 0:
+                per_stock_pcr.append((symbol, round(pe / ce, 2)))
+    except Exception:
+        return None, []
+    return overall_pcr, per_stock_pcr
+
+
+# ----------------------------------------------------------------------
+# SMART VS DUMB MONEY (PRO, CLIENT, FII PARTICIPANT OI & DELTA TRACKER)
+# ----------------------------------------------------------------------
+def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
+    date_str = date.strftime("%d%m%Y")
+    
+    urls = [
+        f"https://nsearchives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv",
+        f"https://archives.nseindia.com/content/nsccl/fao_participant_oi_{date_str}.csv"
+    ]
+    
+    for url in urls:
+        try:
+            resp = session.get(url, headers=HEADERS, timeout=20)
+            if resp.status_code == 200 and "<html" not in resp.text.lower():
+                lines = resp.text.splitlines()
+                
+                header_idx = 0
+                for i, line in enumerate(lines):
+                    if "Client Type" in line or "ClientType" in line or "client type" in line.lower():
+                        header_idx = i
+                        break
+                        
+                csv_data = "\n".join(lines[header_idx:])
+                df = pd.read_csv(io.StringIO(csv_data))
+                df.columns = [str(c).strip() for c in df.columns]
+                return df
+        except Exception as e:
+            log.warning("Participant OI fetch failed for %s: %s", url, e)
+            
+    return None
+
+def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
+    if df is None or df.empty:
+        return ""
+    
+    data = {}
+    c_col = next((c for c in df.columns if "client" in c.lower()), None)
+    if not c_col:
+        return ""
+
+    for _, row in df.iterrows():
+        client_type = str(row[c_col]).strip().upper()
+        if client_type == "FII": key = "FII"
+        elif client_type == "PRO": key = "Pro"
+        elif client_type == "CLIENT": key = "Client"
+        else: continue
+        
+        try:
+            def get_val(keywords):
+                col = next((c for c in df.columns if all(k.lower() in c.lower() for k in keywords)), None)
+                return int(row[col]) if col and pd.notna(row[col]) else 0
+
+            data[key] = {
+                "idx_fut_long": get_val(["future", "index", "long"]),
+                "idx_fut_short": get_val(["future", "index", "short"]),
+                "idx_call_long": get_val(["option", "index", "call", "long"]),
+                "idx_call_short": get_val(["option", "index", "call", "short"]),
+                "idx_put_long": get_val(["option", "index", "put", "long"]),
+                "idx_put_short": get_val(["option", "index", "put", "short"]),
+            }
+        except Exception:
+            continue
+
+    if not data:
+        return ""
+
+    # Aggregate Smart Money (FII + Pro)
+    smart_money = {
+        k: data.get("FII", {}).get(k, 0) + data.get("Pro", {}).get(k, 0)
+        for k in ["idx_fut_long", "idx_fut_short", "idx_call_long", "idx_call_short", "idx_put_long", "idx_put_short"]
+    }
+    retail = data.get("Client", {})
+
+    def calc_net(d):
+        return {
+            "net_fut": d.get("idx_fut_long", 0) - d.get("idx_fut_short", 0),
+            "net_call": d.get("idx_call_long", 0) - d.get("idx_call_short", 0),
+            "net_put": d.get("idx_put_long", 0) - d.get("idx_put_short", 0),
+        }
+    
+    smart_net = calc_net(smart_money)
+    retail_net = calc_net(retail)
+
+    # ------------------------------------------------------------------
+    # DAY-OVER-DAY DELTA TRACKING 
+    # ------------------------------------------------------------------
+    prev_state = {}
+    if PARTICIPANT_STATE_FILE.exists():
+        try:
+            prev_state = json.loads(PARTICIPANT_STATE_FILE.read_text())
+        except Exception:
+            pass
+
+    smart_delta = None
+    retail_delta = None
+
+    if "smart_net" in prev_state and "retail_net" in prev_state:
+        smart_delta = {k: smart_net[k] - prev_state["smart_net"].get(k, 0) for k in smart_net}
+        retail_delta = {k: retail_net[k] - prev_state["retail_net"].get(k, 0) for k in retail_net}
+
+    # Save today's net positions for tomorrow's comparison
+    current_state_payload = {
+        "date": date.isoformat(),
+        "smart_net": smart_net,
+        "retail_net": retail_net
+    }
+    try:
+        PARTICIPANT_STATE_FILE.write_text(json.dumps(current_state_payload))
+    except Exception as e:
+        log.warning("Could not persist participant state: %s", e)
+
+    smart_score = smart_net["net_fut"] + smart_net["net_call"] - smart_net["net_put"]
+    retail_score = retail_net["net_fut"] + retail_net["net_call"] - retail_net["net_put"]
+
+    prediction = "Mixed / Unclear ⚖️"
+    if smart_score > 50000 and retail_score < -50000:
+        prediction = "Highly Bullish 🚀 (Smart money is heavily long, Retail is trapped short)"
+    elif smart_score < -50000 and retail_score > 50000:
+        prediction = "Highly Bearish 🔴 (Retail is heavily long, Smart money is dumping/fading)"
+    elif smart_score > 20000 and retail_score < 0:
+        prediction = "Bullish Tilt 🟢"
+    elif smart_score < -20000 and retail_score > 0:
+        prediction = "Bearish Tilt 🔻"
+
+    # Automated Directional Shift Interpretation based on 1-day Delta
+    delta_commentary = []
+    if smart_delta:
+        if smart_delta["net_fut"] < -5000:
+            delta_commentary.append("• <b>Smart Money added FRESH Short Futures</b>: Institutional pressure remains active.")
+        elif smart_delta["net_fut"] > 5000:
+            delta_commentary.append("• <b>Smart Money COVERED Short Futures</b>: Short-covering momentum detected.")
+        else:
+            delta_commentary.append("• <b>Smart Money Futures flat</b>: Core positional futures stance unchanged.")
+
+        if smart_delta["net_call"] < -20000:
+            delta_commentary.append("• <b>Aggressive Call Writing Added</b>: Upper levels are heavily capped.")
+        elif smart_delta["net_call"] > 20000:
+            delta_commentary.append("• <b>Call Shorts Reduced / Closed</b>: Overhead resistance loosened (often contract expiry effect).")
+
+        if smart_delta["net_put"] > 10000:
+            delta_commentary.append("• <b>Smart Money added LONG Puts</b>: Accumulating downside payoff inventory.")
+        elif smart_delta["net_put"] < -10000:
+            delta_commentary.append("• <b>Smart Money BOOKED Put Profits</b>: Downside hedges trimmed.")
+
+    # --- SEBI RATIONALIZATION EXPIRY LOGIC (Nifty Weekly = Tuesday) ---
+    next_day = date + datetime.timedelta(days=1)
+    while next_day.weekday() >= 5: # Skip weekends
+        next_day += datetime.timedelta(days=1)
+        
+    is_tuesday = (next_day.weekday() == 1)
+    is_last_tuesday = False
+    
+    if is_tuesday:
+        next_week = next_day + datetime.timedelta(days=7)
+        if next_week.month != next_day.month:
+            is_last_tuesday = True
+
+    expiry_pred = ""
+    idx_name = ""
+    
+    if is_tuesday:
+        idx_name = "Nifty (Weekly) + BankNifty/FinNifty (Monthly)" if is_last_tuesday else "Nifty (Weekly)"
+        
+        short_calls = smart_money["idx_call_short"]
+        short_puts = smart_money["idx_put_short"]
+        long_calls = smart_money["idx_call_long"]
+        long_puts = smart_money["idx_put_long"]
+        
+        net_written_calls = short_calls - long_calls
+        net_written_puts = short_puts - long_puts
+        
+        if net_written_calls > 50000 and net_written_puts > 50000:
+            ratio = net_written_calls / net_written_puts if net_written_puts else 1
+            if 0.6 <= ratio <= 1.4:
+                expiry_pred = "🧲 <b>Sideways / Theta Decay Expected</b> (Smart money is heavily writing BOTH Calls and Puts)."
+            elif ratio > 1.4:
+                expiry_pred = "📉 <b>Trending Down / Capped Upside Expected</b> (Smart money is aggressively writing Calls)."
+            else:
+                expiry_pred = "📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
+        elif net_written_calls > 50000:
+            expiry_pred = "📉 <b>Trending Down / Capped Upside Expected</b> (Smart money is aggressively writing Calls)."
+        elif net_written_puts > 50000:
+            expiry_pred = "📈 <b>Trending Up / Supported Downside Expected</b> (Smart money is aggressively writing Puts)."
+        else:
+            expiry_pred = "⚖ No extreme option writing detected by Smart Money."
+
+    def format_oi_line(label, net, delta_dict, key):
+        delta = delta_dict[key] if delta_dict else 0
+        
+        # 1. Structural Posture
+        if net <= -200000: net_desc = "Heavily Short"
+        elif net <= -50000: net_desc = "Net Short"
+        elif net >= 200000: net_desc = "Heavily Long"
+        elif net >= 50000: net_desc = "Net Long"
+        else: net_desc = "Neutral / Flat"
+        
+        # 2. Flow Intensity
+        abs_change = abs(delta)
+        if abs_change >= 100000: intensity = "Aggressive"
+        elif abs_change >= 40000: intensity = "Heavy"
+        elif abs_change >= 15000: intensity = "Moderate"
+        else: intensity = "Mild"
+        
+        # 3. Tactical Action
+        if net < 0:
+            flow_desc = f"{intensity} short-covering" if delta > 0 else f"{intensity} fresh shorts"
+        else:
+            flow_desc = f"{intensity} fresh longs" if delta > 0 else f"{intensity} profit booking / unwind"
+            
+        return f" • {label}: {net:,} (<i>{net_desc}</i>) | {delta:+,} (<i>{flow_desc}</i>)"
+
+    lines = [
+        "🧠 <b>SMART vs DUMB MONEY (Derivatives)</b>",
+        "<i>Net Contract Positions (FII + PRO vs Retail) with 1-Day Change</i>\n",
+        "🏛️ <b>Smart Money (FII + PRO):</b>",
+        format_oi_line("Index Futures", smart_net['net_fut'], smart_delta, "net_fut"),
+        format_oi_line("Index Calls", smart_net['net_call'], smart_delta, "net_call"),
+        format_oi_line("Index Puts", smart_net['net_put'], smart_delta, "net_put"),
+        "\n🛍️ <b>Retail (CLIENT):</b>",
+        format_oi_line("Index Futures", retail_net['net_fut'], retail_delta, "net_fut"),
+        format_oi_line("Index Calls", retail_net['net_call'], retail_delta, "net_call"),
+        format_oi_line("Index Puts", retail_net['net_put'], retail_delta, "net_put"),
+        "\n"
+    ]
+
+    if delta_commentary:
+        lines.append("📊 <b>DAY-OVER-DAY SHIFT ANALYSIS:</b>")
+        lines.extend(delta_commentary)
+        lines.append("")
+
+    lines.append(f"🔮 <b>NEXT TRADING DAY DIRECTION:</b>\n{prediction}\n")
+    
+    if expiry_pred:
+        lines.append(f"📅 <b>TOMORROW'S EXPIRY ({idx_name}):</b>\n{expiry_pred}")
+        
+    return "\n".join(lines)
+
+
+# ----------------------------------------------------------------------
+# MAIN
+# ----------------------------------------------------------------------
+
+def format_stock_list(items, comment=None, third_label="OI"):
+    if not items:
+        return "  (none)"
+    lines = []
+    for entry in items:
+        if len(entry) == 3:
+            symbol, price_chg, extra = entry
+            line = f"  {symbol}: price {price_chg:+.1f}%, {third_label} {extra:+.1f}%"
+            if comment:
+                direction = "buying interest" if price_chg > 0 else "selling pressure"
+                line += f" (high delivery {direction})"
+            lines.append(line)
+        else:
+            symbol, val = entry
+            lines.append(f"  {symbol}: {val}x avg volume")
+    return "\n".join(lines)
+
+
+def main():
+    date = datetime.date.today()
+    if "--date" in sys.argv:
+        idx = sys.argv.index("--date")
+        if idx + 1 < len(sys.argv):
+            date = datetime.datetime.strptime(sys.argv[idx + 1], "%d-%m-%Y").date()
+
+    log.info("Running F&O + Delivery analysis for %s", date)
+    session = get_session()
+
+    sections = []
+    
+    # --- Bulk & Block Deal Analysis ---
+    bulk_block_symbols, ace_deals = fetch_bulk_block_deals(session)
+    if ace_deals:
+        lines = [
+            "💎 <b>Smart Money / Ace Investor Deals</b>", 
+            "<i>Bulk & Block deals flagged today</i>"
+        ]
+        for deal in ace_deals:
+            action_color = "🟢 BUY" if deal['type'] == 'BUY' else "🔴 SELL"
+            qty_fmt = f"{int(deal['qty']):,}"
+            val_cr = (deal['qty'] * deal['price']) / 10000000
+            
+            lines.append(f"  {action_color} <b>{deal['symbol']}</b>: {deal['client']} "
+                         f"({qty_fmt} shrs @ ₹{deal['price']:.2f}) \u2014 <b>₹{val_cr:.2f} Cr</b> [{deal['deal_type']}]")
+        
+        sections.append("\n".join(lines))
+        log.info("Found %d smart money deals.", len(ace_deals))
+
+    # --- Delivery analysis (early movers only) ---
+    deliv_df = fetch_delivery_data(session, date)
+    if deliv_df is not None:
+        tiers = analyze_delivery(deliv_df)
+        sections.append(
+            f"\U0001F331 <b>High Delivery % \u2014 Early Movers</b> "
+            f"(>{DELIVERY_PCT_THRESHOLD:.0f}% delivery, {EARLY_MOVE_MIN:.1f}-{EARLY_MOVE_MAX:.1f}% move)\n"
+            f"<i>Kept tight to moves still early \u2014 beyond {EARLY_MOVE_MAX:.1f}% the move is "
+            f"largely played out and risk/reward for a fresh entry is no longer favorable</i>\n" +
+            format_stock_list([(s, p, d) for s, p, d, v in tiers["early_movers"]], comment=True, third_label="Delivery")
+        )
+
+        unusual = analyze_unusual_volume(deliv_df, session, date, bulk_block_symbols)
+        sections.append(
+            f"\U0001F50D <b>Unusual Volume, Minimal Price Move</b> (\u2265{UNUSUAL_VOLUME_RATIO:.1f}x avg volume, "
+            f"\u2264{UNUSUAL_VOLUME_PRICE_CAP:.1f}% move, bulk/block deals + ETFs excluded)\n"
+            f"<i>High volume without a price move can signal quiet accumulation or distribution "
+            f"before the move shows up in price</i>\n" +
+            format_stock_list([(s, round(v, 1)) for s, p, v in unusual])
+        )
+    else:
+        sections.append("\U0001F4E6 <b>Delivery analysis unavailable</b> (data fetch failed -- see logs)")
+
+    # --- F&O buildup + PCR ---
+    fo_df = fetch_fo_bhavcopy(session, date)
+    if fo_df is not None:
+        buildup = analyze_long_short_buildup(fo_df)
+        buildup_notes = {
+            "Long Buildup": "Price + OI both rising \u2014 commonly read as fresh long positioning (bullish)",
+            "Short Buildup": "Price falling + OI rising \u2014 commonly read as fresh short positioning (bearish)",
+            "Short Covering": "Price rising + OI falling \u2014 shorts being closed out (bullish reversal)",
+            "Long Unwinding": "Price falling + OI falling \u2014 longs being closed out (bearish reversal)",
+        }
+        for cat, emoji in [("Long Buildup", "\U0001F7E2"), ("Short Buildup", "\U0001F534"),
+                           ("Short Covering", "\U0001F7E1"), ("Long Unwinding", "\U0001F7E0")]:
+            sections.append(
+                f"{emoji} <b>{cat}</b>\n<i>{buildup_notes[cat]}</i>\n" + format_stock_list(buildup[cat])
+            )
+
+        overall_pcr, stock_pcr = analyze_pcr(fo_df)
+        stock_pcr.sort(key=lambda x: x[1], reverse=True)
+        pcr_line = f"Overall Market PCR: {overall_pcr}\n" if overall_pcr else ""
+        sections.append(
+            f"\U0001F4CA <b>Put-Call Ratio</b>\n{pcr_line}"
+            f"<i>PCR &gt;1 = heavier downside hedging; PCR &lt;1 = heavier upside bets.</i>\n"
+            f"Highest PCR:\n" + format_stock_list(stock_pcr[:5]) +
+            f"\nLowest PCR:\n" + format_stock_list(stock_pcr[-5:])
+        )
+    else:
+        sections.append("\U0001F4CA <b>F&O buildup/PCR unavailable</b>")
+
+    # --- SMART VS DUMB MONEY AI ENGINE ---
+    part_oi_df = fetch_participant_oi(session, date)
+    if part_oi_df is not None:
+        oi_analysis_text = analyze_participant_oi(part_oi_df, date)
+        if oi_analysis_text:
+            sections.append(oi_analysis_text)
+            log.info("Smart Money AI engine executed successfully.")
+        else:
+            log.warning("Participant OI file fetched but empty/format changed.")
+    else:
+        sections.append("🧠 <b>Smart Money Engine unavailable</b> (NSE Participant OI file not yet published)")
+
+    # --- EMAIL DISPATCH ---
+    try:
+        full_email_message = f"\U0001F4C8 <b>F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}</b>\n\n" + "\n\n".join(sections)
+        send_email(
+            subject=f"F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}",
+            body=strip_html_tags(full_email_message),
+        )
+    except Exception as e:
+        log.error("CRITICAL: Email dispatch failed. Exception: %s", e)
+
+    # --- TELEGRAM DISPATCH ---
+    try:
+        send_telegram_message(f"\U0001F4C8 <b>F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}</b>")
+        for section in sections:
+            if len(section) > 3800:
+                for i in range(0, len(section), 3800):
+                    send_telegram_message(section[i:i + 3800])
+                    time.sleep(1.5)
+            else:
+                send_telegram_message(section)
+                time.sleep(1.5)
+        log.info("Telegram dispatched successfully.")
+    except Exception as e:
+        log.error("CRITICAL: Telegram dispatch failed. Exception: %s", e)
+
+    log.info("Run completed.")
+
+
+if __name__ == "__main__":
+    now = datetime.datetime.now(IST) if IST else datetime.datetime.now()
+    if "--date" in sys.argv or now.weekday() < 5: 
+        main()
+    else:
+        logging.info("Weekend detected. Skipping execution.")
