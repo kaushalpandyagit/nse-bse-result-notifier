@@ -1037,7 +1037,9 @@
       "macro_high_rsi": 54.24126567401347,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 55.9
+      "rs_rank": 55.9,
+      "resistance_last_alert": "2026-10-07T04:30:09.225312",
+      "resistance_last_price": 955.75
     },
     "ASHAPURMIN": {
       "sma50": 584.385,
