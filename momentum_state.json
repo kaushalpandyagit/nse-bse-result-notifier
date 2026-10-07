@@ -8866,8 +8866,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 36.6,
-      "resistance_last_alert": "2026-10-07T03:50:22.955268",
-      "resistance_last_price": 578.0,
+      "resistance_last_alert": "2026-10-07T05:18:17.616474",
+      "resistance_last_price": 572.2000122070312,
       "mtf_last_alert": "2026-10-07T03:50:23.512096",
       "mtf_last_price": 578.0,
       "near_high_17_22_last_alert": "2026-10-07T03:50:24.060574",
@@ -9836,8 +9836,8 @@
       "sos_thrust_peak_price": 206.3800048828125,
       "sos_thrust_peak_rsi": 74.98560043864201,
       "rs_rank": 33.6,
-      "mtf_last_alert": "2026-10-07T04:02:49.241497",
-      "mtf_last_price": 180.92999267578125
+      "mtf_last_alert": "2026-10-07T05:18:31.620520",
+      "mtf_last_price": 178.9499969482422
     },
     "PNBHOUSING": {
       "sma50": 1136.5319995117188,
@@ -14489,7 +14489,9 @@
       "macro_high_rsi": 61.7941842325551,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 78.9
+      "rs_rank": 78.9,
+      "resistance_last_alert": "2026-10-07T05:19:41.747961",
+      "resistance_last_price": 681.8499755859375
     },
     "WHIRLPOOL": {
       "sma50": 803.5040051269531,
