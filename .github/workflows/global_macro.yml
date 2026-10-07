@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
+          # Removed 'cache: pip' to prevent requirements.txt crash
 
       - name: Install Dependencies
         run: |
@@ -51,4 +51,3 @@ jobs:
             git pull --rebase origin main || true
             git push origin main || true
           fi
-          
