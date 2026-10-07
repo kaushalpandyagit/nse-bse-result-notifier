@@ -62,8 +62,8 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-06T10:01:10.538818",
-    "custom_last_price": 171.83999633789062
+    "custom_last_alert": "2026-10-07T04:15:53.207146",
+    "custom_last_price": 170.0
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
@@ -176,8 +176,8 @@
     "spread_last_price": 5.27448869752422
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-06T04:02:56.083313",
-    "spread_last_price": 2.7684563758389236
+    "spread_last_alert": "2026-10-07T04:18:15.478208",
+    "spread_last_price": 2.9059472971565437
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-07T03:51:38.976110",

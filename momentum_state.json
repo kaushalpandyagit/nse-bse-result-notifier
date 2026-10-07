@@ -673,7 +673,9 @@
       "macro_high_rsi": 68.53827580889075,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 79.2
+      "rs_rank": 79.2,
+      "near_high_17_22_last_alert": "2026-10-07T04:16:01.178146",
+      "near_high_17_22_last_price": 1908.0999755859375
     },
     "AMBER": {
       "sma50": 7215.87,
@@ -2197,7 +2199,9 @@
       "macro_high_rsi": 69.34245518682552,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 40.8
+      "rs_rank": 40.8,
+      "near_high_17_22_last_alert": "2026-10-07T04:16:14.798665",
+      "near_high_17_22_last_price": 138.3000030517578
     },
     "CAPILLARY": {
       "sma50": 515.3929962158203,
@@ -2549,7 +2553,9 @@
       "macro_high_rsi": 70.57630745308595,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 23.2
+      "rs_rank": 23.2,
+      "mtf_last_alert": "2026-10-07T04:16:17.942456",
+      "mtf_last_price": 368.20001220703125
     },
     "CEMPRO": {
       "sma50": 1268.4800024414062,
@@ -3029,7 +3035,11 @@
       "macro_high_rsi": 64.872951262964,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 69.1
+      "rs_rank": 69.1,
+      "resistance_last_alert": "2026-10-07T04:16:23.391100",
+      "resistance_last_price": 466.5,
+      "mtf_last_alert": "2026-10-07T04:16:23.943735",
+      "mtf_last_price": 466.5
     },
     "CONCORDBIO": {
       "sma50": 1458.0599975585938,
@@ -7937,7 +7947,9 @@
       "sos_thrust_peak_rsi": null,
       "rs_rank": 38.2,
       "mtf_last_alert": "2026-10-07T03:50:14.542109",
-      "mtf_last_price": 112.5
+      "mtf_last_price": 112.5,
+      "resistance_last_alert": "2026-10-07T04:17:08.498478",
+      "resistance_last_price": 111.33000183105469
     },
     "LICHSGFIN": {
       "sma50": 529.5920025634765,
@@ -12545,7 +12557,9 @@
       "macro_high_rsi": 65.24007237109473,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 83.8
+      "rs_rank": 83.8,
+      "near_high_17_22_last_alert": "2026-10-07T04:17:47.071686",
+      "near_high_17_22_last_price": 899.4000244140625
     },
     "SURYAROSNI": {
       "sma50": 223.31040161132813,
@@ -14163,7 +14177,9 @@
       "macro_high_rsi": 69.22006044448213,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 70.8
+      "rs_rank": 70.8,
+      "near_high_17_22_last_alert": "2026-10-07T04:18:01.476003",
+      "near_high_17_22_last_price": 782.0
     },
     "VOLTAMP": {
       "sma50": 10546.76,
