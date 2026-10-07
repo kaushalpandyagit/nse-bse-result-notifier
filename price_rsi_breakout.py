@@ -1352,4 +1352,113 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
         if rsi is not None and entry.get("baseline_rsi") is not None:
             if rsi > entry["baseline_rsi"] and alert_allowed(entry, "rsi_up"):
                 record_alert(entry, "rsi_up")
-                send_telegram_message(f"📈 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_
+                send_telegram_message(f"📈 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}{rs_tag}")
+
+            if rsi < entry["baseline_rsi"] and alert_allowed(entry, "rsi_down"):
+                record_alert(entry, "rsi_down")
+                send_telegram_message(f"📉 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}{rs_tag}")
+
+    custom_alerts = {**fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)}
+    recent_news = fetch_recent_news_for_alerts()
+
+    for unique_key, rules in custom_alerts.items():
+        state_key = f"custom_alert_{unique_key}"
+        if state_key not in state: state[state_key] = {"alerted": False, "last_alert": None}
+        c_entry = state[state_key]
+        
+        clean_symbol = rules["original_symbol"]
+        exchange = "BSE" if unique_key.startswith("BSE:") else "NSE"
+
+        if rules["metric"] == "news":
+            for news_item in recent_news:
+                if (news_item["symbol"] == clean_symbol) or (clean_symbol in ("CIRCULAR", "ALL", "*")):
+                    subj_lower = news_item["subject"].lower()
+                    matched_kw = next((t for t in rules["targets"] if t in subj_lower), None)
+                    if matched_kw and rules["condition"] == "contains":
+                        news_fp = str(news_item["subject"])[:60]
+                        if c_entry.get("last_news_fingerprint") != news_fp:
+                            c_entry["alerted"] = True
+                            c_entry["last_alert"] = datetime.datetime.now().isoformat()
+                            c_entry["last_news_fingerprint"] = news_fp
+                            header_title = "🏛️ Exchange Circular" if news_item["symbol"] == "CIRCULAR" else f"📰 {clean_symbol} Catalyst Alert"
+                            link_str = f"\n🔗 {news_item['link']}" if news_item.get("link") else ""
+                            send_telegram_message(f"<b>{header_title}</b>!\nMatched: <b>'{matched_kw}'</b>\n\n<i>{news_item['subject']}</i>{link_str}")
+            continue
+
+        c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
+        if not c_metrics: continue
+
+        metric_type, cond, current_val = rules["metric"], rules["condition"], c_metrics.get(rules["metric"])
+        if current_val is None: continue
+        current_price = c_metrics.get("price")
+        
+        c_open, c_low = c_metrics.get("open_price"), c_metrics.get("low_price")
+        custom_open_low_tag = ""
+        now_ist = get_ist_now()
+        if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
+            if c_open and c_low and (c_low >= c_open * 0.999):
+                custom_open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
+        
+        if alert_allowed(c_entry, "custom", current_price):
+            rs_tag = get_rs_and_sector_tag(clean_symbol, c_metrics.get("rsi"), momentum_state)
+            
+            for target_rule in rules["targets"]:
+                target_val = c_metrics.get(target_rule) if isinstance(target_rule, str) else target_rule
+                if target_val is None: continue
+                if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
+                    record_alert(c_entry, "custom", current_price)
+                    t_str = f"{target_rule.upper()} (₹{target_val:.2f})" if isinstance(target_rule, str) else (f"{target_val:+.2f}%" if "pct" in metric_type else f"{target_val:.1f}" if "rsi" in metric_type else f"₹{target_val:+.2f}" if "change" in metric_type else f"₹{target_val:.2f}")
+                    v_str = f"{current_val:+.2f}%" if "pct" in metric_type else f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:+.2f}" if "change" in metric_type else f"₹{current_val:.2f}"
+                    send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{current_price:.2f}{custom_open_low_tag}{rs_tag}")
+                    break
+
+    return state
+
+# ----------------------------------------------------------------------
+# MAIN ENTRY POINT
+# ----------------------------------------------------------------------
+
+def main():
+    one_shot = "--once" in sys.argv
+    log.info("Starting Nifty Breakout Notifier.%s", " (single-shot mode)" if one_shot else "")
+    state = load_state()
+    momentum_state = load_momentum_state()
+
+    fyers_token = get_fyers_access_token()
+    fyers = fyersModel.FyersModel(client_id=CLIENT_ID, token=fyers_token, log_path="/tmp") if fyers_token else None
+
+    if one_shot:
+        try:
+            state = poll_once(state, momentum_state, fyers)
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: 
+            log.exception("Error during poll: %s", e)
+        try:
+            momentum_state = run_daily_momentum_scan(momentum_state)
+            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+            check_nse_bse_arbitrage(momentum_state, state, fyers)
+            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: 
+            log.exception("Error during momentum scan: %s", e)
+        return
+
+    while True:
+        try:
+            state = poll_once(state, momentum_state, fyers)
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: 
+            log.exception("Error during poll: %s", e)
+        try:
+            momentum_state = run_daily_momentum_scan(momentum_state)
+            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+            check_nse_bse_arbitrage(momentum_state, state, fyers)
+            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: 
+            log.exception("Error during momentum scan: %s", e)
+        
+        time.sleep(POLL_INTERVAL_MINUTES * 60)
+
+if __name__ == "__main__":
+    main()
