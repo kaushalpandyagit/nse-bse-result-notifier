@@ -32,8 +32,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 33.1,
-      "near_high_17_22_last_alert": "2026-10-07T03:48:55.332839",
-      "near_high_17_22_last_price": 449.45001220703125
+      "near_high_17_22_last_alert": "2026-10-07T07:01:24.962850",
+      "near_high_17_22_last_price": 444.29998779296875
     },
     "AARTIIND": {
       "sma50": 501.1940032958984,
@@ -779,7 +779,9 @@
       "mtf_last_alert": "2026-10-07T04:46:20.461727",
       "mtf_last_price": 302.20001220703125,
       "near_high_17_22_last_alert": "2026-10-07T03:49:02.106510",
-      "near_high_17_22_last_price": 298.6499938964844
+      "near_high_17_22_last_price": 298.6499938964844,
+      "zanger_last_alert": "2026-10-07T07:01:38.626255",
+      "zanger_last_price": 302.5
     },
     "ANURAS": {
       "sma50": 1212.9300122070313,
@@ -4172,8 +4174,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 62.9,
-      "near_high_17_22_last_alert": "2026-10-07T06:02:54.076088",
-      "near_high_17_22_last_price": 303.20001220703125
+      "near_high_17_22_last_alert": "2026-10-07T07:02:38.286024",
+      "near_high_17_22_last_price": 308.0
     },
     "ENGINERSIN": {
       "sma50": 267.24040130615236,
@@ -5042,10 +5044,10 @@
       "sos_thrust_peak_price": 259.5,
       "sos_thrust_peak_rsi": 74.69960658664013,
       "rs_rank": 50.9,
-      "near_high_17_22_last_alert": "2026-10-07T06:16:42.460716",
-      "near_high_17_22_last_price": 212.5,
-      "sos_pullback_curl_last_alert": "2026-10-07T06:16:41.903016",
-      "sos_pullback_curl_last_price": 212.5
+      "near_high_17_22_last_alert": "2026-10-07T07:02:54.735359",
+      "near_high_17_22_last_price": 215.22000122070312,
+      "sos_pullback_curl_last_alert": "2026-10-07T07:02:54.115325",
+      "sos_pullback_curl_last_price": 215.22000122070312
     },
     "GOLDIAM": {
       "sma50": 345.0609985351563,
@@ -5599,7 +5601,9 @@
       "macro_high_rsi": 60.610577432894,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 66.9
+      "rs_rank": 66.9,
+      "near_high_17_22_last_alert": "2026-10-07T07:03:05.301101",
+      "near_high_17_22_last_price": 666.75
     },
     "HEGAM": {
       "sma50": 489.07539947509764,
@@ -7150,8 +7154,8 @@
       "sos_thrust_peak_price": 1086.0,
       "sos_thrust_peak_rsi": 75.15021251261781,
       "rs_rank": 57.5,
-      "near_high_17_22_last_alert": "2026-10-07T03:50:05.753638",
-      "near_high_17_22_last_price": 989.7000122070312
+      "near_high_17_22_last_alert": "2026-10-07T07:03:34.302146",
+      "near_high_17_22_last_price": 978.9000244140625
     },
     "JUSTDIAL": {
       "sma50": 682.0169995117187,
@@ -9232,8 +9236,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 47.8,
-      "near_high_17_22_last_alert": "2026-10-07T03:50:27.817855",
-      "near_high_17_22_last_price": 75.9800033569336
+      "near_high_17_22_last_alert": "2026-10-07T07:04:09.521363",
+      "near_high_17_22_last_price": 76.98999786376953
     },
     "NORTHARC": {
       "sma50": 294.5170007324219,
