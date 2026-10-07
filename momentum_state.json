@@ -2556,10 +2556,12 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 23.2,
-      "mtf_last_alert": "2026-10-07T05:01:40.708953",
-      "mtf_last_price": 378.0,
-      "resistance_last_alert": "2026-10-07T05:01:40.202148",
-      "resistance_last_price": 378.0
+      "mtf_last_alert": "2026-10-07T06:30:23.801975",
+      "mtf_last_price": 382.6000061035156,
+      "resistance_last_alert": "2026-10-07T06:30:23.125061",
+      "resistance_last_price": 382.6000061035156,
+      "zanger_last_alert": "2026-10-07T06:30:22.460271",
+      "zanger_last_price": 382.6000061035156
     },
     "CEMPRO": {
       "sma50": 1268.4800024414062,
@@ -3042,8 +3044,8 @@
       "rs_rank": 69.1,
       "resistance_last_alert": "2026-10-07T04:16:23.391100",
       "resistance_last_price": 466.5,
-      "mtf_last_alert": "2026-10-07T04:16:23.943735",
-      "mtf_last_price": 466.5
+      "mtf_last_alert": "2026-10-07T06:30:31.957466",
+      "mtf_last_price": 461.1499938964844
     },
     "CONCORDBIO": {
       "sma50": 1458.0599975585938,
@@ -7760,8 +7762,8 @@
       "sos_thrust_peak_price": 452.79998779296875,
       "sos_thrust_peak_rsi": 75.2160988484311,
       "rs_rank": 65.1,
-      "near_high_17_22_last_alert": "2026-10-07T04:48:05.338143",
-      "near_high_17_22_last_price": 387.3999938964844
+      "near_high_17_22_last_alert": "2026-10-07T06:31:38.924324",
+      "near_high_17_22_last_price": 392.04998779296875
     },
     "KRN": {
       "sma50": 1433.4559936523438,
@@ -9842,8 +9844,8 @@
       "sos_thrust_peak_price": 206.3800048828125,
       "sos_thrust_peak_rsi": 74.98560043864201,
       "rs_rank": 33.6,
-      "mtf_last_alert": "2026-10-07T05:18:31.620520",
-      "mtf_last_price": 178.9499969482422
+      "mtf_last_alert": "2026-10-07T06:32:05.432778",
+      "mtf_last_price": 181.60000610351562
     },
     "PNBHOUSING": {
       "sma50": 1136.5319995117188,
