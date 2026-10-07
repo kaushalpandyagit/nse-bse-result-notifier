@@ -9,9 +9,10 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - Special Price Discovery / Call Auction Circular & News Scraper from Google Sheet.
 - 17% to 22% 52W High / ATH Scanner.
 - Uncapped Result-Day RSI recording for ALL companies > 50 Cr Market Cap.
-- SETUP 1: 60-Day Major Structural Sweep & RSI Retest (Wyckoff Spring).
-- SETUP 2: Momentum Ignition (1% to 2.5% below Macro High).
-- SETUP 3: Wyckoff SOS + Range Shift Pullback Curl (Electrosteel Type).
+- SETUP 1: Momentum Ignition (1% to 2.5% below Macro High).
+- SETUP 2: Liquidity Sweep & RSI Retest (Wyckoff Spring).
+- SETUP 3: Wyckoff SOS + Range Shift Pullback Curl.
+- SETUP 4: Rectangle Box Consolidation Bounce (Electrosteel Darvas Type).
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
 - NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
 """
@@ -618,6 +619,22 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             if max_thrust_rsi >= 72.0:
                 sos_peak_rsi = max_thrust_rsi
                 sos_peak_p = float(highs.loc[window_rsi_thrust.idxmax()])
+                
+        # ----------------------------------------------------------------------
+        # SETUP 4: RECTANGLE BOX / CONSOLIDATION METRICS
+        # ----------------------------------------------------------------------
+        box_high, box_low = None, None
+        if len(highs) >= 60 and len(lows) >= 60:
+            w_highs = highs.iloc[-60:]
+            w_lows = lows.iloc[-60:]
+            b_high = float(w_highs.max())
+            b_low = float(w_lows.min())
+            
+            box_height_pct = ((b_high - b_low) / b_low) * 100
+            # Require the box to be a genuine horizontal range (10% to 45% wide)
+            if 10.0 <= box_height_pct <= 45.0:
+                box_high = b_high
+                box_low = b_low
         
         rs_return = (float(closes.iloc[-1]) / float(closes.iloc[-RS_LOOKBACK_DAYS]) - 1) * 100 if len(closes) > RS_LOOKBACK_DAYS and float(closes.iloc[-RS_LOOKBACK_DAYS]) > 0 else None
         
@@ -641,6 +658,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             "macro_low": macro_low, "macro_low_rsi": macro_low_rsi,
             "macro_high": macro_high, "macro_high_rsi": macro_high_rsi,
             "sos_thrust_peak_price": sos_peak_p, "sos_thrust_peak_rsi": sos_peak_rsi,
+            "box_high": box_high, "box_low": box_low, # Rectangle pattern metrics
         }
         if rs_return is not None: returns_6m[symbol] = rs_return
 
@@ -717,7 +735,6 @@ def check_nse_bse_arbitrage(momentum_state: dict, state: dict, fyers):
     custom_alerts = fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)
     
     candidates = set(DEFAULT_ARBITRAGE_CANDIDATES)
-    # FIX applied: use the original_symbol instead of parsing the unique_key
     candidates.update([rules["original_symbol"] for rules in custom_alerts.values()])
     candidates.update(list(watchlist.keys())[:50])
 
@@ -804,9 +821,6 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
             if d_open and d_low and (d_low >= d_open * 0.999):
                 open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
 
-        # ----------------------------------------------------------------------
-        # RS RATING & SECTOR RSI FORMATTER
-        # ----------------------------------------------------------------------
         rs_tag = ""
         if c_rsi is not None:
             rs_rank = entry.get("rs_rank", "N/A")
@@ -825,12 +839,47 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
             sec_name = sector.replace(" ", "") if sector != "Unknown" else "BroadMarket"
             
             rs_tag = f"\n🎯 RS {rs_rank} | Stock RSI: {rsi_display} | {sec_name} RSI: {sec_rsi:.1f}"
+            
+        y_rsi = entry.get("yesterday_rsi")
+
+        # ----------------------------------------------------------------------
+        # SETUP 4: RECTANGLE CONSOLIDATION BOUNCE (Electrosteel Pattern)
+        # ----------------------------------------------------------------------
+        box_high, box_low = entry.get("box_high"), entry.get("box_low")
+
+        if alert_allowed(entry, "rectangle_bounce", price) and box_high and box_low and c_rsi and y_rsi:
+            sma_vol_20 = metrics.get("sma_vol_20")
+            box_range = box_high - box_low
+            
+            # Price drops into the lower 40% of the box, then bounces
+            in_buy_zone = box_low <= price <= (box_low + 0.40 * box_range)
+            
+            # Strict RSI range logic per your request
+            strict_rsi = 28.0 <= c_rsi <= 71.0
+            
+            # Must be curling upward & positive for the day
+            curling_up = (c_rsi >= y_rsi + 0.5) and (price >= prev_close)
+            
+            expanding_vol = (volume >= 1.2 * sma_vol_20) if sma_vol_20 else False
+            
+            if in_buy_zone and strict_rsi and curling_up and expanding_vol:
+                record_alert(entry, "rectangle_bounce", price)
+                reward_pct = ((box_high - price) / price) * 100
+                send_telegram_message(
+                    f"🟩 <b>{symbol}</b> Rectangle Consolidation Bounce!\n"
+                    f"• <b>Current Price:</b> ₹{price:.2f} (Bouncing from Box Support: ₹{box_low:.2f})\n"
+                    f"• <b>Setup:</b> 60-Day Rectangle Pattern (Electrosteel Type)\n"
+                    f"• <b>RSI Range:</b> {c_rsi:.1f} (Strict 28-71 corridor met)\n"
+                    f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Support defended)\n"
+                    f"• <b>Target:</b> Top of Box at ₹{box_high:.2f} (+{reward_pct:.1f}% potential)"
+                    f"{open_low_tag}{rs_tag}"
+                )
 
         # ----------------------------------------------------------------------
         # SETUP 3: WYCKOFF SOS + BULLISH RANGE SHIFT PULLBACK
         # ----------------------------------------------------------------------
         sos_rsi, sos_peak_p = entry.get("sos_thrust_peak_rsi"), entry.get("sos_thrust_peak_price")
-        macro_low, y_rsi = entry.get("macro_low"), entry.get("yesterday_rsi")
+        macro_low = entry.get("macro_low")
 
         if alert_allowed(entry, "sos_pullback_curl", price) and sos_rsi and sos_peak_p and y_rsi and c_rsi:
             sma_vol_20 = metrics["sma_vol_20"]
@@ -929,25 +978,26 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                 send_telegram_message(f"🎯 <b>{symbol}</b> Horizontal Resistance Scanner!\nPrice ₹{price:.2f} is within 4% below the recent base high (₹{base_high:.2f}).{open_low_tag}{rs_tag}")
 
         if alert_allowed(entry, "mtf", price) and c_rsi is not None:
-            m_rsi, y_rsi_val = entry.get("monthly_rsi", 50.0), entry.get("yesterday_rsi", 50.0)
+            m_rsi = entry.get("monthly_rsi", 50.0)
             ema_condition = price >= metrics["ema_200"] * 1.03 or price >= metrics["ema_50"] * 1.03 or price >= metrics["ema_21"] * 1.03
-            rsi_condition = c_rsi > y_rsi_val and c_rsi > 30 and m_rsi <= 56 and metrics["weekly_rsi"] <= c_rsi
-            if rsi_condition and ema_condition:
-                record_alert(entry, "mtf", price)
-                send_telegram_message(f"🔮 <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice ₹{price:.2f} (Spiked ≥3% above key EMA).\nLive Daily RSI: {c_rsi:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}{open_low_tag}{rs_tag}")
+            if y_rsi:
+                rsi_condition = c_rsi > y_rsi and c_rsi > 30 and m_rsi <= 56 and metrics["weekly_rsi"] <= c_rsi
+                if rsi_condition and ema_condition:
+                    record_alert(entry, "mtf", price)
+                    send_telegram_message(f"🔮 <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice ₹{price:.2f} (Spiked ≥3% above key EMA).\nLive Daily RSI: {c_rsi:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}{open_low_tag}{rs_tag}")
         
         if alert_allowed(entry, "ema50_pullback", price) and c_rsi:
             ema_50 = metrics.get("ema_50")
-            y_rsi_val, w_rsi, mcap = entry.get("yesterday_rsi"), metrics.get("weekly_rsi"), entry.get("mcap_cr", 0)
+            w_rsi, mcap = metrics.get("weekly_rsi"), entry.get("mcap_cr", 0)
             sma_vol_5, sma_vol_20 = metrics.get("sma_vol_5"), metrics.get("sma_vol_20")
 
-            if ema_50 and y_rsi_val and w_rsi:
+            if ema_50 and y_rsi and w_rsi:
                 cond_price = (ema_50 * 0.975) <= price <= (ema_50 * 1.06)
                 cond_rsi_bounds = 30 <= c_rsi < 58
                 cond_mcap = mcap > 300
                 cond_vol = (sma_vol_20 and sma_vol_20 > 0 and (sma_vol_5 / sma_vol_20) > 1.5)
                 cond_close = price >= prev_close
-                cond_rsi_daily = c_rsi > y_rsi_val
+                cond_rsi_daily = c_rsi > y_rsi
                 cond_rsi_weekly = c_rsi > w_rsi
 
                 if (cond_price and cond_rsi_bounds and cond_mcap and cond_vol and cond_close and cond_rsi_daily and cond_rsi_weekly):
@@ -955,7 +1005,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     send_telegram_message(
                         f"🧲 <b>{symbol}</b> Strict 50 EMA Pullback Alert!\n"
                         f"Price ₹{price:.2f} is hovering near 50 EMA (₹{ema_50:.2f}) with expanding volume.\n"
-                        f"RSI: {c_rsi:.1f} (Up from {y_rsi_val:.1f}) | Mcap: ₹{mcap:.0f} Cr{open_low_tag}{rs_tag}"
+                        f"RSI: {c_rsi:.1f} (Up from {y_rsi:.1f}) | Mcap: ₹{mcap:.0f} Cr{open_low_tag}{rs_tag}"
                     )
 
         if alert_allowed(entry, "near_high_17_22", price):
@@ -1064,7 +1114,6 @@ def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
             if not targets or condition not in ("above", "below", "contains"): 
                 continue
 
-            # FIX: Append metric to dictionary key to prevent multiple rules for same symbol from overwriting each other
             unique_key = f"{'BSE:' if exchange == 'BSE' else ''}{sym}_{metric}"
             
             sheet_alerts[unique_key] = {
@@ -1256,7 +1305,6 @@ def poll_once(state: dict, fyers) -> dict:
     custom_alerts = {**fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)}
     recent_news = fetch_recent_news_for_alerts()
 
-    # FIX applied: iterate over unique keys so multiple alerts per symbol process successfully
     for unique_key, rules in custom_alerts.items():
         state_key = f"custom_alert_{unique_key}"
         if state_key not in state: state[state_key] = {"alerted": False, "last_alert": None}
