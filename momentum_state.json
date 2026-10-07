@@ -6766,8 +6766,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 47.1,
-      "near_high_17_22_last_alert": "2026-10-07T06:16:58.152856",
-      "near_high_17_22_last_price": 95.26000213623047
+      "near_high_17_22_last_alert": "2026-10-07T07:30:55.089748",
+      "near_high_17_22_last_price": 94.29000091552734
     },
     "JBMA": {
       "sma50": 620.5709948730469,
@@ -8268,8 +8268,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 63.2,
-      "near_high_17_22_last_alert": "2026-10-07T04:48:14.567269",
-      "near_high_17_22_last_price": 314.5
+      "near_high_17_22_last_alert": "2026-10-07T07:31:10.172902",
+      "near_high_17_22_last_price": 311.1499938964844
     },
     "MANORAMA": {
       "sma50": 1859.0720043945312,
@@ -12231,7 +12231,9 @@
       "macro_high_rsi": 74.00821276601455,
       "sos_thrust_peak_price": 831.0999755859375,
       "sos_thrust_peak_rsi": 75.7623389393521,
-      "rs_rank": 59.9
+      "rs_rank": 59.9,
+      "near_high_17_22_last_alert": "2026-10-07T07:31:48.099506",
+      "near_high_17_22_last_price": 809.0
     },
     "STAR": {
       "sma50": 1077.330001220703,
