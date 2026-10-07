@@ -121,7 +121,9 @@
   },
   "custom_alert_PHOENIXLTD_price": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "custom_last_alert": "2026-10-07T06:15:58.304413",
+    "custom_last_price": 1870.199951171875
   },
   "custom_alert_PHOENIXLTD_rsi": {
     "alerted": false,
@@ -210,5 +212,15 @@
   "arb_STEL": {
     "spread_last_alert": "2026-10-07T04:03:50.505389",
     "spread_last_price": 6.862321968062149
+  },
+  "custom_alert_BASILIC_open_change_rs": {
+    "alerted": false,
+    "last_alert": null,
+    "custom_last_alert": "2026-10-07T06:15:54.005907",
+    "custom_last_price": 182.9499969482422
+  },
+  "custom_alert_BSE:PGFOILQ_rsi": {
+    "alerted": false,
+    "last_alert": null
   }
 }
