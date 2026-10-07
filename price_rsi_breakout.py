@@ -14,6 +14,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 3: Wyckoff SOS + Range Shift Pullback Curl.
 - SETUP 4: Rectangle Box Consolidation Bounce (Electrosteel Darvas Type).
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
+- Custom Synthetic Index Engine (Equal-Weighted Basket RSI).
 - NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
 """
 
@@ -92,6 +93,14 @@ MAX_WEEKLY_RSI = 57.0
 MIN_RSI_RECORDING_MCAP_CR = 50.0
 MACRO_PIVOT_LOOKBACK_DAYS = 60
 
+# --- CUSTOM SYNTHETIC INDICES (Your Core Clusters Framework) ---
+CUSTOM_BASKETS = {
+    "Railways_Infra": ["RVNL", "IRCON", "IRFC", "RITES", "TITAGARH", "TEXRAIL"],
+    "Defense_Aero": ["HAL", "BEL", "BDL", "MAZDOCK", "COCHINSHIP", "GRSE", "BEML", "DATAATTNS"],
+    "EMS_Electronics": ["DIXON", "KAYNES", "SYRMA", "AVALON", "CYIENTDLM"],
+    "Capital_Goods_SME": ["EMMIL", "TECHLABS", "RAVELCARE"]
+}
+
 # --- ARBITRAGE SCANNER CONFIG ---
 ARBITRAGE_MIN_SPREAD_PCT = 2.5
 DEFAULT_ARBITRAGE_CANDIDATES = [
@@ -154,11 +163,14 @@ BONDE_MIN_VOLUME = 700000
 
 TOP_N_MOMENTUM = 15
 
+# Expanded Public Sector Indices
 SECTOR_BENCHMARKS = {
     "^NSEI": "Nifty 50", "^CRSLDX": "Nifty 500", "^NSEBANK": "Bank", 
     "^CNXIT": "IT", "^CNXAUTO": "Auto", "^CNXPHARMA": "Pharma", 
     "^CNXMETAL": "Metal", "^CNXFMCG": "FMCG", "^CNXENERGY": "Energy", 
-    "^CNXREALTY": "Realty", "^CNXINFRA": "Infra", "^CNXMEDIA": "Media"
+    "^CNXREALTY": "Realty", "^CNXINFRA": "Infra", "^CNXMEDIA": "Media",
+    "^CNXPSUBANK": "PSU Bank", "^CNXFIN": "FinSrv", "^CNXPSE": "PSE",
+    "^CNXCONSUM": "Consumption", "^CNXCOMMODITIES": "Commodities"
 }
 
 # ----------------------------------------------------------------------
@@ -192,7 +204,7 @@ def send_telegram_message(text: str) -> bool:
         return False
 
 # ----------------------------------------------------------------------
-# LOCAL SECTOR CACHE
+# LOCAL SECTOR CACHE & UNIFIED TAG FORMATTER
 # ----------------------------------------------------------------------
 def get_cached_sector(symbol: str) -> str:
     cache = {}
@@ -217,6 +229,42 @@ def get_cached_sector(symbol: str) -> str:
         log.error("Could not write to sector cache: %s", e)
         
     return sector
+
+def get_rs_and_sector_tag(symbol: str, c_rsi: float, momentum_state: dict) -> str:
+    """Consolidated helper to append RS rank and sector RSI info to any alert."""
+    if c_rsi is None:
+        return ""
+        
+    watchlist = momentum_state.get("watchlist", {})
+    entry = watchlist.get(symbol, {})
+    rs_rank = entry.get("rs_rank", "N/A")
+    
+    sector = get_cached_sector(symbol)
+    
+    # Check if stock belongs to a Custom Institutional Cluster
+    custom_basket_name = None
+    for b_name, b_syms in CUSTOM_BASKETS.items():
+        if symbol in b_syms:
+            custom_basket_name = b_name
+            break
+            
+    if custom_basket_name:
+        sec_rsi = momentum_state.get("sector_rsis", {}).get(f"Custom_{custom_basket_name}", 50.0)
+        sec_name = custom_basket_name.replace("_", " ")
+    else:
+        # Fallback to Public Yahoo Indices
+        yf_to_index = {
+            "Financial Services": "^CNXFIN", "Technology": "^CNXIT", "Healthcare": "^CNXPHARMA",
+            "Consumer Cyclical": "^CNXAUTO", "Basic Materials": "^CNXMETAL", "Consumer Defensive": "^CNXFMCG",
+            "Energy": "^CNXENERGY", "Real Estate": "^CNXREALTY", "Industrials": "^CNXINFRA",
+            "Communication Services": "^CNXMEDIA", "Utilities": "^CNXENERGY"
+        }
+        sec_ticker = yf_to_index.get(sector, "^CRSLDX")
+        sec_rsi = momentum_state.get("sector_rsis", {}).get(sec_ticker, 50.0)
+        sec_name = sector.replace(" ", "") if sector != "Unknown" else "BroadMarket"
+        
+    rsi_display = f"<b>{c_rsi:.1f}</b>" if c_rsi > sec_rsi else f"{c_rsi:.1f}"
+    return f"\n🎯 RS {rs_rank} | Stock RSI: {rsi_display} | {sec_name} RSI: {sec_rsi:.1f}"
 
 # ----------------------------------------------------------------------
 # FYERS AUTHENTICATION
@@ -490,6 +538,28 @@ def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"
 # MOMENTUM SCREENING & TECHNICAL CRITERIA (Batch End-of-Day)
 # ----------------------------------------------------------------------
 
+def calculate_synthetic_index_rsi(hist_map: dict, basket_symbols: list, rsi_period: int = RSI_PERIOD) -> float:
+    """
+    Creates an Equal-Weighted Synthetic Index from a custom basket of symbols.
+    Averages daily % returns, constructs a synthetic price history (Base 100), 
+    and calculates Wilder's RSI on the synthetic index natively.
+    """
+    returns_list = []
+    
+    for sym in basket_symbols:
+        df = hist_map.get(f"{sym}.NS")
+        if df is not None and not df.empty and "Close" in df.columns:
+            pct_change = df["Close"].pct_change()
+            returns_list.append(pct_change)
+            
+    if not returns_list:
+        return 50.0
+        
+    aligned_returns = pd.concat(returns_list, axis=1).mean(axis=1).fillna(0)
+    synthetic_index = (1 + aligned_returns).cumprod() * 100
+    rsi_val = rsi_fyers_tradingview(synthetic_index.tolist(), rsi_period)
+    return rsi_val if rsi_val is not None else 50.0
+
 def fetch_batch_history(tickers: list) -> dict:
     result = {}
     try:
@@ -555,7 +625,12 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     if momentum_state.get("last_scan_date") == today_str:
         return momentum_state
 
-    log.info("Fetching Baseline Sector RSIs...")
+    symbols = get_universe_symbols()
+    tickers = [f"{s}.NS" for s in symbols]
+    log.info("Running daily momentum universe scan for %d symbols...", len(tickers))
+    hist_map = fetch_batch_history(tickers)
+
+    log.info("Fetching Baseline Sector & Custom Synthetic RSIs...")
     sector_rsis = {}
     try:
         sec_data = yf.download(list(SECTOR_BENCHMARKS.keys()), period="3mo", interval="1d", group_by="ticker", threads=True, progress=False)
@@ -569,11 +644,13 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
                 pass
     except Exception as e:
         log.warning(f"Sector RSI fetch failed: {e}")
-
-    symbols = get_universe_symbols()
-    tickers = [f"{s}.NS" for s in symbols]
-    log.info("Running daily momentum universe scan for %d symbols...", len(tickers))
-    hist_map = fetch_batch_history(tickers)
+        
+    for custom_name, custom_symbols in CUSTOM_BASKETS.items():
+        try:
+            custom_rsi = calculate_synthetic_index_rsi(hist_map, custom_symbols, RSI_PERIOD)
+            sector_rsis[f"Custom_{custom_name}"] = custom_rsi
+        except Exception:
+            pass
 
     per_symbol_data = {}
     returns_6m = {}
@@ -631,7 +708,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             b_low = float(w_lows.min())
             
             box_height_pct = ((b_high - b_low) / b_low) * 100
-            # Require the box to be a genuine horizontal range (10% to 45% wide)
             if 10.0 <= box_height_pct <= 45.0:
                 box_high = b_high
                 box_low = b_low
@@ -658,7 +734,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             "macro_low": macro_low, "macro_low_rsi": macro_low_rsi,
             "macro_high": macro_high, "macro_high_rsi": macro_high_rsi,
             "sos_thrust_peak_price": sos_peak_p, "sos_thrust_peak_rsi": sos_peak_rsi,
-            "box_high": box_high, "box_low": box_low, # Rectangle pattern metrics
+            "box_high": box_high, "box_low": box_low, 
         }
         if rs_return is not None: returns_6m[symbol] = rs_return
 
@@ -821,24 +897,8 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
             if d_open and d_low and (d_low >= d_open * 0.999):
                 open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
 
-        rs_tag = ""
-        if c_rsi is not None:
-            rs_rank = entry.get("rs_rank", "N/A")
-            sector = get_cached_sector(symbol)
-                
-            yf_to_index = {
-                "Financial Services": "^NSEBANK", "Technology": "^CNXIT", "Healthcare": "^CNXPHARMA",
-                "Consumer Cyclical": "^CNXAUTO", "Basic Materials": "^CNXMETAL", "Consumer Defensive": "^CNXFMCG",
-                "Energy": "^CNXENERGY", "Real Estate": "^CNXREALTY", "Industrials": "^CNXINFRA",
-                "Communication Services": "^CNXMEDIA", "Utilities": "^CNXENERGY"
-            }
-            sec_ticker = yf_to_index.get(sector, "^CRSLDX")
-            sec_rsi = momentum_state.get("sector_rsis", {}).get(sec_ticker, 50.0)
-            
-            rsi_display = f"<b>{c_rsi:.1f}</b>" if c_rsi > sec_rsi else f"{c_rsi:.1f}"
-            sec_name = sector.replace(" ", "") if sector != "Unknown" else "BroadMarket"
-            
-            rs_tag = f"\n🎯 RS {rs_rank} | Stock RSI: {rsi_display} | {sec_name} RSI: {sec_rsi:.1f}"
+        # Use unified RS Tag formatter
+        rs_tag = get_rs_and_sector_tag(symbol, c_rsi, momentum_state)
             
         y_rsi = entry.get("yesterday_rsi")
 
@@ -850,16 +910,9 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
         if alert_allowed(entry, "rectangle_bounce", price) and box_high and box_low and c_rsi and y_rsi:
             sma_vol_20 = metrics.get("sma_vol_20")
             box_range = box_high - box_low
-            
-            # Price drops into the lower 40% of the box, then bounces
             in_buy_zone = box_low <= price <= (box_low + 0.40 * box_range)
-            
-            # Strict RSI range logic per your request
             strict_rsi = 28.0 <= c_rsi <= 71.0
-            
-            # Must be curling upward & positive for the day
             curling_up = (c_rsi >= y_rsi + 0.5) and (price >= prev_close)
-            
             expanding_vol = (volume >= 1.2 * sma_vol_20) if sma_vol_20 else False
             
             if in_buy_zone and strict_rsi and curling_up and expanding_vol:
@@ -1238,7 +1291,7 @@ def fetch_bse_result_symbols() -> set:
 # THE MAIN TICK LOOP
 # ----------------------------------------------------------------------
 
-def poll_once(state: dict, fyers) -> dict:
+def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
     nse_hits = fetch_nse_result_symbols()
     bse_hits = fetch_bse_result_symbols()
     new_result_symbols = (nse_hits | bse_hits) - set(state.keys())
@@ -1285,122 +1338,18 @@ def poll_once(state: dict, fyers) -> dict:
             if d_open and d_low and (d_low >= d_open * 0.999):
                 open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
 
+        # Inject Unified RS & Sector Info
+        rs_tag = get_rs_and_sector_tag(symbol, rsi, momentum_state)
+
         if price > entry["day_high"] and alert_allowed(entry, "price_high", price):
             record_alert(entry, "price_high", price)
-            send_telegram_message(f"🚀 <b>{symbol}</b> price broke ABOVE result-day High!\nCurrent: ₹{price:.2f} | Result-day High: ₹{entry['day_high']:.2f}{open_low_tag}")
+            send_telegram_message(f"🚀 <b>{symbol}</b> price broke ABOVE result-day High!\nCurrent: ₹{price:.2f} | Result-day High: ₹{entry['day_high']:.2f}{open_low_tag}{rs_tag}")
 
         if price < entry["day_low"] and alert_allowed(entry, "price_low", price):
             record_alert(entry, "price_low", price)
-            send_telegram_message(f"🔻 <b>{symbol}</b> price broke BELOW result-day Low!\nCurrent: ₹{price:.2f} | Result-day Low: ₹{entry['day_low']:.2f}{open_low_tag}")
+            send_telegram_message(f"🔻 <b>{symbol}</b> price broke BELOW result-day Low!\nCurrent: ₹{price:.2f} | Result-day Low: ₹{entry['day_low']:.2f}{open_low_tag}{rs_tag}")
 
         if rsi is not None and entry.get("baseline_rsi") is not None:
             if rsi > entry["baseline_rsi"] and alert_allowed(entry, "rsi_up"):
                 record_alert(entry, "rsi_up")
-                send_telegram_message(f"📈 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}")
-
-            if rsi < entry["baseline_rsi"] and alert_allowed(entry, "rsi_down"):
-                record_alert(entry, "rsi_down")
-                send_telegram_message(f"📉 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}")
-
-    custom_alerts = {**fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)}
-    recent_news = fetch_recent_news_for_alerts()
-
-    for unique_key, rules in custom_alerts.items():
-        state_key = f"custom_alert_{unique_key}"
-        if state_key not in state: state[state_key] = {"alerted": False, "last_alert": None}
-        c_entry = state[state_key]
-        
-        clean_symbol = rules["original_symbol"]
-        exchange = "BSE" if unique_key.startswith("BSE:") else "NSE"
-
-        if rules["metric"] == "news":
-            for news_item in recent_news:
-                if (news_item["symbol"] == clean_symbol) or (clean_symbol in ("CIRCULAR", "ALL", "*")):
-                    subj_lower = news_item["subject"].lower()
-                    matched_kw = next((t for t in rules["targets"] if t in subj_lower), None)
-                    if matched_kw and rules["condition"] == "contains":
-                        news_fp = str(news_item["subject"])[:60]
-                        if c_entry.get("last_news_fingerprint") != news_fp:
-                            c_entry["alerted"] = True
-                            c_entry["last_alert"] = datetime.datetime.now().isoformat()
-                            c_entry["last_news_fingerprint"] = news_fp
-                            header_title = "🏛️ Exchange Circular" if news_item["symbol"] == "CIRCULAR" else f"📰 {clean_symbol} Catalyst Alert"
-                            link_str = f"\n🔗 {news_item['link']}" if news_item.get("link") else ""
-                            send_telegram_message(f"<b>{header_title}</b>!\nMatched: <b>'{matched_kw}'</b>\n\n<i>{news_item['subject']}</i>{link_str}")
-            continue
-
-        c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
-        if not c_metrics: continue
-
-        metric_type, cond, current_val = rules["metric"], rules["condition"], c_metrics.get(rules["metric"])
-        if current_val is None: continue
-        current_price = c_metrics.get("price")
-        
-        c_open, c_low = c_metrics.get("open_price"), c_metrics.get("low_price")
-        custom_open_low_tag = ""
-        now_ist = get_ist_now()
-        if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
-            if c_open and c_low and (c_low >= c_open * 0.999):
-                custom_open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
-        
-        if alert_allowed(c_entry, "custom", current_price):
-            for target_rule in rules["targets"]:
-                target_val = c_metrics.get(target_rule) if isinstance(target_rule, str) else target_rule
-                if target_val is None: continue
-                if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
-                    record_alert(c_entry, "custom", current_price)
-                    t_str = f"{target_rule.upper()} (₹{target_val:.2f})" if isinstance(target_rule, str) else (f"{target_val:+.2f}%" if "pct" in metric_type else f"{target_val:.1f}" if "rsi" in metric_type else f"₹{target_val:+.2f}" if "change" in metric_type else f"₹{target_val:.2f}")
-                    v_str = f"{current_val:+.2f}%" if "pct" in metric_type else f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:+.2f}" if "change" in metric_type else f"₹{current_val:.2f}"
-                    send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{current_price:.2f}{custom_open_low_tag}")
-                    break
-
-    return state
-
-# ----------------------------------------------------------------------
-# MAIN ENTRY POINT
-# ----------------------------------------------------------------------
-
-def main():
-    one_shot = "--once" in sys.argv
-    log.info("Starting Nifty Breakout Notifier.%s", " (single-shot mode)" if one_shot else "")
-    state = load_state()
-    momentum_state = load_momentum_state()
-
-    fyers_token = get_fyers_access_token()
-    fyers = fyersModel.FyersModel(client_id=CLIENT_ID, token=fyers_token, log_path="/tmp") if fyers_token else None
-
-    if one_shot:
-        try:
-            state = poll_once(state, fyers)
-            STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: 
-            log.exception("Error during poll: %s", e)
-        try:
-            momentum_state = run_daily_momentum_scan(momentum_state)
-            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
-            check_nse_bse_arbitrage(momentum_state, state, fyers)
-            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
-            STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: 
-            log.exception("Error during momentum scan: %s", e)
-        return
-
-    while True:
-        try:
-            state = poll_once(state, fyers)
-            STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: 
-            log.exception("Error during poll: %s", e)
-        try:
-            momentum_state = run_daily_momentum_scan(momentum_state)
-            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
-            check_nse_bse_arbitrage(momentum_state, state, fyers)
-            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
-            STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: 
-            log.exception("Error during momentum scan: %s", e)
-        
-        time.sleep(POLL_INTERVAL_MINUTES * 60)
-
-if __name__ == "__main__":
-    main()
+                send_telegram_message(f"📈 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_
