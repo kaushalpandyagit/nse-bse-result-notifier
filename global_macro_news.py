@@ -5,9 +5,9 @@ File: global_macro_news.py
 
 Features:
   1. 9:00 AM IST Macro Pulse (US Futures, 10Y Yield, DXY, Crude, Gold, BTC).
-  2. Live Geopolitical & Global Bellwether News Polling.
-  3. USFDA, PLI Scheme, and Tariff/Duty News Tracking.
-  4. Robust Continuous Loop (Sleep-proof Morning Trigger).
+  2. 7-Day Economic Event Calendar Tracker (RBI, Fed, CPI).
+  3. Live Geopolitical & Global Bellwether News Polling.
+  4. USFDA, PLI Scheme, and Tariff/Duty News Tracking.
 """
 
 import os
@@ -59,11 +59,30 @@ MACRO_SYMBOLS = {
     "Shanghai Comp": "000001.SS"
 }
 
+# ----------------------------------------------------------------------
+# 7-DAY MACRO EVENT CALENDAR (RESTORED)
+# ----------------------------------------------------------------------
+MACRO_EVENTS_SCHEDULE = [
+    # Format: ("YYYY-MM-DD", "Event Description")
+    ("2026-10-07", "🇮🇳 RBI MPC Interest Rate Decision"),
+    ("2026-10-08", "🇺🇸 US FOMC Meeting Minutes"),
+    ("2026-10-13", "🇺🇸 US CPI (Inflation Data)"),
+    ("2026-10-28", "🇺🇸 US Fed FOMC Interest Rate Decision"),
+    ("2026-11-06", "🇺🇸 US Non-Farm Payrolls (NFP)"),
+    ("2026-11-12", "🇮🇳 India CPI Inflation Data"),
+    ("2026-11-13", "🇺🇸 US CPI (Inflation Data)"),
+    ("2026-12-04", "🇮🇳 RBI MPC Interest Rate Decision"),
+    ("2026-12-09", "🇺🇸 US Fed FOMC Interest Rate Decision"),
+    ("2026-12-11", "🇺🇸 US CPI (Inflation Data)"),
+    ("2027-01-27", "🇺🇸 US Fed FOMC Interest Rate Decision"),
+    ("2027-02-05", "🇮🇳 RBI MPC Interest Rate Decision"),
+]
+
 # RSS feeds for Global Macro, USFDA, and Market News
 RSS_FEEDS = [
-    "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",           # WSJ Markets
-    "https://search.cnbc.com/rs/search/combinedcms/view.xml?id=10000664", # CNBC Finance
-    "https://feeds.bloomberg.com/markets/news.rss"             # Bloomberg Markets (if available)
+    "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",
+    "https://search.cnbc.com/rs/search/combinedcms/view.xml?id=10000664",
+    "https://feeds.bloomberg.com/markets/news.rss"
 ]
 
 # Keywords to filter breaking impact news
@@ -120,9 +139,30 @@ def load_state() -> dict:
     return {"seen_news": [], "last_pulse_date": None}
 
 def save_state(state: dict):
-    # Keep only the last 500 seen news fingerprints to prevent file bloat
     state["seen_news"] = state.get("seen_news", [])[-500:]
     STATE_FILE.write_text(json.dumps(state, indent=2))
+
+def fetch_upcoming_events() -> str:
+    """Returns a formatted string of major macro events happening today or in the next 7 days."""
+    now = get_ist_now().date()
+    seven_days_from_now = now + datetime.timedelta(days=7)
+    
+    upcoming = []
+    for date_str, event in MACRO_EVENTS_SCHEDULE:
+        event_date = datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
+        if now <= event_date <= seven_days_from_now:
+            days_left = (event_date - now).days
+            if days_left == 0:
+                upcoming.append(f"🚨 <b>TODAY: {event}</b>")
+            elif days_left == 1:
+                upcoming.append(f"⏳ <b>TOMORROW:</b> {event}")
+            else:
+                upcoming.append(f"📅 <b>{event_date.strftime('%d %b')}:</b> {event}")
+                
+    if not upcoming:
+        return ""
+        
+    return "\n\n🗓️ <b>UPCOMING 7-DAY MACRO CALENDAR:</b>\n" + "\n".join(upcoming)
 
 # ----------------------------------------------------------------------
 # MORNING MACRO PULSE (9:00 AM)
@@ -141,8 +181,8 @@ def fetch_binance_btc() -> str:
     return "<b>Bitcoin (BTC)</b>: Data unavailable"
 
 def fetch_macro_pulse_data() -> str:
-    """Pulls live pricing for Bonds, Currencies, Crude, and Global Futures."""
-    log.info("Fetching Global Macro Data from Yahoo Finance...")
+    """Pulls live pricing for Bonds, Currencies, Crude, Global Futures, and Event Calendar."""
+    log.info("Fetching Global Macro Data...")
     lines = [f"🌍 <b>PRE-MARKET GLOBAL MACRO PULSE</b>\n<i>{get_ist_now().strftime('%d %b %Y | %I:%M %p IST')}</i>\n"]
     
     if yf is None:
@@ -151,7 +191,6 @@ def fetch_macro_pulse_data() -> str:
     for name, ticker in MACRO_SYMBOLS.items():
         try:
             t = yf.Ticker(ticker)
-            # Use fast_info to bypass heavier historical calls if possible
             fast = t.fast_info
             current_price = fast.get("lastPrice") or fast.get("last_price")
             prev_close = fast.get("previousClose") or fast.get("previous_close")
@@ -160,11 +199,10 @@ def fetch_macro_pulse_data() -> str:
                 pct_change = ((current_price - prev_close) / prev_close) * 100
                 sign = "+" if pct_change > 0 else ""
                 
-                # Format specific assets differently
                 if "Yield" in name:
                     lines.append(f"🏛️ <b>{name}</b>: {current_price:.3f}% ({sign}{pct_change:.2f}%)")
                 elif "Crude" in name:
-                    lines.append(f"🛢️️ <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
+                    lines.append(f"🛢️ <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
                 elif "Gold" in name:
                     lines.append(f"🥇 <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
                 elif "Futures" in name or "Nikkei" in name or "Shanghai" in name:
@@ -179,18 +217,19 @@ def fetch_macro_pulse_data() -> str:
     # Add Crypto Pulse
     lines.append(f"🪙 {fetch_binance_btc()}")
     
+    # Add Upcoming Macro Events
+    events_text = fetch_upcoming_events()
+    if events_text:
+        lines.append(events_text)
+    
     return "\n".join(lines)
 
 def check_and_send_morning_pulse(state: dict) -> dict:
-    """
-    Checks if we are in the morning window and sends the macro pulse EXACTLY ONCE per day.
-    Wide window ensures it fires even if sleep loop shifts execution time.
-    """
     now = get_ist_now()
     today_str = now.strftime("%Y-%m-%d")
     
-    # WIDE TIME WINDOW: 8:30 AM to 9:30 AM IST
-    is_morning_window = (now.hour == 8 and now.minute >= 30) or (now.hour == 9 and now.minute <= 30)
+    # WIDE TIME WINDOW: 8:45 AM to 9:30 AM IST
+    is_morning_window = (now.hour == 8 and now.minute >= 45) or (now.hour == 9 and now.minute <= 30)
     
     # STATE CHECK: Has it already sent today?
     already_sent = state.get("last_pulse_date") == today_str
@@ -232,7 +271,7 @@ def poll_news(state: dict) -> dict:
     for feed_url in RSS_FEEDS:
         try:
             feed = feedparser.parse(feed_url)
-            for entry in feed.entries[:15]:  # Check top 15 recent items
+            for entry in feed.entries[:15]:
                 title = entry.get("title", "")
                 link = entry.get("link", "")
                 published = entry.get("published", "")
@@ -301,15 +340,9 @@ def main():
     # Continuous execution
     while True:
         try:
-            # 1. Check for breaking global news
             state = poll_news(state)
-            
-            # 2. Check if we need to send the 9:00 AM Macro Pulse
             state = check_and_send_morning_pulse(state)
-            
-            # 3. Save state to disk immediately
             save_state(state)
-            
         except Exception as e:
             log.exception("Error during cycle: %s", e)
             
