@@ -3502,10 +3502,10 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 62.5,
-      "mtf_last_alert": "2026-10-07T05:01:49.977571",
-      "mtf_last_price": 1399.800048828125,
-      "near_high_17_22_last_alert": "2026-10-07T05:01:50.454644",
-      "near_high_17_22_last_price": 1399.800048828125
+      "mtf_last_alert": "2026-10-07T09:30:17.420178",
+      "mtf_last_price": 1417.0,
+      "near_high_17_22_last_alert": "2026-10-07T09:30:18.017450",
+      "near_high_17_22_last_price": 1417.0
     },
     "DEEPAKNTR": {
       "sma50": 1669.1520166015625,
@@ -5610,8 +5610,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 66.9,
-      "near_high_17_22_last_alert": "2026-10-07T07:03:05.301101",
-      "near_high_17_22_last_price": 666.75
+      "near_high_17_22_last_alert": "2026-10-07T09:30:38.357390",
+      "near_high_17_22_last_price": 660.0499877929688
     },
     "HEGAM": {
       "sma50": 489.07539947509764,
@@ -8012,8 +8012,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 34.9,
-      "near_high_17_22_last_alert": "2026-10-07T05:30:55.274567",
-      "near_high_17_22_last_price": 508.04998779296875
+      "near_high_17_22_last_alert": "2026-10-07T09:31:02.754297",
+      "near_high_17_22_last_price": 514.2999877929688
     },
     "LLOYDSENGG": {
       "sma50": 89.75360000610351,
@@ -9860,8 +9860,8 @@
       "sos_thrust_peak_price": 206.3800048828125,
       "sos_thrust_peak_rsi": 74.98560043864201,
       "rs_rank": 33.6,
-      "mtf_last_alert": "2026-10-07T08:17:25.358353",
-      "mtf_last_price": 179.77999877929688
+      "mtf_last_alert": "2026-10-07T09:31:19.813433",
+      "mtf_last_price": 177.50999450683594
     },
     "PNBHOUSING": {
       "sma50": 1136.5319995117188,
@@ -12596,8 +12596,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 83.8,
-      "near_high_17_22_last_alert": "2026-10-07T04:17:47.071686",
-      "near_high_17_22_last_price": 899.4000244140625
+      "near_high_17_22_last_alert": "2026-10-07T09:31:44.458116",
+      "near_high_17_22_last_price": 889.9000244140625
     },
     "SURYAROSNI": {
       "sma50": 223.31040161132813,
