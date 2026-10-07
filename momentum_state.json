@@ -737,7 +737,9 @@
       "macro_high_rsi": 64.20187262210158,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 69.3
+      "rs_rank": 69.3,
+      "near_high_17_22_last_alert": "2026-10-07T04:01:17.108793",
+      "near_high_17_22_last_price": 616.4000244140625
     },
     "ANGELONE": {
       "sma50": 292.3119989013672,
@@ -1481,7 +1483,9 @@
       "macro_high_rsi": 69.41815416329982,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 97.1
+      "rs_rank": 97.1,
+      "near_high_17_22_last_alert": "2026-10-07T04:01:24.214946",
+      "near_high_17_22_last_price": 2163.0
     },
     "BALRAMCHIN": {
       "sma50": 665.9489965820312,
@@ -5505,7 +5509,9 @@
       "macro_high_rsi": 64.43638784499538,
       "sos_thrust_peak_price": 811.5499877929688,
       "sos_thrust_peak_rsi": 72.2318832688158,
-      "rs_rank": 37.9
+      "rs_rank": 37.9,
+      "mtf_last_alert": "2026-10-07T04:02:06.564943",
+      "mtf_last_price": 766.7999877929688
     },
     "HCC": {
       "sma50": 21.66939998626709,
@@ -6663,7 +6669,11 @@
       "macro_high_rsi": 52.835816198764626,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 2.2
+      "rs_rank": 2.2,
+      "resistance_last_alert": "2026-10-07T04:02:18.053439",
+      "resistance_last_price": 297.29998779296875,
+      "mtf_last_alert": "2026-10-07T04:02:18.580148",
+      "mtf_last_price": 297.29998779296875
     },
     "JAMNAAUTO": {
       "sma50": 129.57900100708008,
@@ -7793,7 +7803,11 @@
       "macro_high_rsi": 54.369633816913286,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 26.1
+      "rs_rank": 26.1,
+      "ema50_pullback_last_alert": "2026-10-07T04:02:29.994675",
+      "ema50_pullback_last_price": 804.0,
+      "near_high_17_22_last_alert": "2026-10-07T04:02:30.525434",
+      "near_high_17_22_last_price": 804.0
     },
     "KSCL": {
       "sma50": 751.8879943847656,
@@ -8019,7 +8033,9 @@
       "macro_high_rsi": 58.4589295012828,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 74.1
+      "rs_rank": 74.1,
+      "near_high_17_22_last_alert": "2026-10-07T04:02:32.981876",
+      "near_high_17_22_last_price": 78.11000061035156
     },
     "LOTUSDEV": {
       "sma50": 196.6724008178711,
@@ -9795,7 +9811,9 @@
       "macro_high_rsi": 74.98560043864201,
       "sos_thrust_peak_price": 206.3800048828125,
       "sos_thrust_peak_rsi": 74.98560043864201,
-      "rs_rank": 33.6
+      "rs_rank": 33.6,
+      "mtf_last_alert": "2026-10-07T04:02:49.241497",
+      "mtf_last_price": 180.92999267578125
     },
     "PNBHOUSING": {
       "sma50": 1136.5319995117188,
@@ -11373,7 +11391,9 @@
       "macro_high_rsi": 60.88426435941352,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 60.3
+      "rs_rank": 60.3,
+      "near_high_17_22_last_alert": "2026-10-07T04:03:04.010452",
+      "near_high_17_22_last_price": 287.8999938964844
     },
     "SENCO": {
       "sma50": 353.9779986572266,
@@ -12783,7 +12803,9 @@
       "macro_high_rsi": 51.36357294950091,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 37.1
+      "rs_rank": 37.1,
+      "ema50_pullback_last_alert": "2026-10-07T04:03:16.655565",
+      "ema50_pullback_last_price": 289.25
     },
     "TATACHEM": {
       "sma50": 649.7530017089844,
