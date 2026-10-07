@@ -1682,8 +1682,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 89.5,
-      "resistance_last_alert": "2026-10-07T03:49:09.850074",
-      "resistance_last_price": 827.7999877929688
+      "resistance_last_alert": "2026-10-07T05:01:31.871785",
+      "resistance_last_price": 836.25
     },
     "BECTORFOOD": {
       "sma50": 228.8256005859375,
@@ -2556,8 +2556,10 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 23.2,
-      "mtf_last_alert": "2026-10-07T04:16:17.942456",
-      "mtf_last_price": 368.20001220703125
+      "mtf_last_alert": "2026-10-07T05:01:40.708953",
+      "mtf_last_price": 378.0,
+      "resistance_last_alert": "2026-10-07T05:01:40.202148",
+      "resistance_last_price": 378.0
     },
     "CEMPRO": {
       "sma50": 1268.4800024414062,
@@ -3489,7 +3491,11 @@
       "macro_high_rsi": 53.90270618477846,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 62.5
+      "rs_rank": 62.5,
+      "mtf_last_alert": "2026-10-07T05:01:49.977571",
+      "mtf_last_price": 1399.800048828125,
+      "near_high_17_22_last_alert": "2026-10-07T05:01:50.454644",
+      "near_high_17_22_last_price": 1399.800048828125
     },
     "DEEPAKNTR": {
       "sma50": 1669.1520166015625,
@@ -3969,7 +3975,9 @@
       "macro_high_rsi": 72.31108988504431,
       "sos_thrust_peak_price": 86.2699966430664,
       "sos_thrust_peak_rsi": 79.19231991680115,
-      "rs_rank": 31.1
+      "rs_rank": 31.1,
+      "mtf_last_alert": "2026-10-07T05:01:55.291190",
+      "mtf_last_price": 78.73999786376953
     },
     "ELGIEQUIP": {
       "sma50": 606.5339978027343,
@@ -12822,8 +12830,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 37.1,
-      "ema50_pullback_last_alert": "2026-10-07T04:03:16.655565",
-      "ema50_pullback_last_price": 289.25
+      "ema50_pullback_last_alert": "2026-10-07T05:03:11.982315",
+      "ema50_pullback_last_price": 292.3999938964844
     },
     "TATACHEM": {
       "sma50": 649.7530017089844,
@@ -13405,7 +13413,9 @@
       "macro_high_rsi": 60.481892171642215,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 68.0
+      "rs_rank": 68.0,
+      "resistance_last_alert": "2026-10-07T05:03:17.487124",
+      "resistance_last_price": 655.7999877929688
     },
     "TITAGARH": {
       "sma50": 835.872001953125,
@@ -13667,7 +13677,9 @@
       "macro_high_rsi": 55.14027072702462,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 66.4
+      "rs_rank": 66.4,
+      "mtf_last_alert": "2026-10-07T05:03:20.525296",
+      "mtf_last_price": 132.3800048828125
     },
     "UCOBANK": {
       "sma50": 24.794599990844727,
