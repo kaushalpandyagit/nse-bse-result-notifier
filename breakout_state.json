@@ -140,8 +140,8 @@
     "spread_last_price": 2.783866725120561
   },
   "arb_ATLANTAELE": {
-    "spread_last_alert": "2026-10-06T03:51:35.308054",
-    "spread_last_price": 3.845133916732962
+    "spread_last_alert": "2026-10-07T03:51:47.078648",
+    "spread_last_price": 2.7959490037586505
   },
   "arb_ABFRL": {
     "spread_last_alert": "2026-10-06T03:51:42.534872",
@@ -156,8 +156,8 @@
     "spread_last_price": 3.3810694008982374
   },
   "arb_PRADPME": {
-    "spread_last_alert": "2026-10-06T05:48:05.577561",
-    "spread_last_price": 4.3354930372501785
+    "spread_last_alert": "2026-10-07T03:51:28.073055",
+    "spread_last_price": 14.633704105139653
   },
   "arb_BENGALASM": {
     "spread_last_alert": "2026-10-06T03:51:53.282052",
@@ -180,23 +180,31 @@
     "spread_last_price": 2.7684563758389236
   },
   "arb_BALAMINES": {
-    "spread_last_alert": "2026-10-06T05:18:28.114609",
-    "spread_last_price": 3.268208059608111
+    "spread_last_alert": "2026-10-07T03:51:38.976110",
+    "spread_last_price": 4.060936789449758
   },
   "arb_JSWHL": {
     "spread_last_alert": "2026-10-06T04:03:05.635296",
     "spread_last_price": 2.8563226503966503
   },
   "arb_RPSGVENT": {
-    "spread_last_alert": "2026-10-06T04:03:08.385141",
-    "spread_last_price": 9.423581277520837
+    "spread_last_alert": "2026-10-07T03:51:36.603253",
+    "spread_last_price": 7.775056739022444
   },
   "arb_ALKYLAMINE": {
-    "spread_last_alert": "2026-10-06T04:49:32.135244",
-    "spread_last_price": 3.932650019878607
+    "spread_last_alert": "2026-10-07T03:51:55.608078",
+    "spread_last_price": 3.0173146277449443
   },
   "arb_VHL": {
     "spread_last_alert": "2026-10-06T05:03:56.064475",
     "spread_last_price": 3.132708406742562
+  },
+  "arb_ASHAPURMIN": {
+    "spread_last_alert": "2026-10-07T03:51:25.888072",
+    "spread_last_price": 3.718964390542244
+  },
+  "arb_ACMESOLAR": {
+    "spread_last_alert": "2026-10-07T03:51:34.611364",
+    "spread_last_price": 3.43165529965965
   }
 }
