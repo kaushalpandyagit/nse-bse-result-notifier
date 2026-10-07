@@ -289,7 +289,9 @@
       "macro_high_rsi": 46.97005566265373,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 39.5
+      "rs_rank": 39.5,
+      "near_high_17_22_last_alert": "2026-10-07T09:46:14.360001",
+      "near_high_17_22_last_price": 1013.5
     },
     "ACC": {
       "sma50": 1279.3700024414063,
@@ -2142,8 +2144,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 37.7,
-      "near_high_17_22_last_alert": "2026-10-07T03:49:15.415874",
-      "near_high_17_22_last_price": 701.5499877929688
+      "near_high_17_22_last_alert": "2026-10-07T09:46:34.627542",
+      "near_high_17_22_last_price": 694.0
     },
     "CANFINHOME": {
       "sma50": 791.7910021972656,
@@ -2562,12 +2564,12 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 23.2,
-      "mtf_last_alert": "2026-10-07T08:01:56.157335",
-      "mtf_last_price": 395.45001220703125,
+      "mtf_last_alert": "2026-10-07T09:46:40.246623",
+      "mtf_last_price": 390.5,
       "resistance_last_alert": "2026-10-07T07:16:49.402635",
       "resistance_last_price": 388.1499938964844,
-      "zanger_last_alert": "2026-10-07T08:01:55.561834",
-      "zanger_last_price": 395.45001220703125
+      "zanger_last_alert": "2026-10-07T09:46:39.630696",
+      "zanger_last_price": 390.5
     },
     "CEMPRO": {
       "sma50": 1268.4800024414062,
@@ -2791,7 +2793,9 @@
       "macro_high_rsi": 63.664789482132825,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 53.1
+      "rs_rank": 53.1,
+      "near_high_17_22_last_alert": "2026-10-07T09:46:43.545218",
+      "near_high_17_22_last_price": 848.7999877929688
     },
     "CHAMBLFERT": {
       "sma50": 425.2359979248047,
@@ -13406,8 +13410,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 26.5,
-      "near_high_17_22_last_alert": "2026-10-07T07:47:17.300751",
-      "near_high_17_22_last_price": 3098.199951171875
+      "near_high_17_22_last_alert": "2026-10-07T09:48:43.715112",
+      "near_high_17_22_last_price": 3135.10009765625
     },
     "TIPSMUSIC": {
       "sma50": 657.9389990234375,

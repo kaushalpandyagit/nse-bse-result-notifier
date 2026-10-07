@@ -160,8 +160,8 @@
     "spread_last_price": 3.3810694008982374
   },
   "arb_PRADPME": {
-    "spread_last_alert": "2026-10-07T04:50:31.273197",
-    "spread_last_price": 2.5867808948863638
+    "spread_last_alert": "2026-10-07T09:49:07.652811",
+    "spread_last_price": 2.7667724227545545
   },
   "arb_BENGALASM": {
     "spread_last_alert": "2026-10-06T03:51:53.282052",
@@ -240,6 +240,8 @@
     "baseline_rsi": 51.477489638429766,
     "mcap_cr": 2267.850121198581,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-07T09:01:07.115166"
+    "rsi_up_last_alert": "2026-10-07T09:01:07.115166",
+    "price_high_last_alert": "2026-10-07T09:45:55.241611",
+    "price_high_last_price": 268.1000061035156
   }
 }
