@@ -1878,8 +1878,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 47.6,
-      "near_high_17_22_last_alert": "2026-10-07T04:46:36.924077",
-      "near_high_17_22_last_price": 607.4500122070312
+      "near_high_17_22_last_alert": "2026-10-07T05:46:17.500785",
+      "near_high_17_22_last_price": 614.2999877929688
     },
     "BLS": {
       "sma50": 240.79719940185547,
@@ -7958,8 +7958,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 38.2,
-      "mtf_last_alert": "2026-10-07T04:48:09.025850",
-      "mtf_last_price": 111.18000030517578,
+      "mtf_last_alert": "2026-10-07T05:47:10.791363",
+      "mtf_last_price": 112.45999908447266,
       "resistance_last_alert": "2026-10-07T04:17:08.498478",
       "resistance_last_price": 111.33000183105469
     },
@@ -8193,7 +8193,9 @@
       "macro_high_rsi": 56.581609775923795,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 52.2
+      "rs_rank": 52.2,
+      "near_high_17_22_last_alert": "2026-10-07T05:47:13.255985",
+      "near_high_17_22_last_price": 1816.0
     },
     "LXCHEM": {
       "sma50": 176.4640005493164,
@@ -9261,7 +9263,9 @@
       "macro_high_rsi": 61.37526855730619,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 70.6
+      "rs_rank": 70.6,
+      "bonde_last_alert": "2026-10-07T05:47:22.609001",
+      "bonde_last_price": 298.95001220703125
     },
     "NSLNISP": {
       "sma50": 43.07360000610352,
