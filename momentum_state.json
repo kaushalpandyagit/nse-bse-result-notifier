@@ -1329,7 +1329,9 @@
       "macro_high_rsi": 60.8090602447691,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 70.2
+      "rs_rank": 70.2,
+      "resistance_last_alert": "2026-10-07T08:30:01.445301",
+      "resistance_last_price": 617.0999755859375
     },
     "AWL": {
       "sma50": 188.44859954833984,
@@ -1781,7 +1783,9 @@
       "macro_high_rsi": 69.77463564062359,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 71.1
+      "rs_rank": 71.1,
+      "near_high_17_22_last_alert": "2026-10-07T08:30:07.420028",
+      "near_high_17_22_last_price": 1993.0
     },
     "BIRET": {
       "sma50": 340.8828009033203,
@@ -4174,8 +4178,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 62.9,
-      "near_high_17_22_last_alert": "2026-10-07T07:02:38.286024",
-      "near_high_17_22_last_price": 308.0
+      "near_high_17_22_last_alert": "2026-10-07T08:30:38.148246",
+      "near_high_17_22_last_price": 304.54998779296875
     },
     "ENGINERSIN": {
       "sma50": 267.24040130615236,
@@ -4304,8 +4308,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 48.2,
-      "near_high_17_22_last_alert": "2026-10-07T06:16:34.885827",
-      "near_high_17_22_last_price": 67.80000305175781
+      "near_high_17_22_last_alert": "2026-10-07T08:30:40.262214",
+      "near_high_17_22_last_price": 68.52999877929688
     },
     "ERIS": {
       "sma50": 1311.1619970703125,
