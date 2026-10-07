@@ -4300,8 +4300,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 48.2,
-      "near_high_17_22_last_alert": "2026-10-07T03:49:35.777346",
-      "near_high_17_22_last_price": 67.77999877929688
+      "near_high_17_22_last_alert": "2026-10-07T05:30:21.718701",
+      "near_high_17_22_last_price": 68.58999633789062
     },
     "ERIS": {
       "sma50": 1311.1619970703125,
@@ -7993,7 +7993,9 @@
       "macro_high_rsi": 69.49962516739555,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 34.9
+      "rs_rank": 34.9,
+      "near_high_17_22_last_alert": "2026-10-07T05:30:55.274567",
+      "near_high_17_22_last_price": 508.04998779296875
     },
     "LLOYDSENGG": {
       "sma50": 89.75360000610351,
