@@ -774,10 +774,10 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 43.0,
-      "resistance_last_alert": "2026-10-07T04:46:19.734428",
-      "resistance_last_price": 302.20001220703125,
-      "mtf_last_alert": "2026-10-07T04:46:20.461727",
-      "mtf_last_price": 302.20001220703125,
+      "resistance_last_alert": "2026-10-07T09:01:26.343171",
+      "resistance_last_price": 305.25,
+      "mtf_last_alert": "2026-10-07T09:01:26.913707",
+      "mtf_last_price": 305.25,
       "near_high_17_22_last_alert": "2026-10-07T03:49:02.106510",
       "near_high_17_22_last_price": 298.6499938964844,
       "zanger_last_alert": "2026-10-07T07:01:38.626255",
@@ -7353,7 +7353,9 @@
       "sos_thrust_peak_rsi": null,
       "rs_rank": 42.5,
       "ema50_pullback_last_alert": "2026-10-07T08:17:00.891858",
-      "ema50_pullback_last_price": 189.4199981689453
+      "ema50_pullback_last_price": 189.4199981689453,
+      "mtf_last_alert": "2026-10-07T09:02:40.036772",
+      "mtf_last_price": 190.8699951171875
     },
     "KAYNES": {
       "sma50": 3649.5320068359374,
@@ -12850,8 +12852,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 37.1,
-      "ema50_pullback_last_alert": "2026-10-07T07:47:13.610208",
-      "ema50_pullback_last_price": 287.75
+      "ema50_pullback_last_alert": "2026-10-07T09:03:39.721063",
+      "ema50_pullback_last_price": 290.8500061035156
     },
     "TATACHEM": {
       "sma50": 649.7530017089844,
@@ -13891,7 +13893,9 @@
       "macro_high_rsi": 51.18902677769572,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 30.9
+      "rs_rank": 30.9,
+      "resistance_last_alert": "2026-10-07T09:03:51.973929",
+      "resistance_last_price": 898.9000244140625
     },
     "UTLSOLAR": {
       "sma50": 423.5539978027344,
