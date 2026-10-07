@@ -222,5 +222,13 @@
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
     "last_alert": null
+  },
+  "LCCPROJECT": {
+    "result_date": "2026-10-07T00:00:00",
+    "day_high": 145.89999389648438,
+    "day_low": 141.50999450683594,
+    "baseline_rsi": null,
+    "mcap_cr": 4162.5755154393555,
+    "exchange": "NSE"
   }
 }

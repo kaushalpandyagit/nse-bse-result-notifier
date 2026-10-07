@@ -740,8 +740,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 69.3,
-      "near_high_17_22_last_alert": "2026-10-07T04:01:17.108793",
-      "near_high_17_22_last_price": 616.4000244140625
+      "near_high_17_22_last_alert": "2026-10-07T07:16:26.984274",
+      "near_high_17_22_last_price": 609.8499755859375
     },
     "ANGELONE": {
       "sma50": 292.3119989013672,
@@ -2558,12 +2558,12 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 23.2,
-      "mtf_last_alert": "2026-10-07T06:30:23.801975",
-      "mtf_last_price": 382.6000061035156,
-      "resistance_last_alert": "2026-10-07T06:30:23.125061",
-      "resistance_last_price": 382.6000061035156,
-      "zanger_last_alert": "2026-10-07T06:30:22.460271",
-      "zanger_last_price": 382.6000061035156
+      "mtf_last_alert": "2026-10-07T07:16:50.064959",
+      "mtf_last_price": 388.1499938964844,
+      "resistance_last_alert": "2026-10-07T07:16:49.402635",
+      "resistance_last_price": 388.1499938964844,
+      "zanger_last_alert": "2026-10-07T07:16:48.680408",
+      "zanger_last_price": 388.1499938964844
     },
     "CEMPRO": {
       "sma50": 1268.4800024414062,
@@ -5080,8 +5080,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 68.4,
-      "near_high_17_22_last_alert": "2026-10-07T03:49:43.511251",
-      "near_high_17_22_last_price": 315.79998779296875
+      "near_high_17_22_last_alert": "2026-10-07T07:17:24.538436",
+      "near_high_17_22_last_price": 320.3500061035156
     },
     "GPIL": {
       "sma50": 237.9516000366211,
@@ -5828,8 +5828,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 70.4,
-      "near_high_17_22_last_alert": "2026-10-07T03:49:51.522833",
-      "near_high_17_22_last_price": 33675.0
+      "near_high_17_22_last_alert": "2026-10-07T07:17:34.858060",
+      "near_high_17_22_last_price": 33300.0
     },
     "ICIL": {
       "sma50": 434.7200018310547,
@@ -7347,7 +7347,9 @@
       "macro_high_rsi": 61.65016409831858,
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
-      "rs_rank": 42.5
+      "rs_rank": 42.5,
+      "ema50_pullback_last_alert": "2026-10-07T07:17:56.340674",
+      "ema50_pullback_last_price": 186.99000549316406
     },
     "KAYNES": {
       "sma50": 3649.5320068359374,
@@ -7476,8 +7478,8 @@
       "sos_thrust_peak_price": null,
       "sos_thrust_peak_rsi": null,
       "rs_rank": 49.8,
-      "near_high_17_22_last_alert": "2026-10-07T04:47:59.975758",
-      "near_high_17_22_last_price": 692.5499877929688
+      "near_high_17_22_last_alert": "2026-10-07T07:17:58.892693",
+      "near_high_17_22_last_price": 700.75
     },
     "KIRLOSBROS": {
       "sma50": 1854.24400390625,
