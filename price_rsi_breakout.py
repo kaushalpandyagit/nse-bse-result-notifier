@@ -484,3 +484,875 @@ def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"
     except Exception:
         pass
     return None
+
+# ----------------------------------------------------------------------
+# MOMENTUM SCREENING & TECHNICAL CRITERIA (Batch End-of-Day)
+# ----------------------------------------------------------------------
+
+def fetch_batch_history(tickers: list) -> dict:
+    result = {}
+    try:
+        data = yf.download(tickers=" ".join(tickers), period=HISTORY_PERIOD, interval="1d", group_by="ticker", threads=True, progress=False, auto_adjust=False)
+    except Exception:
+        return result
+
+    if len(tickers) == 1:
+        t = tickers[0]
+        if not data.empty: result[t] = data.dropna(how="all")
+        return result
+
+    for t in tickers:
+        try:
+            df = data[t].dropna(how="all")
+            if not df.empty: result[t] = df
+        except Exception:
+            continue
+    return result
+
+def get_trend_template_status(closes: pd.Series) -> dict:
+    if len(closes) < 210: return None
+    sma50, sma150, sma200 = closes.rolling(50).mean(), closes.rolling(150).mean(), closes.rolling(200).mean()
+    price = float(closes.iloc[-1])
+    s50, s150, s200 = float(sma50.iloc[-1]), float(sma150.iloc[-1]), float(sma200.iloc[-1])
+
+    sma200_prior = sma200.iloc[-1 - SMA200_TREND_LOOKBACK_DAYS] if len(sma200) > SMA200_TREND_LOOKBACK_DAYS else None
+    sma200_rising = bool(sma200_prior is not None and s200 > float(sma200_prior))
+    window = closes[-252:] if len(closes) >= 252 else closes
+    fifty2w_high, fifty2w_low = float(window.max()), float(window.min())
+
+    near_high = price >= (1 - NEAR_52W_HIGH_PCT / 100) * fifty2w_high
+    above_low = price >= (1 + ABOVE_52W_LOW_PCT / 100) * fifty2w_low
+    stage2 = bool(price > s50 > s150 > s200 and sma200_rising and near_high and above_low)
+
+    return {
+        "sma50": s50, "sma150": s150, "sma200": s200, "sma200_rising": sma200_rising,
+        "stage2": stage2, "fifty2w_high": fifty2w_high, "fifty2w_low": fifty2w_low, "near_high": near_high,
+    }
+
+def detect_vcp(highs: pd.Series, lows: pd.Series, lookback: int = VCP_LOOKBACK_DAYS) -> bool:
+    if len(highs) < lookback or len(lows) < lookback: return False
+    h, l = highs[-lookback:], lows[-lookback:]
+    third = lookback // 3
+    ranges = []
+    for i in range(3):
+        seg_h, seg_l = h[i * third:(i + 1) * third], l[i * third:(i + 1) * third]
+        if seg_l.empty or float(seg_l.min()) <= 0: return False
+        ranges.append((float(seg_h.max()) - float(seg_l.min())) / float(seg_l.min()) * 100)
+    return ranges[0] > ranges[1] > ranges[2]
+
+def get_market_cap_cr(symbol: str, exchange: str = "NSE") -> float:
+    try:
+        t = yf.Ticker(f"{symbol.strip().upper()}{'.NS' if exchange.upper() == 'NSE' else '.BO'}")
+        mcap = t.fast_info.get("marketCap") or t.fast_info.get("market_cap")
+        if mcap: return float(mcap) / 1e7
+    except Exception:
+        pass
+    return None
+
+def run_daily_momentum_scan(momentum_state: dict) -> dict:
+    today_str = datetime.date.today().isoformat()
+    if momentum_state.get("last_scan_date") == today_str:
+        return momentum_state
+
+    log.info("Fetching Baseline Sector RSIs...")
+    sector_rsis = {}
+    try:
+        sec_data = yf.download(list(SECTOR_BENCHMARKS.keys()), period="3mo", interval="1d", group_by="ticker", threads=True, progress=False)
+        for ticker in SECTOR_BENCHMARKS.keys():
+            try:
+                df_s = sec_data[ticker].dropna() if len(SECTOR_BENCHMARKS) > 1 else sec_data.dropna()
+                if not df_s.empty:
+                    s_rsi = rsi_fyers_tradingview(df_s["Close"].tolist(), RSI_PERIOD)
+                    if s_rsi: sector_rsis[ticker] = s_rsi
+            except Exception:
+                pass
+    except Exception as e:
+        log.warning(f"Sector RSI fetch failed: {e}")
+
+    symbols = get_universe_symbols()
+    tickers = [f"{s}.NS" for s in symbols]
+    log.info("Running daily momentum universe scan for %d symbols...", len(tickers))
+    hist_map = fetch_batch_history(tickers)
+
+    per_symbol_data = {}
+    returns_6m = {}
+
+    for symbol in symbols:
+        df = hist_map.get(f"{symbol}.NS")
+        if df is None or df.empty or "Close" not in df.columns: continue
+        closes, highs, lows, volumes = df["Close"].dropna(), df["High"].dropna(), df["Low"].dropna(), df["Volume"].dropna()
+        if len(closes) < 210 or len(volumes) < 50: continue
+
+        mcap_cr = get_market_cap_cr(symbol, "NSE")
+        if mcap_cr is not None and (mcap_cr < MIN_MARKET_CAP_CR or mcap_cr > MAX_MARKET_CAP_CR): continue
+
+        trend = get_trend_template_status(closes)
+        if trend is None: continue
+        
+        rsi_series = get_rsi_series(closes, RSI_PERIOD)
+        
+        macro_low, macro_low_rsi = None, None
+        if len(lows) >= MACRO_PIVOT_LOOKBACK_DAYS:
+            window_lows = lows.iloc[-MACRO_PIVOT_LOOKBACK_DAYS:]
+            m_low, m_idx = float(window_lows.min()), window_lows.idxmin()
+            if m_idx in highs.index:
+                subsequent_highs = highs.iloc[highs.index.get_loc(m_idx):]
+                if float(subsequent_highs.max()) >= m_low * 1.05:
+                    macro_low = m_low
+                    macro_low_rsi = float(rsi_series.loc[m_idx]) if pd.notna(rsi_series.loc[m_idx]) else 50.0
+
+        macro_high, macro_high_rsi = None, None
+        if len(highs) >= MACRO_PIVOT_LOOKBACK_DAYS:
+            window_highs = highs.iloc[-MACRO_PIVOT_LOOKBACK_DAYS:]
+            m_high, m_idx = float(window_highs.max()), window_highs.idxmax()
+            if m_idx in lows.index:
+                subsequent_lows = lows.iloc[lows.index.get_loc(m_idx):]
+                if float(subsequent_lows.min()) <= m_high * 0.95:
+                    macro_high = m_high
+                    macro_high_rsi = float(rsi_series.loc[m_idx]) if pd.notna(rsi_series.loc[m_idx]) else 50.0
+
+        sos_peak_p, sos_peak_rsi = None, None
+        if len(rsi_series) >= 30:
+            window_rsi_thrust = rsi_series.iloc[-30:-3]
+            max_thrust_rsi = float(window_rsi_thrust.max())
+            if max_thrust_rsi >= 72.0:
+                sos_peak_rsi = max_thrust_rsi
+                sos_peak_p = float(highs.loc[window_rsi_thrust.idxmax()])
+        
+        rs_return = (float(closes.iloc[-1]) / float(closes.iloc[-RS_LOOKBACK_DAYS]) - 1) * 100 if len(closes) > RS_LOOKBACK_DAYS and float(closes.iloc[-RS_LOOKBACK_DAYS]) > 0 else None
+        
+        per_symbol_data[symbol] = {
+            **trend,
+            "ath_high": float(highs.max()) if len(highs) > 0 else float(closes.max()),
+            "vcp_contracting": detect_vcp(highs, lows),
+            "rs_return_6m": rs_return,
+            "avg_volume_50d": float(volumes[-50:].mean()),
+            "base_high": float(highs.iloc[-ZANGER_BASE_LOOKBACK_DAYS - 1:-1].max()) if len(highs) > ZANGER_BASE_LOOKBACK_DAYS else float(highs.max()),
+            "base_low": float(lows.iloc[-ZANGER_BASE_LOOKBACK_DAYS - 1:-1].min()) if len(lows) > ZANGER_BASE_LOOKBACK_DAYS else float(lows.min()),
+            "prev_close": float(closes.iloc[-1]),
+            "monthly_rsi": rsi_fyers_tradingview(closes.resample('ME').last().dropna().tolist(), RSI_PERIOD) if len(closes.resample('ME').last().dropna()) > 14 else 50.0,
+            "yesterday_rsi": rsi_fyers_tradingview(closes.tolist(), RSI_PERIOD),
+            "ema_10_prev": float(closes.ewm(span=10, adjust=False).mean().iloc[-1]),
+            "ema_21_prev": float(closes.ewm(span=21, adjust=False).mean().iloc[-1]),
+            "ema_50_prev": float(closes.ewm(span=50, adjust=False).mean().iloc[-1]),
+            "ema_100_prev": float(closes.ewm(span=100, adjust=False).mean().iloc[-1]),
+            "ema_200_prev": float(closes.ewm(span=200, adjust=False).mean().iloc[-1]),
+            "mcap_cr": mcap_cr,
+            "macro_low": macro_low, "macro_low_rsi": macro_low_rsi,
+            "macro_high": macro_high, "macro_high_rsi": macro_high_rsi,
+            "sos_thrust_peak_price": sos_peak_p, "sos_thrust_peak_rsi": sos_peak_rsi,
+        }
+        if rs_return is not None: returns_6m[symbol] = rs_return
+
+    sorted_syms = sorted(returns_6m.keys(), key=lambda s: returns_6m[s], reverse=True)
+    rs_rank_pct = {s: round(100 * (1 - i / (len(sorted_syms) or 1)), 1) for i, s in enumerate(sorted_syms)}
+
+    watchlist = {}
+    stage2_vcp_list, momentum_leader_list = [], []
+
+    for symbol, d in per_symbol_data.items():
+        rs_rank = rs_rank_pct.get(symbol)
+        watchlist[symbol] = {**d, "rs_rank": rs_rank}
+        if d["stage2"] and d["vcp_contracting"]: stage2_vcp_list.append((symbol, rs_rank))
+        if rs_rank is not None and rs_rank >= MOMENTUM_LEADER_RS_RANK_MIN and d["near_high"]: momentum_leader_list.append((symbol, rs_rank))
+
+    stage2_vcp_list.sort(key=lambda x: (x[1] or 0), reverse=True)
+    momentum_leader_list.sort(key=lambda x: (x[1] or 0), reverse=True)
+
+    lines = [
+        f"📊 <b>Daily Momentum Scan — {today_str}</b>",
+        f"<i>Universe: {len(per_symbol_data)} stocks within ₹{MIN_MARKET_CAP_CR:,.0f} Cr – ₹{MAX_MARKET_CAP_CR:,.0f} Cr.</i>", "",
+        f"🟢 <b>Minervini Stage 2 + VCP</b> ({len(stage2_vcp_list)} stocks)",
+    ]
+    for s, r in stage2_vcp_list[:TOP_N_MOMENTUM]: lines.append(f"  {s} (RS rank {r})")
+    lines += ["", f"🌟 <b>Momentum Leaders</b> ({len(momentum_leader_list)} stocks)"]
+    for s, r in momentum_leader_list[:TOP_N_MOMENTUM]: lines.append(f"  {s} (RS rank {r})")
+    send_telegram_message("\n".join(lines))
+    
+    return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis}
+
+# ----------------------------------------------------------------------
+# COOLDOWN & 1% PRICE CHANGE ENGINE
+# ----------------------------------------------------------------------
+
+def alert_allowed(entry: dict, alert_key_prefix: str, current_price: float = None) -> bool:
+    last_time_str = entry.get(f"{alert_key_prefix}_last_alert")
+    if not last_time_str: return True
+    try:
+        last_dt = datetime.datetime.fromisoformat(last_time_str)
+    except Exception:
+        return True
+    
+    if (datetime.datetime.now() - last_dt) < datetime.timedelta(minutes=ALERT_COOLDOWN_MINUTES):
+        return False
+    
+    last_price = entry.get(f"{alert_key_prefix}_last_price")
+    if current_price is not None and last_price is not None:
+        try:
+            pct_diff = abs(current_price - float(last_price)) / float(last_price) * 100.0
+            if pct_diff < MIN_PRICE_CHANGE_FOR_REPEAT_PCT:
+                return False
+        except ZeroDivisionError:
+            pass
+            
+    return True
+
+def record_alert(entry: dict, alert_key_prefix: str, current_price: float = None):
+    entry[f"{alert_key_prefix}_last_alert"] = datetime.datetime.now().isoformat()
+    if current_price is not None:
+        entry[f"{alert_key_prefix}_last_price"] = float(current_price)
+
+# ----------------------------------------------------------------------
+# NSE-BSE DUAL LISTING ARBITRAGE SCANNER
+# ----------------------------------------------------------------------
+
+def check_nse_bse_arbitrage(momentum_state: dict, state: dict, fyers):
+    now_ist = get_ist_now()
+    if now_ist.weekday() >= 5: return
+    current_time = now_ist.time()
+    if not (datetime.time(9, 15) <= current_time <= datetime.time(15, 30)):
+        return
+
+    watchlist = momentum_state.get("watchlist", {})
+    custom_alerts = fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)
+    
+    candidates = set(DEFAULT_ARBITRAGE_CANDIDATES)
+    # FIX applied: use the original_symbol instead of parsing the unique_key
+    candidates.update([rules["original_symbol"] for rules in custom_alerts.values()])
+    candidates.update(list(watchlist.keys())[:50])
+
+    for symbol in candidates:
+        nse_p, bse_p = None, None
+        
+        if fyers:
+            try:
+                q_resp = fyers.quotes(data={"symbols": f"NSE:{symbol}-EQ,BSE:{symbol}-EQ"})
+                if q_resp.get("s") == "ok" and q_resp.get("d"):
+                    for item in q_resp["d"]:
+                        sym_n = item.get("n", "")
+                        lp = item.get("v", {}).get("lp")
+                        if lp and float(lp) > 0:
+                            if "NSE:" in sym_n: nse_p = float(lp)
+                            elif "BSE:" in sym_n: bse_p = float(lp)
+            except Exception:
+                pass
+
+        if not nse_p or not bse_p:
+            try:
+                t_nse = yf.Ticker(f"{symbol}.NS").fast_info
+                t_bse = yf.Ticker(f"{symbol}.BO").fast_info
+                nse_p = t_nse.get("lastPrice") or t_nse.get("last_price")
+                bse_p = t_bse.get("lastPrice") or t_bse.get("last_price")
+            except Exception:
+                continue
+
+        if not nse_p or not bse_p or nse_p <= 0 or bse_p <= 0:
+            continue
+
+        min_p = min(nse_p, bse_p)
+        max_p = max(nse_p, bse_p)
+        spread_pct = ((max_p - min_p) / min_p) * 100.0
+
+        if spread_pct >= ARBITRAGE_MIN_SPREAD_PCT:
+            state_key = f"arb_{symbol}"
+            if state_key not in state:
+                state[state_key] = {}
+                
+            if alert_allowed(state[state_key], "spread", spread_pct):
+                record_alert(state[state_key], "spread", spread_pct)
+                
+                cheaper_ex, higher_ex = ("NSE", "BSE") if nse_p < bse_p else ("BSE", "NSE")
+                cheap_p, high_p = (nse_p, bse_p) if nse_p < bse_p else (bse_p, nse_p)
+                diff_rs = high_p - cheap_p
+
+                send_telegram_message(
+                    f"⚖️ <b>{symbol} — NSE/BSE Arbitrage & Spread Opportunity!</b>\n\n"
+                    f"• <b>Spread:</b> <b>+{spread_pct:.2f}%</b> (₹{diff_rs:.2f} difference)\n"
+                    f"• <b>Cheaper on {cheaper_ex}:</b> ₹{cheap_p:.2f}\n"
+                    f"• <b>Higher on {higher_ex}:</b> ₹{high_p:.2f}\n\n"
+                    f"📌 <i>Action: Buy CNC on {cheaper_ex} (cheaper), sell on {higher_ex} on delivery / next day when spread narrows.</i>"
+                )
+
+# ----------------------------------------------------------------------
+# INTRADAY MOMENTUM SCANNER HEADS
+# ----------------------------------------------------------------------
+
+def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
+    watchlist = momentum_state.get("watchlist", {})
+    if not watchlist: return momentum_state
+
+    now_ist = get_ist_now()
+    if now_ist.weekday() >= 5: return momentum_state  
+    
+    current_time = now_ist.time()
+    if not (datetime.time(9, 0) <= current_time <= datetime.time(15, 40)):
+        return momentum_state
+
+    for symbol, entry in watchlist.items():
+        metrics = get_live_metrics(fyers, symbol, "NSE")
+        if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI:
+            continue
+
+        price, volume, prev_close = metrics["price"], metrics["volume"], metrics["prev_close"]
+        prev_volume, c_rsi = metrics["prev_volume"], metrics["rsi"]
+        avg_vol50, base_high = entry.get("avg_volume_50d") or 0, entry.get("base_high")
+        pct_change = (price - prev_close) / prev_close * 100 if prev_close else None
+
+        open_low_tag = ""
+        if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
+            d_open, d_low = metrics.get("open_price"), metrics.get("low_price")
+            if d_open and d_low and (d_low >= d_open * 0.999):
+                open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
+
+        # ----------------------------------------------------------------------
+        # RS RATING & SECTOR RSI FORMATTER
+        # ----------------------------------------------------------------------
+        rs_tag = ""
+        if c_rsi is not None:
+            rs_rank = entry.get("rs_rank", "N/A")
+            sector = get_cached_sector(symbol)
+                
+            yf_to_index = {
+                "Financial Services": "^NSEBANK", "Technology": "^CNXIT", "Healthcare": "^CNXPHARMA",
+                "Consumer Cyclical": "^CNXAUTO", "Basic Materials": "^CNXMETAL", "Consumer Defensive": "^CNXFMCG",
+                "Energy": "^CNXENERGY", "Real Estate": "^CNXREALTY", "Industrials": "^CNXINFRA",
+                "Communication Services": "^CNXMEDIA", "Utilities": "^CNXENERGY"
+            }
+            sec_ticker = yf_to_index.get(sector, "^CRSLDX")
+            sec_rsi = momentum_state.get("sector_rsis", {}).get(sec_ticker, 50.0)
+            
+            rsi_display = f"<b>{c_rsi:.1f}</b>" if c_rsi > sec_rsi else f"{c_rsi:.1f}"
+            sec_name = sector.replace(" ", "") if sector != "Unknown" else "BroadMarket"
+            
+            rs_tag = f"\n🎯 RS {rs_rank} | Stock RSI: {rsi_display} | {sec_name} RSI: {sec_rsi:.1f}"
+
+        # ----------------------------------------------------------------------
+        # SETUP 3: WYCKOFF SOS + BULLISH RANGE SHIFT PULLBACK
+        # ----------------------------------------------------------------------
+        sos_rsi, sos_peak_p = entry.get("sos_thrust_peak_rsi"), entry.get("sos_thrust_peak_price")
+        macro_low, y_rsi = entry.get("macro_low"), entry.get("yesterday_rsi")
+
+        if alert_allowed(entry, "sos_pullback_curl", price) and sos_rsi and sos_peak_p and y_rsi and c_rsi:
+            sma_vol_20 = metrics["sma_vol_20"]
+            cond_pulled_back = price <= (sos_peak_p * 0.94)
+            cond_holds_floor = (macro_low is None) or (price >= macro_low * 1.04)
+            cond_rsi_corridor = (36.0 <= c_rsi <= 55.0)
+            cond_curl = (c_rsi >= y_rsi + 0.5) and (price >= prev_close)
+            cond_vol = (volume >= 1.1 * sma_vol_20) if sma_vol_20 else False
+
+            if cond_pulled_back and cond_holds_floor and cond_rsi_corridor and cond_curl and cond_vol:
+                record_alert(entry, "sos_pullback_curl", price)
+                pullback_pct = ((sos_peak_p - price) / sos_peak_p) * 100
+                send_telegram_message(
+                    f"🔄 <b>{symbol}</b> SOS Range Shift / Pullback Curl Alert!\n"
+                    f"• <b>Current Price:</b> ₹{price:.2f} (Cooled {pullback_pct:.1f}% from Peak: ₹{sos_peak_p:.2f})\n"
+                    f"• <b>Prior Impulse:</b> Bullish Thrust RSI peaked at <b>{sos_rsi:.1f}</b>\n"
+                    f"• <b>Support Reset:</b> RSI defended 40-zone (Now curling to <b>{c_rsi:.1f}</b> vs Yesterday: {y_rsi:.1f})\n"
+                    f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Buyers reclaiming control)"
+                    f"{open_low_tag}{rs_tag}"
+                )
+
+        # ----------------------------------------------------------------------
+        # SETUP 1: MOMENTUM IGNITION (EARLY BREAKOUT ALERT)
+        # ----------------------------------------------------------------------
+        macro_high, macro_high_rsi = entry.get("macro_high"), entry.get("macro_high_rsi")
+
+        if alert_allowed(entry, "momentum_ignition", price) and macro_high and macro_high_rsi and c_rsi:
+            c_low, c_high, c_open, sma_vol_20 = metrics["low_price"], metrics["high_price"], metrics["open_price"], metrics["sma_vol_20"]
+
+            cond_proximity = (macro_high * 0.975) <= price <= (macro_high * 0.990)
+            cond_rsi = (c_rsi >= macro_high_rsi - 1.5) and (c_rsi >= 60.0)
+
+            range_hl = c_high - c_low
+            upper_wick_ratio = ((c_high - max(c_open, price)) / range_hl) if range_hl > 0 else 0
+            cond_wick = upper_wick_ratio <= 0.25
+            cond_vol = (volume >= 1.5 * sma_vol_20) if sma_vol_20 else False
+
+            if cond_proximity and cond_rsi and cond_wick and cond_vol:
+                record_alert(entry, "momentum_ignition", price)
+                dist_pct = ((macro_high - price) / macro_high) * 100
+                send_telegram_message(
+                    f"🚀 <b>{symbol}</b> Momentum Ignition / Early Breakout Alert!\n"
+                    f"• <b>Current Price:</b> ₹{price:.2f} ({dist_pct:.1f}% below 60-Day Pivot: ₹{macro_high:.2f})\n"
+                    f"• <b>Setup:</b> Resistance Anticipation + Range Shift\n"
+                    f"• <b>RSI Test:</b> Current RSI: <b>{c_rsi:.1f}</b> (Crossed Macro High RSI: {macro_high_rsi:.1f})\n"
+                    f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Expansion detected)\n"
+                    f"• <b>Upper Shadow:</b> {int(upper_wick_ratio*100)}% (Buyers holding the high)"
+                    f"{open_low_tag}{rs_tag}"
+                )
+
+        # ----------------------------------------------------------------------
+        # SETUP 2: LIQUIDITY SWEEP & WYCKOFF SPRING
+        # ----------------------------------------------------------------------
+        macro_low_rsi = entry.get("macro_low_rsi")
+        if alert_allowed(entry, "liquidity_sweep", price) and macro_low and macro_low_rsi and c_rsi:
+            c_low, c_high, c_open, sma_vol_20 = metrics["low_price"], metrics["high_price"], metrics["open_price"], metrics["sma_vol_20"]
+            
+            cond_proximity = (macro_low * 0.985) <= price <= (macro_low * 1.025)
+            cond_rsi = (abs(c_rsi - macro_low_rsi) <= 3.5) or ((c_low <= macro_low) and (c_rsi > macro_low_rsi + 3.0))
+            cond_sweep = c_low <= (macro_low * 1.005)
+            cond_reclaim = price > macro_low
+            
+            range_hl = c_high - c_low
+            wick_ratio = ((min(c_open, price) - c_low) / range_hl) if range_hl > 0 else 0
+            cond_wick = wick_ratio >= 0.40
+            cond_vol = (volume >= 1.2 * sma_vol_20) if sma_vol_20 else False
+            
+            if cond_proximity and cond_rsi and cond_sweep and cond_reclaim and cond_wick and cond_vol:
+                record_alert(entry, "liquidity_sweep", price)
+                send_telegram_message(
+                    f"🧲 <b>{symbol}</b> Major Structural Sweep & RSI Retest!\n"
+                    f"• <b>Current Price:</b> ₹{price:.2f} (Reclaimed above Major Pivot: ₹{macro_low:.2f})\n"
+                    f"• <b>Setup:</b> Liquidity Sweep Spring / Capitulation Wick (Lower shadow: {int(wick_ratio*100)}%)\n"
+                    f"• <b>RSI Test:</b> Current Daily RSI: {c_rsi:.1f} vs Base Pivot RSI: {macro_low_rsi:.1f}\n"
+                    f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Absorption detected)"
+                    f"{open_low_tag}{rs_tag}"
+                )
+
+        # ----------------------------------------------------------------------
+        # STANDARD BREAKOUT SCANNERS (ZANGER, BONDE, PULLBACK, ATH)
+        # ----------------------------------------------------------------------
+        if alert_allowed(entry, "zanger", price) and base_high and avg_vol50 and pct_change is not None:
+            if pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50 and price >= (base_high * 0.95):
+                record_alert(entry, "zanger", price)
+                send_telegram_message(f"💥 <b>{symbol}</b> Zanger Early Entry Setup!\nPrice ₹{price:.2f} (up {pct_change:+.1f}%) near {ZANGER_BASE_LOOKBACK_DAYS}-day base high ₹{base_high:.2f} on {volume / avg_vol50:.1f}x avg volume.{open_low_tag}{rs_tag}")
+
+        if alert_allowed(entry, "bonde", price) and pct_change is not None and prev_volume is not None and metrics.get("close_3d_ago"):
+            return_3d = (prev_close - metrics["close_3d_ago"]) / metrics["close_3d_ago"] * 100
+            if entry.get("stage2") and return_3d < 1.0 and volume > prev_volume and volume >= BONDE_MIN_VOLUME and pct_change >= BONDE_MIN_MOVE_PCT:
+                record_alert(entry, "bonde", price)
+                send_telegram_message(f"⚡ <b>{symbol}</b> Bonde Early Entry Model Trigger!\nConsolidated ({return_3d:+.1f}%), moved {pct_change:+.1f}% today. Vol ({volume:,.0f}) > Yesterday, in Stage 2. Price ₹{price:.2f}{open_low_tag}{rs_tag}")
+
+        if alert_allowed(entry, "resistance", price) and base_high:
+            if 0 < ((base_high - price) / base_high * 100) <= 4.0:
+                record_alert(entry, "resistance", price)
+                send_telegram_message(f"🎯 <b>{symbol}</b> Horizontal Resistance Scanner!\nPrice ₹{price:.2f} is within 4% below the recent base high (₹{base_high:.2f}).{open_low_tag}{rs_tag}")
+
+        if alert_allowed(entry, "mtf", price) and c_rsi is not None:
+            m_rsi, y_rsi_val = entry.get("monthly_rsi", 50.0), entry.get("yesterday_rsi", 50.0)
+            ema_condition = price >= metrics["ema_200"] * 1.03 or price >= metrics["ema_50"] * 1.03 or price >= metrics["ema_21"] * 1.03
+            rsi_condition = c_rsi > y_rsi_val and c_rsi > 30 and m_rsi <= 56 and metrics["weekly_rsi"] <= c_rsi
+            if rsi_condition and ema_condition:
+                record_alert(entry, "mtf", price)
+                send_telegram_message(f"🔮 <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice ₹{price:.2f} (Spiked ≥3% above key EMA).\nLive Daily RSI: {c_rsi:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}{open_low_tag}{rs_tag}")
+        
+        if alert_allowed(entry, "ema50_pullback", price) and c_rsi:
+            ema_50 = metrics.get("ema_50")
+            y_rsi_val, w_rsi, mcap = entry.get("yesterday_rsi"), metrics.get("weekly_rsi"), entry.get("mcap_cr", 0)
+            sma_vol_5, sma_vol_20 = metrics.get("sma_vol_5"), metrics.get("sma_vol_20")
+
+            if ema_50 and y_rsi_val and w_rsi:
+                cond_price = (ema_50 * 0.975) <= price <= (ema_50 * 1.06)
+                cond_rsi_bounds = 30 <= c_rsi < 58
+                cond_mcap = mcap > 300
+                cond_vol = (sma_vol_20 and sma_vol_20 > 0 and (sma_vol_5 / sma_vol_20) > 1.5)
+                cond_close = price >= prev_close
+                cond_rsi_daily = c_rsi > y_rsi_val
+                cond_rsi_weekly = c_rsi > w_rsi
+
+                if (cond_price and cond_rsi_bounds and cond_mcap and cond_vol and cond_close and cond_rsi_daily and cond_rsi_weekly):
+                    record_alert(entry, "ema50_pullback", price)
+                    send_telegram_message(
+                        f"🧲 <b>{symbol}</b> Strict 50 EMA Pullback Alert!\n"
+                        f"Price ₹{price:.2f} is hovering near 50 EMA (₹{ema_50:.2f}) with expanding volume.\n"
+                        f"RSI: {c_rsi:.1f} (Up from {y_rsi_val:.1f}) | Mcap: ₹{mcap:.0f} Cr{open_low_tag}{rs_tag}"
+                    )
+
+        if alert_allowed(entry, "near_high_17_22", price):
+            ref_high = max(entry.get("fifty2w_high") or 0.0, entry.get("ath_high") or 0.0)
+            if ref_high > 0:
+                pct_from_high = ((ref_high - price) / ref_high) * 100
+                if 17.0 <= pct_from_high <= 22.0:
+                    record_alert(entry, "near_high_17_22", price)
+                    send_telegram_message(
+                        f"🏔️ <b>{symbol}</b> Near Yearly High / ATH Scanner!\n"
+                        f"Price ₹{price:.2f} is within {pct_from_high:.1f}% of its 52W/ATH High (₹{ref_high:.2f}).{open_low_tag}{rs_tag}"
+                    )
+
+    return momentum_state
+
+# ----------------------------------------------------------------------
+# NEWS & SPECIAL PRICE DISCOVERY CIRCULARS SCRAPER
+# ----------------------------------------------------------------------
+
+def fetch_recent_news_for_alerts() -> list:
+    results = []
+    session = requests.Session()
+    
+    try:
+        session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
+        time.sleep(1)
+        for idx in ["equities", "sme"]:
+            resp = session.get(f"https://www.nseindia.com/api/corporate-announcements?index={idx}", headers=HEADERS, timeout=15)
+            if resp.status_code == 200:
+                for item in resp.json():
+                    results.append({
+                        "symbol": (item.get("symbol") or "").upper(),
+                        "subject": f"{item.get('desc', '')} {item.get('attchmntText', '')}",
+                        "link": item.get("attchmntFile", "")
+                    })
+    except Exception:
+        pass
+
+    try:
+        time.sleep(1)
+        circ_resp = session.get("https://www.nseindia.com/api/circulars", headers=HEADERS, timeout=15)
+        if circ_resp.status_code == 200:
+            data = circ_resp.json()
+            items = data.get("data", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+            for item in items:
+                subject = f"[{item.get('circNo', '')}] {item.get('sub', '')}"
+                circ_file = item.get("circFile", "")
+                results.append({
+                    "symbol": "CIRCULAR",
+                    "subject": subject,
+                    "link": f"https://archives.nseindia.com/content/circulars/{circ_file}" if circ_file else ""
+                })
+    except Exception:
+        pass
+
+    try:
+        today = datetime.datetime.now().strftime("%Y%m%d")
+        from_date = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y%m%d")
+        url = f"https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P&strToDate={today}&strType=C&subcategory=-1"
+        resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=15)
+        if resp.status_code == 200 and "Table" in resp.json():
+            for item in resp.json()["Table"]:
+                results.append({
+                    "symbol": str(item.get("SCRIP_CD", "")),
+                    "subject": f"{item.get('NEWSSUB', '')} {item.get('HEADLINE', '')}",
+                    "link": item.get("ATTACHMENTNAME", "")
+                })
+    except Exception:
+        pass
+        
+    return results
+
+# ----------------------------------------------------------------------
+# GOOGLE SHEETS DYNAMIC CUSTOM ALERTS
+# ----------------------------------------------------------------------
+
+def parse_target_options(target_raw: str, metric: str) -> list:
+    parts = re.split(r",|\s+(?:or|OR)\s+", str(target_raw).strip())
+    options = [p.strip() for p in parts if p.strip()][:3]
+    parsed = []
+    for opt in options:
+        if metric == "news":
+            parsed.append(opt.lower())
+        else:
+            try:
+                parsed.append(float(opt))
+            except ValueError:
+                parsed.append(opt.lower())
+    return parsed
+
+def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
+    if not sheet_url or "docs.google.com" not in sheet_url: return {}
+    try:
+        df = pd.read_csv(sheet_url)
+        df.columns = [str(c).strip().lower() for c in df.columns]
+        if not {"exchange", "symbol", "metric", "condition", "target"}.issubset(set(df.columns)):
+            return {}
+
+        sheet_alerts = {}
+        for _, row in df.dropna(subset=["symbol", "metric", "condition", "target"]).iterrows():
+            sym = str(row["symbol"]).strip().upper()
+            exchange = str(row["exchange"]).strip().upper()
+            metric = str(row["metric"]).strip().lower()
+            condition = str(row["condition"]).strip().lower()
+            targets = parse_target_options(row["target"], metric)
+            if not targets or condition not in ("above", "below", "contains"): 
+                continue
+
+            # FIX: Append metric to dictionary key to prevent multiple rules for same symbol from overwriting each other
+            unique_key = f"{'BSE:' if exchange == 'BSE' else ''}{sym}_{metric}"
+            
+            sheet_alerts[unique_key] = {
+                "metric": metric, "condition": condition, "targets": targets, "target_raw": str(row["target"]).strip(),
+                "original_symbol": sym
+            }
+        return sheet_alerts
+    except Exception:
+        return {}
+
+# ----------------------------------------------------------------------
+# MAIN POLLING LOOP UTILITIES
+# ----------------------------------------------------------------------
+
+def get_universe_symbols() -> list:
+    if NIFTY500_CACHE_FILE.exists():
+        try:
+            cached = json.loads(NIFTY500_CACHE_FILE.read_text())
+            fetched_at = datetime.datetime.fromisoformat(cached["fetched_at"])
+            if (datetime.datetime.now() - fetched_at).days < 7:
+                return cached["symbols"]
+        except Exception:
+            pass
+
+    try:
+        resp = requests.get(NSE_CSV_URL, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        df = pd.read_csv(io.StringIO(resp.text))
+        symbols = sorted(df["Symbol"].astype(str).str.strip().tolist())
+        NIFTY500_CACHE_FILE.write_text(json.dumps({
+            "fetched_at": datetime.datetime.now().isoformat(), "symbols": symbols,
+        }))
+        return symbols
+    except Exception:
+        return FALLBACK_SYMBOLS
+
+def prune_expired(state: dict) -> dict:
+    cutoff = datetime.datetime.now() - datetime.timedelta(days=TRACK_WINDOW_DAYS)
+    kept = {}
+    for symbol, entry in state.items():
+        if symbol.startswith("custom_alert_") or symbol.startswith("arb_"):
+            kept[symbol] = entry
+            continue
+        try:
+            result_date = datetime.datetime.fromisoformat(entry["result_date"])
+            if result_date >= cutoff:
+                kept[symbol] = entry
+        except Exception:
+            continue
+    return kept
+
+def load_state() -> dict:
+    if STATE_FILE.exists():
+        try:
+            return json.loads(STATE_FILE.read_text())
+        except Exception:
+            pass
+    return {}
+
+def load_momentum_state() -> dict:
+    if MOMENTUM_STATE_FILE.exists():
+        try:
+            return json.loads(MOMENTUM_STATE_FILE.read_text())
+        except Exception:
+            pass
+    return {"last_scan_date": None, "watchlist": {}}
+
+def is_result_announcement(subject: str) -> bool:
+    subj_lower = subject.lower()
+    if any(kw in subj_lower for kw in RESULT_KEYWORDS): return True
+    return "board meeting" in subj_lower and ("result" in subj_lower or "financial" in subj_lower)
+
+def fetch_nse_result_symbols() -> set:
+    session = requests.Session()
+    try:
+        session.get("https://www.nseindia.com", headers=HEADERS, timeout=15)
+        time.sleep(1)
+        resp = session.get("https://www.nseindia.com/api/corporate-announcements?index=equities", headers=HEADERS, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception:
+        return set()
+
+    if isinstance(data, str):
+        try: data = json.loads(data)
+        except Exception: return set()
+    if not isinstance(data, list): return set()
+
+    hits = set()
+    for item in data:
+        subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}"
+        symbol = (item.get("symbol") or "").strip().upper()
+        if symbol and is_result_announcement(subject):
+            hits.add(symbol)
+    return hits
+
+def fetch_bse_result_symbols() -> set:
+    today = datetime.datetime.now().strftime("%Y%m%d")
+    from_date = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime("%Y%m%d")
+    url = f"https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P&strToDate={today}&strType=C&subcategory=-1"
+    try:
+        resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception:
+        return set()
+
+    if isinstance(data, str):
+        try: data = json.loads(data)
+        except Exception: return set()
+    if not isinstance(data, dict): return set()
+
+    hits = set()
+    for item in data.get("Table", []):
+        subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}"
+        scrip_cd = str(item.get("SCRIP_CD", ""))
+        if scrip_cd and is_result_announcement(subject):
+            hits.add(scrip_cd)
+    return hits
+
+# ----------------------------------------------------------------------
+# THE MAIN TICK LOOP
+# ----------------------------------------------------------------------
+
+def poll_once(state: dict, fyers) -> dict:
+    nse_hits = fetch_nse_result_symbols()
+    bse_hits = fetch_bse_result_symbols()
+    new_result_symbols = (nse_hits | bse_hits) - set(state.keys())
+
+    today = datetime.date.today()
+    for symbol in new_result_symbols:
+        exchange = "BSE" if symbol.isdigit() else "NSE"
+        mcap_cr = get_market_cap_cr(symbol, exchange)
+        if mcap_cr is None or mcap_cr < MIN_RSI_RECORDING_MCAP_CR:
+            continue
+            
+        metrics = get_baseline_metrics(fyers, symbol, today, exchange)
+        if metrics is None: continue
+            
+        state[symbol] = {
+            "result_date": datetime.datetime.combine(metrics["actual_date"], datetime.time()).isoformat(),
+            "day_high": metrics["day_high"], 
+            "day_low": metrics["day_low"], 
+            "baseline_rsi": metrics["baseline_rsi"],
+            "mcap_cr": mcap_cr,
+            "exchange": exchange
+        }
+        
+        rsi_line = f"Result-day RSI({RSI_PERIOD}): {metrics['baseline_rsi']:.1f}\n" if metrics["baseline_rsi"] else ""
+        send_telegram_message(f"📌 <b>{symbol}</b> result filed today.\nMarket Cap: ₹{mcap_cr:.0f} Cr\nResult-day High: ₹{metrics['day_high']:.2f} | Low: ₹{metrics['day_low']:.2f}\n{rsi_line}Will alert if price breaks this High/Low or RSI crosses.")
+
+    state = prune_expired(state)
+    
+    for symbol, entry in state.items():
+        if symbol.startswith("custom_alert_") or symbol.startswith("arb_") or "day_low" not in entry or "baseline_rsi" not in entry:
+            continue
+
+        exchange = entry.get("exchange", "BSE" if symbol.isdigit() else "NSE")
+        metrics = get_live_metrics(fyers, symbol, exchange)
+        if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI: continue
+
+        price, rsi = metrics["price"], metrics["rsi"]
+
+        open_low_tag = ""
+        now_ist = get_ist_now()
+        if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
+            d_open = metrics.get("open_price")
+            d_low = metrics.get("low_price")
+            if d_open and d_low and (d_low >= d_open * 0.999):
+                open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
+
+        if price > entry["day_high"] and alert_allowed(entry, "price_high", price):
+            record_alert(entry, "price_high", price)
+            send_telegram_message(f"🚀 <b>{symbol}</b> price broke ABOVE result-day High!\nCurrent: ₹{price:.2f} | Result-day High: ₹{entry['day_high']:.2f}{open_low_tag}")
+
+        if price < entry["day_low"] and alert_allowed(entry, "price_low", price):
+            record_alert(entry, "price_low", price)
+            send_telegram_message(f"🔻 <b>{symbol}</b> price broke BELOW result-day Low!\nCurrent: ₹{price:.2f} | Result-day Low: ₹{entry['day_low']:.2f}{open_low_tag}")
+
+        if rsi is not None and entry.get("baseline_rsi") is not None:
+            if rsi > entry["baseline_rsi"] and alert_allowed(entry, "rsi_up"):
+                record_alert(entry, "rsi_up")
+                send_telegram_message(f"📈 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}")
+
+            if rsi < entry["baseline_rsi"] and alert_allowed(entry, "rsi_down"):
+                record_alert(entry, "rsi_down")
+                send_telegram_message(f"📉 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}")
+
+    custom_alerts = {**fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)}
+    recent_news = fetch_recent_news_for_alerts()
+
+    # FIX applied: iterate over unique keys so multiple alerts per symbol process successfully
+    for unique_key, rules in custom_alerts.items():
+        state_key = f"custom_alert_{unique_key}"
+        if state_key not in state: state[state_key] = {"alerted": False, "last_alert": None}
+        c_entry = state[state_key]
+        
+        clean_symbol = rules["original_symbol"]
+        exchange = "BSE" if unique_key.startswith("BSE:") else "NSE"
+
+        if rules["metric"] == "news":
+            for news_item in recent_news:
+                if (news_item["symbol"] == clean_symbol) or (clean_symbol in ("CIRCULAR", "ALL", "*")):
+                    subj_lower = news_item["subject"].lower()
+                    matched_kw = next((t for t in rules["targets"] if t in subj_lower), None)
+                    if matched_kw and rules["condition"] == "contains":
+                        news_fp = str(news_item["subject"])[:60]
+                        if c_entry.get("last_news_fingerprint") != news_fp:
+                            c_entry["alerted"] = True
+                            c_entry["last_alert"] = datetime.datetime.now().isoformat()
+                            c_entry["last_news_fingerprint"] = news_fp
+                            header_title = "🏛️ Exchange Circular" if news_item["symbol"] == "CIRCULAR" else f"📰 {clean_symbol} Catalyst Alert"
+                            link_str = f"\n🔗 {news_item['link']}" if news_item.get("link") else ""
+                            send_telegram_message(f"<b>{header_title}</b>!\nMatched: <b>'{matched_kw}'</b>\n\n<i>{news_item['subject']}</i>{link_str}")
+            continue
+
+        c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
+        if not c_metrics: continue
+
+        metric_type, cond, current_val = rules["metric"], rules["condition"], c_metrics.get(rules["metric"])
+        if current_val is None: continue
+        current_price = c_metrics.get("price")
+        
+        c_open, c_low = c_metrics.get("open_price"), c_metrics.get("low_price")
+        custom_open_low_tag = ""
+        now_ist = get_ist_now()
+        if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
+            if c_open and c_low and (c_low >= c_open * 0.999):
+                custom_open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
+        
+        if alert_allowed(c_entry, "custom", current_price):
+            for target_rule in rules["targets"]:
+                target_val = c_metrics.get(target_rule) if isinstance(target_rule, str) else target_rule
+                if target_val is None: continue
+                if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
+                    record_alert(c_entry, "custom", current_price)
+                    t_str = f"{target_rule.upper()} (₹{target_val:.2f})" if isinstance(target_rule, str) else (f"{target_val:+.2f}%" if "pct" in metric_type else f"{target_val:.1f}" if "rsi" in metric_type else f"₹{target_val:+.2f}" if "change" in metric_type else f"₹{target_val:.2f}")
+                    v_str = f"{current_val:+.2f}%" if "pct" in metric_type else f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:+.2f}" if "change" in metric_type else f"₹{current_val:.2f}"
+                    send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{current_price:.2f}{custom_open_low_tag}")
+                    break
+
+    return state
+
+# ----------------------------------------------------------------------
+# MAIN ENTRY POINT
+# ----------------------------------------------------------------------
+
+def main():
+    one_shot = "--once" in sys.argv
+    log.info("Starting Nifty Breakout Notifier.%s", " (single-shot mode)" if one_shot else "")
+    state = load_state()
+    momentum_state = load_momentum_state()
+
+    fyers_token = get_fyers_access_token()
+    fyers = fyersModel.FyersModel(client_id=CLIENT_ID, token=fyers_token, log_path="/tmp") if fyers_token else None
+
+    if one_shot:
+        try:
+            state = poll_once(state, fyers)
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: 
+            log.exception("Error during poll: %s", e)
+        try:
+            momentum_state = run_daily_momentum_scan(momentum_state)
+            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+            check_nse_bse_arbitrage(momentum_state, state, fyers)
+            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: 
+            log.exception("Error during momentum scan: %s", e)
+        return
+
+    while True:
+        try:
+            state = poll_once(state, fyers)
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: 
+            log.exception("Error during poll: %s", e)
+        try:
+            momentum_state = run_daily_momentum_scan(momentum_state)
+            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+            check_nse_bse_arbitrage(momentum_state, state, fyers)
+            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
+            STATE_FILE.write_text(json.dumps(state, indent=2))
+        except Exception as e: 
+            log.exception("Error during momentum scan: %s", e)
+        
+        time.sleep(POLL_INTERVAL_MINUTES * 60)
+
+if __name__ == "__main__":
+    main()
