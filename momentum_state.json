@@ -1135,7 +1135,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 995.0,
       "box_low": 862.5,
-      "rs_rank": 62.5
+      "rs_rank": 62.5,
+      "resistance_last_alert": "2026-10-08T06:16:14.552041",
+      "resistance_last_price": 955.9000244140625
     },
     "ASHAPURMIN": {
       "sma50": 572.0719989013672,
@@ -1924,8 +1926,8 @@
       "box_high": 2205.0,
       "box_low": 1668.0999755859375,
       "rs_rank": 70.2,
-      "near_high_17_22_last_alert": "2026-10-08T05:16:15.644880",
-      "near_high_17_22_last_price": 1966.199951171875
+      "near_high_17_22_last_alert": "2026-10-08T06:16:21.495113",
+      "near_high_17_22_last_price": 1942.699951171875
     },
     "BIRET": {
       "sma50": 340.0964013671875,
@@ -6496,8 +6498,8 @@
       "box_high": 705.0,
       "box_low": 548.0,
       "rs_rank": 73.4,
-      "near_high_17_22_last_alert": "2026-10-08T05:30:38.043633",
-      "near_high_17_22_last_price": 579.0499877929688
+      "near_high_17_22_last_alert": "2026-10-08T06:17:00.112365",
+      "near_high_17_22_last_price": 572.9000244140625
     },
     "IIFLCAPS": {
       "sma50": 338.7969989013672,
@@ -8002,8 +8004,8 @@
       "box_high": 827.9500122070312,
       "box_low": 686.0999755859375,
       "rs_rank": 50.5,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:21.887069",
-      "near_high_17_22_last_price": 691.4500122070312
+      "near_high_17_22_last_alert": "2026-10-08T06:17:14.146200",
+      "near_high_17_22_last_price": 682.9500122070312
     },
     "KIRLOSBROS": {
       "sma50": 1846.2680029296876,
@@ -9626,8 +9628,8 @@
       "box_high": 5813.0,
       "box_low": 4115.0,
       "rs_rank": 74.5,
-      "near_high_17_22_last_alert": "2026-10-08T05:31:03.344834",
-      "near_high_17_22_last_price": 4818.2001953125,
+      "near_high_17_22_last_alert": "2026-10-08T06:17:27.415448",
+      "near_high_17_22_last_price": 4738.0,
       "rectangle_bounce_last_alert": "2026-10-08T06:03:23.500448",
       "rectangle_bounce_last_price": 4739.5
     },
