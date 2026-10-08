@@ -308,8 +308,8 @@
       "box_high": 1167.300048828125,
       "box_low": 942.5,
       "rs_rank": 39.9,
-      "near_high_17_22_last_alert": "2026-10-08T04:45:59.248746",
-      "near_high_17_22_last_price": 1015.25
+      "near_high_17_22_last_alert": "2026-10-08T09:46:10.873000",
+      "near_high_17_22_last_price": 1002.7999877929688
     },
     "ACC": {
       "sma50": 1275.4200024414063,
@@ -3408,8 +3408,8 @@
       "rs_rank": 46.0,
       "near_high_17_22_last_alert": "2026-10-08T08:16:28.326726",
       "near_high_17_22_last_price": 1275.4000244140625,
-      "rectangle_bounce_last_alert": "2026-10-08T08:46:46.079203",
-      "rectangle_bounce_last_price": 1274.5999755859375
+      "rectangle_bounce_last_alert": "2026-10-08T09:46:45.280027",
+      "rectangle_bounce_last_price": 1256.199951171875
     },
     "CROMPTON": {
       "sma50": 233.85519958496093,
@@ -3648,8 +3648,8 @@
       "box_high": 5000.0,
       "box_low": 3899.0,
       "rs_rank": 68.4,
-      "near_high_17_22_last_alert": "2026-10-08T06:30:17.725918",
-      "near_high_17_22_last_price": 4144.10009765625
+      "near_high_17_22_last_alert": "2026-10-08T09:46:48.588668",
+      "near_high_17_22_last_price": 4091.800048828125
     },
     "DBL": {
       "sma50": 414.8450018310547,
@@ -4646,8 +4646,8 @@
       "box_high": 81.8499984741211,
       "box_low": 64.62999725341797,
       "rs_rank": 52.5,
-      "near_high_17_22_last_alert": "2026-10-08T06:02:24.320481",
-      "near_high_17_22_last_price": 67.41000366210938
+      "near_high_17_22_last_alert": "2026-10-08T09:46:59.583366",
+      "near_high_17_22_last_price": 66.23999786376953
     },
     "ERIS": {
       "sma50": 1305.5439990234374,
@@ -5205,7 +5205,9 @@
       "box_low": 6860.0,
       "rs_rank": 34.6,
       "resistance_last_alert": "2026-10-08T04:02:20.863690",
-      "resistance_last_price": 7285.5
+      "resistance_last_price": 7285.5,
+      "rectangle_bounce_last_alert": "2026-10-08T09:47:06.631077",
+      "rectangle_bounce_last_price": 7293.0
     },
     "GMDCLTD": {
       "sma50": 555.4010009765625,
@@ -6030,8 +6032,8 @@
       "box_high": 775.0,
       "box_low": 640.5,
       "rs_rank": 64.5,
-      "near_high_17_22_last_alert": "2026-10-08T07:01:54.563917",
-      "near_high_17_22_last_price": 647.5999755859375
+      "near_high_17_22_last_alert": "2026-10-08T09:47:16.400289",
+      "near_high_17_22_last_price": 638.8499755859375
     },
     "HEGAM": {
       "sma50": 480.7501995849609,
@@ -6961,7 +6963,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 21.040000915527344,
       "box_low": 16.75,
-      "rs_rank": 12.6
+      "rs_rank": 12.6,
+      "rectangle_bounce_last_alert": "2026-10-08T09:47:27.944973",
+      "rectangle_bounce_last_price": 17.5
     },
     "IRCON": {
       "sma50": 117.82300003051758,
@@ -9033,7 +9037,9 @@
       "box_low": 1514.5999755859375,
       "rs_rank": 46.6,
       "mtf_last_alert": "2026-10-08T03:49:32.584764",
-      "mtf_last_price": 1662.300048828125
+      "mtf_last_price": 1662.300048828125,
+      "rectangle_bounce_last_alert": "2026-10-08T09:47:52.489745",
+      "rectangle_bounce_last_price": 1658.5
     },
     "MBAPL": {
       "sma50": 163.73779998779298,
@@ -9341,7 +9347,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 805.0,
       "box_low": 570.0,
-      "rs_rank": 92.6
+      "rs_rank": 92.6,
+      "near_high_17_22_last_alert": "2026-10-08T09:47:56.320786",
+      "near_high_17_22_last_price": 667.2000122070312
     },
     "MSUMI": {
       "sma50": 37.15559989929199,
@@ -10826,8 +10834,8 @@
       "box_high": 823.0,
       "box_low": 597.0,
       "rs_rank": 60.6,
-      "near_high_17_22_last_alert": "2026-10-08T05:03:24.860867",
-      "near_high_17_22_last_price": 659.4000244140625
+      "near_high_17_22_last_alert": "2026-10-08T09:48:13.648442",
+      "near_high_17_22_last_price": 647.4000244140625
     },
     "PRIVISCL": {
       "sma50": 3514.866015625,
@@ -14438,8 +14446,8 @@
       "box_high": 904.7999877929688,
       "box_low": 789.4500122070312,
       "rs_rank": 55.8,
-      "near_high_17_22_last_alert": "2026-10-08T06:31:48.530086",
-      "near_high_17_22_last_price": 786.0
+      "near_high_17_22_last_alert": "2026-10-08T09:48:53.673681",
+      "near_high_17_22_last_price": 776.25
     },
     "TMB": {
       "sma50": 884.0089990234375,
@@ -15194,8 +15202,8 @@
       "box_high": 281.20001220703125,
       "box_low": 226.24000549316406,
       "rs_rank": 63.8,
-      "near_high_17_22_last_alert": "2026-10-08T07:02:44.766138",
-      "near_high_17_22_last_price": 238.39999389648438
+      "near_high_17_22_last_alert": "2026-10-08T09:49:02.522969",
+      "near_high_17_22_last_price": 235.6699981689453
     },
     "VMART": {
       "sma50": 804.0629992675781,

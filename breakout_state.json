@@ -206,8 +206,8 @@
     "spread_last_price": 3.0173146277449443
   },
   "arb_VHL": {
-    "spread_last_alert": "2026-10-06T05:03:56.064475",
-    "spread_last_price": 3.132708406742562
+    "spread_last_alert": "2026-10-08T09:49:39.550441",
+    "spread_last_price": 4.184704184704184
   },
   "arb_ASHAPURMIN": {
     "spread_last_alert": "2026-10-07T03:51:25.888072",
@@ -248,7 +248,7 @@
     "baseline_rsi": 51.477489638429766,
     "mcap_cr": 2267.850121198581,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-08T08:45:50.087968",
+    "rsi_up_last_alert": "2026-10-08T09:45:49.538711",
     "price_high_last_alert": "2026-10-07T09:45:55.241611",
     "price_high_last_price": 268.1000061035156
   },
@@ -301,6 +301,7 @@
     "day_low": 1632.300048828125,
     "baseline_rsi": 36.74779989508988,
     "mcap_cr": 46839.5711449,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-08T09:45:51.525292"
   }
 }
