@@ -73,7 +73,9 @@
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "custom_last_alert": "2026-10-08T06:29:43.947468",
+    "custom_last_price": 123.31999969482422
   },
   "custom_alert_LAKSHYA_price": {
     "alerted": false,
