@@ -5440,8 +5440,8 @@
       "box_high": 259.79998779296875,
       "box_low": 204.10000610351562,
       "rs_rank": 48.8,
-      "near_high_17_22_last_alert": "2026-10-08T05:16:45.937063",
-      "near_high_17_22_last_price": 208.75
+      "near_high_17_22_last_alert": "2026-10-08T07:46:50.505553",
+      "near_high_17_22_last_price": 206.49000549316406
     },
     "GOLDIAM": {
       "sma50": 344.2219982910156,
@@ -5716,10 +5716,10 @@
       "box_high": 2455.0,
       "box_low": 1813.5999755859375,
       "rs_rank": 77.1,
-      "resistance_last_alert": "2026-10-08T04:46:43.439586",
-      "resistance_last_price": 1997.199951171875,
-      "near_high_17_22_last_alert": "2026-10-08T04:46:43.975103",
-      "near_high_17_22_last_price": 1997.199951171875
+      "resistance_last_alert": "2026-10-08T07:46:53.401393",
+      "resistance_last_price": 2025.0,
+      "near_high_17_22_last_alert": "2026-10-08T07:46:53.926911",
+      "near_high_17_22_last_price": 2025.0
     },
     "GRSE": {
       "sma50": 2452.7980078125,
@@ -6129,7 +6129,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 622.7999877929688,
       "box_low": 476.25,
-      "rs_rank": 51.9
+      "rs_rank": 51.9,
+      "rectangle_bounce_last_alert": "2026-10-08T07:46:57.626706",
+      "rectangle_bounce_last_price": 512.4000244140625
     },
     "HGINFRA": {
       "sma50": 487.7389990234375,
@@ -8780,8 +8782,8 @@
       "box_high": null,
       "box_low": null,
       "rs_rank": 49.7,
-      "near_high_17_22_last_alert": "2026-10-08T05:47:18.546174",
-      "near_high_17_22_last_price": 1795.300048828125
+      "near_high_17_22_last_alert": "2026-10-08T07:47:20.444498",
+      "near_high_17_22_last_price": 1775.9000244140625
     },
     "LXCHEM": {
       "sma50": 176.69440032958985,
@@ -9640,8 +9642,8 @@
       "box_high": 5813.0,
       "box_low": 4115.0,
       "rs_rank": 74.5,
-      "near_high_17_22_last_alert": "2026-10-08T06:17:27.415448",
-      "near_high_17_22_last_price": 4738.0,
+      "near_high_17_22_last_alert": "2026-10-08T07:47:27.491543",
+      "near_high_17_22_last_price": 4688.2001953125,
       "rectangle_bounce_last_alert": "2026-10-08T06:03:23.500448",
       "rectangle_bounce_last_price": 4739.5
     },
@@ -10610,8 +10612,8 @@
       "box_high": 717.0,
       "box_low": 563.0999755859375,
       "rs_rank": 31.4,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:45.542808",
-      "near_high_17_22_last_price": 595.7999877929688
+      "near_high_17_22_last_alert": "2026-10-08T07:47:36.081797",
+      "near_high_17_22_last_price": 588.5499877929688
     },
     "POLYMED": {
       "sma50": 1720.8759936523438,
@@ -12254,8 +12256,8 @@
       "box_high": 430.0,
       "box_low": 310.1499938964844,
       "rs_rank": 52.7,
-      "near_high_17_22_last_alert": "2026-10-08T06:48:01.388170",
-      "near_high_17_22_last_price": 336.6000061035156,
+      "near_high_17_22_last_alert": "2026-10-08T07:47:49.559270",
+      "near_high_17_22_last_price": 341.3500061035156,
       "rectangle_bounce_last_alert": "2026-10-08T05:03:43.323193",
       "rectangle_bounce_last_price": 343.8500061035156,
       "mtf_last_alert": "2026-10-08T05:03:43.934813",
@@ -12299,7 +12301,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 1599.0,
       "box_low": 1279.699951171875,
-      "rs_rank": 89.1
+      "rs_rank": 89.1,
+      "near_high_17_22_last_alert": "2026-10-08T07:47:50.296891",
+      "near_high_17_22_last_price": 1324.5999755859375
     },
     "SFL": {
       "sma50": 672.6409985351562,

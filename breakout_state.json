@@ -174,8 +174,8 @@
     "spread_last_price": 3.2793758484303854
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-10-08T05:05:02.585643",
-    "spread_last_price": 4.061585503056985
+    "spread_last_alert": "2026-10-08T07:48:29.838278",
+    "spread_last_price": 3.620687024346713
   },
   "arb_BALRAMCHIN": {
     "spread_last_alert": "2026-10-06T03:51:55.290909",
@@ -248,7 +248,7 @@
     "baseline_rsi": 51.477489638429766,
     "mcap_cr": 2267.850121198581,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-08T06:45:48.133781",
+    "rsi_up_last_alert": "2026-10-08T07:45:53.813134",
     "price_high_last_alert": "2026-10-07T09:45:55.241611",
     "price_high_last_price": 268.1000061035156
   },
@@ -260,7 +260,9 @@
     "mcap_cr": 9680.3387657,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-08T06:01:10.928857",
-    "rsi_down_last_alert": "2026-10-08T07:01:07.019287"
+    "rsi_down_last_alert": "2026-10-08T07:01:07.019287",
+    "price_low_last_alert": "2026-10-08T07:45:54.619064",
+    "price_low_last_price": 716.4000244140625
   },
   "arb_RANEHOLDIN": {
     "spread_last_alert": "2026-10-08T04:04:02.627589",
