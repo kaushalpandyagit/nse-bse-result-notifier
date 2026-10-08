@@ -5023,7 +5023,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 1600.0,
       "box_low": 1268.199951171875,
-      "rs_rank": 82.8
+      "rs_rank": 82.8,
+      "near_high_17_22_last_alert": "2026-10-08T06:46:51.113089",
+      "near_high_17_22_last_price": 1325.0999755859375
     },
     "GAEL": {
       "sma50": 168.04660034179688,
@@ -6398,8 +6400,8 @@
       "box_high": null,
       "box_low": null,
       "rs_rank": 53.4,
-      "sos_pullback_curl_last_alert": "2026-10-08T05:46:58.612832",
-      "sos_pullback_curl_last_price": 69.30999755859375
+      "sos_pullback_curl_last_alert": "2026-10-08T06:47:04.541880",
+      "sos_pullback_curl_last_price": 67.83000183105469
     },
     "IGIL": {
       "sma50": 332.85400146484375,
@@ -12248,8 +12250,8 @@
       "box_high": 430.0,
       "box_low": 310.1499938964844,
       "rs_rank": 52.7,
-      "near_high_17_22_last_alert": "2026-10-08T05:47:46.894617",
-      "near_high_17_22_last_price": 344.25,
+      "near_high_17_22_last_alert": "2026-10-08T06:48:01.388170",
+      "near_high_17_22_last_price": 336.6000061035156,
       "rectangle_bounce_last_alert": "2026-10-08T05:03:43.323193",
       "rectangle_bounce_last_price": 343.8500061035156,
       "mtf_last_alert": "2026-10-08T05:03:43.934813",
@@ -13145,7 +13147,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 4150.0,
       "box_low": 3152.199951171875,
-      "rs_rank": 86.3
+      "rs_rank": 86.3,
+      "near_high_17_22_last_alert": "2026-10-08T06:48:09.794897",
+      "near_high_17_22_last_price": 3237.699951171875
     },
     "SUBROS": {
       "sma50": 730.0739990234375,
@@ -13452,8 +13456,8 @@
       "box_high": 1019.7999877929688,
       "box_low": 740.4500122070312,
       "rs_rank": 81.9,
-      "near_high_17_22_last_alert": "2026-10-08T05:03:58.600040",
-      "near_high_17_22_last_price": 862.7000122070312
+      "near_high_17_22_last_alert": "2026-10-08T06:48:12.711828",
+      "near_high_17_22_last_price": 854.0
     },
     "SURYAROSNI": {
       "sma50": 222.10540130615234,
