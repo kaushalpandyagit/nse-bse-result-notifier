@@ -1920,8 +1920,8 @@
       "box_high": 2205.0,
       "box_low": 1668.0999755859375,
       "rs_rank": 70.2,
-      "near_high_17_22_last_alert": "2026-10-08T03:48:32.507733",
-      "near_high_17_22_last_price": 1989.0
+      "near_high_17_22_last_alert": "2026-10-08T05:16:15.644880",
+      "near_high_17_22_last_price": 1966.199951171875
     },
     "BIRET": {
       "sma50": 340.0964013671875,
@@ -2024,8 +2024,8 @@
       "box_high": 659.7000122070312,
       "box_low": 516.5999755859375,
       "rs_rank": 55.3,
-      "near_high_17_22_last_alert": "2026-10-08T03:48:33.822559",
-      "near_high_17_22_last_price": 612.0999755859375
+      "near_high_17_22_last_alert": "2026-10-08T05:16:17.483372",
+      "near_high_17_22_last_price": 604.0999755859375
     },
     "BLS": {
       "sma50": 240.72879943847656,
@@ -5418,8 +5418,8 @@
       "box_high": 259.79998779296875,
       "box_low": 204.10000610351562,
       "rs_rank": 48.8,
-      "near_high_17_22_last_alert": "2026-10-08T03:48:59.988959",
-      "near_high_17_22_last_price": 211.8300018310547
+      "near_high_17_22_last_alert": "2026-10-08T05:16:45.937063",
+      "near_high_17_22_last_price": 208.75
     },
     "GOLDIAM": {
       "sma50": 344.2219982910156,
@@ -13839,7 +13839,9 @@
       "box_low": 683.7000122070312,
       "rs_rank": 70.6,
       "near_high_17_22_last_alert": "2026-10-08T03:50:09.919726",
-      "near_high_17_22_last_price": 715.6500244140625
+      "near_high_17_22_last_price": 715.6500244140625,
+      "rectangle_bounce_last_alert": "2026-10-08T05:17:54.903239",
+      "rectangle_bounce_last_price": 710.7000122070312
     },
     "TBOTEK": {
       "sma50": 1667.009990234375,
