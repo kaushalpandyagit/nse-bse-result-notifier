@@ -260,7 +260,7 @@
     "mcap_cr": 9680.3387657,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-08T06:01:10.928857",
-    "rsi_down_last_alert": "2026-10-08T09:01:07.679330",
+    "rsi_down_last_alert": "2026-10-08T10:01:01.705660",
     "price_low_last_alert": "2026-10-08T07:45:54.619064",
     "price_low_last_price": 716.4000244140625
   },
@@ -287,9 +287,9 @@
     "baseline_rsi": 49.200340007941975,
     "mcap_cr": 2150.92359372431,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-08T09:01:09.066998",
-    "price_low_last_alert": "2026-10-08T09:01:08.560866",
-    "price_low_last_price": 909.0
+    "rsi_down_last_alert": "2026-10-08T10:01:03.196511",
+    "price_low_last_alert": "2026-10-08T10:01:02.635389",
+    "price_low_last_price": 890.0
   },
   "arb_SILINV": {
     "spread_last_alert": "2026-10-08T08:18:24.650310",

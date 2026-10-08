@@ -239,7 +239,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 97.4000015258789,
       "box_low": 72.19999694824219,
-      "rs_rank": 3.9
+      "rs_rank": 3.9,
+      "liquidity_sweep_last_alert": "2026-10-08T10:01:18.575746",
+      "liquidity_sweep_last_price": 72.38999938964844
     },
     "ABREL": {
       "sma50": 1305.83400390625,
@@ -822,8 +824,8 @@
       "box_high": 649.0,
       "box_low": 561.0,
       "rs_rank": 69.1,
-      "near_high_17_22_last_alert": "2026-10-08T09:16:20.255120",
-      "near_high_17_22_last_price": 591.0499877929688
+      "near_high_17_22_last_alert": "2026-10-08T10:01:24.030357",
+      "near_high_17_22_last_price": 584.0
     },
     "ANGELONE": {
       "sma50": 292.6489990234375,
@@ -6516,8 +6518,8 @@
       "box_high": 705.0,
       "box_low": 548.0,
       "rs_rank": 73.4,
-      "near_high_17_22_last_alert": "2026-10-08T06:17:00.112365",
-      "near_high_17_22_last_price": 572.9000244140625
+      "near_high_17_22_last_alert": "2026-10-08T10:02:17.193014",
+      "near_high_17_22_last_price": 581.3499755859375
     },
     "IIFLCAPS": {
       "sma50": 338.7969989013672,
@@ -10697,7 +10699,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 2721.89990234375,
       "box_low": 2270.10009765625,
-      "rs_rank": 52.1
+      "rs_rank": 52.1,
+      "rectangle_bounce_last_alert": "2026-10-08T10:02:55.503727",
+      "rectangle_bounce_last_price": 2445.89990234375
     },
     "PPLPHARMA": {
       "sma50": 209.17160034179688,
@@ -12274,8 +12278,8 @@
       "box_high": 430.0,
       "box_low": 310.1499938964844,
       "rs_rank": 52.7,
-      "near_high_17_22_last_alert": "2026-10-08T07:47:49.559270",
-      "near_high_17_22_last_price": 341.3500061035156,
+      "near_high_17_22_last_alert": "2026-10-08T10:03:10.229856",
+      "near_high_17_22_last_price": 337.1000061035156,
       "rectangle_bounce_last_alert": "2026-10-08T05:03:43.323193",
       "rectangle_bounce_last_price": 343.8500061035156,
       "mtf_last_alert": "2026-10-08T05:03:43.934813",
@@ -13349,7 +13353,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": null,
       "box_low": null,
-      "rs_rank": 83.7
+      "rs_rank": 83.7,
+      "near_high_17_22_last_alert": "2026-10-08T10:03:20.072455",
+      "near_high_17_22_last_price": 1108.300048828125
     },
     "SUNFLAG": {
       "sma50": 374.16999755859376,
