@@ -148,8 +148,8 @@
     "spread_last_price": 2.783866725120561
   },
   "arb_ATLANTAELE": {
-    "spread_last_alert": "2026-10-07T03:51:47.078648",
-    "spread_last_price": 2.7959490037586505
+    "spread_last_alert": "2026-10-08T05:04:37.652777",
+    "spread_last_price": 3.435817563004964
   },
   "arb_ABFRL": {
     "spread_last_alert": "2026-10-06T03:51:42.534872",
@@ -172,8 +172,8 @@
     "spread_last_price": 3.728813559322034
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-10-08T04:04:10.250610",
-    "spread_last_price": 3.6579991185544216
+    "spread_last_alert": "2026-10-08T05:05:02.585643",
+    "spread_last_price": 4.061585503056985
   },
   "arb_BALRAMCHIN": {
     "spread_last_alert": "2026-10-06T03:51:55.290909",
@@ -236,8 +236,8 @@
     "baseline_rsi": null,
     "mcap_cr": 4162.5755154393555,
     "exchange": "NSE",
-    "price_high_last_alert": "2026-10-08T04:01:19.695512",
-    "price_high_last_price": 149.30999755859375
+    "price_high_last_alert": "2026-10-08T05:00:57.559361",
+    "price_high_last_price": 146.52999877929688
   },
   "GLASSWALL": {
     "result_date": "2026-10-07T00:00:00",
@@ -257,7 +257,7 @@
     "baseline_rsi": 34.443371749715936,
     "mcap_cr": 9680.3387657,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-08T04:01:21.000151",
+    "rsi_up_last_alert": "2026-10-08T05:00:59.107305",
     "rsi_down_last_alert": "2026-10-08T03:45:47.937120"
   },
   "arb_RANEHOLDIN": {
