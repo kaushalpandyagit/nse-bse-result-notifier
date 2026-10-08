@@ -67,7 +67,9 @@
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "custom_last_alert": "2026-10-08T04:01:29.866691",
+    "custom_last_price": 3303.699951171875
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -124,12 +126,14 @@
   "custom_alert_PHOENIXLTD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-07T08:01:27.139145",
-    "custom_last_price": 1850.800048828125
+    "custom_last_alert": "2026-10-08T04:01:34.266860",
+    "custom_last_price": 1816.300048828125
   },
   "custom_alert_PHOENIXLTD_rsi": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "custom_last_alert": "2026-10-08T04:01:34.972744",
+    "custom_last_price": 1816.300048828125
   },
   "custom_alert_ESFL_news": {
     "alerted": false,
@@ -168,8 +172,8 @@
     "spread_last_price": 3.728813559322034
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-10-06T06:47:59.787523",
-    "spread_last_price": 2.511013215859026
+    "spread_last_alert": "2026-10-08T04:04:10.250610",
+    "spread_last_price": 3.6579991185544216
   },
   "arb_BALRAMCHIN": {
     "spread_last_alert": "2026-10-06T03:51:55.290909",
@@ -231,7 +235,9 @@
     "day_low": 141.50999450683594,
     "baseline_rsi": null,
     "mcap_cr": 4162.5755154393555,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "price_high_last_alert": "2026-10-08T04:01:19.695512",
+    "price_high_last_price": 149.30999755859375
   },
   "GLASSWALL": {
     "result_date": "2026-10-07T00:00:00",
@@ -251,7 +257,19 @@
     "baseline_rsi": 34.443371749715936,
     "mcap_cr": 9680.3387657,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-07T11:29:35.043831",
+    "rsi_up_last_alert": "2026-10-08T04:01:21.000151",
     "rsi_down_last_alert": "2026-10-08T03:45:47.937120"
+  },
+  "arb_RANEHOLDIN": {
+    "spread_last_alert": "2026-10-08T04:04:02.627589",
+    "spread_last_price": 8.940011318348247
+  },
+  "arb_AXISCADES": {
+    "spread_last_alert": "2026-10-08T04:04:15.325096",
+    "spread_last_price": 2.7452592959757136
+  },
+  "arb_BAJAJCON": {
+    "spread_last_alert": "2026-10-08T04:04:27.242648",
+    "spread_last_price": 2.5172830621425804
   }
 }
