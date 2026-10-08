@@ -34,8 +34,8 @@
       "box_high": 524.4500122070312,
       "box_low": 427.29998779296875,
       "rs_rank": 37.7,
-      "near_high_17_22_last_alert": "2026-10-08T06:01:29.925866",
-      "near_high_17_22_last_price": 446.1499938964844
+      "near_high_17_22_last_alert": "2026-10-08T08:46:06.118857",
+      "near_high_17_22_last_price": 452.3999938964844
     },
     "AARTIIND": {
       "sma50": 501.4760028076172,
@@ -860,8 +860,8 @@
       "rs_rank": 49.2,
       "resistance_last_alert": "2026-10-08T05:01:25.422092",
       "resistance_last_price": 298.29998779296875,
-      "near_high_17_22_last_alert": "2026-10-08T07:01:23.839724",
-      "near_high_17_22_last_price": 294.20001220703125
+      "near_high_17_22_last_alert": "2026-10-08T08:46:14.944012",
+      "near_high_17_22_last_price": 299.1000061035156
     },
     "ANURAS": {
       "sma50": 1211.9940112304687,
@@ -1586,8 +1586,8 @@
       "box_high": 583.6500244140625,
       "box_low": 447.8500061035156,
       "rs_rank": 58.4,
-      "rectangle_bounce_last_alert": "2026-10-08T06:30:00.080306",
-      "rectangle_bounce_last_price": 494.45001220703125
+      "rectangle_bounce_last_alert": "2026-10-08T08:46:24.455288",
+      "rectangle_bounce_last_price": 487.0
     },
     "BALAMINES": {
       "sma50": 2200.2219897460936,
@@ -1622,8 +1622,8 @@
       "box_high": 2629.800048828125,
       "box_low": 1936.0,
       "rs_rank": 96.7,
-      "near_high_17_22_last_alert": "2026-10-08T06:01:48.835101",
-      "near_high_17_22_last_price": 2111.800048828125
+      "near_high_17_22_last_alert": "2026-10-08T08:46:25.464156",
+      "near_high_17_22_last_price": 2085.699951171875
     },
     "BALRAMCHIN": {
       "sma50": 670.0629956054687,
@@ -3407,7 +3407,9 @@
       "box_low": 1209.0999755859375,
       "rs_rank": 46.0,
       "near_high_17_22_last_alert": "2026-10-08T08:16:28.326726",
-      "near_high_17_22_last_price": 1275.4000244140625
+      "near_high_17_22_last_price": 1275.4000244140625,
+      "rectangle_bounce_last_alert": "2026-10-08T08:46:46.079203",
+      "rectangle_bounce_last_price": 1274.5999755859375
     },
     "CROMPTON": {
       "sma50": 233.85519958496093,

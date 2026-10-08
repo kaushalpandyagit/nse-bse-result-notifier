@@ -74,8 +74,8 @@
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-08T06:29:43.947468",
-    "custom_last_price": 123.31999969482422
+    "custom_last_alert": "2026-10-08T08:46:00.845784",
+    "custom_last_price": 121.02999877929688
   },
   "custom_alert_LAKSHYA_price": {
     "alerted": false,
@@ -174,8 +174,8 @@
     "spread_last_price": 3.2793758484303854
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-10-08T07:48:29.838278",
-    "spread_last_price": 3.620687024346713
+    "spread_last_alert": "2026-10-08T08:49:40.951125",
+    "spread_last_price": 4.412781515340073
   },
   "arb_BALRAMCHIN": {
     "spread_last_alert": "2026-10-06T03:51:55.290909",
@@ -218,8 +218,8 @@
     "spread_last_price": 3.43165529965965
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-10-07T04:03:50.505389",
-    "spread_last_price": 6.862321968062149
+    "spread_last_alert": "2026-10-08T08:49:39.546774",
+    "spread_last_price": 3.497774298891397
   },
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
@@ -248,7 +248,7 @@
     "baseline_rsi": 51.477489638429766,
     "mcap_cr": 2267.850121198581,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-08T07:45:53.813134",
+    "rsi_up_last_alert": "2026-10-08T08:45:50.087968",
     "price_high_last_alert": "2026-10-07T09:45:55.241611",
     "price_high_last_price": 268.1000061035156
   },
