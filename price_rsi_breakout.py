@@ -13,6 +13,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 2: Liquidity Sweep & RSI Retest (Wyckoff Spring).
 - SETUP 3: Wyckoff SOS + Range Shift Pullback Curl.
 - SETUP 4: Rectangle Box Consolidation Bounce (Electrosteel Darvas Type).
+- SETUP 5: Descending Trendline Contraction (Tight Wedge Breakout).
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
 - Custom Synthetic Index Engine (Equal-Weighted Basket RSI).
 - NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
@@ -231,7 +232,6 @@ def get_cached_sector(symbol: str) -> str:
     return sector
 
 def get_rs_and_sector_tag(symbol: str, c_rsi: float, momentum_state: dict) -> str:
-    """Consolidated helper to append RS rank and sector RSI info to any alert."""
     if c_rsi is None:
         return ""
         
@@ -241,7 +241,6 @@ def get_rs_and_sector_tag(symbol: str, c_rsi: float, momentum_state: dict) -> st
     
     sector = get_cached_sector(symbol)
     
-    # Check if stock belongs to a Custom Institutional Cluster
     custom_basket_name = None
     for b_name, b_syms in CUSTOM_BASKETS.items():
         if symbol in b_syms:
@@ -252,7 +251,6 @@ def get_rs_and_sector_tag(symbol: str, c_rsi: float, momentum_state: dict) -> st
         sec_rsi = momentum_state.get("sector_rsis", {}).get(f"Custom_{custom_basket_name}", 50.0)
         sec_name = custom_basket_name.replace("_", " ")
     else:
-        # Fallback to Public Yahoo Indices
         yf_to_index = {
             "Financial Services": "^CNXFIN", "Technology": "^CNXIT", "Healthcare": "^CNXPHARMA",
             "Consumer Cyclical": "^CNXAUTO", "Basic Materials": "^CNXMETAL", "Consumer Defensive": "^CNXFMCG",
@@ -711,6 +709,35 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             if 10.0 <= box_height_pct <= 45.0:
                 box_high = b_high
                 box_low = b_low
+
+        # ----------------------------------------------------------------------
+        # SETUP 5: DESCENDING TRENDLINE CONTRACTION (Tight Wedge)
+        # ----------------------------------------------------------------------
+        descending_res, wedge_contraction = None, None
+        if len(highs) >= 40 and len(lows) >= 40:
+            w_h = highs.iloc[-40:]
+            w_l = lows.iloc[-40:]
+            p1_h = w_h.iloc[:-10]
+            if not p1_h.empty:
+                p1_idx = p1_h.argmax()
+                p1_val = float(p1_h.iloc[p1_idx])
+                if p1_idx + 4 < 38:
+                    p2_h = w_h.iloc[p1_idx + 4 : -2]
+                    if not p2_h.empty:
+                        p2_local_idx = p2_h.argmax()
+                        p2_val = float(p2_h.iloc[p2_local_idx])
+                        p2_idx = p1_idx + 4 + p2_local_idx
+                        if p2_val < p1_val:
+                            dx = p2_idx - p1_idx
+                            if dx > 0:
+                                slope = (p2_val - p1_val) / dx
+                                projected_res = p1_val + slope * (39 - p1_idx)
+                                r5 = float((w_h.iloc[-5:] - w_l.iloc[-5:]).mean())
+                                r20 = float((w_h.iloc[-20:] - w_l.iloc[-20:]).mean())
+                                contraction = r5 / r20 if r20 > 0 else 1.0
+                                if projected_res > float(w_l.iloc[-5:].min()):
+                                    descending_res = projected_res
+                                    wedge_contraction = contraction
         
         rs_return = (float(closes.iloc[-1]) / float(closes.iloc[-RS_LOOKBACK_DAYS]) - 1) * 100 if len(closes) > RS_LOOKBACK_DAYS and float(closes.iloc[-RS_LOOKBACK_DAYS]) > 0 else None
         
@@ -735,6 +762,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             "macro_high": macro_high, "macro_high_rsi": macro_high_rsi,
             "sos_thrust_peak_price": sos_peak_p, "sos_thrust_peak_rsi": sos_peak_rsi,
             "box_high": box_high, "box_low": box_low, 
+            "descending_res": descending_res, "wedge_contraction": wedge_contraction,
         }
         if rs_return is not None: returns_6m[symbol] = rs_return
 
@@ -897,10 +925,31 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
             if d_open and d_low and (d_low >= d_open * 0.999):
                 open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
 
-        # Use unified RS Tag formatter
         rs_tag = get_rs_and_sector_tag(symbol, c_rsi, momentum_state)
-            
         y_rsi = entry.get("yesterday_rsi")
+
+        # ----------------------------------------------------------------------
+        # SETUP 5: DESCENDING TRENDLINE CONTRACTION (Tight Wedge Breakout)
+        # ----------------------------------------------------------------------
+        desc_res = entry.get("descending_res")
+        wedge_contract = entry.get("wedge_contraction")
+
+        if alert_allowed(entry, "descending_wedge", price) and desc_res and wedge_contract:
+            sma_vol_20 = metrics.get("sma_vol_20")
+            is_tight = wedge_contract <= 0.70
+            is_breakout = price >= desc_res and prev_close <= (desc_res * 1.015)
+            expanding_vol = (volume >= 1.3 * sma_vol_20) if sma_vol_20 else False
+            
+            if is_tight and is_breakout and expanding_vol:
+                record_alert(entry, "descending_wedge", price)
+                send_telegram_message(
+                    f"📐 <b>{symbol}</b> Descending Wedge / Tight Contraction Breakout!\n"
+                    f"• <b>Current Price:</b> ₹{price:.2f} (Breaking Descending Resistance: ₹{desc_res:.2f})\n"
+                    f"• <b>Setup:</b> Right-Side Tightness (Volatility compressed to {int(wedge_contract*100)}% of avg)\n"
+                    f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Squeeze initiated)\n"
+                    f"• <b>Action:</b> High risk/reward entry as lower-highs trend is broken."
+                    f"{open_low_tag}{rs_tag}"
+                )
 
         # ----------------------------------------------------------------------
         # SETUP 4: RECTANGLE CONSOLIDATION BOUNCE (Electrosteel Pattern)
@@ -1338,7 +1387,6 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
             if d_open and d_low and (d_low >= d_open * 0.999):
                 open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
 
-        # Inject Unified RS & Sector Info
         rs_tag = get_rs_and_sector_tag(symbol, rsi, momentum_state)
 
         if price > entry["day_high"] and alert_allowed(entry, "price_high", price):
