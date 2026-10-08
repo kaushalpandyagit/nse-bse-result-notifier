@@ -12513,7 +12513,9 @@
       "sos_thrust_peak_rsi": 83.95425144147146,
       "box_high": 233.35000610351562,
       "box_low": 165.0,
-      "rs_rank": 83.4
+      "rs_rank": 83.4,
+      "near_high_17_22_last_alert": "2026-10-08T08:31:25.730233",
+      "near_high_17_22_last_price": 191.0
     },
     "SHILCTECH": {
       "sma50": 4120.752006835937,
