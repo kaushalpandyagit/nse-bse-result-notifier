@@ -308,8 +308,8 @@
       "box_high": 1167.300048828125,
       "box_low": 942.5,
       "rs_rank": 39.9,
-      "near_high_17_22_last_alert": "2026-10-08T03:48:19.901708",
-      "near_high_17_22_last_price": 1003.1500244140625
+      "near_high_17_22_last_alert": "2026-10-08T04:45:59.248746",
+      "near_high_17_22_last_price": 1015.25
     },
     "ACC": {
       "sma50": 1275.4200024414063,
@@ -1612,8 +1612,8 @@
       "box_high": 2629.800048828125,
       "box_low": 1936.0,
       "rs_rank": 96.7,
-      "near_high_17_22_last_alert": "2026-10-08T03:48:29.958399",
-      "near_high_17_22_last_price": 2118.0
+      "near_high_17_22_last_alert": "2026-10-08T04:46:09.804581",
+      "near_high_17_22_last_price": 2143.60009765625
     },
     "BALRAMCHIN": {
       "sma50": 670.0629956054687,
@@ -5450,8 +5450,8 @@
       "box_high": 398.20001220703125,
       "box_low": 302.3999938964844,
       "rs_rank": 71.5,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:00.753678",
-      "near_high_17_22_last_price": 315.1499938964844
+      "near_high_17_22_last_alert": "2026-10-08T04:46:41.009487",
+      "near_high_17_22_last_price": 311.8500061035156
     },
     "GPIL": {
       "sma50": 237.17739990234375,
@@ -5690,10 +5690,10 @@
       "box_high": 2455.0,
       "box_low": 1813.5999755859375,
       "rs_rank": 77.1,
-      "resistance_last_alert": "2026-10-08T03:49:02.653420",
-      "resistance_last_price": 2020.0,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:03.216013",
-      "near_high_17_22_last_price": 2020.0
+      "resistance_last_alert": "2026-10-08T04:46:43.439586",
+      "resistance_last_price": 1997.199951171875,
+      "near_high_17_22_last_alert": "2026-10-08T04:46:43.975103",
+      "near_high_17_22_last_price": 1997.199951171875
     },
     "GRSE": {
       "sma50": 2452.7980078125,
@@ -8502,8 +8502,8 @@
       "box_high": 115.68000030517578,
       "box_low": 100.87999725341797,
       "rs_rank": 43.6,
-      "resistance_last_alert": "2026-10-08T03:49:25.980998",
-      "resistance_last_price": 112.81999969482422,
+      "resistance_last_alert": "2026-10-08T04:47:08.536233",
+      "resistance_last_price": 111.22000122070312,
       "mtf_last_alert": "2026-10-08T03:49:26.521948",
       "mtf_last_price": 112.81999969482422
     },
@@ -9823,7 +9823,9 @@
       "zanger_last_alert": "2026-10-08T04:18:26.888337",
       "zanger_last_price": 81.94000244140625,
       "ema50_pullback_last_alert": "2026-10-08T04:18:27.470827",
-      "ema50_pullback_last_price": 81.94000244140625
+      "ema50_pullback_last_price": 81.94000244140625,
+      "near_high_17_22_last_alert": "2026-10-08T04:47:18.954285",
+      "near_high_17_22_last_price": 78.88999938964844
     },
     "NORTHARC": {
       "sma50": 294.7720013427734,
@@ -10335,7 +10337,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 643.9500122070312,
       "box_low": 476.1000061035156,
-      "rs_rank": 37.3
+      "rs_rank": 37.3,
+      "ema50_pullback_last_alert": "2026-10-08T04:47:23.588805",
+      "ema50_pullback_last_price": 530.0
     },
     "PGHL": {
       "sma50": 5753.49,
@@ -11190,8 +11194,8 @@
       "box_high": 1050.0,
       "box_low": 814.0499877929688,
       "rs_rank": 88.5,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:50.031420",
-      "near_high_17_22_last_price": 864.0
+      "near_high_17_22_last_alert": "2026-10-08T04:47:30.563145",
+      "near_high_17_22_last_price": 851.0
     },
     "RATNAMANI": {
       "sma50": 2583.32400390625,
@@ -12216,8 +12220,8 @@
       "box_high": 430.0,
       "box_low": 310.1499938964844,
       "rs_rank": 52.7,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:58.156546",
-      "near_high_17_22_last_price": 337.3999938964844,
+      "near_high_17_22_last_alert": "2026-10-08T04:47:39.595497",
+      "near_high_17_22_last_price": 352.0,
       "rectangle_bounce_last_alert": "2026-10-08T04:03:24.855428",
       "rectangle_bounce_last_price": 348.8999938964844,
       "mtf_last_alert": "2026-10-08T04:03:25.752079",
@@ -14449,7 +14453,9 @@
       "box_low": 400.6499938964844,
       "rs_rank": 25.3,
       "resistance_last_alert": "2026-10-08T04:32:50.758471",
-      "resistance_last_price": 482.54998779296875
+      "resistance_last_price": 482.54998779296875,
+      "mtf_last_alert": "2026-10-08T04:47:57.823616",
+      "mtf_last_price": 483.25
     },
     "TRIDENT": {
       "sma50": 23.78559989929199,
@@ -14925,7 +14931,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 282.29998779296875,
       "box_low": 196.8800048828125,
-      "rs_rank": 34.0
+      "rs_rank": 34.0,
+      "rectangle_bounce_last_alert": "2026-10-08T04:48:01.967735",
+      "rectangle_bounce_last_price": 202.89999389648438
     },
     "VESUVIUS": {
       "sma50": 420.5859991455078,
