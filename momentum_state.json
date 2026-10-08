@@ -1067,7 +1067,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 607.1500244140625,
       "box_low": 504.95001220703125,
-      "rs_rank": 81.0
+      "rs_rank": 81.0,
+      "near_high_17_22_last_alert": "2026-10-08T07:16:17.485112",
+      "near_high_17_22_last_price": 503.45001220703125
     },
     "ARVINDFASN": {
       "sma50": 434.8249987792969,
@@ -3095,7 +3097,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 854.2999877929688,
       "box_low": 706.75,
-      "rs_rank": 48.6
+      "rs_rank": 48.6,
+      "near_high_17_22_last_alert": "2026-10-08T07:16:36.403689",
+      "near_high_17_22_last_price": 713.7999877929688
     },
     "CHOLAHLDNG": {
       "sma50": 1513.7379931640626,
@@ -7500,8 +7504,8 @@
       "box_high": 606.9500122070312,
       "box_low": 465.70001220703125,
       "rs_rank": 76.3,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:18.192340",
-      "near_high_17_22_last_price": 495.6499938964844
+      "near_high_17_22_last_alert": "2026-10-08T07:17:17.346768",
+      "near_high_17_22_last_price": 489.5
     },
     "JSLL": {
       "sma50": 512.5759997558594,

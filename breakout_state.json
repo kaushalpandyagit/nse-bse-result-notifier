@@ -277,5 +277,17 @@
   "arb_AEROFLEX": {
     "spread_last_alert": "2026-10-08T04:20:39.094221",
     "spread_last_price": 2.9695620568848122
+  },
+  "GMBREW": {
+    "result_date": "2026-10-08T00:00:00",
+    "day_high": 1010.0,
+    "day_low": 920.0,
+    "baseline_rsi": 49.200340007941975,
+    "mcap_cr": 2150.92359372431,
+    "exchange": "NSE"
+  },
+  "arb_SILINV": {
+    "spread_last_alert": "2026-10-08T07:18:45.169556",
+    "spread_last_price": 2.6039983381843363
   }
 }
