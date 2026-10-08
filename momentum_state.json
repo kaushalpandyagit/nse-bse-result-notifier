@@ -14447,7 +14447,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 507.6499938964844,
       "box_low": 400.6499938964844,
-      "rs_rank": 25.3
+      "rs_rank": 25.3,
+      "resistance_last_alert": "2026-10-08T04:32:50.758471",
+      "resistance_last_price": 482.54998779296875
     },
     "TRIDENT": {
       "sma50": 23.78559989929199,
