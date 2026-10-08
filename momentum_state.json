@@ -3771,7 +3771,9 @@
       "box_low": 1269.0999755859375,
       "rs_rank": 64.7,
       "near_high_17_22_last_alert": "2026-10-08T03:48:46.504283",
-      "near_high_17_22_last_price": 1401.199951171875
+      "near_high_17_22_last_price": 1401.199951171875,
+      "mtf_last_alert": "2026-10-08T05:46:32.701141",
+      "mtf_last_price": 1405.199951171875
     },
     "DEEPAKNTR": {
       "sma50": 1665.4840161132813,
@@ -3805,7 +3807,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 1851.0,
       "box_low": 1473.0999755859375,
-      "rs_rank": 49.9
+      "rs_rank": 49.9,
+      "rectangle_bounce_last_alert": "2026-10-08T05:46:33.539799",
+      "rectangle_bounce_last_price": 1602.5999755859375
     },
     "DELHIVERY": {
       "sma50": 443.7470007324219,
@@ -4663,7 +4667,9 @@
       "box_low": 1141.0,
       "rs_rank": 13.3,
       "liquidity_sweep_last_alert": "2026-10-08T05:02:10.612768",
-      "liquidity_sweep_last_price": 1151.0
+      "liquidity_sweep_last_price": 1151.0,
+      "rectangle_bounce_last_alert": "2026-10-08T05:46:43.560846",
+      "rectangle_bounce_last_price": 1176.4000244140625
     },
     "ESCORTS": {
       "sma50": 2954.2819970703126,
@@ -6246,8 +6252,8 @@
       "box_high": 41495.0,
       "box_low": 33025.0,
       "rs_rank": 67.3,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:08.037981",
-      "near_high_17_22_last_price": 33195.0
+      "near_high_17_22_last_alert": "2026-10-08T05:46:57.117668",
+      "near_high_17_22_last_price": 32835.0
     },
     "ICIL": {
       "sma50": 434.66400146484375,
@@ -6383,7 +6389,9 @@
       "sos_thrust_peak_rsi": 77.5640234829556,
       "box_high": null,
       "box_low": null,
-      "rs_rank": 53.4
+      "rs_rank": 53.4,
+      "sos_pullback_curl_last_alert": "2026-10-08T05:46:58.612832",
+      "sos_pullback_curl_last_price": 69.30999755859375
     },
     "IGIL": {
       "sma50": 332.85400146484375,
@@ -8756,8 +8764,8 @@
       "box_high": null,
       "box_low": null,
       "rs_rank": 49.7,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:30.034589",
-      "near_high_17_22_last_price": 1814.0
+      "near_high_17_22_last_alert": "2026-10-08T05:47:18.546174",
+      "near_high_17_22_last_price": 1795.300048828125
     },
     "LXCHEM": {
       "sma50": 176.69440032958985,
@@ -11847,7 +11855,9 @@
       "sos_thrust_peak_rsi": 72.64709951977287,
       "box_high": 47.4900016784668,
       "box_low": 40.279998779296875,
-      "rs_rank": 47.1
+      "rs_rank": 47.1,
+      "sos_pullback_curl_last_alert": "2026-10-08T05:47:43.416368",
+      "sos_pullback_curl_last_price": 43.75
     },
     "SAMHI": {
       "sma50": 160.11039978027344,
@@ -12226,8 +12236,8 @@
       "box_high": 430.0,
       "box_low": 310.1499938964844,
       "rs_rank": 52.7,
-      "near_high_17_22_last_alert": "2026-10-08T04:47:39.595497",
-      "near_high_17_22_last_price": 352.0,
+      "near_high_17_22_last_alert": "2026-10-08T05:47:46.894617",
+      "near_high_17_22_last_price": 344.25,
       "rectangle_bounce_last_alert": "2026-10-08T05:03:43.323193",
       "rectangle_bounce_last_price": 343.8500061035156,
       "mtf_last_alert": "2026-10-08T05:03:43.934813",
@@ -15146,8 +15156,8 @@
       "box_high": 281.20001220703125,
       "box_low": 226.24000549316406,
       "rs_rank": 63.8,
-      "near_high_17_22_last_alert": "2026-10-08T04:03:52.089704",
-      "near_high_17_22_last_price": 243.55999755859375
+      "near_high_17_22_last_alert": "2026-10-08T05:48:10.212046",
+      "near_high_17_22_last_price": 241.0
     },
     "VMART": {
       "sma50": 804.0629992675781,
