@@ -479,7 +479,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 3700.0,
       "box_low": 3025.0,
-      "rs_rank": 80.0
+      "rs_rank": 80.0,
+      "near_high_17_22_last_alert": "2026-10-08T05:29:48.403815",
+      "near_high_17_22_last_price": 3099.0
     },
     "ADVENZYMES": {
       "sma50": 296.4479998779297,
@@ -4730,8 +4732,8 @@
       "box_high": 174.39999389648438,
       "box_low": 146.2100067138672,
       "rs_rank": 54.0,
-      "near_high_17_22_last_alert": "2026-10-08T03:48:54.349412",
-      "near_high_17_22_last_price": 147.39999389648438
+      "near_high_17_22_last_alert": "2026-10-08T05:30:23.134598",
+      "near_high_17_22_last_price": 145.86000061035156
     },
     "FIEMIND": {
       "sma50": 2100.1260034179686,
@@ -6484,8 +6486,8 @@
       "box_high": 705.0,
       "box_low": 548.0,
       "rs_rank": 73.4,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:10.161017",
-      "near_high_17_22_last_price": 585.0999755859375
+      "near_high_17_22_last_alert": "2026-10-08T05:30:38.043633",
+      "near_high_17_22_last_price": 579.0499877929688
     },
     "IIFLCAPS": {
       "sma50": 338.7969989013672,
@@ -9614,8 +9616,8 @@
       "box_high": 5813.0,
       "box_low": 4115.0,
       "rs_rank": 74.5,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:37.880498",
-      "near_high_17_22_last_price": 4762.7001953125
+      "near_high_17_22_last_alert": "2026-10-08T05:31:03.344834",
+      "near_high_17_22_last_price": 4818.2001953125
     },
     "NETWORK18": {
       "sma50": 27.87619987487793,
