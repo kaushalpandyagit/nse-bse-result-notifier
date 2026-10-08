@@ -284,7 +284,8 @@
     "day_low": 920.0,
     "baseline_rsi": 49.200340007941975,
     "mcap_cr": 2150.92359372431,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-08T07:29:36.064004"
   },
   "arb_SILINV": {
     "spread_last_alert": "2026-10-08T07:18:45.169556",
