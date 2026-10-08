@@ -68,8 +68,8 @@
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-08T04:01:29.866691",
-    "custom_last_price": 3303.699951171875
+    "custom_last_alert": "2026-10-08T06:01:22.477584",
+    "custom_last_price": 3260.60009765625
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -126,14 +126,14 @@
   "custom_alert_PHOENIXLTD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-08T04:01:34.266860",
-    "custom_last_price": 1816.300048828125
+    "custom_last_alert": "2026-10-08T06:01:27.983780",
+    "custom_last_price": 1791.800048828125
   },
   "custom_alert_PHOENIXLTD_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-08T04:01:34.972744",
-    "custom_last_price": 1816.300048828125
+    "custom_last_alert": "2026-10-08T06:01:28.683284",
+    "custom_last_price": 1791.800048828125
   },
   "custom_alert_ESFL_news": {
     "alerted": false,
@@ -257,7 +257,7 @@
     "baseline_rsi": 34.443371749715936,
     "mcap_cr": 9680.3387657,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-08T05:00:59.107305",
+    "rsi_up_last_alert": "2026-10-08T06:01:10.928857",
     "rsi_down_last_alert": "2026-10-08T03:45:47.937120"
   },
   "arb_RANEHOLDIN": {

@@ -34,8 +34,8 @@
       "box_high": 524.4500122070312,
       "box_low": 427.29998779296875,
       "rs_rank": 37.7,
-      "near_high_17_22_last_alert": "2026-10-08T03:48:17.708220",
-      "near_high_17_22_last_price": 452.5
+      "near_high_17_22_last_alert": "2026-10-08T06:01:29.925866",
+      "near_high_17_22_last_price": 446.1499938964844
     },
     "AARTIIND": {
       "sma50": 501.4760028076172,
@@ -896,8 +896,8 @@
       "box_high": 1279.0,
       "box_low": 1115.800048828125,
       "rs_rank": 33.1,
-      "near_high_17_22_last_alert": "2026-10-08T03:48:24.840378",
-      "near_high_17_22_last_price": 1164.300048828125
+      "near_high_17_22_last_alert": "2026-10-08T06:01:39.297558",
+      "near_high_17_22_last_price": 1151.9000244140625
     },
     "APOLLO": {
       "sma50": 395.1250018310547,
@@ -1271,7 +1271,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 1968.300048828125,
       "box_low": 1493.0,
-      "rs_rank": 85.0
+      "rs_rank": 85.0,
+      "near_high_17_22_last_alert": "2026-10-08T06:01:44.613559",
+      "near_high_17_22_last_price": 1784.0
     },
     "ATUL": {
       "sma50": 6389.68,
@@ -1614,8 +1616,8 @@
       "box_high": 2629.800048828125,
       "box_low": 1936.0,
       "rs_rank": 96.7,
-      "near_high_17_22_last_alert": "2026-10-08T04:46:09.804581",
-      "near_high_17_22_last_price": 2143.60009765625
+      "near_high_17_22_last_alert": "2026-10-08T06:01:48.835101",
+      "near_high_17_22_last_price": 2111.800048828125
     },
     "BALRAMCHIN": {
       "sma50": 670.0629956054687,
@@ -4630,8 +4632,8 @@
       "box_high": 81.8499984741211,
       "box_low": 64.62999725341797,
       "rs_rank": 52.5,
-      "near_high_17_22_last_alert": "2026-10-08T03:48:53.091547",
-      "near_high_17_22_last_price": 68.3499984741211
+      "near_high_17_22_last_alert": "2026-10-08T06:02:24.320481",
+      "near_high_17_22_last_price": 67.41000366210938
     },
     "ERIS": {
       "sma50": 1305.5439990234374,
@@ -7248,8 +7250,8 @@
       "box_high": 105.16999816894531,
       "box_low": 82.5199966430664,
       "rs_rank": 50.1,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:16.032119",
-      "near_high_17_22_last_price": 94.37000274658203
+      "near_high_17_22_last_alert": "2026-10-08T06:02:55.405365",
+      "near_high_17_22_last_price": 93.4000015258789
     },
     "JBMA": {
       "sma50": 613.1249963378906,
@@ -8834,8 +8836,8 @@
       "box_high": 381.54998779296875,
       "box_low": 303.3500061035156,
       "rs_rank": 61.7,
-      "near_high_17_22_last_alert": "2026-10-08T03:49:30.870141",
-      "near_high_17_22_last_price": 308.6000061035156
+      "near_high_17_22_last_alert": "2026-10-08T06:03:14.513122",
+      "near_high_17_22_last_price": 305.20001220703125
     },
     "MANORAMA": {
       "sma50": 1873.0780029296875,
@@ -9625,7 +9627,9 @@
       "box_low": 4115.0,
       "rs_rank": 74.5,
       "near_high_17_22_last_alert": "2026-10-08T05:31:03.344834",
-      "near_high_17_22_last_price": 4818.2001953125
+      "near_high_17_22_last_price": 4818.2001953125,
+      "rectangle_bounce_last_alert": "2026-10-08T06:03:23.500448",
+      "rectangle_bounce_last_price": 4739.5
     },
     "NETWORK18": {
       "sma50": 27.87619987487793,
@@ -13850,8 +13854,8 @@
       "box_high": 891.0,
       "box_low": 683.7000122070312,
       "rs_rank": 70.6,
-      "near_high_17_22_last_alert": "2026-10-08T03:50:09.919726",
-      "near_high_17_22_last_price": 715.6500244140625,
+      "near_high_17_22_last_alert": "2026-10-08T06:04:10.247455",
+      "near_high_17_22_last_price": 708.0,
       "rectangle_bounce_last_alert": "2026-10-08T05:17:54.903239",
       "rectangle_bounce_last_price": 710.7000122070312
     },
@@ -15501,7 +15505,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 794.5,
       "box_low": 634.9000244140625,
-      "rs_rank": 82.4
+      "rs_rank": 82.4,
+      "near_high_17_22_last_alert": "2026-10-08T06:04:28.633538",
+      "near_high_17_22_last_price": 659.1500244140625
     },
     "WHIRLPOOL": {
       "sma50": 805.5050048828125,
@@ -15774,8 +15780,8 @@
       "box_high": 611.8499755859375,
       "box_low": 482.0,
       "rs_rank": 46.2,
-      "near_high_17_22_last_alert": "2026-10-08T04:03:59.500644",
-      "near_high_17_22_last_price": 504.1000061035156
+      "near_high_17_22_last_alert": "2026-10-08T06:04:32.587448",
+      "near_high_17_22_last_price": 497.8500061035156
     }
   },
   "sector_rsis": {
