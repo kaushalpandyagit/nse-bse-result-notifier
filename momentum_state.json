@@ -857,7 +857,9 @@
       "box_low": 267.79998779296875,
       "rs_rank": 49.2,
       "resistance_last_alert": "2026-10-08T03:48:23.981531",
-      "resistance_last_price": 301.6499938964844
+      "resistance_last_price": 301.6499938964844,
+      "near_high_17_22_last_alert": "2026-10-08T04:16:14.950073",
+      "near_high_17_22_last_price": 298.79998779296875
     },
     "ANURAS": {
       "sma50": 1211.9940112304687,
@@ -9817,7 +9819,11 @@
       "mtf_last_alert": "2026-10-08T03:49:39.879109",
       "mtf_last_price": 80.77999877929688,
       "resistance_last_alert": "2026-10-08T04:03:03.333986",
-      "resistance_last_price": 83.01000213623047
+      "resistance_last_price": 83.01000213623047,
+      "zanger_last_alert": "2026-10-08T04:18:26.888337",
+      "zanger_last_price": 81.94000244140625,
+      "ema50_pullback_last_alert": "2026-10-08T04:18:27.470827",
+      "ema50_pullback_last_price": 81.94000244140625
     },
     "NORTHARC": {
       "sma50": 294.7720013427734,
@@ -12217,7 +12223,11 @@
       "mtf_last_alert": "2026-10-08T04:03:25.752079",
       "mtf_last_price": 348.8999938964844,
       "ema50_pullback_last_alert": "2026-10-08T04:03:26.406060",
-      "ema50_pullback_last_price": 348.8999938964844
+      "ema50_pullback_last_price": 348.8999938964844,
+      "zanger_last_alert": "2026-10-08T04:19:02.960975",
+      "zanger_last_price": 355.3500061035156,
+      "resistance_last_alert": "2026-10-08T04:19:03.580621",
+      "resistance_last_price": 355.3500061035156
     },
     "SENORES": {
       "sma50": 1427.0959985351562,
