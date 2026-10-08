@@ -186,8 +186,8 @@
     "spread_last_price": 5.27448869752422
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-07T04:18:15.478208",
-    "spread_last_price": 2.9059472971565437
+    "spread_last_alert": "2026-10-08T09:33:20.819689",
+    "spread_last_price": 3.196808510638293
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-07T03:51:38.976110",
@@ -294,5 +294,13 @@
   "arb_SILINV": {
     "spread_last_alert": "2026-10-08T08:18:24.650310",
     "spread_last_price": 3.663247561977825
+  },
+  "TATACOMM": {
+    "result_date": "2026-10-08T00:00:00",
+    "day_high": 1690.9000244140625,
+    "day_low": 1632.300048828125,
+    "baseline_rsi": 36.74779989508988,
+    "mcap_cr": 46839.5711449,
+    "exchange": "NSE"
   }
 }

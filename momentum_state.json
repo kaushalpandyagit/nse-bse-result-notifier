@@ -4754,8 +4754,8 @@
       "box_high": 174.39999389648438,
       "box_low": 146.2100067138672,
       "rs_rank": 54.0,
-      "near_high_17_22_last_alert": "2026-10-08T06:30:27.125317",
-      "near_high_17_22_last_price": 144.1699981689453
+      "near_high_17_22_last_alert": "2026-10-08T09:30:51.026659",
+      "near_high_17_22_last_price": 145.91000366210938
     },
     "FIEMIND": {
       "sma50": 2100.1260034179686,
@@ -6410,8 +6410,8 @@
       "box_high": null,
       "box_low": null,
       "rs_rank": 53.4,
-      "sos_pullback_curl_last_alert": "2026-10-08T06:47:04.541880",
-      "sos_pullback_curl_last_price": 67.83000183105469
+      "sos_pullback_curl_last_alert": "2026-10-08T09:31:10.726309",
+      "sos_pullback_curl_last_price": 67.0
     },
     "IGIL": {
       "sma50": 332.85400146484375,
@@ -7581,7 +7581,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 143.39999389648438,
       "box_low": 109.62000274658203,
-      "rs_rank": 24.0
+      "rs_rank": 24.0,
+      "rectangle_bounce_last_alert": "2026-10-08T09:31:25.034176",
+      "rectangle_bounce_last_price": 113.0
     },
     "JUBLFOOD": {
       "sma50": 480.5629998779297,
@@ -8718,8 +8720,8 @@
       "box_high": 490.70001220703125,
       "box_low": 368.0,
       "rs_rank": 47.9,
-      "near_high_17_22_last_alert": "2026-10-08T06:31:00.368239",
-      "near_high_17_22_last_price": 410.25
+      "near_high_17_22_last_alert": "2026-10-08T09:31:38.460525",
+      "near_high_17_22_last_price": 405.6000061035156
     },
     "LUMAXIND": {
       "sma50": 5822.08,
@@ -11234,8 +11236,8 @@
       "box_high": 1050.0,
       "box_low": 814.0499877929688,
       "rs_rank": 88.5,
-      "near_high_17_22_last_alert": "2026-10-08T06:31:21.956553",
-      "near_high_17_22_last_price": 841.4500122070312
+      "near_high_17_22_last_alert": "2026-10-08T09:32:06.755026",
+      "near_high_17_22_last_price": 829.0999755859375
     },
     "RATNAMANI": {
       "sma50": 2583.32400390625,
