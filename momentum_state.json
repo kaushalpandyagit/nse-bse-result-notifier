@@ -3405,7 +3405,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 1634.0,
       "box_low": 1209.0999755859375,
-      "rs_rank": 46.0
+      "rs_rank": 46.0,
+      "near_high_17_22_last_alert": "2026-10-08T08:16:28.326726",
+      "near_high_17_22_last_price": 1275.4000244140625
     },
     "CROMPTON": {
       "sma50": 233.85519958496093,
@@ -6786,8 +6788,8 @@
       "box_high": 1220.9000244140625,
       "box_low": 1032.5,
       "rs_rank": 73.2,
-      "near_high_17_22_last_alert": "2026-10-08T05:02:35.759136",
-      "near_high_17_22_last_price": 1064.0
+      "near_high_17_22_last_alert": "2026-10-08T08:16:55.933174",
+      "near_high_17_22_last_price": 1052.5999755859375
     },
     "INOXINDIA": {
       "sma50": 2056.73599609375,
@@ -7369,7 +7371,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 442.0,
       "box_low": 365.0,
-      "rs_rank": 47.5
+      "rs_rank": 47.5,
+      "near_high_17_22_last_alert": "2026-10-08T08:17:01.420309",
+      "near_high_17_22_last_price": 369.0
     },
     "JKTYRE": {
       "sma50": 368.3710009765625,
@@ -12115,7 +12119,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 574.5,
       "box_low": 470.3999938964844,
-      "rs_rank": 86.1
+      "rs_rank": 86.1,
+      "near_high_17_22_last_alert": "2026-10-08T08:17:39.284765",
+      "near_high_17_22_last_price": 484.5
     },
     "SBFC": {
       "sma50": 93.09940032958984,
@@ -12745,7 +12751,9 @@
       "sos_thrust_peak_rsi": null,
       "box_high": 898.0,
       "box_low": 709.7999877929688,
-      "rs_rank": 24.4
+      "rs_rank": 24.4,
+      "rectangle_bounce_last_alert": "2026-10-08T08:17:44.357418",
+      "rectangle_bounce_last_price": 721.4500122070312
     },
     "SJS": {
       "sma50": 2368.2380078125,
@@ -13874,8 +13882,8 @@
       "box_high": 891.0,
       "box_low": 683.7000122070312,
       "rs_rank": 70.6,
-      "near_high_17_22_last_alert": "2026-10-08T06:04:10.247455",
-      "near_high_17_22_last_price": 708.0,
+      "near_high_17_22_last_alert": "2026-10-08T08:17:54.208351",
+      "near_high_17_22_last_price": 700.8499755859375,
       "rectangle_bounce_last_alert": "2026-10-08T05:17:54.903239",
       "rectangle_bounce_last_price": 710.7000122070312
     },
