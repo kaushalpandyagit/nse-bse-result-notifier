@@ -36,8 +36,8 @@
       "descending_res": 457.13123321533203,
       "wedge_contraction": 0.9017343121985806,
       "rs_rank": 34.6,
-      "near_high_17_22_last_alert": "2026-10-09T03:48:34.855411",
-      "near_high_17_22_last_price": 449.6000061035156
+      "near_high_17_22_last_alert": "2026-10-09T09:31:48.605501",
+      "near_high_17_22_last_price": 444.6499938964844
     },
     "AARTIIND": {
       "sma50": 501.4570025634766,
@@ -910,8 +910,8 @@
       "descending_res": 1257.8834838867188,
       "wedge_contraction": 0.6252173410122513,
       "rs_rank": 22.2,
-      "near_high_17_22_last_alert": "2026-10-09T04:29:59.421745",
-      "near_high_17_22_last_price": 1109.0
+      "near_high_17_22_last_alert": "2026-10-09T09:31:55.109217",
+      "near_high_17_22_last_price": 1122.5
     },
     "APOLLO": {
       "sma50": 394.0480023193359,
@@ -1498,8 +1498,8 @@
       "descending_res": 618.9900634765625,
       "wedge_contraction": 1.277965565442589,
       "rs_rank": 69.1,
-      "near_high_17_22_last_alert": "2026-10-09T07:01:27.832483",
-      "near_high_17_22_last_price": 578.5
+      "near_high_17_22_last_alert": "2026-10-09T09:32:00.547665",
+      "near_high_17_22_last_price": 584.75
     },
     "AWL": {
       "sma50": 188.76719970703124,
@@ -6761,7 +6761,9 @@
       "box_low": 139.1999969482422,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 28.5
+      "rs_rank": 28.5,
+      "rectangle_bounce_last_alert": "2026-10-09T09:32:40.291531",
+      "rectangle_bounce_last_price": 146.35000610351562
     },
     "IIFL": {
       "sma50": 620.7630029296874,
@@ -10374,8 +10376,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 49.7,
-      "near_high_17_22_last_alert": "2026-10-09T03:50:03.583578",
-      "near_high_17_22_last_price": 76.94000244140625
+      "near_high_17_22_last_alert": "2026-10-09T09:33:08.248007",
+      "near_high_17_22_last_price": 77.83999633789062
     },
     "NORTHARC": {
       "sma50": 294.13700134277343,
@@ -11170,8 +11172,8 @@
       "descending_res": 617.4153771033654,
       "wedge_contraction": 0.8869048210795357,
       "rs_rank": 39.9,
-      "near_high_17_22_last_alert": "2026-10-09T08:03:12.682283",
-      "near_high_17_22_last_price": 593.6500244140625
+      "near_high_17_22_last_alert": "2026-10-09T09:33:14.577081",
+      "near_high_17_22_last_price": 600.6500244140625
     },
     "POLYMED": {
       "sma50": 1720.0059936523437,
@@ -14470,8 +14472,8 @@
       "descending_res": 131.99000549316406,
       "wedge_contraction": 0.9445388824678903,
       "rs_rank": 33.1,
-      "liquidity_sweep_last_alert": "2026-10-09T07:32:28.424719",
-      "liquidity_sweep_last_price": 116.47000122070312,
+      "liquidity_sweep_last_alert": "2026-10-09T09:33:40.037903",
+      "liquidity_sweep_last_price": 117.68000030517578,
       "rectangle_bounce_last_alert": "2026-10-09T09:03:05.015729",
       "rectangle_bounce_last_price": 118.75
     },
@@ -14911,7 +14913,9 @@
       "box_low": 102.0999984741211,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 57.3
+      "rs_rank": 57.3,
+      "rectangle_bounce_last_alert": "2026-10-09T09:33:43.696488",
+      "rectangle_bounce_last_price": 110.79000091552734
     },
     "THANGAMAYL": {
       "sma50": 5222.16,
