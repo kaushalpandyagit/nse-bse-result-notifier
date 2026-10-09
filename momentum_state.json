@@ -326,8 +326,8 @@
       "descending_res": 1078.6500244140625,
       "wedge_contraction": 0.8650969563386909,
       "rs_rank": 47.7,
-      "near_high_17_22_last_alert": "2026-10-09T03:48:37.347710",
-      "near_high_17_22_last_price": 1004.3499755859375
+      "near_high_17_22_last_alert": "2026-10-09T06:29:50.831096",
+      "near_high_17_22_last_price": 991.9500122070312
     },
     "ACC": {
       "sma50": 1276.1,
@@ -1678,8 +1678,8 @@
       "descending_res": 2305.0105751439146,
       "wedge_contraction": 1.4532036835412305,
       "rs_rank": 97.8,
-      "near_high_17_22_last_alert": "2026-10-09T04:46:22.027210",
-      "near_high_17_22_last_price": 2088.300048828125
+      "near_high_17_22_last_alert": "2026-10-09T06:30:03.384794",
+      "near_high_17_22_last_price": 2062.699951171875
     },
     "BALRAMCHIN": {
       "sma50": 668.7599963378906,
@@ -2331,7 +2331,9 @@
       "box_low": 267.04998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 5.2
+      "rs_rank": 5.2,
+      "rectangle_bounce_last_alert": "2026-10-09T06:30:09.776278",
+      "rectangle_bounce_last_price": 282.75
     },
     "CAMPUS": {
       "sma50": 217.0449996948242,
@@ -5992,8 +5994,8 @@
       "rs_rank": 77.1,
       "resistance_last_alert": "2026-10-09T03:49:22.446933",
       "resistance_last_price": 2011.5,
-      "near_high_17_22_last_alert": "2026-10-09T03:49:22.930369",
-      "near_high_17_22_last_price": 2011.5
+      "near_high_17_22_last_alert": "2026-10-09T06:30:43.769548",
+      "near_high_17_22_last_price": 1983.0
     },
     "GRSE": {
       "sma50": 2452.9600048828124,
@@ -7151,7 +7153,9 @@
       "box_low": 62.43000030517578,
       "descending_res": 66.71000671386719,
       "wedge_contraction": 0.9922903000445261,
-      "rs_rank": 5.4
+      "rs_rank": 5.4,
+      "rectangle_bounce_last_alert": "2026-10-09T06:30:54.798586",
+      "rectangle_bounce_last_price": 64.94000244140625
     },
     "INTELLECT": {
       "sma50": 672.945,
@@ -11808,8 +11812,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 87.6,
-      "near_high_17_22_last_alert": "2026-10-09T03:50:14.600631",
-      "near_high_17_22_last_price": 844.1500244140625
+      "near_high_17_22_last_alert": "2026-10-09T06:31:36.664555",
+      "near_high_17_22_last_price": 834.1500244140625
     },
     "RATNAMANI": {
       "sma50": 2572.4580029296876,
@@ -15539,7 +15543,9 @@
       "box_low": 61.25,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 50.5
+      "rs_rank": 50.5,
+      "near_high_17_22_last_alert": "2026-10-09T06:32:10.162591",
+      "near_high_17_22_last_price": 61.349998474121094
     },
     "UNIMECH": {
       "sma50": 1534.072001953125,
@@ -16008,8 +16014,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 62.1,
-      "near_high_17_22_last_alert": "2026-10-09T03:50:46.349671",
-      "near_high_17_22_last_price": 237.10000610351562
+      "near_high_17_22_last_alert": "2026-10-09T06:32:14.690396",
+      "near_high_17_22_last_price": 233.4199981689453
     },
     "VMART": {
       "sma50": 804.2209997558593,
