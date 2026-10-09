@@ -945,7 +945,9 @@
       "box_low": 361.3999938964844,
       "descending_res": 421.83890109592016,
       "wedge_contraction": 0.7723976813687928,
-      "rs_rank": 91.9
+      "rs_rank": 91.9,
+      "near_high_17_22_last_alert": "2026-10-09T04:01:29.113263",
+      "near_high_17_22_last_price": 386.20001220703125
     },
     "APOLLOTYRE": {
       "sma50": 424.83000122070314,
@@ -1305,7 +1307,9 @@
       "box_low": 1493.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 83.9
+      "rs_rank": 83.9,
+      "near_high_17_22_last_alert": "2026-10-09T04:01:34.105051",
+      "near_high_17_22_last_price": 1765.0999755859375
     },
     "ATUL": {
       "sma50": 6404.13,
@@ -8729,7 +8733,9 @@
       "box_low": null,
       "descending_res": 1499.2222222222222,
       "wedge_contraction": 1.051901068569215,
-      "rs_rank": 83.7
+      "rs_rank": 83.7,
+      "near_high_17_22_last_alert": "2026-10-09T04:03:05.561403",
+      "near_high_17_22_last_price": 1383.4000244140625
     },
     "KSB": {
       "sma50": 808.2189965820312,
@@ -8947,7 +8953,9 @@
       "box_low": 485.45001220703125,
       "descending_res": 574.2250010172526,
       "wedge_contraction": 0.8352759548856045,
-      "rs_rank": 43.6
+      "rs_rank": 43.6,
+      "mtf_last_alert": "2026-10-09T04:03:08.964998",
+      "mtf_last_price": 548.5
     },
     "LLOYDSENGG": {
       "sma50": 90.01759994506835,
@@ -9787,7 +9795,9 @@
       "box_low": 570.0,
       "descending_res": 712.3900512695312,
       "wedge_contraction": 0.862731799752954,
-      "rs_rank": 90.2
+      "rs_rank": 90.2,
+      "near_high_17_22_last_alert": "2026-10-09T04:03:18.305335",
+      "near_high_17_22_last_price": 660.3499755859375
     },
     "MSUMI": {
       "sma50": 37.236199951171876,
@@ -12931,7 +12941,9 @@
       "box_low": 1279.699951171875,
       "descending_res": 1410.1818181818182,
       "wedge_contraction": 1.0764879633501991,
-      "rs_rank": 91.7
+      "rs_rank": 91.7,
+      "near_high_17_22_last_alert": "2026-10-09T04:03:56.613769",
+      "near_high_17_22_last_price": 1320.699951171875
     },
     "SFL": {
       "sma50": 667.3949987792969,
