@@ -3566,8 +3566,8 @@
       "descending_res": 1345.8247985839844,
       "wedge_contraction": 0.8710808133084058,
       "rs_rank": 46.4,
-      "near_high_17_22_last_alert": "2026-10-09T04:46:39.679985",
-      "near_high_17_22_last_price": 1278.5999755859375
+      "near_high_17_22_last_alert": "2026-10-09T08:30:17.488018",
+      "near_high_17_22_last_price": 1292.199951171875
     },
     "CROMPTON": {
       "sma50": 234.4093994140625,
@@ -9278,8 +9278,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 62.7,
-      "near_high_17_22_last_alert": "2026-10-09T06:16:46.889372",
-      "near_high_17_22_last_price": 309.0
+      "near_high_17_22_last_alert": "2026-10-09T08:31:02.539666",
+      "near_high_17_22_last_price": 312.29998779296875
     },
     "MANORAMA": {
       "sma50": 1860.4000024414063,
@@ -10261,7 +10261,9 @@
       "box_low": 439.1000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 39.2
+      "rs_rank": 39.2,
+      "rectangle_bounce_last_alert": "2026-10-09T08:31:10.103404",
+      "rectangle_bounce_last_price": 450.0
     },
     "NFL": {
       "sma50": 69.00640022277832,
@@ -11818,8 +11820,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 87.6,
-      "near_high_17_22_last_alert": "2026-10-09T06:31:36.664555",
-      "near_high_17_22_last_price": 834.1500244140625
+      "near_high_17_22_last_alert": "2026-10-09T08:31:21.904612",
+      "near_high_17_22_last_price": 859.8499755859375
     },
     "RATNAMANI": {
       "sma50": 2572.4580029296876,
@@ -12939,7 +12941,9 @@
       "box_low": 310.1499938964844,
       "descending_res": 353.75,
       "wedge_contraction": 1.0714583819760133,
-      "rs_rank": 44.4
+      "rs_rank": 44.4,
+      "near_high_17_22_last_alert": "2026-10-09T08:31:31.061787",
+      "near_high_17_22_last_price": 336.29998779296875
     },
     "SENORES": {
       "sma50": 1421.9759985351564,
@@ -13194,8 +13198,8 @@
       "descending_res": 186.2050018310547,
       "wedge_contraction": 0.9665661773620444,
       "rs_rank": 76.7,
-      "near_high_17_22_last_alert": "2026-10-09T06:47:36.194261",
-      "near_high_17_22_last_price": 185.5800018310547
+      "near_high_17_22_last_alert": "2026-10-09T08:31:33.785458",
+      "near_high_17_22_last_price": 187.5
     },
     "SHILCTECH": {
       "sma50": 4136.54201171875,
