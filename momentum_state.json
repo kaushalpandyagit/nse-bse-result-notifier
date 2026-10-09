@@ -909,7 +909,9 @@
       "box_low": 1100.0999755859375,
       "descending_res": 1257.8834838867188,
       "wedge_contraction": 0.6252173410122513,
-      "rs_rank": 22.2
+      "rs_rank": 22.2,
+      "near_high_17_22_last_alert": "2026-10-09T04:29:59.421745",
+      "near_high_17_22_last_price": 1109.0
     },
     "APOLLO": {
       "sma50": 394.0480023193359,
@@ -2871,7 +2873,9 @@
       "box_low": 314.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 23.5
+      "rs_rank": 23.5,
+      "mtf_last_alert": "2026-10-09T04:30:24.584115",
+      "mtf_last_price": 375.75
     },
     "CEMPRO": {
       "sma50": 1262.5200024414062,
@@ -13855,7 +13859,9 @@
       "box_low": 3152.199951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 84.1
+      "rs_rank": 84.1,
+      "near_high_17_22_last_alert": "2026-10-09T04:32:42.618768",
+      "near_high_17_22_last_price": 3238.60009765625
     },
     "SUBROS": {
       "sma50": 733.4389978027343,
