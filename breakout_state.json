@@ -229,7 +229,9 @@
   },
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "custom_last_alert": "2026-10-09T10:15:57.614717",
+    "custom_last_price": 192.0
   },
   "LCCPROJECT": {
     "result_date": "2026-10-07T00:00:00",
