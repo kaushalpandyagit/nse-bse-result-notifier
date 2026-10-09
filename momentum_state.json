@@ -326,8 +326,8 @@
       "descending_res": 1078.6500244140625,
       "wedge_contraction": 0.8650969563386909,
       "rs_rank": 47.7,
-      "near_high_17_22_last_alert": "2026-10-09T06:29:50.831096",
-      "near_high_17_22_last_price": 991.9500122070312
+      "near_high_17_22_last_alert": "2026-10-09T08:16:03.215489",
+      "near_high_17_22_last_price": 1004.0
     },
     "ACC": {
       "sma50": 1276.1,
@@ -3929,7 +3929,9 @@
       "box_low": 180.0,
       "descending_res": 205.5,
       "wedge_contraction": 1.1367947638848759,
-      "rs_rank": 50.3
+      "rs_rank": 50.3,
+      "sos_pullback_curl_last_alert": "2026-10-09T08:16:52.264498",
+      "sos_pullback_curl_last_price": 206.85000610351562
     },
     "DEEPAKFERT": {
       "sma50": 1425.1400024414063,
@@ -4003,7 +4005,9 @@
       "box_low": 1473.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 59.3
+      "rs_rank": 59.3,
+      "rectangle_bounce_last_alert": "2026-10-09T08:16:53.974833",
+      "rectangle_bounce_last_price": 1619.5
     },
     "DELHIVERY": {
       "sma50": 445.7980004882813,
@@ -11380,8 +11384,8 @@
       "descending_res": 821.7857142857143,
       "wedge_contraction": 1.1410413242118873,
       "rs_rank": 59.0,
-      "near_high_17_22_last_alert": "2026-10-09T04:47:48.505607",
-      "near_high_17_22_last_price": 651.5499877929688
+      "near_high_17_22_last_alert": "2026-10-09T08:18:34.547825",
+      "near_high_17_22_last_price": 660.8499755859375
     },
     "PRIVISCL": {
       "sma50": 3512.0800146484376,
@@ -14568,8 +14572,8 @@
       "descending_res": 3506.450927734375,
       "wedge_contraction": 0.936861328476489,
       "rs_rank": 2.0,
-      "rectangle_bounce_last_alert": "2026-10-09T06:03:44.337688",
-      "rectangle_bounce_last_price": 3109.0
+      "rectangle_bounce_last_alert": "2026-10-09T08:19:18.080949",
+      "rectangle_bounce_last_price": 3143.0
     },
     "TATAINVEST": {
       "sma50": 655.3910009765625,
@@ -14644,8 +14648,8 @@
       "rs_rank": 74.3,
       "near_high_17_22_last_alert": "2026-10-09T06:17:17.259404",
       "near_high_17_22_last_price": 721.5,
-      "rectangle_bounce_last_alert": "2026-10-09T04:48:15.076245",
-      "rectangle_bounce_last_price": 732.0499877929688
+      "rectangle_bounce_last_alert": "2026-10-09T08:19:19.672305",
+      "rectangle_bounce_last_price": 722.0
     },
     "TBOTEK": {
       "sma50": 1667.3639892578126,
