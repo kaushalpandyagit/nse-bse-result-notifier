@@ -359,5 +359,13 @@
     "baseline_rsi": 32.38122918856408,
     "mcap_cr": 13190.88524150978,
     "exchange": "NSE"
+  },
+  "CORDELIA": {
+    "result_date": "2026-10-09T00:00:00",
+    "day_high": 106.5,
+    "day_low": 100.20999908447266,
+    "baseline_rsi": 45.83891744745961,
+    "mcap_cr": 7310.401195163673,
+    "exchange": "NSE"
   }
 }
