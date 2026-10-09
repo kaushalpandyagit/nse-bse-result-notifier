@@ -1314,8 +1314,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 83.9,
-      "near_high_17_22_last_alert": "2026-10-09T04:01:34.105051",
-      "near_high_17_22_last_price": 1765.0999755859375
+      "near_high_17_22_last_alert": "2026-10-09T05:29:55.324831",
+      "near_high_17_22_last_price": 1783.300048828125
     },
     "ATUL": {
       "sma50": 6404.13,
@@ -7477,7 +7477,9 @@
       "box_low": 57.099998474121094,
       "descending_res": 63.575016021728516,
       "wedge_contraction": 0.9500807551749118,
-      "rs_rank": 54.2
+      "rs_rank": 54.2,
+      "mtf_last_alert": "2026-10-09T05:30:52.474240",
+      "mtf_last_price": 68.72000122070312
     },
     "JAINREC": {
       "sma50": 294.29700073242185,
