@@ -7659,7 +7659,9 @@
       "box_low": 246.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 77.3
+      "rs_rank": 77.3,
+      "near_high_17_22_last_alert": "2026-10-09T05:17:01.577559",
+      "near_high_17_22_last_price": 265.3999938964844
     },
     "JKPAPER": {
       "sma50": 396.49699829101564,
@@ -9810,8 +9812,8 @@
       "descending_res": 712.3900512695312,
       "wedge_contraction": 0.862731799752954,
       "rs_rank": 90.2,
-      "near_high_17_22_last_alert": "2026-10-09T04:03:18.305335",
-      "near_high_17_22_last_price": 660.3499755859375
+      "near_high_17_22_last_alert": "2026-10-09T05:17:20.159848",
+      "near_high_17_22_last_price": 668.0999755859375
     },
     "MSUMI": {
       "sma50": 37.236199951171876,
