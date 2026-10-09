@@ -4730,8 +4730,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 77.8,
-      "near_high_17_22_last_alert": "2026-10-09T03:49:11.390072",
-      "near_high_17_22_last_price": 303.79998779296875
+      "near_high_17_22_last_alert": "2026-10-09T09:46:51.698314",
+      "near_high_17_22_last_price": 300.0
     },
     "ENGINERSIN": {
       "sma50": 267.2564010620117,
@@ -4986,8 +4986,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 45.5,
-      "near_high_17_22_last_alert": "2026-10-09T03:49:13.981130",
-      "near_high_17_22_last_price": 145.0500030517578
+      "near_high_17_22_last_alert": "2026-10-09T09:46:55.104951",
+      "near_high_17_22_last_price": 146.52999877929688
     },
     "FIEMIND": {
       "sma50": 2117.232004394531,
@@ -5710,8 +5710,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 47.5,
-      "near_high_17_22_last_alert": "2026-10-09T09:01:57.806456",
-      "near_high_17_22_last_price": 209.69000244140625
+      "near_high_17_22_last_alert": "2026-10-09T09:47:03.967765",
+      "near_high_17_22_last_price": 206.1199951171875
     },
     "GOLDIAM": {
       "sma50": 343.9439984130859,
@@ -11390,8 +11390,10 @@
       "descending_res": 821.7857142857143,
       "wedge_contraction": 1.1410413242118873,
       "rs_rank": 59.0,
-      "near_high_17_22_last_alert": "2026-10-09T08:18:34.547825",
-      "near_high_17_22_last_price": 660.8499755859375
+      "near_high_17_22_last_alert": "2026-10-09T09:48:09.941239",
+      "near_high_17_22_last_price": 671.7999877929688,
+      "rectangle_bounce_last_alert": "2026-10-09T09:48:09.347816",
+      "rectangle_bounce_last_price": 671.7999877929688
     },
     "PRIVISCL": {
       "sma50": 3512.0800146484376,
@@ -12547,7 +12549,9 @@
       "box_low": 40.279998779296875,
       "descending_res": 46.0049934387207,
       "wedge_contraction": 0.971722875946891,
-      "rs_rank": 45.1
+      "rs_rank": 45.1,
+      "sos_pullback_curl_last_alert": "2026-10-09T09:48:23.125802",
+      "sos_pullback_curl_last_price": 44.0
     },
     "SAMHI": {
       "sma50": 160.38579956054687,
@@ -12839,7 +12843,9 @@
       "wedge_contraction": null,
       "rs_rank": 30.3,
       "sos_pullback_curl_last_alert": "2026-10-09T09:17:48.459700",
-      "sos_pullback_curl_last_price": 84.33999633789062
+      "sos_pullback_curl_last_price": 84.33999633789062,
+      "rectangle_bounce_last_alert": "2026-10-09T09:48:26.789484",
+      "rectangle_bounce_last_price": 84.4000015258789
     },
     "SCHNEIDER": {
       "sma50": 1251.6840014648437,

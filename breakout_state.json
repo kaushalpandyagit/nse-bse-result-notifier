@@ -74,8 +74,8 @@
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-09T04:46:05.147846",
-    "custom_last_price": 119.63999938964844
+    "custom_last_alert": "2026-10-09T09:45:53.341322",
+    "custom_last_price": 117.62000274658203
   },
   "custom_alert_LAKSHYA_price": {
     "alerted": false,
@@ -206,8 +206,8 @@
     "spread_last_price": 3.0173146277449443
   },
   "arb_VHL": {
-    "spread_last_alert": "2026-10-09T03:51:11.737768",
-    "spread_last_price": 3.0345800988002827
+    "spread_last_alert": "2026-10-09T09:49:16.941412",
+    "spread_last_price": 2.576309157098852
   },
   "arb_ASHAPURMIN": {
     "spread_last_alert": "2026-10-07T03:51:25.888072",
