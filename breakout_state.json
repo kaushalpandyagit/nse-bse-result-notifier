@@ -128,8 +128,8 @@
   "custom_alert_PHOENIXLTD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-09T03:46:02.875110",
-    "custom_last_price": 1799.199951171875
+    "custom_last_alert": "2026-10-09T06:01:10.284989",
+    "custom_last_price": 1820.199951171875
   },
   "custom_alert_PHOENIXLTD_rsi": {
     "alerted": false,
@@ -325,7 +325,9 @@
     "mcap_cr": 70.1028709,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-09T04:45:55.368986",
-    "rsi_down_last_alert": "2026-10-09T05:15:47.937272"
+    "rsi_down_last_alert": "2026-10-09T06:00:55.218798",
+    "price_low_last_alert": "2026-10-09T06:00:54.616930",
+    "price_low_last_price": 35.959999084472656
   },
   "arb_AVL": {
     "spread_last_alert": "2026-10-09T03:51:03.116065",

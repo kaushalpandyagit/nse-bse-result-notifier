@@ -3816,8 +3816,8 @@
       "descending_res": 4999.7536057692305,
       "wedge_contraction": 0.6360804537692342,
       "rs_rank": 70.8,
-      "near_high_17_22_last_alert": "2026-10-09T03:49:04.745034",
-      "near_high_17_22_last_price": 4079.5
+      "near_high_17_22_last_alert": "2026-10-09T06:01:50.806171",
+      "near_high_17_22_last_price": 4122.0
     },
     "DBL": {
       "sma50": 414.8280017089844,
@@ -14557,7 +14557,9 @@
       "box_low": 2996.0,
       "descending_res": 3506.450927734375,
       "wedge_contraction": 0.936861328476489,
-      "rs_rank": 2.0
+      "rs_rank": 2.0,
+      "rectangle_bounce_last_alert": "2026-10-09T06:03:44.337688",
+      "rectangle_bounce_last_price": 3109.0
     },
     "TATAINVEST": {
       "sma50": 655.3910009765625,
