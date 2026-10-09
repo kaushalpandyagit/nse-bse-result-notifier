@@ -343,5 +343,13 @@
   "arb_AKUMS": {
     "spread_last_alert": "2026-10-09T06:48:11.480591",
     "spread_last_price": 3.076615300149857
+  },
+  "POONAWALLA": {
+    "result_date": "2026-10-09T00:00:00",
+    "day_high": 450.8999938964844,
+    "day_low": 436.8999938964844,
+    "baseline_rsi": 46.53594385884719,
+    "mcap_cr": 39178.688526714795,
+    "exchange": "NSE"
   }
 }
