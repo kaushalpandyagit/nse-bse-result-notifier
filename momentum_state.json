@@ -8720,8 +8720,8 @@
       "descending_res": 429.02004089355466,
       "wedge_contraction": 0.915671413601399,
       "rs_rank": 64.5,
-      "near_high_17_22_last_alert": "2026-10-09T04:47:24.398726",
-      "near_high_17_22_last_price": 393.25
+      "near_high_17_22_last_alert": "2026-10-09T07:47:13.282361",
+      "near_high_17_22_last_price": 388.79998779296875
     },
     "KRN": {
       "sma50": 1434.7479956054688,
@@ -16381,7 +16381,9 @@
       "box_low": 634.9000244140625,
       "descending_res": 665.033203125,
       "wedge_contraction": 0.9762991359508276,
-      "rs_rank": 81.3
+      "rs_rank": 81.3,
+      "near_high_17_22_last_alert": "2026-10-09T07:48:16.691636",
+      "near_high_17_22_last_price": 657.4500122070312
     },
     "WHIRLPOOL": {
       "sma50": 805.4050061035156,
