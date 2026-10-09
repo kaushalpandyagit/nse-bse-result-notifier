@@ -2551,7 +2551,9 @@
       "box_low": 2382.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 88.2
+      "rs_rank": 88.2,
+      "near_high_17_22_last_alert": "2026-10-09T07:16:18.274550",
+      "near_high_17_22_last_price": 2478.60009765625
     },
     "CARBORUNIV": {
       "sma50": 1139.8159912109375,
@@ -7154,8 +7156,8 @@
       "descending_res": 66.71000671386719,
       "wedge_contraction": 0.9922903000445261,
       "rs_rank": 5.4,
-      "rectangle_bounce_last_alert": "2026-10-09T06:30:54.798586",
-      "rectangle_bounce_last_price": 64.94000244140625
+      "rectangle_bounce_last_alert": "2026-10-09T07:16:53.550411",
+      "rectangle_bounce_last_price": 65.79000091552734
     },
     "INTELLECT": {
       "sma50": 672.945,
