@@ -1132,8 +1132,8 @@
       "descending_res": 431.0,
       "wedge_contraction": 1.0111659828002169,
       "rs_rank": 18.5,
-      "rectangle_bounce_last_alert": "2026-10-09T09:16:07.637214",
-      "rectangle_bounce_last_price": 400.5
+      "rectangle_bounce_last_alert": "2026-10-09T10:01:18.409212",
+      "rectangle_bounce_last_price": 405.0
     },
     "ASAHIINDIA": {
       "sma50": 943.3060021972656,
@@ -2371,7 +2371,9 @@
       "box_low": 197.0,
       "descending_res": 197.11202697753907,
       "wedge_contraction": 1.2166496418910482,
-      "rs_rank": 16.1
+      "rs_rank": 16.1,
+      "liquidity_sweep_last_alert": "2026-10-09T10:01:28.513302",
+      "liquidity_sweep_last_price": 197.94000244140625
     },
     "CAMS": {
       "sma50": 738.0830004882813,
@@ -3061,7 +3063,9 @@
       "box_low": 128.30999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 14.2
+      "rs_rank": 14.2,
+      "rectangle_bounce_last_alert": "2026-10-09T10:01:34.076449",
+      "rectangle_bounce_last_price": 133.1999969482422
     },
     "CGCL": {
       "sma50": 247.84160034179686,
@@ -13210,8 +13214,8 @@
       "descending_res": 186.2050018310547,
       "wedge_contraction": 0.9665661773620444,
       "rs_rank": 76.7,
-      "near_high_17_22_last_alert": "2026-10-09T09:17:51.914730",
-      "near_high_17_22_last_price": 185.4199981689453
+      "near_high_17_22_last_alert": "2026-10-09T10:02:52.732933",
+      "near_high_17_22_last_price": 182.7100067138672
     },
     "SHILCTECH": {
       "sma50": 4136.54201171875,
