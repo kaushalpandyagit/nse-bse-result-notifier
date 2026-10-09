@@ -15,7 +15,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 4: Rectangle Box Consolidation Bounce (Electrosteel Darvas Type).
 - SETUP 5: Descending Trendline Contraction (Tight Wedge Breakout).
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
-- Custom Synthetic Index Engine (Equal-Weighted Basket RSI).
+- Custom Synthetic Index Engine (Equal-Weighted Basket RSI via custom_indices.json).
 - NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
 """
 
@@ -94,13 +94,14 @@ MAX_WEEKLY_RSI = 57.0
 MIN_RSI_RECORDING_MCAP_CR = 50.0
 MACRO_PIVOT_LOOKBACK_DAYS = 60
 
-# --- CUSTOM SYNTHETIC INDICES (Your Core Clusters Framework) ---
-CUSTOM_BASKETS = {
-    "Railways_Infra": ["RVNL", "IRCON", "IRFC", "RITES", "TITAGARH", "TEXRAIL"],
-    "Defense_Aero": ["HAL", "BEL", "BDL", "MAZDOCK", "COCHINSHIP", "GRSE", "BEML", "DATAATTNS"],
-    "EMS_Electronics": ["DIXON", "KAYNES", "SYRMA", "AVALON", "CYIENTDLM"],
-    "Capital_Goods_SME": ["EMMIL", "TECHLABS", "RAVELCARE"]
-}
+# --- LOAD CUSTOM SYNTHETIC INDICES FROM BUILDER JSON ---
+CUSTOM_INDICES_FILE = Path(__file__).parent / "custom_indices.json"
+CUSTOM_SECTORS_CACHE = {}
+if CUSTOM_INDICES_FILE.exists():
+    try:
+        CUSTOM_SECTORS_CACHE = json.loads(CUSTOM_INDICES_FILE.read_text())
+    except Exception as e:
+        print(f"[!] Warning: Could not load custom_indices.json: {e}")
 
 # --- ARBITRAGE SCANNER CONFIG ---
 ARBITRAGE_MIN_SPREAD_PCT = 2.5
@@ -164,7 +165,6 @@ BONDE_MIN_VOLUME = 700000
 
 TOP_N_MOMENTUM = 15
 
-# Expanded Public Sector Indices
 SECTOR_BENCHMARKS = {
     "^NSEI": "Nifty 50", "^CRSLDX": "Nifty 500", "^NSEBANK": "Bank", 
     "^CNXIT": "IT", "^CNXAUTO": "Auto", "^CNXPHARMA": "Pharma", 
@@ -241,15 +241,16 @@ def get_rs_and_sector_tag(symbol: str, c_rsi: float, momentum_state: dict) -> st
     
     sector = get_cached_sector(symbol)
     
-    custom_basket_name = None
-    for b_name, b_syms in CUSTOM_BASKETS.items():
-        if symbol in b_syms:
-            custom_basket_name = b_name
+    # Check custom indices cache loaded from build_indices.py JSON
+    matched_custom_key = None
+    for c_key, c_data in CUSTOM_SECTORS_CACHE.items():
+        if symbol in c_data.get("components", []):
+            matched_custom_key = c_key
             break
             
-    if custom_basket_name:
-        sec_rsi = momentum_state.get("sector_rsis", {}).get(f"Custom_{custom_basket_name}", 50.0)
-        sec_name = custom_basket_name.replace("_", " ")
+    if matched_custom_key:
+        sec_rsi = momentum_state.get("sector_rsis", {}).get(matched_custom_key, 50.0)
+        sec_name = CUSTOM_SECTORS_CACHE[matched_custom_key].get("name", "CustomSector")
     else:
         yf_to_index = {
             "Financial Services": "^CNXFIN", "Technology": "^CNXIT", "Healthcare": "^CNXPHARMA",
@@ -536,26 +537,14 @@ def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"
 # MOMENTUM SCREENING & TECHNICAL CRITERIA (Batch End-of-Day)
 # ----------------------------------------------------------------------
 
-def calculate_synthetic_index_rsi(hist_map: dict, basket_symbols: list, rsi_period: int = RSI_PERIOD) -> float:
-    """
-    Creates an Equal-Weighted Synthetic Index from a custom basket of symbols.
-    Averages daily % returns, constructs a synthetic price history (Base 100), 
-    and calculates Wilder's RSI on the synthetic index natively.
-    """
-    returns_list = []
-    
-    for sym in basket_symbols:
-        df = hist_map.get(f"{sym}.NS")
-        if df is not None and not df.empty and "Close" in df.columns:
-            pct_change = df["Close"].pct_change()
-            returns_list.append(pct_change)
-            
-    if not returns_list:
+def calculate_custom_index_rsi_from_cache(custom_sector_key: str, rsi_period: int = RSI_PERIOD) -> float:
+    """Calculates Wilder's RSI directly from pre-built custom sector history json."""
+    data = CUSTOM_SECTORS_CACHE.get(custom_sector_key)
+    if not data or "history" not in data:
         return 50.0
-        
-    aligned_returns = pd.concat(returns_list, axis=1).mean(axis=1).fillna(0)
-    synthetic_index = (1 + aligned_returns).cumprod() * 100
-    rsi_val = rsi_fyers_tradingview(synthetic_index.tolist(), rsi_period)
+    history_list = data["history"]
+    closes = [item["close"] for item in history_list]
+    rsi_val = rsi_fyers_tradingview(closes, rsi_period)
     return rsi_val if rsi_val is not None else 50.0
 
 def fetch_batch_history(tickers: list) -> dict:
@@ -628,7 +617,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     log.info("Running daily momentum universe scan for %d symbols...", len(tickers))
     hist_map = fetch_batch_history(tickers)
 
-    log.info("Fetching Baseline Sector & Custom Synthetic RSIs...")
+    log.info("Fetching Baseline Sector & Custom Synthetic RSIs from JSON Cache...")
     sector_rsis = {}
     try:
         sec_data = yf.download(list(SECTOR_BENCHMARKS.keys()), period="3mo", interval="1d", group_by="ticker", threads=True, progress=False)
@@ -643,10 +632,10 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     except Exception as e:
         log.warning(f"Sector RSI fetch failed: {e}")
         
-    for custom_name, custom_symbols in CUSTOM_BASKETS.items():
+    for custom_key in CUSTOM_SECTORS_CACHE.keys():
         try:
-            custom_rsi = calculate_synthetic_index_rsi(hist_map, custom_symbols, RSI_PERIOD)
-            sector_rsis[f"Custom_{custom_name}"] = custom_rsi
+            custom_rsi = calculate_custom_index_rsi_from_cache(custom_key, RSI_PERIOD)
+            sector_rsis[custom_key] = custom_rsi
         except Exception:
             pass
 
@@ -695,9 +684,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
                 sos_peak_rsi = max_thrust_rsi
                 sos_peak_p = float(highs.loc[window_rsi_thrust.idxmax()])
                 
-        # ----------------------------------------------------------------------
-        # SETUP 4: RECTANGLE BOX / CONSOLIDATION METRICS
-        # ----------------------------------------------------------------------
         box_high, box_low = None, None
         if len(highs) >= 60 and len(lows) >= 60:
             w_highs = highs.iloc[-60:]
@@ -710,9 +696,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
                 box_high = b_high
                 box_low = b_low
 
-        # ----------------------------------------------------------------------
-        # SETUP 5: DESCENDING TRENDLINE CONTRACTION (Tight Wedge)
-        # ----------------------------------------------------------------------
         descending_res, wedge_contraction = None, None
         if len(highs) >= 40 and len(lows) >= 40:
             w_h = highs.iloc[-40:]
@@ -928,9 +911,6 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
         rs_tag = get_rs_and_sector_tag(symbol, c_rsi, momentum_state)
         y_rsi = entry.get("yesterday_rsi")
 
-        # ----------------------------------------------------------------------
-        # SETUP 5: DESCENDING TRENDLINE CONTRACTION (Tight Wedge Breakout)
-        # ----------------------------------------------------------------------
         desc_res = entry.get("descending_res")
         wedge_contract = entry.get("wedge_contraction")
 
@@ -951,9 +931,6 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"{open_low_tag}{rs_tag}"
                 )
 
-        # ----------------------------------------------------------------------
-        # SETUP 4: RECTANGLE CONSOLIDATION BOUNCE (Electrosteel Pattern)
-        # ----------------------------------------------------------------------
         box_high, box_low = entry.get("box_high"), entry.get("box_low")
 
         if alert_allowed(entry, "rectangle_bounce", price) and box_high and box_low and c_rsi and y_rsi:
@@ -977,9 +954,6 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"{open_low_tag}{rs_tag}"
                 )
 
-        # ----------------------------------------------------------------------
-        # SETUP 3: WYCKOFF SOS + BULLISH RANGE SHIFT PULLBACK
-        # ----------------------------------------------------------------------
         sos_rsi, sos_peak_p = entry.get("sos_thrust_peak_rsi"), entry.get("sos_thrust_peak_price")
         macro_low = entry.get("macro_low")
 
@@ -1003,9 +977,6 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"{open_low_tag}{rs_tag}"
                 )
 
-        # ----------------------------------------------------------------------
-        # SETUP 1: MOMENTUM IGNITION (EARLY BREAKOUT ALERT)
-        # ----------------------------------------------------------------------
         macro_high, macro_high_rsi = entry.get("macro_high"), entry.get("macro_high_rsi")
 
         if alert_allowed(entry, "momentum_ignition", price) and macro_high and macro_high_rsi and c_rsi:
@@ -1032,9 +1003,6 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"{open_low_tag}{rs_tag}"
                 )
 
-        # ----------------------------------------------------------------------
-        # SETUP 2: LIQUIDITY SWEEP & WYCKOFF SPRING
-        # ----------------------------------------------------------------------
         macro_low_rsi = entry.get("macro_low_rsi")
         if alert_allowed(entry, "liquidity_sweep", price) and macro_low and macro_low_rsi and c_rsi:
             c_low, c_high, c_open, sma_vol_20 = metrics["low_price"], metrics["high_price"], metrics["open_price"], metrics["sma_vol_20"]
@@ -1060,9 +1028,6 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"{open_low_tag}{rs_tag}"
                 )
 
-        # ----------------------------------------------------------------------
-        # STANDARD BREAKOUT SCANNERS (ZANGER, BONDE, PULLBACK, ATH)
-        # ----------------------------------------------------------------------
         if alert_allowed(entry, "zanger", price) and base_high and avg_vol50 and pct_change is not None:
             if pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50 and price >= (base_high * 0.95):
                 record_alert(entry, "zanger", price)
