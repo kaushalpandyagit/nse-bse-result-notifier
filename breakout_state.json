@@ -174,8 +174,8 @@
     "spread_last_price": 3.2793758484303854
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-10-08T08:49:40.951125",
-    "spread_last_price": 4.412781515340073
+    "spread_last_alert": "2026-10-09T05:48:23.582602",
+    "spread_last_price": 2.5354859473312223
   },
   "arb_BALRAMCHIN": {
     "spread_last_alert": "2026-10-06T03:51:55.290909",
@@ -248,7 +248,7 @@
     "baseline_rsi": 51.477489638429766,
     "mcap_cr": 2267.850121198581,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-09T04:45:49.854344",
+    "rsi_up_last_alert": "2026-10-09T05:45:46.427241",
     "price_high_last_alert": "2026-10-09T04:45:49.126337",
     "price_high_last_price": 267.79998779296875
   },
@@ -260,7 +260,7 @@
     "mcap_cr": 9680.3387657,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-09T04:29:29.086759",
-    "rsi_down_last_alert": "2026-10-09T04:45:50.870843",
+    "rsi_down_last_alert": "2026-10-09T05:45:47.254400",
     "price_low_last_alert": "2026-10-08T07:45:54.619064",
     "price_low_last_price": 716.4000244140625
   },
@@ -287,7 +287,7 @@
     "baseline_rsi": 49.200340007941975,
     "mcap_cr": 2150.92359372431,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-09T04:45:52.507162",
+    "rsi_down_last_alert": "2026-10-09T05:45:48.056086",
     "price_low_last_alert": "2026-10-09T04:45:51.855744",
     "price_low_last_price": 896.4500122070312
   },
@@ -302,7 +302,7 @@
     "baseline_rsi": 36.74779989508988,
     "mcap_cr": 46839.5711449,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-09T04:45:53.455062",
+    "rsi_up_last_alert": "2026-10-09T05:45:48.880432",
     "price_low_last_alert": "2026-10-09T05:00:56.492822",
     "price_low_last_price": 1631.9000244140625
   },
@@ -313,7 +313,7 @@
     "baseline_rsi": 38.42558311930152,
     "mcap_cr": 751114.9687368,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-09T04:45:54.408051",
+    "rsi_up_last_alert": "2026-10-09T05:45:49.754193",
     "price_high_last_alert": "2026-10-09T05:00:57.296375",
     "price_high_last_price": 2197.699951171875
   },
