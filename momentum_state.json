@@ -8935,7 +8935,9 @@
       "wedge_contraction": null,
       "rs_rank": 36.8,
       "resistance_last_alert": "2026-10-09T05:47:11.652368",
-      "resistance_last_price": 110.52999877929688
+      "resistance_last_price": 110.52999877929688,
+      "mtf_last_alert": "2026-10-09T06:16:44.567288",
+      "mtf_last_price": 110.76000213623047
     },
     "LICHSGFIN": {
       "sma50": 530.0250030517578,
@@ -9266,8 +9268,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 62.7,
-      "near_high_17_22_last_alert": "2026-10-09T04:47:29.145242",
-      "near_high_17_22_last_price": 312.3999938964844
+      "near_high_17_22_last_alert": "2026-10-09T06:16:46.889372",
+      "near_high_17_22_last_price": 309.0
     },
     "MANORAMA": {
       "sma50": 1860.4000024414063,
@@ -14632,8 +14634,8 @@
       "descending_res": 806.199951171875,
       "wedge_contraction": 0.8956220762633719,
       "rs_rank": 74.3,
-      "near_high_17_22_last_alert": "2026-10-09T04:48:15.806334",
-      "near_high_17_22_last_price": 732.0499877929688,
+      "near_high_17_22_last_alert": "2026-10-09T06:17:17.259404",
+      "near_high_17_22_last_price": 721.5,
       "rectangle_bounce_last_alert": "2026-10-09T04:48:15.076245",
       "rectangle_bounce_last_price": 732.0499877929688
     },
