@@ -1091,7 +1091,9 @@
       "box_low": 500.45001220703125,
       "descending_res": 536.6500244140625,
       "wedge_contraction": 0.6667537798113768,
-      "rs_rank": 76.3
+      "rs_rank": 76.3,
+      "near_high_17_22_last_alert": "2026-10-09T04:16:34.235396",
+      "near_high_17_22_last_price": 503.3500061035156
     },
     "ARVINDFASN": {
       "sma50": 435.14299865722654,
@@ -1271,7 +1273,9 @@
       "box_low": 1537.0999755859375,
       "descending_res": 1786.5,
       "wedge_contraction": 0.9467290788748446,
-      "rs_rank": 90.0
+      "rs_rank": 90.0,
+      "near_high_17_22_last_alert": "2026-10-09T04:16:38.616400",
+      "near_high_17_22_last_price": 1614.800048828125
     },
     "ATLANTAELE": {
       "sma50": 1714.9640087890625,
@@ -1489,7 +1493,9 @@
       "box_low": 560.9000244140625,
       "descending_res": 618.9900634765625,
       "wedge_contraction": 1.277965565442589,
-      "rs_rank": 69.1
+      "rs_rank": 69.1,
+      "near_high_17_22_last_alert": "2026-10-09T04:16:42.900231",
+      "near_high_17_22_last_price": 585.0
     },
     "AWL": {
       "sma50": 188.76719970703124,
@@ -12435,7 +12441,9 @@
       "box_low": 1390.300048828125,
       "descending_res": 1851.909090909091,
       "wedge_contraction": 0.7704080848185829,
-      "rs_rank": 93.7
+      "rs_rank": 93.7,
+      "near_high_17_22_last_alert": "2026-10-09T04:19:49.329714",
+      "near_high_17_22_last_price": 1511.9000244140625
     },
     "SAFARI": {
       "sma50": 1487.5779907226563,
