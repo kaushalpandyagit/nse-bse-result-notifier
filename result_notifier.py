@@ -131,6 +131,11 @@ NOISE_KEYWORDS = [
     "annual general meeting", "postal ballot", "notice of", "book closure"
 ]
 
+# NEW: Shareholding Keywords
+SHAREHOLDING_KEYWORDS = [
+    "shareholding pattern"
+]
+
 _AMOUNT_UNIT_PATTERN = re.compile(
     r"(?:rs\.?|inr|₹|usd|\$)\s*([\d,]+(?:\.\d+)?)\s*"
     r"(crore|cr\.?|lakh|lac|million|mn|billion|bn)\b",
@@ -352,6 +357,46 @@ def extract_insider_summary(text: str) -> str:
     seen = set()
     return " | ".join([x for x in summaries if not (x in seen or seen.add(x))])
 
+# NEW: Function to check for shareholding increases
+def check_holding_increase(symbol: str) -> bool:
+    if not symbol or symbol in ["UNKNOWN", "CIRCULAR"]:
+        return False
+    url = f"https://www.nseindia.com/api/corporate-share-holding-pattern?symbol={symbol}"
+    headers = get_browser_headers()
+    try:
+        session = requests.Session()
+        session.get("https://www.nseindia.com", headers=headers, timeout=5)
+        resp = session.get(url, headers=headers, timeout=10)
+        
+        if resp.status_code != 200:
+            return False
+            
+        data = resp.json()
+        if not isinstance(data, list) or len(data) < 2:
+            return False
+            
+        current_qtr = data[0]
+        prev_qtr = data[1]
+        
+        def safe_float(val):
+            try: return float(val) if val else 0.0
+            except: return 0.0
+            
+        promoter_cur = safe_float(current_qtr.get('promoterAndPromoterGroup', 0))
+        promoter_prev = safe_float(prev_qtr.get('promoterAndPromoterGroup', 0))
+        
+        fii_cur = safe_float(current_qtr.get('fii', 0))
+        fii_prev = safe_float(prev_qtr.get('fii', 0))
+        
+        dii_cur = safe_float(current_qtr.get('mutualFunds', 0)) + safe_float(current_qtr.get('otherDii', 0))
+        dii_prev = safe_float(prev_qtr.get('mutualFunds', 0)) + safe_float(prev_qtr.get('otherDii', 0))
+        
+        return (promoter_cur > promoter_prev) or (fii_cur > fii_prev) or (dii_cur > dii_prev)
+        
+    except Exception as e:
+        log.warning("Holding check failed for %s: %s", symbol, e)
+        return False
+
 def classify_announcement(subject: str) -> str:
     subj_lower = f" {subject.lower()} "
     if "trading window" in subj_lower:
@@ -368,6 +413,8 @@ def classify_announcement(subject: str) -> str:
         return "meeting"
     if any(kw in subj_lower for kw in INSIDER_PROMOTER_KEYWORDS):
         return "insider_promoter"
+    if any(kw in subj_lower for kw in SHAREHOLDING_KEYWORDS):
+        return "shareholding"
     if any(kw in subj_lower for kw in RESULT_KEYWORDS) or ("board meeting" in subj_lower and "result" in subj_lower):
         return "result"
     return None
@@ -667,6 +714,15 @@ def poll_once(seen: set) -> set:
             header = f"{dynamic_emoji} <b>{safe_comp}</b> ({item['source']}) — Insider / Promoter Action"
             body = f"{safe_subj}\n{sum_line}🕐 {item['date']}"
             
+        elif cat == "shareholding":
+            if check_holding_increase(item["symbol"]):
+                header = f"🟢 <b>{safe_comp}</b> ({item['source']}) — Smart Money Accumulation"
+                body = f"{safe_subj}\nPromoter, FII, or DII has <b>INCREASED</b> their stake!\n🕐 {item['date']}"
+                sentiment_marker = " 🟢"
+            else:
+                # Discard announcement if holding did not increase
+                continue
+                
         elif cat == "meeting":
             meet_date = extract_meeting_date(item["subject"])
             evoting_purpose = extract_evoting_purpose(item["subject"])
