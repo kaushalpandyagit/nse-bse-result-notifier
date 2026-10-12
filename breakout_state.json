@@ -85,7 +85,9 @@
   },
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "custom_last_alert": "2026-10-12T05:01:12.923003",
+    "custom_last_price": 74.0
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
@@ -267,8 +269,8 @@
     "rsi_down_last_alert": "2026-10-11T16:24:04.542135",
     "price_low_last_alert": "2026-10-08T07:45:54.619064",
     "price_low_last_price": 716.4000244140625,
-    "price_high_last_alert": "2026-10-12T04:00:53.030595",
-    "price_high_last_price": 736.9500122070312
+    "price_high_last_alert": "2026-10-12T05:00:54.145586",
+    "price_high_last_price": 749.0999755859375
   },
   "arb_RANEHOLDIN": {
     "spread_last_alert": "2026-10-08T04:04:02.627589",
