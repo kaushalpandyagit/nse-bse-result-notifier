@@ -2075,7 +2075,9 @@
       "box_low": 789.9000244140625,
       "descending_res": 851.5000915527344,
       "wedge_contraction": 1.0297072248871797,
-      "rs_rank": 21.8
+      "rs_rank": 21.8,
+      "rectangle_bounce_last_alert": "2026-10-12T06:01:33.865680",
+      "rectangle_bounce_last_price": 820.3499755859375
     },
     "BLACKBUCK": {
       "sma50": 593.06400390625,
@@ -2440,8 +2442,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 19.2,
-      "rectangle_bounce_last_alert": "2026-10-12T05:16:31.863157",
-      "rectangle_bounce_last_price": 748.0499877929688
+      "rectangle_bounce_last_alert": "2026-10-12T06:01:37.405483",
+      "rectangle_bounce_last_price": 732.25
     },
     "CANHLIFE": {
       "sma50": 150.61139984130858,
@@ -2552,8 +2554,8 @@
       "descending_res": 2461.4501342773438,
       "wedge_contraction": 0.8534954194909914,
       "rs_rank": 82.8,
-      "near_high_17_22_last_alert": "2026-10-12T04:46:29.692501",
-      "near_high_17_22_last_price": 2390.199951171875
+      "near_high_17_22_last_alert": "2026-10-12T06:01:38.960071",
+      "near_high_17_22_last_price": 2430.39990234375
     },
     "CARBORUNIV": {
       "sma50": 1146.0219921875,
@@ -5354,10 +5356,10 @@
       "zanger_last_price": 574.2000122070312,
       "resistance_last_alert": "2026-10-12T04:02:18.472769",
       "resistance_last_price": 574.2000122070312,
-      "mtf_last_alert": "2026-10-12T05:02:30.082632",
-      "mtf_last_price": 564.25,
-      "vol_breakout_last_alert": "2026-10-12T05:02:29.471496",
-      "vol_breakout_last_price": 564.25,
+      "mtf_last_alert": "2026-10-12T06:02:01.582261",
+      "mtf_last_price": 570.5499877929688,
+      "vol_breakout_last_alert": "2026-10-12T06:02:00.922828",
+      "vol_breakout_last_price": 570.5499877929688,
       "ema50_pullback_last_alert": "2026-10-12T05:02:30.661417",
       "ema50_pullback_last_price": 564.25
     },
@@ -10334,8 +10336,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 51.3,
-      "sos_pullback_curl_last_alert": "2026-10-12T04:47:36.465491",
-      "sos_pullback_curl_last_price": 176.69000244140625,
+      "sos_pullback_curl_last_alert": "2026-10-12T06:02:41.768372",
+      "sos_pullback_curl_last_price": 178.75999450683594,
       "mtf_last_alert": "2026-10-12T05:18:01.084899",
       "mtf_last_price": 178.83999633789062
     },
