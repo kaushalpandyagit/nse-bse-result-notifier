@@ -4,7 +4,8 @@ Daily F&O, Delivery Data, and Ace Investor Analysis -> Telegram
 
 Runs ONCE per trading day, after market close (when NSE's daily
 Bhavcopy and Bulk/Block deal files are finalized, typically by ~6:30 PM IST).
-Includes automated Day-over-Day Delta & Percentage Directional Shift tracking.
+Includes automated Day-over-Day Delta & Percentage Directional Shift tracking,
+plus live Option Chain integration to pinpoint Smart Money strike walls.
 """
 
 import os
@@ -129,6 +130,54 @@ def get_session():
     except Exception as e:
         log.warning("Could not prime NSE session: %s", e)
     return session
+
+
+# ----------------------------------------------------------------------
+# OPTION CHAIN PARSER
+# ----------------------------------------------------------------------
+def get_fno_strike_levels(session, symbol="NIFTY"):
+    url = f"https://www.nseindia.com/api/option-chain-indices?symbol={symbol}"
+    try:
+        response = session.get(url, headers=HEADERS, timeout=15)
+        response.raise_for_status()
+        data = response.json()["records"]
+        underlying_price = data["underlyingValue"]
+        active_expiry = data["expiryDates"][0]
+
+        rows = []
+        for item in data["data"]:
+            if item.get("expiryDate") != active_expiry:
+                continue
+            strike = item["strikePrice"]
+            ce_oi = item.get("CE", {}).get("openInterest", 0)
+            ce_chg = item.get("CE", {}).get("changeinOpenInterest", 0)
+            pe_oi = item.get("PE", {}).get("openInterest", 0)
+            pe_chg = item.get("PE", {}).get("changeinOpenInterest", 0)
+            rows.append({
+                "strike": strike, "ce_oi": ce_oi, "ce_chg": ce_chg,
+                "pe_oi": pe_oi, "pe_chg": pe_chg,
+            })
+
+        df = pd.DataFrame(rows)
+        if df.empty:
+            return None
+
+        max_ce_strike = df.loc[df["ce_oi"].idxmax()]["strike"]
+        fresh_ce_wall = df.loc[df["ce_chg"].idxmax()]["strike"]
+        max_pe_strike = df.loc[df["pe_oi"].idxmax()]["strike"]
+        fresh_pe_wall = df.loc[df["pe_chg"].idxmax()]["strike"]
+
+        return {
+            "Underlying": underlying_price,
+            "Expiry": active_expiry,
+            "Max_Call_Wall": max_ce_strike,
+            "Day_Fresh_Call_Resistance": fresh_ce_wall,
+            "Key_Put_Support": max_pe_strike,
+            "Day_Fresh_Put_Add": fresh_pe_wall,
+        }
+    except Exception as e:
+        log.warning("Option chain fetch failed for %s: %s", symbol, e)
+        return None
 
 
 # ----------------------------------------------------------------------
@@ -427,7 +476,7 @@ def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
             
     return None
 
-def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
+def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> str:
     if df is None or df.empty:
         return ""
     
@@ -605,7 +654,10 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
         else:
             flow_desc = f"{intensity} fresh longs" if delta > 0 else f"{intensity} profit booking / unwind"
             
-        return f" • {label}: {net:,} (<i>{net_desc}</i>) | {delta:+,} (<i>{flow_desc}</i>)"
+        return f" • <b>{label}:</b> {net:,} (<i>{net_desc}</i>) | {delta:+,} (<i>{flow_desc}</i>)"
+
+    # --- Live Option Chain Fetch for Strategic Levels ---
+    oc_levels = get_fno_strike_levels(session, "NIFTY")
 
     lines = [
         "🧠 <b>SMART vs DUMB MONEY (Derivatives)</b>",
@@ -629,8 +681,29 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date) -> str:
     lines.append(f"🔮 <b>NEXT TRADING DAY DIRECTION:</b>\n{prediction}\n")
     
     if expiry_pred:
-        lines.append(f"📅 <b>TOMORROW'S EXPIRY ({idx_name}):</b>\n{expiry_pred}")
+        lines.append(f"📅 <b>TOMORROW'S EXPIRY ({idx_name}):</b>\n{expiry_pred}\n")
         
+    # --- Append the Live Option Chain & Strategic Takeaway ---
+    if oc_levels:
+        lines.append(f"🎯 <b>Live Option Chain Strike Mapping (NIFTY):</b>")
+        lines.append(f"<i>Underlying: {oc_levels['Underlying']:,} | Expiry: {oc_levels['Expiry']}</i>")
+        lines.append(f"• <b>Immediate Ceiling (Fresh CE Wall):</b> {oc_levels['Day_Fresh_Call_Resistance']:,} <i>(Where today's massive Call writing is parked)</i>")
+        lines.append(f"• <b>Macro Resistance (Max CE OI):</b> {oc_levels['Max_Call_Wall']:,} <i>(The ultimate structural wall)</i>")
+        lines.append(f"• <b>Immediate Floor (Fresh PE Wall):</b> {oc_levels['Day_Fresh_Put_Add']:,} <i>(Where retail is writing puts)</i>")
+        lines.append(f"• <b>Macro Support / Breakdown Target:</b> {oc_levels['Key_Put_Support']:,} <i>(The ultimate put target)</i>")
+        
+        strat = ""
+        if smart_net['net_call'] < -50000 and smart_net['net_put'] > 50000:
+            strat = f"Smart Money is aggressively defending the <b>{oc_levels['Day_Fresh_Call_Resistance']:,}</b> ceiling and buying puts to target a breakdown below <b>{oc_levels['Day_Fresh_Put_Add']:,}</b>. Any intraday bounce near {oc_levels['Day_Fresh_Call_Resistance']:,} is a high-probability shorting zone. Do not write puts until the {oc_levels['Key_Put_Support']:,} structural floor is reached."
+        elif smart_net['net_call'] > 50000 and smart_net['net_put'] < -50000:
+            strat = f"Smart Money is defending the <b>{oc_levels['Day_Fresh_Put_Add']:,}</b> floor and targeting a breakout above <b>{oc_levels['Day_Fresh_Call_Resistance']:,}</b>. Dips near the floor are high-probability buying zones."
+        elif smart_net['net_put'] < -50000 and smart_net['net_call'] < -50000:
+            strat = f"Smart Money is heavily writing both sides (Strangle). Expect severe theta decay bounded between <b>{oc_levels['Key_Put_Support']:,}</b> and <b>{oc_levels['Max_Call_Wall']:,}</b>."
+        else:
+            strat = f"Monitor <b>{oc_levels['Day_Fresh_Call_Resistance']:,}</b> for resistance and <b>{oc_levels['Day_Fresh_Put_Add']:,}</b> for support based on fresh intraday flows."
+            
+        lines.append(f"\n📌 <b>Strategic Takeaway:</b>\n{strat}\n")
+
     return "\n".join(lines)
 
 
@@ -740,7 +813,7 @@ def main():
     # --- SMART VS DUMB MONEY AI ENGINE ---
     part_oi_df = fetch_participant_oi(session, date)
     if part_oi_df is not None:
-        oi_analysis_text = analyze_participant_oi(part_oi_df, date)
+        oi_analysis_text = analyze_participant_oi(part_oi_df, date, session)
         if oi_analysis_text:
             sections.append(oi_analysis_text)
             log.info("Smart Money AI engine executed successfully.")
