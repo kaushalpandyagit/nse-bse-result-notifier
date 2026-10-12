@@ -186,8 +186,8 @@
     "spread_last_price": 2.5998229871379683
   },
   "arb_JPOLYINVST": {
-    "spread_last_alert": "2026-10-09T04:05:07.743140",
-    "spread_last_price": 2.5966625959806056
+    "spread_last_alert": "2026-10-12T09:34:53.354185",
+    "spread_last_price": 4.671664340525072
   },
   "arb_DHUNINV": {
     "spread_last_alert": "2026-10-12T05:19:19.877996",
@@ -271,8 +271,8 @@
     "rsi_down_last_alert": "2026-10-11T16:24:04.542135",
     "price_low_last_alert": "2026-10-08T07:45:54.619064",
     "price_low_last_price": 716.4000244140625,
-    "price_high_last_alert": "2026-10-12T05:00:54.145586",
-    "price_high_last_price": 749.0999755859375
+    "price_high_last_alert": "2026-10-12T09:29:36.576899",
+    "price_high_last_price": 738.1500244140625
   },
   "arb_RANEHOLDIN": {
     "spread_last_alert": "2026-10-08T04:04:02.627589",
@@ -427,7 +427,9 @@
     "mcap_cr": 4471.15032,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-12T07:15:52.614013",
-    "rsi_up_last_alert": "2026-10-12T09:15:46.841914"
+    "rsi_up_last_alert": "2026-10-12T09:15:46.841914",
+    "price_high_last_alert": "2026-10-12T09:29:44.487993",
+    "price_high_last_price": 3753.0
   },
   "arb_TATAINVEST": {
     "spread_last_alert": "2026-10-12T08:04:37.662498",

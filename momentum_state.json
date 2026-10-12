@@ -3572,8 +3572,8 @@
       "descending_res": 1333.8747863769531,
       "wedge_contraction": 0.8694348883607913,
       "rs_rank": 48.7,
-      "near_high_17_22_last_alert": "2026-10-12T08:30:42.185012",
-      "near_high_17_22_last_price": 1315.5,
+      "near_high_17_22_last_alert": "2026-10-12T09:31:02.196976",
+      "near_high_17_22_last_price": 1300.9000244140625,
       "rectangle_bounce_last_alert": "2026-10-12T08:46:33.642404",
       "rectangle_bounce_last_price": 1316.300048828125
     },
@@ -3828,8 +3828,8 @@
       "descending_res": 4999.738206129808,
       "wedge_contraction": 0.6743647651355514,
       "rs_rank": 74.7,
-      "near_high_17_22_last_alert": "2026-10-12T04:01:58.214186",
-      "near_high_17_22_last_price": 4140.10009765625
+      "near_high_17_22_last_alert": "2026-10-12T09:31:07.491683",
+      "near_high_17_22_last_price": 4095.5
     },
     "DBL": {
       "sma50": 413.6210015869141,
@@ -6681,7 +6681,9 @@
       "box_low": 1140.0,
       "descending_res": 1386.0752258300781,
       "wedge_contraction": 0.7561451886576032,
-      "rs_rank": 56.6
+      "rs_rank": 56.6,
+      "rectangle_bounce_last_alert": "2026-10-12T09:31:55.432558",
+      "rectangle_bounce_last_price": 1187.0999755859375
     },
     "IFCI": {
       "sma50": 78.85960021972656,
@@ -14568,8 +14570,10 @@
       "rs_rank": 22.3,
       "sos_pullback_curl_last_alert": "2026-10-12T08:32:03.328599",
       "sos_pullback_curl_last_price": 631.2999877929688,
-      "rectangle_bounce_last_alert": "2026-10-12T08:47:59.987463",
-      "rectangle_bounce_last_price": 629.0499877929688
+      "rectangle_bounce_last_alert": "2026-10-12T09:34:11.541462",
+      "rectangle_bounce_last_price": 636.4000244140625,
+      "vol_breakout_last_alert": "2026-10-12T09:34:10.939984",
+      "vol_breakout_last_price": 636.4000244140625
     },
     "TATAELXSI": {
       "sma50": 3478.309990234375,
