@@ -462,5 +462,21 @@
     "baseline_rsi": null,
     "mcap_cr": 866.0108063241883,
     "exchange": "NSE"
+  },
+  "RBLBANK": {
+    "result_date": "2026-10-12T00:00:00",
+    "day_high": 424.0,
+    "day_low": 413.79998779296875,
+    "baseline_rsi": 56.171211734749654,
+    "mcap_cr": 64838.7974765948,
+    "exchange": "NSE"
+  },
+  "AGRITECH": {
+    "result_date": "2026-10-12T00:00:00",
+    "day_high": 105.0,
+    "day_low": 95.0,
+    "baseline_rsi": 57.0561346012055,
+    "mcap_cr": 58.9485587310791,
+    "exchange": "NSE"
   }
 }
