@@ -454,5 +454,13 @@
     "baseline_rsi": 61.09650117443259,
     "mcap_cr": 95.61373289372712,
     "exchange": "NSE"
+  },
+  "ADROITIND": {
+    "result_date": "2026-10-12T00:00:00",
+    "day_high": 205.6999969482422,
+    "day_low": 192.77000427246094,
+    "baseline_rsi": null,
+    "mcap_cr": 866.0108063241883,
+    "exchange": "NSE"
   }
 }
