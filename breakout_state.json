@@ -478,5 +478,13 @@
     "baseline_rsi": 57.0561346012055,
     "mcap_cr": 58.9485587310791,
     "exchange": "NSE"
+  },
+  "HCLTECH": {
+    "result_date": "2026-10-12T00:00:00",
+    "day_high": 1236.800048828125,
+    "day_low": 1206.0,
+    "baseline_rsi": 45.894243243432655,
+    "mcap_cr": 330915.2691222,
+    "exchange": "NSE"
   }
 }
