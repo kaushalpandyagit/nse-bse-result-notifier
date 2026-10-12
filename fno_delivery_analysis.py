@@ -139,36 +139,47 @@ def get_session():
 # ----------------------------------------------------------------------
 # NEW: LIVE OPTION CHAIN PARSER (Triple-Cookie Bypass)
 # ----------------------------------------------------------------------
+# ----------------------------------------------------------------------
+# NEW: LIVE OPTION CHAIN PARSER (Ultra-Stealth Chrome Mimic)
+# ----------------------------------------------------------------------
 def get_fno_strike_levels(symbol="NIFTY"):
     api_url = f"https://www.nseindia.com/api/option-chain-indices?symbol={symbol}"
     
+    # Perfectly mimic a standard Google Chrome network request
     headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "application/json, text/javascript, */*; q=0.01",
         "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "X-Requested-With": "XMLHttpRequest",
         "Referer": "https://www.nseindia.com/option-chain",
+        "Connection": "keep-alive",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-origin"
     }
     
     session = requests.Session()
     try:
-        # Step 1: Prime the main page cookie
+        # Step 1: Prime the session by visiting the homepage
         session.get("https://www.nseindia.com", headers=headers, timeout=10)
-        time.sleep(1.5)
+        time.sleep(1)
         
-        # Step 2: Prime the option chain page cookie
+        # Step 2: Visit the option chain UI page to secure the specific Akamai cookies
         session.get("https://www.nseindia.com/option-chain", headers=headers, timeout=10)
         time.sleep(1.5)
         
-        # Step 3: Fetch the JSON API
+        # Step 3: Fetch the JSON data
         response = session.get(api_url, headers=headers, timeout=15)
         
-        if response.status_code != 200:
-            return {"error": f"Blocked by NSE (Status: {response.status_code})"}
+        if response.status_code == 404:
+            return {"error": "NSE Option Chain Offline (Late-Night Maintenance Routine)"}
+        elif response.status_code != 200:
+            return {"error": f"Blocked by NSE Firewall (Status: {response.status_code})"}
             
         data = response.json().get("records")
         if not data:
-            return {"error": "NSE returned empty data (Maintenance/Off-hours)"}
+            return {"error": "NSE returned empty data."}
             
         underlying_price = data["underlyingValue"]
         active_expiry = data["expiryDates"][0]
@@ -203,23 +214,6 @@ def get_fno_strike_levels(symbol="NIFTY"):
         }
     except Exception as e:
         return {"error": f"Exception: {str(e)[:40]}"}
-        # Find the massive institutional walls
-        max_ce_strike = df.loc[df["ce_oi"].idxmax()]["strike"]
-        fresh_ce_wall = df.loc[df["ce_chg"].idxmax()]["strike"]
-        max_pe_strike = df.loc[df["pe_oi"].idxmax()]["strike"]
-        fresh_pe_wall = df.loc[df["pe_chg"].idxmax()]["strike"]
-
-        return {
-            "Underlying": underlying_price,
-            "Expiry": active_expiry,
-            "Max_Call_Wall": max_ce_strike,
-            "Day_Fresh_Call_Resistance": fresh_ce_wall,
-            "Key_Put_Support": max_pe_strike,
-            "Day_Fresh_Put_Add": fresh_pe_wall,
-        }
-    except Exception as e:
-        log.warning(f"Option chain fetch failed for {symbol}: {e}")
-        return None
 
 # ----------------------------------------------------------------------
 # SMART MONEY: BULK & BLOCK DEALS
