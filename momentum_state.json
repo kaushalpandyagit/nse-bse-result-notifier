@@ -870,8 +870,8 @@
       "descending_res": 305.5,
       "wedge_contraction": 1.0215744075232298,
       "rs_rank": 51.5,
-      "resistance_last_alert": "2026-10-12T03:47:50.638989",
-      "resistance_last_price": 297.6000061035156,
+      "resistance_last_alert": "2026-10-12T04:46:14.572994",
+      "resistance_last_price": 302.5,
       "near_high_17_22_last_alert": "2026-10-12T03:47:51.367711",
       "near_high_17_22_last_price": 297.6000061035156,
       "ema50_pullback_last_alert": "2026-10-12T04:30:06.262235",
@@ -1674,8 +1674,8 @@
       "descending_res": 2290.2474172491775,
       "wedge_contraction": 1.361537612610261,
       "rs_rank": 98.0,
-      "near_high_17_22_last_alert": "2026-10-12T03:47:57.285776",
-      "near_high_17_22_last_price": 2072.300048828125
+      "near_high_17_22_last_alert": "2026-10-12T04:46:21.513953",
+      "near_high_17_22_last_price": 2099.0
     },
     "BALRAMCHIN": {
       "sma50": 670.2529968261719,
@@ -2110,8 +2110,8 @@
       "descending_res": 604.0166524251302,
       "wedge_contraction": 0.6801834922631176,
       "rs_rank": 46.9,
-      "near_high_17_22_last_alert": "2026-10-12T03:48:00.855760",
-      "near_high_17_22_last_price": 593.6500244140625
+      "near_high_17_22_last_alert": "2026-10-12T04:46:25.755944",
+      "near_high_17_22_last_price": 585.0
     },
     "BLS": {
       "sma50": 240.03499938964845,
@@ -2548,8 +2548,8 @@
       "descending_res": 2461.4501342773438,
       "wedge_contraction": 0.8534954194909914,
       "rs_rank": 82.8,
-      "near_high_17_22_last_alert": "2026-10-12T03:48:05.042547",
-      "near_high_17_22_last_price": 2415.0
+      "near_high_17_22_last_alert": "2026-10-12T04:46:29.692501",
+      "near_high_17_22_last_price": 2390.199951171875
     },
     "CARBORUNIV": {
       "sma50": 1146.0219921875,
@@ -4037,7 +4037,9 @@
       "wedge_contraction": 0.806522827394218,
       "rs_rank": 21.0,
       "near_high_17_22_last_alert": "2026-10-12T04:02:01.256623",
-      "near_high_17_22_last_price": 421.1000061035156
+      "near_high_17_22_last_price": 421.1000061035156,
+      "rectangle_bounce_last_alert": "2026-10-12T04:46:41.970302",
+      "rectangle_bounce_last_price": 420.0
     },
     "DEVYANI": {
       "sma50": 136.01519897460938,
@@ -6331,7 +6333,9 @@
       "box_low": 583.2000122070312,
       "descending_res": 684.4375,
       "wedge_contraction": 1.1584309728711313,
-      "rs_rank": 52.4
+      "rs_rank": 52.4,
+      "liquidity_sweep_last_alert": "2026-10-12T04:47:01.405665",
+      "liquidity_sweep_last_price": 593.0
     },
     "HEGAM": {
       "sma50": 480.4637997436523,
@@ -8974,8 +8978,10 @@
       "descending_res": 574.0,
       "wedge_contraction": 0.8816006742023618,
       "rs_rank": 48.0,
-      "mtf_last_alert": "2026-10-12T03:48:46.899122",
-      "mtf_last_price": 550.0999755859375
+      "mtf_last_alert": "2026-10-12T04:47:25.318185",
+      "mtf_last_price": 556.2999877929688,
+      "resistance_last_alert": "2026-10-12T04:47:24.823802",
+      "resistance_last_price": 556.2999877929688
     },
     "LLOYDSENGG": {
       "sma50": 90.08559997558594,
@@ -10315,7 +10321,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 51.3
+      "rs_rank": 51.3,
+      "sos_pullback_curl_last_alert": "2026-10-12T04:47:36.465491",
+      "sos_pullback_curl_last_price": 176.69000244140625
     },
     "NIVABUPA": {
       "sma50": 81.06180023193359,
@@ -12091,7 +12099,9 @@
       "wedge_contraction": 0.7820949401522475,
       "rs_rank": 40.2,
       "rectangle_bounce_last_alert": "2026-10-12T04:17:40.397444",
-      "rectangle_bounce_last_price": 220.6999969482422
+      "rectangle_bounce_last_price": 220.6999969482422,
+      "vol_breakout_last_alert": "2026-10-12T04:47:51.060650",
+      "vol_breakout_last_price": 225.83999633789062
     },
     "RENUKA": {
       "sma50": 23.238800010681153,
@@ -12451,7 +12461,9 @@
       "box_low": 1280.0,
       "descending_res": 1408.5997009277344,
       "wedge_contraction": 0.7991821678652312,
-      "rs_rank": 17.0
+      "rs_rank": 17.0,
+      "rectangle_bounce_last_alert": "2026-10-12T04:47:54.725723",
+      "rectangle_bounce_last_price": 1338.800048828125
     },
     "SAGILITY": {
       "sma50": 44.253800048828126,
@@ -13430,8 +13442,8 @@
       "descending_res": 2555.4713309151784,
       "wedge_contraction": 0.6879583373899538,
       "rs_rank": 61.6,
-      "near_high_17_22_last_alert": "2026-10-12T03:49:15.733247",
-      "near_high_17_22_last_price": 2032.0
+      "near_high_17_22_last_alert": "2026-10-12T04:48:02.762769",
+      "near_high_17_22_last_price": 2068.5
     },
     "SJVN": {
       "sma50": 64.165,
@@ -13756,8 +13768,8 @@
       "descending_res": 847.7000732421875,
       "wedge_contraction": 0.692278818397123,
       "rs_rank": 54.4,
-      "near_high_17_22_last_alert": "2026-10-12T03:49:17.653254",
-      "near_high_17_22_last_price": 802.0
+      "near_high_17_22_last_alert": "2026-10-12T04:48:05.770133",
+      "near_high_17_22_last_price": 781.7000122070312
     },
     "STAR": {
       "sma50": 1077.5760021972656,
@@ -14154,8 +14166,8 @@
       "descending_res": 971.8875122070312,
       "wedge_contraction": 0.7665386420849942,
       "rs_rank": 80.1,
-      "near_high_17_22_last_alert": "2026-10-12T03:49:19.799795",
-      "near_high_17_22_last_price": 867.7999877929688
+      "near_high_17_22_last_alert": "2026-10-12T04:48:09.025955",
+      "near_high_17_22_last_price": 877.1500244140625
     },
     "SURYAROSNI": {
       "sma50": 221.67840118408202,
@@ -15132,10 +15144,10 @@
       "descending_res": 635.7,
       "wedge_contraction": 1.0452644624636849,
       "rs_rank": 67.7,
-      "resistance_last_alert": "2026-10-12T03:49:25.818007",
-      "resistance_last_price": 666.8499755859375,
-      "mtf_last_alert": "2026-10-12T03:49:26.494141",
-      "mtf_last_price": 666.8499755859375
+      "resistance_last_alert": "2026-10-12T04:48:17.831903",
+      "resistance_last_price": 675.1500244140625,
+      "mtf_last_alert": "2026-10-12T04:48:18.319066",
+      "mtf_last_price": 675.1500244140625
     },
     "TITAGARH": {
       "sma50": 833.247001953125,
