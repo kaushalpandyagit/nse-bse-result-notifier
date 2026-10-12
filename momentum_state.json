@@ -5354,8 +5354,8 @@
       "descending_res": 593.7300415039062,
       "wedge_contraction": 1.2308457498909133,
       "rs_rank": 19.7,
-      "rectangle_bounce_last_alert": "2026-10-12T05:17:04.596747",
-      "rectangle_bounce_last_price": 566.25,
+      "rectangle_bounce_last_alert": "2026-10-12T07:46:42.275953",
+      "rectangle_bounce_last_price": 572.5,
       "zanger_last_alert": "2026-10-12T07:17:08.494967",
       "zanger_last_price": 576.7000122070312,
       "resistance_last_alert": "2026-10-12T07:17:09.160926",
@@ -7616,8 +7616,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 60.5,
-      "near_high_17_22_last_alert": "2026-10-12T03:48:37.030935",
-      "near_high_17_22_last_price": 92.8499984741211
+      "near_high_17_22_last_alert": "2026-10-12T07:47:00.144092",
+      "near_high_17_22_last_price": 94.13999938964844
     },
     "JBMA": {
       "sma50": 610.8269946289063,
@@ -11191,7 +11191,9 @@
       "near_high_17_22_last_alert": "2026-10-12T07:31:24.900933",
       "near_high_17_22_last_price": 611.0,
       "resistance_last_alert": "2026-10-12T07:18:18.577558",
-      "resistance_last_price": 614.4500122070312
+      "resistance_last_price": 614.4500122070312,
+      "rectangle_bounce_last_alert": "2026-10-12T07:47:27.026887",
+      "rectangle_bounce_last_price": 612.4500122070312
     },
     "POLYMED": {
       "sma50": 1717.0679931640625,
@@ -11408,8 +11410,8 @@
       "descending_res": 821.75,
       "wedge_contraction": 1.0236859061782275,
       "rs_rank": 64.6,
-      "near_high_17_22_last_alert": "2026-10-12T03:49:03.740960",
-      "near_high_17_22_last_price": 676.0
+      "near_high_17_22_last_alert": "2026-10-12T07:47:29.318886",
+      "near_high_17_22_last_price": 669.0499877929688
     },
     "PRIVISCL": {
       "sma50": 3503.708017578125,
@@ -12132,8 +12134,8 @@
       "descending_res": 242.95667521158853,
       "wedge_contraction": 0.7820949401522475,
       "rs_rank": 40.2,
-      "rectangle_bounce_last_alert": "2026-10-12T05:04:06.412082",
-      "rectangle_bounce_last_price": 226.00999450683594,
+      "rectangle_bounce_last_alert": "2026-10-12T07:47:35.141748",
+      "rectangle_bounce_last_price": 223.7100067138672,
       "vol_breakout_last_alert": "2026-10-12T05:47:46.429721",
       "vol_breakout_last_price": 223.05999755859375
     },
