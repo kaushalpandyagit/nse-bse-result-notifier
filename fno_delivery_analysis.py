@@ -133,11 +133,34 @@ def get_session():
 # ----------------------------------------------------------------------
 # NEW: LIVE OPTION CHAIN PARSER
 # ----------------------------------------------------------------------
+# ----------------------------------------------------------------------
+# NEW: LIVE OPTION CHAIN PARSER (Firewall Bypass Version)
+# ----------------------------------------------------------------------
 def get_fno_strike_levels(session, symbol="NIFTY"):
-    url = f"https://www.nseindia.com/api/option-chain-indices?symbol={symbol}"
+    api_url = f"https://www.nseindia.com/api/option-chain-indices?symbol={symbol}"
+    
+    # NSE requires exact browser headers to allow API access
+    oc_headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": "https://www.nseindia.com/option-chain",
+    }
+    
     try:
-        response = session.get(url, headers=HEADERS, timeout=15)
-        response.raise_for_status()
+        # 1. Visit the main Option Chain page first to get valid cookies
+        session.get("https://www.nseindia.com/option-chain", headers=oc_headers, timeout=10)
+        time.sleep(1.5) # Crucial pause to let NSE register the cookie
+        
+        # 2. Hit the actual JSON API
+        response = session.get(api_url, headers=oc_headers, timeout=15)
+        
+        if response.status_code != 200:
+            log.warning(f"Option chain blocked by NSE (Status {response.status_code})")
+            return None
+            
         data = response.json().get("records")
         if not data:
             return None
@@ -165,7 +188,7 @@ def get_fno_strike_levels(session, symbol="NIFTY"):
         if df.empty:
             return None
 
-        # Find the massive walls
+        # Find the massive institutional walls
         max_ce_strike = df.loc[df["ce_oi"].idxmax()]["strike"]
         fresh_ce_wall = df.loc[df["ce_chg"].idxmax()]["strike"]
         max_pe_strike = df.loc[df["pe_oi"].idxmax()]["strike"]
