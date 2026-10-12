@@ -3535,7 +3535,9 @@
       "box_low": 216.0,
       "descending_res": 236.33333333333334,
       "wedge_contraction": 1.0340097351587392,
-      "rs_rank": 24.0
+      "rs_rank": 24.0,
+      "vol_breakout_last_alert": "2026-10-12T10:02:47.754982",
+      "vol_breakout_last_price": 220.5
     },
     "CREDITACC": {
       "sma50": 1413.787998046875,
@@ -8067,7 +8069,9 @@
       "rectangle_bounce_last_alert": "2026-10-12T09:02:48.045046",
       "rectangle_bounce_last_price": 938.9000244140625,
       "sos_pullback_curl_last_alert": "2026-10-12T09:48:31.151500",
-      "sos_pullback_curl_last_price": 949.9000244140625
+      "sos_pullback_curl_last_price": 949.9000244140625,
+      "vol_breakout_last_alert": "2026-10-12T10:04:27.350032",
+      "vol_breakout_last_price": 950.9000244140625
     },
     "JUSTDIAL": {
       "sma50": 676.1090002441406,
@@ -10362,12 +10366,12 @@
       "rs_rank": 51.3,
       "sos_pullback_curl_last_alert": "2026-10-12T08:03:08.621319",
       "sos_pullback_curl_last_price": 184.0399932861328,
-      "mtf_last_alert": "2026-10-12T09:17:20.859691",
-      "mtf_last_price": 182.97999572753906,
-      "vol_breakout_last_alert": "2026-10-12T09:17:20.272527",
-      "vol_breakout_last_price": 182.97999572753906,
-      "ema50_pullback_last_alert": "2026-10-12T09:17:21.337560",
-      "ema50_pullback_last_price": 182.97999572753906
+      "mtf_last_alert": "2026-10-12T10:05:13.818392",
+      "mtf_last_price": 187.02000427246094,
+      "vol_breakout_last_alert": "2026-10-12T10:05:13.134180",
+      "vol_breakout_last_price": 187.02000427246094,
+      "ema50_pullback_last_alert": "2026-10-12T10:05:14.500177",
+      "ema50_pullback_last_price": 187.02000427246094
     },
     "NIVABUPA": {
       "sma50": 81.06180023193359,
@@ -12631,7 +12635,9 @@
       "box_low": 125.66000366210938,
       "descending_res": 157.960009765625,
       "wedge_contraction": 0.8549106909511126,
-      "rs_rank": 14.6
+      "rs_rank": 14.6,
+      "rectangle_bounce_last_alert": "2026-10-12T10:06:02.555824",
+      "rectangle_bounce_last_price": 132.44000244140625
     },
     "SANDUMA": {
       "sma50": 194.73939880371094,
