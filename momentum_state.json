@@ -10199,7 +10199,9 @@
       "box_low": 24.25,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 5.9
+      "rs_rank": 5.9,
+      "rectangle_bounce_last_alert": "2026-10-12T08:16:50.938896",
+      "rectangle_bounce_last_price": 25.270000457763672
     },
     "NEULANDLAB": {
       "sma50": 22361.44,
@@ -10894,10 +10896,10 @@
       "descending_res": 274.4800170898437,
       "wedge_contraction": 0.966516923078012,
       "rs_rank": 10.0,
-      "sos_pullback_curl_last_alert": "2026-10-12T06:48:08.386053",
-      "sos_pullback_curl_last_price": 287.5,
-      "near_high_17_22_last_alert": "2026-10-12T06:48:09.075004",
-      "near_high_17_22_last_price": 287.5,
+      "sos_pullback_curl_last_alert": "2026-10-12T08:16:55.315882",
+      "sos_pullback_curl_last_price": 290.6499938964844,
+      "near_high_17_22_last_alert": "2026-10-12T08:16:56.014416",
+      "near_high_17_22_last_price": 290.6499938964844,
       "rectangle_bounce_last_alert": "2026-10-12T08:03:16.020994",
       "rectangle_bounce_last_price": 288.25,
       "vol_breakout_last_alert": "2026-10-12T08:03:15.400072",
@@ -13196,8 +13198,8 @@
       "descending_res": 182.8375015258789,
       "wedge_contraction": 0.9382375396026396,
       "rs_rank": 76.4,
-      "near_high_17_22_last_alert": "2026-10-12T03:49:14.303840",
-      "near_high_17_22_last_price": 184.25
+      "near_high_17_22_last_alert": "2026-10-12T08:17:09.375803",
+      "near_high_17_22_last_price": 186.50999450683594
     },
     "SHILCTECH": {
       "sma50": 4114.7580078125,
@@ -13668,8 +13670,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 28.8,
-      "vol_breakout_last_alert": "2026-10-12T07:18:46.177610",
-      "vol_breakout_last_price": 1150.0
+      "vol_breakout_last_alert": "2026-10-12T08:17:12.180247",
+      "vol_breakout_last_price": 1165.5
     },
     "SONATSOFTW": {
       "sma50": 290.27100036621096,
@@ -13814,8 +13816,8 @@
       "descending_res": 847.7000732421875,
       "wedge_contraction": 0.692278818397123,
       "rs_rank": 54.4,
-      "near_high_17_22_last_alert": "2026-10-12T04:48:05.770133",
-      "near_high_17_22_last_price": 781.7000122070312
+      "near_high_17_22_last_alert": "2026-10-12T08:17:13.734997",
+      "near_high_17_22_last_price": 772.0
     },
     "STAR": {
       "sma50": 1077.5760021972656,
@@ -14399,7 +14401,9 @@
       "wedge_contraction": null,
       "rs_rank": 24.9,
       "rectangle_bounce_last_alert": "2026-10-12T05:04:36.201774",
-      "rectangle_bounce_last_price": 369.25
+      "rectangle_bounce_last_price": 369.25,
+      "vol_breakout_last_alert": "2026-10-12T08:17:17.887127",
+      "vol_breakout_last_price": 370.45001220703125
     },
     "TANLA": {
       "sma50": 535.9020007324219,
