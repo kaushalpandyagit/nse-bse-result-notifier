@@ -2479,7 +2479,9 @@
       "box_low": 135.25999450683594,
       "descending_res": 149.95005798339844,
       "wedge_contraction": 1.0760928207261042,
-      "rs_rank": 39.5
+      "rs_rank": 39.5,
+      "near_high_17_22_last_alert": "2026-10-12T06:16:17.460819",
+      "near_high_17_22_last_price": 137.9600067138672
     },
     "CAPILLARY": {
       "sma50": 520.50599609375,
@@ -5352,10 +5354,10 @@
       "rs_rank": 19.7,
       "rectangle_bounce_last_alert": "2026-10-12T05:17:04.596747",
       "rectangle_bounce_last_price": 566.25,
-      "zanger_last_alert": "2026-10-12T04:02:17.851681",
-      "zanger_last_price": 574.2000122070312,
-      "resistance_last_alert": "2026-10-12T04:02:18.472769",
-      "resistance_last_price": 574.2000122070312,
+      "zanger_last_alert": "2026-10-12T06:16:40.245454",
+      "zanger_last_price": 582.75,
+      "resistance_last_alert": "2026-10-12T06:16:40.758415",
+      "resistance_last_price": 582.75,
       "mtf_last_alert": "2026-10-12T06:02:01.582261",
       "mtf_last_price": 570.5499877929688,
       "vol_breakout_last_alert": "2026-10-12T06:02:00.922828",
@@ -9140,8 +9142,8 @@
       "descending_res": 418.99993896484375,
       "wedge_contraction": 0.8833020207967075,
       "rs_rank": 44.5,
-      "near_high_17_22_last_alert": "2026-10-12T05:31:02.277396",
-      "near_high_17_22_last_price": 419.5
+      "near_high_17_22_last_alert": "2026-10-12T06:17:12.290689",
+      "near_high_17_22_last_price": 414.29998779296875
     },
     "LUMAXIND": {
       "sma50": 5814.17,
@@ -9213,7 +9215,9 @@
       "box_low": null,
       "descending_res": 1971.6,
       "wedge_contraction": 0.9864534070132431,
-      "rs_rank": 44.1
+      "rs_rank": 44.1,
+      "near_high_17_22_last_alert": "2026-10-12T06:17:13.503691",
+      "near_high_17_22_last_price": 1814.800048828125
     },
     "LXCHEM": {
       "sma50": 176.665400390625,
@@ -12803,7 +12807,9 @@
       "box_low": 79.81999969482422,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 31.4
+      "rs_rank": 31.4,
+      "rectangle_bounce_last_alert": "2026-10-12T06:17:42.451598",
+      "rectangle_bounce_last_price": 87.31999969482422
     },
     "SCHNEIDER": {
       "sma50": 1247.1540014648438,
