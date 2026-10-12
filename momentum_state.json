@@ -3572,8 +3572,8 @@
       "descending_res": 1333.8747863769531,
       "wedge_contraction": 0.8694348883607913,
       "rs_rank": 48.7,
-      "near_high_17_22_last_alert": "2026-10-12T07:30:20.057211",
-      "near_high_17_22_last_price": 1302.300048828125
+      "near_high_17_22_last_alert": "2026-10-12T08:30:42.185012",
+      "near_high_17_22_last_price": 1315.5
     },
     "CROMPTON": {
       "sma50": 233.3093994140625,
@@ -3974,8 +3974,8 @@
       "rs_rank": 75.8,
       "mtf_last_alert": "2026-10-12T03:48:12.589093",
       "mtf_last_price": 1414.0,
-      "near_high_17_22_last_alert": "2026-10-12T05:30:21.130812",
-      "near_high_17_22_last_price": 1394.699951171875
+      "near_high_17_22_last_alert": "2026-10-12T08:30:45.671701",
+      "near_high_17_22_last_price": 1416.0999755859375
     },
     "DEEPAKNTR": {
       "sma50": 1669.4020141601563,
@@ -5358,10 +5358,10 @@
       "rs_rank": 19.7,
       "rectangle_bounce_last_alert": "2026-10-12T07:46:42.275953",
       "rectangle_bounce_last_price": 572.5,
-      "zanger_last_alert": "2026-10-12T07:17:08.494967",
-      "zanger_last_price": 576.7000122070312,
-      "resistance_last_alert": "2026-10-12T07:17:09.160926",
-      "resistance_last_price": 576.7000122070312,
+      "zanger_last_alert": "2026-10-12T08:30:55.848433",
+      "zanger_last_price": 582.6500244140625,
+      "resistance_last_alert": "2026-10-12T08:30:56.356390",
+      "resistance_last_price": 582.6500244140625,
       "mtf_last_alert": "2026-10-12T06:47:04.627857",
       "mtf_last_price": 577.4000244140625,
       "vol_breakout_last_alert": "2026-10-12T06:47:04.025529",
@@ -10352,8 +10352,8 @@
       "mtf_last_price": 185.0500030517578,
       "vol_breakout_last_alert": "2026-10-12T07:18:07.487588",
       "vol_breakout_last_price": 185.0500030517578,
-      "ema50_pullback_last_alert": "2026-10-12T07:03:36.632540",
-      "ema50_pullback_last_price": 183.1199951171875
+      "ema50_pullback_last_alert": "2026-10-12T08:31:32.714634",
+      "ema50_pullback_last_price": 185.24000549316406
     },
     "NIVABUPA": {
       "sma50": 81.06180023193359,
@@ -14511,7 +14511,9 @@
       "box_low": 266.6000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 48.5
+      "rs_rank": 48.5,
+      "mtf_last_alert": "2026-10-12T08:32:02.489551",
+      "mtf_last_price": 294.29998779296875
     },
     "TATACHEM": {
       "sma50": 647.4640014648437,
@@ -14547,7 +14549,9 @@
       "box_low": 586.4500122070312,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 22.3
+      "rs_rank": 22.3,
+      "sos_pullback_curl_last_alert": "2026-10-12T08:32:03.328599",
+      "sos_pullback_curl_last_price": 631.2999877929688
     },
     "TATAELXSI": {
       "sma50": 3478.309990234375,
@@ -16619,7 +16623,9 @@
       "box_low": 1479.199951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 47.2
+      "rs_rank": 47.2,
+      "rectangle_bounce_last_alert": "2026-10-12T08:32:18.114154",
+      "rectangle_bounce_last_price": 1603.5
     },
     "ZFCVINDIA": {
       "sma50": 2468.7959814453125,

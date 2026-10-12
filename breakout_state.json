@@ -70,8 +70,8 @@
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-09T05:01:06.368814",
-    "custom_last_price": 3263.0
+    "custom_last_alert": "2026-10-12T08:30:13.327177",
+    "custom_last_price": 3229.39990234375
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -431,5 +431,13 @@
   "arb_TATAINVEST": {
     "spread_last_alert": "2026-10-12T08:04:37.662498",
     "spread_last_price": 2.5452723656172265
+  },
+  "BAJAJELEC": {
+    "result_date": "2026-10-12T00:00:00",
+    "day_high": 301.95001220703125,
+    "day_low": 295.04998779296875,
+    "baseline_rsi": 34.747656473742936,
+    "mcap_cr": 3445.3955346,
+    "exchange": "NSE"
   }
 }
