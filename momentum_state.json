@@ -3573,7 +3573,9 @@
       "wedge_contraction": 0.8694348883607913,
       "rs_rank": 48.7,
       "near_high_17_22_last_alert": "2026-10-12T08:30:42.185012",
-      "near_high_17_22_last_price": 1315.5
+      "near_high_17_22_last_price": 1315.5,
+      "rectangle_bounce_last_alert": "2026-10-12T08:46:33.642404",
+      "rectangle_bounce_last_price": 1316.300048828125
     },
     "CROMPTON": {
       "sma50": 233.3093994140625,
@@ -4048,10 +4050,10 @@
       "descending_res": 429.5998840332031,
       "wedge_contraction": 0.806522827394218,
       "rs_rank": 21.0,
-      "near_high_17_22_last_alert": "2026-10-12T07:02:11.980777",
-      "near_high_17_22_last_price": 415.5,
-      "rectangle_bounce_last_alert": "2026-10-12T07:02:11.399192",
-      "rectangle_bounce_last_price": 415.5
+      "near_high_17_22_last_alert": "2026-10-12T08:46:38.523642",
+      "near_high_17_22_last_price": 411.0,
+      "rectangle_bounce_last_alert": "2026-10-12T08:46:37.847029",
+      "rectangle_bounce_last_price": 411.0
     },
     "DEVYANI": {
       "sma50": 136.01519897460938,
@@ -7727,7 +7729,9 @@
       "box_low": 360.54998779296875,
       "descending_res": 362.0,
       "wedge_contraction": 0.9206292204462538,
-      "rs_rank": 50.0
+      "rs_rank": 50.0,
+      "rectangle_bounce_last_alert": "2026-10-12T08:47:06.158665",
+      "rectangle_bounce_last_price": 377.20001220703125
     },
     "JKTYRE": {
       "sma50": 366.5620007324219,
@@ -10427,7 +10431,9 @@
       "box_low": 273.1499938964844,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 67.0
+      "rs_rank": 67.0,
+      "rectangle_bounce_last_alert": "2026-10-12T08:47:26.754222",
+      "rectangle_bounce_last_price": 287.0
     },
     "NSLNISP": {
       "sma50": 42.84879997253418,
@@ -11192,14 +11198,14 @@
       "descending_res": 615.7692213792068,
       "wedge_contraction": 1.0832110852549057,
       "rs_rank": 36.7,
-      "ema50_pullback_last_alert": "2026-10-12T07:18:19.214080",
-      "ema50_pullback_last_price": 614.4500122070312,
-      "near_high_17_22_last_alert": "2026-10-12T07:31:24.900933",
-      "near_high_17_22_last_price": 611.0,
+      "ema50_pullback_last_alert": "2026-10-12T08:47:33.817390",
+      "ema50_pullback_last_price": 604.7999877929688,
+      "near_high_17_22_last_alert": "2026-10-12T08:47:34.625853",
+      "near_high_17_22_last_price": 604.7999877929688,
       "resistance_last_alert": "2026-10-12T07:18:18.577558",
       "resistance_last_price": 614.4500122070312,
-      "rectangle_bounce_last_alert": "2026-10-12T07:47:27.026887",
-      "rectangle_bounce_last_price": 612.4500122070312
+      "rectangle_bounce_last_alert": "2026-10-12T08:47:33.135022",
+      "rectangle_bounce_last_price": 604.7999877929688
     },
     "POLYMED": {
       "sma50": 1717.0679931640625,
@@ -14218,8 +14224,8 @@
       "descending_res": 971.8875122070312,
       "wedge_contraction": 0.7665386420849942,
       "rs_rank": 80.1,
-      "near_high_17_22_last_alert": "2026-10-12T07:04:27.012209",
-      "near_high_17_22_last_price": 877.3499755859375
+      "near_high_17_22_last_alert": "2026-10-12T08:47:56.549232",
+      "near_high_17_22_last_price": 865.5
     },
     "SURYAROSNI": {
       "sma50": 221.67840118408202,
@@ -14551,7 +14557,9 @@
       "wedge_contraction": null,
       "rs_rank": 22.3,
       "sos_pullback_curl_last_alert": "2026-10-12T08:32:03.328599",
-      "sos_pullback_curl_last_price": 631.2999877929688
+      "sos_pullback_curl_last_price": 631.2999877929688,
+      "rectangle_bounce_last_alert": "2026-10-12T08:47:59.987463",
+      "rectangle_bounce_last_price": 629.0499877929688
     },
     "TATAELXSI": {
       "sma50": 3478.309990234375,
