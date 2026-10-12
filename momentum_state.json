@@ -2297,7 +2297,9 @@
       "wedge_contraction": null,
       "rs_rank": 47.6,
       "sos_pullback_curl_last_alert": "2026-10-12T07:30:09.206736",
-      "sos_pullback_curl_last_price": 570.1500244140625
+      "sos_pullback_curl_last_price": 570.1500244140625,
+      "rectangle_bounce_last_alert": "2026-10-12T08:01:42.734810",
+      "rectangle_bounce_last_price": 571.75
     },
     "BSOFT": {
       "sma50": 292.8819970703125,
@@ -10342,8 +10344,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 51.3,
-      "sos_pullback_curl_last_alert": "2026-10-12T06:48:01.106469",
-      "sos_pullback_curl_last_price": 181.00999450683594,
+      "sos_pullback_curl_last_alert": "2026-10-12T08:03:08.621319",
+      "sos_pullback_curl_last_price": 184.0399932861328,
       "mtf_last_alert": "2026-10-12T07:18:08.111959",
       "mtf_last_price": 185.0500030517578,
       "vol_breakout_last_alert": "2026-10-12T07:18:07.487588",
@@ -10896,8 +10898,10 @@
       "sos_pullback_curl_last_price": 287.5,
       "near_high_17_22_last_alert": "2026-10-12T06:48:09.075004",
       "near_high_17_22_last_price": 287.5,
-      "rectangle_bounce_last_alert": "2026-10-12T07:03:44.362694",
-      "rectangle_bounce_last_price": 293.20001220703125
+      "rectangle_bounce_last_alert": "2026-10-12T08:03:16.020994",
+      "rectangle_bounce_last_price": 288.25,
+      "vol_breakout_last_alert": "2026-10-12T08:03:15.400072",
+      "vol_breakout_last_price": 288.25
     },
     "PGEL": {
       "sma50": 561.3560015869141,
@@ -12498,8 +12502,8 @@
       "descending_res": 1408.5997009277344,
       "wedge_contraction": 0.7991821678652312,
       "rs_rank": 17.0,
-      "rectangle_bounce_last_alert": "2026-10-12T04:47:54.725723",
-      "rectangle_bounce_last_price": 1338.800048828125
+      "rectangle_bounce_last_alert": "2026-10-12T08:03:33.455783",
+      "rectangle_bounce_last_price": 1320.300048828125
     },
     "SAGILITY": {
       "sma50": 44.253800048828126,

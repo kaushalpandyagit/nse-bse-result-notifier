@@ -335,7 +335,7 @@
     "baseline_rsi": 49.93750546775799,
     "mcap_cr": 70.1028709,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-12T07:15:48.631530",
+    "rsi_up_last_alert": "2026-10-12T08:01:02.076764",
     "rsi_down_last_alert": "2026-10-12T07:00:55.625208",
     "price_low_last_alert": "2026-10-09T06:00:54.616930",
     "price_low_last_price": 35.959999084472656
@@ -373,7 +373,7 @@
     "rsi_up_last_alert": "2026-10-12T05:45:55.910737",
     "price_low_last_alert": "2026-10-12T07:00:57.293974",
     "price_low_last_price": 135.42999267578125,
-    "rsi_down_last_alert": "2026-10-12T07:00:57.831939"
+    "rsi_down_last_alert": "2026-10-12T08:01:03.578865"
   },
   "CORDELIA": {
     "result_date": "2026-10-09T00:00:00",
@@ -427,5 +427,9 @@
     "mcap_cr": 4471.15032,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-12T07:15:52.614013"
+  },
+  "arb_TATAINVEST": {
+    "spread_last_alert": "2026-10-12T08:04:37.662498",
+    "spread_last_price": 2.5452723656172265
   }
 }
