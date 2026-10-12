@@ -2295,7 +2295,9 @@
       "box_low": 515.5999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 47.6
+      "rs_rank": 47.6,
+      "sos_pullback_curl_last_alert": "2026-10-12T07:30:09.206736",
+      "sos_pullback_curl_last_price": 570.1500244140625
     },
     "BSOFT": {
       "sma50": 292.8819970703125,
@@ -3568,8 +3570,8 @@
       "descending_res": 1333.8747863769531,
       "wedge_contraction": 0.8694348883607913,
       "rs_rank": 48.7,
-      "near_high_17_22_last_alert": "2026-10-12T04:01:54.665966",
-      "near_high_17_22_last_price": 1288.699951171875
+      "near_high_17_22_last_alert": "2026-10-12T07:30:20.057211",
+      "near_high_17_22_last_price": 1302.300048828125
     },
     "CROMPTON": {
       "sma50": 233.3093994140625,
@@ -11186,8 +11188,8 @@
       "rs_rank": 36.7,
       "ema50_pullback_last_alert": "2026-10-12T07:18:19.214080",
       "ema50_pullback_last_price": 614.4500122070312,
-      "near_high_17_22_last_alert": "2026-10-12T05:03:53.404868",
-      "near_high_17_22_last_price": 597.75,
+      "near_high_17_22_last_alert": "2026-10-12T07:31:24.900933",
+      "near_high_17_22_last_price": 611.0,
       "resistance_last_alert": "2026-10-12T07:18:18.577558",
       "resistance_last_price": 614.4500122070312
     },
