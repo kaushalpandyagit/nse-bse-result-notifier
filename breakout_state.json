@@ -296,8 +296,8 @@
     "mcap_cr": 2150.92359372431,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-12T04:45:48.642316",
-    "price_low_last_alert": "2026-10-09T07:29:39.677516",
-    "price_low_last_price": 887.0
+    "price_low_last_alert": "2026-10-12T05:29:35.495059",
+    "price_low_last_price": 876.9000244140625
   },
   "arb_SILINV": {
     "spread_last_alert": "2026-10-09T08:04:11.598589",
@@ -386,8 +386,8 @@
     "mcap_cr": 4576.430664715265,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-12T04:45:54.358897",
-    "price_low_last_alert": "2026-10-12T04:00:57.139895",
-    "price_low_last_price": 224.42999267578125
+    "price_low_last_alert": "2026-10-12T05:29:38.585264",
+    "price_low_last_price": 221.75
   },
   "arb_GPIL": {
     "spread_last_alert": "2026-10-12T03:49:45.325909",
@@ -404,5 +404,13 @@
   "arb_SUMMITSEC": {
     "spread_last_alert": "2026-10-12T04:05:02.562731",
     "spread_last_price": 6.2877639962946414
+  },
+  "STCINDIA": {
+    "result_date": "2026-10-12T00:00:00",
+    "day_high": 106.1500015258789,
+    "day_low": 102.31999969482422,
+    "baseline_rsi": 36.86499581916251,
+    "mcap_cr": 629.8200073242188,
+    "exchange": "NSE"
   }
 }
