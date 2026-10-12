@@ -241,7 +241,6 @@ def get_rs_and_sector_tag(symbol: str, c_rsi: float, momentum_state: dict) -> st
     
     sector = get_cached_sector(symbol)
     
-    # Check custom indices cache loaded from build_indices.py JSON
     matched_custom_key = None
     for c_key, c_data in CUSTOM_SECTORS_CACHE.items():
         if symbol in c_data.get("components", []):
@@ -264,6 +263,27 @@ def get_rs_and_sector_tag(symbol: str, c_rsi: float, momentum_state: dict) -> st
         
     rsi_display = f"<b>{c_rsi:.1f}</b>" if c_rsi > sec_rsi else f"{c_rsi:.1f}"
     return f"\n🎯 RS {rs_rank} | Stock RSI: {rsi_display} | {sec_name} RSI: {sec_rsi:.1f}"
+
+def get_earnings_tag(symbol: str) -> str:
+    try:
+        ticker = yf.Ticker(f"{symbol}.NS")
+        if hasattr(ticker, 'get_earnings_dates'):
+            ed = ticker.get_earnings_dates(limit=10)
+            if ed is not None and not ed.empty:
+                now = pd.Timestamp.now(tz='UTC')
+                future = ed[ed.index >= now].index
+                past = ed[ed.index < now].index
+                
+                if not future.empty:
+                    next_d = future.min()
+                    return f" | 📅 EE {next_d.strftime('%d %b')}"
+                elif not past.empty:
+                    last_d = past.max()
+                    if (now - last_d).days <= 30: # Only show if declared in last 30 days
+                        return f" | 📢 E {last_d.strftime('%d %b')}"
+    except Exception:
+        pass
+    return ""
 
 # ----------------------------------------------------------------------
 # FYERS AUTHENTICATION
@@ -538,7 +558,6 @@ def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"
 # ----------------------------------------------------------------------
 
 def calculate_custom_index_rsi_from_cache(custom_sector_key: str, rsi_period: int = RSI_PERIOD) -> float:
-    """Calculates Wilder's RSI directly from pre-built custom sector history json."""
     data = CUSTOM_SECTORS_CACHE.get(custom_sector_key)
     if not data or "history" not in data:
         return 50.0
@@ -777,7 +796,6 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis}
 
 def send_morning_sector_rs_report(momentum_state: dict) -> dict:
-    """Sends a 9:00 AM summary of the strongest RS stocks grouped by their sector."""
     now_ist = get_ist_now()
     today_str = now_ist.date().isoformat()
     
@@ -787,14 +805,12 @@ def send_morning_sector_rs_report(momentum_state: dict) -> dict:
     if now_ist.weekday() >= 5:
         return momentum_state
 
-    # Only send between 9:00 AM and 9:29 AM
     if not (now_ist.hour == 9 and now_ist.minute < 30):
         return momentum_state
         
     watchlist = momentum_state.get("watchlist", {})
     if not watchlist: return momentum_state
     
-    # Get top RS stocks (RS rank >= 85)
     top_stocks = []
     for sym, data in watchlist.items():
         rs_rank = data.get("rs_rank")
@@ -816,7 +832,6 @@ def send_morning_sector_rs_report(momentum_state: dict) -> dict:
         
     lines = [f"🌅 <b>Pre-Market Sector RS Leaders — {today_str}</b>", ""]
     
-    # Sort sectors by number of strong stocks (sector breadth)
     sorted_sectors = sorted(sectors.items(), key=lambda x: len(x[1]), reverse=True)
     
     for sec, syms in sorted_sectors[:10]:
@@ -961,11 +976,9 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                 open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
 
         rs_tag = get_rs_and_sector_tag(symbol, c_rsi, momentum_state)
+        ern_tag = get_earnings_tag(symbol)
         y_rsi = entry.get("yesterday_rsi")
 
-        # ---------------------------------------------------------
-        # NEW: Intraday Volume Breakout Scanner (4x Average Volume)
-        # ---------------------------------------------------------
         avg_vol_for_bo = entry.get("avg_volume_50d") or metrics.get("sma_vol_20")
         if alert_allowed(entry, "vol_breakout", price) and avg_vol_for_bo and avg_vol_for_bo > 0:
             if volume >= 4.0 * avg_vol_for_bo:
@@ -977,7 +990,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"• <b>Current Price:</b> ₹{price:.2f} {pct_str}\n"
                     f"• <b>Volume:</b> {vol_mult:.1f}x Average Volume\n"
                     f"• <b>Traded Vol:</b> {volume:,.0f} shares"
-                    f"{open_low_tag}{rs_tag}"
+                    f"{open_low_tag}{rs_tag}{ern_tag}"
                 )
 
         desc_res = entry.get("descending_res")
@@ -997,7 +1010,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"• <b>Setup:</b> Right-Side Tightness (Volatility compressed to {int(wedge_contract*100)}% of avg)\n"
                     f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Squeeze initiated)\n"
                     f"• <b>Action:</b> High risk/reward entry as lower-highs trend is broken."
-                    f"{open_low_tag}{rs_tag}"
+                    f"{open_low_tag}{rs_tag}{ern_tag}"
                 )
 
         box_high, box_low = entry.get("box_high"), entry.get("box_low")
@@ -1020,7 +1033,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"• <b>RSI Range:</b> {c_rsi:.1f} (Strict 28-71 corridor met)\n"
                     f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Support defended)\n"
                     f"• <b>Target:</b> Top of Box at ₹{box_high:.2f} (+{reward_pct:.1f}% potential)"
-                    f"{open_low_tag}{rs_tag}"
+                    f"{open_low_tag}{rs_tag}{ern_tag}"
                 )
 
         sos_rsi, sos_peak_p = entry.get("sos_thrust_peak_rsi"), entry.get("sos_thrust_peak_price")
@@ -1043,7 +1056,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"• <b>Prior Impulse:</b> Bullish Thrust RSI peaked at <b>{sos_rsi:.1f}</b>\n"
                     f"• <b>Support Reset:</b> RSI defended 40-zone (Now curling to <b>{c_rsi:.1f}</b> vs Yesterday: {y_rsi:.1f})\n"
                     f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Buyers reclaiming control)"
-                    f"{open_low_tag}{rs_tag}"
+                    f"{open_low_tag}{rs_tag}{ern_tag}"
                 )
 
         macro_high, macro_high_rsi = entry.get("macro_high"), entry.get("macro_high_rsi")
@@ -1069,7 +1082,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"• <b>RSI Test:</b> Current RSI: <b>{c_rsi:.1f}</b> (Crossed Macro High RSI: {macro_high_rsi:.1f})\n"
                     f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Expansion detected)\n"
                     f"• <b>Upper Shadow:</b> {int(upper_wick_ratio*100)}% (Buyers holding the high)"
-                    f"{open_low_tag}{rs_tag}"
+                    f"{open_low_tag}{rs_tag}{ern_tag}"
                 )
 
         macro_low_rsi = entry.get("macro_low_rsi")
@@ -1094,24 +1107,24 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     f"• <b>Setup:</b> Liquidity Sweep Spring / Capitulation Wick (Lower shadow: {int(wick_ratio*100)}%)\n"
                     f"• <b>RSI Test:</b> Current Daily RSI: {c_rsi:.1f} vs Base Pivot RSI: {macro_low_rsi:.1f}\n"
                     f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Absorption detected)"
-                    f"{open_low_tag}{rs_tag}"
+                    f"{open_low_tag}{rs_tag}{ern_tag}"
                 )
 
         if alert_allowed(entry, "zanger", price) and base_high and avg_vol50 and pct_change is not None:
             if pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50 and price >= (base_high * 0.95):
                 record_alert(entry, "zanger", price)
-                send_telegram_message(f"💥 <b>{symbol}</b> Zanger Early Entry Setup!\nPrice ₹{price:.2f} (up {pct_change:+.1f}%) near {ZANGER_BASE_LOOKBACK_DAYS}-day base high ₹{base_high:.2f} on {volume / avg_vol50:.1f}x avg volume.{open_low_tag}{rs_tag}")
+                send_telegram_message(f"💥 <b>{symbol}</b> Zanger Early Entry Setup!\nPrice ₹{price:.2f} (up {pct_change:+.1f}%) near {ZANGER_BASE_LOOKBACK_DAYS}-day base high ₹{base_high:.2f} on {volume / avg_vol50:.1f}x avg volume.{open_low_tag}{rs_tag}{ern_tag}")
 
         if alert_allowed(entry, "bonde", price) and pct_change is not None and prev_volume is not None and metrics.get("close_3d_ago"):
             return_3d = (prev_close - metrics["close_3d_ago"]) / metrics["close_3d_ago"] * 100
             if entry.get("stage2") and return_3d < 1.0 and volume > prev_volume and volume >= BONDE_MIN_VOLUME and pct_change >= BONDE_MIN_MOVE_PCT:
                 record_alert(entry, "bonde", price)
-                send_telegram_message(f"⚡ <b>{symbol}</b> Bonde Early Entry Model Trigger!\nConsolidated ({return_3d:+.1f}%), moved {pct_change:+.1f}% today. Vol ({volume:,.0f}) > Yesterday, in Stage 2. Price ₹{price:.2f}{open_low_tag}{rs_tag}")
+                send_telegram_message(f"⚡ <b>{symbol}</b> Bonde Early Entry Model Trigger!\nConsolidated ({return_3d:+.1f}%), moved {pct_change:+.1f}% today. Vol ({volume:,.0f}) > Yesterday, in Stage 2. Price ₹{price:.2f}{open_low_tag}{rs_tag}{ern_tag}")
 
         if alert_allowed(entry, "resistance", price) and base_high:
             if 0 < ((base_high - price) / base_high * 100) <= 4.0:
                 record_alert(entry, "resistance", price)
-                send_telegram_message(f"🎯 <b>{symbol}</b> Horizontal Resistance Scanner!\nPrice ₹{price:.2f} is within 4% below the recent base high (₹{base_high:.2f}).{open_low_tag}{rs_tag}")
+                send_telegram_message(f"🎯 <b>{symbol}</b> Horizontal Resistance Scanner!\nPrice ₹{price:.2f} is within 4% below the recent base high (₹{base_high:.2f}).{open_low_tag}{rs_tag}{ern_tag}")
 
         if alert_allowed(entry, "mtf", price) and c_rsi is not None:
             m_rsi = entry.get("monthly_rsi", 50.0)
@@ -1120,7 +1133,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                 rsi_condition = c_rsi > y_rsi and c_rsi > 30 and m_rsi <= 56 and metrics["weekly_rsi"] <= c_rsi
                 if rsi_condition and ema_condition:
                     record_alert(entry, "mtf", price)
-                    send_telegram_message(f"🔮 <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice ₹{price:.2f} (Spiked ≥3% above key EMA).\nLive Daily RSI: {c_rsi:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}{open_low_tag}{rs_tag}")
+                    send_telegram_message(f"🔮 <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice ₹{price:.2f} (Spiked ≥3% above key EMA).\nLive Daily RSI: {c_rsi:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}{open_low_tag}{rs_tag}{ern_tag}")
         
         if alert_allowed(entry, "ema50_pullback", price) and c_rsi:
             ema_50 = metrics.get("ema_50")
@@ -1141,7 +1154,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     send_telegram_message(
                         f"🧲 <b>{symbol}</b> Strict 50 EMA Pullback Alert!\n"
                         f"Price ₹{price:.2f} is hovering near 50 EMA (₹{ema_50:.2f}) with expanding volume.\n"
-                        f"RSI: {c_rsi:.1f} (Up from {y_rsi:.1f}) | Mcap: ₹{mcap:.0f} Cr{open_low_tag}{rs_tag}"
+                        f"RSI: {c_rsi:.1f} (Up from {y_rsi:.1f}) | Mcap: ₹{mcap:.0f} Cr{open_low_tag}{rs_tag}{ern_tag}"
                     )
 
         if alert_allowed(entry, "near_high_17_22", price):
@@ -1152,7 +1165,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                     record_alert(entry, "near_high_17_22", price)
                     send_telegram_message(
                         f"🏔️ <b>{symbol}</b> Near Yearly High / ATH Scanner!\n"
-                        f"Price ₹{price:.2f} is within {pct_from_high:.1f}% of its 52W/ATH High (₹{ref_high:.2f}).{open_low_tag}{rs_tag}"
+                        f"Price ₹{price:.2f} is within {pct_from_high:.1f}% of its 52W/ATH High (₹{ref_high:.2f}).{open_low_tag}{rs_tag}{ern_tag}"
                     )
 
     return momentum_state
@@ -1422,23 +1435,24 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
                 open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
 
         rs_tag = get_rs_and_sector_tag(symbol, rsi, momentum_state)
+        ern_tag = get_earnings_tag(symbol)
 
         if price > entry["day_high"] and alert_allowed(entry, "price_high", price):
             record_alert(entry, "price_high", price)
-            send_telegram_message(f"🚀 <b>{symbol}</b> price broke ABOVE result-day High!\nCurrent: ₹{price:.2f} | Result-day High: ₹{entry['day_high']:.2f}{open_low_tag}{rs_tag}")
+            send_telegram_message(f"🚀 <b>{symbol}</b> price broke ABOVE result-day High!\nCurrent: ₹{price:.2f} | Result-day High: ₹{entry['day_high']:.2f}{open_low_tag}{rs_tag}{ern_tag}")
 
         if price < entry["day_low"] and alert_allowed(entry, "price_low", price):
             record_alert(entry, "price_low", price)
-            send_telegram_message(f"🔻 <b>{symbol}</b> price broke BELOW result-day Low!\nCurrent: ₹{price:.2f} | Result-day Low: ₹{entry['day_low']:.2f}{open_low_tag}{rs_tag}")
+            send_telegram_message(f"🔻 <b>{symbol}</b> price broke BELOW result-day Low!\nCurrent: ₹{price:.2f} | Result-day Low: ₹{entry['day_low']:.2f}{open_low_tag}{rs_tag}{ern_tag}")
 
         if rsi is not None and entry.get("baseline_rsi") is not None:
             if rsi > entry["baseline_rsi"] and alert_allowed(entry, "rsi_up"):
                 record_alert(entry, "rsi_up")
-                send_telegram_message(f"📈 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}{rs_tag}")
+                send_telegram_message(f"📈 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}{rs_tag}{ern_tag}")
 
             if rsi < entry["baseline_rsi"] and alert_allowed(entry, "rsi_down"):
                 record_alert(entry, "rsi_down")
-                send_telegram_message(f"📉 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}{rs_tag}")
+                send_telegram_message(f"📉 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}{rs_tag}{ern_tag}")
 
     custom_alerts = {**fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)}
     recent_news = fetch_recent_news_for_alerts()
@@ -1483,6 +1497,7 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
         
         if alert_allowed(c_entry, "custom", current_price):
             rs_tag = get_rs_and_sector_tag(clean_symbol, c_metrics.get("rsi"), momentum_state)
+            ern_tag = get_earnings_tag(clean_symbol)
             
             for target_rule in rules["targets"]:
                 target_val = c_metrics.get(target_rule) if isinstance(target_rule, str) else target_rule
@@ -1491,7 +1506,7 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
                     record_alert(c_entry, "custom", current_price)
                     t_str = f"{target_rule.upper()} (₹{target_val:.2f})" if isinstance(target_rule, str) else (f"{target_val:+.2f}%" if "pct" in metric_type else f"{target_val:.1f}" if "rsi" in metric_type else f"₹{target_val:+.2f}" if "change" in metric_type else f"₹{target_val:.2f}")
                     v_str = f"{current_val:+.2f}%" if "pct" in metric_type else f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:+.2f}" if "change" in metric_type else f"₹{current_val:.2f}"
-                    send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{current_price:.2f}{custom_open_low_tag}{rs_tag}")
+                    send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{current_price:.2f}{custom_open_low_tag}{rs_tag}{ern_tag}")
                     break
 
     return state
