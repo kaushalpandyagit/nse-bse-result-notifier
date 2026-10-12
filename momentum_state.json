@@ -2000,8 +2000,8 @@
       "descending_res": 2047.857142857143,
       "wedge_contraction": 0.9818992328243771,
       "rs_rank": 66.8,
-      "near_high_17_22_last_alert": "2026-10-12T03:47:59.504906",
-      "near_high_17_22_last_price": 1920.5
+      "near_high_17_22_last_alert": "2026-10-12T05:16:26.429666",
+      "near_high_17_22_last_price": 1946.4000244140625
     },
     "BIRET": {
       "sma50": 339.7530010986328,
@@ -2437,7 +2437,9 @@
       "box_low": 700.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 19.2
+      "rs_rank": 19.2,
+      "rectangle_bounce_last_alert": "2026-10-12T05:16:31.863157",
+      "rectangle_bounce_last_price": 748.0499877929688
     },
     "CANHLIFE": {
       "sma50": 150.61139984130858,
@@ -5234,8 +5236,8 @@
       "descending_res": 281.7062568664551,
       "wedge_contraction": 0.9519040262316517,
       "rs_rank": 70.7,
-      "mtf_last_alert": "2026-10-12T03:48:20.799312",
-      "mtf_last_price": 272.0
+      "mtf_last_alert": "2026-10-12T05:17:02.777112",
+      "mtf_last_price": 275.29998779296875
     },
     "GABRIEL": {
       "sma50": 1395.2440063476563,
@@ -5344,8 +5346,8 @@
       "descending_res": 593.7300415039062,
       "wedge_contraction": 1.2308457498909133,
       "rs_rank": 19.7,
-      "rectangle_bounce_last_alert": "2026-10-12T04:02:17.164970",
-      "rectangle_bounce_last_price": 574.2000122070312,
+      "rectangle_bounce_last_alert": "2026-10-12T05:17:04.596747",
+      "rectangle_bounce_last_price": 566.25,
       "zanger_last_alert": "2026-10-12T04:02:17.851681",
       "zanger_last_price": 574.2000122070312,
       "resistance_last_alert": "2026-10-12T04:02:18.472769",
@@ -10329,7 +10331,9 @@
       "wedge_contraction": null,
       "rs_rank": 51.3,
       "sos_pullback_curl_last_alert": "2026-10-12T04:47:36.465491",
-      "sos_pullback_curl_last_price": 176.69000244140625
+      "sos_pullback_curl_last_price": 176.69000244140625,
+      "mtf_last_alert": "2026-10-12T05:18:01.084899",
+      "mtf_last_price": 178.83999633789062
     },
     "NIVABUPA": {
       "sma50": 81.06180023193359,
