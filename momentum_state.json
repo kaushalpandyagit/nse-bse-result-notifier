@@ -873,7 +873,9 @@
       "resistance_last_alert": "2026-10-12T03:47:50.638989",
       "resistance_last_price": 297.6000061035156,
       "near_high_17_22_last_alert": "2026-10-12T03:47:51.367711",
-      "near_high_17_22_last_price": 297.6000061035156
+      "near_high_17_22_last_price": 297.6000061035156,
+      "ema50_pullback_last_alert": "2026-10-12T04:30:06.262235",
+      "ema50_pullback_last_price": 300.6499938964844
     },
     "ANURAS": {
       "sma50": 1207.4280102539062,
@@ -4975,7 +4977,9 @@
       "box_low": 141.60000610351562,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 48.9
+      "rs_rank": 48.9,
+      "near_high_17_22_last_alert": "2026-10-12T04:30:54.374948",
+      "near_high_17_22_last_price": 148.10000610351562
     },
     "FIEMIND": {
       "sma50": 2093.54,
