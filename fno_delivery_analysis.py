@@ -4,8 +4,7 @@ Daily F&O, Delivery Data, and Ace Investor Analysis -> Telegram
 
 Runs ONCE per trading day, after market close (when NSE's daily
 Bhavcopy and Bulk/Block deal files are finalized, typically by ~6:30 PM IST).
-Includes automated Day-over-Day Delta & Percentage Directional Shift tracking,
-plus live Option Chain integration to pinpoint Smart Money strike walls.
+Includes automated Day-over-Day Delta & Percentage Directional Shift tracking.
 """
 
 import os
@@ -131,16 +130,18 @@ def get_session():
         log.warning("Could not prime NSE session: %s", e)
     return session
 
-
 # ----------------------------------------------------------------------
-# OPTION CHAIN PARSER
+# NEW: LIVE OPTION CHAIN PARSER
 # ----------------------------------------------------------------------
 def get_fno_strike_levels(session, symbol="NIFTY"):
     url = f"https://www.nseindia.com/api/option-chain-indices?symbol={symbol}"
     try:
         response = session.get(url, headers=HEADERS, timeout=15)
         response.raise_for_status()
-        data = response.json()["records"]
+        data = response.json().get("records")
+        if not data:
+            return None
+            
         underlying_price = data["underlyingValue"]
         active_expiry = data["expiryDates"][0]
 
@@ -153,8 +154,10 @@ def get_fno_strike_levels(session, symbol="NIFTY"):
             ce_chg = item.get("CE", {}).get("changeinOpenInterest", 0)
             pe_oi = item.get("PE", {}).get("openInterest", 0)
             pe_chg = item.get("PE", {}).get("changeinOpenInterest", 0)
+            
             rows.append({
-                "strike": strike, "ce_oi": ce_oi, "ce_chg": ce_chg,
+                "strike": strike, 
+                "ce_oi": ce_oi, "ce_chg": ce_chg,
                 "pe_oi": pe_oi, "pe_chg": pe_chg,
             })
 
@@ -162,6 +165,7 @@ def get_fno_strike_levels(session, symbol="NIFTY"):
         if df.empty:
             return None
 
+        # Find the massive walls
         max_ce_strike = df.loc[df["ce_oi"].idxmax()]["strike"]
         fresh_ce_wall = df.loc[df["ce_chg"].idxmax()]["strike"]
         max_pe_strike = df.loc[df["pe_oi"].idxmax()]["strike"]
@@ -176,9 +180,8 @@ def get_fno_strike_levels(session, symbol="NIFTY"):
             "Day_Fresh_Put_Add": fresh_pe_wall,
         }
     except Exception as e:
-        log.warning("Option chain fetch failed for %s: %s", symbol, e)
+        log.warning(f"Option chain fetch failed for {symbol}: {e}")
         return None
-
 
 # ----------------------------------------------------------------------
 # SMART MONEY: BULK & BLOCK DEALS
