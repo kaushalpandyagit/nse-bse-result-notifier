@@ -5345,7 +5345,9 @@
       "resistance_last_alert": "2026-10-12T04:02:18.472769",
       "resistance_last_price": 574.2000122070312,
       "mtf_last_alert": "2026-10-12T04:02:19.088225",
-      "mtf_last_price": 574.2000122070312
+      "mtf_last_price": 574.2000122070312,
+      "vol_breakout_last_alert": "2026-10-12T04:16:45.246300",
+      "vol_breakout_last_price": 573.3499755859375
     },
     "GENUSPOWER": {
       "sma50": 314.63499938964844,
@@ -12083,7 +12085,9 @@
       "box_low": 216.0500030517578,
       "descending_res": 242.95667521158853,
       "wedge_contraction": 0.7820949401522475,
-      "rs_rank": 40.2
+      "rs_rank": 40.2,
+      "rectangle_bounce_last_alert": "2026-10-12T04:17:40.397444",
+      "rectangle_bounce_last_price": 220.6999969482422
     },
     "RENUKA": {
       "sma50": 23.238800010681153,
@@ -14327,7 +14331,9 @@
       "box_low": 344.45001220703125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 24.9
+      "rs_rank": 24.9,
+      "rectangle_bounce_last_alert": "2026-10-12T04:17:58.490736",
+      "rectangle_bounce_last_price": 364.3999938964844
     },
     "TANLA": {
       "sma50": 535.9020007324219,
