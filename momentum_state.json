@@ -1489,7 +1489,9 @@
       "box_low": 560.9000244140625,
       "descending_res": 615.4500732421875,
       "wedge_contraction": 1.0307946952322948,
-      "rs_rank": 69.9
+      "rs_rank": 69.9,
+      "near_high_17_22_last_alert": "2026-10-12T04:01:31.160382",
+      "near_high_17_22_last_price": 583.75
     },
     "AWL": {
       "sma50": 188.50779937744142,
@@ -3555,7 +3557,9 @@
       "box_low": 1209.0999755859375,
       "descending_res": 1333.8747863769531,
       "wedge_contraction": 0.8694348883607913,
-      "rs_rank": 48.7
+      "rs_rank": 48.7,
+      "near_high_17_22_last_alert": "2026-10-12T04:01:54.665966",
+      "near_high_17_22_last_price": 1288.699951171875
     },
     "CROMPTON": {
       "sma50": 233.3093994140625,
@@ -3807,7 +3811,9 @@
       "box_low": 3899.0,
       "descending_res": 4999.738206129808,
       "wedge_contraction": 0.6743647651355514,
-      "rs_rank": 74.7
+      "rs_rank": 74.7,
+      "near_high_17_22_last_alert": "2026-10-12T04:01:58.214186",
+      "near_high_17_22_last_price": 4140.10009765625
     },
     "DBL": {
       "sma50": 413.6210015869141,
@@ -4027,7 +4033,9 @@
       "box_low": 393.0,
       "descending_res": 429.5998840332031,
       "wedge_contraction": 0.806522827394218,
-      "rs_rank": 21.0
+      "rs_rank": 21.0,
+      "near_high_17_22_last_alert": "2026-10-12T04:02:01.256623",
+      "near_high_17_22_last_price": 421.1000061035156
     },
     "DEVYANI": {
       "sma50": 136.01519897460938,
@@ -5329,7 +5337,15 @@
       "box_low": 500.0,
       "descending_res": 593.7300415039062,
       "wedge_contraction": 1.2308457498909133,
-      "rs_rank": 19.7
+      "rs_rank": 19.7,
+      "rectangle_bounce_last_alert": "2026-10-12T04:02:17.164970",
+      "rectangle_bounce_last_price": 574.2000122070312,
+      "zanger_last_alert": "2026-10-12T04:02:17.851681",
+      "zanger_last_price": 574.2000122070312,
+      "resistance_last_alert": "2026-10-12T04:02:18.472769",
+      "resistance_last_price": 574.2000122070312,
+      "mtf_last_alert": "2026-10-12T04:02:19.088225",
+      "mtf_last_price": 574.2000122070312
     },
     "GENUSPOWER": {
       "sma50": 314.63499938964844,
@@ -16339,7 +16355,9 @@
       "box_low": 706.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 41.5
+      "rs_rank": 41.5,
+      "mtf_last_alert": "2026-10-12T04:04:23.756266",
+      "mtf_last_price": 846.75
     },
     "YATHARTH": {
       "sma50": 969.8969982910156,
