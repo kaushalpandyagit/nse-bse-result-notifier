@@ -17,6 +17,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
 - Custom Synthetic Index Engine (Equal-Weighted Basket RSI via custom_indices.json).
 - NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
+- Fast local earnings_calendar.json ingestion for EE / E tagging on alerts.
 """
 
 import os
@@ -126,6 +127,7 @@ NIFTY500_CACHE_FILE = Path(__file__).parent / "nifty500_symbols.json"
 LOG_FILE = Path(__file__).parent / "breakout_notifier.log"
 MOMENTUM_STATE_FILE = Path(__file__).parent / "momentum_state.json"
 SECTOR_CACHE_FILE = Path(__file__).parent / "stock_sectors.json"
+EARNINGS_JSON_FILE = Path(__file__).parent / "earnings_calendar.json"
 
 NSE_CSV_URL = "https://archives.nseindia.com/content/indices/ind_niftytotalmarket_list.csv"
 
@@ -173,6 +175,14 @@ SECTOR_BENCHMARKS = {
     "^CNXPSUBANK": "PSU Bank", "^CNXFIN": "FinSrv", "^CNXPSE": "PSE",
     "^CNXCONSUM": "Consumption", "^CNXCOMMODITIES": "Commodities"
 }
+
+# --- LOAD EARNINGS CALENDAR MAP ---
+EARNINGS_MAP = {}
+if EARNINGS_JSON_FILE.exists():
+    try:
+        EARNINGS_MAP = json.loads(EARNINGS_JSON_FILE.read_text())
+    except Exception as e:
+        print(f"[!] Warning: Could not load earnings_calendar.json: {e}")
 
 # ----------------------------------------------------------------------
 # LOGGING & TELEGRAM
@@ -265,24 +275,40 @@ def get_rs_and_sector_tag(symbol: str, c_rsi: float, momentum_state: dict) -> st
     return f"\n🎯 RS {rs_rank} | Stock RSI: {rsi_display} | {sec_name} RSI: {sec_rsi:.1f}"
 
 def get_earnings_tag(symbol: str) -> str:
+    clean_sym = symbol.strip().upper()
+    now_dt = get_ist_now().date()
+
+    if clean_sym in EARNINGS_MAP:
+        try:
+            target_date = datetime.datetime.strptime(str(EARNINGS_MAP[clean_sym]), "%Y-%m-%d").date()
+            if target_date > now_dt:
+                return f" | 📅 EE {target_date.strftime('%d %b')}"
+            else:
+                days_ago = (now_dt - target_date).days
+                if days_ago <= 30:
+                    return f" | 📢 E {target_date.strftime('%d %b')}"
+        except Exception:
+            pass
+
     try:
-        ticker = yf.Ticker(f"{symbol}.NS")
-        if hasattr(ticker, 'get_earnings_dates'):
-            ed = ticker.get_earnings_dates(limit=10)
+        ticker = yf.Ticker(f"{clean_sym}.NS")
+        if hasattr(ticker, "get_earnings_dates"):
+            ed = ticker.get_earnings_dates(limit=5)
             if ed is not None and not ed.empty:
-                now = pd.Timestamp.now(tz='UTC')
-                future = ed[ed.index >= now].index
-                past = ed[ed.index < now].index
-                
+                now_utc = pd.Timestamp.now(tz="UTC")
+                future = ed[ed.index >= now_utc].index
+                past = ed[ed.index < now_utc].index
+
                 if not future.empty:
                     next_d = future.min()
                     return f" | 📅 EE {next_d.strftime('%d %b')}"
                 elif not past.empty:
                     last_d = past.max()
-                    if (now - last_d).days <= 30: # Only show if declared in last 30 days
+                    if (now_utc - last_d).days <= 30:
                         return f" | 📢 E {last_d.strftime('%d %b')}"
     except Exception:
         pass
+
     return ""
 
 # ----------------------------------------------------------------------
@@ -788,9 +814,13 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         f"<i>Universe: {len(per_symbol_data)} stocks within ₹{MIN_MARKET_CAP_CR:,.0f} Cr – ₹{MAX_MARKET_CAP_CR:,.0f} Cr.</i>", "",
         f"🟢 <b>Minervini Stage 2 + VCP</b> ({len(stage2_vcp_list)} stocks)",
     ]
-    for s, r in stage2_vcp_list[:TOP_N_MOMENTUM]: lines.append(f"  {s} (RS rank {r})")
+    for s, r in stage2_vcp_list[:TOP_N_MOMENTUM]:
+        e_tag = get_earnings_tag(s)
+        lines.append(f"  {s} (RS rank {r}){e_tag}")
     lines += ["", f"🌟 <b>Momentum Leaders</b> ({len(momentum_leader_list)} stocks)"]
-    for s, r in momentum_leader_list[:TOP_N_MOMENTUM]: lines.append(f"  {s} (RS rank {r})")
+    for s, r in momentum_leader_list[:TOP_N_MOMENTUM]:
+        e_tag = get_earnings_tag(s)
+        lines.append(f"  {s} (RS rank {r}){e_tag}")
     send_telegram_message("\n".join(lines))
     
     return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis}
@@ -825,7 +855,9 @@ def send_morning_sector_rs_report(momentum_state: dict) -> dict:
         if sec == "Unknown": sec = "Broad Market"
         if sec not in sectors:
             sectors[sec] = []
-        sectors[sec].append(f"{sym} ({rs})")
+        e_tag = get_earnings_tag(sym).strip(" |")
+        e_str = f" [{e_tag}]" if e_tag else ""
+        sectors[sec].append(f"{sym} ({rs}){e_str}")
         
     if not sectors:
         return momentum_state
