@@ -776,6 +776,58 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     
     return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis}
 
+def send_morning_sector_rs_report(momentum_state: dict) -> dict:
+    """Sends a 9:00 AM summary of the strongest RS stocks grouped by their sector."""
+    now_ist = get_ist_now()
+    today_str = now_ist.date().isoformat()
+    
+    if momentum_state.get("last_sector_report_date") == today_str:
+        return momentum_state
+        
+    if now_ist.weekday() >= 5:
+        return momentum_state
+
+    # Only send between 9:00 AM and 9:29 AM
+    if not (now_ist.hour == 9 and now_ist.minute < 30):
+        return momentum_state
+        
+    watchlist = momentum_state.get("watchlist", {})
+    if not watchlist: return momentum_state
+    
+    # Get top RS stocks (RS rank >= 85)
+    top_stocks = []
+    for sym, data in watchlist.items():
+        rs_rank = data.get("rs_rank")
+        if rs_rank is not None and rs_rank >= 85.0:
+            top_stocks.append((sym, rs_rank))
+            
+    top_stocks.sort(key=lambda x: x[1], reverse=True)
+    
+    sectors = {}
+    for sym, rs in top_stocks:
+        sec = get_cached_sector(sym)
+        if sec == "Unknown": sec = "Broad Market"
+        if sec not in sectors:
+            sectors[sec] = []
+        sectors[sec].append(f"{sym} ({rs})")
+        
+    if not sectors:
+        return momentum_state
+        
+    lines = [f"🌅 <b>Pre-Market Sector RS Leaders — {today_str}</b>", ""]
+    
+    # Sort sectors by number of strong stocks (sector breadth)
+    sorted_sectors = sorted(sectors.items(), key=lambda x: len(x[1]), reverse=True)
+    
+    for sec, syms in sorted_sectors[:10]:
+        lines.append(f"📁 <b>{sec}</b> ({len(syms)} strong stocks)")
+        lines.append("  " + ", ".join(syms[:6]))
+        lines.append("")
+        
+    send_telegram_message("\n".join(lines))
+    momentum_state["last_sector_report_date"] = today_str
+    return momentum_state
+
 # ----------------------------------------------------------------------
 # COOLDOWN & 1% PRICE CHANGE ENGINE
 # ----------------------------------------------------------------------
@@ -910,6 +962,23 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
 
         rs_tag = get_rs_and_sector_tag(symbol, c_rsi, momentum_state)
         y_rsi = entry.get("yesterday_rsi")
+
+        # ---------------------------------------------------------
+        # NEW: Intraday Volume Breakout Scanner (4x Average Volume)
+        # ---------------------------------------------------------
+        avg_vol_for_bo = entry.get("avg_volume_50d") or metrics.get("sma_vol_20")
+        if alert_allowed(entry, "vol_breakout", price) and avg_vol_for_bo and avg_vol_for_bo > 0:
+            if volume >= 4.0 * avg_vol_for_bo:
+                record_alert(entry, "vol_breakout", price)
+                vol_mult = volume / avg_vol_for_bo
+                pct_str = f"({pct_change:+.1f}%)" if pct_change is not None else ""
+                send_telegram_message(
+                    f"🔊 <b>{symbol}</b> Massive Volume Breakout!\n"
+                    f"• <b>Current Price:</b> ₹{price:.2f} {pct_str}\n"
+                    f"• <b>Volume:</b> {vol_mult:.1f}x Average Volume\n"
+                    f"• <b>Traded Vol:</b> {volume:,.0f} shares"
+                    f"{open_low_tag}{rs_tag}"
+                )
 
         desc_res = entry.get("descending_res")
         wedge_contract = entry.get("wedge_contraction")
@@ -1448,6 +1517,7 @@ def main():
             log.exception("Error during poll: %s", e)
         try:
             momentum_state = run_daily_momentum_scan(momentum_state)
+            momentum_state = send_morning_sector_rs_report(momentum_state)
             momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
             check_nse_bse_arbitrage(momentum_state, state, fyers)
             MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
@@ -1464,6 +1534,7 @@ def main():
             log.exception("Error during poll: %s", e)
         try:
             momentum_state = run_daily_momentum_scan(momentum_state)
+            momentum_state = send_morning_sector_rs_report(momentum_state)
             momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
             check_nse_bse_arbitrage(momentum_state, state, fyers)
             MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
