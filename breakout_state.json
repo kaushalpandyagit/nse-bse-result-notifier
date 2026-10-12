@@ -336,7 +336,7 @@
     "baseline_rsi": 49.93750546775799,
     "mcap_cr": 70.1028709,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-12T10:01:03.023002",
+    "rsi_up_last_alert": "2026-10-12T11:01:10.905595",
     "rsi_down_last_alert": "2026-10-12T07:00:55.625208",
     "price_low_last_alert": "2026-10-09T06:00:54.616930",
     "price_low_last_price": 35.959999084472656
@@ -375,7 +375,7 @@
     "rsi_up_last_alert": "2026-10-12T05:45:55.910737",
     "price_low_last_alert": "2026-10-12T07:00:57.293974",
     "price_low_last_price": 135.42999267578125,
-    "rsi_down_last_alert": "2026-10-12T10:01:06.045003"
+    "rsi_down_last_alert": "2026-10-12T11:01:13.352540"
   },
   "CORDELIA": {
     "result_date": "2026-10-09T00:00:00",
@@ -429,7 +429,7 @@
     "mcap_cr": 4471.15032,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-12T07:15:52.614013",
-    "rsi_up_last_alert": "2026-10-12T10:01:09.387759",
+    "rsi_up_last_alert": "2026-10-12T11:01:16.502425",
     "price_high_last_alert": "2026-10-12T09:29:44.487993",
     "price_high_last_price": 3753.0
   },
