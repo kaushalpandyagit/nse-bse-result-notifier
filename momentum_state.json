@@ -326,8 +326,8 @@
       "descending_res": 1074.1500244140625,
       "wedge_contraction": 0.580055095403363,
       "rs_rank": 45.4,
-      "near_high_17_22_last_alert": "2026-10-12T05:29:52.501684",
-      "near_high_17_22_last_price": 1000.0
+      "near_high_17_22_last_alert": "2026-10-12T09:01:41.359016",
+      "near_high_17_22_last_price": 986.2999877929688
     },
     "ACC": {
       "sma50": 1271.7040014648437,
@@ -4738,8 +4738,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 77.5,
-      "near_high_17_22_last_alert": "2026-10-12T06:30:13.023192",
-      "near_high_17_22_last_price": 301.3999938964844
+      "near_high_17_22_last_alert": "2026-10-12T09:02:16.816149",
+      "near_high_17_22_last_price": 297.79998779296875
     },
     "ENGINERSIN": {
       "sma50": 268.7228009033203,
@@ -5364,10 +5364,10 @@
       "zanger_last_price": 582.6500244140625,
       "resistance_last_alert": "2026-10-12T08:30:56.356390",
       "resistance_last_price": 582.6500244140625,
-      "mtf_last_alert": "2026-10-12T06:47:04.627857",
-      "mtf_last_price": 577.4000244140625,
-      "vol_breakout_last_alert": "2026-10-12T06:47:04.025529",
-      "vol_breakout_last_price": 577.4000244140625,
+      "mtf_last_alert": "2026-10-12T09:02:23.252920",
+      "mtf_last_price": 594.7999877929688,
+      "vol_breakout_last_alert": "2026-10-12T09:02:22.612893",
+      "vol_breakout_last_price": 594.7999877929688,
       "ema50_pullback_last_alert": "2026-10-12T05:02:30.661417",
       "ema50_pullback_last_price": 564.25
     },
@@ -6717,7 +6717,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 67.9
+      "rs_rank": 67.9,
+      "sos_pullback_curl_last_alert": "2026-10-12T09:02:35.054594",
+      "sos_pullback_curl_last_price": 70.94999694824219
     },
     "IGIL": {
       "sma50": 332.5940008544922,
@@ -7295,7 +7297,9 @@
       "box_low": 16.75,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 12.7
+      "rs_rank": 12.7,
+      "rectangle_bounce_last_alert": "2026-10-12T09:02:40.550448",
+      "rectangle_bounce_last_price": 17.889999389648438
     },
     "IRCON": {
       "sma50": 117.51599990844727,
@@ -8057,7 +8061,11 @@
       "box_low": 847.8499755859375,
       "descending_res": 1086.7167561848958,
       "wedge_contraction": 0.76245186216481,
-      "rs_rank": 49.1
+      "rs_rank": 49.1,
+      "rectangle_bounce_last_alert": "2026-10-12T09:02:48.045046",
+      "rectangle_bounce_last_price": 938.9000244140625,
+      "sos_pullback_curl_last_alert": "2026-10-12T09:02:48.607134",
+      "sos_pullback_curl_last_price": 938.9000244140625
     },
     "JUSTDIAL": {
       "sma50": 676.1090002441406,
@@ -10902,14 +10910,14 @@
       "descending_res": 274.4800170898437,
       "wedge_contraction": 0.966516923078012,
       "rs_rank": 10.0,
-      "sos_pullback_curl_last_alert": "2026-10-12T08:16:55.315882",
-      "sos_pullback_curl_last_price": 290.6499938964844,
+      "sos_pullback_curl_last_alert": "2026-10-12T09:03:13.795310",
+      "sos_pullback_curl_last_price": 284.3999938964844,
       "near_high_17_22_last_alert": "2026-10-12T08:16:56.014416",
       "near_high_17_22_last_price": 290.6499938964844,
-      "rectangle_bounce_last_alert": "2026-10-12T08:03:16.020994",
-      "rectangle_bounce_last_price": 288.25,
-      "vol_breakout_last_alert": "2026-10-12T08:03:15.400072",
-      "vol_breakout_last_price": 288.25
+      "rectangle_bounce_last_alert": "2026-10-12T09:03:13.216135",
+      "rectangle_bounce_last_price": 284.3999938964844,
+      "vol_breakout_last_alert": "2026-10-12T09:03:11.651848",
+      "vol_breakout_last_price": 284.3999938964844
     },
     "PGEL": {
       "sma50": 561.3560015869141,
@@ -10945,7 +10953,9 @@
       "box_low": 476.1000061035156,
       "descending_res": 594.4499053955078,
       "wedge_contraction": 1.2270085192650528,
-      "rs_rank": 52.2
+      "rs_rank": 52.2,
+      "rectangle_bounce_last_alert": "2026-10-12T09:03:14.720853",
+      "rectangle_bounce_last_price": 522.5999755859375
     },
     "PGHL": {
       "sma50": 5695.3,
@@ -13204,8 +13214,8 @@
       "descending_res": 182.8375015258789,
       "wedge_contraction": 0.9382375396026396,
       "rs_rank": 76.4,
-      "near_high_17_22_last_alert": "2026-10-12T08:17:09.375803",
-      "near_high_17_22_last_price": 186.50999450683594
+      "near_high_17_22_last_alert": "2026-10-12T09:03:34.238182",
+      "near_high_17_22_last_price": 183.27999877929688
     },
     "SHILCTECH": {
       "sma50": 4114.7580078125,
