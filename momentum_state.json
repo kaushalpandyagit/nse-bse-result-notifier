@@ -4732,8 +4732,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 77.5,
-      "near_high_17_22_last_alert": "2026-10-12T03:48:17.196061",
-      "near_high_17_22_last_price": 305.20001220703125
+      "near_high_17_22_last_alert": "2026-10-12T06:30:13.023192",
+      "near_high_17_22_last_price": 301.3999938964844
     },
     "ENGINERSIN": {
       "sma50": 268.7228009033203,
@@ -10342,8 +10342,10 @@
       "rs_rank": 51.3,
       "sos_pullback_curl_last_alert": "2026-10-12T06:02:41.768372",
       "sos_pullback_curl_last_price": 178.75999450683594,
-      "mtf_last_alert": "2026-10-12T05:18:01.084899",
-      "mtf_last_price": 178.83999633789062
+      "mtf_last_alert": "2026-10-12T06:30:45.545308",
+      "mtf_last_price": 182.67999267578125,
+      "vol_breakout_last_alert": "2026-10-12T06:30:44.830135",
+      "vol_breakout_last_price": 182.67999267578125
     },
     "NIVABUPA": {
       "sma50": 81.06180023193359,
