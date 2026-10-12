@@ -136,34 +136,39 @@ def get_session():
 # ----------------------------------------------------------------------
 # NEW: LIVE OPTION CHAIN PARSER (Firewall Bypass Version)
 # ----------------------------------------------------------------------
-def get_fno_strike_levels(session, symbol="NIFTY"):
+# ----------------------------------------------------------------------
+# NEW: LIVE OPTION CHAIN PARSER (Triple-Cookie Bypass)
+# ----------------------------------------------------------------------
+def get_fno_strike_levels(symbol="NIFTY"):
     api_url = f"https://www.nseindia.com/api/option-chain-indices?symbol={symbol}"
     
-    # NSE requires exact browser headers to allow API access
-    oc_headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "application/json, text/javascript, */*; q=0.01",
         "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate, br",
-        "X-Requested-With": "XMLHttpRequest",
         "Referer": "https://www.nseindia.com/option-chain",
     }
     
+    session = requests.Session()
     try:
-        # 1. Visit the main Option Chain page first to get valid cookies
-        session.get("https://www.nseindia.com/option-chain", headers=oc_headers, timeout=10)
-        time.sleep(1.5) # Crucial pause to let NSE register the cookie
+        # Step 1: Prime the main page cookie
+        session.get("https://www.nseindia.com", headers=headers, timeout=10)
+        time.sleep(1.5)
         
-        # 2. Hit the actual JSON API
-        response = session.get(api_url, headers=oc_headers, timeout=15)
+        # Step 2: Prime the option chain page cookie
+        session.get("https://www.nseindia.com/option-chain", headers=headers, timeout=10)
+        time.sleep(1.5)
+        
+        # Step 3: Fetch the JSON API
+        response = session.get(api_url, headers=headers, timeout=15)
         
         if response.status_code != 200:
-            log.warning(f"Option chain blocked by NSE (Status {response.status_code})")
-            return None
+            return {"error": f"Blocked by NSE (Status: {response.status_code})"}
             
         data = response.json().get("records")
         if not data:
-            return None
+            return {"error": "NSE returned empty data (Maintenance/Off-hours)"}
             
         underlying_price = data["underlyingValue"]
         active_expiry = data["expiryDates"][0]
@@ -179,15 +184,25 @@ def get_fno_strike_levels(session, symbol="NIFTY"):
             pe_chg = item.get("PE", {}).get("changeinOpenInterest", 0)
             
             rows.append({
-                "strike": strike, 
-                "ce_oi": ce_oi, "ce_chg": ce_chg,
+                "strike": strike, "ce_oi": ce_oi, "ce_chg": ce_chg,
                 "pe_oi": pe_oi, "pe_chg": pe_chg,
             })
 
         df = pd.DataFrame(rows)
         if df.empty:
-            return None
+            return {"error": "Failed to parse strike rows."}
 
+        return {
+            "Underlying": underlying_price,
+            "Expiry": active_expiry,
+            "Max_Call_Wall": df.loc[df["ce_oi"].idxmax()]["strike"],
+            "Day_Fresh_Call_Resistance": df.loc[df["ce_chg"].idxmax()]["strike"],
+            "Key_Put_Support": df.loc[df["pe_oi"].idxmax()]["strike"],
+            "Day_Fresh_Put_Add": df.loc[df["pe_chg"].idxmax()]["strike"],
+            "error": None
+        }
+    except Exception as e:
+        return {"error": f"Exception: {str(e)[:40]}"}
         # Find the massive institutional walls
         max_ce_strike = df.loc[df["ce_oi"].idxmax()]["strike"]
         fresh_ce_wall = df.loc[df["ce_chg"].idxmax()]["strike"]
@@ -683,7 +698,8 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
         return f" • <b>{label}:</b> {net:,} (<i>{net_desc}</i>) | {delta:+,} (<i>{flow_desc}</i>)"
 
     # --- Live Option Chain Fetch for Strategic Levels ---
-    oc_levels = get_fno_strike_levels(session, "NIFTY")
+    # --- Live Option Chain Fetch for Strategic Levels ---
+    oc_levels = get_fno_strike_levels("NIFTY")
 
     lines = [
         "🧠 <b>SMART vs DUMB MONEY (Derivatives)</b>",
@@ -710,25 +726,30 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
         lines.append(f"📅 <b>TOMORROW'S EXPIRY ({idx_name}):</b>\n{expiry_pred}\n")
         
     # --- Append the Live Option Chain & Strategic Takeaway ---
-    if oc_levels:
-        lines.append(f"🎯 <b>Live Option Chain Strike Mapping (NIFTY):</b>")
+    lines.append(f"🎯 <b>Live Option Chain Strike Mapping (NIFTY):</b>")
+    
+    if oc_levels and not oc_levels.get("error"):
         lines.append(f"<i>Underlying: {oc_levels['Underlying']:,} | Expiry: {oc_levels['Expiry']}</i>")
-        lines.append(f"• <b>Immediate Ceiling (Fresh CE Wall):</b> {oc_levels['Day_Fresh_Call_Resistance']:,} <i>(Where today's massive Call writing is parked)</i>")
-        lines.append(f"• <b>Macro Resistance (Max CE OI):</b> {oc_levels['Max_Call_Wall']:,} <i>(The ultimate structural wall)</i>")
-        lines.append(f"• <b>Immediate Floor (Fresh PE Wall):</b> {oc_levels['Day_Fresh_Put_Add']:,} <i>(Where retail is writing puts)</i>")
-        lines.append(f"• <b>Macro Support / Breakdown Target:</b> {oc_levels['Key_Put_Support']:,} <i>(The ultimate put target)</i>")
+        lines.append(f"• <b>Immediate Ceiling (Fresh CE Wall):</b> {oc_levels['Day_Fresh_Call_Resistance']:,}")
+        lines.append(f"• <b>Macro Resistance (Max CE OI):</b> {oc_levels['Max_Call_Wall']:,}")
+        lines.append(f"• <b>Immediate Floor (Fresh PE Wall):</b> {oc_levels['Day_Fresh_Put_Add']:,}")
+        lines.append(f"• <b>Macro Support (Max PE OI):</b> {oc_levels['Key_Put_Support']:,}")
         
         strat = ""
         if smart_net['net_call'] < -50000 and smart_net['net_put'] > 50000:
-            strat = f"Smart Money is aggressively defending the <b>{oc_levels['Day_Fresh_Call_Resistance']:,}</b> ceiling and buying puts to target a breakdown below <b>{oc_levels['Day_Fresh_Put_Add']:,}</b>. Any intraday bounce near {oc_levels['Day_Fresh_Call_Resistance']:,} is a high-probability shorting zone. Do not write puts until the {oc_levels['Key_Put_Support']:,} structural floor is reached."
+            strat = f"Smart Money is aggressively defending the <b>{oc_levels['Day_Fresh_Call_Resistance']:,}</b> ceiling and buying puts to target a breakdown below <b>{oc_levels['Day_Fresh_Put_Add']:,}</b>. Bounces near {oc_levels['Day_Fresh_Call_Resistance']:,} are high-probability shorting zones."
         elif smart_net['net_call'] > 50000 and smart_net['net_put'] < -50000:
-            strat = f"Smart Money is defending the <b>{oc_levels['Day_Fresh_Put_Add']:,}</b> floor and targeting a breakout above <b>{oc_levels['Day_Fresh_Call_Resistance']:,}</b>. Dips near the floor are high-probability buying zones."
+            strat = f"Smart Money is defending the <b>{oc_levels['Day_Fresh_Put_Add']:,}</b> floor and targeting a breakout above <b>{oc_levels['Day_Fresh_Call_Resistance']:,}</b>. Dips near the floor are buying zones."
         elif smart_net['net_put'] < -50000 and smart_net['net_call'] < -50000:
-            strat = f"Smart Money is heavily writing both sides (Strangle). Expect severe theta decay bounded between <b>{oc_levels['Key_Put_Support']:,}</b> and <b>{oc_levels['Max_Call_Wall']:,}</b>."
+            strat = f"Smart Money is heavily writing both sides (Strangle). Expect theta decay bounded between <b>{oc_levels['Key_Put_Support']:,}</b> and <b>{oc_levels['Max_Call_Wall']:,}</b>."
         else:
-            strat = f"Monitor <b>{oc_levels['Day_Fresh_Call_Resistance']:,}</b> for resistance and <b>{oc_levels['Day_Fresh_Put_Add']:,}</b> for support based on fresh intraday flows."
+            strat = f"Monitor <b>{oc_levels['Day_Fresh_Call_Resistance']:,}</b> for resistance and <b>{oc_levels['Day_Fresh_Put_Add']:,}</b> for support."
             
         lines.append(f"\n📌 <b>Strategic Takeaway:</b>\n{strat}\n")
+    else:
+        # If it fails, print exactly WHY it failed in Telegram so we can fix it
+        err_msg = oc_levels.get("error") if oc_levels else "Unknown Error"
+        lines.append(f"🔴 <i>Unavailable: {err_msg}</i>\n")
 
     return "\n".join(lines)
 
