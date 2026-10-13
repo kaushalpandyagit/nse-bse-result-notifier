@@ -7003,7 +7003,9 @@
       "box_low": null,
       "descending_res": 940.599609375,
       "wedge_contraction": 1.5135857541226143,
-      "rs_rank": 0.2
+      "rs_rank": 0.2,
+      "vol_breakout_last_alert": "2026-10-13T06:48:10.031082",
+      "vol_breakout_last_price": 356.54998779296875
     },
     "INDIAMART": {
       "sma50": 1704.2220068359375,
@@ -8670,8 +8672,8 @@
       "descending_res": 578.7949768066406,
       "wedge_contraction": 0.8621360558030979,
       "rs_rank": 2.4,
-      "rectangle_bounce_last_alert": "2026-10-13T05:48:37.789166",
-      "rectangle_bounce_last_price": 500.6000061035156
+      "rectangle_bounce_last_alert": "2026-10-13T06:48:38.350239",
+      "rectangle_bounce_last_price": 507.8500061035156
     },
     "KRBL": {
       "sma50": 399.09399963378905,
@@ -8746,8 +8748,8 @@
       "descending_res": 1501.3157894736842,
       "wedge_contraction": 1.0558149165128026,
       "rs_rank": 85.0,
-      "near_high_17_22_last_alert": "2026-10-13T05:33:22.739957",
-      "near_high_17_22_last_price": 1372.0
+      "near_high_17_22_last_alert": "2026-10-13T06:48:40.429495",
+      "near_high_17_22_last_price": 1337.9000244140625
     },
     "KSB": {
       "sma50": 805.4539965820312,
@@ -8930,8 +8932,8 @@
       "rs_rank": 40.1,
       "resistance_last_alert": "2026-10-13T05:48:42.428812",
       "resistance_last_price": 111.95999908447266,
-      "mtf_last_alert": "2026-10-13T04:32:41.287171",
-      "mtf_last_price": 111.2300033569336
+      "mtf_last_alert": "2026-10-13T06:48:43.927485",
+      "mtf_last_price": 112.41000366210938
     },
     "LICHSGFIN": {
       "sma50": 530.6750030517578,
@@ -14236,8 +14238,8 @@
       "descending_res": 971.8875122070312,
       "wedge_contraction": 0.7865238186113737,
       "rs_rank": 78.9,
-      "near_high_17_22_last_alert": "2026-10-13T04:34:08.626937",
-      "near_high_17_22_last_price": 850.4500122070312
+      "near_high_17_22_last_alert": "2026-10-13T06:50:08.159370",
+      "near_high_17_22_last_price": 860.0
     },
     "SURYAROSNI": {
       "sma50": 221.6132012939453,
