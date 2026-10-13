@@ -910,8 +910,8 @@
       "descending_res": 1256.8501586914062,
       "wedge_contraction": 1.0339245183846075,
       "rs_rank": 27.7,
-      "near_high_17_22_last_alert": "2026-10-13T03:51:23.747195",
-      "near_high_17_22_last_price": 1149.199951171875
+      "near_high_17_22_last_alert": "2026-10-13T08:30:19.768974",
+      "near_high_17_22_last_price": 1163.5999755859375
     },
     "APOLLO": {
       "sma50": 394.267001953125,
@@ -3580,8 +3580,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 17.9,
-      "rectangle_bounce_last_alert": "2026-10-13T07:02:22.263469",
-      "rectangle_bounce_last_price": 209.27999877929688
+      "rectangle_bounce_last_alert": "2026-10-13T08:31:03.251458",
+      "rectangle_bounce_last_price": 212.1300048828125
     },
     "CSBBANK": {
       "sma50": 322.90300048828124,
@@ -5522,8 +5522,8 @@
       "mtf_last_price": 103.80999755859375,
       "zanger_last_alert": "2026-10-13T07:17:44.451869",
       "zanger_last_price": 104.05999755859375,
-      "vol_breakout_last_alert": "2026-10-13T07:02:51.151773",
-      "vol_breakout_last_price": 104.19999694824219
+      "vol_breakout_last_alert": "2026-10-13T08:31:33.890366",
+      "vol_breakout_last_price": 103.1500015258789
     },
     "GNFC": {
       "sma50": 580.0330004882812,
@@ -7195,7 +7195,9 @@
       "box_low": 564.0499877929688,
       "descending_res": 656.89990234375,
       "wedge_contraction": 0.907414284669932,
-      "rs_rank": 25.3
+      "rs_rank": 25.3,
+      "rectangle_bounce_last_alert": "2026-10-13T08:32:01.515917",
+      "rectangle_bounce_last_price": 603.75
     },
     "IONEXCHANG": {
       "sma50": 400.87000244140626,
@@ -10341,7 +10343,9 @@
       "wedge_contraction": null,
       "rs_rank": 66.7,
       "mtf_last_alert": "2026-10-13T08:19:46.502057",
-      "mtf_last_price": 188.4499969482422
+      "mtf_last_price": 188.4499969482422,
+      "near_high_17_22_last_alert": "2026-10-13T08:32:55.349237",
+      "near_high_17_22_last_price": 191.0
     },
     "NIVABUPA": {
       "sma50": 81.09300018310547,
@@ -11141,7 +11145,9 @@
       "vol_breakout_last_alert": "2026-10-13T08:05:48.648866",
       "vol_breakout_last_price": 150.55999755859375,
       "mtf_last_alert": "2026-10-13T08:20:04.084562",
-      "mtf_last_price": 151.5
+      "mtf_last_price": 151.5,
+      "descending_wedge_last_alert": "2026-10-13T08:33:10.344362",
+      "descending_wedge_last_price": 154.1199951171875
     },
     "PNGJL": {
       "sma50": 608.8810021972656,
@@ -11508,8 +11514,8 @@
       "descending_res": 219.02858189174106,
       "wedge_contraction": 0.8326228218093416,
       "rs_rank": 53.8,
-      "rectangle_bounce_last_alert": "2026-10-13T07:04:30.359653",
-      "rectangle_bounce_last_price": 209.52999877929688
+      "rectangle_bounce_last_alert": "2026-10-13T08:33:18.250451",
+      "rectangle_bounce_last_price": 211.92999267578125
     },
     "PVRINOX": {
       "sma50": 1228.027998046875,
@@ -14558,8 +14564,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 50.1,
-      "mtf_last_alert": "2026-10-13T06:20:20.003071",
-      "mtf_last_price": 299.29998779296875
+      "mtf_last_alert": "2026-10-13T08:34:05.615860",
+      "mtf_last_price": 303.6000061035156
     },
     "TATACHEM": {
       "sma50": 647.9590014648437,

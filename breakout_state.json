@@ -260,8 +260,8 @@
     "price_high_last_alert": "2026-10-09T04:45:49.126337",
     "price_high_last_price": 267.79998779296875,
     "rsi_down_last_alert": "2026-10-13T07:45:45.456274",
-    "price_low_last_alert": "2026-10-13T06:01:00.036243",
-    "price_low_last_price": 251.8000030517578
+    "price_low_last_alert": "2026-10-13T08:29:37.575576",
+    "price_low_last_price": 254.5
   },
   "CANFINHOME": {
     "result_date": "2026-10-07T00:00:00",
@@ -459,7 +459,7 @@
     "mcap_cr": 3445.3955346,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-13T07:46:03.812911",
-    "rsi_up_last_alert": "2026-10-12T10:46:00.173889"
+    "rsi_up_last_alert": "2026-10-13T08:29:45.219071"
   },
   "ALKALI": {
     "result_date": "2026-10-12T00:00:00",
@@ -568,6 +568,8 @@
     "mcap_cr": 65212.65615915,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-13T08:01:12.880315",
-    "rsi_down_last_alert": "2026-10-13T08:15:57.677447"
+    "rsi_down_last_alert": "2026-10-13T08:15:57.677447",
+    "price_low_last_alert": "2026-10-13T08:29:49.343417",
+    "price_low_last_price": 447.70001220703125
   }
 }
