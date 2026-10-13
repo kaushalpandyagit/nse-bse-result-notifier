@@ -2103,7 +2103,9 @@
       "box_low": 516.5999755859375,
       "descending_res": 604.0166524251302,
       "wedge_contraction": 0.6896269990828914,
-      "rs_rank": 45.5
+      "rs_rank": 45.5,
+      "near_high_17_22_last_alert": "2026-10-13T04:30:40.943311",
+      "near_high_17_22_last_price": 583.5
     },
     "BLS": {
       "sma50": 239.9843994140625,
@@ -2321,7 +2323,11 @@
       "wedge_contraction": null,
       "rs_rank": 9.4,
       "rectangle_bounce_last_alert": "2026-10-13T04:17:02.021234",
-      "rectangle_bounce_last_price": 288.79998779296875
+      "rectangle_bounce_last_price": 288.79998779296875,
+      "zanger_last_alert": "2026-10-13T04:30:45.781158",
+      "zanger_last_price": 291.0,
+      "mtf_last_alert": "2026-10-13T04:30:46.265998",
+      "mtf_last_price": 291.0
     },
     "CAMPUS": {
       "sma50": 216.49959930419922,
@@ -6499,7 +6505,9 @@
       "box_low": 32170.0,
       "descending_res": 36062.5,
       "wedge_contraction": 0.7458167330677291,
-      "rs_rank": 61.4
+      "rs_rank": 61.4,
+      "near_high_17_22_last_alert": "2026-10-13T04:31:56.234241",
+      "near_high_17_22_last_price": 32390.0
     },
     "ICIL": {
       "sma50": 435.61300170898437,
@@ -7257,7 +7265,9 @@
       "box_low": 101.5999984741211,
       "descending_res": 117.76251602172852,
       "wedge_contraction": 0.7692685816021582,
-      "rs_rank": 12.2
+      "rs_rank": 12.2,
+      "vol_breakout_last_alert": "2026-10-13T04:32:10.295688",
+      "vol_breakout_last_price": 107.13999938964844
     },
     "IREDA": {
       "sma50": 113.90539978027344,
@@ -8889,7 +8899,9 @@
       "wedge_contraction": null,
       "rs_rank": 40.1,
       "resistance_last_alert": "2026-10-13T03:54:16.257630",
-      "resistance_last_price": 110.5199966430664
+      "resistance_last_price": 110.5199966430664,
+      "mtf_last_alert": "2026-10-13T04:32:41.287171",
+      "mtf_last_price": 111.2300033569336
     },
     "LICHSGFIN": {
       "sma50": 530.6750030517578,
@@ -14185,7 +14197,9 @@
       "box_low": 740.4500122070312,
       "descending_res": 971.8875122070312,
       "wedge_contraction": 0.7865238186113737,
-      "rs_rank": 78.9
+      "rs_rank": 78.9,
+      "near_high_17_22_last_alert": "2026-10-13T04:34:08.626937",
+      "near_high_17_22_last_price": 850.4500122070312
     },
     "SURYAROSNI": {
       "sma50": 221.6132012939453,
@@ -14547,7 +14561,9 @@
       "box_low": 2996.0,
       "descending_res": 3498.4759521484375,
       "wedge_contraction": 1.0586949684349953,
-      "rs_rank": 5.2
+      "rs_rank": 5.2,
+      "mtf_last_alert": "2026-10-13T04:34:15.265687",
+      "mtf_last_price": 3338.800048828125
     },
     "TATATECH": {
       "sma50": 775.1699987792969,

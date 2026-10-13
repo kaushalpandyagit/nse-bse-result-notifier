@@ -363,7 +363,9 @@
     "price_high_last_alert": "2026-10-12T07:15:49.921697",
     "price_high_last_price": 455.0,
     "rsi_up_last_alert": "2026-10-12T10:45:54.411075",
-    "rsi_down_last_alert": "2026-10-13T03:45:51.237840"
+    "rsi_down_last_alert": "2026-10-13T03:45:51.237840",
+    "price_low_last_alert": "2026-10-13T04:29:40.082428",
+    "price_low_last_price": 436.45001220703125
   },
   "CANHLIFE": {
     "result_date": "2026-10-09T00:00:00",
@@ -383,7 +385,10 @@
     "day_low": 100.20999908447266,
     "baseline_rsi": 45.83891744745961,
     "mcap_cr": 7310.401195163673,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "price_low_last_alert": "2026-10-13T04:29:42.025223",
+    "price_low_last_price": 97.94999694824219,
+    "rsi_down_last_alert": "2026-10-13T04:29:42.508991"
   },
   "CRAMC": {
     "result_date": "2026-10-12T00:00:00",
