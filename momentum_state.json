@@ -2533,7 +2533,9 @@
       "box_low": 438.1499938964844,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 46.8
+      "rs_rank": 46.8,
+      "mtf_last_alert": "2026-10-13T09:30:51.591322",
+      "mtf_last_price": 560.7000122070312
     },
     "CAPLIPOINT": {
       "sma50": 2631.2100146484377,
@@ -2860,8 +2862,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 21.8,
-      "mtf_last_alert": "2026-10-13T05:02:10.363741",
-      "mtf_last_price": 362.1000061035156,
+      "mtf_last_alert": "2026-10-13T09:30:55.772680",
+      "mtf_last_price": 365.75,
       "ema50_pullback_last_alert": "2026-10-13T09:17:27.081216",
       "ema50_pullback_last_price": 365.04998779296875
     },
@@ -3808,8 +3810,8 @@
       "descending_res": 4999.738206129808,
       "wedge_contraction": 0.6680241866832494,
       "rs_rank": 71.2,
-      "near_high_17_22_last_alert": "2026-10-13T07:31:04.738139",
-      "near_high_17_22_last_price": 4080.699951171875
+      "near_high_17_22_last_alert": "2026-10-13T09:31:13.006382",
+      "near_high_17_22_last_price": 4132.7001953125
     },
     "DBL": {
       "sma50": 413.55200134277345,
@@ -5491,7 +5493,9 @@
       "box_low": 458.04998779296875,
       "descending_res": 500.857177734375,
       "wedge_contraction": 1.0260927467587446,
-      "rs_rank": 8.7
+      "rs_rank": 8.7,
+      "rectangle_bounce_last_alert": "2026-10-13T09:31:41.087263",
+      "rectangle_bounce_last_price": 479.3999938964844
     },
     "GMRP&UI": {
       "sma50": 96.62440032958985,
@@ -8414,8 +8418,8 @@
       "descending_res": 813.4062423706055,
       "wedge_contraction": 0.8383091943474316,
       "rs_rank": 49.5,
-      "near_high_17_22_last_alert": "2026-10-13T03:54:03.901887",
-      "near_high_17_22_last_price": 695.5
+      "near_high_17_22_last_alert": "2026-10-13T09:32:34.935040",
+      "near_high_17_22_last_price": 708.7000122070312
     },
     "KIRLOSBROS": {
       "sma50": 1842.3000024414061,
@@ -10398,8 +10402,8 @@
       "descending_res": 82.33997802734375,
       "wedge_contraction": 1.0670714028922985,
       "rs_rank": 55.3,
-      "near_high_17_22_last_alert": "2026-10-13T06:19:09.920376",
-      "near_high_17_22_last_price": 78.97000122070312
+      "near_high_17_22_last_alert": "2026-10-13T09:33:10.192334",
+      "near_high_17_22_last_price": 78.06999969482422
     },
     "NORTHARC": {
       "sma50": 294.1110015869141,
@@ -11202,8 +11206,8 @@
       "descending_res": 615.7692213792068,
       "wedge_contraction": 1.0950109963521084,
       "rs_rank": 36.4,
-      "near_high_17_22_last_alert": "2026-10-13T07:50:20.021721",
-      "near_high_17_22_last_price": 591.4500122070312
+      "near_high_17_22_last_alert": "2026-10-13T09:33:25.722219",
+      "near_high_17_22_last_price": 597.8499755859375
     },
     "POLYMED": {
       "sma50": 1717.6359936523438,
@@ -12945,7 +12949,9 @@
       "box_low": 1134.9000244140625,
       "descending_res": 1303.9324053596047,
       "wedge_contraction": 1.0410349619394796,
-      "rs_rank": 65.6
+      "rs_rank": 65.6,
+      "near_high_17_22_last_alert": "2026-10-13T09:33:57.167868",
+      "near_high_17_22_last_price": 1208.800048828125
     },
     "SCI": {
       "sma50": 286.78600036621094,
@@ -14512,8 +14518,8 @@
       "mtf_last_price": 530.2999877929688,
       "resistance_last_alert": "2026-10-13T06:04:33.405957",
       "resistance_last_price": 530.2999877929688,
-      "zanger_last_alert": "2026-10-13T06:20:18.421780",
-      "zanger_last_price": 528.0999755859375
+      "zanger_last_alert": "2026-10-13T09:34:23.294220",
+      "zanger_last_price": 535.4000244140625
     },
     "TARC": {
       "sma50": 126.51019927978516,
@@ -14703,7 +14709,9 @@
       "wedge_contraction": 0.8929296653846395,
       "rs_rank": 75.8,
       "near_high_17_22_last_alert": "2026-10-13T07:05:17.055279",
-      "near_high_17_22_last_price": 730.6500244140625
+      "near_high_17_22_last_price": 730.6500244140625,
+      "mtf_last_alert": "2026-10-13T09:34:26.943609",
+      "mtf_last_price": 741.5
     },
     "TBOTEK": {
       "sma50": 1672.3479907226563,
