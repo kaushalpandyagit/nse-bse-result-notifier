@@ -459,7 +459,7 @@
     "mcap_cr": 3445.3955346,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-13T07:46:03.812911",
-    "rsi_up_last_alert": "2026-10-13T08:29:45.219071"
+    "rsi_up_last_alert": "2026-10-13T09:15:55.990392"
   },
   "ALKALI": {
     "result_date": "2026-10-12T00:00:00",
@@ -559,7 +559,7 @@
     "baseline_rsi": 53.28644213359594,
     "mcap_cr": 1364.1167734781068,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-13T07:46:10.696376",
+    "rsi_down_last_alert": "2026-10-13T09:16:01.420345",
     "rsi_up_last_alert": "2026-10-13T09:01:12.026772"
   },
   "ICICIPRULI": {
@@ -570,7 +570,7 @@
     "mcap_cr": 65212.65615915,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-13T09:01:13.030245",
-    "rsi_down_last_alert": "2026-10-13T08:15:57.677447",
+    "rsi_down_last_alert": "2026-10-13T09:16:02.543597",
     "price_low_last_alert": "2026-10-13T08:29:49.343417",
     "price_low_last_price": 447.70001220703125
   }
