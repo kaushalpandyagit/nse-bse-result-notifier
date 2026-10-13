@@ -64,8 +64,8 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-13T04:01:29.916502",
-    "custom_last_price": 169.8800048828125
+    "custom_last_alert": "2026-10-13T06:16:10.918214",
+    "custom_last_price": 168.13999938964844
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
@@ -379,8 +379,8 @@
     "mcap_cr": 13190.88524150978,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-12T05:45:55.910737",
-    "price_low_last_alert": "2026-10-13T04:15:54.799632",
-    "price_low_last_price": 137.02000427246094,
+    "price_low_last_alert": "2026-10-13T06:15:52.891488",
+    "price_low_last_price": 134.5800018310547,
     "rsi_down_last_alert": "2026-10-13T05:45:50.102585"
   },
   "CORDELIA": {
@@ -483,8 +483,8 @@
     "baseline_rsi": 56.171211734749654,
     "mcap_cr": 64838.7974765948,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-13T03:46:01.681064",
-    "price_low_last_price": 394.1499938964844,
+    "price_low_last_alert": "2026-10-13T06:15:57.289599",
+    "price_low_last_price": 388.25,
     "rsi_down_last_alert": "2026-10-13T05:45:56.789894"
   },
   "AGRITECH": {
@@ -503,8 +503,8 @@
     "baseline_rsi": 45.894243243432655,
     "mcap_cr": 330915.2691222,
     "exchange": "NSE",
-    "price_high_last_alert": "2026-10-13T04:46:04.472870",
-    "price_high_last_price": 1291.5999755859375,
+    "price_high_last_alert": "2026-10-13T06:15:59.205898",
+    "price_high_last_price": 1306.5999755859375,
     "rsi_up_last_alert": "2026-10-13T05:45:59.230872"
   },
   "SWANDEF": {

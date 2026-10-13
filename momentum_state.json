@@ -2484,8 +2484,8 @@
       "descending_res": 149.95005798339844,
       "wedge_contraction": 1.0275050406713666,
       "rs_rank": 35.7,
-      "near_high_17_22_last_alert": "2026-10-13T03:51:55.930149",
-      "near_high_17_22_last_price": 136.2899932861328
+      "near_high_17_22_last_alert": "2026-10-13T06:16:58.669216",
+      "near_high_17_22_last_price": 134.5800018310547
     },
     "CAPILLARY": {
       "sma50": 520.1569958496094,
@@ -10244,8 +10244,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 46.2,
-      "rectangle_bounce_last_alert": "2026-10-13T04:19:18.749100",
-      "rectangle_bounce_last_price": 459.75
+      "rectangle_bounce_last_alert": "2026-10-13T06:19:07.315395",
+      "rectangle_bounce_last_price": 464.54998779296875
     },
     "NFL": {
       "sma50": 68.81900024414062,
@@ -10355,7 +10355,9 @@
       "box_low": 71.9800033569336,
       "descending_res": 82.33997802734375,
       "wedge_contraction": 1.0670714028922985,
-      "rs_rank": 55.3
+      "rs_rank": 55.3,
+      "near_high_17_22_last_alert": "2026-10-13T06:19:09.920376",
+      "near_high_17_22_last_price": 78.97000122070312
     },
     "NORTHARC": {
       "sma50": 294.1110015869141,
@@ -12817,7 +12819,9 @@
       "box_low": 470.3999938964844,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 87.6
+      "rs_rank": 87.6,
+      "near_high_17_22_last_alert": "2026-10-13T06:19:52.497055",
+      "near_high_17_22_last_price": 484.8500061035156
     },
     "SBFC": {
       "sma50": 92.69900009155273,
@@ -14453,7 +14457,9 @@
       "mtf_last_alert": "2026-10-13T06:04:34.057094",
       "mtf_last_price": 530.2999877929688,
       "resistance_last_alert": "2026-10-13T06:04:33.405957",
-      "resistance_last_price": 530.2999877929688
+      "resistance_last_price": 530.2999877929688,
+      "zanger_last_alert": "2026-10-13T06:20:18.421780",
+      "zanger_last_price": 528.0999755859375
     },
     "TARC": {
       "sma50": 126.51019927978516,
@@ -14526,8 +14532,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 50.1,
-      "mtf_last_alert": "2026-10-13T05:05:28.844602",
-      "mtf_last_price": 304.25
+      "mtf_last_alert": "2026-10-13T06:20:20.003071",
+      "mtf_last_price": 299.29998779296875
     },
     "TATACHEM": {
       "sma50": 647.9590014648437,
@@ -16488,8 +16494,8 @@
       "descending_res": 1140.875,
       "wedge_contraction": 0.8965880727122215,
       "rs_rank": 75.4,
-      "near_high_17_22_last_alert": "2026-10-13T03:56:42.940471",
-      "near_high_17_22_last_price": 961.0
+      "near_high_17_22_last_alert": "2026-10-13T06:20:51.638475",
+      "near_high_17_22_last_price": 951.2999877929688
     },
     "ZAGGLE": {
       "sma50": 185.20119934082032,
