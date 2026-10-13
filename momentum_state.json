@@ -5200,8 +5200,10 @@
       "rs_rank": 74.7,
       "resistance_last_alert": "2026-10-13T03:52:53.282887",
       "resistance_last_price": 281.6000061035156,
-      "mtf_last_alert": "2026-10-13T03:52:53.886983",
-      "mtf_last_price": 281.6000061035156
+      "mtf_last_alert": "2026-10-13T05:17:33.645449",
+      "mtf_last_price": 292.3500061035156,
+      "zanger_last_alert": "2026-10-13T05:17:33.101300",
+      "zanger_last_price": 292.3500061035156
     },
     "GABRIEL": {
       "sma50": 1396.0000073242188,
@@ -5971,7 +5973,9 @@
       "resistance_last_alert": "2026-10-13T03:53:13.013798",
       "resistance_last_price": 1988.4000244140625,
       "near_high_17_22_last_alert": "2026-10-13T03:53:13.651552",
-      "near_high_17_22_last_price": 1988.4000244140625
+      "near_high_17_22_last_price": 1988.4000244140625,
+      "rectangle_bounce_last_alert": "2026-10-13T05:17:47.021376",
+      "rectangle_bounce_last_price": 1993.0
     },
     "GRSE": {
       "sma50": 2442.946005859375,
@@ -7272,8 +7276,8 @@
       "descending_res": 117.76251602172852,
       "wedge_contraction": 0.7692685816021582,
       "rs_rank": 12.2,
-      "vol_breakout_last_alert": "2026-10-13T04:32:10.295688",
-      "vol_breakout_last_price": 107.13999938964844
+      "vol_breakout_last_alert": "2026-10-13T05:18:08.944902",
+      "vol_breakout_last_price": 105.80000305175781
     },
     "IREDA": {
       "sma50": 113.90539978027344,
@@ -11348,8 +11352,8 @@
       "descending_res": 821.75,
       "wedge_contraction": 1.0291833454543078,
       "rs_rank": 63.0,
-      "near_high_17_22_last_alert": "2026-10-13T03:55:08.261411",
-      "near_high_17_22_last_price": 665.7999877929688
+      "near_high_17_22_last_alert": "2026-10-13T05:19:17.356431",
+      "near_high_17_22_last_price": 658.8499755859375
     },
     "PRIVISCL": {
       "sma50": 3501.414013671875,
