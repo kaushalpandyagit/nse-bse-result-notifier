@@ -259,7 +259,9 @@
     "rsi_up_last_alert": "2026-10-12T10:45:45.947653",
     "price_high_last_alert": "2026-10-09T04:45:49.126337",
     "price_high_last_price": 267.79998779296875,
-    "rsi_down_last_alert": "2026-10-13T05:45:41.285145"
+    "rsi_down_last_alert": "2026-10-13T05:45:41.285145",
+    "price_low_last_alert": "2026-10-13T06:01:00.036243",
+    "price_low_last_price": 251.8000030517578
   },
   "CANFINHOME": {
     "result_date": "2026-10-07T00:00:00",
