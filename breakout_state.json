@@ -86,8 +86,8 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-12T05:01:12.923003",
-    "custom_last_price": 74.0
+    "custom_last_alert": "2026-10-13T05:30:02.075850",
+    "custom_last_price": 73.0
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
@@ -339,7 +339,9 @@
     "rsi_up_last_alert": "2026-10-13T04:45:49.652849",
     "rsi_down_last_alert": "2026-10-12T07:00:55.625208",
     "price_low_last_alert": "2026-10-09T06:00:54.616930",
-    "price_low_last_price": 35.959999084472656
+    "price_low_last_price": 35.959999084472656,
+    "price_high_last_alert": "2026-10-13T05:29:34.832888",
+    "price_high_last_price": 38.31999969482422
   },
   "arb_AVL": {
     "spread_last_alert": "2026-10-09T03:51:03.116065",
@@ -398,8 +400,8 @@
     "mcap_cr": 4576.430664715265,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-13T04:45:54.632878",
-    "price_low_last_alert": "2026-10-13T04:15:56.510170",
-    "price_low_last_price": 224.0500030517578
+    "price_low_last_alert": "2026-10-13T05:29:38.673148",
+    "price_low_last_price": 221.5
   },
   "arb_GPIL": {
     "spread_last_alert": "2026-10-12T03:49:45.325909",
