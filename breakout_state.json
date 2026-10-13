@@ -583,5 +583,13 @@
     "baseline_rsi": 61.680037004706556,
     "mcap_cr": 9125.0413536,
     "exchange": "NSE"
+  },
+  "ARSSBL": {
+    "result_date": "2026-10-13T00:00:00",
+    "day_high": 555.0,
+    "day_low": 527.7000122070312,
+    "baseline_rsi": 59.4638967041579,
+    "mcap_cr": 3428.9202449853515,
+    "exchange": "NSE"
   }
 }
