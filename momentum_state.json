@@ -1819,7 +1819,9 @@
       "wedge_contraction": 1.1361002508731257,
       "rs_rank": 42.5,
       "rectangle_bounce_last_alert": "2026-10-13T04:16:50.434525",
-      "rectangle_bounce_last_price": 169.5
+      "rectangle_bounce_last_price": 169.5,
+      "vol_breakout_last_alert": "2026-10-13T08:16:54.781176",
+      "vol_breakout_last_price": 169.91000366210938
     },
     "BATAINDIA": {
       "sma50": 670.0189990234375,
@@ -4377,7 +4379,9 @@
       "box_low": 177.1300048828125,
       "descending_res": 190.76856122698103,
       "wedge_contraction": 0.7710578903168765,
-      "rs_rank": 48.4
+      "rs_rank": 48.4,
+      "rectangle_bounce_last_alert": "2026-10-13T08:17:45.841373",
+      "rectangle_bounce_last_price": 181.49000549316406
     },
     "EIHOTEL": {
       "sma50": 300.04599914550784,
@@ -10336,8 +10340,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 66.7,
-      "mtf_last_alert": "2026-10-13T04:50:19.990150",
-      "mtf_last_price": 185.9499969482422
+      "mtf_last_alert": "2026-10-13T08:19:46.502057",
+      "mtf_last_price": 188.4499969482422
     },
     "NIVABUPA": {
       "sma50": 81.09300018310547,
@@ -11135,7 +11139,9 @@
       "wedge_contraction": 0.5398303913542102,
       "rs_rank": 5.7,
       "vol_breakout_last_alert": "2026-10-13T08:05:48.648866",
-      "vol_breakout_last_price": 150.55999755859375
+      "vol_breakout_last_price": 150.55999755859375,
+      "mtf_last_alert": "2026-10-13T08:20:04.084562",
+      "mtf_last_price": 151.5
     },
     "PNGJL": {
       "sma50": 608.8810021972656,
@@ -16626,10 +16632,10 @@
       "descending_res": 467.24989318847656,
       "wedge_contraction": 0.8109268295607249,
       "rs_rank": 16.1,
-      "resistance_last_alert": "2026-10-13T07:05:48.211589",
-      "resistance_last_price": 469.79998779296875,
-      "mtf_last_alert": "2026-10-13T07:05:48.714432",
-      "mtf_last_price": 469.79998779296875
+      "resistance_last_alert": "2026-10-13T08:21:51.312849",
+      "resistance_last_price": 474.70001220703125,
+      "mtf_last_alert": "2026-10-13T08:21:51.922307",
+      "mtf_last_price": 474.70001220703125
     },
     "ZENTEC": {
       "sma50": 1736.7080029296876,
