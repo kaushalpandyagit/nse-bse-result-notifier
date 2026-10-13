@@ -870,8 +870,8 @@
       "descending_res": 305.5,
       "wedge_contraction": 1.0259098144141001,
       "rs_rank": 55.6,
-      "resistance_last_alert": "2026-10-13T03:51:22.238525",
-      "resistance_last_price": 301.29998779296875,
+      "resistance_last_alert": "2026-10-13T08:46:49.751444",
+      "resistance_last_price": 307.3999938964844,
       "ema50_pullback_last_alert": "2026-10-13T06:30:27.903537",
       "ema50_pullback_last_price": 303.5
     },
@@ -5330,10 +5330,10 @@
       "rs_rank": 32.0,
       "vol_breakout_last_alert": "2026-10-13T08:03:34.314126",
       "vol_breakout_last_price": 586.7999877929688,
-      "zanger_last_alert": "2026-10-13T07:48:16.287179",
-      "zanger_last_price": 587.2999877929688,
-      "resistance_last_alert": "2026-10-13T07:48:17.068796",
-      "resistance_last_price": 587.2999877929688
+      "zanger_last_alert": "2026-10-13T08:48:16.262390",
+      "zanger_last_price": 576.0999755859375,
+      "resistance_last_alert": "2026-10-13T08:48:16.916921",
+      "resistance_last_price": 576.0999755859375
     },
     "GENUSPOWER": {
       "sma50": 314.5259997558594,
@@ -5704,8 +5704,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 48.8,
-      "near_high_17_22_last_alert": "2026-10-13T07:48:25.551104",
-      "near_high_17_22_last_price": 204.00999450683594
+      "near_high_17_22_last_alert": "2026-10-13T08:48:23.779477",
+      "near_high_17_22_last_price": 207.60000610351562
     },
     "GOLDIAM": {
       "sma50": 341.85899841308594,
@@ -5996,12 +5996,12 @@
       "rs_rank": 76.5,
       "resistance_last_alert": "2026-10-13T03:53:13.013798",
       "resistance_last_price": 1988.4000244140625,
-      "near_high_17_22_last_alert": "2026-10-13T03:53:13.651552",
-      "near_high_17_22_last_price": 1988.4000244140625,
+      "near_high_17_22_last_alert": "2026-10-13T08:48:32.026317",
+      "near_high_17_22_last_price": 1947.4000244140625,
       "rectangle_bounce_last_alert": "2026-10-13T05:17:47.021376",
       "rectangle_bounce_last_price": 1993.0,
-      "vol_breakout_last_alert": "2026-10-13T05:32:19.243920",
-      "vol_breakout_last_price": 1988.699951171875
+      "vol_breakout_last_alert": "2026-10-13T08:48:31.334901",
+      "vol_breakout_last_price": 1947.4000244140625
     },
     "GRSE": {
       "sma50": 2442.946005859375,
@@ -7306,8 +7306,8 @@
       "descending_res": 117.76251602172852,
       "wedge_contraction": 0.7692685816021582,
       "rs_rank": 12.2,
-      "vol_breakout_last_alert": "2026-10-13T07:48:59.720641",
-      "vol_breakout_last_price": 104.44000244140625
+      "vol_breakout_last_alert": "2026-10-13T08:49:00.032696",
+      "vol_breakout_last_price": 105.70999908447266
     },
     "IREDA": {
       "sma50": 113.90539978027344,
@@ -8764,8 +8764,8 @@
       "descending_res": 1501.3157894736842,
       "wedge_contraction": 1.0558149165128026,
       "rs_rank": 85.0,
-      "near_high_17_22_last_alert": "2026-10-13T07:49:30.897397",
-      "near_high_17_22_last_price": 1324.5
+      "near_high_17_22_last_alert": "2026-10-13T08:49:30.128865",
+      "near_high_17_22_last_price": 1344.699951171875
     },
     "KSB": {
       "sma50": 805.4539965820312,
@@ -9716,8 +9716,8 @@
       "descending_res": 63.18907720392401,
       "wedge_contraction": 0.9107247730295198,
       "rs_rank": 32.9,
-      "rectangle_bounce_last_alert": "2026-10-13T07:49:49.488008",
-      "rectangle_bounce_last_price": 58.83000183105469,
+      "rectangle_bounce_last_alert": "2026-10-13T08:49:49.851703",
+      "rectangle_bounce_last_price": 56.400001525878906,
       "vol_breakout_last_alert": "2026-10-13T08:05:14.525473",
       "vol_breakout_last_price": 58.470001220703125
     },
@@ -9792,8 +9792,8 @@
       "descending_res": 183.06470624138328,
       "wedge_contraction": 0.9853725463552402,
       "rs_rank": 43.1,
-      "near_high_17_22_last_alert": "2026-10-13T03:54:33.585089",
-      "near_high_17_22_last_price": 172.0500030517578
+      "near_high_17_22_last_alert": "2026-10-13T08:49:51.980028",
+      "near_high_17_22_last_price": 174.67999267578125
     },
     "MSTCLTD": {
       "sma50": 693.1909985351563,
@@ -11105,7 +11105,9 @@
       "box_low": null,
       "descending_res": 201.85164642333984,
       "wedge_contraction": 0.7055873713808382,
-      "rs_rank": 32.5
+      "rs_rank": 32.5,
+      "sos_pullback_curl_last_alert": "2026-10-13T08:50:18.037690",
+      "sos_pullback_curl_last_price": 165.3000030517578
     },
     "PNCINFRA": {
       "sma50": 180.56059936523437,
@@ -11404,8 +11406,8 @@
       "descending_res": 821.75,
       "wedge_contraction": 1.0291833454543078,
       "rs_rank": 63.0,
-      "near_high_17_22_last_alert": "2026-10-13T05:19:17.356431",
-      "near_high_17_22_last_price": 658.8499755859375
+      "near_high_17_22_last_alert": "2026-10-13T08:50:25.532339",
+      "near_high_17_22_last_price": 666.0
     },
     "PRIVISCL": {
       "sma50": 3501.414013671875,
@@ -11840,8 +11842,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 88.5,
-      "near_high_17_22_last_alert": "2026-10-13T03:55:15.782984",
-      "near_high_17_22_last_price": 859.5999755859375
+      "near_high_17_22_last_alert": "2026-10-13T08:50:34.251243",
+      "near_high_17_22_last_price": 869.0
     },
     "RATNAMANI": {
       "sma50": 2575.500009765625,
@@ -13941,7 +13943,9 @@
       "box_low": 3152.199951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 86.9
+      "rs_rank": 86.9,
+      "near_high_17_22_last_alert": "2026-10-13T08:51:15.953216",
+      "near_high_17_22_last_price": 3244.89990234375
     },
     "SUBROS": {
       "sma50": 728.9799987792969,
@@ -14266,8 +14270,8 @@
       "descending_res": 971.8875122070312,
       "wedge_contraction": 0.7865238186113737,
       "rs_rank": 78.9,
-      "near_high_17_22_last_alert": "2026-10-13T06:50:08.159370",
-      "near_high_17_22_last_price": 860.0
+      "near_high_17_22_last_alert": "2026-10-13T08:51:22.318462",
+      "near_high_17_22_last_price": 872.5
     },
     "SURYAROSNI": {
       "sma50": 221.6132012939453,
