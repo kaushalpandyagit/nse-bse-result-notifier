@@ -871,7 +871,9 @@
       "wedge_contraction": 1.0259098144141001,
       "rs_rank": 55.6,
       "resistance_last_alert": "2026-10-13T03:51:22.238525",
-      "resistance_last_price": 301.29998779296875
+      "resistance_last_price": 301.29998779296875,
+      "ema50_pullback_last_alert": "2026-10-13T06:30:27.903537",
+      "ema50_pullback_last_price": 303.5
     },
     "ANURAS": {
       "sma50": 1207.5120092773439,
@@ -13220,8 +13222,8 @@
       "descending_res": 182.8375015258789,
       "wedge_contraction": 0.9372529471119325,
       "rs_rank": 77.6,
-      "near_high_17_22_last_alert": "2026-10-13T05:05:07.784415",
-      "near_high_17_22_last_price": 191.47999572753906
+      "near_high_17_22_last_alert": "2026-10-13T06:34:49.194936",
+      "near_high_17_22_last_price": 188.67999267578125
     },
     "SHILCTECH": {
       "sma50": 4111.516010742187,
@@ -13510,8 +13512,8 @@
       "descending_res": 2555.4713309151784,
       "wedge_contraction": 0.7324339144378006,
       "rs_rank": 61.9,
-      "near_high_17_22_last_alert": "2026-10-13T03:55:48.862877",
-      "near_high_17_22_last_price": 2030.0
+      "near_high_17_22_last_alert": "2026-10-13T06:34:55.747890",
+      "near_high_17_22_last_price": 2054.699951171875
     },
     "SJVN": {
       "sma50": 64.14760002136231,
