@@ -5367,7 +5367,9 @@
       "box_low": 1261.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 60.1
+      "rs_rank": 60.1,
+      "near_high_17_22_last_alert": "2026-10-13T04:03:45.546483",
+      "near_high_17_22_last_price": 1484.199951171875
     },
     "GILLETTE": {
       "sma50": 7345.64,
@@ -9753,7 +9755,9 @@
       "box_low": 570.0,
       "descending_res": 707.9800537109375,
       "wedge_contraction": 0.9031397764849877,
-      "rs_rank": 89.5
+      "rs_rank": 89.5,
+      "near_high_17_22_last_alert": "2026-10-13T04:05:29.509687",
+      "near_high_17_22_last_price": 668.0999755859375
     },
     "MSUMI": {
       "sma50": 37.0907999420166,
@@ -10151,7 +10155,9 @@
       "box_low": 18055.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 79.3
+      "rs_rank": 79.3,
+      "near_high_17_22_last_alert": "2026-10-13T04:05:39.444809",
+      "near_high_17_22_last_price": 20050.0
     },
     "NEWGEN": {
       "sma50": 511.44799865722655,
@@ -10657,7 +10663,9 @@
       "box_low": 1152.4000244140625,
       "descending_res": 1525.2167358398438,
       "wedge_contraction": 0.8643148121616463,
-      "rs_rank": 97.2
+      "rs_rank": 97.2,
+      "near_high_17_22_last_alert": "2026-10-13T04:05:52.587822",
+      "near_high_17_22_last_price": 1276.4000244140625
     },
     "PCBL": {
       "sma50": 324.4809997558594,
@@ -13769,7 +13777,9 @@
       "box_low": 678.3499755859375,
       "descending_res": 847.7000732421875,
       "wedge_contraction": 0.7235626196566978,
-      "rs_rank": 46.6
+      "rs_rank": 46.6,
+      "near_high_17_22_last_alert": "2026-10-13T04:07:03.377895",
+      "near_high_17_22_last_price": 765.5999755859375
     },
     "STAR": {
       "sma50": 1077.1380017089843,
@@ -14453,7 +14463,9 @@
       "box_low": 266.6000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 50.1
+      "rs_rank": 50.1,
+      "mtf_last_alert": "2026-10-13T04:07:20.238575",
+      "mtf_last_price": 297.0
     },
     "TATACHEM": {
       "sma50": 647.9590014648437,
