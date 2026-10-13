@@ -35,7 +35,9 @@
       "box_low": 427.29998779296875,
       "descending_res": 463.839990234375,
       "wedge_contraction": 0.7842002283449312,
-      "rs_rank": 33.3
+      "rs_rank": 33.3,
+      "near_high_17_22_last_alert": "2026-10-13T04:16:22.581121",
+      "near_high_17_22_last_price": 439.20001220703125
     },
     "AARTIIND": {
       "sma50": 500.8040020751953,
@@ -1809,7 +1811,9 @@
       "box_low": 153.7899932861328,
       "descending_res": 169.92999267578125,
       "wedge_contraction": 1.1361002508731257,
-      "rs_rank": 42.5
+      "rs_rank": 42.5,
+      "rectangle_bounce_last_alert": "2026-10-13T04:16:50.434525",
+      "rectangle_bounce_last_price": 169.5
     },
     "BATAINDIA": {
       "sma50": 670.0189990234375,
@@ -2315,7 +2319,9 @@
       "box_low": 267.04998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 9.4
+      "rs_rank": 9.4,
+      "rectangle_bounce_last_alert": "2026-10-13T04:17:02.021234",
+      "rectangle_bounce_last_price": 288.79998779296875
     },
     "CAMPUS": {
       "sma50": 216.49959930419922,
@@ -3985,7 +3991,9 @@
       "box_low": 393.0,
       "descending_res": 429.5998840332031,
       "wedge_contraction": 0.8240198426461999,
-      "rs_rank": 24.4
+      "rs_rank": 24.4,
+      "near_high_17_22_last_alert": "2026-10-13T04:17:31.082391",
+      "near_high_17_22_last_price": 412.20001220703125
     },
     "DEVYANI": {
       "sma50": 135.97959884643555,
@@ -10193,7 +10201,9 @@
       "box_low": 439.1000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 46.2
+      "rs_rank": 46.2,
+      "rectangle_bounce_last_alert": "2026-10-13T04:19:18.749100",
+      "rectangle_bounce_last_price": 459.75
     },
     "NFL": {
       "sma50": 68.81900024414062,
@@ -16167,7 +16177,9 @@
       "box_low": 1856.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 84.1
+      "rs_rank": 84.1,
+      "near_high_17_22_last_alert": "2026-10-13T04:20:59.633595",
+      "near_high_17_22_last_price": 1924.199951171875
     },
     "WEBELSOLAR": {
       "sma50": 78.56899993896485,
