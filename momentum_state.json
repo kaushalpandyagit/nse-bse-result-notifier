@@ -5324,8 +5324,8 @@
       "descending_res": 593.7300415039062,
       "wedge_contraction": 1.0482281676594434,
       "rs_rank": 32.0,
-      "vol_breakout_last_alert": "2026-10-13T07:17:41.013090",
-      "vol_breakout_last_price": 574.0,
+      "vol_breakout_last_alert": "2026-10-13T08:03:34.314126",
+      "vol_breakout_last_price": 586.7999877929688,
       "zanger_last_alert": "2026-10-13T07:48:16.287179",
       "zanger_last_price": 587.2999877929688,
       "resistance_last_alert": "2026-10-13T07:48:17.068796",
@@ -8027,7 +8027,9 @@
       "wedge_contraction": 0.8884793837023642,
       "rs_rank": 49.7,
       "sos_pullback_curl_last_alert": "2026-10-13T07:49:14.680118",
-      "sos_pullback_curl_last_price": 936.0
+      "sos_pullback_curl_last_price": 936.0,
+      "rectangle_bounce_last_alert": "2026-10-13T08:04:36.450877",
+      "rectangle_bounce_last_price": 938.4000244140625
     },
     "JUSTDIAL": {
       "sma50": 676.2480004882813,
@@ -9709,7 +9711,9 @@
       "wedge_contraction": 0.9107247730295198,
       "rs_rank": 32.9,
       "rectangle_bounce_last_alert": "2026-10-13T07:49:49.488008",
-      "rectangle_bounce_last_price": 58.83000183105469
+      "rectangle_bounce_last_price": 58.83000183105469,
+      "vol_breakout_last_alert": "2026-10-13T08:05:14.525473",
+      "vol_breakout_last_price": 58.470001220703125
     },
     "MOIL": {
       "sma50": 254.3711999511719,
@@ -11129,7 +11133,9 @@
       "box_low": null,
       "descending_res": 154.06244659423828,
       "wedge_contraction": 0.5398303913542102,
-      "rs_rank": 5.7
+      "rs_rank": 5.7,
+      "vol_breakout_last_alert": "2026-10-13T08:05:48.648866",
+      "vol_breakout_last_price": 150.55999755859375
     },
     "PNGJL": {
       "sma50": 608.8810021972656,
