@@ -2327,7 +2327,11 @@
       "zanger_last_alert": "2026-10-13T04:30:45.781158",
       "zanger_last_price": 291.0,
       "mtf_last_alert": "2026-10-13T04:30:46.265998",
-      "mtf_last_price": 291.0
+      "mtf_last_price": 291.0,
+      "vol_breakout_last_alert": "2026-10-13T04:47:23.063628",
+      "vol_breakout_last_price": 292.54998779296875,
+      "resistance_last_alert": "2026-10-13T04:47:23.720899",
+      "resistance_last_price": 292.54998779296875
     },
     "CAMPUS": {
       "sma50": 216.49959930419922,
@@ -2400,8 +2404,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 38.3,
-      "near_high_17_22_last_alert": "2026-10-13T03:51:53.836362",
-      "near_high_17_22_last_price": 690.7000122070312
+      "near_high_17_22_last_alert": "2026-10-13T04:47:25.874654",
+      "near_high_17_22_last_price": 700.2999877929688
     },
     "CANFINHOME": {
       "sma50": 785.5170031738281,
@@ -3524,8 +3528,8 @@
       "descending_res": 1333.8747863769531,
       "wedge_contraction": 0.922625109353693,
       "rs_rank": 53.4,
-      "near_high_17_22_last_alert": "2026-10-13T03:52:21.121664",
-      "near_high_17_22_last_price": 1302.699951171875
+      "near_high_17_22_last_alert": "2026-10-13T04:47:51.432650",
+      "near_high_17_22_last_price": 1281.9000244140625
     },
     "CROMPTON": {
       "sma50": 233.1975994873047,
@@ -3778,8 +3782,8 @@
       "descending_res": 4999.738206129808,
       "wedge_contraction": 0.6680241866832494,
       "rs_rank": 71.2,
-      "near_high_17_22_last_alert": "2026-10-13T03:52:26.197432",
-      "near_high_17_22_last_price": 4075.39990234375
+      "near_high_17_22_last_alert": "2026-10-13T04:47:56.576951",
+      "near_high_17_22_last_price": 4122.2001953125
     },
     "DBL": {
       "sma50": 413.55200134277345,
@@ -5304,12 +5308,12 @@
       "descending_res": 593.7300415039062,
       "wedge_contraction": 1.0482281676594434,
       "rs_rank": 32.0,
-      "vol_breakout_last_alert": "2026-10-13T03:52:56.696060",
-      "vol_breakout_last_price": 588.7000122070312,
-      "zanger_last_alert": "2026-10-13T03:52:57.297554",
-      "zanger_last_price": 588.7000122070312,
-      "resistance_last_alert": "2026-10-13T03:52:57.898745",
-      "resistance_last_price": 588.7000122070312
+      "vol_breakout_last_alert": "2026-10-13T04:48:27.547090",
+      "vol_breakout_last_price": 577.0,
+      "zanger_last_alert": "2026-10-13T04:48:28.106657",
+      "zanger_last_price": 577.0,
+      "resistance_last_alert": "2026-10-13T04:48:28.646084",
+      "resistance_last_price": 577.0
     },
     "GENUSPOWER": {
       "sma50": 314.5259997558594,
@@ -9159,7 +9163,9 @@
       "box_low": null,
       "descending_res": 1971.6,
       "wedge_contraction": 0.9944234209442347,
-      "rs_rank": 44.4
+      "rs_rank": 44.4,
+      "near_high_17_22_last_alert": "2026-10-13T04:49:54.921804",
+      "near_high_17_22_last_price": 1816.800048828125
     },
     "LXCHEM": {
       "sma50": 176.69300048828126,
@@ -10288,8 +10294,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 66.7,
-      "mtf_last_alert": "2026-10-13T03:54:45.308578",
-      "mtf_last_price": 184.0
+      "mtf_last_alert": "2026-10-13T04:50:19.990150",
+      "mtf_last_price": 185.9499969482422
     },
     "NIVABUPA": {
       "sma50": 81.09300018310547,
