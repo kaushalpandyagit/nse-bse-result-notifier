@@ -442,7 +442,7 @@
     "baseline_rsi": 62.506235155002045,
     "mcap_cr": 4471.15032,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-13T08:15:50.444961",
+    "rsi_down_last_alert": "2026-10-13T09:01:06.895240",
     "rsi_up_last_alert": "2026-10-13T07:46:02.801375",
     "price_high_last_alert": "2026-10-12T09:29:44.487993",
     "price_high_last_price": 3753.0
@@ -497,7 +497,9 @@
     "baseline_rsi": 57.0561346012055,
     "mcap_cr": 58.9485587310791,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-13T08:46:07.503308"
+    "rsi_down_last_alert": "2026-10-13T08:46:07.503308",
+    "price_low_last_alert": "2026-10-13T09:01:10.037033",
+    "price_low_last_price": 94.5
   },
   "HCLTECH": {
     "result_date": "2026-10-12T00:00:00",
@@ -558,7 +560,7 @@
     "mcap_cr": 1364.1167734781068,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-13T07:46:10.696376",
-    "rsi_up_last_alert": "2026-10-13T08:15:56.610997"
+    "rsi_up_last_alert": "2026-10-13T09:01:12.026772"
   },
   "ICICIPRULI": {
     "result_date": "2026-10-13T00:00:00",
@@ -567,7 +569,7 @@
     "baseline_rsi": 37.79821909864495,
     "mcap_cr": 65212.65615915,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-13T08:01:12.880315",
+    "rsi_up_last_alert": "2026-10-13T09:01:13.030245",
     "rsi_down_last_alert": "2026-10-13T08:15:57.677447",
     "price_low_last_alert": "2026-10-13T08:29:49.343417",
     "price_low_last_price": 447.70001220703125

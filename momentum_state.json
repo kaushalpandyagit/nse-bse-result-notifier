@@ -1673,7 +1673,9 @@
       "box_low": 1936.0,
       "descending_res": 2290.2474172491775,
       "wedge_contraction": 1.3842717528955741,
-      "rs_rank": 97.4
+      "rs_rank": 97.4,
+      "near_high_17_22_last_alert": "2026-10-13T09:01:55.679434",
+      "near_high_17_22_last_price": 2058.699951171875
     },
     "BALRAMCHIN": {
       "sma50": 670.5489965820312,
@@ -2891,7 +2893,9 @@
       "box_low": null,
       "descending_res": 1341.6600748697917,
       "wedge_contraction": 0.8518242759471061,
-      "rs_rank": 96.7
+      "rs_rank": 96.7,
+      "liquidity_sweep_last_alert": "2026-10-13T09:02:16.497458",
+      "liquidity_sweep_last_price": 1136.0
     },
     "CENTRALBK": {
       "sma50": 30.8503999710083,
@@ -4852,8 +4856,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 55.8,
-      "near_high_17_22_last_alert": "2026-10-13T03:52:45.147176",
-      "near_high_17_22_last_price": 66.91999816894531
+      "near_high_17_22_last_alert": "2026-10-13T09:02:47.710292",
+      "near_high_17_22_last_price": 67.66000366210938
     },
     "ERIS": {
       "sma50": 1301.0319970703124,
@@ -5219,7 +5223,9 @@
       "mtf_last_alert": "2026-10-13T05:17:33.645449",
       "mtf_last_price": 292.3500061035156,
       "zanger_last_alert": "2026-10-13T05:17:33.101300",
-      "zanger_last_price": 292.3500061035156
+      "zanger_last_price": 292.3500061035156,
+      "vol_breakout_last_alert": "2026-10-13T09:02:55.099582",
+      "vol_breakout_last_price": 290.29998779296875
     },
     "GABRIEL": {
       "sma50": 1396.0000073242188,
@@ -5328,8 +5334,8 @@
       "descending_res": 593.7300415039062,
       "wedge_contraction": 1.0482281676594434,
       "rs_rank": 32.0,
-      "vol_breakout_last_alert": "2026-10-13T08:03:34.314126",
-      "vol_breakout_last_price": 586.7999877929688,
+      "vol_breakout_last_alert": "2026-10-13T09:02:56.927589",
+      "vol_breakout_last_price": 579.5499877929688,
       "zanger_last_alert": "2026-10-13T08:48:16.262390",
       "zanger_last_price": 576.0999755859375,
       "resistance_last_alert": "2026-10-13T08:48:16.916921",
@@ -7451,7 +7457,9 @@
       "box_low": 135.02000427246094,
       "descending_res": 141.90328979492188,
       "wedge_contraction": 0.8826656205308506,
-      "rs_rank": 60.6
+      "rs_rank": 60.6,
+      "rectangle_bounce_last_alert": "2026-10-13T09:03:34.841454",
+      "rectangle_bounce_last_price": 138.74000549316406
     },
     "JAIBALAJI": {
       "sma50": 66.07900024414063,
@@ -9718,8 +9726,8 @@
       "rs_rank": 32.9,
       "rectangle_bounce_last_alert": "2026-10-13T08:49:49.851703",
       "rectangle_bounce_last_price": 56.400001525878906,
-      "vol_breakout_last_alert": "2026-10-13T08:05:14.525473",
-      "vol_breakout_last_price": 58.470001220703125
+      "vol_breakout_last_alert": "2026-10-13T09:04:12.987080",
+      "vol_breakout_last_price": 55.84000015258789
     },
     "MOIL": {
       "sma50": 254.3711999511719,
@@ -11144,8 +11152,8 @@
       "descending_res": 154.06244659423828,
       "wedge_contraction": 0.5398303913542102,
       "rs_rank": 5.7,
-      "vol_breakout_last_alert": "2026-10-13T08:05:48.648866",
-      "vol_breakout_last_price": 150.55999755859375,
+      "vol_breakout_last_alert": "2026-10-13T09:04:37.037865",
+      "vol_breakout_last_price": 155.50999450683594,
       "mtf_last_alert": "2026-10-13T08:20:04.084562",
       "mtf_last_price": 151.5,
       "descending_wedge_last_alert": "2026-10-13T08:33:10.344362",
@@ -13036,8 +13044,8 @@
       "descending_res": 1398.0,
       "wedge_contraction": 0.9490858550945547,
       "rs_rank": 90.2,
-      "near_high_17_22_last_alert": "2026-10-13T03:55:40.931752",
-      "near_high_17_22_last_price": 1297.5999755859375
+      "near_high_17_22_last_alert": "2026-10-13T09:05:08.450885",
+      "near_high_17_22_last_price": 1311.9000244140625
     },
     "SFL": {
       "sma50": 663.8729992675782,
@@ -13544,8 +13552,8 @@
       "descending_res": 2555.4713309151784,
       "wedge_contraction": 0.7324339144378006,
       "rs_rank": 61.9,
-      "near_high_17_22_last_alert": "2026-10-13T06:34:55.747890",
-      "near_high_17_22_last_price": 2054.699951171875
+      "near_high_17_22_last_alert": "2026-10-13T09:05:15.626511",
+      "near_high_17_22_last_price": 2077.39990234375
     },
     "SJVN": {
       "sma50": 64.14760002136231,
@@ -14645,7 +14653,9 @@
       "mtf_last_alert": "2026-10-13T06:04:36.755215",
       "mtf_last_price": 3393.199951171875,
       "rectangle_bounce_last_alert": "2026-10-13T05:05:30.604816",
-      "rectangle_bounce_last_price": 3333.0
+      "rectangle_bounce_last_price": 3333.0,
+      "vol_breakout_last_alert": "2026-10-13T09:05:35.063615",
+      "vol_breakout_last_price": 3406.0
     },
     "TATATECH": {
       "sma50": 775.1699987792969,
@@ -16532,8 +16542,8 @@
       "descending_res": 1140.875,
       "wedge_contraction": 0.8965880727122215,
       "rs_rank": 75.4,
-      "near_high_17_22_last_alert": "2026-10-13T07:34:16.516474",
-      "near_high_17_22_last_price": 964.5999755859375
+      "near_high_17_22_last_alert": "2026-10-13T09:06:04.097454",
+      "near_high_17_22_last_price": 975.0
     },
     "ZAGGLE": {
       "sma50": 185.20119934082032,
@@ -16717,7 +16727,9 @@
       "box_low": 2075.0,
       "descending_res": 2532.8240966796875,
       "wedge_contraction": 0.9286663892339921,
-      "rs_rank": 26.4
+      "rs_rank": 26.4,
+      "rectangle_bounce_last_alert": "2026-10-13T09:06:08.149967",
+      "rectangle_bounce_last_price": 2151.89990234375
     },
     "ZYDUSWELL": {
       "sma50": 523.9419995117188,
@@ -16754,8 +16766,8 @@
       "descending_res": 517.75,
       "wedge_contraction": 0.747056978384488,
       "rs_rank": 44.7,
-      "near_high_17_22_last_alert": "2026-10-13T03:56:49.682527",
-      "near_high_17_22_last_price": 490.79998779296875
+      "near_high_17_22_last_alert": "2026-10-13T09:06:09.611374",
+      "near_high_17_22_last_price": 496.5
     }
   },
   "sector_rsis": {
