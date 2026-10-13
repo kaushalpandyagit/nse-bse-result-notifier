@@ -2841,7 +2841,9 @@
       "box_low": 314.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 21.8
+      "rs_rank": 21.8,
+      "mtf_last_alert": "2026-10-13T05:02:10.363741",
+      "mtf_last_price": 362.1000061035156
     },
     "CEMPRO": {
       "sma50": 1254.08400390625,
@@ -8682,8 +8684,8 @@
       "descending_res": 427.3800445556641,
       "wedge_contraction": 1.005538744329551,
       "rs_rank": 67.5,
-      "near_high_17_22_last_alert": "2026-10-13T03:54:11.598782",
-      "near_high_17_22_last_price": 392.1000061035156
+      "near_high_17_22_last_alert": "2026-10-13T05:03:51.872186",
+      "near_high_17_22_last_price": 401.04998779296875
     },
     "KRN": {
       "sma50": 1438.9719946289063,
@@ -13190,8 +13192,8 @@
       "descending_res": 182.8375015258789,
       "wedge_contraction": 0.9372529471119325,
       "rs_rank": 77.6,
-      "near_high_17_22_last_alert": "2026-10-13T03:55:45.102227",
-      "near_high_17_22_last_price": 188.6999969482422
+      "near_high_17_22_last_alert": "2026-10-13T05:05:07.784415",
+      "near_high_17_22_last_price": 191.47999572753906
     },
     "SHILCTECH": {
       "sma50": 4111.516010742187,
@@ -14421,7 +14423,11 @@
       "box_low": 480.79998779296875,
       "descending_res": 584.2373809814453,
       "wedge_contraction": 0.8200301912564852,
-      "rs_rank": 52.7
+      "rs_rank": 52.7,
+      "rectangle_bounce_last_alert": "2026-10-13T05:05:26.611269",
+      "rectangle_bounce_last_price": 520.5999755859375,
+      "mtf_last_alert": "2026-10-13T05:05:27.100879",
+      "mtf_last_price": 520.5999755859375
     },
     "TARC": {
       "sma50": 126.51019927978516,
@@ -14494,8 +14500,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 50.1,
-      "mtf_last_alert": "2026-10-13T04:07:20.238575",
-      "mtf_last_price": 297.0
+      "mtf_last_alert": "2026-10-13T05:05:28.844602",
+      "mtf_last_price": 304.25
     },
     "TATACHEM": {
       "sma50": 647.9590014648437,
@@ -14569,7 +14575,9 @@
       "wedge_contraction": 1.0586949684349953,
       "rs_rank": 5.2,
       "mtf_last_alert": "2026-10-13T04:34:15.265687",
-      "mtf_last_price": 3338.800048828125
+      "mtf_last_price": 3338.800048828125,
+      "rectangle_bounce_last_alert": "2026-10-13T05:05:30.604816",
+      "rectangle_bounce_last_price": 3333.0
     },
     "TATATECH": {
       "sma50": 775.1699987792969,
