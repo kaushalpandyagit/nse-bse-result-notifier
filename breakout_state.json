@@ -234,8 +234,8 @@
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-13T08:46:25.950891",
-    "custom_last_price": 194.0
+    "custom_last_alert": "2026-10-14T04:30:02.492375",
+    "custom_last_price": 190.0
   },
   "LCCPROJECT": {
     "result_date": "2026-10-07T00:00:00",
@@ -390,9 +390,9 @@
     "baseline_rsi": 45.83891744745961,
     "mcap_cr": 7310.401195163673,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-13T04:29:42.025223",
-    "price_low_last_price": 97.94999694824219,
-    "rsi_down_last_alert": "2026-10-13T07:45:58.095716"
+    "price_low_last_alert": "2026-10-14T04:29:41.201838",
+    "price_low_last_price": 96.91999816894531,
+    "rsi_down_last_alert": "2026-10-14T04:29:41.761133"
   },
   "CRAMC": {
     "result_date": "2026-10-12T00:00:00",
@@ -488,8 +488,8 @@
     "baseline_rsi": 56.171211734749654,
     "mcap_cr": 64838.7974765948,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-13T08:15:53.296228",
-    "price_low_last_price": 389.04998779296875,
+    "price_low_last_alert": "2026-10-14T04:29:45.905902",
+    "price_low_last_price": 384.8500061035156,
     "rsi_down_last_alert": "2026-10-14T03:46:08.448865"
   },
   "AGRITECH": {

@@ -3929,7 +3929,9 @@
       "box_low": 1473.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 57.9
+      "rs_rank": 57.9,
+      "mtf_last_alert": "2026-10-14T04:31:09.913489",
+      "mtf_last_price": 1647.9000244140625
     },
     "DELHIVERY": {
       "sma50": 441.8840008544922,
@@ -7411,7 +7413,9 @@
       "wedge_contraction": null,
       "rs_rank": 44.3,
       "ema50_pullback_last_alert": "2026-10-14T04:19:32.322087",
-      "ema50_pullback_last_price": 66.66999816894531
+      "ema50_pullback_last_price": 66.66999816894531,
+      "mtf_last_alert": "2026-10-14T04:32:07.766739",
+      "mtf_last_price": 68.69999694824219
     },
     "JAINREC": {
       "sma50": 292.09800109863284,
@@ -15179,7 +15183,9 @@
       "box_low": 400.6499938964844,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 16.2
+      "rs_rank": 16.2,
+      "mtf_last_alert": "2026-10-14T04:34:08.919754",
+      "mtf_last_price": 475.5
     },
     "TRIDENT": {
       "sma50": 23.640799903869627,
@@ -16299,7 +16305,9 @@
       "box_low": 706.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 37.1
+      "rs_rank": 37.1,
+      "mtf_last_alert": "2026-10-14T04:34:27.582255",
+      "mtf_last_price": 853.0
     },
     "YATHARTH": {
       "sma50": 975.9089978027343,
