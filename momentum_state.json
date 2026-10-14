@@ -906,8 +906,8 @@
       "descending_res": 1256.33349609375,
       "wedge_contraction": 1.0911919863377573,
       "rs_rank": 30.5,
-      "near_high_17_22_last_alert": "2026-10-14T03:50:47.194364",
-      "near_high_17_22_last_price": 1161.0
+      "near_high_17_22_last_alert": "2026-10-14T07:30:18.100090",
+      "near_high_17_22_last_price": 1173.0999755859375
     },
     "APOLLO": {
       "sma50": 394.8250018310547,
@@ -10629,7 +10629,9 @@
       "box_low": 1152.4000244140625,
       "descending_res": 1523.4584045410156,
       "wedge_contraction": 0.7898257846212121,
-      "rs_rank": 96.5
+      "rs_rank": 96.5,
+      "near_high_17_22_last_alert": "2026-10-14T07:32:50.016627",
+      "near_high_17_22_last_price": 1279.300048828125
     },
     "PCBL": {
       "sma50": 324.1870007324219,
@@ -13182,8 +13184,8 @@
       "descending_res": 4028.8333333333335,
       "wedge_contraction": 1.0313174778500664,
       "rs_rank": 18.2,
-      "rectangle_bounce_last_alert": "2026-10-14T04:05:39.657540",
-      "rectangle_bounce_last_price": 3952.199951171875
+      "rectangle_bounce_last_alert": "2026-10-14T07:33:30.737691",
+      "rectangle_bounce_last_price": 3911.10009765625
     },
     "SHILPAMED": {
       "sma50": 923.7529968261719,
@@ -14160,8 +14162,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 80.9,
-      "near_high_17_22_last_alert": "2026-10-14T03:55:03.296218",
-      "near_high_17_22_last_price": 879.75
+      "near_high_17_22_last_alert": "2026-10-14T07:33:44.215558",
+      "near_high_17_22_last_price": 870.75
     },
     "SURYAROSNI": {
       "sma50": 220.41200134277344,
@@ -14573,7 +14575,9 @@
       "box_low": 683.7000122070312,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 75.9
+      "rs_rank": 75.9,
+      "near_high_17_22_last_alert": "2026-10-14T07:33:50.874372",
+      "near_high_17_22_last_price": 739.1500244140625
     },
     "TBOTEK": {
       "sma50": 1675.1739916992187,
@@ -16504,8 +16508,8 @@
       "descending_res": 457.8999938964844,
       "wedge_contraction": 1.0810271920086558,
       "rs_rank": 23.5,
-      "mtf_last_alert": "2026-10-14T06:20:29.024069",
-      "mtf_last_price": 498.3999938964844
+      "mtf_last_alert": "2026-10-14T07:34:19.546565",
+      "mtf_last_price": 493.20001220703125
     },
     "ZENTEC": {
       "sma50": 1737.6980004882812,
