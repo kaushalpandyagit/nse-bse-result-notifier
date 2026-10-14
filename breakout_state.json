@@ -86,8 +86,8 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-14T03:46:39.862009",
-    "custom_last_price": 74.23999786376953
+    "custom_last_alert": "2026-10-14T06:16:06.917805",
+    "custom_last_price": 73.25
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
@@ -154,8 +154,8 @@
     "spread_last_price": 4.535936250073645
   },
   "arb_ATLANTAELE": {
-    "spread_last_alert": "2026-10-14T03:56:04.336809",
-    "spread_last_price": 4.13973723991428
+    "spread_last_alert": "2026-10-14T06:20:54.944442",
+    "spread_last_price": 2.844757308437323
   },
   "arb_ABFRL": {
     "spread_last_alert": "2026-10-06T03:51:42.534872",
@@ -234,8 +234,8 @@
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-14T05:16:07.715489",
-    "custom_last_price": 192.0
+    "custom_last_alert": "2026-10-14T06:16:08.152966",
+    "custom_last_price": 190.0
   },
   "LCCPROJECT": {
     "result_date": "2026-10-07T00:00:00",

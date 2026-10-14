@@ -1521,7 +1521,9 @@
       "box_low": 172.60000610351562,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 48.2
+      "rs_rank": 48.2,
+      "mtf_last_alert": "2026-10-14T06:16:37.078676",
+      "mtf_last_price": 189.72999572753906
     },
     "AXISCADES": {
       "sma50": 1798.1679931640624,
@@ -7135,7 +7137,9 @@
       "box_low": 564.0499877929688,
       "descending_res": 654.6943427191841,
       "wedge_contraction": 0.9385825978454894,
-      "rs_rank": 36.6
+      "rs_rank": 36.6,
+      "rectangle_bounce_last_alert": "2026-10-14T06:18:03.601480",
+      "rectangle_bounce_last_price": 639.9000244140625
     },
     "IONEXCHANG": {
       "sma50": 400.2450018310547,
@@ -7426,8 +7430,8 @@
       "rs_rank": 44.3,
       "ema50_pullback_last_alert": "2026-10-14T04:19:32.322087",
       "ema50_pullback_last_price": 66.66999816894531,
-      "mtf_last_alert": "2026-10-14T05:17:58.005658",
-      "mtf_last_price": 69.75
+      "mtf_last_alert": "2026-10-14T06:18:10.062998",
+      "mtf_last_price": 69.02999877929688
     },
     "JAINREC": {
       "sma50": 292.09800109863284,
@@ -11137,7 +11141,9 @@
       "box_low": 2270.10009765625,
       "descending_res": 2507.0999581473216,
       "wedge_contraction": 1.193126282966137,
-      "rs_rank": 53.1
+      "rs_rank": 53.1,
+      "resistance_last_alert": "2026-10-14T06:19:09.816000",
+      "resistance_last_price": 2505.10009765625
     },
     "PPLPHARMA": {
       "sma50": 208.76280029296876,
@@ -16494,8 +16500,8 @@
       "descending_res": 457.8999938964844,
       "wedge_contraction": 1.0810271920086558,
       "rs_rank": 23.5,
-      "mtf_last_alert": "2026-10-14T03:55:48.899041",
-      "mtf_last_price": 487.3500061035156
+      "mtf_last_alert": "2026-10-14T06:20:29.024069",
+      "mtf_last_price": 498.3999938964844
     },
     "ZENTEC": {
       "sma50": 1737.6980004882812,
