@@ -4418,8 +4418,8 @@
       "descending_res": 419.55834452311194,
       "wedge_contraction": 0.9897223512083846,
       "rs_rank": 53.3,
-      "mtf_last_alert": "2026-10-14T07:47:40.788130",
-      "mtf_last_price": 456.6499938964844,
+      "mtf_last_alert": "2026-10-14T08:48:07.006537",
+      "mtf_last_price": 473.6499938964844,
       "zanger_last_alert": "2026-10-14T08:03:19.189396",
       "zanger_last_price": 479.0,
       "resistance_last_alert": "2026-10-14T08:03:19.785137",
@@ -5187,7 +5187,9 @@
       "box_low": 246.64999389648438,
       "descending_res": 281.1343822479248,
       "wedge_contraction": 1.067942972458776,
-      "rs_rank": 80.7
+      "rs_rank": 80.7,
+      "resistance_last_alert": "2026-10-14T08:48:22.470764",
+      "resistance_last_price": 291.0
     },
     "GABRIEL": {
       "sma50": 1395.4220043945313,
@@ -7153,7 +7155,11 @@
       "wedge_contraction": 0.9385825978454894,
       "rs_rank": 36.6,
       "rectangle_bounce_last_alert": "2026-10-14T06:18:03.601480",
-      "rectangle_bounce_last_price": 639.9000244140625
+      "rectangle_bounce_last_price": 639.9000244140625,
+      "mtf_last_alert": "2026-10-14T08:49:01.472807",
+      "mtf_last_price": 644.8499755859375,
+      "ema50_pullback_last_alert": "2026-10-14T08:49:02.076561",
+      "ema50_pullback_last_price": 644.8499755859375
     },
     "IONEXCHANG": {
       "sma50": 400.2450018310547,
@@ -8025,7 +8031,9 @@
       "box_low": 625.4000244140625,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 67.5
+      "rs_rank": 67.5,
+      "rectangle_bounce_last_alert": "2026-10-14T08:49:24.063023",
+      "rectangle_bounce_last_price": 683.5
     },
     "JWL": {
       "sma50": 238.87679992675783,
@@ -9557,7 +9565,9 @@
       "box_low": 1017.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 37.7
+      "rs_rank": 37.7,
+      "rectangle_bounce_last_alert": "2026-10-14T08:49:54.155704",
+      "rectangle_bounce_last_price": 1035.9000244140625
     },
     "MIDHANI": {
       "sma50": 427.4780004882812,
@@ -11312,8 +11322,8 @@
       "descending_res": 821.7142857142857,
       "wedge_contraction": 0.8213024337787497,
       "rs_rank": 65.6,
-      "near_high_17_22_last_alert": "2026-10-14T03:54:12.941185",
-      "near_high_17_22_last_price": 668.6500244140625
+      "near_high_17_22_last_alert": "2026-10-14T08:50:32.724608",
+      "near_high_17_22_last_price": 676.0
     },
     "PRIVISCL": {
       "sma50": 3493.314013671875,
@@ -15724,8 +15734,8 @@
       "descending_res": 224.44998423258463,
       "wedge_contraction": 0.8854735219714865,
       "rs_rank": 9.9,
-      "vol_breakout_last_alert": "2026-10-14T07:50:44.576588",
-      "vol_breakout_last_price": 171.10000610351562
+      "vol_breakout_last_alert": "2026-10-14T08:51:52.255692",
+      "vol_breakout_last_price": 168.0
     },
     "VAIBHAVGBL": {
       "sma50": 217.40320037841798,
