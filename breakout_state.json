@@ -166,8 +166,8 @@
     "spread_last_price": 3.1420714372666714
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-10-14T07:07:52.261148",
-    "spread_last_price": 6.248418922337465
+    "spread_last_alert": "2026-10-14T09:34:50.508494",
+    "spread_last_price": 6.146379603990929
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-10-14T07:22:21.225677",
@@ -190,8 +190,8 @@
     "spread_last_price": 2.692430483428206
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-14T07:07:42.210826",
-    "spread_last_price": 3.938730853391685
+    "spread_last_alert": "2026-10-14T09:34:47.644348",
+    "spread_last_price": 2.7027027027027026
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-13T03:57:17.405657",
@@ -619,8 +619,8 @@
     "mcap_cr": 10504.160860262848,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-14T08:01:21.028644",
-    "price_high_last_alert": "2026-10-14T08:16:02.559052",
-    "price_high_last_price": 483.79998779296875,
+    "price_high_last_alert": "2026-10-14T09:29:49.241008",
+    "price_high_last_price": 492.5,
     "rsi_up_last_alert": "2026-10-14T09:16:15.028748"
   },
   "BHEL": {
@@ -629,6 +629,14 @@
     "day_low": 439.1499938964844,
     "baseline_rsi": 62.60988982733857,
     "mcap_cr": 158695.037404125,
+    "exchange": "NSE"
+  },
+  "THELEELA": {
+    "result_date": "2026-10-14T00:00:00",
+    "day_high": 615.5,
+    "day_low": 579.1500244140625,
+    "baseline_rsi": 64.77886277943135,
+    "mcap_cr": 20030.793114776574,
     "exchange": "NSE"
   }
 }
