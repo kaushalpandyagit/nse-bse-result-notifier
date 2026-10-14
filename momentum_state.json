@@ -1811,7 +1811,9 @@
       "box_low": 153.7899932861328,
       "descending_res": 166.08499145507812,
       "wedge_contraction": 1.093547528955293,
-      "rs_rank": 41.2
+      "rs_rank": 41.2,
+      "near_high_17_22_last_alert": "2026-10-14T04:02:11.726567",
+      "near_high_17_22_last_price": 172.9499969482422
     },
     "BATAINDIA": {
       "sma50": 666.592998046875,
@@ -2833,7 +2835,9 @@
       "wedge_contraction": null,
       "rs_rank": 24.6,
       "mtf_last_alert": "2026-10-14T03:51:24.114167",
-      "mtf_last_price": 377.5
+      "mtf_last_price": 377.5,
+      "resistance_last_alert": "2026-10-14T04:02:28.667378",
+      "resistance_last_price": 383.1000061035156
     },
     "CEMPRO": {
       "sma50": 1246.1220043945314,
@@ -2905,7 +2909,11 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 20.8
+      "rs_rank": 20.8,
+      "resistance_last_alert": "2026-10-14T04:02:30.747248",
+      "resistance_last_price": 31.81999969482422,
+      "mtf_last_alert": "2026-10-14T04:02:31.392790",
+      "mtf_last_price": 31.81999969482422
     },
     "CENTUM": {
       "sma50": 4011.6120166015626,
@@ -5439,7 +5447,9 @@
       "wedge_contraction": null,
       "rs_rank": 39.9,
       "resistance_last_alert": "2026-10-14T03:52:11.244354",
-      "resistance_last_price": 102.83999633789062
+      "resistance_last_price": 102.83999633789062,
+      "mtf_last_alert": "2026-10-14T04:03:16.791276",
+      "mtf_last_price": 103.5199966430664
     },
     "GNFC": {
       "sma50": 582.8910009765625,
@@ -5913,7 +5923,9 @@
       "wedge_contraction": null,
       "rs_rank": 73.7,
       "near_high_17_22_last_alert": "2026-10-14T03:52:21.960506",
-      "near_high_17_22_last_price": 1968.699951171875
+      "near_high_17_22_last_price": 1968.699951171875,
+      "resistance_last_alert": "2026-10-14T04:03:27.194049",
+      "resistance_last_price": 1984.5
     },
     "GRSE": {
       "sma50": 2425.376005859375,
@@ -12391,7 +12403,11 @@
       "box_low": 40.279998779296875,
       "descending_res": 45.83999252319336,
       "wedge_contraction": 0.9500862574131312,
-      "rs_rank": 50.4
+      "rs_rank": 50.4,
+      "mtf_last_alert": "2026-10-14T04:05:25.387135",
+      "mtf_last_price": 45.18000030517578,
+      "near_high_17_22_last_alert": "2026-10-14T04:05:26.104933",
+      "near_high_17_22_last_price": 45.18000030517578
     },
     "SAILIFE": {
       "sma50": 1508.507998046875,
@@ -12787,7 +12803,11 @@
       "box_low": 260.20001220703125,
       "descending_res": 282.3099365234375,
       "wedge_contraction": 0.8561575291843977,
-      "rs_rank": 60.7
+      "rs_rank": 60.7,
+      "resistance_last_alert": "2026-10-14T04:05:33.058099",
+      "resistance_last_price": 288.5,
+      "near_high_17_22_last_alert": "2026-10-14T04:05:33.714502",
+      "near_high_17_22_last_price": 288.5
     },
     "SENCO": {
       "sma50": 348.4909985351562,
@@ -13113,7 +13133,9 @@
       "box_low": 3784.89990234375,
       "descending_res": 4028.8333333333335,
       "wedge_contraction": 1.0313174778500664,
-      "rs_rank": 18.2
+      "rs_rank": 18.2,
+      "rectangle_bounce_last_alert": "2026-10-14T04:05:39.657540",
+      "rectangle_bounce_last_price": 3952.199951171875
     },
     "SHILPAMED": {
       "sma50": 923.7529968261719,
@@ -14271,7 +14293,9 @@
       "box_low": 344.45001220703125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 31.1
+      "rs_rank": 31.1,
+      "mtf_last_alert": "2026-10-14T04:05:57.685152",
+      "mtf_last_price": 385.0
     },
     "TANLA": {
       "sma50": 533.3120013427734,
@@ -14461,7 +14485,9 @@
       "resistance_last_alert": "2026-10-14T03:55:11.836487",
       "resistance_last_price": 3647.5,
       "mtf_last_alert": "2026-10-14T03:55:12.368842",
-      "mtf_last_price": 3647.5
+      "mtf_last_price": 3647.5,
+      "vol_breakout_last_alert": "2026-10-14T04:06:02.470031",
+      "vol_breakout_last_price": 3686.699951171875
     },
     "TATATECH": {
       "sma50": 774.7789990234374,
@@ -16229,7 +16255,9 @@
       "box_low": 634.9000244140625,
       "descending_res": 661.0899047851562,
       "wedge_contraction": 0.8406593648933269,
-      "rs_rank": 81.6
+      "rs_rank": 81.6,
+      "mtf_last_alert": "2026-10-14T04:06:31.866331",
+      "mtf_last_price": 680.2999877929688
     },
     "WHIRLPOOL": {
       "sma50": 804.81900390625,
