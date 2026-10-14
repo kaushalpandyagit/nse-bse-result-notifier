@@ -2106,8 +2106,8 @@
       "descending_res": 599.7333170572916,
       "wedge_contraction": 0.8073807158473786,
       "rs_rank": 46.1,
-      "near_high_17_22_last_alert": "2026-10-14T05:02:15.830395",
-      "near_high_17_22_last_price": 584.0
+      "near_high_17_22_last_alert": "2026-10-14T06:30:41.517906",
+      "near_high_17_22_last_price": 590.2999877929688
     },
     "BLS": {
       "sma50": 238.95719940185546,
@@ -4450,8 +4450,8 @@
       "descending_res": 79.36095682779948,
       "wedge_contraction": 0.8159925005431125,
       "rs_rank": 34.2,
-      "mtf_last_alert": "2026-10-14T05:02:58.202911",
-      "mtf_last_price": 78.45999908447266
+      "mtf_last_alert": "2026-10-14T06:31:20.800709",
+      "mtf_last_price": 79.25
     },
     "ELGIEQUIP": {
       "sma50": 606.2719958496094,
@@ -7428,8 +7428,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 44.3,
-      "ema50_pullback_last_alert": "2026-10-14T04:19:32.322087",
-      "ema50_pullback_last_price": 66.66999816894531,
+      "ema50_pullback_last_alert": "2026-10-14T06:32:10.628098",
+      "ema50_pullback_last_price": 68.7699966430664,
       "mtf_last_alert": "2026-10-14T06:18:10.062998",
       "mtf_last_price": 69.02999877929688
     },
@@ -14932,8 +14932,8 @@
       "descending_res": 103.29198303222657,
       "wedge_contraction": 0.9260384195790718,
       "rs_rank": 40.6,
-      "rectangle_bounce_last_alert": "2026-10-14T05:35:32.803754",
-      "rectangle_bounce_last_price": 104.02999877929688
+      "rectangle_bounce_last_alert": "2026-10-14T06:34:10.134768",
+      "rectangle_bounce_last_price": 102.8499984741211
     },
     "THYROCARE": {
       "sma50": 570.0279992675781,
@@ -16315,7 +16315,9 @@
       "wedge_contraction": 0.8406593648933269,
       "rs_rank": 81.6,
       "mtf_last_alert": "2026-10-14T04:06:31.866331",
-      "mtf_last_price": 680.2999877929688
+      "mtf_last_price": 680.2999877929688,
+      "resistance_last_alert": "2026-10-14T06:34:32.050715",
+      "resistance_last_price": 681.9500122070312
     },
     "WHIRLPOOL": {
       "sma50": 804.81900390625,
