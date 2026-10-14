@@ -234,8 +234,8 @@
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-14T07:16:14.221428",
-    "custom_last_price": 188.0
+    "custom_last_alert": "2026-10-14T08:01:38.964733",
+    "custom_last_price": 190.0
   },
   "LCCPROJECT": {
     "result_date": "2026-10-07T00:00:00",
@@ -501,7 +501,7 @@
     "baseline_rsi": 57.0561346012055,
     "mcap_cr": 58.9485587310791,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-14T07:01:12.533948",
+    "rsi_down_last_alert": "2026-10-14T08:01:14.842782",
     "price_low_last_alert": "2026-10-14T05:29:46.895702",
     "price_low_last_price": 93.19999694824219,
     "rsi_up_last_alert": "2026-10-14T03:46:10.189007"
@@ -564,7 +564,7 @@
     "baseline_rsi": 53.28644213359594,
     "mcap_cr": 1364.1167734781068,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-14T07:01:15.036574",
+    "rsi_down_last_alert": "2026-10-14T08:01:17.491478",
     "rsi_up_last_alert": "2026-10-14T03:46:14.443941"
   },
   "ICICIPRULI": {
@@ -574,7 +574,7 @@
     "baseline_rsi": 37.79821909864495,
     "mcap_cr": 65212.65615915,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-14T07:01:16.158889",
+    "rsi_up_last_alert": "2026-10-14T08:01:18.655272",
     "rsi_down_last_alert": "2026-10-14T03:46:15.518251",
     "price_low_last_alert": "2026-10-13T08:29:49.343417",
     "price_low_last_price": 447.70001220703125
@@ -610,5 +610,14 @@
     "mcap_cr": 114444.40528653415,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-14T07:46:10.941687"
+  },
+  "ELECON": {
+    "result_date": "2026-10-14T00:00:00",
+    "day_high": 477.29998779296875,
+    "day_low": 434.6499938964844,
+    "baseline_rsi": 59.32102616554831,
+    "mcap_cr": 10504.160860262848,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-14T08:01:21.028644"
   }
 }

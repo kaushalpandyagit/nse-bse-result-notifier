@@ -4417,7 +4417,11 @@
       "wedge_contraction": 0.9897223512083846,
       "rs_rank": 53.3,
       "mtf_last_alert": "2026-10-14T07:47:40.788130",
-      "mtf_last_price": 456.6499938964844
+      "mtf_last_price": 456.6499938964844,
+      "zanger_last_alert": "2026-10-14T08:03:19.189396",
+      "zanger_last_price": 479.0,
+      "resistance_last_alert": "2026-10-14T08:03:19.785137",
+      "resistance_last_price": 479.0
     },
     "ELECTCAST": {
       "sma50": 75.72259994506835,
@@ -11034,10 +11038,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 9.6,
-      "mtf_last_alert": "2026-10-14T07:05:40.961055",
-      "mtf_last_price": 164.14999389648438,
-      "vol_breakout_last_alert": "2026-10-14T07:05:40.409961",
-      "vol_breakout_last_price": 164.14999389648438
+      "mtf_last_alert": "2026-10-14T08:05:50.404047",
+      "mtf_last_price": 157.8000030517578,
+      "vol_breakout_last_alert": "2026-10-14T08:05:49.776727",
+      "vol_breakout_last_price": 157.8000030517578
     },
     "PNGJL": {
       "sma50": 607.5230029296876,
@@ -13949,7 +13953,9 @@
       "box_low": null,
       "descending_res": 1177.6875762939453,
       "wedge_contraction": 1.0874534749459512,
-      "rs_rank": 91.2
+      "rs_rank": 91.2,
+      "sos_pullback_curl_last_alert": "2026-10-14T08:06:53.898817",
+      "sos_pullback_curl_last_price": 1045.9000244140625
     },
     "SUMICHEM": {
       "sma50": 488.32999938964844,
@@ -15962,8 +15968,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 59.4,
-      "near_high_17_22_last_alert": "2026-10-14T03:55:39.369795",
-      "near_high_17_22_last_price": 235.25999450683594
+      "near_high_17_22_last_alert": "2026-10-14T08:07:37.840131",
+      "near_high_17_22_last_price": 232.8699951171875
     },
     "VMART": {
       "sma50": 807.6180004882813,
