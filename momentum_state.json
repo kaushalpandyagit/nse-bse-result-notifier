@@ -2103,7 +2103,9 @@
       "box_low": 516.5999755859375,
       "descending_res": 599.7333170572916,
       "wedge_contraction": 0.8073807158473786,
-      "rs_rank": 46.1
+      "rs_rank": 46.1,
+      "near_high_17_22_last_alert": "2026-10-14T05:02:15.830395",
+      "near_high_17_22_last_price": 584.0
     },
     "BLS": {
       "sma50": 238.95719940185546,
@@ -2836,8 +2838,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 24.6,
-      "mtf_last_alert": "2026-10-14T03:51:24.114167",
-      "mtf_last_price": 377.5,
+      "mtf_last_alert": "2026-10-14T05:02:27.502013",
+      "mtf_last_price": 383.0,
       "resistance_last_alert": "2026-10-14T04:02:28.667378",
       "resistance_last_price": 383.1000061035156
     },
@@ -2915,7 +2917,9 @@
       "resistance_last_alert": "2026-10-14T04:47:36.360666",
       "resistance_last_price": 31.299999237060547,
       "mtf_last_alert": "2026-10-14T04:02:31.392790",
-      "mtf_last_price": 31.81999969482422
+      "mtf_last_price": 31.81999969482422,
+      "zanger_last_alert": "2026-10-14T05:02:29.929733",
+      "zanger_last_price": 31.34000015258789
     },
     "CENTUM": {
       "sma50": 4011.6120166015626,
@@ -4439,7 +4443,9 @@
       "box_low": 69.5199966430664,
       "descending_res": 79.36095682779948,
       "wedge_contraction": 0.8159925005431125,
-      "rs_rank": 34.2
+      "rs_rank": 34.2,
+      "mtf_last_alert": "2026-10-14T05:02:58.202911",
+      "mtf_last_price": 78.45999908447266
     },
     "ELGIEQUIP": {
       "sma50": 606.2719958496094,
@@ -9303,7 +9309,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 45.4
+      "rs_rank": 45.4,
+      "mtf_last_alert": "2026-10-14T05:04:29.809941",
+      "mtf_last_price": 930.8499755859375
     },
     "MARKSANS": {
       "sma50": 319.3450006103516,
@@ -12781,7 +12789,9 @@
       "box_low": 1134.9000244140625,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 66.4
+      "rs_rank": 66.4,
+      "near_high_17_22_last_alert": "2026-10-14T05:05:34.003438",
+      "near_high_17_22_last_price": 1208.5
     },
     "SCI": {
       "sma50": 286.4729998779297,
