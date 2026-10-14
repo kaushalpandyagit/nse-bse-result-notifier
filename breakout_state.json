@@ -618,6 +618,17 @@
     "baseline_rsi": 59.32102616554831,
     "mcap_cr": 10504.160860262848,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-14T08:01:21.028644"
+    "rsi_down_last_alert": "2026-10-14T08:01:21.028644",
+    "price_high_last_alert": "2026-10-14T08:16:02.559052",
+    "price_high_last_price": 483.79998779296875,
+    "rsi_up_last_alert": "2026-10-14T08:16:03.199581"
+  },
+  "BHEL": {
+    "result_date": "2026-10-14T00:00:00",
+    "day_high": 460.75,
+    "day_low": 439.1499938964844,
+    "baseline_rsi": 62.60988982733857,
+    "mcap_cr": 158695.037404125,
+    "exchange": "NSE"
   }
 }
