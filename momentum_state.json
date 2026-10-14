@@ -1087,7 +1087,9 @@
       "box_low": 499.1000061035156,
       "descending_res": 529.6000244140625,
       "wedge_contraction": 0.7358464755525982,
-      "rs_rank": 79.2
+      "rs_rank": 79.2,
+      "rectangle_bounce_last_alert": "2026-10-14T10:02:17.036174",
+      "rectangle_bounce_last_price": 529.4500122070312
     },
     "ARVINDFASN": {
       "sma50": 432.0959991455078,
@@ -1632,8 +1634,8 @@
       "descending_res": 499.19005126953124,
       "wedge_contraction": 0.9222933977417599,
       "rs_rank": 69.1,
-      "resistance_last_alert": "2026-10-14T08:16:54.726254",
-      "resistance_last_price": 513.2000122070312
+      "resistance_last_alert": "2026-10-14T10:02:27.788150",
+      "resistance_last_price": 520.0499877929688
     },
     "BALAMINES": {
       "sma50": 2193.683991699219,
@@ -9029,7 +9031,9 @@
       "box_low": 65.91000366210938,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 70.8
+      "rs_rank": 70.8,
+      "rectangle_bounce_last_alert": "2026-10-14T10:05:12.634580",
+      "rectangle_bounce_last_price": 71.83000183105469
     },
     "LOTUSDEV": {
       "sma50": 199.9902001953125,
@@ -15319,7 +15323,9 @@
       "box_low": 21.600000381469727,
       "descending_res": 22.945006847381592,
       "wedge_contraction": 0.7884414308299897,
-      "rs_rank": 23.0
+      "rs_rank": 23.0,
+      "rectangle_bounce_last_alert": "2026-10-14T10:07:26.829882",
+      "rectangle_bounce_last_price": 22.31999969482422
     },
     "TRITURBINE": {
       "sma50": 569.3450018310547,

@@ -260,8 +260,8 @@
     "price_high_last_alert": "2026-10-09T04:45:49.126337",
     "price_high_last_price": 267.79998779296875,
     "rsi_down_last_alert": "2026-10-14T09:45:46.890033",
-    "price_low_last_alert": "2026-10-14T09:16:01.048710",
-    "price_low_last_price": 251.75
+    "price_low_last_alert": "2026-10-14T10:01:05.639776",
+    "price_low_last_price": 248.0
   },
   "CANFINHOME": {
     "result_date": "2026-10-07T00:00:00",
@@ -344,8 +344,8 @@
     "rsi_down_last_alert": "2026-10-12T07:00:55.625208",
     "price_low_last_alert": "2026-10-09T06:00:54.616930",
     "price_low_last_price": 35.959999084472656,
-    "price_high_last_alert": "2026-10-14T04:45:51.308569",
-    "price_high_last_price": 38.9900016784668
+    "price_high_last_alert": "2026-10-14T10:01:11.291145",
+    "price_high_last_price": 38.5
   },
   "arb_AVL": {
     "spread_last_alert": "2026-10-09T03:51:03.116065",
@@ -621,7 +621,7 @@
     "rsi_down_last_alert": "2026-10-14T08:01:21.028644",
     "price_high_last_alert": "2026-10-14T09:29:49.241008",
     "price_high_last_price": 492.5,
-    "rsi_up_last_alert": "2026-10-14T09:16:15.028748"
+    "rsi_up_last_alert": "2026-10-14T10:01:25.657286"
   },
   "BHEL": {
     "result_date": "2026-10-14T00:00:00",
@@ -646,7 +646,9 @@
     "baseline_rsi": 35.913970878277794,
     "mcap_cr": 46216.16791985124,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-14T09:46:10.293861"
+    "rsi_down_last_alert": "2026-10-14T09:46:10.293861",
+    "price_low_last_alert": "2026-10-14T10:01:27.700703",
+    "price_low_last_price": 1951.0999755859375
   },
   "PETRONET": {
     "result_date": "2026-10-14T00:00:00",
