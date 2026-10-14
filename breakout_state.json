@@ -166,8 +166,8 @@
     "spread_last_price": 3.1420714372666714
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-10-14T03:56:07.630596",
-    "spread_last_price": 5.160734650525299
+    "spread_last_alert": "2026-10-14T07:07:52.261148",
+    "spread_last_price": 6.248418922337465
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-10-14T03:56:05.133429",
@@ -190,8 +190,8 @@
     "spread_last_price": 2.692430483428206
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-14T06:06:18.519554",
-    "spread_last_price": 4.149534021034662
+    "spread_last_alert": "2026-10-14T07:07:42.210826",
+    "spread_last_price": 3.938730853391685
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-13T03:57:17.405657",
@@ -501,7 +501,7 @@
     "baseline_rsi": 57.0561346012055,
     "mcap_cr": 58.9485587310791,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-14T06:01:13.900567",
+    "rsi_down_last_alert": "2026-10-14T07:01:12.533948",
     "price_low_last_alert": "2026-10-14T05:29:46.895702",
     "price_low_last_price": 93.19999694824219,
     "rsi_up_last_alert": "2026-10-14T03:46:10.189007"
@@ -564,7 +564,7 @@
     "baseline_rsi": 53.28644213359594,
     "mcap_cr": 1364.1167734781068,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-14T06:01:15.737452",
+    "rsi_down_last_alert": "2026-10-14T07:01:15.036574",
     "rsi_up_last_alert": "2026-10-14T03:46:14.443941"
   },
   "ICICIPRULI": {
@@ -574,7 +574,7 @@
     "baseline_rsi": 37.79821909864495,
     "mcap_cr": 65212.65615915,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-14T06:01:16.561876",
+    "rsi_up_last_alert": "2026-10-14T07:01:16.158889",
     "rsi_down_last_alert": "2026-10-14T03:46:15.518251",
     "price_low_last_alert": "2026-10-13T08:29:49.343417",
     "price_low_last_price": 447.70001220703125
