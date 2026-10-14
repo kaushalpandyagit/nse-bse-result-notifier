@@ -10729,7 +10729,9 @@
       "box_low": 325.1499938964844,
       "descending_res": 369.44380950927734,
       "wedge_contraction": 0.7475474577818348,
-      "rs_rank": 64.9
+      "rs_rank": 64.9,
+      "rectangle_bounce_last_alert": "2026-10-14T05:48:48.868272",
+      "rectangle_bounce_last_price": 350.5
     },
     "PFIZER": {
       "sma50": 4395.5279931640625,
@@ -11018,10 +11020,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 9.6,
-      "mtf_last_alert": "2026-10-14T04:50:27.251827",
-      "mtf_last_price": 163.69000244140625,
-      "vol_breakout_last_alert": "2026-10-14T04:50:26.563108",
-      "vol_breakout_last_price": 163.69000244140625
+      "mtf_last_alert": "2026-10-14T05:48:54.463809",
+      "mtf_last_price": 166.8699951171875,
+      "vol_breakout_last_alert": "2026-10-14T05:48:53.942004",
+      "vol_breakout_last_price": 166.8699951171875
     },
     "PNGJL": {
       "sma50": 607.5230029296876,
@@ -12435,7 +12437,9 @@
       "mtf_last_alert": "2026-10-14T04:05:25.387135",
       "mtf_last_price": 45.18000030517578,
       "near_high_17_22_last_alert": "2026-10-14T04:05:26.104933",
-      "near_high_17_22_last_price": 45.18000030517578
+      "near_high_17_22_last_price": 45.18000030517578,
+      "resistance_last_alert": "2026-10-14T05:49:16.558868",
+      "resistance_last_price": 45.599998474121094
     },
     "SAILIFE": {
       "sma50": 1508.507998046875,
