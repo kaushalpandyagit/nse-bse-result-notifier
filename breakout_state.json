@@ -190,8 +190,8 @@
     "spread_last_price": 2.692430483428206
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-14T05:20:28.330367",
-    "spread_last_price": 3.2440335590867924
+    "spread_last_alert": "2026-10-14T06:06:18.519554",
+    "spread_last_price": 4.149534021034662
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-13T03:57:17.405657",
@@ -381,8 +381,8 @@
     "mcap_cr": 13190.88524150978,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-12T05:45:55.910737",
-    "price_low_last_alert": "2026-10-13T07:29:42.476821",
-    "price_low_last_price": 136.14999389648438,
+    "price_low_last_alert": "2026-10-14T06:01:08.973614",
+    "price_low_last_price": 134.75999450683594,
     "rsi_down_last_alert": "2026-10-14T05:45:48.538815"
   },
   "CORDELIA": {
@@ -501,7 +501,7 @@
     "baseline_rsi": 57.0561346012055,
     "mcap_cr": 58.9485587310791,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-14T05:01:16.207123",
+    "rsi_down_last_alert": "2026-10-14T06:01:13.900567",
     "price_low_last_alert": "2026-10-14T05:29:46.895702",
     "price_low_last_price": 93.19999694824219,
     "rsi_up_last_alert": "2026-10-14T03:46:10.189007"
@@ -564,7 +564,7 @@
     "baseline_rsi": 53.28644213359594,
     "mcap_cr": 1364.1167734781068,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-14T05:01:18.865522",
+    "rsi_down_last_alert": "2026-10-14T06:01:15.737452",
     "rsi_up_last_alert": "2026-10-14T03:46:14.443941"
   },
   "ICICIPRULI": {
@@ -574,7 +574,7 @@
     "baseline_rsi": 37.79821909864495,
     "mcap_cr": 65212.65615915,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-14T05:01:19.905801",
+    "rsi_up_last_alert": "2026-10-14T06:01:16.561876",
     "rsi_down_last_alert": "2026-10-14T03:46:15.518251",
     "price_low_last_alert": "2026-10-13T08:29:49.343417",
     "price_low_last_price": 447.70001220703125
