@@ -190,8 +190,8 @@
     "spread_last_price": 2.692430483428206
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-13T09:35:30.067843",
-    "spread_last_price": 2.529915921029202
+    "spread_last_alert": "2026-10-14T04:24:00.385214",
+    "spread_last_price": 5.736782902137233
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-13T03:57:17.405657",
@@ -301,8 +301,8 @@
     "mcap_cr": 2150.92359372431,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-14T03:45:49.992663",
-    "price_low_last_alert": "2026-10-13T07:45:48.960912",
-    "price_low_last_price": 867.5
+    "price_low_last_alert": "2026-10-14T04:15:51.235061",
+    "price_low_last_price": 876.5499877929688
   },
   "arb_SILINV": {
     "spread_last_alert": "2026-10-14T04:06:47.846462",
@@ -460,8 +460,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-13T07:46:03.812911",
     "rsi_up_last_alert": "2026-10-14T03:46:05.162517",
-    "price_high_last_alert": "2026-10-13T09:29:38.465191",
-    "price_high_last_price": 302.0
+    "price_high_last_alert": "2026-10-14T04:16:00.927105",
+    "price_high_last_price": 305.29998779296875
   },
   "ALKALI": {
     "result_date": "2026-10-12T00:00:00",

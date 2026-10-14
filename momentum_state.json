@@ -3273,7 +3273,9 @@
       "box_low": 366.8999938964844,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 11.0
+      "rs_rank": 11.0,
+      "resistance_last_alert": "2026-10-14T04:17:48.577882",
+      "resistance_last_price": 382.5
     },
     "CLEAN": {
       "sma50": 817.2950048828125,
@@ -5885,7 +5887,9 @@
       "box_low": 178.7100067138672,
       "descending_res": 214.81502532958984,
       "wedge_contraction": 0.9028854192557111,
-      "rs_rank": 82.0
+      "rs_rank": 82.0,
+      "near_high_17_22_last_alert": "2026-10-14T04:18:50.818014",
+      "near_high_17_22_last_price": 212.7899932861328
     },
     "GRINDWELL": {
       "sma50": 2006.516005859375,
@@ -7405,7 +7409,9 @@
       "box_low": 57.099998474121094,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 44.3
+      "rs_rank": 44.3,
+      "ema50_pullback_last_alert": "2026-10-14T04:19:32.322087",
+      "ema50_pullback_last_price": 66.66999816894531
     },
     "JAINREC": {
       "sma50": 292.09800109863284,
