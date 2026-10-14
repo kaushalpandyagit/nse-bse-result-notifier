@@ -6245,7 +6245,9 @@
       "box_low": 18.350000381469727,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 53.7
+      "rs_rank": 53.7,
+      "rectangle_bounce_last_alert": "2026-10-14T08:31:43.259637",
+      "rectangle_bounce_last_price": 20.170000076293945
     },
     "HCG": {
       "sma50": 691.9170007324219,
@@ -9667,7 +9669,9 @@
       "wedge_contraction": 1.6499148754768485,
       "rs_rank": 41.7,
       "ema50_pullback_last_alert": "2026-10-14T03:53:37.287438",
-      "ema50_pullback_last_price": 59.369998931884766
+      "ema50_pullback_last_price": 59.369998931884766,
+      "vol_breakout_last_alert": "2026-10-14T08:32:37.486453",
+      "vol_breakout_last_price": 58.2400016784668
     },
     "MOIL": {
       "sma50": 252.47420074462892,
