@@ -868,8 +868,8 @@
       "descending_res": 305.0,
       "wedge_contraction": 1.093463571484765,
       "rs_rank": 48.9,
-      "resistance_last_alert": "2026-10-14T03:50:45.693453",
-      "resistance_last_price": 307.5
+      "resistance_last_alert": "2026-10-14T07:46:42.855238",
+      "resistance_last_price": 303.8999938964844
     },
     "ANURAS": {
       "sma50": 1206.8760083007812,
@@ -1668,8 +1668,8 @@
       "descending_res": 2275.484259354441,
       "wedge_contraction": 0.7385795069988638,
       "rs_rank": 97.6,
-      "near_high_17_22_last_alert": "2026-10-14T05:30:49.190680",
-      "near_high_17_22_last_price": 2096.699951171875
+      "near_high_17_22_last_alert": "2026-10-14T07:46:56.319606",
+      "near_high_17_22_last_price": 2069.60009765625
     },
     "BALRAMCHIN": {
       "sma50": 674.73599609375,
@@ -4415,7 +4415,9 @@
       "box_low": 402.3999938964844,
       "descending_res": 419.55834452311194,
       "wedge_contraction": 0.9897223512083846,
-      "rs_rank": 53.3
+      "rs_rank": 53.3,
+      "mtf_last_alert": "2026-10-14T07:47:40.788130",
+      "mtf_last_price": 456.6499938964844
     },
     "ELECTCAST": {
       "sma50": 75.72259994506835,
@@ -4452,8 +4454,8 @@
       "descending_res": 79.36095682779948,
       "wedge_contraction": 0.8159925005431125,
       "rs_rank": 34.2,
-      "mtf_last_alert": "2026-10-14T06:31:20.800709",
-      "mtf_last_price": 79.25
+      "mtf_last_alert": "2026-10-14T07:47:42.275779",
+      "mtf_last_price": 78.3499984741211
     },
     "ELGIEQUIP": {
       "sma50": 606.2719958496094,
@@ -5688,8 +5690,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 70.6,
-      "near_high_17_22_last_alert": "2026-10-14T05:32:11.943614",
-      "near_high_17_22_last_price": 315.54998779296875
+      "near_high_17_22_last_alert": "2026-10-14T07:48:01.411177",
+      "near_high_17_22_last_price": 312.20001220703125
     },
     "GPIL": {
       "sma50": 234.71240020751952,
@@ -8627,7 +8629,9 @@
       "wedge_contraction": 1.1284091206674025,
       "rs_rank": 3.9,
       "rectangle_bounce_last_alert": "2026-10-14T05:18:15.522677",
-      "rectangle_bounce_last_price": 525.4000244140625
+      "rectangle_bounce_last_price": 525.4000244140625,
+      "mtf_last_alert": "2026-10-14T07:48:49.565678",
+      "mtf_last_price": 530.5499877929688
     },
     "KRBL": {
       "sma50": 400.0219995117188,
@@ -8702,8 +8706,8 @@
       "descending_res": 1483.6315789473683,
       "wedge_contraction": 1.1337810110426945,
       "rs_rank": 71.1,
-      "near_high_17_22_last_alert": "2026-10-14T04:49:38.159628",
-      "near_high_17_22_last_price": 1368.5
+      "near_high_17_22_last_alert": "2026-10-14T07:48:52.114848",
+      "near_high_17_22_last_price": 1351.0
     },
     "KSB": {
       "sma50": 804.0279968261718,
@@ -10740,8 +10744,8 @@
       "descending_res": 369.44380950927734,
       "wedge_contraction": 0.7475474577818348,
       "rs_rank": 64.9,
-      "rectangle_bounce_last_alert": "2026-10-14T06:49:18.774916",
-      "rectangle_bounce_last_price": 344.75
+      "rectangle_bounce_last_alert": "2026-10-14T07:49:27.075972",
+      "rectangle_bounce_last_price": 341.29998779296875
     },
     "PFIZER": {
       "sma50": 4395.5279931640625,
@@ -14532,10 +14536,10 @@
       "descending_res": 3348.3994954427085,
       "wedge_contraction": 1.65775009485344,
       "rs_rank": 13.8,
-      "zanger_last_alert": "2026-10-14T03:55:11.295882",
-      "zanger_last_price": 3647.5,
-      "resistance_last_alert": "2026-10-14T03:55:11.836487",
-      "resistance_last_price": 3647.5,
+      "zanger_last_alert": "2026-10-14T07:50:26.925648",
+      "zanger_last_price": 3605.699951171875,
+      "resistance_last_alert": "2026-10-14T07:50:27.692885",
+      "resistance_last_price": 3605.699951171875,
       "mtf_last_alert": "2026-10-14T03:55:12.368842",
       "mtf_last_price": 3647.5,
       "vol_breakout_last_alert": "2026-10-14T07:21:06.831214",
@@ -15701,7 +15705,9 @@
       "box_low": null,
       "descending_res": 224.44998423258463,
       "wedge_contraction": 0.8854735219714865,
-      "rs_rank": 9.9
+      "rs_rank": 9.9,
+      "vol_breakout_last_alert": "2026-10-14T07:50:44.576588",
+      "vol_breakout_last_price": 171.10000610351562
     },
     "VAIBHAVGBL": {
       "sma50": 217.40320037841798,
