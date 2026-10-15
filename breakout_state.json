@@ -319,8 +319,8 @@
     "price_low_last_alert": "2026-10-09T05:00:56.492822",
     "price_low_last_price": 1631.9000244140625,
     "rsi_down_last_alert": "2026-10-09T08:01:31.560283",
-    "price_high_last_alert": "2026-10-15T08:29:40.009570",
-    "price_high_last_price": 1716.4000244140625
+    "price_high_last_alert": "2026-10-15T09:15:45.668090",
+    "price_high_last_price": 1803.5
   },
   "TCS": {
     "result_date": "2026-10-08T00:00:00",
@@ -340,7 +340,7 @@
     "baseline_rsi": 49.93750546775799,
     "mcap_cr": 70.1028709,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-15T06:01:00.484742",
+    "rsi_up_last_alert": "2026-10-15T09:15:48.180702",
     "rsi_down_last_alert": "2026-10-12T07:00:55.625208",
     "price_low_last_alert": "2026-10-09T06:00:54.616930",
     "price_low_last_price": 35.959999084472656,
@@ -392,8 +392,8 @@
     "baseline_rsi": 45.83891744745961,
     "mcap_cr": 7310.401195163673,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-14T06:45:58.374558",
-    "price_low_last_price": 97.95999908447266,
+    "price_low_last_alert": "2026-10-15T09:15:51.198256",
+    "price_low_last_price": 96.88999938964844,
     "rsi_down_last_alert": "2026-10-15T08:46:04.740734"
   },
   "CRAMC": {
@@ -490,8 +490,8 @@
     "baseline_rsi": 56.171211734749654,
     "mcap_cr": 64838.7974765948,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-15T07:15:51.636294",
-    "price_low_last_price": 379.70001220703125,
+    "price_low_last_alert": "2026-10-15T09:15:55.851381",
+    "price_low_last_price": 375.3500061035156,
     "rsi_down_last_alert": "2026-10-15T08:46:13.450554"
   },
   "AGRITECH": {
@@ -750,7 +750,8 @@
     "baseline_rsi": 38.8071205717803,
     "mcap_cr": 249080.35129880274,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-15T08:46:31.277048"
+    "rsi_up_last_alert": "2026-10-15T08:46:31.277048",
+    "rsi_down_last_alert": "2026-10-15T09:16:04.534596"
   },
   "FEDFINA": {
     "result_date": "2026-10-15T00:00:00",
@@ -814,7 +815,7 @@
     "mcap_cr": 3026.942660579791,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-15T08:16:20.548205",
-    "rsi_down_last_alert": "2026-10-15T08:30:00.379985"
+    "rsi_down_last_alert": "2026-10-15T09:16:08.130634"
   },
   "TIPSMUSIC": {
     "result_date": "2026-10-15T00:00:00",
@@ -823,7 +824,9 @@
     "baseline_rsi": 60.095481529713005,
     "mcap_cr": 8826.78699870835,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-15T09:01:21.558632"
+    "rsi_down_last_alert": "2026-10-15T09:01:21.558632",
+    "price_low_last_alert": "2026-10-15T09:16:09.100913",
+    "price_low_last_price": 675.0
   },
   "ORIENTELEC": {
     "result_date": "2026-10-15T00:00:00",
@@ -841,5 +844,14 @@
     "baseline_rsi": 58.77477973017172,
     "mcap_cr": 33142.18718768687,
     "exchange": "NSE"
+  },
+  "HDFCAMC": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 2422.10009765625,
+    "day_low": 2277.699951171875,
+    "baseline_rsi": 54.14343776241393,
+    "mcap_cr": 103591.19257422494,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-15T09:16:10.523541"
   }
 }
