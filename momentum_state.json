@@ -1376,8 +1376,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 78.6,
-      "near_high_17_22_last_alert": "2026-10-15T05:16:20.761294",
-      "near_high_17_22_last_price": 1745.0
+      "near_high_17_22_last_alert": "2026-10-15T06:01:53.443156",
+      "near_high_17_22_last_price": 1727.0
     },
     "ATUL": {
       "sma50": 6321.23,
@@ -2980,8 +2980,8 @@
       "descending_res": 1331.3635808771307,
       "wedge_contraction": 1.2231607018751232,
       "rs_rank": 97.2,
-      "vol_breakout_last_alert": "2026-10-15T05:16:43.391074",
-      "vol_breakout_last_price": 1268.800048828125,
+      "vol_breakout_last_alert": "2026-10-15T06:02:18.933345",
+      "vol_breakout_last_price": 1230.199951171875,
       "ema50_pullback_last_alert": "2026-10-15T05:16:44.131160",
       "ema50_pullback_last_price": 1268.800048828125
     },
@@ -4956,8 +4956,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 53.2,
-      "near_high_17_22_last_alert": "2026-10-15T03:52:15.342338",
-      "near_high_17_22_last_price": 69.0999984741211
+      "near_high_17_22_last_alert": "2026-10-15T06:02:52.808219",
+      "near_high_17_22_last_price": 68.29000091552734
     },
     "ERIS": {
       "sma50": 1288.03,
@@ -9264,8 +9264,8 @@
       "descending_res": 414.65447998046875,
       "wedge_contraction": 0.7901677153565279,
       "rs_rank": 46.8,
-      "near_high_17_22_last_alert": "2026-10-15T03:53:34.639344",
-      "near_high_17_22_last_price": 418.20001220703125
+      "near_high_17_22_last_alert": "2026-10-15T06:04:06.770380",
+      "near_high_17_22_last_price": 413.95001220703125
     },
     "LUMAXIND": {
       "sma50": 5804.64,
@@ -11157,7 +11157,9 @@
       "box_low": 561.1500244140625,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 49.2
+      "rs_rank": 49.2,
+      "rectangle_bounce_last_alert": "2026-10-15T06:04:42.675008",
+      "rectangle_bounce_last_price": 607.5999755859375
     },
     "PINELABS": {
       "sma50": 169.8856002807617,
@@ -12318,14 +12320,14 @@
       "descending_res": 221.41506958007812,
       "wedge_contraction": 0.6997956056412651,
       "rs_rank": 38.3,
-      "resistance_last_alert": "2026-10-15T04:49:16.859526",
-      "resistance_last_price": 215.0,
-      "mtf_last_alert": "2026-10-15T04:49:17.573975",
-      "mtf_last_price": 215.0,
-      "zanger_last_alert": "2026-10-15T04:19:54.568807",
-      "zanger_last_price": 214.3699951171875,
-      "vol_breakout_last_alert": "2026-10-15T04:49:16.120206",
-      "vol_breakout_last_price": 215.0
+      "resistance_last_alert": "2026-10-15T06:05:05.390523",
+      "resistance_last_price": 211.5500030517578,
+      "mtf_last_alert": "2026-10-15T06:05:05.876541",
+      "mtf_last_price": 211.5500030517578,
+      "zanger_last_alert": "2026-10-15T06:05:04.891780",
+      "zanger_last_price": 211.5500030517578,
+      "vol_breakout_last_alert": "2026-10-15T06:05:04.384162",
+      "vol_breakout_last_price": 211.5500030517578
     },
     "RKFORGE": {
       "sma50": 718.5259973144531,
@@ -14326,8 +14328,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 28.7,
-      "rectangle_bounce_last_alert": "2026-10-15T04:49:41.859195",
-      "rectangle_bounce_last_price": 215.99000549316406
+      "rectangle_bounce_last_alert": "2026-10-15T06:05:39.809676",
+      "rectangle_bounce_last_price": 213.6699981689453
     },
     "SUVEN": {
       "sma50": 338.6209991455078,
@@ -16586,10 +16588,10 @@
       "descending_res": 483.1646997788373,
       "wedge_contraction": 1.1407673490188728,
       "rs_rank": 21.2,
-      "resistance_last_alert": "2026-10-15T03:55:52.948318",
-      "resistance_last_price": 494.6499938964844,
-      "mtf_last_alert": "2026-10-15T03:55:53.609417",
-      "mtf_last_price": 494.6499938964844
+      "resistance_last_alert": "2026-10-15T06:06:17.472085",
+      "resistance_last_price": 501.45001220703125,
+      "mtf_last_alert": "2026-10-15T06:06:18.245327",
+      "mtf_last_price": 501.45001220703125
     },
     "ZENTEC": {
       "sma50": 1736.9080004882812,

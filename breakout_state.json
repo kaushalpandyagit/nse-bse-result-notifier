@@ -305,8 +305,8 @@
     "price_low_last_price": 876.5499877929688
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-10-15T05:20:08.383780",
-    "spread_last_price": 4.077205302023746
+    "spread_last_alert": "2026-10-15T06:06:31.187816",
+    "spread_last_price": 3.7846034460444344
   },
   "TATACOMM": {
     "result_date": "2026-10-08T00:00:00",
@@ -340,7 +340,7 @@
     "baseline_rsi": 49.93750546775799,
     "mcap_cr": 70.1028709,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-15T04:45:53.842204",
+    "rsi_up_last_alert": "2026-10-15T06:01:00.484742",
     "rsi_down_last_alert": "2026-10-12T07:00:55.625208",
     "price_low_last_alert": "2026-10-09T06:00:54.616930",
     "price_low_last_price": 35.959999084472656,
@@ -682,7 +682,7 @@
     "price_high_last_alert": "2026-10-15T03:46:51.621040",
     "price_high_last_price": 776.25,
     "rsi_up_last_alert": "2026-10-15T03:46:52.304027",
-    "rsi_down_last_alert": "2026-10-15T05:01:23.824206",
+    "rsi_down_last_alert": "2026-10-15T06:01:12.366963",
     "price_low_last_alert": "2026-10-15T04:29:56.963926",
     "price_low_last_price": 728.2999877929688
   },
@@ -721,6 +721,7 @@
     "baseline_rsi": 42.96871939629207,
     "mcap_cr": 102398.64380076739,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-15T05:46:21.864775"
+    "rsi_down_last_alert": "2026-10-15T05:46:21.864775",
+    "rsi_up_last_alert": "2026-10-15T06:01:13.424262"
   }
 }
