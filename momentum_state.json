@@ -2080,8 +2080,8 @@
       "descending_res": 2026.4285714285713,
       "wedge_contraction": 0.9083816995821451,
       "rs_rank": 63.2,
-      "near_high_17_22_last_alert": "2026-10-15T03:51:18.934073",
-      "near_high_17_22_last_price": 1965.4000244140625
+      "near_high_17_22_last_alert": "2026-10-15T06:31:05.719288",
+      "near_high_17_22_last_price": 1945.0
     },
     "BIRET": {
       "sma50": 339.04960083007813,
@@ -3059,7 +3059,9 @@
       "box_low": null,
       "descending_res": 4983.75,
       "wedge_contraction": 0.8218575082307924,
-      "rs_rank": 87.7
+      "rs_rank": 87.7,
+      "near_high_17_22_last_alert": "2026-10-15T06:31:26.930211",
+      "near_high_17_22_last_price": 4023.800048828125
     },
     "CERA": {
       "sma50": 5599.24,
@@ -5291,7 +5293,9 @@
       "resistance_last_alert": "2026-10-15T05:17:15.975358",
       "resistance_last_price": 17682.0,
       "mtf_last_alert": "2026-10-15T05:32:08.756227",
-      "mtf_last_price": 17794.0
+      "mtf_last_price": 17794.0,
+      "rectangle_bounce_last_alert": "2026-10-15T06:32:12.474180",
+      "rectangle_bounce_last_price": 17659.0
     },
     "FSL": {
       "sma50": 270.0160012817383,
@@ -11270,8 +11274,8 @@
       "descending_res": 613.2999877929688,
       "wedge_contraction": 1.0052097142008356,
       "rs_rank": 31.3,
-      "near_high_17_22_last_alert": "2026-10-15T03:54:18.496286",
-      "near_high_17_22_last_price": 598.4500122070312,
+      "near_high_17_22_last_alert": "2026-10-15T06:34:26.414568",
+      "near_high_17_22_last_price": 592.0,
       "ema50_pullback_last_alert": "2026-10-15T04:49:01.319368",
       "ema50_pullback_last_price": 599.25
     },
