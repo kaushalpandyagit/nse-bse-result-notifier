@@ -1707,7 +1707,9 @@
       "wedge_contraction": 1.137703584379896,
       "rs_rank": 71.6,
       "resistance_last_alert": "2026-10-15T03:51:11.528134",
-      "resistance_last_price": 523.9500122070312
+      "resistance_last_price": 523.9500122070312,
+      "vol_breakout_last_alert": "2026-10-15T04:16:49.002762",
+      "vol_breakout_last_price": 495.20001220703125
     },
     "BALAMINES": {
       "sma50": 2196.7219921875,
@@ -2223,7 +2225,11 @@
       "mtf_last_alert": "2026-10-15T03:51:24.830343",
       "mtf_last_price": 234.3000030517578,
       "resistance_last_alert": "2026-10-15T04:02:24.000862",
-      "resistance_last_price": 238.52000427246094
+      "resistance_last_price": 238.52000427246094,
+      "zanger_last_alert": "2026-10-15T04:16:59.372601",
+      "zanger_last_price": 231.9199981689453,
+      "ema50_pullback_last_alert": "2026-10-15T04:16:59.846980",
+      "ema50_pullback_last_price": 231.9199981689453
     },
     "BLUEJET": {
       "sma50": 569.3709985351562,
@@ -4517,7 +4523,9 @@
       "wedge_contraction": 1.0753867204048249,
       "rs_rank": 67.2,
       "resistance_last_alert": "2026-10-15T03:52:07.792730",
-      "resistance_last_price": 472.29998779296875
+      "resistance_last_price": 472.29998779296875,
+      "mtf_last_alert": "2026-10-15T04:17:37.427450",
+      "mtf_last_price": 478.3500061035156
     },
     "ELECTCAST": {
       "sma50": 75.84459991455078,
@@ -5277,7 +5285,11 @@
       "box_low": 246.64999389648438,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 68.5
+      "rs_rank": 68.5,
+      "resistance_last_alert": "2026-10-15T04:17:51.585041",
+      "resistance_last_price": 288.45001220703125,
+      "mtf_last_alert": "2026-10-15T04:17:52.057288",
+      "mtf_last_price": 288.45001220703125
     },
     "GABRIEL": {
       "sma50": 1393.5100048828126,
@@ -5389,7 +5401,9 @@
       "resistance_last_alert": "2026-10-15T04:03:20.138811",
       "resistance_last_price": 592.5999755859375,
       "mtf_last_alert": "2026-10-15T04:03:20.784577",
-      "mtf_last_price": 592.5999755859375
+      "mtf_last_price": 592.5999755859375,
+      "zanger_last_alert": "2026-10-15T04:17:53.565556",
+      "zanger_last_price": 621.2000122070312
     },
     "GENUSPOWER": {
       "sma50": 313.8439990234375,
@@ -6223,7 +6237,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 23.9
+      "rs_rank": 23.9,
+      "mtf_last_alert": "2026-10-15T04:18:08.974263",
+      "mtf_last_price": 338.95001220703125
     },
     "HAPPYFORGE": {
       "sma50": 2104.435998535156,
@@ -7233,7 +7249,11 @@
       "box_low": 564.0499877929688,
       "descending_res": 650.2832234700521,
       "wedge_contraction": 1.015902722359257,
-      "rs_rank": 36.5
+      "rs_rank": 36.5,
+      "mtf_last_alert": "2026-10-15T04:18:25.825959",
+      "mtf_last_price": 648.5999755859375,
+      "ema50_pullback_last_alert": "2026-10-15T04:18:26.301288",
+      "ema50_pullback_last_price": 648.5999755859375
     },
     "IONEXCHANG": {
       "sma50": 399.36700134277345,
@@ -7523,7 +7543,9 @@
       "wedge_contraction": null,
       "rs_rank": 54.7,
       "mtf_last_alert": "2026-10-15T04:03:58.442530",
-      "mtf_last_price": 70.83999633789062
+      "mtf_last_price": 70.83999633789062,
+      "resistance_last_alert": "2026-10-15T04:18:33.220997",
+      "resistance_last_price": 72.25
     },
     "JAINREC": {
       "sma50": 290.81500061035155,
@@ -12239,7 +12261,9 @@
       "resistance_last_alert": "2026-10-15T03:54:35.704491",
       "resistance_last_price": 212.47999572753906,
       "mtf_last_alert": "2026-10-15T03:54:36.473144",
-      "mtf_last_price": 212.47999572753906
+      "mtf_last_price": 212.47999572753906,
+      "zanger_last_alert": "2026-10-15T04:19:54.568807",
+      "zanger_last_price": 214.3699951171875
     },
     "RKFORGE": {
       "sma50": 718.5259973144531,
@@ -13221,7 +13245,9 @@
       "box_low": 165.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 80.5
+      "rs_rank": 80.5,
+      "near_high_17_22_last_alert": "2026-10-15T04:20:10.680494",
+      "near_high_17_22_last_price": 193.64999389648438
     },
     "SHILCTECH": {
       "sma50": 4082.3780126953125,
