@@ -2635,7 +2635,9 @@
       "box_low": 2321.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 79.6
+      "rs_rank": 79.6,
+      "near_high_17_22_last_alert": "2026-10-15T04:31:15.836889",
+      "near_high_17_22_last_price": 2345.0
     },
     "CARBORUNIV": {
       "sma50": 1148.9899877929688,
@@ -5403,7 +5405,11 @@
       "mtf_last_alert": "2026-10-15T04:03:20.784577",
       "mtf_last_price": 592.5999755859375,
       "zanger_last_alert": "2026-10-15T04:17:53.565556",
-      "zanger_last_price": 621.2000122070312
+      "zanger_last_price": 621.2000122070312,
+      "vol_breakout_last_alert": "2026-10-15T04:32:14.773172",
+      "vol_breakout_last_price": 636.0,
+      "momentum_ignition_last_alert": "2026-10-15T04:32:15.389558",
+      "momentum_ignition_last_price": 636.0
     },
     "GENUSPOWER": {
       "sma50": 313.8439990234375,
@@ -10303,7 +10309,11 @@
       "box_low": 439.1000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 47.7
+      "rs_rank": 47.7,
+      "mtf_last_alert": "2026-10-15T04:34:07.330257",
+      "mtf_last_price": 494.45001220703125,
+      "ema50_pullback_last_alert": "2026-10-15T04:34:08.015387",
+      "ema50_pullback_last_price": 494.45001220703125
     },
     "NFL": {
       "sma50": 68.30000030517579,
@@ -16365,7 +16375,9 @@
       "box_low": 706.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 44.6
+      "rs_rank": 44.6,
+      "mtf_last_alert": "2026-10-15T04:36:22.595263",
+      "mtf_last_price": 851.5499877929688
     },
     "YATHARTH": {
       "sma50": 975.8789978027344,
