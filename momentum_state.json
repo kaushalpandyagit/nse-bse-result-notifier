@@ -1416,8 +1416,8 @@
       "descending_res": 6543.1,
       "wedge_contraction": 0.765625,
       "rs_rank": 31.9,
-      "near_high_17_22_last_alert": "2026-10-15T04:46:47.725722",
-      "near_high_17_22_last_price": 6094.0
+      "near_high_17_22_last_alert": "2026-10-15T06:46:51.644049",
+      "near_high_17_22_last_price": 6166.5
     },
     "AURIONPRO": {
       "sma50": 679.51,
@@ -1562,8 +1562,8 @@
       "descending_res": 611.9100830078125,
       "wedge_contraction": 0.8422927139585205,
       "rs_rank": 64.3,
-      "near_high_17_22_last_alert": "2026-10-15T03:51:08.163754",
-      "near_high_17_22_last_price": 580.25
+      "near_high_17_22_last_alert": "2026-10-15T06:46:54.349568",
+      "near_high_17_22_last_price": 573.2000122070312
     },
     "AWL": {
       "sma50": 188.41659942626953,
@@ -2427,7 +2427,9 @@
       "mtf_last_alert": "2026-10-15T05:47:44.317936",
       "mtf_last_price": 314.3999938964844,
       "zanger_last_alert": "2026-10-15T05:31:08.991616",
-      "zanger_last_price": 313.79998779296875
+      "zanger_last_price": 313.79998779296875,
+      "vol_breakout_last_alert": "2026-10-15T06:47:10.448569",
+      "vol_breakout_last_price": 312.79998779296875
     },
     "CAMPUS": {
       "sma50": 215.4513995361328,
@@ -3494,8 +3496,8 @@
       "descending_res": 480.8333333333333,
       "wedge_contraction": 0.7079016143609458,
       "rs_rank": 72.6,
-      "mtf_last_alert": "2026-10-15T04:47:16.904962",
-      "mtf_last_price": 462.0,
+      "mtf_last_alert": "2026-10-15T06:47:28.069426",
+      "mtf_last_price": 469.8500061035156,
       "resistance_last_alert": "2026-10-15T05:02:47.913034",
       "resistance_last_price": 466.70001220703125
     },
@@ -4560,8 +4562,8 @@
       "resistance_last_price": 487.8999938964844,
       "mtf_last_alert": "2026-10-15T06:17:50.545273",
       "mtf_last_price": 490.54998779296875,
-      "zanger_last_alert": "2026-10-15T05:48:32.179038",
-      "zanger_last_price": 487.8999938964844
+      "zanger_last_alert": "2026-10-15T06:47:44.127588",
+      "zanger_last_price": 492.8500061035156
     },
     "ELECTCAST": {
       "sma50": 75.84459991455078,
@@ -4813,7 +4815,9 @@
       "box_low": 290.45001220703125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 65.0
+      "rs_rank": 65.0,
+      "vol_breakout_last_alert": "2026-10-15T06:47:49.089480",
+      "vol_breakout_last_price": 283.54998779296875
     },
     "ENGINERSIN": {
       "sma50": 272.50740112304686,
@@ -10362,8 +10366,8 @@
       "rs_rank": 47.7,
       "mtf_last_alert": "2026-10-15T04:34:07.330257",
       "mtf_last_price": 494.45001220703125,
-      "ema50_pullback_last_alert": "2026-10-15T04:34:08.015387",
-      "ema50_pullback_last_price": 494.45001220703125,
+      "ema50_pullback_last_alert": "2026-10-15T06:49:25.268695",
+      "ema50_pullback_last_price": 488.25,
       "rectangle_bounce_last_alert": "2026-10-15T05:50:55.120582",
       "rectangle_bounce_last_price": 494.1000061035156
     },
@@ -14666,8 +14670,8 @@
       "descending_res": 3336.7994791666665,
       "wedge_contraction": 1.5595861135607598,
       "rs_rank": 13.3,
-      "resistance_last_alert": "2026-10-15T03:55:18.311265",
-      "resistance_last_price": 3709.0,
+      "resistance_last_alert": "2026-10-15T06:50:40.326658",
+      "resistance_last_price": 3662.300048828125,
       "mtf_last_alert": "2026-10-15T03:55:18.964688",
       "mtf_last_price": 3709.0,
       "zanger_last_alert": "2026-10-15T05:35:29.903831",
