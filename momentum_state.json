@@ -3496,8 +3496,8 @@
       "descending_res": 480.8333333333333,
       "wedge_contraction": 0.7079016143609458,
       "rs_rank": 72.6,
-      "mtf_last_alert": "2026-10-15T06:47:28.069426",
-      "mtf_last_price": 469.8500061035156,
+      "mtf_last_alert": "2026-10-15T07:47:43.210394",
+      "mtf_last_price": 464.54998779296875,
       "resistance_last_alert": "2026-10-15T05:02:47.913034",
       "resistance_last_price": 466.70001220703125
     },
@@ -5466,8 +5466,8 @@
       "zanger_last_price": 624.3499755859375,
       "vol_breakout_last_alert": "2026-10-15T05:48:54.088721",
       "vol_breakout_last_price": 624.3499755859375,
-      "momentum_ignition_last_alert": "2026-10-15T04:32:15.389558",
-      "momentum_ignition_last_price": 636.0
+      "momentum_ignition_last_alert": "2026-10-15T07:48:12.921599",
+      "momentum_ignition_last_price": 628.75
     },
     "GENUSPOWER": {
       "sma50": 313.8439990234375,
@@ -7723,7 +7723,9 @@
       "box_low": 82.5199966430664,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 45.3
+      "rs_rank": 45.3,
+      "near_high_17_22_last_alert": "2026-10-15T07:48:52.201175",
+      "near_high_17_22_last_price": 96.97000122070312
     },
     "JBMA": {
       "sma50": 605.9729956054688,
@@ -14391,7 +14393,9 @@
       "box_low": null,
       "descending_res": 345.71241760253906,
       "wedge_contraction": 1.0277991603776686,
-      "rs_rank": 90.2
+      "rs_rank": 90.2,
+      "vol_breakout_last_alert": "2026-10-15T07:50:45.781613",
+      "vol_breakout_last_price": 302.04998779296875
     },
     "SWANCORP": {
       "sma50": 291.89599975585935,
@@ -15557,7 +15561,13 @@
       "box_low": 22.809999465942383,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 33.9
+      "rs_rank": 33.9,
+      "zanger_last_alert": "2026-10-15T07:51:04.670021",
+      "zanger_last_price": 24.530000686645508,
+      "resistance_last_alert": "2026-10-15T07:51:05.431813",
+      "resistance_last_price": 24.530000686645508,
+      "mtf_last_alert": "2026-10-15T07:51:06.090926",
+      "mtf_last_price": 24.530000686645508
     },
     "UJJIVANSFB": {
       "sma50": 66.90500007629394,
