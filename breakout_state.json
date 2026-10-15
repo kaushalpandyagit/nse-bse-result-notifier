@@ -932,5 +932,21 @@
     "baseline_rsi": 66.07136496573195,
     "mcap_cr": 8177.280543872949,
     "exchange": "NSE"
+  },
+  "ORIENTHOT": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 147.6699981689453,
+    "day_low": 141.5,
+    "baseline_rsi": 60.232741404877906,
+    "mcap_cr": 2600.0468951424864,
+    "exchange": "NSE"
+  },
+  "TECHM": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 1650.0,
+    "day_low": 1596.0999755859375,
+    "baseline_rsi": 65.3379875157577,
+    "mcap_cr": 146177.37024,
+    "exchange": "NSE"
   }
 }
