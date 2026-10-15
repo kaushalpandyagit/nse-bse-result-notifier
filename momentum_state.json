@@ -1714,8 +1714,8 @@
       "rs_rank": 71.6,
       "resistance_last_alert": "2026-10-15T03:51:11.528134",
       "resistance_last_price": 523.9500122070312,
-      "vol_breakout_last_alert": "2026-10-15T05:47:23.377911",
-      "vol_breakout_last_price": 476.1000061035156
+      "vol_breakout_last_alert": "2026-10-15T07:31:22.830119",
+      "vol_breakout_last_price": 470.6000061035156
     },
     "BALAMINES": {
       "sma50": 2196.7219921875,
@@ -3024,8 +3024,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 27.6,
-      "resistance_last_alert": "2026-10-15T03:51:41.827113",
-      "resistance_last_price": 31.469999313354492
+      "resistance_last_alert": "2026-10-15T07:31:59.924183",
+      "resistance_last_price": 31.149999618530273
     },
     "CENTUM": {
       "sma50": 4020.8600146484373,
@@ -4527,7 +4527,9 @@
       "mtf_last_alert": "2026-10-15T07:02:55.669410",
       "mtf_last_price": 306.6000061035156,
       "vol_breakout_last_alert": "2026-10-15T07:17:34.644874",
-      "vol_breakout_last_price": 306.0
+      "vol_breakout_last_price": 306.0,
+      "rectangle_bounce_last_alert": "2026-10-15T07:32:39.240373",
+      "rectangle_bounce_last_price": 302.54998779296875
     },
     "ELECON": {
       "sma50": 434.7710009765625,
@@ -5079,7 +5081,9 @@
       "box_low": 141.60000610351562,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 62.1
+      "rs_rank": 62.1,
+      "vol_breakout_last_alert": "2026-10-15T07:32:53.541729",
+      "vol_breakout_last_price": 155.0
     },
     "FIEMIND": {
       "sma50": 2059.428000488281,
