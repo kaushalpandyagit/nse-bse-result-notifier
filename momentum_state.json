@@ -1752,8 +1752,8 @@
       "descending_res": 2245.957943564967,
       "wedge_contraction": 0.5757961086149322,
       "rs_rank": 96.9,
-      "near_high_17_22_last_alert": "2026-10-15T03:51:12.937314",
-      "near_high_17_22_last_price": 2075.60009765625
+      "near_high_17_22_last_alert": "2026-10-15T07:16:45.494736",
+      "near_high_17_22_last_price": 2052.39990234375
     },
     "BALRAMCHIN": {
       "sma50": 675.5819958496094,
@@ -4525,7 +4525,9 @@
       "zanger_last_alert": "2026-10-15T07:02:54.993000",
       "zanger_last_price": 306.6000061035156,
       "mtf_last_alert": "2026-10-15T07:02:55.669410",
-      "mtf_last_price": 306.6000061035156
+      "mtf_last_price": 306.6000061035156,
+      "vol_breakout_last_alert": "2026-10-15T07:17:34.644874",
+      "vol_breakout_last_price": 306.0
     },
     "ELECON": {
       "sma50": 434.7710009765625,
@@ -11940,8 +11942,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 90.4,
-      "near_high_17_22_last_alert": "2026-10-15T06:20:34.795736",
-      "near_high_17_22_last_price": 859.2000122070312
+      "near_high_17_22_last_alert": "2026-10-15T07:19:50.980330",
+      "near_high_17_22_last_price": 845.4500122070312
     },
     "RATNAMANI": {
       "sma50": 2582.2340087890625,
@@ -12342,10 +12344,12 @@
       "resistance_last_price": 211.5500030517578,
       "mtf_last_alert": "2026-10-15T06:05:05.876541",
       "mtf_last_price": 211.5500030517578,
-      "zanger_last_alert": "2026-10-15T06:05:04.891780",
-      "zanger_last_price": 211.5500030517578,
-      "vol_breakout_last_alert": "2026-10-15T06:05:04.384162",
-      "vol_breakout_last_price": 211.5500030517578
+      "zanger_last_alert": "2026-10-15T07:19:59.843492",
+      "zanger_last_price": 208.64999389648438,
+      "vol_breakout_last_alert": "2026-10-15T07:19:58.735727",
+      "vol_breakout_last_price": 208.64999389648438,
+      "rectangle_bounce_last_alert": "2026-10-15T07:19:59.287438",
+      "rectangle_bounce_last_price": 208.64999389648438
     },
     "RKFORGE": {
       "sma50": 718.5259973144531,
@@ -16128,8 +16132,8 @@
       "descending_res": 11119.555555555555,
       "wedge_contraction": 1.0041120031329547,
       "rs_rank": 61.9,
-      "near_high_17_22_last_alert": "2026-10-15T03:55:43.465645",
-      "near_high_17_22_last_price": 10580.0
+      "near_high_17_22_last_alert": "2026-10-15T07:21:06.588239",
+      "near_high_17_22_last_price": 10473.0
     },
     "VTL": {
       "sma50": 573.1040002441406,
@@ -16608,8 +16612,8 @@
       "rs_rank": 21.2,
       "resistance_last_alert": "2026-10-15T06:06:17.472085",
       "resistance_last_price": 501.45001220703125,
-      "mtf_last_alert": "2026-10-15T06:06:18.245327",
-      "mtf_last_price": 501.45001220703125
+      "mtf_last_alert": "2026-10-15T07:21:14.346956",
+      "mtf_last_price": 506.75
     },
     "ZENTEC": {
       "sma50": 1736.9080004882812,

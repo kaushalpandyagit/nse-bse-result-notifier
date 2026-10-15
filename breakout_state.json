@@ -490,8 +490,8 @@
     "baseline_rsi": 56.171211734749654,
     "mcap_cr": 64838.7974765948,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-14T04:29:45.905902",
-    "price_low_last_price": 384.8500061035156,
+    "price_low_last_alert": "2026-10-15T07:15:51.636294",
+    "price_low_last_price": 379.70001220703125,
     "rsi_down_last_alert": "2026-10-15T06:45:57.343135"
   },
   "AGRITECH": {
@@ -750,5 +750,18 @@
     "mcap_cr": 249080.35129880274,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-15T07:01:22.505054"
+  },
+  "FEDFINA": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 161.25,
+    "day_low": 151.0500030517578,
+    "baseline_rsi": 53.9337629114403,
+    "mcap_cr": 5818.824203498837,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-15T07:15:58.936476"
+  },
+  "arb_APOLLO": {
+    "spread_last_alert": "2026-10-15T07:21:24.170921",
+    "spread_last_price": 2.59520070915067
   }
 }
