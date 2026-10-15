@@ -1048,8 +1048,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 35.9,
-      "rectangle_bounce_last_alert": "2026-10-15T04:02:03.231451",
-      "rectangle_bounce_last_price": 418.04998779296875
+      "rectangle_bounce_last_alert": "2026-10-15T05:02:01.100046",
+      "rectangle_bounce_last_price": 412.29998779296875
     },
     "APTUS": {
       "sma50": 245.01039978027345,
@@ -1710,8 +1710,8 @@
       "rs_rank": 71.6,
       "resistance_last_alert": "2026-10-15T03:51:11.528134",
       "resistance_last_price": 523.9500122070312,
-      "vol_breakout_last_alert": "2026-10-15T04:16:49.002762",
-      "vol_breakout_last_price": 495.20001220703125
+      "vol_breakout_last_alert": "2026-10-15T05:02:12.054521",
+      "vol_breakout_last_price": 483.75
     },
     "BALAMINES": {
       "sma50": 2196.7219921875,
@@ -2224,8 +2224,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 9.2,
-      "rectangle_bounce_last_alert": "2026-10-15T03:51:24.150661",
-      "rectangle_bounce_last_price": 234.3000030517578,
+      "rectangle_bounce_last_alert": "2026-10-15T05:02:23.725440",
+      "rectangle_bounce_last_price": 230.41000366210938,
       "mtf_last_alert": "2026-10-15T03:51:24.830343",
       "mtf_last_price": 234.3000030517578,
       "resistance_last_alert": "2026-10-15T04:02:24.000862",
@@ -3479,7 +3479,9 @@
       "wedge_contraction": 0.7079016143609458,
       "rs_rank": 72.6,
       "mtf_last_alert": "2026-10-15T04:47:16.904962",
-      "mtf_last_price": 462.0
+      "mtf_last_price": 462.0,
+      "resistance_last_alert": "2026-10-15T05:02:47.913034",
+      "resistance_last_price": 466.70001220703125
     },
     "CONCORDBIO": {
       "sma50": 1452.8519995117188,
@@ -3843,7 +3845,9 @@
       "wedge_contraction": 0.9744325035108983,
       "rs_rank": 56.9,
       "mtf_last_alert": "2026-10-15T03:51:55.368647",
-      "mtf_last_price": 806.6500244140625
+      "mtf_last_price": 806.6500244140625,
+      "rectangle_bounce_last_alert": "2026-10-15T05:02:53.865205",
+      "rectangle_bounce_last_price": 795.75
     },
     "DATAPATTNS": {
       "sma50": 4468.772006835938,
@@ -5418,10 +5422,10 @@
       "rs_rank": 4.8,
       "resistance_last_alert": "2026-10-15T04:03:20.138811",
       "resistance_last_price": 592.5999755859375,
-      "mtf_last_alert": "2026-10-15T04:03:20.784577",
-      "mtf_last_price": 592.5999755859375,
-      "zanger_last_alert": "2026-10-15T04:17:53.565556",
-      "zanger_last_price": 621.2000122070312,
+      "mtf_last_alert": "2026-10-15T05:03:21.406688",
+      "mtf_last_price": 632.7000122070312,
+      "zanger_last_alert": "2026-10-15T05:03:20.685292",
+      "zanger_last_price": 632.7000122070312,
       "vol_breakout_last_alert": "2026-10-15T04:32:14.773172",
       "vol_breakout_last_price": 636.0,
       "momentum_ignition_last_alert": "2026-10-15T04:32:15.389558",
@@ -5787,7 +5791,9 @@
       "wedge_contraction": null,
       "rs_rank": 50.5,
       "near_high_17_22_last_alert": "2026-10-15T03:52:29.894251",
-      "near_high_17_22_last_price": 212.27000427246094
+      "near_high_17_22_last_price": 212.27000427246094,
+      "rectangle_bounce_last_alert": "2026-10-15T05:03:27.998810",
+      "rectangle_bounce_last_price": 213.8699951171875
     },
     "GOLDIAM": {
       "sma50": 338.57299743652345,
@@ -13060,8 +13066,8 @@
       "descending_res": 1379.7272727272727,
       "wedge_contraction": 0.700941826268008,
       "rs_rank": 86.2,
-      "near_high_17_22_last_alert": "2026-10-15T03:54:54.024353",
-      "near_high_17_22_last_price": 1265.300048828125
+      "near_high_17_22_last_alert": "2026-10-15T05:05:44.457290",
+      "near_high_17_22_last_price": 1289.5
     },
     "SFL": {
       "sma50": 656.8990002441407,
@@ -13531,7 +13537,9 @@
       "box_low": 1918.0,
       "descending_res": 2121.7753295898438,
       "wedge_contraction": 0.8026106779253247,
-      "rs_rank": 68.7
+      "rs_rank": 68.7,
+      "near_high_17_22_last_alert": "2026-10-15T05:05:50.932374",
+      "near_high_17_22_last_price": 2022.800048828125
     },
     "SJVN": {
       "sma50": 63.38980003356934,
