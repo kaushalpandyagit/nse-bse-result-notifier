@@ -3070,8 +3070,8 @@
       "descending_res": 4983.75,
       "wedge_contraction": 0.8218575082307924,
       "rs_rank": 87.7,
-      "near_high_17_22_last_alert": "2026-10-15T06:31:26.930211",
-      "near_high_17_22_last_price": 4023.800048828125
+      "near_high_17_22_last_alert": "2026-10-15T10:02:49.639141",
+      "near_high_17_22_last_price": 3981.0
     },
     "CERA": {
       "sma50": 5599.24,
@@ -4459,7 +4459,9 @@
       "box_low": 672.2999877929688,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 16.0
+      "rs_rank": 16.0,
+      "rectangle_bounce_last_alert": "2026-10-15T10:03:16.808061",
+      "rectangle_bounce_last_price": 701.9500122070312
     },
     "EIEL": {
       "sma50": 197.32319976806642,
@@ -4495,7 +4497,9 @@
       "box_low": 176.27999877929688,
       "descending_res": 187.02284458705358,
       "wedge_contraction": 0.9005644767336706,
-      "rs_rank": 30.4
+      "rs_rank": 30.4,
+      "vol_breakout_last_alert": "2026-10-15T10:03:18.420649",
+      "vol_breakout_last_price": 189.97000122070312
     },
     "EIHOTEL": {
       "sma50": 298.74299865722656,
@@ -5204,12 +5208,12 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 28.2,
-      "rectangle_bounce_last_alert": "2026-10-15T04:47:38.914291",
-      "rectangle_bounce_last_price": 156.39999389648438,
+      "rectangle_bounce_last_alert": "2026-10-15T10:03:32.057234",
+      "rectangle_bounce_last_price": 154.75,
       "resistance_last_alert": "2026-10-15T04:47:39.676648",
       "resistance_last_price": 156.39999389648438,
-      "zanger_last_alert": "2026-10-15T09:17:56.289959",
-      "zanger_last_price": 157.1699981689453
+      "zanger_last_alert": "2026-10-15T10:03:32.671912",
+      "zanger_last_price": 154.75
     },
     "FIRSTCRY": {
       "sma50": 185.52920013427735,
@@ -6865,7 +6869,9 @@
       "box_low": 304.1000061035156,
       "descending_res": 318.69996643066406,
       "wedge_contraction": 0.8931729522255689,
-      "rs_rank": 31.7
+      "rs_rank": 31.7,
+      "rectangle_bounce_last_alert": "2026-10-15T10:04:09.101415",
+      "rectangle_bounce_last_price": 321.79998779296875
     },
     "IGL": {
       "sma50": 148.68640014648437,
@@ -6937,7 +6943,9 @@
       "box_low": 548.0,
       "descending_res": 612.0908702503551,
       "wedge_contraction": 1.0557025759417948,
-      "rs_rank": 73.3
+      "rs_rank": 73.3,
+      "rectangle_bounce_last_alert": "2026-10-15T10:04:11.193581",
+      "rectangle_bounce_last_price": 598.0999755859375
     },
     "IIFLCAPS": {
       "sma50": 339.5929998779297,
