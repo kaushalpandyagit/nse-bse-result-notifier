@@ -924,5 +924,13 @@
     "baseline_rsi": 61.48876559055737,
     "mcap_cr": 91616.243336,
     "exchange": "NSE"
+  },
+  "CYIENTDLM": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 1053.0,
+    "day_low": 973.9000244140625,
+    "baseline_rsi": 66.07136496573195,
+    "mcap_cr": 8177.280543872949,
+    "exchange": "NSE"
   }
 }
