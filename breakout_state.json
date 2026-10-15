@@ -899,5 +899,22 @@
     "mcap_cr": 103110.51433409576,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-15T10:16:01.334252"
+  },
+  "WIPRO": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 174.69000244140625,
+    "day_low": 172.7100067138672,
+    "baseline_rsi": 62.11408124316339,
+    "mcap_cr": 172195.28020041747,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-15T10:30:00.230494"
+  },
+  "HDFCLIFE": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 554.5999755859375,
+    "day_low": 541.0999755859375,
+    "baseline_rsi": 53.49057227559344,
+    "mcap_cr": 119582.16313665781,
+    "exchange": "NSE"
   }
 }
