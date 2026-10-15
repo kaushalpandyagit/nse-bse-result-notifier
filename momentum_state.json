@@ -2430,8 +2430,8 @@
       "rs_rank": 17.1,
       "mtf_last_alert": "2026-10-15T08:17:45.991885",
       "mtf_last_price": 310.70001220703125,
-      "zanger_last_alert": "2026-10-15T05:31:08.991616",
-      "zanger_last_price": 313.79998779296875,
+      "zanger_last_alert": "2026-10-15T08:31:04.666906",
+      "zanger_last_price": 310.6000061035156,
       "vol_breakout_last_alert": "2026-10-15T06:47:10.448569",
       "vol_breakout_last_price": 312.79998779296875
     },
@@ -5086,8 +5086,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 62.1,
-      "vol_breakout_last_alert": "2026-10-15T07:32:53.541729",
-      "vol_breakout_last_price": 155.0
+      "vol_breakout_last_alert": "2026-10-15T08:31:50.288598",
+      "vol_breakout_last_price": 157.0
     },
     "FIEMIND": {
       "sma50": 2059.428000488281,
@@ -12691,7 +12691,9 @@
       "box_low": 1216.300048828125,
       "descending_res": 1583.7201171875,
       "wedge_contraction": 0.8607008814355822,
-      "rs_rank": 87.1
+      "rs_rank": 87.1,
+      "near_high_17_22_last_alert": "2026-10-15T08:34:21.906610",
+      "near_high_17_22_last_price": 1403.5999755859375
     },
     "SAMHI": {
       "sma50": 157.32779968261718,
