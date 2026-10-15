@@ -786,5 +786,22 @@
   "arb_AURIONPRO": {
     "spread_last_alert": "2026-10-15T07:51:46.252608",
     "spread_last_price": 3.331166588678405
+  },
+  "SOUTHBANK": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 49.79999923706055,
+    "day_low": 47.72999954223633,
+    "baseline_rsi": 54.344789013014015,
+    "mcap_cr": 12699.353851624637,
+    "exchange": "NSE"
+  },
+  "UCOBANK": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 24.799999237060547,
+    "day_low": 23.729999542236328,
+    "baseline_rsi": 49.986864763677765,
+    "mcap_cr": 29819.072113085185,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-15T08:01:25.320155"
   }
 }
