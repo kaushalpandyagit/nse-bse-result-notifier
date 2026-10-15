@@ -1421,7 +1421,9 @@
       "wedge_contraction": 0.765625,
       "rs_rank": 31.9,
       "near_high_17_22_last_alert": "2026-10-15T06:46:51.644049",
-      "near_high_17_22_last_price": 6166.5
+      "near_high_17_22_last_price": 6166.5,
+      "rectangle_bounce_last_alert": "2026-10-15T09:30:55.177486",
+      "rectangle_bounce_last_price": 6142.0
     },
     "AURIONPRO": {
       "sma50": 679.51,
@@ -1568,8 +1570,8 @@
       "descending_res": 611.9100830078125,
       "wedge_contraction": 0.8422927139585205,
       "rs_rank": 64.3,
-      "near_high_17_22_last_alert": "2026-10-15T06:46:54.349568",
-      "near_high_17_22_last_price": 573.2000122070312
+      "near_high_17_22_last_alert": "2026-10-15T09:30:58.056387",
+      "near_high_17_22_last_price": 567.3499755859375
     },
     "AWL": {
       "sma50": 188.41659942626953,
@@ -8935,7 +8937,9 @@
       "box_low": null,
       "descending_res": 1474.7894736842104,
       "wedge_contraction": 1.042861606479443,
-      "rs_rank": 54.9
+      "rs_rank": 54.9,
+      "vol_breakout_last_alert": "2026-10-15T09:33:13.271359",
+      "vol_breakout_last_price": 1242.0
     },
     "KSB": {
       "sma50": 802.5489978027343,
@@ -9115,7 +9119,9 @@
       "box_low": 100.87999725341797,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 47.9
+      "rs_rank": 47.9,
+      "resistance_last_alert": "2026-10-15T09:33:16.933998",
+      "resistance_last_price": 112.9800033569336
     },
     "LICHSGFIN": {
       "sma50": 532.4070037841797,
@@ -9335,7 +9341,9 @@
       "box_low": 5020.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 41.8
+      "rs_rank": 41.8,
+      "near_high_17_22_last_alert": "2026-10-15T09:33:21.694244",
+      "near_high_17_22_last_price": 5409.0
     },
     "LUMAXTECH": {
       "sma50": 1952.482001953125,
@@ -9956,8 +9964,8 @@
       "descending_res": 694.7500610351562,
       "wedge_contraction": 0.7119528697234336,
       "rs_rank": 84.2,
-      "near_high_17_22_last_alert": "2026-10-15T05:50:43.175091",
-      "near_high_17_22_last_price": 658.9000244140625
+      "near_high_17_22_last_alert": "2026-10-15T09:33:33.351795",
+      "near_high_17_22_last_price": 651.75
     },
     "MSUMI": {
       "sma50": 36.71040000915527,
@@ -12364,10 +12372,10 @@
       "descending_res": 221.41506958007812,
       "wedge_contraction": 0.6997956056412651,
       "rs_rank": 38.3,
-      "resistance_last_alert": "2026-10-15T06:05:05.390523",
-      "resistance_last_price": 211.5500030517578,
-      "mtf_last_alert": "2026-10-15T06:05:05.876541",
-      "mtf_last_price": 211.5500030517578,
+      "resistance_last_alert": "2026-10-15T09:34:20.097312",
+      "resistance_last_price": 213.67999267578125,
+      "mtf_last_alert": "2026-10-15T09:34:20.689430",
+      "mtf_last_price": 213.67999267578125,
       "zanger_last_alert": "2026-10-15T08:21:54.859116",
       "zanger_last_price": 211.77999877929688,
       "vol_breakout_last_alert": "2026-10-15T08:21:54.281053",
@@ -15549,7 +15557,9 @@
       "box_low": 120.4000015258789,
       "descending_res": 135.4583214653863,
       "wedge_contraction": 0.7976159610645118,
-      "rs_rank": 58.9
+      "rs_rank": 58.9,
+      "near_high_17_22_last_alert": "2026-10-15T09:35:14.654684",
+      "near_high_17_22_last_price": 121.93000030517578
     },
     "UCOBANK": {
       "sma50": 24.63819999694824,
@@ -16172,8 +16182,8 @@
       "descending_res": 11119.555555555555,
       "wedge_contraction": 1.0041120031329547,
       "rs_rank": 61.9,
-      "near_high_17_22_last_alert": "2026-10-15T07:21:06.588239",
-      "near_high_17_22_last_price": 10473.0
+      "near_high_17_22_last_alert": "2026-10-15T09:35:26.955390",
+      "near_high_17_22_last_price": 10366.0
     },
     "VTL": {
       "sma50": 573.1040002441406,
@@ -16689,7 +16699,9 @@
       "box_low": 1479.199951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 55.8
+      "rs_rank": 55.8,
+      "mtf_last_alert": "2026-10-15T09:35:35.497385",
+      "mtf_last_price": 1675.699951171875
     },
     "ZFCVINDIA": {
       "sma50": 2457.9179833984376,
