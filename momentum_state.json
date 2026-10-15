@@ -2428,8 +2428,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 17.1,
-      "mtf_last_alert": "2026-10-15T05:47:44.317936",
-      "mtf_last_price": 314.3999938964844,
+      "mtf_last_alert": "2026-10-15T08:17:45.991885",
+      "mtf_last_price": 310.70001220703125,
       "zanger_last_alert": "2026-10-15T05:31:08.991616",
       "zanger_last_price": 313.79998779296875,
       "vol_breakout_last_alert": "2026-10-15T06:47:10.448569",
@@ -2692,8 +2692,8 @@
       "descending_res": 1233.3285958426338,
       "wedge_contraction": 0.7779783796453905,
       "rs_rank": 77.0,
-      "near_high_17_22_last_alert": "2026-10-15T05:31:15.787512",
-      "near_high_17_22_last_price": 1135.0
+      "near_high_17_22_last_alert": "2026-10-15T08:17:53.165380",
+      "near_high_17_22_last_price": 1122.699951171875
     },
     "CARTRADE": {
       "sma50": 2955.8460009765627,
@@ -4236,8 +4236,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 28.0,
-      "rectangle_bounce_last_alert": "2026-10-15T04:47:26.505175",
-      "rectangle_bounce_last_price": 2140.699951171875
+      "rectangle_bounce_last_alert": "2026-10-15T08:18:30.228058",
+      "rectangle_bounce_last_price": 2119.10009765625
     },
     "DYNAMATECH": {
       "sma50": 12141.3,
@@ -11188,8 +11188,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 49.2,
-      "rectangle_bounce_last_alert": "2026-10-15T06:04:42.675008",
-      "rectangle_bounce_last_price": 607.5999755859375
+      "rectangle_bounce_last_alert": "2026-10-15T08:21:22.435752",
+      "rectangle_bounce_last_price": 599.75
     },
     "PINELABS": {
       "sma50": 169.8856002807617,
@@ -12354,10 +12354,10 @@
       "resistance_last_price": 211.5500030517578,
       "mtf_last_alert": "2026-10-15T06:05:05.876541",
       "mtf_last_price": 211.5500030517578,
-      "zanger_last_alert": "2026-10-15T07:19:59.843492",
-      "zanger_last_price": 208.64999389648438,
-      "vol_breakout_last_alert": "2026-10-15T07:19:58.735727",
-      "vol_breakout_last_price": 208.64999389648438,
+      "zanger_last_alert": "2026-10-15T08:21:54.859116",
+      "zanger_last_price": 211.77999877929688,
+      "vol_breakout_last_alert": "2026-10-15T08:21:54.281053",
+      "vol_breakout_last_price": 211.77999877929688,
       "rectangle_bounce_last_alert": "2026-10-15T07:19:59.287438",
       "rectangle_bounce_last_price": 208.64999389648438
     },

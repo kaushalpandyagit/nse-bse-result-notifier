@@ -246,8 +246,8 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-08T05:00:57.559361",
     "price_high_last_price": 146.52999877929688,
-    "price_low_last_alert": "2026-10-15T07:29:37.141079",
-    "price_low_last_price": 136.14999389648438
+    "price_low_last_alert": "2026-10-15T08:15:48.259875",
+    "price_low_last_price": 134.22999572753906
   },
   "GLASSWALL": {
     "result_date": "2026-10-07T00:00:00",
@@ -610,8 +610,8 @@
     "mcap_cr": 114444.40528653415,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-15T07:46:17.579186",
-    "price_low_last_alert": "2026-10-15T05:29:51.531684",
-    "price_low_last_price": 119.19999694824219
+    "price_low_last_alert": "2026-10-15T08:16:07.507010",
+    "price_low_last_price": 117.9800033569336
   },
   "ELECON": {
     "result_date": "2026-10-14T00:00:00",
@@ -758,7 +758,7 @@
     "baseline_rsi": 53.9337629114403,
     "mcap_cr": 5818.824203498837,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-15T07:15:58.936476",
+    "rsi_down_last_alert": "2026-10-15T08:16:14.977784",
     "rsi_up_last_alert": "2026-10-15T07:46:27.396095"
   },
   "arb_APOLLO": {
@@ -772,7 +772,7 @@
     "baseline_rsi": 47.5364195582079,
     "mcap_cr": 111090.854332975,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-15T07:30:08.736968"
+    "rsi_up_last_alert": "2026-10-15T08:16:17.042940"
   },
   "POLYCAB": {
     "result_date": "2026-10-15T00:00:00",
@@ -781,7 +781,8 @@
     "baseline_rsi": 43.83118563885669,
     "mcap_cr": 123242.06861195,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-15T07:46:29.233496"
+    "rsi_down_last_alert": "2026-10-15T07:46:29.233496",
+    "rsi_up_last_alert": "2026-10-15T08:16:18.173961"
   },
   "arb_AURIONPRO": {
     "spread_last_alert": "2026-10-15T07:51:46.252608",
@@ -803,5 +804,14 @@
     "mcap_cr": 29819.072113085185,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-15T08:01:25.320155"
+  },
+  "DBCORP": {
+    "result_date": "2026-10-15T00:00:00",
+    "day_high": 178.5,
+    "day_low": 166.1199951171875,
+    "baseline_rsi": 34.22916556075262,
+    "mcap_cr": 3026.942660579791,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-15T08:16:20.548205"
   }
 }
