@@ -368,7 +368,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-12T07:15:49.921697",
     "price_high_last_price": 455.0,
-    "rsi_up_last_alert": "2026-10-12T10:45:54.411075",
+    "rsi_up_last_alert": "2026-10-15T05:29:40.874451",
     "rsi_down_last_alert": "2026-10-15T04:45:55.169364",
     "price_low_last_alert": "2026-10-13T04:29:40.082428",
     "price_low_last_price": 436.45001220703125
@@ -610,8 +610,8 @@
     "mcap_cr": 114444.40528653415,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-15T04:46:09.104860",
-    "price_low_last_alert": "2026-10-15T04:01:24.475732",
-    "price_low_last_price": 117.75
+    "price_low_last_alert": "2026-10-15T05:29:51.531684",
+    "price_low_last_price": 119.19999694824219
   },
   "ELECON": {
     "result_date": "2026-10-14T00:00:00",
@@ -621,8 +621,8 @@
     "mcap_cr": 10504.160860262848,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-14T08:01:21.028644",
-    "price_high_last_alert": "2026-10-15T03:46:46.045048",
-    "price_high_last_price": 478.6000061035156,
+    "price_high_last_alert": "2026-10-15T05:29:52.596087",
+    "price_high_last_price": 487.04998779296875,
     "rsi_up_last_alert": "2026-10-15T04:46:10.089358"
   },
   "BHEL": {

@@ -2234,8 +2234,8 @@
       "resistance_last_price": 238.52000427246094,
       "zanger_last_alert": "2026-10-15T04:16:59.372601",
       "zanger_last_price": 231.9199981689453,
-      "ema50_pullback_last_alert": "2026-10-15T04:16:59.846980",
-      "ema50_pullback_last_price": 231.9199981689453,
+      "ema50_pullback_last_alert": "2026-10-15T05:31:03.941109",
+      "ema50_pullback_last_price": 228.55999755859375,
       "vol_breakout_last_alert": "2026-10-15T04:46:59.598678",
       "vol_breakout_last_price": 232.1999969482422
     },
@@ -2423,7 +2423,9 @@
       "wedge_contraction": null,
       "rs_rank": 17.1,
       "mtf_last_alert": "2026-10-15T03:51:30.466689",
-      "mtf_last_price": 311.1499938964844
+      "mtf_last_price": 311.1499938964844,
+      "zanger_last_alert": "2026-10-15T05:31:08.991616",
+      "zanger_last_price": 313.79998779296875
     },
     "CAMPUS": {
       "sma50": 215.4513995361328,
@@ -2570,8 +2572,8 @@
       "descending_res": 149.02506256103516,
       "wedge_contraction": 0.9150580520126886,
       "rs_rank": 35.0,
-      "near_high_17_22_last_alert": "2026-10-15T03:51:34.023573",
-      "near_high_17_22_last_price": 135.49000549316406
+      "near_high_17_22_last_alert": "2026-10-15T05:31:12.234779",
+      "near_high_17_22_last_price": 134.1199951171875
     },
     "CAPILLARY": {
       "sma50": 522.614995727539,
@@ -2681,7 +2683,9 @@
       "box_low": 1018.0999755859375,
       "descending_res": 1233.3285958426338,
       "wedge_contraction": 0.7779783796453905,
-      "rs_rank": 77.0
+      "rs_rank": 77.0,
+      "near_high_17_22_last_alert": "2026-10-15T05:31:15.787512",
+      "near_high_17_22_last_price": 1135.0
     },
     "CARTRADE": {
       "sma50": 2955.8460009765627,
@@ -2863,7 +2867,9 @@
       "box_low": 3186.699951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 25.4
+      "rs_rank": 25.4,
+      "vol_breakout_last_alert": "2026-10-15T05:31:18.430826",
+      "vol_breakout_last_price": 3208.699951171875
     },
     "CEIGALL": {
       "sma50": 355.30199951171875,
@@ -5279,7 +5285,9 @@
       "wedge_contraction": null,
       "rs_rank": 8.5,
       "resistance_last_alert": "2026-10-15T05:17:15.975358",
-      "resistance_last_price": 17682.0
+      "resistance_last_price": 17682.0,
+      "mtf_last_alert": "2026-10-15T05:32:08.756227",
+      "mtf_last_price": 17794.0
     },
     "FSL": {
       "sma50": 270.0160012817383,
@@ -6274,8 +6282,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 23.9,
-      "mtf_last_alert": "2026-10-15T04:18:08.974263",
-      "mtf_last_price": 338.95001220703125
+      "mtf_last_alert": "2026-10-15T05:32:29.354396",
+      "mtf_last_price": 335.1000061035156
     },
     "HAPPYFORGE": {
       "sma50": 2104.435998535156,
@@ -7578,12 +7586,14 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 54.7,
-      "mtf_last_alert": "2026-10-15T04:03:58.442530",
-      "mtf_last_price": 70.83999633789062,
+      "mtf_last_alert": "2026-10-15T05:32:59.189008",
+      "mtf_last_price": 74.94999694824219,
       "resistance_last_alert": "2026-10-15T04:18:33.220997",
       "resistance_last_price": 72.25,
       "zanger_last_alert": "2026-10-15T04:48:11.784619",
-      "zanger_last_price": 74.23999786376953
+      "zanger_last_price": 74.23999786376953,
+      "vol_breakout_last_alert": "2026-10-15T05:32:58.599944",
+      "vol_breakout_last_price": 74.94999694824219
     },
     "JAINREC": {
       "sma50": 290.81500061035155,
@@ -7944,8 +7954,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 72.9,
-      "near_high_17_22_last_alert": "2026-10-15T03:53:07.768669",
-      "near_high_17_22_last_price": 497.0
+      "near_high_17_22_last_alert": "2026-10-15T05:33:05.836022",
+      "near_high_17_22_last_price": 483.8500061035156
     },
     "JSLL": {
       "sma50": 499.7589996337891,
@@ -8852,8 +8862,8 @@
       "descending_res": 425.74004821777345,
       "wedge_contraction": 0.9534526894065318,
       "rs_rank": 70.9,
-      "near_high_17_22_last_alert": "2026-10-15T03:53:26.764976",
-      "near_high_17_22_last_price": 399.70001220703125
+      "near_high_17_22_last_alert": "2026-10-15T05:33:26.529114",
+      "near_high_17_22_last_price": 395.70001220703125
     },
     "KRN": {
       "sma50": 1448.1919970703125,
@@ -10230,8 +10240,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 77.9,
-      "near_high_17_22_last_alert": "2026-10-15T04:04:42.276503",
-      "near_high_17_22_last_price": 4804.7001953125
+      "near_high_17_22_last_alert": "2026-10-15T05:33:55.632923",
+      "near_high_17_22_last_price": 4734.0
     },
     "NETWORK18": {
       "sma50": 27.54059989929199,
@@ -11905,7 +11915,9 @@
       "box_low": 814.0499877929688,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 90.4
+      "rs_rank": 90.4,
+      "near_high_17_22_last_alert": "2026-10-15T05:34:34.335502",
+      "near_high_17_22_last_price": 870.0
     },
     "RATNAMANI": {
       "sma50": 2582.2340087890625,
@@ -12526,8 +12538,8 @@
       "descending_res": 1846.8636363636363,
       "wedge_contraction": 0.7650014834214861,
       "rs_rank": 97.6,
-      "near_high_17_22_last_alert": "2026-10-15T03:54:40.190843",
-      "near_high_17_22_last_price": 1506.0999755859375
+      "near_high_17_22_last_alert": "2026-10-15T05:34:48.207297",
+      "near_high_17_22_last_price": 1489.300048828125
     },
     "SAFARI": {
       "sma50": 1467.1379907226562,
@@ -14454,8 +14466,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 31.1,
-      "resistance_last_alert": "2026-10-15T04:49:44.290098",
-      "resistance_last_price": 397.1499938964844,
+      "resistance_last_alert": "2026-10-15T05:35:26.496678",
+      "resistance_last_price": 390.0,
       "mtf_last_alert": "2026-10-15T04:49:45.027385",
       "mtf_last_price": 397.1499938964844
     },
@@ -14643,7 +14655,9 @@
       "resistance_last_alert": "2026-10-15T03:55:18.311265",
       "resistance_last_price": 3709.0,
       "mtf_last_alert": "2026-10-15T03:55:18.964688",
-      "mtf_last_price": 3709.0
+      "mtf_last_price": 3709.0,
+      "zanger_last_alert": "2026-10-15T05:35:29.903831",
+      "zanger_last_price": 3678.199951171875
     },
     "TBOTEK": {
       "sma50": 1676.0519921875,
