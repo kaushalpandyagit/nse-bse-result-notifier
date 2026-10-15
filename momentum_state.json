@@ -35,7 +35,9 @@
       "box_low": 427.29998779296875,
       "descending_res": 476.29998779296875,
       "wedge_contraction": 0.7707553770973576,
-      "rs_rank": 33.5
+      "rs_rank": 33.5,
+      "near_high_17_22_last_alert": "2026-10-15T05:16:04.517638",
+      "near_high_17_22_last_price": 441.5
     },
     "AARTIIND": {
       "sma50": 501.3380017089844,
@@ -1374,8 +1376,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 78.6,
-      "near_high_17_22_last_alert": "2026-10-15T03:51:05.089182",
-      "near_high_17_22_last_price": 1764.800048828125
+      "near_high_17_22_last_alert": "2026-10-15T05:16:20.761294",
+      "near_high_17_22_last_price": 1745.0
     },
     "ATUL": {
       "sma50": 6321.23,
@@ -2971,7 +2973,11 @@
       "box_low": null,
       "descending_res": 1331.3635808771307,
       "wedge_contraction": 1.2231607018751232,
-      "rs_rank": 97.2
+      "rs_rank": 97.2,
+      "vol_breakout_last_alert": "2026-10-15T05:16:43.391074",
+      "vol_breakout_last_price": 1268.800048828125,
+      "ema50_pullback_last_alert": "2026-10-15T05:16:44.131160",
+      "ema50_pullback_last_price": 1268.800048828125
     },
     "CENTRALBK": {
       "sma50": 30.83900001525879,
@@ -4542,8 +4548,8 @@
       "rs_rank": 67.2,
       "resistance_last_alert": "2026-10-15T04:47:30.239890",
       "resistance_last_price": 482.3500061035156,
-      "mtf_last_alert": "2026-10-15T04:17:37.427450",
-      "mtf_last_price": 478.3500061035156
+      "mtf_last_alert": "2026-10-15T05:17:03.968413",
+      "mtf_last_price": 485.3500061035156
     },
     "ELECTCAST": {
       "sma50": 75.84459991455078,
@@ -5271,7 +5277,9 @@
       "box_low": 16520.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 8.5
+      "rs_rank": 8.5,
+      "resistance_last_alert": "2026-10-15T05:17:15.975358",
+      "resistance_last_price": 17682.0
     },
     "FSL": {
       "sma50": 270.0160012817383,
@@ -6084,8 +6092,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 73.1,
-      "near_high_17_22_last_alert": "2026-10-15T03:52:37.205441",
-      "near_high_17_22_last_price": 1944.0999755859375
+      "near_high_17_22_last_alert": "2026-10-15T05:17:26.559373",
+      "near_high_17_22_last_price": 1919.300048828125
     },
     "GRSE": {
       "sma50": 2416.436005859375,
