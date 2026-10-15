@@ -324,8 +324,8 @@
       "descending_res": 1067.4000244140625,
       "wedge_contraction": 0.6657800781564868,
       "rs_rank": 38.1,
-      "near_high_17_22_last_alert": "2026-10-15T03:50:47.316357",
-      "near_high_17_22_last_price": 976.2999877929688
+      "near_high_17_22_last_alert": "2026-10-15T04:46:34.150799",
+      "near_high_17_22_last_price": 990.5
     },
     "ACC": {
       "sma50": 1256.7280029296876,
@@ -1411,7 +1411,9 @@
       "box_low": 5798.0,
       "descending_res": 6543.1,
       "wedge_contraction": 0.765625,
-      "rs_rank": 31.9
+      "rs_rank": 31.9,
+      "near_high_17_22_last_alert": "2026-10-15T04:46:47.725722",
+      "near_high_17_22_last_price": 6094.0
     },
     "AURIONPRO": {
       "sma50": 679.51,
@@ -1891,7 +1893,9 @@
       "box_low": 153.7899932861328,
       "descending_res": 164.16249084472656,
       "wedge_contraction": 0.9300187842867679,
-      "rs_rank": 42.0
+      "rs_rank": 42.0,
+      "near_high_17_22_last_alert": "2026-10-15T04:46:53.948260",
+      "near_high_17_22_last_price": 172.74000549316406
     },
     "BATAINDIA": {
       "sma50": 666.652998046875,
@@ -2229,7 +2233,9 @@
       "zanger_last_alert": "2026-10-15T04:16:59.372601",
       "zanger_last_price": 231.9199981689453,
       "ema50_pullback_last_alert": "2026-10-15T04:16:59.846980",
-      "ema50_pullback_last_price": 231.9199981689453
+      "ema50_pullback_last_price": 231.9199981689453,
+      "vol_breakout_last_alert": "2026-10-15T04:46:59.598678",
+      "vol_breakout_last_price": 232.1999969482422
     },
     "BLUEJET": {
       "sma50": 569.3709985351562,
@@ -2927,7 +2933,9 @@
       "box_low": 314.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 24.9
+      "rs_rank": 24.9,
+      "mtf_last_alert": "2026-10-15T04:47:08.296620",
+      "mtf_last_price": 376.3999938964844
     },
     "CEMPRO": {
       "sma50": 1245.55400390625,
@@ -3469,7 +3477,9 @@
       "box_low": 411.0,
       "descending_res": 480.8333333333333,
       "wedge_contraction": 0.7079016143609458,
-      "rs_rank": 72.6
+      "rs_rank": 72.6,
+      "mtf_last_alert": "2026-10-15T04:47:16.904962",
+      "mtf_last_price": 462.0
     },
     "CONCORDBIO": {
       "sma50": 1452.8519995117188,
@@ -4199,7 +4209,9 @@
       "box_low": 2020.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 28.0
+      "rs_rank": 28.0,
+      "rectangle_bounce_last_alert": "2026-10-15T04:47:26.505175",
+      "rectangle_bounce_last_price": 2140.699951171875
     },
     "DYNAMATECH": {
       "sma50": 12141.3,
@@ -4524,8 +4536,8 @@
       "descending_res": 419.55834452311194,
       "wedge_contraction": 1.0753867204048249,
       "rs_rank": 67.2,
-      "resistance_last_alert": "2026-10-15T03:52:07.792730",
-      "resistance_last_price": 472.29998779296875,
+      "resistance_last_alert": "2026-10-15T04:47:30.239890",
+      "resistance_last_price": 482.3500061035156,
       "mtf_last_alert": "2026-10-15T04:17:37.427450",
       "mtf_last_price": 478.3500061035156
     },
@@ -5143,7 +5155,11 @@
       "box_low": 148.0500030517578,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 28.2
+      "rs_rank": 28.2,
+      "rectangle_bounce_last_alert": "2026-10-15T04:47:38.914291",
+      "rectangle_bounce_last_price": 156.39999389648438,
+      "resistance_last_alert": "2026-10-15T04:47:39.676648",
+      "resistance_last_price": 156.39999389648438
     },
     "FIRSTCRY": {
       "sma50": 185.52920013427735,
@@ -7551,7 +7567,9 @@
       "mtf_last_alert": "2026-10-15T04:03:58.442530",
       "mtf_last_price": 70.83999633789062,
       "resistance_last_alert": "2026-10-15T04:18:33.220997",
-      "resistance_last_price": 72.25
+      "resistance_last_price": 72.25,
+      "zanger_last_alert": "2026-10-15T04:48:11.784619",
+      "zanger_last_price": 74.23999786376953
     },
     "JAINREC": {
       "sma50": 290.81500061035155,
@@ -11221,7 +11239,9 @@
       "wedge_contraction": 1.0052097142008356,
       "rs_rank": 31.3,
       "near_high_17_22_last_alert": "2026-10-15T03:54:18.496286",
-      "near_high_17_22_last_price": 598.4500122070312
+      "near_high_17_22_last_price": 598.4500122070312,
+      "ema50_pullback_last_alert": "2026-10-15T04:49:01.319368",
+      "ema50_pullback_last_price": 599.25
     },
     "POLYMED": {
       "sma50": 1713.399990234375,
@@ -12268,12 +12288,14 @@
       "descending_res": 221.41506958007812,
       "wedge_contraction": 0.6997956056412651,
       "rs_rank": 38.3,
-      "resistance_last_alert": "2026-10-15T03:54:35.704491",
-      "resistance_last_price": 212.47999572753906,
-      "mtf_last_alert": "2026-10-15T03:54:36.473144",
-      "mtf_last_price": 212.47999572753906,
+      "resistance_last_alert": "2026-10-15T04:49:16.859526",
+      "resistance_last_price": 215.0,
+      "mtf_last_alert": "2026-10-15T04:49:17.573975",
+      "mtf_last_price": 215.0,
       "zanger_last_alert": "2026-10-15T04:19:54.568807",
-      "zanger_last_price": 214.3699951171875
+      "zanger_last_price": 214.3699951171875,
+      "vol_breakout_last_alert": "2026-10-15T04:49:16.120206",
+      "vol_breakout_last_price": 215.0
     },
     "RKFORGE": {
       "sma50": 718.5259973144531,
@@ -14269,7 +14291,9 @@
       "box_low": 204.58999633789062,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 28.7
+      "rs_rank": 28.7,
+      "rectangle_bounce_last_alert": "2026-10-15T04:49:41.859195",
+      "rectangle_bounce_last_price": 215.99000549316406
     },
     "SUVEN": {
       "sma50": 338.6209991455078,
@@ -14414,10 +14438,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 31.1,
-      "resistance_last_alert": "2026-10-15T03:55:14.765796",
-      "resistance_last_price": 392.5,
-      "mtf_last_alert": "2026-10-15T03:55:15.457406",
-      "mtf_last_price": 392.5
+      "resistance_last_alert": "2026-10-15T04:49:44.290098",
+      "resistance_last_price": 397.1499938964844,
+      "mtf_last_alert": "2026-10-15T04:49:45.027385",
+      "mtf_last_price": 397.1499938964844
     },
     "TANLA": {
       "sma50": 533.2770001220703,
