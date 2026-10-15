@@ -2,8 +2,8 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-05T07:15:52.970544",
-    "custom_last_price": 139.9499969482422
+    "custom_last_alert": "2026-10-15T06:16:03.318524",
+    "custom_last_price": 137.5
   },
   "custom_alert_AERON_price": {
     "alerted": false,
@@ -260,8 +260,8 @@
     "price_high_last_alert": "2026-10-09T04:45:49.126337",
     "price_high_last_price": 267.79998779296875,
     "rsi_down_last_alert": "2026-10-15T05:45:47.425902",
-    "price_low_last_alert": "2026-10-15T05:15:38.843875",
-    "price_low_last_price": 241.35000610351562
+    "price_low_last_alert": "2026-10-15T06:15:38.816533",
+    "price_low_last_price": 238.6999969482422
   },
   "CANFINHOME": {
     "result_date": "2026-10-07T00:00:00",
