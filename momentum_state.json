@@ -521,7 +521,9 @@
       "box_low": 3025.0,
       "descending_res": 3107.0001395089284,
       "wedge_contraction": 0.8532379044522166,
-      "rs_rank": 83.5
+      "rs_rank": 83.5,
+      "rectangle_bounce_last_alert": "2026-10-16T09:30:42.209781",
+      "rectangle_bounce_last_price": 3196.39990234375
     },
     "ADVENZYMES": {
       "sma50": 291.01600036621096,
@@ -994,8 +996,8 @@
       "descending_res": 1255.3001708984375,
       "wedge_contraction": 1.0596631864622241,
       "rs_rank": 35.9,
-      "near_high_17_22_last_alert": "2026-10-16T03:50:03.236104",
-      "near_high_17_22_last_price": 1147.199951171875
+      "near_high_17_22_last_alert": "2026-10-16T09:30:51.068292",
+      "near_high_17_22_last_price": 1168.199951171875
     },
     "APOLLO": {
       "sma50": 395.94300231933596,
@@ -2879,7 +2881,9 @@
       "ema50_pullback_last_alert": "2026-10-16T04:02:56.657977",
       "ema50_pullback_last_price": 3326.0,
       "rectangle_bounce_last_alert": "2026-10-16T08:02:13.297276",
-      "rectangle_bounce_last_price": 3269.0
+      "rectangle_bounce_last_price": 3269.0,
+      "vol_breakout_last_alert": "2026-10-16T09:31:27.603360",
+      "vol_breakout_last_price": 3294.5
     },
     "CEIGALL": {
       "sma50": 357.2299993896484,
@@ -6778,8 +6782,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 61.7,
-      "rectangle_bounce_last_alert": "2026-10-16T07:48:41.938003",
-      "rectangle_bounce_last_price": 1223.699951171875
+      "rectangle_bounce_last_alert": "2026-10-16T09:32:38.718086",
+      "rectangle_bounce_last_price": 1207.699951171875
     },
     "IFCI": {
       "sma50": 78.310400390625,
@@ -6851,7 +6855,9 @@
       "box_low": 304.1000061035156,
       "descending_res": 318.875,
       "wedge_contraction": 0.7499351849508766,
-      "rs_rank": 26.0
+      "rs_rank": 26.0,
+      "resistance_last_alert": "2026-10-16T09:32:40.589399",
+      "resistance_last_price": 325.54998779296875
     },
     "IGL": {
       "sma50": 148.51740020751953,
@@ -10080,8 +10086,8 @@
       "descending_res": 7697.333333333333,
       "wedge_contraction": 0.9234393404004712,
       "rs_rank": 87.9,
-      "near_high_17_22_last_alert": "2026-10-16T04:51:27.360896",
-      "near_high_17_22_last_price": 7000.0
+      "near_high_17_22_last_alert": "2026-10-16T09:33:40.570068",
+      "near_high_17_22_last_price": 7078.0
     },
     "NATCOPHARM": {
       "sma50": 845.8739514160156,
@@ -13961,7 +13967,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 31.8
+      "rs_rank": 31.8,
+      "vol_breakout_last_alert": "2026-10-16T09:34:53.302735",
+      "vol_breakout_last_price": 248.0
     },
     "SOUTHBANK": {
       "sma50": 46.857600173950196,
@@ -14657,7 +14665,9 @@
       "mtf_last_alert": "2026-10-16T04:53:17.829347",
       "mtf_last_price": 386.95001220703125,
       "resistance_last_alert": "2026-10-16T09:07:11.061422",
-      "resistance_last_price": 387.8999938964844
+      "resistance_last_price": 387.8999938964844,
+      "ema50_pullback_last_alert": "2026-10-16T09:35:06.728029",
+      "ema50_pullback_last_price": 386.1000061035156
     },
     "TANLA": {
       "sma50": 531.4079998779297,
@@ -14922,8 +14932,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 75.5,
-      "near_high_17_22_last_alert": "2026-10-16T06:51:51.930211",
-      "near_high_17_22_last_price": 733.25
+      "near_high_17_22_last_alert": "2026-10-16T09:35:11.425516",
+      "near_high_17_22_last_price": 725.25
     },
     "TBOTEK": {
       "sma50": 1675.9319946289063,
@@ -15103,7 +15113,9 @@
       "box_low": 445.70001220703125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 62.3
+      "rs_rank": 62.3,
+      "sos_pullback_curl_last_alert": "2026-10-16T09:35:14.904532",
+      "sos_pullback_curl_last_price": 476.0
     },
     "TENNIND": {
       "sma50": 519.1800012207032,
@@ -15430,8 +15442,8 @@
       "descending_res": 3305.0,
       "wedge_contraction": 0.8787963412604191,
       "rs_rank": 20.8,
-      "rectangle_bounce_last_alert": "2026-10-16T08:35:26.145595",
-      "rectangle_bounce_last_price": 2925.300048828125
+      "rectangle_bounce_last_alert": "2026-10-16T09:35:21.778784",
+      "rectangle_bounce_last_price": 2892.300048828125
     },
     "TIPSMUSIC": {
       "sma50": 657.5369995117187,
@@ -16092,8 +16104,8 @@
       "descending_res": 202.00500869750977,
       "wedge_contraction": 0.8728844138345959,
       "rs_rank": 38.1,
-      "rectangle_bounce_last_alert": "2026-10-16T08:35:37.697111",
-      "rectangle_bounce_last_price": 214.3300018310547,
+      "rectangle_bounce_last_alert": "2026-10-16T09:35:33.413484",
+      "rectangle_bounce_last_price": 210.74000549316406,
       "mtf_last_alert": "2026-10-16T08:04:56.817484",
       "mtf_last_price": 213.0800018310547,
       "vol_breakout_last_alert": "2026-10-16T08:52:09.185777",
@@ -16508,8 +16520,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 85.1,
-      "near_high_17_22_last_alert": "2026-10-16T03:54:06.602108",
-      "near_high_17_22_last_price": 1921.300048828125
+      "near_high_17_22_last_alert": "2026-10-16T09:35:43.089513",
+      "near_high_17_22_last_price": 1873.5
     },
     "WEBELSOLAR": {
       "sma50": 76.83179992675781,
