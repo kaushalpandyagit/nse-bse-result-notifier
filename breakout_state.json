@@ -1171,5 +1171,23 @@
     "baseline_rsi": 52.49347153072453,
     "mcap_cr": 133662.93371420793,
     "exchange": "NSE"
+  },
+  "OBEROIRLTY": {
+    "result_date": "2026-10-16T00:00:00",
+    "day_high": 1720.5999755859375,
+    "day_low": 1690.800048828125,
+    "baseline_rsi": 39.78813229209396,
+    "mcap_cr": 61921.4609611,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-16T11:30:13.254637"
+  },
+  "LTM": {
+    "result_date": "2026-10-16T00:00:00",
+    "day_high": 4419.5,
+    "day_low": 4211.10009765625,
+    "baseline_rsi": 61.502828509065736,
+    "mcap_cr": 130146.474263,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-16T11:30:14.276924"
   }
 }
