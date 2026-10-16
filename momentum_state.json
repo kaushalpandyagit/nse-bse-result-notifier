@@ -1468,8 +1468,8 @@
       "rs_rank": 3.0,
       "mtf_last_alert": "2026-10-16T04:47:54.955886",
       "mtf_last_price": 657.8499755859375,
-      "rectangle_bounce_last_alert": "2026-10-16T06:02:19.865135",
-      "rectangle_bounce_last_price": 640.1500244140625
+      "rectangle_bounce_last_alert": "2026-10-16T07:30:55.098092",
+      "rectangle_bounce_last_price": 633.2999877929688
     },
     "AVALON": {
       "sma50": 2222.55201171875,
@@ -5173,7 +5173,9 @@
       "box_low": 148.0500030517578,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 32.5
+      "rs_rank": 32.5,
+      "rectangle_bounce_last_alert": "2026-10-16T07:32:03.155061",
+      "rectangle_bounce_last_price": 153.05999755859375
     },
     "FIRSTCRY": {
       "sma50": 184.8182000732422,
@@ -5847,7 +5849,9 @@
       "mtf_last_alert": "2026-10-16T06:31:49.288255",
       "mtf_last_price": 323.79998779296875,
       "rectangle_bounce_last_alert": "2026-10-16T07:03:11.785786",
-      "rectangle_bounce_last_price": 322.8999938964844
+      "rectangle_bounce_last_price": 322.8999938964844,
+      "descending_wedge_last_alert": "2026-10-16T07:32:16.955068",
+      "descending_wedge_last_price": 322.25
     },
     "GPIL": {
       "sma50": 233.19580017089845,
@@ -9056,8 +9060,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 10.8,
-      "rectangle_bounce_last_alert": "2026-10-16T05:48:57.787145",
-      "rectangle_bounce_last_price": 248.77999877929688
+      "rectangle_bounce_last_alert": "2026-10-16T07:33:21.049880",
+      "rectangle_bounce_last_price": 245.5500030517578
     },
     "LEMONTREE": {
       "sma50": 107.84080017089843,
@@ -9320,8 +9324,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 46.3,
-      "near_high_17_22_last_alert": "2026-10-16T06:04:59.622687",
-      "near_high_17_22_last_price": 5586.0
+      "near_high_17_22_last_alert": "2026-10-16T07:33:26.621652",
+      "near_high_17_22_last_price": 5522.5
     },
     "LUMAXTECH": {
       "sma50": 1958.36,
@@ -16048,8 +16052,8 @@
       "descending_res": 202.00500869750977,
       "wedge_contraction": 0.8728844138345959,
       "rs_rank": 38.1,
-      "rectangle_bounce_last_alert": "2026-10-16T06:22:05.893820",
-      "rectangle_bounce_last_price": 208.5
+      "rectangle_bounce_last_alert": "2026-10-16T07:35:29.731901",
+      "rectangle_bounce_last_price": 210.69000244140625
     },
     "VESUVIUS": {
       "sma50": 418.1339990234375,
