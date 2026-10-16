@@ -76,8 +76,8 @@
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-16T05:01:31.562984",
-    "custom_last_price": 119.97000122070312
+    "custom_last_alert": "2026-10-16T06:01:41.130923",
+    "custom_last_price": 118.52999877929688
   },
   "custom_alert_LAKSHYA_price": {
     "alerted": false,
@@ -86,8 +86,8 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-16T04:47:09.622117",
-    "custom_last_price": 72.0
+    "custom_last_alert": "2026-10-16T06:01:43.352186",
+    "custom_last_price": 73.5
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
@@ -354,8 +354,8 @@
     "spread_last_price": 4.484228473998287
   },
   "arb_KICL": {
-    "spread_last_alert": "2026-10-15T05:54:11.006173",
-    "spread_last_price": 2.6985485076100697
+    "spread_last_alert": "2026-10-16T06:07:36.539296",
+    "spread_last_price": 3.384823148346519
   },
   "arb_AKUMS": {
     "spread_last_alert": "2026-10-15T03:56:16.040314",
@@ -482,8 +482,8 @@
     "baseline_rsi": null,
     "mcap_cr": 866.0108063241883,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-16T05:01:06.385326",
-    "price_low_last_price": 181.80999755859375
+    "price_low_last_alert": "2026-10-16T06:01:07.973478",
+    "price_low_last_price": 175.92999267578125
   },
   "RBLBANK": {
     "result_date": "2026-10-12T00:00:00",
@@ -548,8 +548,8 @@
     "spread_last_price": 5.281862200701883
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-10-14T03:56:25.730416",
-    "spread_last_price": 3.582952338631632
+    "spread_last_alert": "2026-10-16T06:07:43.183685",
+    "spread_last_price": 3.731599406887037
   },
   "EIMCOELECO": {
     "result_date": "2026-10-13T00:00:00",
@@ -996,6 +996,7 @@
     "day_low": 9.600000381469727,
     "baseline_rsi": 35.98389299651974,
     "mcap_cr": 138.70413047087098,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-16T06:01:27.311648"
   }
 }

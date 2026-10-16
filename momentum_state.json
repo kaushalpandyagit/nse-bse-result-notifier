@@ -1466,8 +1466,8 @@
       "rs_rank": 3.0,
       "mtf_last_alert": "2026-10-16T04:47:54.955886",
       "mtf_last_price": 657.8499755859375,
-      "rectangle_bounce_last_alert": "2026-10-16T05:01:59.618643",
-      "rectangle_bounce_last_price": 647.7000122070312
+      "rectangle_bounce_last_alert": "2026-10-16T06:02:19.865135",
+      "rectangle_bounce_last_price": 640.1500244140625
     },
     "AVALON": {
       "sma50": 2222.55201171875,
@@ -1615,7 +1615,9 @@
       "wedge_contraction": null,
       "rs_rank": 55.0,
       "resistance_last_alert": "2026-10-16T03:50:14.682134",
-      "resistance_last_price": 188.77000427246094
+      "resistance_last_price": 188.77000427246094,
+      "mtf_last_alert": "2026-10-16T06:02:24.057713",
+      "mtf_last_price": 190.60000610351562
     },
     "AXISCADES": {
       "sma50": 1815.4199951171875,
@@ -1941,7 +1943,9 @@
       "box_low": 599.5999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 21.9
+      "rs_rank": 21.9,
+      "rectangle_bounce_last_alert": "2026-10-16T06:02:30.261618",
+      "rectangle_bounce_last_price": 631.9500122070312
     },
     "BBOX": {
       "sma50": 792.247998046875,
@@ -2940,8 +2944,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 24.7,
-      "mtf_last_alert": "2026-10-16T03:50:37.030479",
-      "mtf_last_price": 367.8500061035156
+      "mtf_last_alert": "2026-10-16T06:02:50.068292",
+      "mtf_last_price": 374.0
     },
     "CEMPRO": {
       "sma50": 1240.9620043945313,
@@ -5193,7 +5197,9 @@
       "box_low": 163.3699951171875,
       "descending_res": 191.97200622558594,
       "wedge_contraction": 0.7133840290893703,
-      "rs_rank": 6.9
+      "rs_rank": 6.9,
+      "mtf_last_alert": "2026-10-16T06:03:33.602732",
+      "mtf_last_price": 183.4499969482422
     },
     "FIVESTAR": {
       "sma50": 527.1609985351563,
@@ -5824,8 +5830,8 @@
       "descending_res": 308.25,
       "wedge_contraction": 0.6451298923908168,
       "rs_rank": 58.2,
-      "near_high_17_22_last_alert": "2026-10-16T05:03:09.780466",
-      "near_high_17_22_last_price": 314.8999938964844
+      "near_high_17_22_last_alert": "2026-10-16T06:03:46.791529",
+      "near_high_17_22_last_price": 318.3500061035156
     },
     "GPIL": {
       "sma50": 233.19580017089845,
@@ -6339,7 +6345,9 @@
       "vol_breakout_last_alert": "2026-10-16T05:48:16.375332",
       "vol_breakout_last_price": 790.4000244140625,
       "zanger_last_alert": "2026-10-16T05:48:16.909289",
-      "zanger_last_price": 790.4000244140625
+      "zanger_last_price": 790.4000244140625,
+      "resistance_last_alert": "2026-10-16T06:03:58.456740",
+      "resistance_last_price": 806.6500244140625
     },
     "HCC": {
       "sma50": 21.36459991455078,
@@ -9292,8 +9300,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 46.3,
-      "near_high_17_22_last_alert": "2026-10-16T04:51:08.336728",
-      "near_high_17_22_last_price": 5530.0
+      "near_high_17_22_last_alert": "2026-10-16T06:04:59.622687",
+      "near_high_17_22_last_price": 5586.0
     },
     "LUMAXTECH": {
       "sma50": 1958.36,
@@ -10613,7 +10621,9 @@
       "box_low": 307.95001220703125,
       "descending_res": 341.18751525878906,
       "wedge_contraction": 0.7152659438569858,
-      "rs_rank": 59.7
+      "rs_rank": 59.7,
+      "mtf_last_alert": "2026-10-16T06:05:27.437942",
+      "mtf_last_price": 338.79998779296875
     },
     "OLAELEC": {
       "sma50": 37.84692901611328,
@@ -15353,7 +15363,9 @@
       "box_low": 2846.0,
       "descending_res": 3305.0,
       "wedge_contraction": 0.8787963412604191,
-      "rs_rank": 20.8
+      "rs_rank": 20.8,
+      "rectangle_bounce_last_alert": "2026-10-16T06:06:59.191225",
+      "rectangle_bounce_last_price": 2887.699951171875
     },
     "TIPSMUSIC": {
       "sma50": 657.5369995117187,
@@ -16632,8 +16644,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 40.0,
-      "mtf_last_alert": "2026-10-16T04:54:04.441806",
-      "mtf_last_price": 840.2999877929688
+      "mtf_last_alert": "2026-10-16T06:07:24.652465",
+      "mtf_last_price": 849.6500244140625
     },
     "YATHARTH": {
       "sma50": 978.5749987792968,
