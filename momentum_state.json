@@ -447,7 +447,9 @@
       "mtf_last_alert": "2026-10-16T04:02:08.746500",
       "mtf_last_price": 497.70001220703125,
       "rectangle_bounce_last_alert": "2026-10-16T04:16:57.643645",
-      "rectangle_bounce_last_price": 493.45001220703125
+      "rectangle_bounce_last_price": 493.45001220703125,
+      "vol_breakout_last_alert": "2026-10-16T09:02:23.363721",
+      "vol_breakout_last_price": 477.1000061035156
     },
     "ACMESOLAR": {
       "sma50": 409.0739996337891,
@@ -7612,8 +7614,8 @@
       "rs_rank": 59.3,
       "mtf_last_alert": "2026-10-16T03:51:46.263724",
       "mtf_last_price": 74.22000122070312,
-      "resistance_last_alert": "2026-10-16T06:32:21.084935",
-      "resistance_last_price": 73.33999633789062
+      "resistance_last_alert": "2026-10-16T09:04:46.790041",
+      "resistance_last_price": 72.55999755859375
     },
     "JAINREC": {
       "sma50": 290.21700073242187,
@@ -10667,7 +10669,9 @@
       "wedge_contraction": 0.7152659438569858,
       "rs_rank": 59.7,
       "mtf_last_alert": "2026-10-16T06:05:27.437942",
-      "mtf_last_price": 338.79998779296875
+      "mtf_last_price": 338.79998779296875,
+      "resistance_last_alert": "2026-10-16T09:05:49.574988",
+      "resistance_last_price": 341.8500061035156
     },
     "OLAELEC": {
       "sma50": 37.84692901611328,
@@ -11102,8 +11106,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 17.7,
-      "near_high_17_22_last_alert": "2026-10-16T07:20:56.094506",
-      "near_high_17_22_last_price": 291.29998779296875
+      "near_high_17_22_last_alert": "2026-10-16T09:05:59.431752",
+      "near_high_17_22_last_price": 287.95001220703125
     },
     "PGEL": {
       "sma50": 554.4910015869141,
@@ -12015,7 +12019,9 @@
       "box_low": 780.0999755859375,
       "descending_res": 849.2941176470588,
       "wedge_contraction": 0.7459876562599562,
-      "rs_rank": 11.7
+      "rs_rank": 11.7,
+      "rectangle_bounce_last_alert": "2026-10-16T09:06:18.335254",
+      "rectangle_bounce_last_price": 801.5499877929688
     },
     "RATEGAIN": {
       "sma50": 883.77400390625,
@@ -14645,7 +14651,9 @@
       "wedge_contraction": null,
       "rs_rank": 31.4,
       "mtf_last_alert": "2026-10-16T04:53:17.829347",
-      "mtf_last_price": 386.95001220703125
+      "mtf_last_price": 386.95001220703125,
+      "resistance_last_alert": "2026-10-16T09:07:11.061422",
+      "resistance_last_price": 387.8999938964844
     },
     "TANLA": {
       "sma50": 531.4079998779297,
@@ -14832,8 +14840,8 @@
       "rs_rank": 19.0,
       "resistance_last_alert": "2026-10-16T03:53:41.257791",
       "resistance_last_price": 3701.10009765625,
-      "mtf_last_alert": "2026-10-16T04:22:22.792995",
-      "mtf_last_price": 3792.10009765625,
+      "mtf_last_alert": "2026-10-16T09:07:15.183796",
+      "mtf_last_price": 3833.10009765625,
       "zanger_last_alert": "2026-10-16T05:50:20.980025",
       "zanger_last_price": 3810.0,
       "momentum_ignition_last_alert": "2026-10-16T07:50:47.474243",
@@ -15491,7 +15499,9 @@
       "box_low": 739.4000244140625,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 49.1
+      "rs_rank": 49.1,
+      "rectangle_bounce_last_alert": "2026-10-16T09:07:27.480246",
+      "rectangle_bounce_last_price": 751.9500122070312
     },
     "TMB": {
       "sma50": 884.0239978027344,
@@ -15781,7 +15791,9 @@
       "wedge_contraction": null,
       "rs_rank": 30.3,
       "ema50_pullback_last_alert": "2026-10-16T05:05:44.383393",
-      "ema50_pullback_last_price": 23.709999084472656
+      "ema50_pullback_last_price": 23.709999084472656,
+      "rectangle_bounce_last_alert": "2026-10-16T09:07:33.809378",
+      "rectangle_bounce_last_price": 23.760000228881836
     },
     "UJJIVANSFB": {
       "sma50": 66.80880012512208,
@@ -16449,7 +16461,9 @@
       "box_low": 790.5499877929688,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 7.6
+      "rs_rank": 7.6,
+      "rectangle_bounce_last_alert": "2026-10-16T09:07:48.617947",
+      "rectangle_bounce_last_price": 833.4000244140625
     },
     "WABAG": {
       "sma50": 2016.8299975585937,
