@@ -2794,8 +2794,8 @@
       "rs_rank": 40.9,
       "near_high_17_22_last_alert": "2026-10-16T04:48:28.917299",
       "near_high_17_22_last_price": 997.9000244140625,
-      "vol_breakout_last_alert": "2026-10-16T05:31:08.881672",
-      "vol_breakout_last_price": 1009.9000244140625
+      "vol_breakout_last_alert": "2026-10-16T06:17:34.551092",
+      "vol_breakout_last_price": 999.0
     },
     "CDSL": {
       "sma50": 1337.0680029296875,
@@ -4581,7 +4581,9 @@
       "box_low": 69.5199966430664,
       "descending_res": 78.38952891031902,
       "wedge_contraction": 0.7134667505943432,
-      "rs_rank": 41.6
+      "rs_rank": 41.6,
+      "mtf_last_alert": "2026-10-16T06:18:09.303736",
+      "mtf_last_price": 78.2300033569336
     },
     "ELGIEQUIP": {
       "sma50": 605.4439965820312,
@@ -5312,8 +5314,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 71.0,
-      "mtf_last_alert": "2026-10-16T04:49:28.364854",
-      "mtf_last_price": 290.25,
+      "mtf_last_alert": "2026-10-16T06:18:25.321234",
+      "mtf_last_price": 286.5,
       "resistance_last_alert": "2026-10-16T04:49:27.741059",
       "resistance_last_price": 290.25
     },
@@ -6340,8 +6342,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 34.4,
-      "mtf_last_alert": "2026-10-16T05:19:08.157810",
-      "mtf_last_price": 768.7999877929688,
+      "mtf_last_alert": "2026-10-16T06:18:47.442436",
+      "mtf_last_price": 801.7000122070312,
       "vol_breakout_last_alert": "2026-10-16T05:48:16.375332",
       "vol_breakout_last_price": 790.4000244140625,
       "zanger_last_alert": "2026-10-16T05:48:16.909289",
@@ -9116,8 +9118,8 @@
       "descending_res": 573.3249969482422,
       "wedge_contraction": 0.9859305485557993,
       "rs_rank": 47.2,
-      "near_high_17_22_last_alert": "2026-10-16T03:52:10.546065",
-      "near_high_17_22_last_price": 529.2000122070312
+      "near_high_17_22_last_alert": "2026-10-16T06:19:46.147025",
+      "near_high_17_22_last_price": 523.0499877929688
     },
     "LLOYDSENGG": {
       "sma50": 90.12,
@@ -10512,8 +10514,8 @@
       "descending_res": 84.11247825622559,
       "wedge_contraction": 0.9082054430822636,
       "rs_rank": 40.3,
-      "near_high_17_22_last_alert": "2026-10-16T05:33:37.505278",
-      "near_high_17_22_last_price": 76.88999938964844
+      "near_high_17_22_last_alert": "2026-10-16T06:20:15.818971",
+      "near_high_17_22_last_price": 75.8499984741211
     },
     "NORTHARC": {
       "sma50": 294.1600018310547,
@@ -11058,8 +11060,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 17.7,
-      "near_high_17_22_last_alert": "2026-10-16T04:05:51.947999",
-      "near_high_17_22_last_price": 289.45001220703125
+      "near_high_17_22_last_alert": "2026-10-16T06:20:28.110616",
+      "near_high_17_22_last_price": 295.6499938964844
     },
     "PGEL": {
       "sma50": 554.4910015869141,
@@ -11570,8 +11572,8 @@
       "descending_res": 821.6428571428571,
       "wedge_contraction": 0.7195974992148242,
       "rs_rank": 67.7,
-      "near_high_17_22_last_alert": "2026-10-16T03:52:53.072904",
-      "near_high_17_22_last_price": 663.7000122070312
+      "near_high_17_22_last_alert": "2026-10-16T06:20:40.007022",
+      "near_high_17_22_last_price": 672.0999755859375
     },
     "PRIVISCL": {
       "sma50": 3487.858017578125,
@@ -12736,8 +12738,8 @@
       "resistance_last_price": 45.84000015258789,
       "mtf_last_alert": "2026-10-16T03:53:10.856447",
       "mtf_last_price": 45.84000015258789,
-      "near_high_17_22_last_alert": "2026-10-16T03:53:11.351258",
-      "near_high_17_22_last_price": 45.84000015258789
+      "near_high_17_22_last_alert": "2026-10-16T06:21:02.816996",
+      "near_high_17_22_last_price": 45.22999954223633
     },
     "SAILIFE": {
       "sma50": 1511.2879956054687,
@@ -12774,8 +12776,8 @@
       "descending_res": 1579.0001220703125,
       "wedge_contraction": 0.8465450368950292,
       "rs_rank": 88.1,
-      "near_high_17_22_last_alert": "2026-10-16T05:21:35.336494",
-      "near_high_17_22_last_price": 1381.9000244140625
+      "near_high_17_22_last_alert": "2026-10-16T06:21:03.869350",
+      "near_high_17_22_last_price": 1396.0999755859375
     },
     "SAMHI": {
       "sma50": 156.75639953613282,
@@ -13172,8 +13174,10 @@
       "descending_res": 350.0,
       "wedge_contraction": 0.8406442788213877,
       "rs_rank": 47.4,
-      "near_high_17_22_last_alert": "2026-10-16T05:34:29.293160",
-      "near_high_17_22_last_price": 339.29998779296875
+      "near_high_17_22_last_alert": "2026-10-16T06:21:13.595061",
+      "near_high_17_22_last_price": 344.75,
+      "mtf_last_alert": "2026-10-16T06:21:13.039783",
+      "mtf_last_price": 344.75
     },
     "SENORES": {
       "sma50": 1419.12599609375,
@@ -16020,8 +16024,8 @@
       "descending_res": 202.00500869750977,
       "wedge_contraction": 0.8728844138345959,
       "rs_rank": 38.1,
-      "rectangle_bounce_last_alert": "2026-10-16T05:35:17.783179",
-      "rectangle_bounce_last_price": 205.25
+      "rectangle_bounce_last_alert": "2026-10-16T06:22:05.893820",
+      "rectangle_bounce_last_price": 208.5
     },
     "VESUVIUS": {
       "sma50": 418.1339990234375,
