@@ -86,8 +86,8 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-16T07:30:20.316840",
-    "custom_last_price": 71.55000305175781
+    "custom_last_alert": "2026-10-16T08:16:25.315285",
+    "custom_last_price": 73.0
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
@@ -576,7 +576,7 @@
     "baseline_rsi": 37.79821909864495,
     "mcap_cr": 65212.65615915,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-16T05:16:05.011261",
+    "rsi_up_last_alert": "2026-10-16T08:16:00.739040",
     "rsi_down_last_alert": "2026-10-16T07:46:09.383638",
     "price_low_last_alert": "2026-10-16T05:16:04.329899",
     "price_low_last_price": 446.04998779296875
@@ -653,7 +653,7 @@
     "rsi_down_last_alert": "2026-10-16T07:46:14.256562",
     "price_low_last_alert": "2026-10-14T10:01:27.700703",
     "price_low_last_price": 1951.0999755859375,
-    "rsi_up_last_alert": "2026-10-16T05:46:08.537271"
+    "rsi_up_last_alert": "2026-10-16T08:16:03.115783"
   },
   "PETRONET": {
     "result_date": "2026-10-14T00:00:00",
@@ -725,7 +725,7 @@
     "mcap_cr": 102398.64380076739,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-16T07:46:17.505088",
-    "rsi_up_last_alert": "2026-10-15T06:01:13.424262",
+    "rsi_up_last_alert": "2026-10-16T08:16:04.771562",
     "price_low_last_alert": "2026-10-15T07:01:19.920205",
     "price_low_last_price": 784.75
   },
@@ -938,7 +938,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-16T07:46:33.104100",
     "price_low_last_alert": "2026-10-16T04:01:36.752830",
-    "price_low_last_price": 532.75
+    "price_low_last_price": 532.75,
+    "rsi_up_last_alert": "2026-10-16T08:16:11.285564"
   },
   "PERSISTENT": {
     "result_date": "2026-10-15T00:00:00",
@@ -1030,7 +1031,8 @@
     "baseline_rsi": 54.12381833109849,
     "mcap_cr": 4255.210872129888,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-16T08:01:23.159422"
+    "rsi_down_last_alert": "2026-10-16T08:01:23.159422",
+    "rsi_up_last_alert": "2026-10-16T08:16:14.544688"
   },
   "FEDERALBNK": {
     "result_date": "2026-10-16T00:00:00",
@@ -1038,6 +1040,14 @@
     "day_low": 328.0,
     "baseline_rsi": 56.325763657372235,
     "mcap_cr": 83474.55620143216,
+    "exchange": "NSE"
+  },
+  "SOLARA": {
+    "result_date": "2026-10-16T00:00:00",
+    "day_high": 740.0,
+    "day_low": 645.0,
+    "baseline_rsi": 59.84842928849905,
+    "mcap_cr": 3512.396079939551,
     "exchange": "NSE"
   }
 }

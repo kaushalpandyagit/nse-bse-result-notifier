@@ -5175,7 +5175,9 @@
       "wedge_contraction": null,
       "rs_rank": 32.5,
       "rectangle_bounce_last_alert": "2026-10-16T07:32:03.155061",
-      "rectangle_bounce_last_price": 153.05999755859375
+      "rectangle_bounce_last_price": 153.05999755859375,
+      "resistance_last_alert": "2026-10-16T08:17:43.255824",
+      "resistance_last_price": 154.0
     },
     "FIRSTCRY": {
       "sma50": 184.8182000732422,
@@ -6360,8 +6362,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 34.4,
-      "mtf_last_alert": "2026-10-16T07:19:06.031678",
-      "mtf_last_price": 811.2000122070312,
+      "mtf_last_alert": "2026-10-16T08:18:01.417547",
+      "mtf_last_price": 825.5499877929688,
       "vol_breakout_last_alert": "2026-10-16T07:48:32.911287",
       "vol_breakout_last_price": 814.7999877929688,
       "zanger_last_alert": "2026-10-16T07:48:33.603217",
@@ -11963,7 +11965,9 @@
       "box_low": 193.39999389648438,
       "descending_res": 206.72505950927734,
       "wedge_contraction": 1.361055772122559,
-      "rs_rank": 8.9
+      "rs_rank": 8.9,
+      "resistance_last_alert": "2026-10-16T08:19:26.561383",
+      "resistance_last_price": 204.89999389648438
     },
     "RAMCOCEM": {
       "sma50": 873.2509985351562,
