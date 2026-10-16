@@ -330,8 +330,8 @@
       "descending_res": 1065.1500244140625,
       "wedge_contraction": 0.7803484768001236,
       "rs_rank": 39.8,
-      "near_high_17_22_last_alert": "2026-10-16T04:47:27.095230",
-      "near_high_17_22_last_price": 980.8499755859375
+      "near_high_17_22_last_alert": "2026-10-16T09:46:47.011092",
+      "near_high_17_22_last_price": 970.5
     },
     "ACC": {
       "sma50": 1251.5880029296875,
@@ -959,7 +959,9 @@
       "wedge_contraction": null,
       "rs_rank": 47.0,
       "resistance_last_alert": "2026-10-16T04:47:40.757081",
-      "resistance_last_price": 305.95001220703125
+      "resistance_last_price": 305.95001220703125,
+      "near_high_17_22_last_alert": "2026-10-16T09:46:55.613959",
+      "near_high_17_22_last_price": 298.8999938964844
     },
     "ANURAS": {
       "sma50": 1205.0940063476562,
@@ -1952,8 +1954,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 21.9,
-      "rectangle_bounce_last_alert": "2026-10-16T06:02:30.261618",
-      "rectangle_bounce_last_price": 631.9500122070312
+      "rectangle_bounce_last_alert": "2026-10-16T09:47:13.432125",
+      "rectangle_bounce_last_price": 640.0999755859375
     },
     "BBOX": {
       "sma50": 792.247998046875,
@@ -4524,8 +4526,8 @@
       "descending_res": 288.1714390345982,
       "wedge_contraction": 1.1796402874279683,
       "rs_rank": 36.6,
-      "ema50_pullback_last_alert": "2026-10-16T08:31:54.732083",
-      "ema50_pullback_last_price": 299.1000061035156
+      "ema50_pullback_last_alert": "2026-10-16T09:47:52.005260",
+      "ema50_pullback_last_price": 303.75
     },
     "ELECON": {
       "sma50": 437.2490008544922,
@@ -5860,8 +5862,8 @@
       "descending_res": 308.25,
       "wedge_contraction": 0.6451298923908168,
       "rs_rank": 58.2,
-      "near_high_17_22_last_alert": "2026-10-16T06:48:57.624147",
-      "near_high_17_22_last_price": 324.0,
+      "near_high_17_22_last_alert": "2026-10-16T09:48:12.788066",
+      "near_high_17_22_last_price": 320.45001220703125,
       "mtf_last_alert": "2026-10-16T06:31:49.288255",
       "mtf_last_price": 323.79998779296875,
       "rectangle_bounce_last_alert": "2026-10-16T07:03:11.785786",
@@ -8942,8 +8944,8 @@
       "descending_res": 1465.9473684210525,
       "wedge_contraction": 1.1741012765665662,
       "rs_rank": 41.3,
-      "vol_breakout_last_alert": "2026-10-16T08:49:57.111561",
-      "vol_breakout_last_price": 1155.5
+      "vol_breakout_last_alert": "2026-10-16T09:49:04.593586",
+      "vol_breakout_last_price": 1138.0
     },
     "KSB": {
       "sma50": 800.35099609375,
@@ -10049,7 +10051,9 @@
       "box_low": 32.70000076293945,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 31.0
+      "rs_rank": 31.0,
+      "rectangle_bounce_last_alert": "2026-10-16T09:49:20.222543",
+      "rectangle_bounce_last_price": 35.470001220703125
     },
     "MTARTECH": {
       "sma50": 7228.0,
@@ -11953,7 +11957,9 @@
       "box_low": 1196.800048828125,
       "descending_res": 1212.4001159667969,
       "wedge_contraction": 0.8067077230718178,
-      "rs_rank": 45.9
+      "rs_rank": 45.9,
+      "rectangle_bounce_last_alert": "2026-10-16T09:49:51.869300",
+      "rectangle_bounce_last_price": 1263.199951171875
     },
     "RALLIS": {
       "sma50": 205.67600006103515,
@@ -13787,7 +13793,9 @@
       "box_low": 53.65999984741211,
       "descending_res": 55.4133415222168,
       "wedge_contraction": 1.0516673145081736,
-      "rs_rank": 5.4
+      "rs_rank": 5.4,
+      "vol_breakout_last_alert": "2026-10-16T09:50:20.227416",
+      "vol_breakout_last_price": 53.68000030517578
     },
     "SKIPPER": {
       "sma50": 547.0060009765625,
@@ -15115,7 +15123,9 @@
       "wedge_contraction": null,
       "rs_rank": 62.3,
       "sos_pullback_curl_last_alert": "2026-10-16T09:35:14.904532",
-      "sos_pullback_curl_last_price": 476.0
+      "sos_pullback_curl_last_price": 476.0,
+      "rectangle_bounce_last_alert": "2026-10-16T09:50:39.500767",
+      "rectangle_bounce_last_price": 474.8999938964844
     },
     "TENNIND": {
       "sma50": 519.1800012207032,
