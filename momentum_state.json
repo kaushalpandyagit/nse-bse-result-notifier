@@ -435,7 +435,11 @@
       "box_low": 446.0,
       "descending_res": 489.4198486328125,
       "wedge_contraction": 0.9195973941591616,
-      "rs_rank": 15.8
+      "rs_rank": 15.8,
+      "resistance_last_alert": "2026-10-16T04:02:08.084619",
+      "resistance_last_price": 497.70001220703125,
+      "mtf_last_alert": "2026-10-16T04:02:08.746500",
+      "mtf_last_price": 497.70001220703125
     },
     "ACMESOLAR": {
       "sma50": 409.0739996337891,
@@ -1339,7 +1343,9 @@
       "box_low": 1537.0999755859375,
       "descending_res": 1786.9599609375,
       "wedge_contraction": 0.7717586119326976,
-      "rs_rank": 91.1
+      "rs_rank": 91.1,
+      "near_high_17_22_last_alert": "2026-10-16T04:02:27.296450",
+      "near_high_17_22_last_price": 1626.300048828125
     },
     "ATLANTAELE": {
       "sma50": 1739.3780078125,
@@ -1743,7 +1749,9 @@
       "box_low": 1936.0,
       "descending_res": 2231.1947856702304,
       "wedge_contraction": 0.511556958864122,
-      "rs_rank": 97.8
+      "rs_rank": 97.8,
+      "near_high_17_22_last_alert": "2026-10-16T04:02:34.579598",
+      "near_high_17_22_last_price": 2068.800048828125
     },
     "BALRAMCHIN": {
       "sma50": 675.7249963378906,
@@ -2839,7 +2847,9 @@
       "box_low": 3186.699951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 30.5
+      "rs_rank": 30.5,
+      "ema50_pullback_last_alert": "2026-10-16T04:02:56.657977",
+      "ema50_pullback_last_price": 3326.0
     },
     "CEIGALL": {
       "sma50": 357.2299993896484,
@@ -3453,7 +3463,9 @@
       "box_low": 411.0,
       "descending_res": 480.75,
       "wedge_contraction": 0.8727797192981901,
-      "rs_rank": 70.8
+      "rs_rank": 70.8,
+      "mtf_last_alert": "2026-10-16T04:03:10.325106",
+      "mtf_last_price": 462.75
     },
     "CONCORDBIO": {
       "sma50": 1451.5859985351562,
@@ -4067,7 +4079,9 @@
       "box_low": 393.0,
       "descending_res": 423.54986572265625,
       "wedge_contraction": 0.9859285610917736,
-      "rs_rank": 32.7
+      "rs_rank": 32.7,
+      "near_high_17_22_last_alert": "2026-10-16T04:03:22.911444",
+      "near_high_17_22_last_price": 411.0
     },
     "DEVYANI": {
       "sma50": 136.22079879760742,
@@ -5227,7 +5241,9 @@
       "box_low": 16520.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 13.4
+      "rs_rank": 13.4,
+      "resistance_last_alert": "2026-10-16T04:03:44.713264",
+      "resistance_last_price": 17729.0
     },
     "FSL": {
       "sma50": 268.80500091552733,
@@ -5263,7 +5279,9 @@
       "box_low": 246.64999389648438,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 71.0
+      "rs_rank": 71.0,
+      "mtf_last_alert": "2026-10-16T04:03:46.332308",
+      "mtf_last_price": 285.45001220703125
     },
     "GABRIEL": {
       "sma50": 1391.1480053710939,
@@ -5445,7 +5463,9 @@
       "box_low": 1261.0,
       "descending_res": 1571.0,
       "wedge_contraction": 0.9437414924913591,
-      "rs_rank": 59.5
+      "rs_rank": 59.5,
+      "near_high_17_22_last_alert": "2026-10-16T04:03:50.235525",
+      "near_high_17_22_last_price": 1468.4000244140625
     },
     "GILLETTE": {
       "sma50": 7306.78,
@@ -5771,7 +5791,9 @@
       "box_low": 302.3999938964844,
       "descending_res": 308.25,
       "wedge_contraction": 0.6451298923908168,
-      "rs_rank": 58.2
+      "rs_rank": 58.2,
+      "near_high_17_22_last_alert": "2026-10-16T04:03:57.997099",
+      "near_high_17_22_last_price": 311.29998779296875
     },
     "GPIL": {
       "sma50": 233.19580017089845,
@@ -6203,7 +6225,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 26.2
+      "rs_rank": 26.2,
+      "mtf_last_alert": "2026-10-16T04:04:07.765163",
+      "mtf_last_price": 336.20001220703125
     },
     "HAPPYFORGE": {
       "sma50": 2108.0339965820312,
@@ -7211,7 +7235,11 @@
       "box_low": 564.0499877929688,
       "descending_res": 650.2832234700521,
       "wedge_contraction": 0.9765968986705922,
-      "rs_rank": 37.4
+      "rs_rank": 37.4,
+      "mtf_last_alert": "2026-10-16T04:04:29.170951",
+      "mtf_last_price": 646.3499755859375,
+      "ema50_pullback_last_alert": "2026-10-16T04:04:29.770688",
+      "ema50_pullback_last_price": 646.3499755859375
     },
     "IONEXCHANG": {
       "sma50": 398.44500122070315,
@@ -7501,7 +7529,9 @@
       "wedge_contraction": null,
       "rs_rank": 59.3,
       "mtf_last_alert": "2026-10-16T03:51:46.263724",
-      "mtf_last_price": 74.22000122070312
+      "mtf_last_price": 74.22000122070312,
+      "resistance_last_alert": "2026-10-16T04:04:37.776522",
+      "resistance_last_price": 73.37999725341797
     },
     "JAINREC": {
       "sma50": 290.21700073242187,
@@ -8731,7 +8761,11 @@
       "box_low": 470.1000061035156,
       "descending_res": 482.4397705078125,
       "wedge_contraction": 0.9436358723284861,
-      "rs_rank": 5.8
+      "rs_rank": 5.8,
+      "mtf_last_alert": "2026-10-16T04:05:02.613044",
+      "mtf_last_price": 535.5999755859375,
+      "ema50_pullback_last_alert": "2026-10-16T04:05:03.238549",
+      "ema50_pullback_last_price": 535.5999755859375
     },
     "KRBL": {
       "sma50": 401.0529992675781,
@@ -8985,7 +9019,9 @@
       "box_low": 100.87999725341797,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 45.7
+      "rs_rank": 45.7,
+      "mtf_last_alert": "2026-10-16T04:05:09.911836",
+      "mtf_last_price": 112.54000091552734
     },
     "LICHSGFIN": {
       "sma50": 532.2760028076171,
@@ -10303,7 +10339,9 @@
       "box_low": 439.1000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 52.8
+      "rs_rank": 52.8,
+      "mtf_last_alert": "2026-10-16T04:05:36.410327",
+      "mtf_last_price": 499.20001220703125
     },
     "NFL": {
       "sma50": 68.08380027770995,
@@ -10375,7 +10413,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 58.0
+      "rs_rank": 58.0,
+      "mtf_last_alert": "2026-10-16T04:05:38.928524",
+      "mtf_last_price": 183.44000244140625
     },
     "NIVABUPA": {
       "sma50": 80.29520034790039,
@@ -10955,7 +10995,9 @@
       "box_low": 257.6499938964844,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 17.7
+      "rs_rank": 17.7,
+      "near_high_17_22_last_alert": "2026-10-16T04:05:51.947999",
+      "near_high_17_22_last_price": 289.45001220703125
     },
     "PGEL": {
       "sma50": 554.4910015869141,
@@ -12329,7 +12371,11 @@
       "box_low": 191.25,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 41.8
+      "rs_rank": 41.8,
+      "resistance_last_alert": "2026-10-16T04:06:20.048022",
+      "resistance_last_price": 211.8699951171875,
+      "mtf_last_alert": "2026-10-16T04:06:20.708574",
+      "mtf_last_price": 211.8699951171875
     },
     "RKFORGE": {
       "sma50": 717.8389965820312,
@@ -15703,7 +15749,9 @@
       "box_low": null,
       "descending_res": 169.5033416748047,
       "wedge_contraction": 0.8495182112396112,
-      "rs_rank": 69.7
+      "rs_rank": 69.7,
+      "near_high_17_22_last_alert": "2026-10-16T04:07:23.259568",
+      "near_high_17_22_last_price": 156.92999267578125
     },
     "USHAMART": {
       "sma50": 501.4550006103516,
@@ -16135,7 +16183,9 @@
       "box_low": 682.6500244140625,
       "descending_res": 812.4998779296875,
       "wedge_contraction": 0.8455108737161744,
-      "rs_rank": 80.1
+      "rs_rank": 80.1,
+      "near_high_17_22_last_alert": "2026-10-16T04:07:33.831651",
+      "near_high_17_22_last_price": 784.0
     },
     "VOLTAMP": {
       "sma50": 10614.15,
@@ -16649,7 +16699,9 @@
       "wedge_contraction": 1.176431674131361,
       "rs_rank": 24.0,
       "resistance_last_alert": "2026-10-16T03:54:11.179084",
-      "resistance_last_price": 498.54998779296875
+      "resistance_last_price": 498.54998779296875,
+      "mtf_last_alert": "2026-10-16T04:07:43.925425",
+      "mtf_last_price": 509.75
     },
     "ZENTEC": {
       "sma50": 1737.632001953125,
