@@ -64,8 +64,8 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-16T04:16:37.391831",
-    "custom_last_price": 182.35000610351562
+    "custom_last_alert": "2026-10-16T05:16:40.674829",
+    "custom_last_price": 179.4199981689453
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
@@ -576,10 +576,10 @@
     "baseline_rsi": 37.79821909864495,
     "mcap_cr": 65212.65615915,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-15T11:01:12.256605",
+    "rsi_up_last_alert": "2026-10-16T05:16:05.011261",
     "rsi_down_last_alert": "2026-10-16T04:46:17.810643",
-    "price_low_last_alert": "2026-10-16T04:01:19.280103",
-    "price_low_last_price": 439.29998779296875
+    "price_low_last_alert": "2026-10-16T05:16:04.329899",
+    "price_low_last_price": 446.04998779296875
   },
   "TARIL": {
     "result_date": "2026-10-13T00:00:00",
