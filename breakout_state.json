@@ -192,8 +192,8 @@
     "spread_last_price": 2.596131552419355
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-16T04:08:19.175695",
-    "spread_last_price": 3.825136612021858
+    "spread_last_alert": "2026-10-16T05:35:56.645703",
+    "spread_last_price": 3.5355803111989785
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-13T03:57:17.405657",
@@ -650,7 +650,7 @@
     "baseline_rsi": 35.913970878277794,
     "mcap_cr": 46216.16791985124,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-16T04:16:06.922002",
+    "rsi_down_last_alert": "2026-10-16T05:29:43.296049",
     "price_low_last_alert": "2026-10-14T10:01:27.700703",
     "price_low_last_price": 1951.0999755859375,
     "rsi_up_last_alert": "2026-10-16T04:46:24.305572"
@@ -911,7 +911,9 @@
     "rsi_up_last_alert": "2026-10-16T04:46:45.949362",
     "price_low_last_alert": "2026-10-16T03:46:26.986770",
     "price_low_last_price": 78.02999877929688,
-    "rsi_down_last_alert": "2026-10-16T03:46:27.462912"
+    "rsi_down_last_alert": "2026-10-16T03:46:27.462912",
+    "price_high_last_alert": "2026-10-16T05:29:53.350102",
+    "price_high_last_price": 80.33000183105469
   },
   "WIPRO": {
     "result_date": "2026-10-15T00:00:00",
