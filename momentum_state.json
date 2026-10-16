@@ -147,7 +147,9 @@
       "box_low": 1167.199951171875,
       "descending_res": 1297.1738546620245,
       "wedge_contraction": 0.7368160690468784,
-      "rs_rank": 36.8
+      "rs_rank": 36.8,
+      "rectangle_bounce_last_alert": "2026-10-16T08:47:08.714607",
+      "rectangle_bounce_last_price": 1197.199951171875
     },
     "ABDL": {
       "sma50": 646.3750048828125,
@@ -770,8 +772,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 44.6,
-      "rectangle_bounce_last_alert": "2026-10-16T08:01:46.115915",
-      "rectangle_bounce_last_price": 1451.0999755859375
+      "rectangle_bounce_last_alert": "2026-10-16T08:47:20.658469",
+      "rectangle_bounce_last_price": 1432.0999755859375
     },
     "AKUMS": {
       "sma50": 769.1509973144531,
@@ -2794,8 +2796,8 @@
       "descending_res": 1130.39990234375,
       "wedge_contraction": 1.0233184376416145,
       "rs_rank": 40.9,
-      "near_high_17_22_last_alert": "2026-10-16T06:48:00.601497",
-      "near_high_17_22_last_price": 1015.0,
+      "near_high_17_22_last_alert": "2026-10-16T08:47:59.827704",
+      "near_high_17_22_last_price": 1002.9000244140625,
       "vol_breakout_last_alert": "2026-10-16T08:02:12.163864",
       "vol_breakout_last_price": 1009.5,
       "liquidity_sweep_last_alert": "2026-10-16T06:47:59.946858",
@@ -3822,8 +3824,8 @@
       "descending_res": 1811.0,
       "wedge_contraction": 0.823210113970458,
       "rs_rank": 19.9,
-      "rectangle_bounce_last_alert": "2026-10-16T07:47:52.994990",
-      "rectangle_bounce_last_price": 1643.0
+      "rectangle_bounce_last_alert": "2026-10-16T08:48:19.178208",
+      "rectangle_bounce_last_price": 1696.5
     },
     "DATAMATICS": {
       "sma50": 795.0690014648437,
@@ -5737,7 +5739,9 @@
       "box_low": 534.2999877929688,
       "descending_res": 617.3749389648438,
       "wedge_contraction": 0.7705482054507684,
-      "rs_rank": 50.4
+      "rs_rank": 50.4,
+      "sos_pullback_curl_last_alert": "2026-10-16T08:48:53.542145",
+      "sos_pullback_curl_last_price": 624.3499755859375
     },
     "GOKEX": {
       "sma50": 743.0000012207031,
@@ -8369,7 +8373,9 @@
       "box_low": 173.1300048828125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 31.6
+      "rs_rank": 31.6,
+      "rectangle_bounce_last_alert": "2026-10-16T08:49:44.662639",
+      "rectangle_bounce_last_price": 185.5399932861328
     },
     "KAYNES": {
       "sma50": 3586.7440087890627,
@@ -8925,7 +8931,9 @@
       "box_low": null,
       "descending_res": 1465.9473684210525,
       "wedge_contraction": 1.1741012765665662,
-      "rs_rank": 41.3
+      "rs_rank": 41.3,
+      "vol_breakout_last_alert": "2026-10-16T08:49:57.111561",
+      "vol_breakout_last_price": 1155.5
     },
     "KSB": {
       "sma50": 800.35099609375,
@@ -10396,8 +10404,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 83.3,
-      "near_high_17_22_last_alert": "2026-10-16T03:52:32.561068",
-      "near_high_17_22_last_price": 20090.0
+      "near_high_17_22_last_alert": "2026-10-16T08:50:25.005574",
+      "near_high_17_22_last_price": 19800.0
     },
     "NEWGEN": {
       "sma50": 505.30699951171874,
@@ -11390,8 +11398,8 @@
       "resistance_last_price": 609.75,
       "mtf_last_alert": "2026-10-16T05:33:54.320623",
       "mtf_last_price": 616.9500122070312,
-      "rectangle_bounce_last_alert": "2026-10-16T06:50:47.520034",
-      "rectangle_bounce_last_price": 613.0499877929688
+      "rectangle_bounce_last_alert": "2026-10-16T08:50:45.043065",
+      "rectangle_bounce_last_price": 603.0999755859375
     },
     "POLYMED": {
       "sma50": 1708.043994140625,
@@ -16071,7 +16079,9 @@
       "rectangle_bounce_last_alert": "2026-10-16T08:35:37.697111",
       "rectangle_bounce_last_price": 214.3300018310547,
       "mtf_last_alert": "2026-10-16T08:04:56.817484",
-      "mtf_last_price": 213.0800018310547
+      "mtf_last_price": 213.0800018310547,
+      "vol_breakout_last_alert": "2026-10-16T08:52:09.185777",
+      "vol_breakout_last_price": 211.6999969482422
     },
     "VESUVIUS": {
       "sma50": 418.1339990234375,
