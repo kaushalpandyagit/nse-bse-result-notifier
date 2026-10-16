@@ -767,7 +767,9 @@
       "box_low": 1388.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 44.6
+      "rs_rank": 44.6,
+      "rectangle_bounce_last_alert": "2026-10-16T05:46:56.498979",
+      "rectangle_bounce_last_price": 1436.300048828125
     },
     "AKUMS": {
       "sma50": 769.1509973144531,
@@ -2416,8 +2418,8 @@
       "rs_rank": 16.2,
       "resistance_last_alert": "2026-10-16T05:02:16.684995",
       "resistance_last_price": 316.45001220703125,
-      "mtf_last_alert": "2026-10-16T04:48:20.885896",
-      "mtf_last_price": 319.75
+      "mtf_last_alert": "2026-10-16T05:47:21.473157",
+      "mtf_last_price": 316.1499938964844
     },
     "CAMPUS": {
       "sma50": 214.9145993041992,
@@ -6333,7 +6335,11 @@
       "wedge_contraction": null,
       "rs_rank": 34.4,
       "mtf_last_alert": "2026-10-16T05:19:08.157810",
-      "mtf_last_price": 768.7999877929688
+      "mtf_last_price": 768.7999877929688,
+      "vol_breakout_last_alert": "2026-10-16T05:48:16.375332",
+      "vol_breakout_last_price": 790.4000244140625,
+      "zanger_last_alert": "2026-10-16T05:48:16.909289",
+      "zanger_last_price": 790.4000244140625
     },
     "HCC": {
       "sma50": 21.36459991455078,
@@ -9023,7 +9029,9 @@
       "box_low": 228.3699951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 10.8
+      "rs_rank": 10.8,
+      "rectangle_bounce_last_alert": "2026-10-16T05:48:57.787145",
+      "rectangle_bounce_last_price": 248.77999877929688
     },
     "LEMONTREE": {
       "sma50": 107.84080017089843,
@@ -11330,8 +11338,8 @@
       "descending_res": 612.4769099308894,
       "wedge_contraction": 0.7595123381740904,
       "rs_rank": 30.7,
-      "near_high_17_22_last_alert": "2026-10-16T04:52:01.938385",
-      "near_high_17_22_last_price": 600.5,
+      "near_high_17_22_last_alert": "2026-10-16T05:49:32.135395",
+      "near_high_17_22_last_price": 608.3499755859375,
       "resistance_last_alert": "2026-10-16T05:33:53.639968",
       "resistance_last_price": 616.9500122070312,
       "mtf_last_alert": "2026-10-16T05:33:54.320623",
@@ -14763,7 +14771,9 @@
       "resistance_last_alert": "2026-10-16T03:53:41.257791",
       "resistance_last_price": 3701.10009765625,
       "mtf_last_alert": "2026-10-16T04:22:22.792995",
-      "mtf_last_price": 3792.10009765625
+      "mtf_last_price": 3792.10009765625,
+      "zanger_last_alert": "2026-10-16T05:50:20.980025",
+      "zanger_last_price": 3810.0
     },
     "TATAINVEST": {
       "sma50": 647.8069982910156,
