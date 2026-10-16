@@ -770,8 +770,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 44.6,
-      "rectangle_bounce_last_alert": "2026-10-16T05:46:56.498979",
-      "rectangle_bounce_last_price": 1436.300048828125
+      "rectangle_bounce_last_alert": "2026-10-16T08:01:46.115915",
+      "rectangle_bounce_last_price": 1451.0999755859375
     },
     "AKUMS": {
       "sma50": 769.1509973144531,
@@ -2796,8 +2796,8 @@
       "rs_rank": 40.9,
       "near_high_17_22_last_alert": "2026-10-16T06:48:00.601497",
       "near_high_17_22_last_price": 1015.0,
-      "vol_breakout_last_alert": "2026-10-16T06:17:34.551092",
-      "vol_breakout_last_price": 999.0,
+      "vol_breakout_last_alert": "2026-10-16T08:02:12.163864",
+      "vol_breakout_last_price": 1009.5,
       "liquidity_sweep_last_alert": "2026-10-16T06:47:59.946858",
       "liquidity_sweep_last_price": 1015.0
     },
@@ -2874,8 +2874,8 @@
       "rs_rank": 30.5,
       "ema50_pullback_last_alert": "2026-10-16T04:02:56.657977",
       "ema50_pullback_last_price": 3326.0,
-      "rectangle_bounce_last_alert": "2026-10-16T04:31:19.811726",
-      "rectangle_bounce_last_price": 3313.10009765625
+      "rectangle_bounce_last_alert": "2026-10-16T08:02:13.297276",
+      "rectangle_bounce_last_price": 3269.0
     },
     "CEIGALL": {
       "sma50": 357.2299993896484,
@@ -4882,8 +4882,8 @@
       "descending_res": 1822.5,
       "wedge_contraction": 0.8201624542302841,
       "rs_rank": 77.7,
-      "near_high_17_22_last_alert": "2026-10-16T05:18:33.106832",
-      "near_high_17_22_last_price": 1556.699951171875
+      "near_high_17_22_last_alert": "2026-10-16T08:02:37.190697",
+      "near_high_17_22_last_price": 1573.800048828125
     },
     "EPL": {
       "sma50": 241.60320037841797,
@@ -9622,8 +9622,8 @@
       "rs_rank": 50.0,
       "resistance_last_alert": "2026-10-16T07:20:19.885824",
       "resistance_last_price": 1830.0,
-      "mtf_last_alert": "2026-10-16T07:04:12.471724",
-      "mtf_last_price": 1836.699951171875
+      "mtf_last_alert": "2026-10-16T08:03:36.807498",
+      "mtf_last_price": 1817.0999755859375
     },
     "MBAPL": {
       "sma50": 164.32080047607423,
@@ -16061,7 +16061,9 @@
       "wedge_contraction": 0.8728844138345959,
       "rs_rank": 38.1,
       "rectangle_bounce_last_alert": "2026-10-16T07:35:29.731901",
-      "rectangle_bounce_last_price": 210.69000244140625
+      "rectangle_bounce_last_price": 210.69000244140625,
+      "mtf_last_alert": "2026-10-16T08:04:56.817484",
+      "mtf_last_price": 213.0800018310547
     },
     "VESUVIUS": {
       "sma50": 418.1339990234375,
