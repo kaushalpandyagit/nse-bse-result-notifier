@@ -2,8 +2,8 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-15T07:01:28.065133",
-    "custom_last_price": 140.9499969482422
+    "custom_last_alert": "2026-10-16T04:16:27.911211",
+    "custom_last_price": 138.39999389648438
   },
   "custom_alert_AERON_price": {
     "alerted": false,
@@ -64,8 +64,8 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-15T07:30:26.979768",
-    "custom_last_price": 176.5399932861328
+    "custom_last_alert": "2026-10-16T04:16:37.391831",
+    "custom_last_price": 182.35000610351562
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
@@ -492,8 +492,8 @@
     "baseline_rsi": 56.171211734749654,
     "mcap_cr": 64838.7974765948,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-15T09:15:55.851381",
-    "price_low_last_price": 375.3500061035156,
+    "price_low_last_alert": "2026-10-16T04:16:00.320846",
+    "price_low_last_price": 379.79998779296875,
     "rsi_down_last_alert": "2026-10-16T03:46:04.657479"
   },
   "AGRITECH": {
@@ -650,7 +650,7 @@
     "baseline_rsi": 35.913970878277794,
     "mcap_cr": 46216.16791985124,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-15T04:29:55.159747",
+    "rsi_down_last_alert": "2026-10-16T04:16:06.922002",
     "price_low_last_alert": "2026-10-14T10:01:27.700703",
     "price_low_last_price": 1951.0999755859375,
     "rsi_up_last_alert": "2026-10-16T03:46:12.484167"

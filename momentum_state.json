@@ -73,7 +73,9 @@
       "box_low": 459.29998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 67.5
+      "rs_rank": 67.5,
+      "resistance_last_alert": "2026-10-16T04:16:49.558346",
+      "resistance_last_price": 503.25
     },
     "AARTIPHARM": {
       "sma50": 859.8710021972656,
@@ -439,7 +441,9 @@
       "resistance_last_alert": "2026-10-16T04:02:08.084619",
       "resistance_last_price": 497.70001220703125,
       "mtf_last_alert": "2026-10-16T04:02:08.746500",
-      "mtf_last_price": 497.70001220703125
+      "mtf_last_price": 497.70001220703125,
+      "rectangle_bounce_last_alert": "2026-10-16T04:16:57.643645",
+      "rectangle_bounce_last_price": 493.45001220703125
     },
     "ACMESOLAR": {
       "sma50": 409.0739996337891,
@@ -3031,7 +3035,9 @@
       "box_low": null,
       "descending_res": 4981.5,
       "wedge_contraction": 0.7250959373698642,
-      "rs_rank": 79.7
+      "rs_rank": 79.7,
+      "near_high_17_22_last_alert": "2026-10-16T04:17:55.529565",
+      "near_high_17_22_last_price": 4027.10009765625
     },
     "CERA": {
       "sma50": 5573.32,
@@ -4477,7 +4483,9 @@
       "box_low": 280.29998779296875,
       "descending_res": 288.1714390345982,
       "wedge_contraction": 1.1796402874279683,
-      "rs_rank": 36.6
+      "rs_rank": 36.6,
+      "ema50_pullback_last_alert": "2026-10-16T04:18:26.594001",
+      "ema50_pullback_last_price": 295.3500061035156
     },
     "ELECON": {
       "sma50": 437.2490008544922,
@@ -13359,7 +13367,9 @@
       "box_low": 165.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 81.0
+      "rs_rank": 81.0,
+      "near_high_17_22_last_alert": "2026-10-16T04:21:53.953378",
+      "near_high_17_22_last_price": 193.2100067138672
     },
     "SHILCTECH": {
       "sma50": 4065.5600048828123,
@@ -13611,7 +13621,9 @@
       "box_low": 1918.0,
       "descending_res": 2121.7753295898438,
       "wedge_contraction": 0.8471988581555021,
-      "rs_rank": 69.5
+      "rs_rank": 69.5,
+      "near_high_17_22_last_alert": "2026-10-16T04:21:58.556781",
+      "near_high_17_22_last_price": 2028.9000244140625
     },
     "SJVN": {
       "sma50": 63.0873999786377,
@@ -13973,7 +13985,9 @@
       "box_low": 931.2999877929688,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 58.4
+      "rs_rank": 58.4,
+      "near_high_17_22_last_alert": "2026-10-16T04:22:07.003256",
+      "near_high_17_22_last_price": 1045.0
     },
     "STYLAMIND": {
       "sma50": 3404.627978515625,
@@ -14555,7 +14569,9 @@
       "wedge_contraction": 1.6260459684771558,
       "rs_rank": 66.2,
       "mtf_last_alert": "2026-10-16T03:53:39.092610",
-      "mtf_last_price": 553.4000244140625
+      "mtf_last_price": 553.4000244140625,
+      "resistance_last_alert": "2026-10-16T04:22:19.300016",
+      "resistance_last_price": 565.0999755859375
     },
     "TARC": {
       "sma50": 125.83499938964843,
@@ -14701,7 +14717,9 @@
       "wedge_contraction": 1.3841026744653324,
       "rs_rank": 19.0,
       "resistance_last_alert": "2026-10-16T03:53:41.257791",
-      "resistance_last_price": 3701.10009765625
+      "resistance_last_price": 3701.10009765625,
+      "mtf_last_alert": "2026-10-16T04:22:22.792995",
+      "mtf_last_price": 3792.10009765625
     },
     "TATAINVEST": {
       "sma50": 647.8069982910156,
