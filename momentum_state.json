@@ -2853,7 +2853,9 @@
       "wedge_contraction": null,
       "rs_rank": 30.5,
       "ema50_pullback_last_alert": "2026-10-16T04:02:56.657977",
-      "ema50_pullback_last_price": 3326.0
+      "ema50_pullback_last_price": 3326.0,
+      "rectangle_bounce_last_alert": "2026-10-16T04:31:19.811726",
+      "rectangle_bounce_last_price": 3313.10009765625
     },
     "CEIGALL": {
       "sma50": 357.2299993896484,
@@ -5581,7 +5583,11 @@
       "box_low": 86.80000305175781,
       "descending_res": 105.6575059890747,
       "wedge_contraction": 0.9087418031882035,
-      "rs_rank": 36.1
+      "rs_rank": 36.1,
+      "resistance_last_alert": "2026-10-16T04:32:12.909397",
+      "resistance_last_price": 102.88999938964844,
+      "mtf_last_alert": "2026-10-16T04:32:13.502818",
+      "mtf_last_price": 102.88999938964844
     },
     "GNFC": {
       "sma50": 583.8750012207031,
@@ -6235,7 +6241,9 @@
       "wedge_contraction": null,
       "rs_rank": 26.2,
       "mtf_last_alert": "2026-10-16T04:04:07.765163",
-      "mtf_last_price": 336.20001220703125
+      "mtf_last_price": 336.20001220703125,
+      "ema50_pullback_last_alert": "2026-10-16T04:32:28.861857",
+      "ema50_pullback_last_price": 336.70001220703125
     },
     "HAPPYFORGE": {
       "sma50": 2108.0339965820312,
@@ -8919,7 +8927,9 @@
       "box_low": 669.2999877929688,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 14.1
+      "rs_rank": 14.1,
+      "mtf_last_alert": "2026-10-16T04:33:24.050093",
+      "mtf_last_price": 745.6500244140625
     },
     "KTKBANK": {
       "sma50": 326.0170001220703,
@@ -10349,7 +10359,9 @@
       "wedge_contraction": null,
       "rs_rank": 52.8,
       "mtf_last_alert": "2026-10-16T04:05:36.410327",
-      "mtf_last_price": 499.20001220703125
+      "mtf_last_price": 499.20001220703125,
+      "ema50_pullback_last_alert": "2026-10-16T04:33:51.035429",
+      "ema50_pullback_last_price": 498.3500061035156
     },
     "NFL": {
       "sma50": 68.08380027770995,
