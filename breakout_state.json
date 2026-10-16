@@ -262,8 +262,8 @@
     "price_high_last_alert": "2026-10-09T04:45:49.126337",
     "price_high_last_price": 267.79998779296875,
     "rsi_down_last_alert": "2026-10-16T09:45:46.361739",
-    "price_low_last_alert": "2026-10-16T07:00:59.105910",
-    "price_low_last_price": 244.25
+    "price_low_last_alert": "2026-10-16T10:01:01.873801",
+    "price_low_last_price": 240.0
   },
   "CANFINHOME": {
     "result_date": "2026-10-07T00:00:00",
@@ -370,7 +370,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-12T07:15:49.921697",
     "price_high_last_price": 455.0,
-    "rsi_up_last_alert": "2026-10-16T09:15:49.565845",
+    "rsi_up_last_alert": "2026-10-16T10:01:06.254023",
     "rsi_down_last_alert": "2026-10-16T07:45:55.552895",
     "price_low_last_alert": "2026-10-13T04:29:40.082428",
     "price_low_last_price": 436.45001220703125
@@ -396,7 +396,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-16T04:01:10.563398",
     "price_low_last_price": 97.91999816894531,
-    "rsi_down_last_alert": "2026-10-16T09:01:17.063314"
+    "rsi_down_last_alert": "2026-10-16T10:01:08.580128"
   },
   "CRAMC": {
     "result_date": "2026-10-12T00:00:00",
@@ -406,8 +406,8 @@
     "mcap_cr": 4576.430664715265,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-16T09:01:18.479938",
-    "price_low_last_alert": "2026-10-16T04:46:04.974191",
-    "price_low_last_price": 223.8800048828125,
+    "price_low_last_alert": "2026-10-16T10:01:10.007506",
+    "price_low_last_price": 226.39999389648438,
     "rsi_up_last_alert": "2026-10-16T09:45:54.530333"
   },
   "arb_GPIL": {
@@ -578,7 +578,7 @@
     "mcap_cr": 65212.65615915,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-16T08:16:00.739040",
-    "rsi_down_last_alert": "2026-10-16T09:01:25.245171",
+    "rsi_down_last_alert": "2026-10-16T10:01:16.251149",
     "price_low_last_alert": "2026-10-16T05:16:04.329899",
     "price_low_last_price": 446.04998779296875
   },
@@ -654,7 +654,7 @@
     "rsi_down_last_alert": "2026-10-16T07:46:14.256562",
     "price_low_last_alert": "2026-10-14T10:01:27.700703",
     "price_low_last_price": 1951.0999755859375,
-    "rsi_up_last_alert": "2026-10-16T09:01:28.835283"
+    "rsi_up_last_alert": "2026-10-16T10:01:19.302354"
   },
   "PETRONET": {
     "result_date": "2026-10-14T00:00:00",
@@ -784,8 +784,8 @@
     "mcap_cr": 111090.854332975,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-16T09:46:11.940184",
-    "price_high_last_alert": "2026-10-16T07:16:09.127962",
-    "price_high_last_price": 864.6500244140625
+    "price_high_last_alert": "2026-10-16T10:01:23.748185",
+    "price_high_last_price": 854.0999755859375
   },
   "POLYCAB": {
     "result_date": "2026-10-15T00:00:00",
@@ -819,7 +819,7 @@
     "rsi_up_last_alert": "2026-10-16T08:46:28.305049",
     "price_low_last_alert": "2026-10-15T09:30:06.638495",
     "price_low_last_price": 23.6200008392334,
-    "rsi_down_last_alert": "2026-10-16T09:16:03.309682"
+    "rsi_down_last_alert": "2026-10-16T10:01:25.807697"
   },
   "DBCORP": {
     "result_date": "2026-10-15T00:00:00",
@@ -940,7 +940,7 @@
     "rsi_down_last_alert": "2026-10-16T07:46:33.104100",
     "price_low_last_alert": "2026-10-16T04:01:36.752830",
     "price_low_last_price": 532.75,
-    "rsi_up_last_alert": "2026-10-16T09:01:41.007703"
+    "rsi_up_last_alert": "2026-10-16T10:01:29.643444"
   },
   "PERSISTENT": {
     "result_date": "2026-10-15T00:00:00",
@@ -1000,7 +1000,7 @@
     "mcap_cr": 138.70413047087098,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-16T09:46:21.635969",
-    "rsi_up_last_alert": "2026-10-16T09:01:43.823953"
+    "rsi_up_last_alert": "2026-10-16T10:01:32.235999"
   },
   "ONWARDTEC": {
     "result_date": "2026-10-16T00:00:00",
@@ -1033,7 +1033,7 @@
     "baseline_rsi": 54.12381833109849,
     "mcap_cr": 4255.210872129888,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-16T09:01:45.936971",
+    "rsi_down_last_alert": "2026-10-16T10:01:33.805062",
     "rsi_up_last_alert": "2026-10-16T08:16:14.544688"
   },
   "FEDERALBNK": {
@@ -1088,7 +1088,7 @@
     "baseline_rsi": 50.83240859678935,
     "mcap_cr": 14108.818865426447,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-16T09:01:50.017520"
+    "rsi_down_last_alert": "2026-10-16T10:01:35.785885"
   },
   "SHOPERSTOP": {
     "result_date": "2026-10-16T00:00:00",

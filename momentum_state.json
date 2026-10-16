@@ -2433,7 +2433,9 @@
       "resistance_last_alert": "2026-10-16T05:02:16.684995",
       "resistance_last_price": 316.45001220703125,
       "mtf_last_alert": "2026-10-16T05:47:21.473157",
-      "mtf_last_price": 316.1499938964844
+      "mtf_last_price": 316.1499938964844,
+      "zanger_last_alert": "2026-10-16T10:02:44.751146",
+      "zanger_last_price": 318.20001220703125
     },
     "CAMPUS": {
       "sma50": 214.9145993041992,
@@ -8678,10 +8680,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 3.9,
-      "rectangle_bounce_last_alert": "2026-10-16T07:49:13.168984",
-      "rectangle_bounce_last_price": 123.5999984741211,
-      "mtf_last_alert": "2026-10-16T07:49:13.919412",
-      "mtf_last_price": 123.5999984741211,
+      "rectangle_bounce_last_alert": "2026-10-16T10:04:42.931070",
+      "rectangle_bounce_last_price": 122.19999694824219,
+      "mtf_last_alert": "2026-10-16T10:04:43.536092",
+      "mtf_last_price": 122.19999694824219,
       "zanger_last_alert": "2026-10-16T08:33:16.433868",
       "zanger_last_price": 124.47000122070312
     },
@@ -12654,8 +12656,8 @@
       "descending_res": 2960.366414388021,
       "wedge_contraction": 0.9628117988923016,
       "rs_rank": 97.0,
-      "near_high_17_22_last_alert": "2026-10-16T09:19:44.427680",
-      "near_high_17_22_last_price": 2416.10009765625
+      "near_high_17_22_last_alert": "2026-10-16T10:06:01.635695",
+      "near_high_17_22_last_price": 2388.0
     },
     "RTNPOWER": {
       "sma50": 7.435599994659424,
@@ -13285,7 +13287,9 @@
       "wedge_contraction": 0.6940932053564877,
       "rs_rank": 87.4,
       "near_high_17_22_last_alert": "2026-10-16T09:19:55.250746",
-      "near_high_17_22_last_price": 1317.4000244140625
+      "near_high_17_22_last_price": 1317.4000244140625,
+      "rectangle_bounce_last_alert": "2026-10-16T10:06:15.534470",
+      "rectangle_bounce_last_price": 1318.4000244140625
     },
     "SFL": {
       "sma50": 653.59,
@@ -14864,8 +14868,8 @@
       "resistance_last_price": 3701.10009765625,
       "mtf_last_alert": "2026-10-16T09:07:15.183796",
       "mtf_last_price": 3833.10009765625,
-      "zanger_last_alert": "2026-10-16T05:50:20.980025",
-      "zanger_last_price": 3810.0,
+      "zanger_last_alert": "2026-10-16T10:06:42.785065",
+      "zanger_last_price": 3850.10009765625,
       "momentum_ignition_last_alert": "2026-10-16T07:50:47.474243",
       "momentum_ignition_last_price": 3817.0
     },
