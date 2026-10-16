@@ -3491,7 +3491,9 @@
       "wedge_contraction": 0.8727797192981901,
       "rs_rank": 70.8,
       "mtf_last_alert": "2026-10-16T04:03:10.325106",
-      "mtf_last_price": 462.75
+      "mtf_last_price": 462.75,
+      "resistance_last_alert": "2026-10-16T06:31:12.634044",
+      "resistance_last_price": 464.79998779296875
     },
     "CONCORDBIO": {
       "sma50": 1451.5859985351562,
@@ -5833,7 +5835,9 @@
       "wedge_contraction": 0.6451298923908168,
       "rs_rank": 58.2,
       "near_high_17_22_last_alert": "2026-10-16T06:03:46.791529",
-      "near_high_17_22_last_price": 318.3500061035156
+      "near_high_17_22_last_price": 318.3500061035156,
+      "mtf_last_alert": "2026-10-16T06:31:49.288255",
+      "mtf_last_price": 323.79998779296875
     },
     "GPIL": {
       "sma50": 233.19580017089845,
@@ -7582,8 +7586,8 @@
       "rs_rank": 59.3,
       "mtf_last_alert": "2026-10-16T03:51:46.263724",
       "mtf_last_price": 74.22000122070312,
-      "resistance_last_alert": "2026-10-16T05:32:41.253062",
-      "resistance_last_price": 72.55999755859375
+      "resistance_last_alert": "2026-10-16T06:32:21.084935",
+      "resistance_last_price": 73.33999633789062
     },
     "JAINREC": {
       "sma50": 290.21700073242187,
@@ -9191,7 +9195,9 @@
       "box_low": 65.91000366210938,
       "descending_res": 75.77501106262207,
       "wedge_contraction": 0.64097013048062,
-      "rs_rank": 63.2
+      "rs_rank": 63.2,
+      "rectangle_bounce_last_alert": "2026-10-16T06:32:48.159444",
+      "rectangle_bounce_last_price": 71.80000305175781
     },
     "LOTUSDEV": {
       "sma50": 202.7632000732422,
@@ -16796,8 +16802,8 @@
       "rs_rank": 24.0,
       "resistance_last_alert": "2026-10-16T03:54:11.179084",
       "resistance_last_price": 498.54998779296875,
-      "mtf_last_alert": "2026-10-16T04:07:43.925425",
-      "mtf_last_price": 509.75
+      "mtf_last_alert": "2026-10-16T06:34:49.100596",
+      "mtf_last_price": 504.5
     },
     "ZENTEC": {
       "sma50": 1737.632001953125,
