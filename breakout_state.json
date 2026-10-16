@@ -1131,5 +1131,29 @@
     "baseline_rsi": 54.546708548206176,
     "mcap_cr": 8261.358805,
     "exchange": "NSE"
+  },
+  "BAJAJHFL": {
+    "result_date": "2026-10-16T00:00:00",
+    "day_high": 84.25,
+    "day_low": 83.08999633789062,
+    "baseline_rsi": 50.7057961411095,
+    "mcap_cr": 69427.72699035719,
+    "exchange": "NSE"
+  },
+  "SWSOLAR": {
+    "result_date": "2026-10-16T00:00:00",
+    "day_high": 170.0,
+    "day_low": 164.0,
+    "baseline_rsi": 41.01175128104524,
+    "mcap_cr": 3864.4094253854705,
+    "exchange": "NSE"
+  },
+  "CARRARO": {
+    "result_date": "2026-10-16T00:00:00",
+    "day_high": 508.8999938964844,
+    "day_low": 501.54998779296875,
+    "baseline_rsi": 40.65070394571671,
+    "mcap_cr": 2865.3175152,
+    "exchange": "NSE"
   }
 }
