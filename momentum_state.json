@@ -3822,8 +3822,8 @@
       "descending_res": 1811.0,
       "wedge_contraction": 0.823210113970458,
       "rs_rank": 19.9,
-      "rectangle_bounce_last_alert": "2026-10-16T07:02:39.805611",
-      "rectangle_bounce_last_price": 1677.199951171875
+      "rectangle_bounce_last_alert": "2026-10-16T07:47:52.994990",
+      "rectangle_bounce_last_price": 1643.0
     },
     "DATAMATICS": {
       "sma50": 795.0690014648437,
@@ -6362,12 +6362,12 @@
       "rs_rank": 34.4,
       "mtf_last_alert": "2026-10-16T07:19:06.031678",
       "mtf_last_price": 811.2000122070312,
-      "vol_breakout_last_alert": "2026-10-16T06:49:09.055483",
-      "vol_breakout_last_price": 798.9500122070312,
-      "zanger_last_alert": "2026-10-16T06:49:09.643096",
-      "zanger_last_price": 798.9500122070312,
-      "resistance_last_alert": "2026-10-16T06:03:58.456740",
-      "resistance_last_price": 806.6500244140625,
+      "vol_breakout_last_alert": "2026-10-16T07:48:32.911287",
+      "vol_breakout_last_price": 814.7999877929688,
+      "zanger_last_alert": "2026-10-16T07:48:33.603217",
+      "zanger_last_price": 814.7999877929688,
+      "resistance_last_alert": "2026-10-16T07:48:34.332835",
+      "resistance_last_price": 814.7999877929688,
       "momentum_ignition_last_alert": "2026-10-16T07:19:05.377027",
       "momentum_ignition_last_price": 811.2000122070312
     },
@@ -6765,7 +6765,9 @@
       "box_low": 1140.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 61.7
+      "rs_rank": 61.7,
+      "rectangle_bounce_last_alert": "2026-10-16T07:48:41.938003",
+      "rectangle_bounce_last_price": 1223.699951171875
     },
     "IFCI": {
       "sma50": 78.310400390625,
@@ -8508,8 +8510,8 @@
       "descending_res": 781.9500579833984,
       "wedge_contraction": 0.7210300363374015,
       "rs_rank": 48.7,
-      "near_high_17_22_last_alert": "2026-10-16T03:51:59.928951",
-      "near_high_17_22_last_price": 677.5999755859375
+      "near_high_17_22_last_alert": "2026-10-16T07:49:09.577942",
+      "near_high_17_22_last_price": 685.25
     },
     "KIRLOSBROS": {
       "sma50": 1832.3540063476562,
@@ -8653,7 +8655,11 @@
       "box_low": 113.11000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 3.9
+      "rs_rank": 3.9,
+      "rectangle_bounce_last_alert": "2026-10-16T07:49:13.168984",
+      "rectangle_bounce_last_price": 123.5999984741211,
+      "mtf_last_alert": "2026-10-16T07:49:13.919412",
+      "mtf_last_price": 123.5999984741211
     },
     "KMEW": {
       "sma50": 2915.720009765625,
@@ -14813,7 +14819,9 @@
       "mtf_last_alert": "2026-10-16T04:22:22.792995",
       "mtf_last_price": 3792.10009765625,
       "zanger_last_alert": "2026-10-16T05:50:20.980025",
-      "zanger_last_price": 3810.0
+      "zanger_last_price": 3810.0,
+      "momentum_ignition_last_alert": "2026-10-16T07:50:47.474243",
+      "momentum_ignition_last_price": 3817.0
     },
     "TATAINVEST": {
       "sma50": 647.8069982910156,
