@@ -35,6 +35,7 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HE
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
 PARTICIPANT_STATE_FILE = Path(__file__).parent / "fno_participant_state.json"
+FNO_STATE_FILE = Path(__file__).parent / "fno_alert_state.json"
 
 # ----------------------------------------------------------------------
 # ACE INVESTOR & INSTITUTIONAL WATCHLIST
@@ -130,22 +131,9 @@ def get_session():
         log.warning("Could not prime NSE session: %s", e)
     return session
 
-# ----------------------------------------------------------------------
-# NEW: LIVE OPTION CHAIN PARSER
-# ----------------------------------------------------------------------
-# ----------------------------------------------------------------------
-# NEW: LIVE OPTION CHAIN PARSER (Firewall Bypass Version)
-# ----------------------------------------------------------------------
-# ----------------------------------------------------------------------
-# NEW: LIVE OPTION CHAIN PARSER (Triple-Cookie Bypass)
-# ----------------------------------------------------------------------
-# ----------------------------------------------------------------------
-# NEW: LIVE OPTION CHAIN PARSER (Ultra-Stealth Chrome Mimic)
-# ----------------------------------------------------------------------
 def get_fno_strike_levels(symbol="NIFTY"):
     api_url = f"https://www.nseindia.com/api/option-chain-indices?symbol={symbol}"
     
-    # Perfectly mimic a standard Google Chrome network request
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "application/json, text/javascript, */*; q=0.01",
@@ -161,15 +149,11 @@ def get_fno_strike_levels(symbol="NIFTY"):
     
     session = requests.Session()
     try:
-        # Step 1: Prime the session by visiting the homepage
         session.get("https://www.nseindia.com", headers=headers, timeout=10)
         time.sleep(1)
-        
-        # Step 2: Visit the option chain UI page to secure the specific Akamai cookies
         session.get("https://www.nseindia.com/option-chain", headers=headers, timeout=10)
         time.sleep(1.5)
         
-        # Step 3: Fetch the JSON data
         response = session.get(api_url, headers=headers, timeout=15)
         
         if response.status_code == 404:
@@ -215,9 +199,6 @@ def get_fno_strike_levels(symbol="NIFTY"):
     except Exception as e:
         return {"error": f"Exception: {str(e)[:40]}"}
 
-# ----------------------------------------------------------------------
-# SMART MONEY: BULK & BLOCK DEALS
-# ----------------------------------------------------------------------
 def fetch_bulk_block_deals(session) -> tuple:
     symbols = set()
     ace_deals = []
@@ -270,9 +251,6 @@ def fetch_bulk_block_deals(session) -> tuple:
     return symbols, ace_deals
 
 
-# ----------------------------------------------------------------------
-# DELIVERY % ANALYSIS
-# ----------------------------------------------------------------------
 def fetch_delivery_data(session, date: datetime.date) -> pd.DataFrame | None:
     url = f"https://archives.nseindia.com/products/content/sec_bhavdata_full_{date.strftime('%d%m%Y')}.csv"
     try:
@@ -313,9 +291,6 @@ def analyze_delivery(df: pd.DataFrame) -> dict:
     return {"early_movers": early_movers[:TOP_N]}
 
 
-# ----------------------------------------------------------------------
-# UNUSUAL VOLUME 
-# ----------------------------------------------------------------------
 VOLUME_HISTORY_FILE = Path(__file__).parent / "volume_history.json"
 VOLUME_HISTORY_DAYS = 20  
 UNUSUAL_VOLUME_RATIO = 2.5  
@@ -371,6 +346,8 @@ def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date, bulk_
                 close = float(row["CLOSE_PRICE"])
                 prev_close = float(row["PREV_CLOSE"])
                 volume = float(row["TTL_TRD_QNTY"])
+                high = float(row["HIGH_PRICE"]) if "HIGH_PRICE" in df.columns else close
+                low = float(row["LOW_PRICE"]) if "LOW_PRICE" in df.columns else close
                 if prev_close == 0: continue
                 price_change_pct = ((close - prev_close) / prev_close) * 100
 
@@ -392,20 +369,51 @@ def analyze_unusual_volume(df: pd.DataFrame, session, date: datetime.date, bulk_
                 volume_ratio = volume / avg_volume
 
                 if volume_ratio >= UNUSUAL_VOLUME_RATIO and abs(price_change_pct) <= UNUSUAL_VOLUME_PRICE_CAP:
-                    results.append((symbol, price_change_pct, volume_ratio))
+                    results.append({
+                        "symbol": symbol,
+                        "price_change_pct": price_change_pct,
+                        "volume_ratio": volume_ratio,
+                        "high": high,
+                        "low": low
+                    })
             except (ValueError, KeyError):
                 continue
     except Exception as e:
         log.error("Unusual volume analysis failed: %s", e)
 
     save_volume_history(history)
-    results.sort(key=lambda x: x[2], reverse=True)
+    results.sort(key=lambda x: x["volume_ratio"], reverse=True)
     return results[:TOP_N]
 
+def save_fno_alert_state(unusual_list, date_obj):
+    state = {}
+    if FNO_STATE_FILE.exists():
+        try:
+            state = json.loads(FNO_STATE_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+            
+    today_str = date_obj.isoformat()
+    updated = False
+    for item in unusual_list:
+        sym = item["symbol"]
+        if sym not in state or state[sym].get("trigger_date") != today_str:
+            state[sym] = {
+                "trigger_date": today_str,
+                "ref_high": item["high"],
+                "ref_low": item["low"],
+                "status": "Active"
+            }
+            updated = True
+            
+    if updated or not FNO_STATE_FILE.exists():
+        try:
+            FNO_STATE_FILE.write_text(json.dumps(state, indent=2), encoding="utf-8")
+            log.info("F&O Unusual Volume alert state saved/updated successfully.")
+        except Exception as e:
+            log.error("Failed to save F&O alert state: %s", e)
 
-# ----------------------------------------------------------------------
-# F&O BHAVCOPY -- LONG/SHORT BUILDUP + PCR
-# ----------------------------------------------------------------------
+
 def fetch_fo_bhavcopy(session, date: datetime.date) -> pd.DataFrame | None:
     date_str = date.strftime("%Y%m%d")
     url = f"https://nsearchives.nseindia.com/content/fo/BhavCopy_NSE_FO_0_0_0_{date_str}_F_0000.csv.zip"
@@ -479,9 +487,6 @@ def analyze_pcr(df: pd.DataFrame) -> tuple:
     return overall_pcr, per_stock_pcr
 
 
-# ----------------------------------------------------------------------
-# SMART VS DUMB MONEY (PRO, CLIENT, FII PARTICIPANT OI & DELTA TRACKER)
-# ----------------------------------------------------------------------
 def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
     date_str = date.strftime("%d%m%Y")
     
@@ -546,7 +551,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
     if not data:
         return ""
 
-    # Aggregate Smart Money (FII + Pro)
     smart_money = {
         k: data.get("FII", {}).get(k, 0) + data.get("Pro", {}).get(k, 0)
         for k in ["idx_fut_long", "idx_fut_short", "idx_call_long", "idx_call_short", "idx_put_long", "idx_put_short"]
@@ -563,9 +567,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
     smart_net = calc_net(smart_money)
     retail_net = calc_net(retail)
 
-    # ------------------------------------------------------------------
-    # DAY-OVER-DAY DELTA TRACKING 
-    # ------------------------------------------------------------------
     prev_state = {}
     if PARTICIPANT_STATE_FILE.exists():
         try:
@@ -580,7 +581,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
         smart_delta = {k: smart_net[k] - prev_state["smart_net"].get(k, 0) for k in smart_net}
         retail_delta = {k: retail_net[k] - prev_state["retail_net"].get(k, 0) for k in retail_net}
 
-    # Save today's net positions for tomorrow's comparison
     current_state_payload = {
         "date": date.isoformat(),
         "smart_net": smart_net,
@@ -604,7 +604,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
     elif smart_score < -20000 and retail_score > 0:
         prediction = "Bearish Tilt 🔻"
 
-    # Automated Directional Shift Interpretation based on 1-day Delta
     delta_commentary = []
     if smart_delta:
         if smart_delta["net_fut"] < -5000:
@@ -624,9 +623,8 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
         elif smart_delta["net_put"] < -10000:
             delta_commentary.append("• <b>Smart Money BOOKED Put Profits</b>: Downside hedges trimmed.")
 
-    # --- SEBI RATIONALIZATION EXPIRY LOGIC (Nifty Weekly = Tuesday) ---
     next_day = date + datetime.timedelta(days=1)
-    while next_day.weekday() >= 5: # Skip weekends
+    while next_day.weekday() >= 5: 
         next_day += datetime.timedelta(days=1)
         
     is_tuesday = (next_day.weekday() == 1)
@@ -669,21 +667,18 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
     def format_oi_line(label, net, delta_dict, key):
         delta = delta_dict[key] if delta_dict else 0
         
-        # 1. Structural Posture
         if net <= -200000: net_desc = "Heavily Short"
         elif net <= -50000: net_desc = "Net Short"
         elif net >= 200000: net_desc = "Heavily Long"
         elif net >= 50000: net_desc = "Net Long"
         else: net_desc = "Neutral / Flat"
         
-        # 2. Flow Intensity
         abs_change = abs(delta)
         if abs_change >= 100000: intensity = "Aggressive"
         elif abs_change >= 40000: intensity = "Heavy"
         elif abs_change >= 15000: intensity = "Moderate"
         else: intensity = "Mild"
         
-        # 3. Tactical Action
         if net < 0:
             flow_desc = f"{intensity} short-covering" if delta > 0 else f"{intensity} fresh shorts"
         else:
@@ -691,8 +686,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
             
         return f" • <b>{label}:</b> {net:,} (<i>{net_desc}</i>) | {delta:+,} (<i>{flow_desc}</i>)"
 
-    # --- Live Option Chain Fetch for Strategic Levels ---
-    # --- Live Option Chain Fetch for Strategic Levels ---
     oc_levels = get_fno_strike_levels("NIFTY")
 
     lines = [
@@ -719,7 +712,6 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
     if expiry_pred:
         lines.append(f"📅 <b>TOMORROW'S EXPIRY ({idx_name}):</b>\n{expiry_pred}\n")
         
-    # --- Append the Live Option Chain & Strategic Takeaway ---
     lines.append(f"🎯 <b>Live Option Chain Strike Mapping (NIFTY):</b>")
     
     if oc_levels and not oc_levels.get("error"):
@@ -741,16 +733,11 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
             
         lines.append(f"\n📌 <b>Strategic Takeaway:</b>\n{strat}\n")
     else:
-        # If it fails, print exactly WHY it failed in Telegram so we can fix it
         err_msg = oc_levels.get("error") if oc_levels else "Unknown Error"
         lines.append(f"🔴 <i>Unavailable: {err_msg}</i>\n")
 
     return "\n".join(lines)
 
-
-# ----------------------------------------------------------------------
-# MAIN
-# ----------------------------------------------------------------------
 
 def format_stock_list(items, comment=None, third_label="OI"):
     if not items:
@@ -782,7 +769,6 @@ def main():
 
     sections = []
     
-    # --- Bulk & Block Deal Analysis ---
     bulk_block_symbols, ace_deals = fetch_bulk_block_deals(session)
     if ace_deals:
         lines = [
@@ -800,7 +786,6 @@ def main():
         sections.append("\n".join(lines))
         log.info("Found %d smart money deals.", len(ace_deals))
 
-    # --- Delivery analysis (early movers only) ---
     deliv_df = fetch_delivery_data(session, date)
     if deliv_df is not None:
         tiers = analyze_delivery(deliv_df)
@@ -813,17 +798,17 @@ def main():
         )
 
         unusual = analyze_unusual_volume(deliv_df, session, date, bulk_block_symbols)
+        save_fno_alert_state(unusual, date)
         sections.append(
             f"\U0001F50D <b>Unusual Volume, Minimal Price Move</b> (\u2265{UNUSUAL_VOLUME_RATIO:.1f}x avg volume, "
             f"\u2264{UNUSUAL_VOLUME_PRICE_CAP:.1f}% move, bulk/block deals + ETFs excluded)\n"
             f"<i>High volume without a price move can signal quiet accumulation or distribution "
             f"before the move shows up in price</i>\n" +
-            format_stock_list([(s, round(v, 1)) for s, p, v in unusual])
+            format_stock_list([(s["symbol"], round(s["volume_ratio"], 1)) for s in unusual])
         )
     else:
         sections.append("\U0001F4E6 <b>Delivery analysis unavailable</b> (data fetch failed -- see logs)")
 
-    # --- F&O buildup + PCR ---
     fo_df = fetch_fo_bhavcopy(session, date)
     if fo_df is not None:
         buildup = analyze_long_short_buildup(fo_df)
@@ -851,7 +836,6 @@ def main():
     else:
         sections.append("\U0001F4CA <b>F&O buildup/PCR unavailable</b>")
 
-    # --- SMART VS DUMB MONEY AI ENGINE ---
     part_oi_df = fetch_participant_oi(session, date)
     if part_oi_df is not None:
         oi_analysis_text = analyze_participant_oi(part_oi_df, date, session)
@@ -863,7 +847,6 @@ def main():
     else:
         sections.append("🧠 <b>Smart Money Engine unavailable</b> (NSE Participant OI file not yet published)")
 
-    # --- EMAIL DISPATCH ---
     try:
         full_email_message = f"\U0001F4C8 <b>F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}</b>\n\n" + "\n\n".join(sections)
         send_email(
@@ -873,7 +856,6 @@ def main():
     except Exception as e:
         log.error("CRITICAL: Email dispatch failed. Exception: %s", e)
 
-    # --- TELEGRAM DISPATCH ---
     try:
         send_telegram_message(f"\U0001F4C8 <b>F&O + Delivery Analysis \u2014 {date.strftime('%d %b %Y')}</b>")
         for section in sections:
