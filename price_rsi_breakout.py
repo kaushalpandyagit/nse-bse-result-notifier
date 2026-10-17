@@ -18,6 +18,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - Custom Synthetic Index Engine (Equal-Weighted Basket RSI via custom_indices.json).
 - NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
 - Fast local earnings_calendar.json ingestion for EE / E tagging on alerts.
+- F&O 3-Day High/Low Monitoring & ETF iNAV Discount (>= 5%) Scanner.
 """
 
 import os
@@ -123,6 +124,7 @@ RESULT_KEYWORDS = [
 ]
 
 STATE_FILE = Path(__file__).parent / "breakout_state.json"
+FNO_STATE_FILE = Path(__file__).parent / "fno_alert_state.json"
 NIFTY500_CACHE_FILE = Path(__file__).parent / "nifty500_symbols.json"
 LOG_FILE = Path(__file__).parent / "breakout_notifier.log"
 MOMENTUM_STATE_FILE = Path(__file__).parent / "momentum_state.json"
@@ -907,6 +909,118 @@ def record_alert(entry: dict, alert_key_prefix: str, current_price: float = None
         entry[f"{alert_key_prefix}_last_price"] = float(current_price)
 
 # ----------------------------------------------------------------------
+# F&O 3-DAY HIGH/LOW MONITOR & ETF iNAV DISCOUNT SCANNER
+# ----------------------------------------------------------------------
+
+def check_fno_three_day_breakouts(momentum_state: dict, fyers):
+    if not FNO_STATE_FILE.exists():
+        return
+    try:
+        state = json.loads(FNO_STATE_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return
+        
+    today = datetime.date.today()
+    updated = False
+    
+    for symbol, entry in state.items():
+        if entry.get("status") != "Active":
+            continue
+            
+        try:
+            trigger_date = datetime.datetime.strptime(entry["trigger_date"], "%Y-%m-%d").date()
+        except Exception:
+            continue
+            
+        days_elapsed = (today - trigger_date).days
+        if days_elapsed > 3:
+            entry["status"] = "Expired"
+            updated = True
+            continue
+            
+        metrics = get_live_metrics(fyers, symbol, "NSE")
+        if not metrics:
+            continue
+            
+        price = metrics["price"]
+        ref_high = entry["ref_high"]
+        ref_low = entry["ref_low"]
+        
+        rs_tag = get_rs_and_sector_tag(symbol, metrics.get("rsi"), momentum_state)
+        ern_tag = get_earnings_tag(symbol)
+        
+        if price >= ref_high and alert_allowed(entry, "fno_high_breach", price):
+            record_alert(entry, "fno_high_breach", price)
+            entry["status"] = "Breached High"
+            updated = True
+            send_telegram_message(
+                f"🚀 <b>{symbol} — F&O Unusual Volume 3-Day High Breach!</b>\n"
+                f"• <b>Current Price:</b> ₹{price:.2f}\n"
+                f"• <b>Day Candle High:</b> ₹{ref_high:.2f}\n"
+                f"• <b>Window:</b> Day {days_elapsed} of 3\n"
+                f"📌 <i>Stock has broken above its unusual volume day high within 3 days.</i>"
+                f"{rs_tag}{ern_tag}"
+            )
+        elif price <= ref_low and alert_allowed(entry, "fno_low_breach", price):
+            record_alert(entry, "fno_low_breach", price)
+            entry["status"] = "Breached Low"
+            updated = True
+            send_telegram_message(
+                f"🔻 <b>{symbol} — F&O Unusual Volume 3-Day Low Breach!</b>\n"
+                f"• <b>Current Price:</b> ₹{price:.2f}\n"
+                f"• <b>Day Candle Low:</b> ₹{ref_low:.2f}\n"
+                f"• <b>Window:</b> Day {days_elapsed} of 3\n"
+                f"📌 <i>Stock has broken below its unusual volume day low within 3 days.</i>"
+                f"{rs_tag}{ern_tag}"
+            )
+            
+    if updated:
+        try:
+            FNO_STATE_FILE.write_text(json.dumps(state, indent=2), encoding="utf-8")
+        except Exception:
+            pass
+
+
+def check_etf_inav_discount(session):
+    """
+    Scans NSE ETF market data to detect any ETF trading at a >= 5% discount to iNAV.
+    """
+    try:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            "Accept": "application/json, text/javascript, */*; q=0.01",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Referer": "https://www.nseindia.com/market-data/exchange-traded-funds-etf",
+            "X-Requested-With": "XMLHttpRequest"
+        }
+        resp = session.get("https://www.nseindia.com/api/etf", headers=headers, timeout=15)
+        if resp.status_code == 200:
+            data = resp.json()
+            items = data.get("data", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+            for item in items:
+                symbol = str(item.get("SYMBOL") or item.get("symbol") or "").strip().upper()
+                ltp_str = str(item.get("LTP") or item.get("ltp") or "").replace(",", "")
+                inav_str = str(item.get("i-NAV") or item.get("iNAV") or item.get("inav") or "").replace(",", "")
+                
+                try:
+                    ltp = float(ltp_str)
+                    inav = float(inav_str)
+                    if inav > 0 and ltp > 0:
+                        discount_pct = ((inav - ltp) / inav) * 100.0
+                        if discount_pct >= 5.0:
+                            send_telegram_message(
+                                f"🔥 <b>{symbol} — ETF iNAV Discount Alert!</b>\n"
+                                f"• <b>Discount:</b> <b>{discount_pct:.2f}%</b> below iNAV\n"
+                                f"• <b>LTP:</b> ₹{ltp:.2f}\n"
+                                f"• <b>iNAV:</b> ₹{inav:.2f}\n\n"
+                                f"📌 <i>Action: ETF is trading at a significant discount to its underlying portfolio value.</i>"
+                            )
+                except (ValueError, TypeError):
+                    continue
+    except Exception as e:
+        log.warning("ETF iNAV check failed: %s", e)
+
+# ----------------------------------------------------------------------
 # NSE-BSE DUAL LISTING ARBITRAGE SCANNER
 # ----------------------------------------------------------------------
 
@@ -1540,6 +1654,16 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
                     v_str = f"{current_val:+.2f}%" if "pct" in metric_type else f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:+.2f}" if "change" in metric_type else f"₹{current_val:.2f}"
                     send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{current_price:.2f}{custom_open_low_tag}{rs_tag}{ern_tag}")
                     break
+
+    session = requests.Session()
+    try:
+        session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
+        time.sleep(1)
+        check_etf_inav_discount(session)
+    except Exception:
+        pass
+
+    check_fno_three_day_breakouts(momentum_state, fyers)
 
     return state
 
