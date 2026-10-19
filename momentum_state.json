@@ -990,8 +990,8 @@
       "descending_res": 1254.266845703125,
       "wedge_contraction": 0.8687430718084407,
       "rs_rank": 31.4,
-      "near_high_17_22_last_alert": "2026-10-19T07:47:44.342079",
-      "near_high_17_22_last_price": 1120.9000244140625
+      "near_high_17_22_last_alert": "2026-10-19T09:31:05.479293",
+      "near_high_17_22_last_price": 1108.0999755859375
     },
     "APOLLO": {
       "sma50": 396.6550018310547,
@@ -7493,7 +7493,9 @@
       "box_low": 133.6999969482422,
       "descending_res": 147.6283747355143,
       "wedge_contraction": 0.816292267081684,
-      "rs_rank": 54.5
+      "rs_rank": 54.5,
+      "rectangle_bounce_last_alert": "2026-10-19T09:33:10.281623",
+      "rectangle_bounce_last_price": 138.64999389648438
     },
     "JAIBALAJI": {
       "sma50": 67.02820030212402,
@@ -13368,8 +13370,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 81.0,
-      "near_high_17_22_last_alert": "2026-10-19T08:21:10.570292",
-      "near_high_17_22_last_price": 189.05999755859375
+      "near_high_17_22_last_alert": "2026-10-19T09:35:04.957544",
+      "near_high_17_22_last_price": 187.11000061035156
     },
     "SHILCTECH": {
       "sma50": 4036.3420068359374,
@@ -14350,8 +14352,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 87.7,
-      "near_high_17_22_last_alert": "2026-10-19T07:52:11.609093",
-      "near_high_17_22_last_price": 885.6500244140625
+      "near_high_17_22_last_alert": "2026-10-19T09:35:22.218233",
+      "near_high_17_22_last_price": 876.25
     },
     "SURYAROSNI": {
       "sma50": 218.3730014038086,
@@ -14721,7 +14723,9 @@
       "box_low": 586.4500122070312,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 33.1
+      "rs_rank": 33.1,
+      "sos_pullback_curl_last_alert": "2026-10-19T09:35:29.128940",
+      "sos_pullback_curl_last_price": 635.0
     },
     "TATAELXSI": {
       "sma50": 3474.9099951171875,

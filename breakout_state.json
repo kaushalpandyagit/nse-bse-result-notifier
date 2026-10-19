@@ -224,8 +224,8 @@
     "spread_last_price": 2.820854182104335
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-10-19T04:22:58.094497",
-    "spread_last_price": 4.491292392300641
+    "spread_last_alert": "2026-10-19T09:36:22.903479",
+    "spread_last_price": 2.6934852780902756
   },
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
@@ -910,7 +910,8 @@
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-19T08:46:30.167219",
     "price_high_last_alert": "2026-10-16T03:46:25.739737",
-    "price_high_last_price": 201.13999938964844
+    "price_high_last_price": 201.13999938964844,
+    "rsi_down_last_alert": "2026-10-19T09:30:05.285481"
   },
   "arb_ACI": {
     "spread_last_alert": "2026-10-19T03:56:03.477588",
@@ -938,8 +939,8 @@
     "mcap_cr": 172195.28020041747,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-15T10:30:00.230494",
-    "price_high_last_alert": "2026-10-16T04:46:47.095036",
-    "price_high_last_price": 183.94000244140625,
+    "price_high_last_alert": "2026-10-19T09:30:07.335295",
+    "price_high_last_price": 181.8300018310547,
     "rsi_up_last_alert": "2026-10-19T08:46:32.124081"
   },
   "HDFCLIFE": {
@@ -976,7 +977,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-19T07:46:38.213177",
     "price_low_last_price": 764.0,
-    "rsi_down_last_alert": "2026-10-19T07:46:38.851906"
+    "rsi_down_last_alert": "2026-10-19T09:30:09.239367"
   },
   "ORIENTHOT": {
     "result_date": "2026-10-15T00:00:00",
@@ -1020,7 +1021,9 @@
     "rsi_down_last_alert": "2026-10-19T08:46:36.449093",
     "rsi_up_last_alert": "2026-10-19T04:46:35.632235",
     "price_high_last_alert": "2026-10-19T03:46:41.044204",
-    "price_high_last_price": 10.279999732971191
+    "price_high_last_price": 10.279999732971191,
+    "price_low_last_alert": "2026-10-19T09:30:11.514659",
+    "price_low_last_price": 9.579999923706055
   },
   "ONWARDTEC": {
     "result_date": "2026-10-16T00:00:00",
@@ -1158,7 +1161,7 @@
     "baseline_rsi": 61.65444011129658,
     "mcap_cr": 9651.722693522574,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-19T06:01:29.093544"
+    "rsi_down_last_alert": "2026-10-19T09:30:16.155630"
   },
   "RPEL": {
     "result_date": "2026-10-16T00:00:00",
@@ -1325,7 +1328,7 @@
     "baseline_rsi": 52.28314618687073,
     "mcap_cr": 19218.595015,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-19T08:30:22.222231"
+    "rsi_down_last_alert": "2026-10-19T09:30:24.549686"
   },
   "ONMOBILE": {
     "result_date": "2026-10-19T00:00:00",
