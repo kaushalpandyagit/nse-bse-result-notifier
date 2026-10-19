@@ -949,7 +949,9 @@
       "box_low": 267.79998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 41.3
+      "rs_rank": 41.3,
+      "near_high_17_22_last_alert": "2026-10-19T06:47:28.508102",
+      "near_high_17_22_last_price": 299.0
     },
     "ANURAS": {
       "sma50": 1203.6200048828125,
@@ -986,8 +988,8 @@
       "descending_res": 1254.266845703125,
       "wedge_contraction": 0.8687430718084407,
       "rs_rank": 31.4,
-      "near_high_17_22_last_alert": "2026-10-19T04:47:37.642361",
-      "near_high_17_22_last_price": 1147.9000244140625
+      "near_high_17_22_last_alert": "2026-10-19T06:47:29.959491",
+      "near_high_17_22_last_price": 1132.9000244140625
     },
     "APOLLO": {
       "sma50": 396.6550018310547,
@@ -2080,8 +2082,8 @@
       "descending_res": 2012.142857142857,
       "wedge_contraction": 0.8986205109041926,
       "rs_rank": 68.0,
-      "near_high_17_22_last_alert": "2026-10-19T05:17:07.283863",
-      "near_high_17_22_last_price": 1973.0
+      "near_high_17_22_last_alert": "2026-10-19T06:47:47.027442",
+      "near_high_17_22_last_price": 1951.5
     },
     "BIRET": {
       "sma50": 337.76860107421874,
@@ -3693,7 +3695,9 @@
       "box_low": 295.0,
       "descending_res": 325.388235653148,
       "wedge_contraction": 1.3175283370826711,
-      "rs_rank": 15.2
+      "rs_rank": 15.2,
+      "rectangle_bounce_last_alert": "2026-10-19T06:48:11.942773",
+      "rectangle_bounce_last_price": 315.8999938964844
     },
     "CUB": {
       "sma50": 224.92880096435547,
@@ -7430,8 +7434,8 @@
       "descending_res": 166.08750915527344,
       "wedge_contraction": 1.191017285135815,
       "rs_rank": 31.2,
-      "vol_breakout_last_alert": "2026-10-19T05:49:35.200150",
-      "vol_breakout_last_price": 164.22000122070312,
+      "vol_breakout_last_alert": "2026-10-19T06:49:13.927956",
+      "vol_breakout_last_price": 157.6999969482422,
       "mtf_last_alert": "2026-10-19T05:49:36.337725",
       "mtf_last_price": 164.22000122070312,
       "ema50_pullback_last_alert": "2026-10-19T05:49:36.881473",
@@ -8819,7 +8823,9 @@
       "box_low": null,
       "descending_res": 1457.1052631578948,
       "wedge_contraction": 1.2727137290115358,
-      "rs_rank": 28.8
+      "rs_rank": 28.8,
+      "vol_breakout_last_alert": "2026-10-19T06:49:36.023215",
+      "vol_breakout_last_price": 1077.699951171875
     },
     "KSB": {
       "sma50": 800.2899951171875,
@@ -10282,8 +10288,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 79.4,
-      "near_high_17_22_last_alert": "2026-10-19T03:53:53.407332",
-      "near_high_17_22_last_price": 19790.0
+      "near_high_17_22_last_alert": "2026-10-19T06:49:59.409091",
+      "near_high_17_22_last_price": 19515.0
     },
     "NEWGEN": {
       "sma50": 504.0979986572266,
@@ -11268,8 +11274,8 @@
       "descending_res": 611.6538320688101,
       "wedge_contraction": 0.8544704239444464,
       "rs_rank": 34.0,
-      "near_high_17_22_last_alert": "2026-10-19T06:05:02.324285",
-      "near_high_17_22_last_price": 598.5999755859375
+      "near_high_17_22_last_alert": "2026-10-19T06:50:15.958150",
+      "near_high_17_22_last_price": 592.2000122070312
     },
     "POLYMED": {
       "sma50": 1705.2699926757812,
@@ -13960,8 +13966,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 55.0,
-      "near_high_17_22_last_alert": "2026-10-19T06:05:46.059565",
-      "near_high_17_22_last_price": 1045.4000244140625
+      "near_high_17_22_last_alert": "2026-10-19T06:50:58.512316",
+      "near_high_17_22_last_price": 1032.699951171875
     },
     "STYLAMIND": {
       "sma50": 3398.0759765625,
@@ -16728,8 +16734,8 @@
       "rs_rank": 22.1,
       "resistance_last_alert": "2026-10-19T06:33:50.604763",
       "resistance_last_price": 514.0499877929688,
-      "mtf_last_alert": "2026-10-19T04:52:55.053540",
-      "mtf_last_price": 518.5
+      "mtf_last_alert": "2026-10-19T06:51:40.154640",
+      "mtf_last_price": 512.7000122070312
     },
     "ZENTEC": {
       "sma50": 1735.6000024414063,
