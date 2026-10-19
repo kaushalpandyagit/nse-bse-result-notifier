@@ -36,8 +36,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 38.7,
-      "near_high_17_22_last_alert": "2026-10-19T03:50:59.793817",
-      "near_high_17_22_last_price": 444.0
+      "near_high_17_22_last_alert": "2026-10-19T05:47:13.477874",
+      "near_high_17_22_last_price": 439.25
     },
     "AARTIIND": {
       "sma50": 501.7250012207031,
@@ -1424,8 +1424,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 40.9,
-      "near_high_17_22_last_alert": "2026-10-19T03:51:20.872178",
-      "near_high_17_22_last_price": 6190.0
+      "near_high_17_22_last_alert": "2026-10-19T05:47:39.574998",
+      "near_high_17_22_last_price": 6122.5
     },
     "AURIONPRO": {
       "sma50": 673.25,
@@ -7430,12 +7430,14 @@
       "descending_res": 166.08750915527344,
       "wedge_contraction": 1.191017285135815,
       "rs_rank": 31.2,
-      "vol_breakout_last_alert": "2026-10-19T04:49:44.581863",
-      "vol_breakout_last_price": 158.39999389648438,
-      "mtf_last_alert": "2026-10-19T04:49:45.280853",
-      "mtf_last_price": 158.39999389648438,
-      "ema50_pullback_last_alert": "2026-10-19T04:49:46.310987",
-      "ema50_pullback_last_price": 158.39999389648438
+      "vol_breakout_last_alert": "2026-10-19T05:49:35.200150",
+      "vol_breakout_last_price": 164.22000122070312,
+      "mtf_last_alert": "2026-10-19T05:49:36.337725",
+      "mtf_last_price": 164.22000122070312,
+      "ema50_pullback_last_alert": "2026-10-19T05:49:36.881473",
+      "ema50_pullback_last_price": 164.22000122070312,
+      "zanger_last_alert": "2026-10-19T05:49:35.789994",
+      "zanger_last_price": 164.22000122070312
     },
     "J&KBANK": {
       "sma50": 146.10619995117187,
@@ -13118,8 +13120,8 @@
       "descending_res": 1367.5454545454545,
       "wedge_contraction": 0.8934088360734973,
       "rs_rank": 90.0,
-      "near_high_17_22_last_alert": "2026-10-19T04:51:42.687207",
-      "near_high_17_22_last_price": 1316.5999755859375
+      "near_high_17_22_last_alert": "2026-10-19T05:51:27.537135",
+      "near_high_17_22_last_price": 1289.0999755859375
     },
     "SFL": {
       "sma50": 648.8489990234375,
@@ -14318,8 +14320,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 87.7,
-      "near_high_17_22_last_alert": "2026-10-19T04:52:10.355332",
-      "near_high_17_22_last_price": 886.9000244140625
+      "near_high_17_22_last_alert": "2026-10-19T05:51:48.733335",
+      "near_high_17_22_last_price": 897.7000122070312
     },
     "SURYAROSNI": {
       "sma50": 218.3730014038086,
