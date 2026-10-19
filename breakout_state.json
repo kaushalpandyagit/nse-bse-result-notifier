@@ -303,8 +303,8 @@
     "mcap_cr": 2150.92359372431,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-19T08:45:49.368521",
-    "price_low_last_alert": "2026-10-16T04:45:53.665325",
-    "price_low_last_price": 864.9000244140625
+    "price_low_last_alert": "2026-10-19T09:00:59.516127",
+    "price_low_last_price": 855.0499877929688
   },
   "arb_SILINV": {
     "spread_last_alert": "2026-10-19T04:53:18.986291",
@@ -342,7 +342,7 @@
     "baseline_rsi": 49.93750546775799,
     "mcap_cr": 70.1028709,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-19T08:01:00.847336",
+    "rsi_up_last_alert": "2026-10-19T09:01:01.255175",
     "rsi_down_last_alert": "2026-10-12T07:00:55.625208",
     "price_low_last_alert": "2026-10-09T06:00:54.616930",
     "price_low_last_price": 35.959999084472656,
@@ -475,9 +475,9 @@
     "baseline_rsi": 61.09650117443259,
     "mcap_cr": 95.61373289372712,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-19T07:01:04.457887",
-    "price_low_last_price": 84.5,
-    "rsi_down_last_alert": "2026-10-19T08:01:06.321017"
+    "price_low_last_alert": "2026-10-19T09:01:06.780618",
+    "price_low_last_price": 83.51000213623047,
+    "rsi_down_last_alert": "2026-10-19T09:01:07.306874"
   },
   "ADROITIND": {
     "result_date": "2026-10-12T00:00:00",
@@ -1080,7 +1080,7 @@
     "baseline_rsi": 59.84842928849905,
     "mcap_cr": 3512.396079939551,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-19T08:16:16.577918"
+    "rsi_down_last_alert": "2026-10-19T09:01:23.266660"
   },
   "E2E": {
     "result_date": "2026-10-16T00:00:00",
@@ -1343,9 +1343,9 @@
     "baseline_rsi": 44.07875742462139,
     "mcap_cr": 3051.0046816272124,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-19T08:16:28.475641",
-    "price_low_last_price": 116.75,
-    "rsi_down_last_alert": "2026-10-19T08:16:29.186699"
+    "price_low_last_alert": "2026-10-19T09:01:32.076621",
+    "price_low_last_price": 119.33000183105469,
+    "rsi_down_last_alert": "2026-10-19T09:01:32.554252"
   },
   "ULTRACEMCO": {
     "result_date": "2026-10-19T00:00:00",
@@ -1355,6 +1355,8 @@
     "mcap_cr": 314090.4227582,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-19T08:30:24.372720",
-    "rsi_down_last_alert": "2026-10-19T08:47:00.633091"
+    "rsi_down_last_alert": "2026-10-19T08:47:00.633091",
+    "price_low_last_alert": "2026-10-19T09:01:33.368464",
+    "price_low_last_price": 10620.0
   }
 }

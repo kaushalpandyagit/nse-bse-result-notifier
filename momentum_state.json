@@ -1574,8 +1574,8 @@
       "descending_res": 606.60009765625,
       "wedge_contraction": 0.6612216323622646,
       "rs_rank": 64.9,
-      "near_high_17_22_last_alert": "2026-10-19T03:51:23.911187",
-      "near_high_17_22_last_price": 569.0999755859375
+      "near_high_17_22_last_alert": "2026-10-19T09:02:15.153520",
+      "near_high_17_22_last_price": 563.2999877929688
     },
     "AWL": {
       "sma50": 188.0061993408203,
@@ -4859,7 +4859,9 @@
       "box_low": 221.24000549316406,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 46.8
+      "rs_rank": 46.8,
+      "near_high_17_22_last_alert": "2026-10-19T09:03:04.670943",
+      "near_high_17_22_last_price": 227.3800048828125
     },
     "EQUITASBNK": {
       "sma50": 72.02819946289063,
@@ -6286,8 +6288,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 55.6,
-      "resistance_last_alert": "2026-10-19T06:31:31.881470",
-      "resistance_last_price": 818.0
+      "resistance_last_alert": "2026-10-19T09:03:29.176471",
+      "resistance_last_price": 809.0
     },
     "HCC": {
       "sma50": 21.319399948120118,
@@ -7446,8 +7448,8 @@
       "descending_res": 166.08750915527344,
       "wedge_contraction": 1.191017285135815,
       "rs_rank": 31.2,
-      "vol_breakout_last_alert": "2026-10-19T07:49:52.314030",
-      "vol_breakout_last_price": 155.80999755859375,
+      "vol_breakout_last_alert": "2026-10-19T09:03:48.499241",
+      "vol_breakout_last_price": 153.8000030517578,
       "mtf_last_alert": "2026-10-19T05:49:36.337725",
       "mtf_last_price": 164.22000122070312,
       "ema50_pullback_last_alert": "2026-10-19T05:49:36.881473",
@@ -13942,8 +13944,8 @@
       "descending_res": 826.3251037597656,
       "wedge_contraction": 0.7910401691260189,
       "rs_rank": 50.0,
-      "near_high_17_22_last_alert": "2026-10-19T07:33:57.948102",
-      "near_high_17_22_last_price": 778.75
+      "near_high_17_22_last_alert": "2026-10-19T09:05:31.245114",
+      "near_high_17_22_last_price": 768.3499755859375
     },
     "STAR": {
       "sma50": 1083.7960009765625,
@@ -14526,8 +14528,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 32.3,
-      "resistance_last_alert": "2026-10-19T03:55:02.472240",
-      "resistance_last_price": 388.54998779296875
+      "resistance_last_alert": "2026-10-19T09:05:40.237403",
+      "resistance_last_price": 397.20001220703125,
+      "mtf_last_alert": "2026-10-19T09:05:40.770280",
+      "mtf_last_price": 397.20001220703125
     },
     "SYRMA": {
       "sma50": 1585.8080053710937,
