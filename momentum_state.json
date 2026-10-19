@@ -439,7 +439,9 @@
       "box_low": 446.0,
       "descending_res": 487.5598388671875,
       "wedge_contraction": 0.9980575993825173,
-      "rs_rank": 15.4
+      "rs_rank": 15.4,
+      "ema50_pullback_last_alert": "2026-10-19T05:01:55.950324",
+      "ema50_pullback_last_price": 480.70001220703125
     },
     "ACMESOLAR": {
       "sma50": 409.97399963378905,
@@ -5358,8 +5360,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 2.6,
-      "mtf_last_alert": "2026-10-19T03:52:26.377690",
-      "mtf_last_price": 593.5499877929688
+      "mtf_last_alert": "2026-10-19T05:03:11.808429",
+      "mtf_last_price": 605.0999755859375
     },
     "GENUSPOWER": {
       "sma50": 312.43499938964845,
@@ -5762,8 +5764,8 @@
       "rs_rank": 56.7,
       "mtf_last_alert": "2026-10-19T03:52:34.488947",
       "mtf_last_price": 326.1499938964844,
-      "near_high_17_22_last_alert": "2026-10-19T03:52:35.037086",
-      "near_high_17_22_last_price": 326.1499938964844
+      "near_high_17_22_last_alert": "2026-10-19T05:03:18.711234",
+      "near_high_17_22_last_price": 322.1000061035156
     },
     "GPIL": {
       "sma50": 232.62580017089843,
