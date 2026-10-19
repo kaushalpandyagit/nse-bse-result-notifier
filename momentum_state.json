@@ -13360,8 +13360,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 81.0,
-      "near_high_17_22_last_alert": "2026-10-19T03:54:44.909277",
-      "near_high_17_22_last_price": 190.97999572753906
+      "near_high_17_22_last_alert": "2026-10-19T08:21:10.570292",
+      "near_high_17_22_last_price": 189.05999755859375
     },
     "SHILCTECH": {
       "sma50": 4036.3420068359374,
@@ -14746,8 +14746,8 @@
       "descending_res": 3714.0611165364585,
       "wedge_contraction": 1.4508567180817067,
       "rs_rank": 23.2,
-      "resistance_last_alert": "2026-10-19T03:55:05.665103",
-      "resistance_last_price": 3813.0,
+      "resistance_last_alert": "2026-10-19T08:21:34.228336",
+      "resistance_last_price": 3773.800048828125,
       "mtf_last_alert": "2026-10-19T04:05:55.036963",
       "mtf_last_price": 3816.10009765625
     },
@@ -16455,7 +16455,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 91.6
+      "rs_rank": 91.6,
+      "near_high_17_22_last_alert": "2026-10-19T08:22:06.939505",
+      "near_high_17_22_last_price": 694.7999877929688
     },
     "WELSPUNLIV": {
       "sma50": 204.85400024414062,
