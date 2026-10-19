@@ -401,7 +401,9 @@
       "box_low": 971.5999755859375,
       "descending_res": 1259.3636363636363,
       "wedge_contraction": 0.9596806881162562,
-      "rs_rank": 75.1
+      "rs_rank": 75.1,
+      "near_high_17_22_last_alert": "2026-10-19T04:02:02.704378",
+      "near_high_17_22_last_price": 1114.5
     },
     "ACI": {
       "sma50": 485.8190008544922,
@@ -1339,7 +1341,9 @@
       "box_low": 1537.0999755859375,
       "descending_res": 1690.0,
       "wedge_contraction": 0.7420335925174246,
-      "rs_rank": 91.8
+      "rs_rank": 91.8,
+      "near_high_17_22_last_alert": "2026-10-19T04:02:18.901222",
+      "near_high_17_22_last_price": 1624.5
     },
     "ATLANTAELE": {
       "sma50": 1741.1040063476562,
@@ -3459,7 +3463,9 @@
       "wedge_contraction": 0.9488562154570593,
       "rs_rank": 76.4,
       "resistance_last_alert": "2026-10-19T03:51:57.865719",
-      "resistance_last_price": 463.0
+      "resistance_last_price": 463.0,
+      "mtf_last_alert": "2026-10-19T04:02:51.526699",
+      "mtf_last_price": 464.1000061035156
     },
     "CONCORDBIO": {
       "sma50": 1449.96,
@@ -4433,7 +4439,9 @@
       "box_low": 280.29998779296875,
       "descending_res": 318.3722161187066,
       "wedge_contraction": 1.3953474811308033,
-      "rs_rank": 33.5
+      "rs_rank": 33.5,
+      "ema50_pullback_last_alert": "2026-10-19T04:03:05.610191",
+      "ema50_pullback_last_price": 302.79998779296875
     },
     "ELECON": {
       "sma50": 437.5850006103516,
@@ -7521,7 +7529,9 @@
       "box_low": 271.0,
       "descending_res": 294.32222154405383,
       "wedge_contraction": 0.6039719731953589,
-      "rs_rank": 3.9
+      "rs_rank": 3.9,
+      "resistance_last_alert": "2026-10-19T04:03:58.237846",
+      "resistance_last_price": 296.3500061035156
     },
     "JAMNAAUTO": {
       "sma50": 130.8306007385254,
@@ -8533,7 +8543,11 @@
       "box_low": 113.11000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 8.9
+      "rs_rank": 8.9,
+      "resistance_last_alert": "2026-10-19T04:04:15.295298",
+      "resistance_last_price": 127.47000122070312,
+      "mtf_last_alert": "2026-10-19T04:04:15.866375",
+      "mtf_last_price": 127.47000122070312
     },
     "KMEW": {
       "sma50": 2933.120009765625,
@@ -8965,7 +8979,9 @@
       "box_low": 100.87999725341797,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 49.4
+      "rs_rank": 49.4,
+      "resistance_last_alert": "2026-10-19T04:04:23.641497",
+      "resistance_last_price": 113.37999725341797
     },
     "LICHSGFIN": {
       "sma50": 532.9030035400391,
@@ -10755,7 +10771,9 @@
       "box_low": 1152.4000244140625,
       "descending_res": 1516.4250793457031,
       "wedge_contraction": 0.7122290110045113,
-      "rs_rank": 93.7
+      "rs_rank": 93.7,
+      "near_high_17_22_last_alert": "2026-10-19T04:04:53.424014",
+      "near_high_17_22_last_price": 1278.699951171875
     },
     "PCBL": {
       "sma50": 323.11500061035156,
@@ -10935,7 +10953,9 @@
       "box_low": 257.6499938964844,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 27.9
+      "rs_rank": 27.9,
+      "near_high_17_22_last_alert": "2026-10-19T04:04:56.922154",
+      "near_high_17_22_last_price": 287.25
     },
     "PGEL": {
       "sma50": 552.6230010986328,
@@ -13075,7 +13095,9 @@
       "box_low": 1253.5999755859375,
       "descending_res": 1367.5454545454545,
       "wedge_contraction": 0.8934088360734973,
-      "rs_rank": 90.0
+      "rs_rank": 90.0,
+      "near_high_17_22_last_alert": "2026-10-19T04:05:32.145101",
+      "near_high_17_22_last_price": 1302.300048828125
     },
     "SFL": {
       "sma50": 648.8489990234375,
@@ -14673,7 +14695,9 @@
       "wedge_contraction": 1.4508567180817067,
       "rs_rank": 23.2,
       "resistance_last_alert": "2026-10-19T03:55:05.665103",
-      "resistance_last_price": 3813.0
+      "resistance_last_price": 3813.0,
+      "mtf_last_alert": "2026-10-19T04:05:55.036963",
+      "mtf_last_price": 3816.10009765625
     },
     "TATAINVEST": {
       "sma50": 646.7479992675782,
@@ -15901,7 +15925,9 @@
       "box_low": 196.8800048828125,
       "descending_res": 215.70283944266183,
       "wedge_contraction": 1.0572041043282623,
-      "rs_rank": 42.9
+      "rs_rank": 42.9,
+      "mtf_last_alert": "2026-10-19T04:06:13.715776",
+      "mtf_last_price": 213.50999450683594
     },
     "VESUVIUS": {
       "sma50": 416.74999938964845,
