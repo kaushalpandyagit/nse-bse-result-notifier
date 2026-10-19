@@ -36,8 +36,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 38.7,
-      "near_high_17_22_last_alert": "2026-10-19T05:47:13.477874",
-      "near_high_17_22_last_price": 439.25
+      "near_high_17_22_last_alert": "2026-10-19T08:47:25.516806",
+      "near_high_17_22_last_price": 444.3500061035156
     },
     "AARTIIND": {
       "sma50": 501.7250012207031,
@@ -3149,7 +3149,9 @@
       "box_low": 217.0,
       "descending_res": 259.8318148526278,
       "wedge_contraction": 0.870108626257617,
-      "rs_rank": 81.6
+      "rs_rank": 81.6,
+      "vol_breakout_last_alert": "2026-10-19T08:48:28.290254",
+      "vol_breakout_last_price": 245.0
     },
     "CHALET": {
       "sma50": 859.5640014648437,
@@ -4820,8 +4822,8 @@
       "descending_res": 1815.0,
       "wedge_contraction": 0.9160184349262408,
       "rs_rank": 74.2,
-      "near_high_17_22_last_alert": "2026-10-19T05:17:50.428206",
-      "near_high_17_22_last_price": 1540.0
+      "near_high_17_22_last_alert": "2026-10-19T08:49:00.520361",
+      "near_high_17_22_last_price": 1517.199951171875
     },
     "EPL": {
       "sma50": 241.7392007446289,
@@ -5366,12 +5368,12 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 2.6,
-      "mtf_last_alert": "2026-10-19T08:03:16.098760",
-      "mtf_last_price": 644.0999755859375,
+      "mtf_last_alert": "2026-10-19T08:49:13.327814",
+      "mtf_last_price": 657.5999755859375,
       "zanger_last_alert": "2026-10-19T07:49:09.038490",
       "zanger_last_price": 660.4000244140625,
-      "vol_breakout_last_alert": "2026-10-19T08:03:14.787752",
-      "vol_breakout_last_price": 644.0999755859375,
+      "vol_breakout_last_alert": "2026-10-19T08:49:12.766040",
+      "vol_breakout_last_price": 657.5999755859375,
       "resistance_last_alert": "2026-10-19T08:03:15.441745",
       "resistance_last_price": 644.0999755859375
     },
@@ -8834,8 +8836,8 @@
       "descending_res": 1457.1052631578948,
       "wedge_contraction": 1.2727137290115358,
       "rs_rank": 28.8,
-      "vol_breakout_last_alert": "2026-10-19T07:50:20.412542",
-      "vol_breakout_last_price": 1104.0999755859375
+      "vol_breakout_last_alert": "2026-10-19T08:50:27.722869",
+      "vol_breakout_last_price": 1120.0
     },
     "KSB": {
       "sma50": 800.2899951171875,
@@ -9970,8 +9972,8 @@
       "descending_res": 7648.416666666667,
       "wedge_contraction": 0.7954965256398979,
       "rs_rank": 86.1,
-      "near_high_17_22_last_alert": "2026-10-19T06:04:38.937807",
-      "near_high_17_22_last_price": 6948.0
+      "near_high_17_22_last_alert": "2026-10-19T08:50:51.598867",
+      "near_high_17_22_last_price": 7050.0
     },
     "NATCOPHARM": {
       "sma50": 840.7519519042969,
