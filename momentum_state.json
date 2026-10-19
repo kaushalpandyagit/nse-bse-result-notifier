@@ -583,7 +583,9 @@
       "box_low": 258.29998779296875,
       "descending_res": 281.4062042236328,
       "wedge_contraction": 0.580956380332477,
-      "rs_rank": 85.1
+      "rs_rank": 85.1,
+      "near_high_17_22_last_alert": "2026-10-19T04:47:29.484877",
+      "near_high_17_22_last_price": 264.3500061035156
     },
     "AEQUS": {
       "sma50": 251.40680114746092,
@@ -982,8 +984,8 @@
       "descending_res": 1254.266845703125,
       "wedge_contraction": 0.8687430718084407,
       "rs_rank": 31.4,
-      "near_high_17_22_last_alert": "2026-10-19T03:51:13.202254",
-      "near_high_17_22_last_price": 1164.199951171875
+      "near_high_17_22_last_alert": "2026-10-19T04:47:37.642361",
+      "near_high_17_22_last_price": 1147.9000244140625
     },
     "APOLLO": {
       "sma50": 396.6550018310547,
@@ -1493,7 +1495,9 @@
       "box_low": null,
       "descending_res": 2379.6666666666665,
       "wedge_contraction": 0.9964334650712009,
-      "rs_rank": 97.8
+      "rs_rank": 97.8,
+      "near_high_17_22_last_alert": "2026-10-19T04:47:48.649641",
+      "near_high_17_22_last_price": 2048.10009765625
     },
     "AVANTIFEED": {
       "sma50": 790.7189990234375,
@@ -3177,7 +3181,9 @@
       "box_low": 785.0499877929688,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 57.8
+      "rs_rank": 57.8,
+      "near_high_17_22_last_alert": "2026-10-19T04:48:21.099698",
+      "near_high_17_22_last_price": 846.5
     },
     "CHAMBLFERT": {
       "sma50": 415.7149981689453,
@@ -7422,12 +7428,12 @@
       "descending_res": 166.08750915527344,
       "wedge_contraction": 1.191017285135815,
       "rs_rank": 31.2,
-      "vol_breakout_last_alert": "2026-10-19T03:53:03.815862",
-      "vol_breakout_last_price": 161.00999450683594,
-      "mtf_last_alert": "2026-10-19T03:53:04.472088",
-      "mtf_last_price": 161.00999450683594,
-      "ema50_pullback_last_alert": "2026-10-19T03:53:05.253999",
-      "ema50_pullback_last_price": 161.00999450683594
+      "vol_breakout_last_alert": "2026-10-19T04:49:44.581863",
+      "vol_breakout_last_price": 158.39999389648438,
+      "mtf_last_alert": "2026-10-19T04:49:45.280853",
+      "mtf_last_price": 158.39999389648438,
+      "ema50_pullback_last_alert": "2026-10-19T04:49:46.310987",
+      "ema50_pullback_last_price": 158.39999389648438
     },
     "J&KBANK": {
       "sma50": 146.10619995117187,
@@ -10526,10 +10532,10 @@
       "descending_res": 340.17918395996094,
       "wedge_contraction": 0.9220909709386393,
       "rs_rank": 64.1,
-      "resistance_last_alert": "2026-10-19T03:53:58.907297",
-      "resistance_last_price": 340.79998779296875,
-      "mtf_last_alert": "2026-10-19T03:53:59.445427",
-      "mtf_last_price": 340.79998779296875
+      "resistance_last_alert": "2026-10-19T04:50:48.015594",
+      "resistance_last_price": 346.45001220703125,
+      "mtf_last_alert": "2026-10-19T04:50:48.696220",
+      "mtf_last_price": 346.45001220703125
     },
     "OLAELEC": {
       "sma50": 37.71512908935547,
@@ -12486,8 +12492,8 @@
       "descending_res": 2959.7330729166665,
       "wedge_contraction": 1.2817216350502743,
       "rs_rank": 92.6,
-      "near_high_17_22_last_alert": "2026-10-19T03:54:30.441141",
-      "near_high_17_22_last_price": 2352.5
+      "near_high_17_22_last_alert": "2026-10-19T04:51:28.963352",
+      "near_high_17_22_last_price": 2378.699951171875
     },
     "RTNPOWER": {
       "sma50": 7.346399984359741,
@@ -12560,8 +12566,8 @@
       "descending_res": 1841.8181818181818,
       "wedge_contraction": 0.9306770614257114,
       "rs_rank": 92.9,
-      "near_high_17_22_last_alert": "2026-10-19T03:54:32.213132",
-      "near_high_17_22_last_price": 1504.0
+      "near_high_17_22_last_alert": "2026-10-19T04:51:31.243073",
+      "near_high_17_22_last_price": 1484.0
     },
     "SAFARI": {
       "sma50": 1455.5439916992189,
@@ -13106,8 +13112,8 @@
       "descending_res": 1367.5454545454545,
       "wedge_contraction": 0.8934088360734973,
       "rs_rank": 90.0,
-      "near_high_17_22_last_alert": "2026-10-19T04:05:32.145101",
-      "near_high_17_22_last_price": 1302.300048828125
+      "near_high_17_22_last_alert": "2026-10-19T04:51:42.687207",
+      "near_high_17_22_last_price": 1316.5999755859375
     },
     "SFL": {
       "sma50": 648.8489990234375,
@@ -14306,8 +14312,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 87.7,
-      "near_high_17_22_last_alert": "2026-10-19T03:54:59.573025",
-      "near_high_17_22_last_price": 877.4000244140625
+      "near_high_17_22_last_alert": "2026-10-19T04:52:10.355332",
+      "near_high_17_22_last_price": 886.9000244140625
     },
     "SURYAROSNI": {
       "sma50": 218.3730014038086,
@@ -16342,8 +16348,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 83.5,
-      "near_high_17_22_last_alert": "2026-10-19T03:55:32.615064",
-      "near_high_17_22_last_price": 1915.699951171875
+      "near_high_17_22_last_alert": "2026-10-19T04:52:49.257285",
+      "near_high_17_22_last_price": 1893.0999755859375
     },
     "WEBELSOLAR": {
       "sma50": 75.78259979248047,
@@ -16708,8 +16714,8 @@
       "rs_rank": 22.1,
       "resistance_last_alert": "2026-10-19T03:55:37.657610",
       "resistance_last_price": 503.5,
-      "mtf_last_alert": "2026-10-19T03:55:38.221221",
-      "mtf_last_price": 503.5
+      "mtf_last_alert": "2026-10-19T04:52:55.053540",
+      "mtf_last_price": 518.5
     },
     "ZENTEC": {
       "sma50": 1735.6000024414063,
