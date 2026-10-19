@@ -262,8 +262,8 @@
     "price_high_last_alert": "2026-10-09T04:45:49.126337",
     "price_high_last_price": 267.79998779296875,
     "rsi_down_last_alert": "2026-10-19T06:45:51.510817",
-    "price_low_last_alert": "2026-10-19T03:45:45.844863",
-    "price_low_last_price": 239.3000030517578
+    "price_low_last_alert": "2026-10-19T07:29:35.236887",
+    "price_low_last_price": 242.0
   },
   "CANFINHOME": {
     "result_date": "2026-10-07T00:00:00",
@@ -681,8 +681,8 @@
     "baseline_rsi": 31.385207771477965,
     "mcap_cr": 48361.03809225,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-19T05:01:15.101282",
-    "price_low_last_price": 513.25,
+    "price_low_last_alert": "2026-10-19T07:29:48.607568",
+    "price_low_last_price": 507.54998779296875,
     "rsi_down_last_alert": "2026-10-19T06:46:18.906217"
   },
   "TATATECH": {
@@ -1056,8 +1056,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-19T06:46:38.876502",
     "rsi_up_last_alert": "2026-10-16T08:16:14.544688",
-    "price_low_last_alert": "2026-10-19T06:16:21.924374",
-    "price_low_last_price": 8.289999961853027
+    "price_low_last_alert": "2026-10-19T07:29:58.154348",
+    "price_low_last_price": 8.170000076293945
   },
   "FEDERALBNK": {
     "result_date": "2026-10-16T00:00:00",
@@ -1077,7 +1077,7 @@
     "baseline_rsi": 59.84842928849905,
     "mcap_cr": 3512.396079939551,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-19T06:16:23.109382"
+    "rsi_down_last_alert": "2026-10-19T07:29:59.082239"
   },
   "E2E": {
     "result_date": "2026-10-16T00:00:00",
@@ -1312,5 +1312,13 @@
     "mcap_cr": 136030.84958714843,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-19T06:46:55.244436"
+  },
+  "KAJARIACER": {
+    "result_date": "2026-10-19T00:00:00",
+    "day_high": 1235.5,
+    "day_low": 1201.0,
+    "baseline_rsi": 52.28314618687073,
+    "mcap_cr": 19218.595015,
+    "exchange": "NSE"
   }
 }

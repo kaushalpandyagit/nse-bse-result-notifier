@@ -5473,7 +5473,9 @@
       "box_low": 6860.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 36.6
+      "rs_rank": 36.6,
+      "resistance_last_alert": "2026-10-19T07:31:46.542463",
+      "resistance_last_price": 7269.0
     },
     "GMDCLTD": {
       "sma50": 542.5320013427735,
@@ -13928,8 +13930,8 @@
       "descending_res": 826.3251037597656,
       "wedge_contraction": 0.7910401691260189,
       "rs_rank": 50.0,
-      "near_high_17_22_last_alert": "2026-10-19T03:54:52.562275",
-      "near_high_17_22_last_price": 786.75
+      "near_high_17_22_last_alert": "2026-10-19T07:33:57.948102",
+      "near_high_17_22_last_price": 778.75
     },
     "STAR": {
       "sma50": 1083.7960009765625,
@@ -16331,7 +16333,9 @@
       "box_low": 790.5499877929688,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 10.0
+      "rs_rank": 10.0,
+      "resistance_last_alert": "2026-10-19T07:34:32.062885",
+      "resistance_last_price": 832.0
     },
     "WABAG": {
       "sma50": 2015.0039990234375,
