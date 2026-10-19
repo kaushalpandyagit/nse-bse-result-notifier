@@ -1379,5 +1379,13 @@
     "baseline_rsi": 40.14720485652442,
     "mcap_cr": 227491.18527572023,
     "exchange": "NSE"
+  },
+  "TATVA": {
+    "result_date": "2026-10-19T00:00:00",
+    "day_high": 1992.9000244140625,
+    "day_low": 1847.5,
+    "baseline_rsi": 57.51266610761375,
+    "mcap_cr": 4452.443805809509,
+    "exchange": "NSE"
   }
 }
