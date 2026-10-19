@@ -328,8 +328,8 @@
       "descending_res": 1062.9000244140625,
       "wedge_contraction": 0.733201354732167,
       "rs_rank": 36.8,
-      "near_high_17_22_last_alert": "2026-10-19T03:51:05.125759",
-      "near_high_17_22_last_price": 972.5999755859375
+      "near_high_17_22_last_alert": "2026-10-19T06:02:01.119955",
+      "near_high_17_22_last_price": 962.2000122070312
     },
     "ACC": {
       "sma50": 1249.0700024414064,
@@ -5360,8 +5360,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 2.6,
-      "mtf_last_alert": "2026-10-19T05:03:11.808429",
-      "mtf_last_price": 605.0999755859375
+      "mtf_last_alert": "2026-10-19T06:03:19.841246",
+      "mtf_last_price": 596.5499877929688
     },
     "GENUSPOWER": {
       "sma50": 312.43499938964845,
@@ -6996,8 +6996,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 6.5,
-      "vol_breakout_last_alert": "2026-10-19T04:33:36.307740",
-      "vol_breakout_last_price": 289.70001220703125
+      "vol_breakout_last_alert": "2026-10-19T06:03:48.179222",
+      "vol_breakout_last_price": 293.1000061035156
     },
     "INDIAGLYCO": {
       "sma50": 595.7060049438477,
@@ -9512,8 +9512,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 58.0,
-      "resistance_last_alert": "2026-10-19T03:53:38.500776",
-      "resistance_last_price": 1824.0999755859375,
+      "resistance_last_alert": "2026-10-19T06:04:30.888492",
+      "resistance_last_price": 1797.800048828125,
       "mtf_last_alert": "2026-10-19T03:53:39.045432",
       "mtf_last_price": 1824.0999755859375
     },
@@ -9954,8 +9954,8 @@
       "descending_res": 7648.416666666667,
       "wedge_contraction": 0.7954965256398979,
       "rs_rank": 86.1,
-      "near_high_17_22_last_alert": "2026-10-19T03:53:47.317190",
-      "near_high_17_22_last_price": 6865.5
+      "near_high_17_22_last_alert": "2026-10-19T06:04:38.937807",
+      "near_high_17_22_last_price": 6948.0
     },
     "NATCOPHARM": {
       "sma50": 840.7519519042969,
@@ -10465,7 +10465,9 @@
       "box_low": 273.1499938964844,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 70.3
+      "rs_rank": 70.3,
+      "near_high_17_22_last_alert": "2026-10-19T06:04:48.968825",
+      "near_high_17_22_last_price": 277.0
     },
     "NSLNISP": {
       "sma50": 42.44000007629395,
@@ -11266,8 +11268,8 @@
       "descending_res": 611.6538320688101,
       "wedge_contraction": 0.8544704239444464,
       "rs_rank": 34.0,
-      "near_high_17_22_last_alert": "2026-10-19T03:54:10.343695",
-      "near_high_17_22_last_price": 605.0
+      "near_high_17_22_last_alert": "2026-10-19T06:05:02.324285",
+      "near_high_17_22_last_price": 598.5999755859375
     },
     "POLYMED": {
       "sma50": 1705.2699926757812,
@@ -13956,8 +13958,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 55.0,
-      "near_high_17_22_last_alert": "2026-10-19T05:20:24.477102",
-      "near_high_17_22_last_price": 1027.800048828125
+      "near_high_17_22_last_alert": "2026-10-19T06:05:46.059565",
+      "near_high_17_22_last_price": 1045.4000244140625
     },
     "STYLAMIND": {
       "sma50": 3398.0759765625,
