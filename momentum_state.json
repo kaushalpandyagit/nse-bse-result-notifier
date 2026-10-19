@@ -2670,8 +2670,8 @@
       "descending_res": 1202.0428815569196,
       "wedge_contraction": 0.7536731428593008,
       "rs_rank": 69.9,
-      "near_high_17_22_last_alert": "2026-10-19T03:51:45.563942",
-      "near_high_17_22_last_price": 1098.699951171875
+      "near_high_17_22_last_alert": "2026-10-19T05:31:13.117978",
+      "near_high_17_22_last_price": 1086.5999755859375
     },
     "CARTRADE": {
       "sma50": 2960.016005859375,
@@ -7617,7 +7617,9 @@
       "box_low": 82.5199966430664,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 54.8
+      "rs_rank": 54.8,
+      "near_high_17_22_last_alert": "2026-10-19T05:32:33.966784",
+      "near_high_17_22_last_price": 96.29000091552734
     },
     "JBMA": {
       "sma50": 598.6079956054688,
@@ -10790,8 +10792,8 @@
       "descending_res": 1516.4250793457031,
       "wedge_contraction": 0.7122290110045113,
       "rs_rank": 93.7,
-      "near_high_17_22_last_alert": "2026-10-19T04:04:53.424014",
-      "near_high_17_22_last_price": 1278.699951171875
+      "near_high_17_22_last_alert": "2026-10-19T05:33:27.069814",
+      "near_high_17_22_last_price": 1265.699951171875
     },
     "PCBL": {
       "sma50": 323.11500061035156,
@@ -13076,8 +13078,10 @@
       "descending_res": 349.25,
       "wedge_contraction": 1.0458600839724144,
       "rs_rank": 55.4,
-      "near_high_17_22_last_alert": "2026-10-19T03:54:40.850628",
-      "near_high_17_22_last_price": 338.79998779296875
+      "near_high_17_22_last_alert": "2026-10-19T05:34:05.498321",
+      "near_high_17_22_last_price": 348.0,
+      "mtf_last_alert": "2026-10-19T05:34:04.781898",
+      "mtf_last_price": 348.0
     },
     "SENORES": {
       "sma50": 1419.13599609375,
@@ -14570,8 +14574,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 66.7,
-      "mtf_last_alert": "2026-10-19T04:21:49.235653",
-      "mtf_last_price": 545.7000122070312
+      "mtf_last_alert": "2026-10-19T05:34:27.670448",
+      "mtf_last_price": 552.2000122070312
     },
     "TARC": {
       "sma50": 125.36899932861328,
@@ -16605,7 +16609,9 @@
       "box_low": null,
       "descending_res": 1126.5,
       "wedge_contraction": 0.753823466311356,
-      "rs_rank": 81.4
+      "rs_rank": 81.4,
+      "near_high_17_22_last_alert": "2026-10-19T05:34:59.032963",
+      "near_high_17_22_last_price": 979.7000122070312
     },
     "ZAGGLE": {
       "sma50": 181.5139993286133,

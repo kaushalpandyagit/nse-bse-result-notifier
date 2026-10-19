@@ -168,8 +168,8 @@
     "spread_last_price": 2.749986840175877
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-10-19T03:56:08.514672",
-    "spread_last_price": 2.534701267350636
+    "spread_last_alert": "2026-10-19T05:35:30.947779",
+    "spread_last_price": 7.717579250720466
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-10-16T04:08:15.778204",
@@ -595,7 +595,7 @@
     "price_high_last_alert": "2026-10-19T03:46:10.122633",
     "price_high_last_price": 325.75,
     "rsi_up_last_alert": "2026-10-19T05:01:12.405436",
-    "rsi_down_last_alert": "2026-10-19T04:01:10.534008"
+    "rsi_down_last_alert": "2026-10-19T05:29:51.986197"
   },
   "ARSSBL": {
     "result_date": "2026-10-13T00:00:00",
@@ -828,7 +828,7 @@
     "rsi_up_last_alert": "2026-10-19T04:46:23.818176",
     "price_low_last_alert": "2026-10-15T09:30:06.638495",
     "price_low_last_price": 23.6200008392334,
-    "rsi_down_last_alert": "2026-10-17T17:31:01.576256"
+    "rsi_down_last_alert": "2026-10-19T05:29:59.167125"
   },
   "DBCORP": {
     "result_date": "2026-10-15T00:00:00",
