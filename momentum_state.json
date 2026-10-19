@@ -14729,7 +14729,9 @@
       "wedge_contraction": null,
       "rs_rank": 33.1,
       "sos_pullback_curl_last_alert": "2026-10-19T09:35:29.128940",
-      "sos_pullback_curl_last_price": 635.0
+      "sos_pullback_curl_last_price": 635.0,
+      "rectangle_bounce_last_alert": "2026-10-19T10:06:02.699032",
+      "rectangle_bounce_last_price": 637.6500244140625
     },
     "TATAELXSI": {
       "sma50": 3474.9099951171875,
@@ -16587,7 +16589,9 @@
       "wedge_contraction": 0.6866638211842785,
       "rs_rank": 72.7,
       "near_high_17_22_last_alert": "2026-10-19T03:55:34.639316",
-      "near_high_17_22_last_price": 657.7000122070312
+      "near_high_17_22_last_price": 657.7000122070312,
+      "rectangle_bounce_last_alert": "2026-10-19T10:06:31.337674",
+      "rectangle_bounce_last_price": 663.7999877929688
     },
     "WHIRLPOOL": {
       "sma50": 807.29900390625,
