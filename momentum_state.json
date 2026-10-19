@@ -12692,8 +12692,8 @@
       "descending_res": 1574.280126953125,
       "wedge_contraction": 0.8560142705874214,
       "rs_rank": 89.4,
-      "near_high_17_22_last_alert": "2026-10-19T05:20:04.831808",
-      "near_high_17_22_last_price": 1387.0
+      "near_high_17_22_last_alert": "2026-10-19T07:05:00.524564",
+      "near_high_17_22_last_price": 1403.199951171875
     },
     "SAMHI": {
       "sma50": 155.66679962158204,
@@ -16219,7 +16219,9 @@
       "box_low": 682.6500244140625,
       "descending_res": 809.3665364583334,
       "wedge_contraction": 0.6928124083370204,
-      "rs_rank": 74.5
+      "rs_rank": 74.5,
+      "near_high_17_22_last_alert": "2026-10-19T07:05:51.035834",
+      "near_high_17_22_last_price": 783.6500244140625
     },
     "VOLTAMP": {
       "sma50": 10636.07,
