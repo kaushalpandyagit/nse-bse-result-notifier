@@ -6987,7 +6987,9 @@
       "box_low": 289.20001220703125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 6.5
+      "rs_rank": 6.5,
+      "vol_breakout_last_alert": "2026-10-19T04:33:36.307740",
+      "vol_breakout_last_price": 289.70001220703125
     },
     "INDIAGLYCO": {
       "sma50": 595.7060049438477,
@@ -14633,7 +14635,9 @@
       "box_low": 266.6000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 50.6
+      "rs_rank": 50.6,
+      "mtf_last_alert": "2026-10-19T04:36:40.399882",
+      "mtf_last_price": 325.54998779296875
     },
     "TATACHEM": {
       "sma50": 644.3930004882812,
