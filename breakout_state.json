@@ -1394,7 +1394,8 @@
     "day_low": 3580.0,
     "baseline_rsi": 62.89436588085537,
     "mcap_cr": 38310.93448083936,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-19T11:16:39.858091"
   },
   "SMLMAH": {
     "result_date": "2026-10-19T00:00:00",
