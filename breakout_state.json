@@ -841,8 +841,8 @@
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-15T08:16:20.548205",
     "rsi_down_last_alert": "2026-10-19T05:46:20.939498",
-    "price_low_last_alert": "2026-10-15T10:01:26.937747",
-    "price_low_last_price": 165.0500030517578
+    "price_low_last_alert": "2026-10-19T06:29:49.910585",
+    "price_low_last_price": 162.89999389648438
   },
   "TIPSMUSIC": {
     "result_date": "2026-10-15T00:00:00",
@@ -926,7 +926,7 @@
     "rsi_up_last_alert": "2026-10-19T05:46:25.698252",
     "price_low_last_alert": "2026-10-16T03:46:26.986770",
     "price_low_last_price": 78.02999877929688,
-    "rsi_down_last_alert": "2026-10-16T03:46:27.462912",
+    "rsi_down_last_alert": "2026-10-19T06:29:52.028232",
     "price_high_last_alert": "2026-10-16T05:29:53.350102",
     "price_high_last_price": 80.33000183105469
   },
@@ -1295,5 +1295,13 @@
   "arb_ANANTRAJ": {
     "spread_last_alert": "2026-10-19T04:23:10.809125",
     "spread_last_price": 3.0230943861571857
+  },
+  "HFCL": {
+    "result_date": "2026-10-19T00:00:00",
+    "day_high": 265.0,
+    "day_low": 257.0,
+    "baseline_rsi": 59.99861454076042,
+    "mcap_cr": 40245.9343369,
+    "exchange": "NSE"
   }
 }

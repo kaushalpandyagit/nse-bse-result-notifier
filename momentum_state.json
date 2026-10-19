@@ -5214,8 +5214,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 17.5,
-      "resistance_last_alert": "2026-10-19T03:52:24.261890",
-      "resistance_last_price": 17891.0
+      "resistance_last_alert": "2026-10-19T06:31:16.192648",
+      "resistance_last_price": 17648.0
     },
     "FSL": {
       "sma50": 268.47300018310546,
@@ -6270,8 +6270,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 55.6,
-      "resistance_last_alert": "2026-10-19T03:52:44.083328",
-      "resistance_last_price": 809.2999877929688
+      "resistance_last_alert": "2026-10-19T06:31:31.881470",
+      "resistance_last_price": 818.0
     },
     "HCC": {
       "sma50": 21.319399948120118,
@@ -9514,8 +9514,8 @@
       "rs_rank": 58.0,
       "resistance_last_alert": "2026-10-19T06:04:30.888492",
       "resistance_last_price": 1797.800048828125,
-      "mtf_last_alert": "2026-10-19T03:53:39.045432",
-      "mtf_last_price": 1824.0999755859375
+      "mtf_last_alert": "2026-10-19T06:32:15.169718",
+      "mtf_last_price": 1797.9000244140625
     },
     "MBAPL": {
       "sma50": 164.69780059814454,
@@ -10540,10 +10540,10 @@
       "descending_res": 340.17918395996094,
       "wedge_contraction": 0.9220909709386393,
       "rs_rank": 64.1,
-      "resistance_last_alert": "2026-10-19T04:50:48.015594",
-      "resistance_last_price": 346.45001220703125,
-      "mtf_last_alert": "2026-10-19T04:50:48.696220",
-      "mtf_last_price": 346.45001220703125
+      "resistance_last_alert": "2026-10-19T06:32:30.243554",
+      "resistance_last_price": 351.45001220703125,
+      "mtf_last_alert": "2026-10-19T06:32:30.990827",
+      "mtf_last_price": 351.45001220703125
     },
     "OLAELEC": {
       "sma50": 37.71512908935547,
@@ -11705,7 +11705,9 @@
       "box_low": 292.0,
       "descending_res": 352.45,
       "wedge_contraction": 0.8485287381374599,
-      "rs_rank": 94.8
+      "rs_rank": 94.8,
+      "near_high_17_22_last_alert": "2026-10-19T06:32:47.172339",
+      "near_high_17_22_last_price": 318.0
     },
     "RAILTEL": {
       "sma50": 267.67699645996095,
@@ -14802,8 +14804,8 @@
       "descending_res": 804.7199869791667,
       "wedge_contraction": 1.4516155466691563,
       "rs_rank": 75.8,
-      "near_high_17_22_last_alert": "2026-10-19T03:55:06.925534",
-      "near_high_17_22_last_price": 718.8499755859375
+      "near_high_17_22_last_alert": "2026-10-19T06:33:25.943387",
+      "near_high_17_22_last_price": 711.5499877929688
     },
     "TBOTEK": {
       "sma50": 1675.653994140625,
@@ -16724,8 +16726,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 22.1,
-      "resistance_last_alert": "2026-10-19T03:55:37.657610",
-      "resistance_last_price": 503.5,
+      "resistance_last_alert": "2026-10-19T06:33:50.604763",
+      "resistance_last_price": 514.0499877929688,
       "mtf_last_alert": "2026-10-19T04:52:55.053540",
       "mtf_last_price": 518.5
     },
