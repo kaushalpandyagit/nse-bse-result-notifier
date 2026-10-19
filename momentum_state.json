@@ -691,7 +691,9 @@
       "box_low": 1400.199951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 78.1
+      "rs_rank": 78.1,
+      "near_high_17_22_last_alert": "2026-10-19T04:17:01.972315",
+      "near_high_17_22_last_price": 1503.5
     },
     "AFCONS": {
       "sma50": 264.3729998779297,
@@ -2845,7 +2847,9 @@
       "box_low": 3186.699951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 26.6
+      "rs_rank": 26.6,
+      "ema50_pullback_last_alert": "2026-10-19T04:17:47.511548",
+      "ema50_pullback_last_price": 3295.0
     },
     "CEIGALL": {
       "sma50": 358.50699951171873,
@@ -8727,7 +8731,9 @@
       "box_low": 470.1000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 7.8
+      "rs_rank": 7.8,
+      "mtf_last_alert": "2026-10-19T04:19:50.142282",
+      "mtf_last_price": 545.5
     },
     "KRBL": {
       "sma50": 401.4979998779297,
@@ -9711,7 +9717,9 @@
       "box_low": 629.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 71.6
+      "rs_rank": 71.6,
+      "near_high_17_22_last_alert": "2026-10-19T04:20:11.164381",
+      "near_high_17_22_last_price": 637.3499755859375
     },
     "MMTC": {
       "sma50": 60.695399856567384,
@@ -13567,7 +13575,9 @@
       "box_low": 1918.0,
       "descending_res": 2095.4253540039062,
       "wedge_contraction": 0.7425447148604004,
-      "rs_rank": 71.4
+      "rs_rank": 71.4,
+      "near_high_17_22_last_alert": "2026-10-19T04:21:31.375401",
+      "near_high_17_22_last_price": 2021.9000244140625
     },
     "SJVN": {
       "sma50": 62.74639999389648,
@@ -14549,7 +14559,9 @@
       "box_low": 480.79998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 66.7
+      "rs_rank": 66.7,
+      "mtf_last_alert": "2026-10-19T04:21:49.235653",
+      "mtf_last_price": 545.7000122070312
     },
     "TARC": {
       "sma50": 125.36899932861328,
