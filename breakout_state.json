@@ -965,7 +965,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-16T04:46:50.094917",
     "price_low_last_price": 5647.0,
-    "rsi_down_last_alert": "2026-10-16T08:46:37.096885"
+    "rsi_down_last_alert": "2026-10-19T09:16:15.468351"
   },
   "CYIENTDLM": {
     "result_date": "2026-10-15T00:00:00",
@@ -1251,8 +1251,8 @@
     "baseline_rsi": 45.96349108625379,
     "mcap_cr": 6689.497546430206,
     "exchange": "NSE",
-    "price_high_last_alert": "2026-10-19T06:46:50.666116",
-    "price_high_last_price": 157.5,
+    "price_high_last_alert": "2026-10-19T09:16:26.280466",
+    "price_high_last_price": 154.89999389648438,
     "rsi_up_last_alert": "2026-10-19T08:46:51.957767"
   },
   "ROSSARI": {

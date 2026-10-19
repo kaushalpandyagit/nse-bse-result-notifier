@@ -951,7 +951,9 @@
       "wedge_contraction": null,
       "rs_rank": 41.3,
       "near_high_17_22_last_alert": "2026-10-19T06:47:28.508102",
-      "near_high_17_22_last_price": 299.0
+      "near_high_17_22_last_price": 299.0,
+      "ema50_pullback_last_alert": "2026-10-19T09:17:09.880331",
+      "ema50_pullback_last_price": 304.1499938964844
     },
     "ANURAS": {
       "sma50": 1203.6200048828125,
@@ -3698,8 +3700,8 @@
       "descending_res": 325.388235653148,
       "wedge_contraction": 1.3175283370826711,
       "rs_rank": 15.2,
-      "rectangle_bounce_last_alert": "2026-10-19T06:48:11.942773",
-      "rectangle_bounce_last_price": 315.8999938964844
+      "rectangle_bounce_last_alert": "2026-10-19T09:18:03.521435",
+      "rectangle_bounce_last_price": 312.3999938964844
     },
     "CUB": {
       "sma50": 224.92880096435547,
@@ -5372,8 +5374,8 @@
       "rs_rank": 2.6,
       "mtf_last_alert": "2026-10-19T08:49:13.327814",
       "mtf_last_price": 657.5999755859375,
-      "zanger_last_alert": "2026-10-19T07:49:09.038490",
-      "zanger_last_price": 660.4000244140625,
+      "zanger_last_alert": "2026-10-19T09:18:37.505290",
+      "zanger_last_price": 648.25,
       "vol_breakout_last_alert": "2026-10-19T08:49:12.766040",
       "vol_breakout_last_price": 657.5999755859375,
       "resistance_last_alert": "2026-10-19T08:03:15.441745",
@@ -10011,7 +10013,9 @@
       "box_low": 779.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 6.1
+      "rs_rank": 6.1,
+      "rectangle_bounce_last_alert": "2026-10-19T09:20:12.853146",
+      "rectangle_bounce_last_price": 802.3499755859375
     },
     "NAVA": {
       "sma50": 557.8650036621094,
@@ -10560,10 +10564,10 @@
       "descending_res": 340.17918395996094,
       "wedge_contraction": 0.9220909709386393,
       "rs_rank": 64.1,
-      "resistance_last_alert": "2026-10-19T06:32:30.243554",
-      "resistance_last_price": 351.45001220703125,
-      "mtf_last_alert": "2026-10-19T06:32:30.990827",
-      "mtf_last_price": 351.45001220703125,
+      "resistance_last_alert": "2026-10-19T09:20:25.009382",
+      "resistance_last_price": 346.8500061035156,
+      "mtf_last_alert": "2026-10-19T09:20:25.687028",
+      "mtf_last_price": 346.8500061035156,
       "zanger_last_alert": "2026-10-19T07:50:56.416786",
       "zanger_last_price": 349.79998779296875
     },
@@ -11000,8 +11004,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 27.9,
-      "near_high_17_22_last_alert": "2026-10-19T04:04:56.922154",
-      "near_high_17_22_last_price": 287.25
+      "near_high_17_22_last_alert": "2026-10-19T09:20:35.589739",
+      "near_high_17_22_last_price": 293.29998779296875
     },
     "PGEL": {
       "sma50": 552.6230010986328,
@@ -13146,8 +13150,8 @@
       "descending_res": 1367.5454545454545,
       "wedge_contraction": 0.8934088360734973,
       "rs_rank": 90.0,
-      "near_high_17_22_last_alert": "2026-10-19T07:51:49.959861",
-      "near_high_17_22_last_price": 1275.4000244140625
+      "near_high_17_22_last_alert": "2026-10-19T09:21:19.095249",
+      "near_high_17_22_last_price": 1260.9000244140625
     },
     "SFL": {
       "sma50": 648.8489990234375,
@@ -14531,7 +14535,9 @@
       "resistance_last_alert": "2026-10-19T09:05:40.237403",
       "resistance_last_price": 397.20001220703125,
       "mtf_last_alert": "2026-10-19T09:05:40.770280",
-      "mtf_last_price": 397.20001220703125
+      "mtf_last_price": 397.20001220703125,
+      "zanger_last_alert": "2026-10-19T09:21:43.426543",
+      "zanger_last_price": 400.25
     },
     "SYRMA": {
       "sma50": 1585.8080053710937,
@@ -16238,8 +16244,8 @@
       "descending_res": 809.3665364583334,
       "wedge_contraction": 0.6928124083370204,
       "rs_rank": 74.5,
-      "near_high_17_22_last_alert": "2026-10-19T08:06:05.100135",
-      "near_high_17_22_last_price": 772.0
+      "near_high_17_22_last_alert": "2026-10-19T09:22:14.971116",
+      "near_high_17_22_last_price": 783.9500122070312
     },
     "VOLTAMP": {
       "sma50": 10636.07,
