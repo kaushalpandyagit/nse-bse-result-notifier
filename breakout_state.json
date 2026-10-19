@@ -596,7 +596,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-19T03:46:10.122633",
     "price_high_last_price": 325.75,
-    "rsi_up_last_alert": "2026-10-19T08:46:09.516110",
+    "rsi_up_last_alert": "2026-10-19T10:15:56.099580",
     "rsi_down_last_alert": "2026-10-19T09:46:09.010267"
   },
   "ARSSBL": {
@@ -911,7 +911,7 @@
     "rsi_up_last_alert": "2026-10-19T08:46:30.167219",
     "price_high_last_alert": "2026-10-16T03:46:25.739737",
     "price_high_last_price": 201.13999938964844,
-    "rsi_down_last_alert": "2026-10-19T09:30:05.285481"
+    "rsi_down_last_alert": "2026-10-19T10:16:05.479766"
   },
   "arb_ACI": {
     "spread_last_alert": "2026-10-19T03:56:03.477588",
@@ -977,7 +977,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-19T09:46:31.687716",
     "price_low_last_price": 743.1500244140625,
-    "rsi_down_last_alert": "2026-10-19T09:30:09.239367"
+    "rsi_down_last_alert": "2026-10-19T10:16:07.556280"
   },
   "ORIENTHOT": {
     "result_date": "2026-10-15T00:00:00",
@@ -1163,7 +1163,7 @@
     "baseline_rsi": 61.65444011129658,
     "mcap_cr": 9651.722693522574,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-19T09:30:16.155630"
+    "rsi_down_last_alert": "2026-10-19T10:16:12.336637"
   },
   "RPEL": {
     "result_date": "2026-10-16T00:00:00",
@@ -1330,7 +1330,7 @@
     "baseline_rsi": 52.28314618687073,
     "mcap_cr": 19218.595015,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-19T09:30:24.549686"
+    "rsi_down_last_alert": "2026-10-19T10:16:19.113036"
   },
   "ONMOBILE": {
     "result_date": "2026-10-19T00:00:00",
@@ -1363,5 +1363,21 @@
     "rsi_down_last_alert": "2026-10-19T09:46:59.996316",
     "price_low_last_alert": "2026-10-19T09:01:33.368464",
     "price_low_last_price": 10620.0
+  },
+  "YESBANK": {
+    "result_date": "2026-10-19T00:00:00",
+    "day_high": 17.729999542236328,
+    "day_low": 16.809999465942383,
+    "baseline_rsi": 20.516450933166183,
+    "mcap_cr": 52985.91892170617,
+    "exchange": "NSE"
+  },
+  "HINDZINC": {
+    "result_date": "2026-10-19T00:00:00",
+    "day_high": 547.4000244140625,
+    "day_low": 536.0999755859375,
+    "baseline_rsi": 40.14720485652442,
+    "mcap_cr": 227491.18527572023,
+    "exchange": "NSE"
   }
 }
