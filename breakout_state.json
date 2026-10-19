@@ -168,8 +168,8 @@
     "spread_last_price": 2.749986840175877
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-10-19T05:35:30.947779",
-    "spread_last_price": 7.717579250720466
+    "spread_last_alert": "2026-10-19T06:22:42.284777",
+    "spread_last_price": 6.794285714285719
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-10-16T04:08:15.778204",
@@ -383,8 +383,8 @@
     "mcap_cr": 13190.88524150978,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-12T05:45:55.910737",
-    "price_low_last_alert": "2026-10-19T05:15:45.222042",
-    "price_low_last_price": 129.00999450683594,
+    "price_low_last_alert": "2026-10-19T06:15:55.885373",
+    "price_low_last_price": 126.9800033569336,
     "rsi_down_last_alert": "2026-10-19T05:45:51.699523"
   },
   "CORDELIA": {
@@ -830,7 +830,7 @@
     "rsi_up_last_alert": "2026-10-19T04:46:23.818176",
     "price_low_last_alert": "2026-10-15T09:30:06.638495",
     "price_low_last_price": 23.6200008392334,
-    "rsi_down_last_alert": "2026-10-19T05:29:59.167125"
+    "rsi_down_last_alert": "2026-10-19T06:16:13.209744"
   },
   "DBCORP": {
     "result_date": "2026-10-15T00:00:00",
@@ -1000,7 +1000,8 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-19T05:16:03.956485",
     "price_high_last_price": 344.5,
-    "rsi_up_last_alert": "2026-10-19T05:46:29.600123"
+    "rsi_up_last_alert": "2026-10-19T05:46:29.600123",
+    "rsi_down_last_alert": "2026-10-19T06:16:19.125778"
   },
   "arb_BBTC": {
     "spread_last_alert": "2026-10-16T03:54:30.093977",
@@ -1054,7 +1055,9 @@
     "mcap_cr": 4255.210872129888,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-19T05:46:32.668569",
-    "rsi_up_last_alert": "2026-10-16T08:16:14.544688"
+    "rsi_up_last_alert": "2026-10-16T08:16:14.544688",
+    "price_low_last_alert": "2026-10-19T06:16:21.924374",
+    "price_low_last_price": 8.289999961853027
   },
   "FEDERALBNK": {
     "result_date": "2026-10-16T00:00:00",
@@ -1073,7 +1076,8 @@
     "day_low": 645.0,
     "baseline_rsi": 59.84842928849905,
     "mcap_cr": 3512.396079939551,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-19T06:16:23.109382"
   },
   "E2E": {
     "result_date": "2026-10-16T00:00:00",
