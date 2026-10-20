@@ -4,6 +4,7 @@ Nifty Total Market Breakout Notifier -> Telegram
 Dual-Engine Fyers & Yahoo Finance Edition:
 - Fully Automated Headless TOTP Login via GitHub Secrets.
 - Time-based routing: Fyers (9:15-3:30) -> Yahoo Finance (After Hours).
+- Holiday-aware execution pause for price-related scanners.
 - Real-Time LTP override using Fyers Quotes API for zero-delay SME alerts.
 - 45-minute hibernation + >1% price change requirement for repeats.
 - Special Price Discovery / Call Auction Circular & News Scraper from Google Sheet.
@@ -95,6 +96,18 @@ MAX_WEEKLY_RSI = 57.0
 
 MIN_RSI_RECORDING_MCAP_CR = 50.0
 MACRO_PIVOT_LOOKBACK_DAYS = 60
+
+# --- OFFICIAL NSE/BSE TRADING HOLIDAYS (2026 - MARCH 2027) ---
+MARKET_HOLIDAYS_2026_2027 = {
+    "2026-10-20",  # Dussehra
+    "2026-11-10",  # Diwali-Balipratipada
+    "2026-11-24",  # Prakash Gurpurb Sri Guru Nanak Dev
+    "2026-12-25",  # Christmas
+    "2027-01-26",  # Republic Day
+    "2027-03-10",  # Id-ul-Fitr (Ramzan Id)
+    "2027-03-22",  # Holi
+    "2027-03-26",  # Good Friday
+}
 
 # --- LOAD CUSTOM SYNTHETIC INDICES FROM BUILDER JSON ---
 CUSTOM_INDICES_FILE = Path(__file__).parent / "custom_indices.json"
@@ -215,6 +228,14 @@ def send_telegram_message(text: str) -> bool:
     except Exception as e:
         log.error("Telegram send exception: %s", e)
         return False
+
+# ----------------------------------------------------------------------
+# HOLIDAY CHECKER
+# ----------------------------------------------------------------------
+def is_market_holiday(d: datetime.date) -> bool:
+    if d.weekday() >= 5:  # Saturday or Sunday
+        return True
+    return d.isoformat() in MARKET_HOLIDAYS_2026_2027
 
 # ----------------------------------------------------------------------
 # LOCAL SECTOR CACHE & UNIFIED TAG FORMATTER
@@ -980,11 +1001,7 @@ def check_fno_three_day_breakouts(momentum_state: dict, fyers):
         except Exception:
             pass
 
-
 def check_etf_inav_discount(session):
-    """
-    Scans NSE ETF market data to detect any ETF trading at a >= 5% discount to iNAV.
-    """
     try:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -1359,361 +1376,4 @@ def fetch_recent_news_for_alerts() -> list:
     try:
         today = datetime.datetime.now().strftime("%Y%m%d")
         from_date = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y%m%d")
-        url = f"https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P&strToDate={today}&strType=C&subcategory=-1"
-        resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=15)
-        if resp.status_code == 200 and "Table" in resp.json():
-            for item in resp.json()["Table"]:
-                results.append({
-                    "symbol": str(item.get("SCRIP_CD", "")),
-                    "subject": f"{item.get('NEWSSUB', '')} {item.get('HEADLINE', '')}",
-                    "link": item.get("ATTACHMENTNAME", "")
-                })
-    except Exception:
-        pass
-        
-    return results
-
-# ----------------------------------------------------------------------
-# GOOGLE SHEETS DYNAMIC CUSTOM ALERTS
-# ----------------------------------------------------------------------
-
-def parse_target_options(target_raw: str, metric: str) -> list:
-    parts = re.split(r",|\s+(?:or|OR)\s+", str(target_raw).strip())
-    options = [p.strip() for p in parts if p.strip()][:3]
-    parsed = []
-    for opt in options:
-        if metric == "news":
-            parsed.append(opt.lower())
-        else:
-            try:
-                parsed.append(float(opt))
-            except ValueError:
-                parsed.append(opt.lower())
-    return parsed
-
-def fetch_custom_alerts_from_sheet(sheet_url: str) -> dict:
-    if not sheet_url or "docs.google.com" not in sheet_url: return {}
-    try:
-        df = pd.read_csv(sheet_url)
-        df.columns = [str(c).strip().lower() for c in df.columns]
-        if not {"exchange", "symbol", "metric", "condition", "target"}.issubset(set(df.columns)):
-            return {}
-
-        sheet_alerts = {}
-        for _, row in df.dropna(subset=["symbol", "metric", "condition", "target"]).iterrows():
-            sym = str(row["symbol"]).strip().upper()
-            exchange = str(row["exchange"]).strip().upper()
-            metric = str(row["metric"]).strip().lower()
-            condition = str(row["condition"]).strip().lower()
-            targets = parse_target_options(row["target"], metric)
-            if not targets or condition not in ("above", "below", "contains"): 
-                continue
-
-            unique_key = f"{'BSE:' if exchange == 'BSE' else ''}{sym}_{metric}"
-            
-            sheet_alerts[unique_key] = {
-                "metric": metric, "condition": condition, "targets": targets, "target_raw": str(row["target"]).strip(),
-                "original_symbol": sym
-            }
-        return sheet_alerts
-    except Exception:
-        return {}
-
-# ----------------------------------------------------------------------
-# MAIN POLLING LOOP UTILITIES
-# ----------------------------------------------------------------------
-
-def get_universe_symbols() -> list:
-    if NIFTY500_CACHE_FILE.exists():
-        try:
-            cached = json.loads(NIFTY500_CACHE_FILE.read_text())
-            fetched_at = datetime.datetime.fromisoformat(cached["fetched_at"])
-            if (datetime.datetime.now() - fetched_at).days < 7:
-                return cached["symbols"]
-        except Exception:
-            pass
-
-    try:
-        resp = requests.get(NSE_CSV_URL, headers=HEADERS, timeout=20)
-        resp.raise_for_status()
-        df = pd.read_csv(io.StringIO(resp.text))
-        symbols = sorted(df["Symbol"].astype(str).str.strip().tolist())
-        NIFTY500_CACHE_FILE.write_text(json.dumps({
-            "fetched_at": datetime.datetime.now().isoformat(), "symbols": symbols,
-        }))
-        return symbols
-    except Exception:
-        return FALLBACK_SYMBOLS
-
-def prune_expired(state: dict) -> dict:
-    cutoff = datetime.datetime.now() - datetime.timedelta(days=TRACK_WINDOW_DAYS)
-    kept = {}
-    for symbol, entry in state.items():
-        if symbol.startswith("custom_alert_") or symbol.startswith("arb_"):
-            kept[symbol] = entry
-            continue
-        try:
-            result_date = datetime.datetime.fromisoformat(entry["result_date"])
-            if result_date >= cutoff:
-                kept[symbol] = entry
-        except Exception:
-            continue
-    return kept
-
-def load_state() -> dict:
-    if STATE_FILE.exists():
-        try:
-            return json.loads(STATE_FILE.read_text())
-        except Exception:
-            pass
-    return {}
-
-def load_momentum_state() -> dict:
-    if MOMENTUM_STATE_FILE.exists():
-        try:
-            return json.loads(MOMENTUM_STATE_FILE.read_text())
-        except Exception:
-            pass
-    return {"last_scan_date": None, "watchlist": {}}
-
-def is_result_announcement(subject: str) -> bool:
-    subj_lower = subject.lower()
-    if any(kw in subj_lower for kw in RESULT_KEYWORDS): return True
-    return "board meeting" in subj_lower and ("result" in subj_lower or "financial" in subj_lower)
-
-def fetch_nse_result_symbols() -> set:
-    session = requests.Session()
-    try:
-        session.get("https://www.nseindia.com", headers=HEADERS, timeout=15)
-        time.sleep(1)
-        resp = session.get("https://www.nseindia.com/api/corporate-announcements?index=equities", headers=HEADERS, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception:
-        return set()
-
-    if isinstance(data, str):
-        try: data = json.loads(data)
-        except Exception: return set()
-    if not isinstance(data, list): return set()
-
-    hits = set()
-    for item in data:
-        subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}"
-        symbol = (item.get("symbol") or "").strip().upper()
-        if symbol and is_result_announcement(subject):
-            hits.add(symbol)
-    return hits
-
-def fetch_bse_result_symbols() -> set:
-    today = datetime.datetime.now().strftime("%Y%m%d")
-    from_date = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime("%Y%m%d")
-    url = f"https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P&strToDate={today}&strType=C&subcategory=-1"
-    try:
-        resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception:
-        return set()
-
-    if isinstance(data, str):
-        try: data = json.loads(data)
-        except Exception: return set()
-    if not isinstance(data, dict): return set()
-
-    hits = set()
-    for item in data.get("Table", []):
-        subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}"
-        scrip_cd = str(item.get("SCRIP_CD", ""))
-        if scrip_cd and is_result_announcement(subject):
-            hits.add(scrip_cd)
-    return hits
-
-# ----------------------------------------------------------------------
-# THE MAIN TICK LOOP
-# ----------------------------------------------------------------------
-
-def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
-    nse_hits = fetch_nse_result_symbols()
-    bse_hits = fetch_bse_result_symbols()
-    new_result_symbols = (nse_hits | bse_hits) - set(state.keys())
-
-    today = datetime.date.today()
-    for symbol in new_result_symbols:
-        exchange = "BSE" if symbol.isdigit() else "NSE"
-        mcap_cr = get_market_cap_cr(symbol, exchange)
-        if mcap_cr is None or mcap_cr < MIN_RSI_RECORDING_MCAP_CR:
-            continue
-            
-        metrics = get_baseline_metrics(fyers, symbol, today, exchange)
-        if metrics is None: continue
-            
-        state[symbol] = {
-            "result_date": datetime.datetime.combine(metrics["actual_date"], datetime.time()).isoformat(),
-            "day_high": metrics["day_high"], 
-            "day_low": metrics["day_low"], 
-            "baseline_rsi": metrics["baseline_rsi"],
-            "mcap_cr": mcap_cr,
-            "exchange": exchange
-        }
-        
-        rsi_line = f"Result-day RSI({RSI_PERIOD}): {metrics['baseline_rsi']:.1f}\n" if metrics["baseline_rsi"] else ""
-        send_telegram_message(f"📌 <b>{symbol}</b> result filed today.\nMarket Cap: ₹{mcap_cr:.0f} Cr\nResult-day High: ₹{metrics['day_high']:.2f} | Low: ₹{metrics['day_low']:.2f}\n{rsi_line}Will alert if price breaks this High/Low or RSI crosses.")
-
-    state = prune_expired(state)
-    
-    for symbol, entry in state.items():
-        if symbol.startswith("custom_alert_") or symbol.startswith("arb_") or "day_low" not in entry or "baseline_rsi" not in entry:
-            continue
-
-        exchange = entry.get("exchange", "BSE" if symbol.isdigit() else "NSE")
-        metrics = get_live_metrics(fyers, symbol, exchange)
-        if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI: continue
-
-        price, rsi = metrics["price"], metrics["rsi"]
-
-        open_low_tag = ""
-        now_ist = get_ist_now()
-        if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
-            d_open = metrics.get("open_price")
-            d_low = metrics.get("low_price")
-            if d_open and d_low and (d_low >= d_open * 0.999):
-                open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
-
-        rs_tag = get_rs_and_sector_tag(symbol, rsi, momentum_state)
-        ern_tag = get_earnings_tag(symbol)
-
-        if price > entry["day_high"] and alert_allowed(entry, "price_high", price):
-            record_alert(entry, "price_high", price)
-            send_telegram_message(f"🚀 <b>{symbol}</b> price broke ABOVE result-day High!\nCurrent: ₹{price:.2f} | Result-day High: ₹{entry['day_high']:.2f}{open_low_tag}{rs_tag}{ern_tag}")
-
-        if price < entry["day_low"] and alert_allowed(entry, "price_low", price):
-            record_alert(entry, "price_low", price)
-            send_telegram_message(f"🔻 <b>{symbol}</b> price broke BELOW result-day Low!\nCurrent: ₹{price:.2f} | Result-day Low: ₹{entry['day_low']:.2f}{open_low_tag}{rs_tag}{ern_tag}")
-
-        if rsi is not None and entry.get("baseline_rsi") is not None:
-            if rsi > entry["baseline_rsi"] and alert_allowed(entry, "rsi_up"):
-                record_alert(entry, "rsi_up")
-                send_telegram_message(f"📈 <b>{symbol}</b> RSI crossed ABOVE result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}{rs_tag}{ern_tag}")
-
-            if rsi < entry["baseline_rsi"] and alert_allowed(entry, "rsi_down"):
-                record_alert(entry, "rsi_down")
-                send_telegram_message(f"📉 <b>{symbol}</b> RSI crossed BELOW result-day RSI!\nCurrent RSI: {rsi:.1f} | Base RSI: {entry['baseline_rsi']:.1f} | Price: ₹{price:.2f}{open_low_tag}{rs_tag}{ern_tag}")
-
-    custom_alerts = {**fetch_custom_alerts_from_sheet(GOOGLE_SHEET_CSV_URL)}
-    recent_news = fetch_recent_news_for_alerts()
-
-    for unique_key, rules in custom_alerts.items():
-        state_key = f"custom_alert_{unique_key}"
-        if state_key not in state: state[state_key] = {"alerted": False, "last_alert": None}
-        c_entry = state[state_key]
-        
-        clean_symbol = rules["original_symbol"]
-        exchange = "BSE" if unique_key.startswith("BSE:") else "NSE"
-
-        if rules["metric"] == "news":
-            for news_item in recent_news:
-                if (news_item["symbol"] == clean_symbol) or (clean_symbol in ("CIRCULAR", "ALL", "*")):
-                    subj_lower = news_item["subject"].lower()
-                    matched_kw = next((t for t in rules["targets"] if t in subj_lower), None)
-                    if matched_kw and rules["condition"] == "contains":
-                        news_fp = str(news_item["subject"])[:60]
-                        if c_entry.get("last_news_fingerprint") != news_fp:
-                            c_entry["alerted"] = True
-                            c_entry["last_alert"] = datetime.datetime.now().isoformat()
-                            c_entry["last_news_fingerprint"] = news_fp
-                            header_title = "🏛️ Exchange Circular" if news_item["symbol"] == "CIRCULAR" else f"📰 {clean_symbol} Catalyst Alert"
-                            link_str = f"\n🔗 {news_item['link']}" if news_item.get("link") else ""
-                            send_telegram_message(f"<b>{header_title}</b>!\nMatched: <b>'{matched_kw}'</b>\n\n<i>{news_item['subject']}</i>{link_str}")
-            continue
-
-        c_metrics = get_live_metrics(fyers, clean_symbol, exchange)
-        if not c_metrics: continue
-
-        metric_type, cond, current_val = rules["metric"], rules["condition"], c_metrics.get(rules["metric"])
-        if current_val is None: continue
-        current_price = c_metrics.get("price")
-        
-        c_open, c_low = c_metrics.get("open_price"), c_metrics.get("low_price")
-        custom_open_low_tag = ""
-        now_ist = get_ist_now()
-        if now_ist.hour > 9 or (now_ist.hour == 9 and now_ist.minute >= 45):
-            if c_open and c_low and (c_low >= c_open * 0.999):
-                custom_open_low_tag = "\n⚡ <b>OPEN = LOW:</b> Strong intraday bullish momentum!"
-        
-        if alert_allowed(c_entry, "custom", current_price):
-            rs_tag = get_rs_and_sector_tag(clean_symbol, c_metrics.get("rsi"), momentum_state)
-            ern_tag = get_earnings_tag(clean_symbol)
-            
-            for target_rule in rules["targets"]:
-                target_val = c_metrics.get(target_rule) if isinstance(target_rule, str) else target_rule
-                if target_val is None: continue
-                if (cond == "below" and current_val < target_val) or (cond == "above" and current_val > target_val):
-                    record_alert(c_entry, "custom", current_price)
-                    t_str = f"{target_rule.upper()} (₹{target_val:.2f})" if isinstance(target_rule, str) else (f"{target_val:+.2f}%" if "pct" in metric_type else f"{target_val:.1f}" if "rsi" in metric_type else f"₹{target_val:+.2f}" if "change" in metric_type else f"₹{target_val:.2f}")
-                    v_str = f"{current_val:+.2f}%" if "pct" in metric_type else f"{current_val:.1f}" if "rsi" in metric_type else f"₹{current_val:+.2f}" if "change" in metric_type else f"₹{current_val:.2f}"
-                    send_telegram_message(f"🎯 <b>{clean_symbol}</b> Custom Alert!\n{metric_type.replace('_', ' ').title()} ({v_str}) has {'dropped BELOW' if cond == 'below' else 'crossed ABOVE'} {t_str}.\nCurrent Price: ₹{current_price:.2f}{custom_open_low_tag}{rs_tag}{ern_tag}")
-                    break
-
-    session = requests.Session()
-    try:
-        session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
-        time.sleep(1)
-        check_etf_inav_discount(session)
-    except Exception:
-        pass
-
-    check_fno_three_day_breakouts(momentum_state, fyers)
-
-    return state
-
-# ----------------------------------------------------------------------
-# MAIN ENTRY POINT
-# ----------------------------------------------------------------------
-
-def main():
-    one_shot = "--once" in sys.argv
-    log.info("Starting Nifty Breakout Notifier.%s", " (single-shot mode)" if one_shot else "")
-    state = load_state()
-    momentum_state = load_momentum_state()
-
-    fyers_token = get_fyers_access_token()
-    fyers = fyersModel.FyersModel(client_id=CLIENT_ID, token=fyers_token, log_path="/tmp") if fyers_token else None
-
-    if one_shot:
-        try:
-            state = poll_once(state, momentum_state, fyers)
-            STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: 
-            log.exception("Error during poll: %s", e)
-        try:
-            momentum_state = run_daily_momentum_scan(momentum_state)
-            momentum_state = send_morning_sector_rs_report(momentum_state)
-            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
-            check_nse_bse_arbitrage(momentum_state, state, fyers)
-            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
-            STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: 
-            log.exception("Error during momentum scan: %s", e)
-        return
-
-    while True:
-        try:
-            state = poll_once(state, momentum_state, fyers)
-            STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: 
-            log.exception("Error during poll: %s", e)
-        try:
-            momentum_state = run_daily_momentum_scan(momentum_state)
-            momentum_state = send_morning_sector_rs_report(momentum_state)
-            momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
-            check_nse_bse_arbitrage(momentum_state, state, fyers)
-            MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
-            STATE_FILE.write_text(json.dumps(state, indent=2))
-        except Exception as e: 
-            log.exception("Error during momentum scan: %s", e)
-        
-        time.sleep(POLL_INTERVAL_MINUTES * 60)
-
-if __name__ == "__main__":
-    main()
+        url = f"
