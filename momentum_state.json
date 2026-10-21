@@ -803,7 +803,9 @@
       "box_low": 653.5999755859375,
       "descending_res": 827.2000122070312,
       "wedge_contraction": 0.8231201602255387,
-      "rs_rank": 83.7
+      "rs_rank": 83.7,
+      "near_high_17_22_last_alert": "2026-10-21T06:17:00.648240",
+      "near_high_17_22_last_price": 694.0999755859375
     },
     "ALKYLAMINE": {
       "sma50": 1902.4740063476563,
@@ -1241,7 +1243,9 @@
       "box_low": 862.5,
       "descending_res": 994.6572265625,
       "wedge_contraction": 0.6317911160384131,
-      "rs_rank": 63.6
+      "rs_rank": 63.6,
+      "near_high_17_22_last_alert": "2026-10-21T06:17:09.485356",
+      "near_high_17_22_last_price": 890.7999877929688
     },
     "ASHAPURMIN": {
       "sma50": 539.1030004882813,
@@ -2043,7 +2047,9 @@
       "box_low": 222.75,
       "descending_res": 236.7050018310547,
       "wedge_contraction": 0.7391279600184824,
-      "rs_rank": 60.4
+      "rs_rank": 60.4,
+      "near_high_17_22_last_alert": "2026-10-21T06:17:24.496150",
+      "near_high_17_22_last_price": 221.39999389648438
     },
     "BEML": {
       "sma50": 1984.5059985351563,
@@ -3034,8 +3040,8 @@
       "descending_res": 4979.25,
       "wedge_contraction": 0.7179419917852897,
       "rs_rank": 88.0,
-      "near_high_17_22_last_alert": "2026-10-21T04:48:10.999737",
-      "near_high_17_22_last_price": 3913.300048828125
+      "near_high_17_22_last_alert": "2026-10-21T06:17:41.191686",
+      "near_high_17_22_last_price": 3962.39990234375
     },
     "CERA": {
       "sma50": 5500.27,
@@ -7728,8 +7734,8 @@
       "descending_res": 103.82944615681966,
       "wedge_contraction": 1.4112883386300765,
       "rs_rank": 52.2,
-      "near_high_17_22_last_alert": "2026-10-21T04:49:38.404130",
-      "near_high_17_22_last_price": 93.76000213623047
+      "near_high_17_22_last_alert": "2026-10-21T06:19:05.341398",
+      "near_high_17_22_last_price": 92.68000030517578
     },
     "JBMA": {
       "sma50": 596.0839953613281,
@@ -10678,8 +10684,8 @@
       "descending_res": 1878.590897993608,
       "wedge_contraction": 0.6764980449706492,
       "rs_rank": 74.1,
-      "near_high_17_22_last_alert": "2026-10-21T05:06:28.681922",
-      "near_high_17_22_last_price": 1706.5999755859375
+      "near_high_17_22_last_alert": "2026-10-21T06:19:58.085971",
+      "near_high_17_22_last_price": 1675.0999755859375
     },
     "NUVOCO": {
       "sma50": 329.18800048828126,
@@ -16816,8 +16822,8 @@
       "descending_res": 1123.625,
       "wedge_contraction": 0.6694810732333021,
       "rs_rank": 82.7,
-      "near_high_17_22_last_alert": "2026-10-21T05:22:54.454963",
-      "near_high_17_22_last_price": 950.4000244140625
+      "near_high_17_22_last_alert": "2026-10-21T06:21:40.346701",
+      "near_high_17_22_last_price": 940.5999755859375
     },
     "ZAGGLE": {
       "sma50": 180.54299926757812,

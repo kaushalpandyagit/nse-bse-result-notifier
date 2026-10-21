@@ -172,16 +172,16 @@
     "spread_last_price": 6.040000000000003
   },
   "arb_PRADPME": {
-    "spread_last_alert": "2026-10-21T05:08:50.393614",
-    "spread_last_price": 3.231669955943101
+    "spread_last_alert": "2026-10-21T06:21:49.011565",
+    "spread_last_price": 4.1152968518286706
   },
   "arb_BENGALASM": {
     "spread_last_alert": "2026-10-15T09:06:48.828544",
     "spread_last_price": 2.6521328641318345
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-10-21T05:08:48.191071",
-    "spread_last_price": 5.414472073308283
+    "spread_last_alert": "2026-10-21T06:22:06.285408",
+    "spread_last_price": 3.4978453083390417
   },
   "arb_BALRAMCHIN": {
     "spread_last_alert": "2026-10-06T03:51:55.290909",
@@ -406,8 +406,8 @@
     "mcap_cr": 4576.430664715265,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-21T05:45:56.173626",
-    "price_low_last_alert": "2026-10-21T04:29:40.981520",
-    "price_low_last_price": 218.0800018310547,
+    "price_low_last_alert": "2026-10-21T06:15:52.814448",
+    "price_low_last_price": 215.0399932861328,
     "rsi_up_last_alert": "2026-10-17T17:30:31.576585"
   },
   "arb_GPIL": {
@@ -433,7 +433,7 @@
     "baseline_rsi": 36.86499581916251,
     "mcap_cr": 629.8200073242188,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-13T06:45:53.693811",
+    "rsi_down_last_alert": "2026-10-21T06:15:53.862819",
     "price_low_last_alert": "2026-10-13T04:01:07.960034",
     "price_low_last_price": 102.25,
     "price_high_last_alert": "2026-10-16T05:45:56.595974",
@@ -477,8 +477,8 @@
     "baseline_rsi": 61.09650117443259,
     "mcap_cr": 95.61373289372712,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-19T10:01:12.197633",
-    "price_low_last_price": 82.63999938964844,
+    "price_low_last_alert": "2026-10-21T06:15:56.323775",
+    "price_low_last_price": 79.5,
     "rsi_down_last_alert": "2026-10-21T05:46:00.133077"
   },
   "ADROITIND": {
@@ -536,8 +536,8 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-19T09:47:14.953173",
-    "custom_last_price": 170.9499969482422
+    "custom_last_alert": "2026-10-21T06:16:44.390317",
+    "custom_last_price": 166.0
   },
   "arb_AETHER": {
     "spread_last_alert": "2026-10-14T03:56:29.004278",
@@ -588,8 +588,8 @@
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-16T08:16:00.739040",
     "rsi_down_last_alert": "2026-10-21T05:46:05.553947",
-    "price_low_last_alert": "2026-10-19T04:01:09.753977",
-    "price_low_last_price": 438.29998779296875
+    "price_low_last_alert": "2026-10-21T06:15:59.980347",
+    "price_low_last_price": 433.5
   },
   "TARIL": {
     "result_date": "2026-10-13T00:00:00",
@@ -598,8 +598,8 @@
     "baseline_rsi": 61.680037004706556,
     "mcap_cr": 9125.0413536,
     "exchange": "NSE",
-    "price_high_last_alert": "2026-10-19T03:46:10.122633",
-    "price_high_last_price": 325.75,
+    "price_high_last_alert": "2026-10-21T06:16:00.977582",
+    "price_high_last_price": 322.0,
     "rsi_up_last_alert": "2026-10-21T05:46:06.446712",
     "rsi_down_last_alert": "2026-10-21T06:01:21.309266"
   },
@@ -1220,8 +1220,8 @@
     "baseline_rsi": 40.65070394571671,
     "mcap_cr": 2865.3175152,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-19T09:46:45.769165",
-    "price_low_last_price": 474.6499938964844,
+    "price_low_last_alert": "2026-10-21T06:16:18.691833",
+    "price_low_last_price": 469.54998779296875,
     "rsi_down_last_alert": "2026-10-21T05:46:44.321802"
   },
   "URBANCO": {
@@ -1351,7 +1351,9 @@
     "baseline_rsi": 52.28314618687073,
     "mcap_cr": 19218.595015,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-21T05:46:52.086828"
+    "rsi_down_last_alert": "2026-10-21T05:46:52.086828",
+    "price_low_last_alert": "2026-10-21T06:16:24.320498",
+    "price_low_last_price": 1198.300048828125
   },
   "ONMOBILE": {
     "result_date": "2026-10-19T00:00:00",
