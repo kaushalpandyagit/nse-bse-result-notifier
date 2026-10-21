@@ -948,8 +948,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 42.6,
-      "near_high_17_22_last_alert": "2026-10-21T04:47:33.723580",
-      "near_high_17_22_last_price": 298.20001220703125
+      "near_high_17_22_last_alert": "2026-10-21T05:47:34.077939",
+      "near_high_17_22_last_price": 294.3999938964844
     },
     "ANURAS": {
       "sma50": 1200.316005859375,
@@ -3468,8 +3468,8 @@
       "descending_res": 469.97727272727275,
       "wedge_contraction": 0.9283497742435978,
       "rs_rank": 79.9,
-      "mtf_last_alert": "2026-10-21T04:17:33.005249",
-      "mtf_last_price": 462.04998779296875,
+      "mtf_last_alert": "2026-10-21T05:48:14.811087",
+      "mtf_last_price": 466.95001220703125,
       "resistance_last_alert": "2026-10-21T04:31:31.951429",
       "resistance_last_price": 464.25
     },
@@ -4890,8 +4890,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 52.9,
-      "near_high_17_22_last_alert": "2026-10-21T04:17:56.205080",
-      "near_high_17_22_last_price": 227.0399932861328
+      "near_high_17_22_last_alert": "2026-10-21T05:48:38.247384",
+      "near_high_17_22_last_price": 224.64999389648438
     },
     "EQUITASBNK": {
       "sma50": 71.91339950561523,
@@ -5653,7 +5653,9 @@
       "box_low": 506.0,
       "descending_res": 631.4285714285714,
       "wedge_contraction": 0.6232990391074947,
-      "rs_rank": 69.4
+      "rs_rank": 69.4,
+      "near_high_17_22_last_alert": "2026-10-21T05:48:51.344477",
+      "near_high_17_22_last_price": 526.7999877929688
     },
     "GODFRYPHLP": {
       "sma50": 1993.7180053710938,
@@ -9647,7 +9649,9 @@
       "wedge_contraction": 1.00560808603977,
       "rs_rank": 57.8,
       "mtf_last_alert": "2026-10-21T03:53:16.037325",
-      "mtf_last_price": 1855.0
+      "mtf_last_price": 1855.0,
+      "resistance_last_alert": "2026-10-21T05:50:01.278839",
+      "resistance_last_price": 1837.0
     },
     "MBAPL": {
       "sma50": 164.70820098876953,
@@ -9828,8 +9832,8 @@
       "descending_res": 456.6555684407552,
       "wedge_contraction": 0.8240456453631041,
       "rs_rank": 62.1,
-      "near_high_17_22_last_alert": "2026-10-21T04:19:19.508025",
-      "near_high_17_22_last_price": 398.29998779296875
+      "near_high_17_22_last_alert": "2026-10-21T05:50:04.753349",
+      "near_high_17_22_last_price": 393.79998779296875
     },
     "MINDACORP": {
       "sma50": 689.1299963378906,
@@ -11436,8 +11440,8 @@
       "descending_res": 610.8307542067307,
       "wedge_contraction": 0.8822235550619065,
       "rs_rank": 34.0,
-      "near_high_17_22_last_alert": "2026-10-21T03:53:49.118201",
-      "near_high_17_22_last_price": 586.0999755859375
+      "near_high_17_22_last_alert": "2026-10-21T05:50:32.877959",
+      "near_high_17_22_last_price": 576.25
     },
     "POLYMED": {
       "sma50": 1701.7159912109375,
@@ -11618,8 +11622,8 @@
       "descending_res": 523.5695535411005,
       "wedge_contraction": 0.9569073783413972,
       "rs_rank": 66.4,
-      "near_high_17_22_last_alert": "2026-10-21T04:50:51.179195",
-      "near_high_17_22_last_price": 415.79998779296875
+      "near_high_17_22_last_alert": "2026-10-21T05:50:37.306940",
+      "near_high_17_22_last_price": 411.6000061035156
     },
     "PRICOLLTD": {
       "sma50": 745.0190002441407,
@@ -11875,7 +11879,9 @@
       "box_low": 293.0,
       "descending_res": 351.35,
       "wedge_contraction": 0.8643216057568641,
-      "rs_rank": 94.9
+      "rs_rank": 94.9,
+      "near_high_17_22_last_alert": "2026-10-21T05:50:42.422190",
+      "near_high_17_22_last_price": 318.1499938964844
     },
     "RAILTEL": {
       "sma50": 266.8149966430664,
@@ -13834,8 +13840,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 68.1,
-      "near_high_17_22_last_alert": "2026-10-21T04:51:31.646050",
-      "near_high_17_22_last_price": 509.75
+      "near_high_17_22_last_alert": "2026-10-21T05:51:15.718150",
+      "near_high_17_22_last_price": 496.0
     },
     "SKYGOLD": {
       "sma50": 835.5329992675781,
@@ -14126,8 +14132,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 56.3,
-      "near_high_17_22_last_alert": "2026-10-21T03:54:36.950028",
-      "near_high_17_22_last_price": 1029.300048828125
+      "near_high_17_22_last_alert": "2026-10-21T05:51:20.568944",
+      "near_high_17_22_last_price": 1016.7999877929688
     },
     "STYLAMIND": {
       "sma50": 3392.9559765625,
@@ -15816,8 +15822,8 @@
       "descending_res": 134.82498677571616,
       "wedge_contraction": 0.6677639459102103,
       "rs_rank": 61.7,
-      "near_high_17_22_last_alert": "2026-10-21T04:52:04.780109",
-      "near_high_17_22_last_price": 117.4800033569336
+      "near_high_17_22_last_alert": "2026-10-21T05:51:48.500933",
+      "near_high_17_22_last_price": 114.88999938964844
     },
     "UCOBANK": {
       "sma50": 24.40819999694824,
@@ -16396,8 +16402,8 @@
       "descending_res": 807.7998657226562,
       "wedge_contraction": 0.8074035285724211,
       "rs_rank": 75.4,
-      "near_high_17_22_last_alert": "2026-10-21T03:55:14.859548",
-      "near_high_17_22_last_price": 778.0499877929688
+      "near_high_17_22_last_alert": "2026-10-21T05:51:58.408472",
+      "near_high_17_22_last_price": 769.5999755859375
     },
     "VOLTAMP": {
       "sma50": 10641.87,
@@ -16434,8 +16440,8 @@
       "descending_res": 11053.333333333334,
       "wedge_contraction": 1.2208117289468978,
       "rs_rank": 51.6,
-      "near_high_17_22_last_alert": "2026-10-21T03:55:16.149343",
-      "near_high_17_22_last_price": 10364.0
+      "near_high_17_22_last_alert": "2026-10-21T05:51:59.725388",
+      "near_high_17_22_last_price": 10253.0
     },
     "VTL": {
       "sma50": 567.5640014648437,
