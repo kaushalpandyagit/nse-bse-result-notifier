@@ -1677,7 +1677,9 @@
       "box_low": 2250.0,
       "descending_res": 2923.14990234375,
       "wedge_contraction": 0.8737824973031024,
-      "rs_rank": 89.9
+      "rs_rank": 89.9,
+      "near_high_17_22_last_alert": "2026-10-21T04:31:01.455230",
+      "near_high_17_22_last_price": 2581.0
     },
     "BAJAJCON": {
       "sma50": 495.60900024414065,
@@ -2403,7 +2405,9 @@
       "wedge_contraction": null,
       "rs_rank": 20.3,
       "mtf_last_alert": "2026-10-21T03:51:12.579748",
-      "mtf_last_price": 323.70001220703125
+      "mtf_last_price": 323.70001220703125,
+      "resistance_last_alert": "2026-10-21T04:31:15.383441",
+      "resistance_last_price": 319.1499938964844
     },
     "CAMPUS": {
       "sma50": 213.48659942626952,
@@ -3459,7 +3463,9 @@
       "wedge_contraction": 0.9283497742435978,
       "rs_rank": 79.9,
       "mtf_last_alert": "2026-10-21T04:17:33.005249",
-      "mtf_last_price": 462.04998779296875
+      "mtf_last_price": 462.04998779296875,
+      "resistance_last_alert": "2026-10-21T04:31:31.951429",
+      "resistance_last_price": 464.25
     },
     "CONCORDBIO": {
       "sma50": 1447.0340014648436,
@@ -4911,7 +4917,9 @@
       "box_low": 64.62999725341797,
       "descending_res": 72.38000615437825,
       "wedge_contraction": 0.9356616043669131,
-      "rs_rank": 63.4
+      "rs_rank": 63.4,
+      "near_high_17_22_last_alert": "2026-10-21T04:31:55.513069",
+      "near_high_17_22_last_price": 69.31999969482422
     },
     "ERIS": {
       "sma50": 1272.8980004882812,
@@ -15085,7 +15093,9 @@
       "box_low": null,
       "descending_res": 2098.2251586914062,
       "wedge_contraction": 0.6890650943031649,
-      "rs_rank": 65.7
+      "rs_rank": 65.7,
+      "near_high_17_22_last_alert": "2026-10-21T04:34:41.763936",
+      "near_high_17_22_last_price": 1818.800048828125
     },
     "TEJASNET": {
       "sma50": 512.3999993896484,
