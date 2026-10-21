@@ -1419,7 +1419,9 @@
       "box_low": 5798.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 41.8
+      "rs_rank": 41.8,
+      "near_high_17_22_last_alert": "2026-10-21T04:02:37.129391",
+      "near_high_17_22_last_price": 6083.0
     },
     "AURIONPRO": {
       "sma50": 669.7819995117187,
@@ -2981,7 +2983,9 @@
       "box_low": null,
       "descending_res": 31.95529488956227,
       "wedge_contraction": 1.48605881992761,
-      "rs_rank": 28.3
+      "rs_rank": 28.3,
+      "ema50_pullback_last_alert": "2026-10-21T04:03:04.063695",
+      "ema50_pullback_last_price": 31.0
     },
     "CENTUM": {
       "sma50": 4037.8920068359375,
@@ -6309,7 +6313,9 @@
       "box_low": 648.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 55.7
+      "rs_rank": 55.7,
+      "resistance_last_alert": "2026-10-21T04:04:05.272262",
+      "resistance_last_price": 812.5499877929688
     },
     "HCC": {
       "sma50": 21.28359992980957,
@@ -7285,7 +7291,9 @@
       "box_low": 564.0499877929688,
       "descending_res": 643.6665445963541,
       "wedge_contraction": 0.9681766523301394,
-      "rs_rank": 44.1
+      "rs_rank": 44.1,
+      "mtf_last_alert": "2026-10-21T04:04:23.464192",
+      "mtf_last_price": 651.0
     },
     "IONEXCHANG": {
       "sma50": 397.2060009765625,
@@ -9091,7 +9099,9 @@
       "box_low": 100.87999725341797,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 39.0
+      "rs_rank": 39.0,
+      "mtf_last_alert": "2026-10-21T04:04:56.368326",
+      "mtf_last_price": 112.91999816894531
     },
     "LICHSGFIN": {
       "sma50": 532.843003540039,
@@ -10663,7 +10673,11 @@
       "box_low": 307.95001220703125,
       "descending_res": 339.6750183105469,
       "wedge_contraction": 1.0242053375753761,
-      "rs_rank": 68.5
+      "rs_rank": 68.5,
+      "resistance_last_alert": "2026-10-21T04:05:25.195922",
+      "resistance_last_price": 341.0,
+      "mtf_last_alert": "2026-10-21T04:05:25.856539",
+      "mtf_last_price": 341.0
     },
     "OLAELEC": {
       "sma50": 37.573929138183594,
@@ -15563,7 +15577,9 @@
       "resistance_last_alert": "2026-10-21T03:55:00.922732",
       "resistance_last_price": 480.70001220703125,
       "mtf_last_alert": "2026-10-21T03:55:01.403942",
-      "mtf_last_price": 480.70001220703125
+      "mtf_last_price": 480.70001220703125,
+      "zanger_last_alert": "2026-10-21T04:06:45.580768",
+      "zanger_last_price": 478.8999938964844
     },
     "TRIDENT": {
       "sma50": 23.40699993133545,
@@ -15781,7 +15797,9 @@
       "box_low": 22.809999465942383,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 35.1
+      "rs_rank": 35.1,
+      "ema50_pullback_last_alert": "2026-10-21T04:06:50.217058",
+      "ema50_pullback_last_price": 23.690000534057617
     },
     "UJJIVANSFB": {
       "sma50": 66.46340003967285,
@@ -16433,7 +16451,9 @@
       "box_low": 722.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 6.0
+      "rs_rank": 6.0,
+      "vol_breakout_last_alert": "2026-10-21T04:07:02.360784",
+      "vol_breakout_last_price": 755.2999877929688
     },
     "WABAG": {
       "sma50": 2011.61,
