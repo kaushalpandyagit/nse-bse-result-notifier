@@ -692,8 +692,8 @@
       "descending_res": 1803.8500366210938,
       "wedge_contraction": 0.9880276787831663,
       "rs_rank": 80.1,
-      "near_high_17_22_last_alert": "2026-10-21T04:16:48.290225",
-      "near_high_17_22_last_price": 1492.9000244140625
+      "near_high_17_22_last_alert": "2026-10-21T05:02:43.745493",
+      "near_high_17_22_last_price": 1470.4000244140625
     },
     "AFCONS": {
       "sma50": 263.7717999267578,
@@ -984,8 +984,8 @@
       "descending_res": 1253.7501831054688,
       "wedge_contraction": 1.1125725984767831,
       "rs_rank": 25.9,
-      "near_high_17_22_last_alert": "2026-10-21T03:50:46.678421",
-      "near_high_17_22_last_price": 1117.0999755859375
+      "near_high_17_22_last_alert": "2026-10-21T05:02:50.945503",
+      "near_high_17_22_last_price": 1104.0
     },
     "APOLLO": {
       "sma50": 396.88000122070315,
@@ -3866,8 +3866,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 70.7,
-      "near_high_17_22_last_alert": "2026-10-21T03:51:34.402850",
-      "near_high_17_22_last_price": 4035.0
+      "near_high_17_22_last_alert": "2026-10-21T05:03:52.649900",
+      "near_high_17_22_last_price": 3990.60009765625
     },
     "DBL": {
       "sma50": 406.87300048828126,
@@ -6840,8 +6840,8 @@
       "descending_res": 317.125,
       "wedge_contraction": 0.831517399708109,
       "rs_rank": 37.0,
-      "resistance_last_alert": "2026-10-21T03:52:26.523291",
-      "resistance_last_price": 329.8500061035156
+      "resistance_last_alert": "2026-10-21T05:05:00.091768",
+      "resistance_last_price": 324.70001220703125
     },
     "IGL": {
       "sma50": 148.05619995117186,
@@ -7095,7 +7095,11 @@
       "box_low": 286.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 7.9
+      "rs_rank": 7.9,
+      "vol_breakout_last_alert": "2026-10-21T05:05:05.840696",
+      "vol_breakout_last_price": 311.8999938964844,
+      "rectangle_bounce_last_alert": "2026-10-21T05:05:06.476210",
+      "rectangle_bounce_last_price": 311.8999938964844
     },
     "INDIAGLYCO": {
       "sma50": 579.0800051879883,
@@ -7239,7 +7243,9 @@
       "box_low": 1824.0,
       "descending_res": 2101.513248697917,
       "wedge_contraction": 0.7230251359678391,
-      "rs_rank": 85.4
+      "rs_rank": 85.4,
+      "near_high_17_22_last_alert": "2026-10-21T05:05:11.003880",
+      "near_high_17_22_last_price": 1938.0
     },
     "INOXWIND": {
       "sma50": 72.26879959106445,
@@ -10326,8 +10332,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 76.0,
-      "near_high_17_22_last_alert": "2026-10-21T03:53:28.462828",
-      "near_high_17_22_last_price": 4718.5
+      "near_high_17_22_last_alert": "2026-10-21T05:06:19.798714",
+      "near_high_17_22_last_price": 4772.0
     },
     "NETWORK18": {
       "sma50": 27.317199897766113,
@@ -10658,8 +10664,8 @@
       "descending_res": 1878.590897993608,
       "wedge_contraction": 0.6764980449706492,
       "rs_rank": 74.1,
-      "near_high_17_22_last_alert": "2026-10-21T03:53:36.947664",
-      "near_high_17_22_last_price": 1682.9000244140625
+      "near_high_17_22_last_alert": "2026-10-21T05:06:28.681922",
+      "near_high_17_22_last_price": 1706.5999755859375
     },
     "NUVOCO": {
       "sma50": 329.18800048828126,
@@ -14476,8 +14482,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 86.9,
-      "near_high_17_22_last_alert": "2026-10-21T03:54:42.867194",
-      "near_high_17_22_last_price": 865.4000244140625
+      "near_high_17_22_last_alert": "2026-10-21T05:07:51.633575",
+      "near_high_17_22_last_price": 855.0499877929688
     },
     "SURYAROSNI": {
       "sma50": 217.74160125732422,
@@ -14697,7 +14703,9 @@
       "box_low": 1257.0,
       "descending_res": 1633.300048828125,
       "wedge_contraction": 0.8766848120985105,
-      "rs_rank": 92.7
+      "rs_rank": 92.7,
+      "near_high_17_22_last_alert": "2026-10-21T05:07:56.754975",
+      "near_high_17_22_last_price": 1502.0999755859375
     },
     "TANLA": {
       "sma50": 529.3749993896485,
@@ -14805,7 +14813,9 @@
       "box_low": 266.6000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 49.3
+      "rs_rank": 49.3,
+      "mtf_last_alert": "2026-10-21T05:07:58.532303",
+      "mtf_last_price": 326.54998779296875
     },
     "TATACHEM": {
       "sma50": 643.7430017089844,
@@ -15028,8 +15038,8 @@
       "descending_res": 846.0900024414062,
       "wedge_contraction": 0.7958243872052226,
       "rs_rank": 89.3,
-      "near_high_17_22_last_alert": "2026-10-21T04:20:43.429401",
-      "near_high_17_22_last_price": 703.2999877929688
+      "near_high_17_22_last_alert": "2026-10-21T05:08:03.585399",
+      "near_high_17_22_last_price": 693.9500122070312
     },
     "TECHNOE": {
       "sma50": 983.8640026855469,
@@ -16598,8 +16608,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 88.2,
-      "near_high_17_22_last_alert": "2026-10-21T03:55:20.625556",
-      "near_high_17_22_last_price": 684.2000122070312
+      "near_high_17_22_last_alert": "2026-10-21T05:08:37.265049",
+      "near_high_17_22_last_price": 696.9000244140625
     },
     "WELSPUNLIV": {
       "sma50": 205.78780029296874,
