@@ -4337,7 +4337,11 @@
       "box_low": 1733.0,
       "descending_res": 2017.3466389973958,
       "wedge_contraction": 0.9722540338811119,
-      "rs_rank": 77.5
+      "rs_rank": 77.5,
+      "resistance_last_alert": "2026-10-21T05:31:56.494754",
+      "resistance_last_price": 1948.0999755859375,
+      "near_high_17_22_last_alert": "2026-10-21T05:31:57.078098",
+      "near_high_17_22_last_price": 1948.0999755859375
     },
     "EDELWEISS": {
       "sma50": 130.88999954223632,
@@ -4810,8 +4814,8 @@
       "descending_res": 319.5999755859375,
       "wedge_contraction": 0.6028674698823673,
       "rs_rank": 67.9,
-      "near_high_17_22_last_alert": "2026-10-21T04:17:54.203852",
-      "near_high_17_22_last_price": 264.3999938964844
+      "near_high_17_22_last_alert": "2026-10-21T05:32:07.506510",
+      "near_high_17_22_last_price": 261.6000061035156
     },
     "ENTERO": {
       "sma50": 1665.2080029296876,
