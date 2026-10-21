@@ -473,7 +473,9 @@
       "box_low": 344.70001220703125,
       "descending_res": 427.81666056315106,
       "wedge_contraction": 0.8108420002216769,
-      "rs_rank": 88.7
+      "rs_rank": 88.7,
+      "near_high_17_22_last_alert": "2026-10-21T08:47:41.425241",
+      "near_high_17_22_last_price": 395.3500061035156
     },
     "ACUTAAS": {
       "sma50": 3231.8919921875,
@@ -694,8 +696,8 @@
       "descending_res": 1803.8500366210938,
       "wedge_contraction": 0.9880276787831663,
       "rs_rank": 80.1,
-      "near_high_17_22_last_alert": "2026-10-21T08:02:28.961964",
-      "near_high_17_22_last_price": 1477.800048828125
+      "near_high_17_22_last_alert": "2026-10-21T08:47:46.166806",
+      "near_high_17_22_last_price": 1461.300048828125
     },
     "AFCONS": {
       "sma50": 263.7717999267578,
@@ -10698,8 +10700,8 @@
       "descending_res": 1878.590897993608,
       "wedge_contraction": 0.6764980449706492,
       "rs_rank": 74.1,
-      "near_high_17_22_last_alert": "2026-10-21T06:19:58.085971",
-      "near_high_17_22_last_price": 1675.0999755859375
+      "near_high_17_22_last_alert": "2026-10-21T08:50:35.606459",
+      "near_high_17_22_last_price": 1698.0999755859375
     },
     "NUVOCO": {
       "sma50": 329.18800048828126,
@@ -13981,7 +13983,9 @@
       "wedge_contraction": null,
       "rs_rank": 23.3,
       "vol_breakout_last_alert": "2026-10-21T08:34:36.599309",
-      "vol_breakout_last_price": 1166.0999755859375
+      "vol_breakout_last_price": 1166.0999755859375,
+      "rectangle_bounce_last_alert": "2026-10-21T08:51:29.608134",
+      "rectangle_bounce_last_price": 1182.800048828125
     },
     "SONATSOFTW": {
       "sma50": 279.53600036621094,
