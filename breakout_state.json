@@ -262,8 +262,8 @@
     "price_high_last_alert": "2026-10-09T04:45:49.126337",
     "price_high_last_price": 267.79998779296875,
     "rsi_down_last_alert": "2026-10-21T05:45:45.828335",
-    "price_low_last_alert": "2026-10-21T05:01:02.942477",
-    "price_low_last_price": 231.5
+    "price_low_last_alert": "2026-10-21T06:29:39.550561",
+    "price_low_last_price": 228.5500030517578
   },
   "CANFINHOME": {
     "result_date": "2026-10-07T00:00:00",
@@ -498,8 +498,8 @@
     "baseline_rsi": 56.171211734749654,
     "mcap_cr": 64838.7974765948,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-21T05:01:17.087190",
-    "price_low_last_price": 364.79998779296875,
+    "price_low_last_alert": "2026-10-21T06:29:48.798164",
+    "price_low_last_price": 360.8999938964844,
     "rsi_down_last_alert": "2026-10-21T05:46:01.945505"
   },
   "AGRITECH": {
@@ -910,8 +910,8 @@
     "mcap_cr": 3720.1915833618164,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-21T05:46:25.346926",
-    "price_low_last_alert": "2026-10-21T05:01:35.223398",
-    "price_low_last_price": 372.6000061035156
+    "price_low_last_alert": "2026-10-21T06:29:59.268410",
+    "price_low_last_price": 368.70001220703125
   },
   "GROWW": {
     "result_date": "2026-10-15T00:00:00",
@@ -923,7 +923,9 @@
     "rsi_up_last_alert": "2026-10-19T08:46:30.167219",
     "price_high_last_alert": "2026-10-16T03:46:25.739737",
     "price_high_last_price": 201.13999938964844,
-    "rsi_down_last_alert": "2026-10-21T05:46:26.231602"
+    "rsi_down_last_alert": "2026-10-21T05:46:26.231602",
+    "price_low_last_alert": "2026-10-21T06:30:00.008748",
+    "price_low_last_price": 190.52999877929688
   },
   "arb_ACI": {
     "spread_last_alert": "2026-10-19T03:56:03.477588",
@@ -1152,8 +1154,8 @@
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-16T09:01:51.000927",
     "rsi_down_last_alert": "2026-10-21T05:46:39.472042",
-    "price_low_last_alert": "2026-10-21T04:46:35.321836",
-    "price_low_last_price": 334.95001220703125
+    "price_low_last_alert": "2026-10-21T06:30:06.435403",
+    "price_low_last_price": 340.6499938964844
   },
   "MODISONLTD": {
     "result_date": "2026-10-16T00:00:00",
@@ -1397,8 +1399,8 @@
     "baseline_rsi": 20.516450933166183,
     "mcap_cr": 52985.91892170617,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-21T04:46:53.598348",
-    "price_low_last_price": 16.420000076293945,
+    "price_low_last_alert": "2026-10-21T06:30:16.044119",
+    "price_low_last_price": 16.209999084472656,
     "rsi_down_last_alert": "2026-10-21T05:46:56.539053"
   },
   "HINDZINC": {
@@ -1411,7 +1413,9 @@
     "price_high_last_alert": "2026-10-21T03:46:55.714118",
     "price_high_last_price": 555.2000122070312,
     "rsi_up_last_alert": "2026-10-21T05:46:57.739796",
-    "rsi_down_last_alert": "2026-10-21T06:02:05.847082"
+    "rsi_down_last_alert": "2026-10-21T06:02:05.847082",
+    "price_low_last_alert": "2026-10-21T06:30:17.295093",
+    "price_low_last_price": 533.7000122070312
   },
   "TATVA": {
     "result_date": "2026-10-19T00:00:00",
@@ -1440,5 +1444,32 @@
     "price_low_last_alert": "2026-10-21T04:46:56.499565",
     "price_low_last_price": 5501.0,
     "rsi_down_last_alert": "2026-10-21T05:46:58.767673"
+  },
+  "AYE": {
+    "result_date": "2026-10-21T00:00:00",
+    "day_high": 148.49000549316406,
+    "day_low": 136.2100067138672,
+    "baseline_rsi": 26.829751331092595,
+    "mcap_cr": 3390.875897855148,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-21T06:30:18.677596"
+  },
+  "AONESTEELS": {
+    "result_date": "2026-10-21T00:00:00",
+    "day_high": 419.79998779296875,
+    "day_low": 402.1000061035156,
+    "baseline_rsi": null,
+    "mcap_cr": 3117.2375001809996,
+    "exchange": "NSE",
+    "price_low_last_alert": "2026-10-21T06:30:19.640073",
+    "price_low_last_price": 402.0
+  },
+  "MGEL": {
+    "result_date": "2026-10-21T00:00:00",
+    "day_high": 17.440000534057617,
+    "day_low": 16.40999984741211,
+    "baseline_rsi": 68.77146298752292,
+    "mcap_cr": 559.9149568570709,
+    "exchange": "NSE"
   }
 }

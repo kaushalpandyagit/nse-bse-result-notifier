@@ -1686,8 +1686,8 @@
       "descending_res": 2923.14990234375,
       "wedge_contraction": 0.8737824973031024,
       "rs_rank": 89.9,
-      "near_high_17_22_last_alert": "2026-10-21T04:31:01.455230",
-      "near_high_17_22_last_price": 2581.0
+      "near_high_17_22_last_alert": "2026-10-21T06:31:06.450762",
+      "near_high_17_22_last_price": 2545.10009765625
     },
     "BAJAJCON": {
       "sma50": 495.60900024414065,
@@ -4602,8 +4602,8 @@
       "descending_res": 583.8000244140625,
       "wedge_contraction": 0.9360665774073639,
       "rs_rank": 53.7,
-      "near_high_17_22_last_alert": "2026-10-21T04:48:39.639368",
-      "near_high_17_22_last_price": 530.5
+      "near_high_17_22_last_alert": "2026-10-21T06:31:53.696742",
+      "near_high_17_22_last_price": 523.7999877929688
     },
     "ELLEN": {
       "sma50": 340.6239996337891,
@@ -9510,8 +9510,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 76.2,
-      "near_high_17_22_last_alert": "2026-10-21T03:53:13.866119",
-      "near_high_17_22_last_price": 1741.300048828125
+      "near_high_17_22_last_alert": "2026-10-21T06:33:19.790478",
+      "near_high_17_22_last_price": 1722.300048828125
     },
     "MANYAVAR": {
       "sma50": 536.9499981689453,
@@ -11557,7 +11557,9 @@
       "box_low": 180.75,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 82.9
+      "rs_rank": 82.9,
+      "near_high_17_22_last_alert": "2026-10-21T06:33:54.928206",
+      "near_high_17_22_last_price": 192.00999450683594
     },
     "PRAJIND": {
       "sma50": 320.167998046875,
@@ -14362,8 +14364,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 83.3,
-      "near_high_17_22_last_alert": "2026-10-21T04:51:41.264667",
-      "near_high_17_22_last_price": 1074.300048828125
+      "near_high_17_22_last_alert": "2026-10-21T06:34:42.829664",
+      "near_high_17_22_last_price": 1063.0999755859375
     },
     "SUNFLAG": {
       "sma50": 382.007998046875,
@@ -15138,8 +15140,8 @@
       "descending_res": 2098.2251586914062,
       "wedge_contraction": 0.6890650943031649,
       "rs_rank": 65.7,
-      "near_high_17_22_last_alert": "2026-10-21T04:34:41.763936",
-      "near_high_17_22_last_price": 1818.800048828125
+      "near_high_17_22_last_alert": "2026-10-21T06:34:54.203648",
+      "near_high_17_22_last_price": 1798.800048828125
     },
     "TEJASNET": {
       "sma50": 512.3999993896484,
