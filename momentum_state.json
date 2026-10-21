@@ -5559,7 +5559,9 @@
       "box_low": 6860.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 37.9
+      "rs_rank": 37.9,
+      "resistance_last_alert": "2026-10-21T09:03:09.010904",
+      "resistance_last_price": 7269.0
     },
     "GMDCLTD": {
       "sma50": 539.7200018310547,
@@ -11868,8 +11870,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 69.6,
-      "near_high_17_22_last_alert": "2026-10-21T07:50:05.373191",
-      "near_high_17_22_last_price": 1367.5
+      "near_high_17_22_last_alert": "2026-10-21T09:04:35.501155",
+      "near_high_17_22_last_price": 1387.699951171875
     },
     "QUESS": {
       "sma50": 344.337001953125,
@@ -13434,8 +13436,8 @@
       "descending_res": 3149.4287109375,
       "wedge_contraction": 1.0122945566945627,
       "rs_rank": 95.7,
-      "near_high_17_22_last_alert": "2026-10-21T06:07:18.847668",
-      "near_high_17_22_last_price": 2935.199951171875
+      "near_high_17_22_last_alert": "2026-10-21T09:04:59.262229",
+      "near_high_17_22_last_price": 2988.800048828125
     },
     "SHAKTIPUMP": {
       "sma50": 469.4290008544922,
@@ -15682,8 +15684,8 @@
       "mtf_last_price": 480.70001220703125,
       "zanger_last_alert": "2026-10-21T04:06:45.580768",
       "zanger_last_price": 478.8999938964844,
-      "vol_breakout_last_alert": "2026-10-21T07:22:21.934844",
-      "vol_breakout_last_price": 458.79998779296875
+      "vol_breakout_last_alert": "2026-10-21T09:05:28.034904",
+      "vol_breakout_last_price": 464.3999938964844
     },
     "TRIDENT": {
       "sma50": 23.40699993133545,
