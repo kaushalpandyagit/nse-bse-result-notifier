@@ -327,7 +327,9 @@
       "box_low": 942.5,
       "descending_res": 1060.6500244140625,
       "wedge_contraction": 0.7492641608784607,
-      "rs_rank": 40.0
+      "rs_rank": 40.0,
+      "vol_breakout_last_alert": "2026-10-21T09:47:28.715102",
+      "vol_breakout_last_price": 949.0999755859375
     },
     "ACC": {
       "sma50": 1244.6500024414063,
@@ -584,8 +586,8 @@
       "descending_res": 279.324951171875,
       "wedge_contraction": 0.7180597526237991,
       "rs_rank": 84.6,
-      "near_high_17_22_last_alert": "2026-10-21T06:47:42.525202",
-      "near_high_17_22_last_price": 257.3999938964844
+      "near_high_17_22_last_alert": "2026-10-21T09:47:33.283849",
+      "near_high_17_22_last_price": 263.0
     },
     "AEQUS": {
       "sma50": 251.52260070800781,
@@ -991,7 +993,9 @@
       "wedge_contraction": 1.1125725984767831,
       "rs_rank": 25.9,
       "near_high_17_22_last_alert": "2026-10-21T05:02:50.945503",
-      "near_high_17_22_last_price": 1104.0
+      "near_high_17_22_last_price": 1104.0,
+      "liquidity_sweep_last_alert": "2026-10-21T09:47:41.289622",
+      "liquidity_sweep_last_price": 1108.0
     },
     "APOLLO": {
       "sma50": 396.88000122070315,
@@ -3337,7 +3341,9 @@
       "box_low": 1330.0999755859375,
       "descending_res": 1491.6922137920674,
       "wedge_contraction": 0.704020085783545,
-      "rs_rank": 28.9
+      "rs_rank": 28.9,
+      "liquidity_sweep_last_alert": "2026-10-21T09:48:21.162704",
+      "liquidity_sweep_last_price": 1331.699951171875
     },
     "CIEINDIA": {
       "sma50": 388.3760009765625,
@@ -4830,8 +4836,8 @@
       "descending_res": 319.5999755859375,
       "wedge_contraction": 0.6028674698823673,
       "rs_rank": 67.9,
-      "near_high_17_22_last_alert": "2026-10-21T06:48:55.297700",
-      "near_high_17_22_last_price": 257.8500061035156
+      "near_high_17_22_last_alert": "2026-10-21T09:48:45.633018",
+      "near_high_17_22_last_price": 260.6000061035156
     },
     "ENTERO": {
       "sma50": 1665.2080029296876,
@@ -4906,8 +4912,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 52.9,
-      "near_high_17_22_last_alert": "2026-10-21T06:48:57.576331",
-      "near_high_17_22_last_price": 222.39999389648438
+      "near_high_17_22_last_alert": "2026-10-21T09:48:47.784237",
+      "near_high_17_22_last_price": 225.52000427246094
     },
     "EQUITASBNK": {
       "sma50": 71.91339950561523,
@@ -7021,7 +7027,9 @@
       "box_low": 1651.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 71.3
+      "rs_rank": 71.3,
+      "near_high_17_22_last_alert": "2026-10-21T09:49:25.363020",
+      "near_high_17_22_last_price": 1625.800048828125
     },
     "IMFA": {
       "sma50": 1284.537998046875,
@@ -7130,12 +7138,14 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 7.9,
-      "vol_breakout_last_alert": "2026-10-21T08:04:49.918165",
-      "vol_breakout_last_price": 321.8999938964844,
-      "rectangle_bounce_last_alert": "2026-10-21T08:04:50.477047",
-      "rectangle_bounce_last_price": 321.8999938964844,
-      "mtf_last_alert": "2026-10-21T08:04:51.036403",
-      "mtf_last_price": 321.8999938964844
+      "vol_breakout_last_alert": "2026-10-21T09:49:27.113848",
+      "vol_breakout_last_price": 327.6499938964844,
+      "rectangle_bounce_last_alert": "2026-10-21T09:49:27.602444",
+      "rectangle_bounce_last_price": 327.6499938964844,
+      "mtf_last_alert": "2026-10-21T09:49:28.102808",
+      "mtf_last_price": 327.6499938964844,
+      "ema50_pullback_last_alert": "2026-10-21T09:49:28.599186",
+      "ema50_pullback_last_price": 327.6499938964844
     },
     "INDIAGLYCO": {
       "sma50": 579.0800051879883,
@@ -7752,8 +7762,8 @@
       "descending_res": 103.82944615681966,
       "wedge_contraction": 1.4112883386300765,
       "rs_rank": 52.2,
-      "near_high_17_22_last_alert": "2026-10-21T06:19:05.341398",
-      "near_high_17_22_last_price": 92.68000030517578
+      "near_high_17_22_last_alert": "2026-10-21T09:49:40.523464",
+      "near_high_17_22_last_price": 93.6500015258789
     },
     "JBMA": {
       "sma50": 596.0839953613281,
@@ -9860,8 +9870,8 @@
       "descending_res": 456.6555684407552,
       "wedge_contraction": 0.8240456453631041,
       "rs_rank": 62.1,
-      "near_high_17_22_last_alert": "2026-10-21T07:34:16.497721",
-      "near_high_17_22_last_price": 389.8500061035156
+      "near_high_17_22_last_alert": "2026-10-21T09:50:16.524867",
+      "near_high_17_22_last_price": 394.95001220703125
     },
     "MINDACORP": {
       "sma50": 689.1299963378906,
@@ -12785,7 +12795,9 @@
       "box_low": 1450.5,
       "descending_res": 1840.1363636363637,
       "wedge_contraction": 0.9344244909844112,
-      "rs_rank": 93.6
+      "rs_rank": 93.6,
+      "liquidity_sweep_last_alert": "2026-10-21T09:51:08.334470",
+      "liquidity_sweep_last_price": 1461.199951171875
     },
     "SAFARI": {
       "sma50": 1452.8039892578124,
@@ -13992,10 +14004,12 @@
       "rs_rank": 23.3,
       "vol_breakout_last_alert": "2026-10-21T09:21:03.955638",
       "vol_breakout_last_price": 1183.4000244140625,
-      "rectangle_bounce_last_alert": "2026-10-21T08:51:29.608134",
-      "rectangle_bounce_last_price": 1182.800048828125,
+      "rectangle_bounce_last_alert": "2026-10-21T09:51:27.582035",
+      "rectangle_bounce_last_price": 1216.0,
       "ema50_pullback_last_alert": "2026-10-21T09:35:55.425537",
-      "ema50_pullback_last_price": 1211.4000244140625
+      "ema50_pullback_last_price": 1211.4000244140625,
+      "zanger_last_alert": "2026-10-21T09:51:28.154452",
+      "zanger_last_price": 1216.0
     },
     "SONATSOFTW": {
       "sma50": 279.53600036621094,
@@ -15180,8 +15194,8 @@
       "descending_res": 2098.2251586914062,
       "wedge_contraction": 0.6890650943031649,
       "rs_rank": 65.7,
-      "near_high_17_22_last_alert": "2026-10-21T07:36:07.543347",
-      "near_high_17_22_last_price": 1817.0
+      "near_high_17_22_last_alert": "2026-10-21T09:51:47.629905",
+      "near_high_17_22_last_price": 1790.0
     },
     "TEJASNET": {
       "sma50": 512.3999993896484,
@@ -15692,8 +15706,8 @@
       "mtf_last_price": 480.70001220703125,
       "zanger_last_alert": "2026-10-21T04:06:45.580768",
       "zanger_last_price": 478.8999938964844,
-      "vol_breakout_last_alert": "2026-10-21T09:05:28.034904",
-      "vol_breakout_last_price": 464.3999938964844
+      "vol_breakout_last_alert": "2026-10-21T09:51:56.233999",
+      "vol_breakout_last_price": 470.75
     },
     "TRIDENT": {
       "sma50": 23.40699993133545,
