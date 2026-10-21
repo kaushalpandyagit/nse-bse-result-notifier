@@ -1626,7 +1626,7 @@
     "baseline_rsi": 32.61790423451768,
     "mcap_cr": 1481.2,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-21T10:30:39.428294"
+    "rsi_down_last_alert": "2026-10-21T11:30:37.346284"
   },
   "RAJRATAN": {
     "result_date": "2026-10-21T00:00:00",
@@ -1659,6 +1659,14 @@
     "day_low": 743.4500122070312,
     "baseline_rsi": 57.91879933457349,
     "mcap_cr": 108929.4103395,
+    "exchange": "NSE"
+  },
+  "SONAMLTD": {
+    "result_date": "2026-10-21T00:00:00",
+    "day_high": 79.80000305175781,
+    "day_low": 74.12000274658203,
+    "baseline_rsi": 57.277454463102266,
+    "mcap_cr": 296.7572050048828,
     "exchange": "NSE"
   }
 }
