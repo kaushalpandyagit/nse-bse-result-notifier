@@ -1642,6 +1642,23 @@
     "day_low": 316.6499938964844,
     "baseline_rsi": 50.00888550846997,
     "mcap_cr": 13876.648102329345,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-21T11:16:28.774801"
+  },
+  "PILITA": {
+    "result_date": "2026-10-21T00:00:00",
+    "day_high": 7.800000190734863,
+    "day_low": 7.199999809265137,
+    "baseline_rsi": 41.89894783922748,
+    "mcap_cr": 170.61000537872314,
+    "exchange": "NSE"
+  },
+  "INDHOTEL": {
+    "result_date": "2026-10-21T00:00:00",
+    "day_high": 767.8499755859375,
+    "day_low": 743.4500122070312,
+    "baseline_rsi": 57.91879933457349,
+    "mcap_cr": 108929.4103395,
     "exchange": "NSE"
   }
 }
