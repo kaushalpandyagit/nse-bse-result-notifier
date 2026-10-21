@@ -691,7 +691,9 @@
       "box_low": 1420.4000244140625,
       "descending_res": 1803.8500366210938,
       "wedge_contraction": 0.9880276787831663,
-      "rs_rank": 80.1
+      "rs_rank": 80.1,
+      "near_high_17_22_last_alert": "2026-10-21T04:16:48.290225",
+      "near_high_17_22_last_price": 1492.9000244140625
     },
     "AFCONS": {
       "sma50": 263.7717999267578,
@@ -3455,7 +3457,9 @@
       "box_low": 416.20001220703125,
       "descending_res": 469.97727272727275,
       "wedge_contraction": 0.9283497742435978,
-      "rs_rank": 79.9
+      "rs_rank": 79.9,
+      "mtf_last_alert": "2026-10-21T04:17:33.005249",
+      "mtf_last_price": 462.04998779296875
     },
     "CONCORDBIO": {
       "sma50": 1447.0340014648436,
@@ -4793,7 +4797,9 @@
       "box_low": null,
       "descending_res": 319.5999755859375,
       "wedge_contraction": 0.6028674698823673,
-      "rs_rank": 67.9
+      "rs_rank": 67.9,
+      "near_high_17_22_last_alert": "2026-10-21T04:17:54.203852",
+      "near_high_17_22_last_price": 264.3999938964844
     },
     "ENTERO": {
       "sma50": 1665.2080029296876,
@@ -4867,7 +4873,9 @@
       "box_low": 221.24000549316406,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 52.9
+      "rs_rank": 52.9,
+      "near_high_17_22_last_alert": "2026-10-21T04:17:56.205080",
+      "near_high_17_22_last_price": 227.0399932861328
     },
     "EQUITASBNK": {
       "sma50": 71.91339950561523,
@@ -9793,7 +9801,9 @@
       "box_low": 387.45001220703125,
       "descending_res": 456.6555684407552,
       "wedge_contraction": 0.8240456453631041,
-      "rs_rank": 62.1
+      "rs_rank": 62.1,
+      "near_high_17_22_last_alert": "2026-10-21T04:19:19.508025",
+      "near_high_17_22_last_price": 398.29998779296875
     },
     "MINDACORP": {
       "sma50": 689.1299963378906,
@@ -11801,7 +11811,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 69.6
+      "rs_rank": 69.6,
+      "near_high_17_22_last_alert": "2026-10-21T04:19:54.179315",
+      "near_high_17_22_last_price": 1384.300048828125
     },
     "QUESS": {
       "sma50": 344.337001953125,
@@ -14119,7 +14131,9 @@
       "box_low": 3152.199951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 91.9
+      "rs_rank": 91.9,
+      "near_high_17_22_last_alert": "2026-10-21T04:20:30.944881",
+      "near_high_17_22_last_price": 3260.10009765625
     },
     "SUBROS": {
       "sma50": 709.9309985351563,
@@ -14997,7 +15011,9 @@
       "box_low": null,
       "descending_res": 846.0900024414062,
       "wedge_contraction": 0.7958243872052226,
-      "rs_rank": 89.3
+      "rs_rank": 89.3,
+      "near_high_17_22_last_alert": "2026-10-21T04:20:43.429401",
+      "near_high_17_22_last_price": 703.2999877929688
     },
     "TECHNOE": {
       "sma50": 983.8640026855469,
@@ -16967,7 +16983,9 @@
       "box_low": 482.0,
       "descending_res": 501.25,
       "wedge_contraction": 0.8169936185369698,
-      "rs_rank": 54.8
+      "rs_rank": 54.8,
+      "near_high_17_22_last_alert": "2026-10-21T04:21:16.102113",
+      "near_high_17_22_last_price": 504.0
     }
   },
   "sector_rsis": {
