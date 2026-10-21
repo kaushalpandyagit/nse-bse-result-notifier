@@ -3295,7 +3295,9 @@
       "box_low": 706.75,
       "descending_res": 791.03125,
       "wedge_contraction": 0.6115364936094341,
-      "rs_rank": 54.0
+      "rs_rank": 54.0,
+      "near_high_17_22_last_alert": "2026-10-21T07:48:05.306469",
+      "near_high_17_22_last_price": 714.0
     },
     "CHOLAHLDNG": {
       "sma50": 1480.663994140625,
@@ -5662,8 +5664,8 @@
       "descending_res": 631.4285714285714,
       "wedge_contraction": 0.6232990391074947,
       "rs_rank": 69.4,
-      "near_high_17_22_last_alert": "2026-10-21T05:48:51.344477",
-      "near_high_17_22_last_price": 526.7999877929688
+      "near_high_17_22_last_alert": "2026-10-21T07:48:36.380054",
+      "near_high_17_22_last_price": 521.4000244140625
     },
     "GODFRYPHLP": {
       "sma50": 1993.7180053710938,
@@ -11858,8 +11860,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 69.6,
-      "near_high_17_22_last_alert": "2026-10-21T04:19:54.179315",
-      "near_high_17_22_last_price": 1384.300048828125
+      "near_high_17_22_last_alert": "2026-10-21T07:50:05.373191",
+      "near_high_17_22_last_price": 1367.5
     },
     "QUESS": {
       "sma50": 344.337001953125,
@@ -14740,8 +14742,8 @@
       "descending_res": 1633.300048828125,
       "wedge_contraction": 0.8766848120985105,
       "rs_rank": 92.7,
-      "near_high_17_22_last_alert": "2026-10-21T07:05:18.686278",
-      "near_high_17_22_last_price": 1493.9000244140625
+      "near_high_17_22_last_alert": "2026-10-21T07:50:44.375309",
+      "near_high_17_22_last_price": 1477.199951171875
     },
     "TANLA": {
       "sma50": 529.3749993896485,
