@@ -168,8 +168,8 @@
     "spread_last_price": 2.749986840175877
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-10-21T03:55:50.319058",
-    "spread_last_price": 6.040000000000003
+    "spread_last_alert": "2026-10-21T08:23:45.854468",
+    "spread_last_price": 6.115322865832355
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-10-21T06:21:49.011565",
@@ -192,8 +192,8 @@
     "spread_last_price": 2.596131552419355
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-21T07:36:51.408647",
-    "spread_last_price": 3.2890940565493363
+    "spread_last_alert": "2026-10-21T08:24:00.663664",
+    "spread_last_price": 3.6006938496285343
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-13T03:57:17.405657",
@@ -434,8 +434,8 @@
     "mcap_cr": 629.8200073242188,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-21T08:01:04.851002",
-    "price_low_last_alert": "2026-10-13T04:01:07.960034",
-    "price_low_last_price": 102.25,
+    "price_low_last_alert": "2026-10-21T08:15:54.565068",
+    "price_low_last_price": 99.58000183105469,
     "price_high_last_alert": "2026-10-16T05:45:56.595974",
     "price_high_last_price": 106.62000274658203,
     "rsi_up_last_alert": "2026-10-21T05:45:57.110361"
@@ -536,8 +536,8 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-21T07:30:47.030613",
-    "custom_last_price": 164.0
+    "custom_last_alert": "2026-10-21T08:17:07.164289",
+    "custom_last_price": 160.8000030517578
   },
   "arb_AETHER": {
     "spread_last_alert": "2026-10-14T03:56:29.004278",
@@ -1038,8 +1038,8 @@
     "rsi_up_last_alert": "2026-10-21T03:46:32.057403",
     "price_high_last_alert": "2026-10-21T03:46:31.587558",
     "price_high_last_price": 9.979999542236328,
-    "price_low_last_alert": "2026-10-21T06:01:43.118874",
-    "price_low_last_price": 9.40999984741211
+    "price_low_last_alert": "2026-10-21T08:16:21.366027",
+    "price_low_last_price": 9.300000190734863
   },
   "ONWARDTEC": {
     "result_date": "2026-10-16T00:00:00",
@@ -1100,8 +1100,8 @@
     "mcap_cr": 3512.396079939551,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-21T07:46:37.403199",
-    "price_low_last_alert": "2026-10-19T09:46:37.892100",
-    "price_low_last_price": 643.7999877929688
+    "price_low_last_alert": "2026-10-21T08:16:24.534515",
+    "price_low_last_price": 636.0
   },
   "E2E": {
     "result_date": "2026-10-16T00:00:00",
@@ -1356,8 +1356,8 @@
     "mcap_cr": 19218.595015,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-21T07:46:55.188734",
-    "price_low_last_alert": "2026-10-21T06:16:24.320498",
-    "price_low_last_price": 1198.300048828125
+    "price_low_last_alert": "2026-10-21T08:16:37.136556",
+    "price_low_last_price": 1184.800048828125
   },
   "ONMOBILE": {
     "result_date": "2026-10-19T00:00:00",
