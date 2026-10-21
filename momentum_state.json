@@ -5991,7 +5991,9 @@
       "box_low": 638.0,
       "descending_res": 853.9411908318015,
       "wedge_contraction": 0.8429944623503564,
-      "rs_rank": 54.6
+      "rs_rank": 54.6,
+      "near_high_17_22_last_alert": "2026-10-21T07:32:52.755160",
+      "near_high_17_22_last_price": 725.5
     },
     "GRAVITA": {
       "sma50": 1638.64400390625,
@@ -9844,8 +9846,8 @@
       "descending_res": 456.6555684407552,
       "wedge_contraction": 0.8240456453631041,
       "rs_rank": 62.1,
-      "near_high_17_22_last_alert": "2026-10-21T05:50:04.753349",
-      "near_high_17_22_last_price": 393.79998779296875
+      "near_high_17_22_last_alert": "2026-10-21T07:34:16.497721",
+      "near_high_17_22_last_price": 389.8500061035156
     },
     "MINDACORP": {
       "sma50": 689.1299963378906,
@@ -9992,8 +9994,8 @@
       "descending_res": 191.4365287449049,
       "wedge_contraction": 1.1378184720642401,
       "rs_rank": 46.9,
-      "near_high_17_22_last_alert": "2026-10-21T04:50:19.247620",
-      "near_high_17_22_last_price": 169.3300018310547
+      "near_high_17_22_last_alert": "2026-10-21T07:34:20.134941",
+      "near_high_17_22_last_price": 167.60000610351562
     },
     "MSTCLTD": {
       "sma50": 698.8509985351562,
@@ -10614,8 +10616,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 70.9,
-      "near_high_17_22_last_alert": "2026-10-21T04:50:32.697249",
-      "near_high_17_22_last_price": 266.6499938964844
+      "near_high_17_22_last_alert": "2026-10-21T07:34:34.304756",
+      "near_high_17_22_last_price": 261.8500061035156
     },
     "NSLNISP": {
       "sma50": 42.370200119018556,
@@ -12220,8 +12222,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 89.1,
-      "near_high_17_22_last_alert": "2026-10-21T04:51:02.296108",
-      "near_high_17_22_last_price": 88.3499984741211
+      "near_high_17_22_last_alert": "2026-10-21T07:35:08.510418",
+      "near_high_17_22_last_price": 87.31999969482422
     },
     "RCF": {
       "sma50": 112.85759979248047,
@@ -12874,8 +12876,8 @@
       "descending_res": 1569.5601318359375,
       "wedge_contraction": 0.7528850455682525,
       "rs_rank": 90.1,
-      "near_high_17_22_last_alert": "2026-10-21T06:07:07.366988",
-      "near_high_17_22_last_price": 1369.5999755859375
+      "near_high_17_22_last_alert": "2026-10-21T07:35:23.433483",
+      "near_high_17_22_last_price": 1385.0
     },
     "SAMHI": {
       "sma50": 155.0843997192383,
@@ -14516,8 +14518,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 86.9,
-      "near_high_17_22_last_alert": "2026-10-21T05:07:51.633575",
-      "near_high_17_22_last_price": 855.0499877929688
+      "near_high_17_22_last_alert": "2026-10-21T07:35:55.140139",
+      "near_high_17_22_last_price": 846.4000244140625
     },
     "SURYAROSNI": {
       "sma50": 217.74160125732422,
@@ -15152,8 +15154,8 @@
       "descending_res": 2098.2251586914062,
       "wedge_contraction": 0.6890650943031649,
       "rs_rank": 65.7,
-      "near_high_17_22_last_alert": "2026-10-21T06:34:54.203648",
-      "near_high_17_22_last_price": 1798.800048828125
+      "near_high_17_22_last_alert": "2026-10-21T07:36:07.543347",
+      "near_high_17_22_last_price": 1817.0
     },
     "TEJASNET": {
       "sma50": 512.3999993896484,
@@ -17056,8 +17058,8 @@
       "descending_res": 501.25,
       "wedge_contraction": 0.8169936185369698,
       "rs_rank": 54.8,
-      "near_high_17_22_last_alert": "2026-10-21T04:21:16.102113",
-      "near_high_17_22_last_price": 504.0
+      "near_high_17_22_last_alert": "2026-10-21T07:36:47.697658",
+      "near_high_17_22_last_price": 497.79998779296875
     }
   },
   "sector_rsis": {
