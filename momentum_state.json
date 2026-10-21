@@ -655,7 +655,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 97.2
+      "rs_rank": 97.2,
+      "near_high_17_22_last_alert": "2026-10-21T05:17:09.566570",
+      "near_high_17_22_last_price": 483.6000061035156
     },
     "AETHER": {
       "sma50": 1654.643994140625,
@@ -4734,8 +4736,8 @@
       "descending_res": 178.43999862670898,
       "wedge_contraction": 0.5707419599559551,
       "rs_rank": 93.4,
-      "near_high_17_22_last_alert": "2026-10-21T03:51:48.982100",
-      "near_high_17_22_last_price": 173.08999633789062
+      "near_high_17_22_last_alert": "2026-10-21T05:18:36.461050",
+      "near_high_17_22_last_price": 165.8800048828125
     },
     "EMMVEE": {
       "sma50": 316.90300048828124,
@@ -5139,7 +5141,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 85.0
+      "rs_rank": 85.0,
+      "near_high_17_22_last_alert": "2026-10-21T05:18:46.045470",
+      "near_high_17_22_last_price": 1243.9000244140625
     },
     "FINPIPE": {
       "sma50": 155.80200012207033,
@@ -13389,7 +13393,9 @@
       "box_low": 2957.699951171875,
       "descending_res": 3149.4287109375,
       "wedge_contraction": 1.0122945566945627,
-      "rs_rank": 95.7
+      "rs_rank": 95.7,
+      "near_high_17_22_last_alert": "2026-10-21T05:21:45.426622",
+      "near_high_17_22_last_price": 2977.5
     },
     "SHAKTIPUMP": {
       "sma50": 469.4290008544922,
@@ -15623,7 +15629,9 @@
       "mtf_last_alert": "2026-10-21T03:55:01.403942",
       "mtf_last_price": 480.70001220703125,
       "zanger_last_alert": "2026-10-21T04:06:45.580768",
-      "zanger_last_price": 478.8999938964844
+      "zanger_last_price": 478.8999938964844,
+      "vol_breakout_last_alert": "2026-10-21T05:22:29.225555",
+      "vol_breakout_last_price": 468.79998779296875
     },
     "TRIDENT": {
       "sma50": 23.40699993133545,
@@ -16792,8 +16800,8 @@
       "descending_res": 1123.625,
       "wedge_contraction": 0.6694810732333021,
       "rs_rank": 82.7,
-      "near_high_17_22_last_alert": "2026-10-21T03:55:23.574816",
-      "near_high_17_22_last_price": 962.2999877929688
+      "near_high_17_22_last_alert": "2026-10-21T05:22:54.454963",
+      "near_high_17_22_last_price": 950.4000244140625
     },
     "ZAGGLE": {
       "sma50": 180.54299926757812,
