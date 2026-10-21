@@ -64,8 +64,8 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-21T06:47:23.407042",
-    "custom_last_price": 168.10000610351562
+    "custom_last_alert": "2026-10-21T09:16:48.493125",
+    "custom_last_price": 169.8699951171875
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
@@ -383,8 +383,8 @@
     "mcap_cr": 13190.88524150978,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-12T05:45:55.910737",
-    "price_low_last_alert": "2026-10-21T04:29:39.127229",
-    "price_low_last_price": 125.8499984741211,
+    "price_low_last_alert": "2026-10-21T09:15:52.929954",
+    "price_low_last_price": 127.9000015258789,
     "rsi_down_last_alert": "2026-10-21T08:45:55.769976"
   },
   "CORDELIA": {
@@ -434,8 +434,8 @@
     "mcap_cr": 629.8200073242188,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-21T09:01:08.572531",
-    "price_low_last_alert": "2026-10-21T08:15:54.565068",
-    "price_low_last_price": 99.58000183105469,
+    "price_low_last_alert": "2026-10-21T09:15:55.330416",
+    "price_low_last_price": 97.0,
     "price_high_last_alert": "2026-10-16T05:45:56.595974",
     "price_high_last_price": 106.62000274658203,
     "rsi_up_last_alert": "2026-10-21T05:45:57.110361"
@@ -787,7 +787,7 @@
     "baseline_rsi": 53.9337629114403,
     "mcap_cr": 5818.824203498837,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-21T08:29:53.573094",
+    "rsi_down_last_alert": "2026-10-21T09:16:06.245880",
     "rsi_up_last_alert": "2026-10-21T08:01:21.966630"
   },
   "arb_APOLLO": {
@@ -837,8 +837,8 @@
     "mcap_cr": 29819.072113085185,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-19T07:01:15.408563",
-    "price_low_last_alert": "2026-10-21T06:01:34.159401",
-    "price_low_last_price": 23.360000610351562,
+    "price_low_last_alert": "2026-10-21T09:16:08.856071",
+    "price_low_last_price": 23.1200008392334,
     "rsi_down_last_alert": "2026-10-21T08:46:23.550358"
   },
   "DBCORP": {
@@ -1038,8 +1038,8 @@
     "rsi_up_last_alert": "2026-10-21T03:46:32.057403",
     "price_high_last_alert": "2026-10-21T03:46:31.587558",
     "price_high_last_price": 9.979999542236328,
-    "price_low_last_alert": "2026-10-21T08:16:21.366027",
-    "price_low_last_price": 9.300000190734863
+    "price_low_last_alert": "2026-10-21T09:16:14.600792",
+    "price_low_last_price": 9.180000305175781
   },
   "ONWARDTEC": {
     "result_date": "2026-10-16T00:00:00",
@@ -1368,8 +1368,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-21T08:47:02.441080",
     "rsi_up_last_alert": "2026-10-21T03:46:51.288769",
-    "price_low_last_alert": "2026-10-21T05:46:53.300979",
-    "price_low_last_price": 56.400001525878906
+    "price_low_last_alert": "2026-10-21T09:16:25.716704",
+    "price_low_last_price": 55.709999084472656
   },
   "BEPL": {
     "result_date": "2026-10-19T00:00:00",
@@ -1454,7 +1454,7 @@
     "baseline_rsi": 26.829751331092595,
     "mcap_cr": 3390.875897855148,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-21T08:30:14.676993",
+    "rsi_down_last_alert": "2026-10-21T09:16:29.577430",
     "rsi_up_last_alert": "2026-10-21T07:47:03.090167"
   },
   "AONESTEELS": {
@@ -1522,7 +1522,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-21T08:30:18.178256",
     "price_high_last_price": 235.0,
-    "rsi_up_last_alert": "2026-10-21T08:30:18.686067"
+    "rsi_up_last_alert": "2026-10-21T09:16:33.102417"
   },
   "ABSLAMC": {
     "result_date": "2026-10-21T00:00:00",
@@ -1540,10 +1540,29 @@
     "baseline_rsi": 44.08268792392342,
     "mcap_cr": 206737.07519262383,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-21T09:01:40.258709"
+    "rsi_down_last_alert": "2026-10-21T09:01:40.258709",
+    "price_low_last_alert": "2026-10-21T09:16:34.921744",
+    "price_low_last_price": 1246.199951171875
   },
   "arb_ABSLAMC": {
     "spread_last_alert": "2026-10-21T09:05:55.145187",
     "spread_last_price": 2.7461183249960137
+  },
+  "MACPOWER": {
+    "result_date": "2026-10-21T00:00:00",
+    "day_high": 1904.300048828125,
+    "day_low": 1702.0999755859375,
+    "baseline_rsi": 37.293587036800595,
+    "mcap_cr": 1730.5196456484375,
+    "exchange": "NSE"
+  },
+  "LMW": {
+    "result_date": "2026-10-21T00:00:00",
+    "day_high": 17000.0,
+    "day_low": 15845.0,
+    "baseline_rsi": 37.58455565166012,
+    "mcap_cr": 17197.4934,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-21T09:16:36.527577"
   }
 }
