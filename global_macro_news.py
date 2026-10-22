@@ -7,7 +7,7 @@ Features:
   1. 9:00 AM IST Macro Pulse (US Futures, 10Y Yield, DXY, Crude, Gold, BTC).
   2. 7-Day Economic Event Calendar Tracker (RBI, Fed, CPI).
   3. Live Geopolitical & Global Bellwether News Polling.
-  4. USFDA, PLI Scheme, and Tariff/Duty News Tracking.
+  4. USFDA, PLI Scheme, Tariff/Duty News Tracking, & Indian PM/FM Economic Statements.
 """
 
 import os
@@ -19,6 +19,7 @@ import logging
 import datetime
 from pathlib import Path
 import html
+import urllib.parse
 
 import requests
 
@@ -78,17 +79,20 @@ MACRO_EVENTS_SCHEDULE = [
     ("2027-02-05", "🇮🇳 RBI MPC Interest Rate Decision"),
 ]
 
-# RSS feeds for Global Macro, USFDA, and Market News
+# RSS feeds for Global Macro, USFDA, Market News, and targeted Indian Leaders Google News RSS
 RSS_FEEDS = [
     "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",
     "https://search.cnbc.com/rs/search/combinedcms/view.xml?id=10000664",
-    "https://feeds.bloomberg.com/markets/news.rss"
+    "https://feeds.bloomberg.com/markets/news.rss",
+    # Targeted Google News RSS feed for Indian Prime Minister & Finance Minister statements on Economy, Finance, & Semiconductors
+    "https://news.google.com/rss/search?q=" + urllib.parse.quote("(PM Modi OR Finance Minister Nirmala Sitharaman) AND (semiconductor OR economy OR finance OR GDP OR fiscal OR inflation OR budget)") + "&hl=en-IN&gl=IN&ceid=IN:en"
 ]
 
 # Keywords to filter breaking impact news
 BELLWETHER_KEYWORDS = ["nvidia", "apple", "tesla", "microsoft", "tsmc", "guidance", "revenue booms", "earnings", "ai demand"]
 GEOPOLITICAL_KEYWORDS = ["war", "strike", "missile", "sanctions", "geopolitical", "opec", "fed", "federal reserve", "rate cut", "rbi"]
 REGULATORY_KEYWORDS = ["usfda", "fda", "pli scheme", "tariff", "duty", "import tax", "export ban", "anti-dumping"]
+LEADER_STATEMENT_KEYWORDS = ["semiconductor", "economy", "finance", "fiscal", "gdp", "inflation", "investment", "rupee", "budget", "fabs", "chip"]
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
@@ -264,7 +268,7 @@ def poll_news(state: dict) -> dict:
     if not feedparser:
         return state
 
-    log.info("Polling global RSS feeds for breaking macro news...")
+    log.info("Polling global and Indian leadership RSS feeds for breaking macro news...")
     seen = state.get("seen_news", [])
     new_alerts = []
 
@@ -284,18 +288,25 @@ def poll_news(state: dict) -> dict:
                 icon = "📢"
                 header = "GLOBAL NEWS ALERT"
                 
-                if check_keyword_match(title, BELLWETHER_KEYWORDS):
-                    category = "bellwether"
-                    icon = "📢"
-                    header = "GLOBAL BELLWETHER RESULTS / GUIDANCE 🇺🇸"
-                elif check_keyword_match(title, GEOPOLITICAL_KEYWORDS):
-                    category = "geopolitical"
-                    icon = "⚠️"
-                    header = "GEOPOLITICAL / MACRO SHOCK ALERT 🌍"
-                elif check_keyword_match(title, REGULATORY_KEYWORDS):
-                    category = "regulatory"
-                    icon = "🏛️"
-                    header = "REGULATORY / TRADE DUTY ALERT ⚖️"
+                # Check if it's targeted PM/FM economic/semiconductor news from Google News feed
+                if "news.google.com" in feed_url:
+                    if check_keyword_match(title, LEADER_STATEMENT_KEYWORDS) and ("modi" in title.lower() or "sitharaman" in title.lower() or "finance minister" in title.lower() or "prime minister" in title.lower()):
+                        category = "leadership_statement"
+                        icon = "🇮🇳"
+                        header = "PM / FINANCE MINISTER STATEMENT (ECONOMY / SEMICONDUCTOR)"
+                else:
+                    if check_keyword_match(title, BELLWETHER_KEYWORDS):
+                        category = "bellwether"
+                        icon = "📢"
+                        header = "GLOBAL BELLWETHER RESULTS / GUIDANCE 🇺🇸"
+                    elif check_keyword_match(title, GEOPOLITICAL_KEYWORDS):
+                        category = "geopolitical"
+                        icon = "⚠️"
+                        header = "GEOPOLITICAL / MACRO SHOCK ALERT 🌍"
+                    elif check_keyword_match(title, REGULATORY_KEYWORDS):
+                        category = "regulatory"
+                        icon = "🏛️"
+                        header = "REGULATORY / TRADE DUTY ALERT ⚖️"
 
                 if category:
                     seen.append(fp)
