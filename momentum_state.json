@@ -1356,8 +1356,8 @@
       "descending_res": 1682.0,
       "wedge_contraction": 1.0270599243203988,
       "rs_rank": 88.5,
-      "near_high_17_22_last_alert": "2026-10-22T05:17:35.023546",
-      "near_high_17_22_last_price": 1562.699951171875
+      "near_high_17_22_last_alert": "2026-10-22T07:48:34.518624",
+      "near_high_17_22_last_price": 1546.0
     },
     "ATLANTAELE": {
       "sma50": 1744.262001953125,
@@ -2089,7 +2089,9 @@
       "box_low": 1668.0999755859375,
       "descending_res": 1997.857142857143,
       "wedge_contraction": 1.0967227981827823,
-      "rs_rank": 60.0
+      "rs_rank": 60.0,
+      "near_high_17_22_last_alert": "2026-10-22T07:48:50.944168",
+      "near_high_17_22_last_price": 1902.9000244140625
     },
     "BIRET": {
       "sma50": 337.2442010498047,
@@ -6218,8 +6220,8 @@
       "rs_rank": 96.4,
       "near_high_17_22_last_alert": "2026-10-22T07:18:40.739908",
       "near_high_17_22_last_price": 6285.0,
-      "vol_breakout_last_alert": "2026-10-22T07:03:57.725717",
-      "vol_breakout_last_price": 6185.0
+      "vol_breakout_last_alert": "2026-10-22T07:50:19.351033",
+      "vol_breakout_last_price": 6450.0
     },
     "GSFC": {
       "sma50": 154.57019958496093,
@@ -7693,7 +7695,9 @@
       "box_low": 133.5800018310547,
       "descending_res": 147.27171071370444,
       "wedge_contraction": 1.047619671560952,
-      "rs_rank": 59.6
+      "rs_rank": 59.6,
+      "rectangle_bounce_last_alert": "2026-10-22T07:50:51.712088",
+      "rectangle_bounce_last_price": 137.7100067138672
     },
     "JAIBALAJI": {
       "sma50": 67.02240043640137,
@@ -9984,8 +9988,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 71.3,
-      "near_high_17_22_last_alert": "2026-10-22T06:52:31.770426",
-      "near_high_17_22_last_price": 605.5499877929688
+      "near_high_17_22_last_alert": "2026-10-22T07:51:41.324456",
+      "near_high_17_22_last_price": 613.5999755859375,
+      "rectangle_bounce_last_alert": "2026-10-22T07:51:40.734341",
+      "rectangle_bounce_last_price": 613.5999755859375
     },
     "MMTC": {
       "sma50": 60.230599822998045,
@@ -15176,8 +15182,8 @@
       "descending_res": 845.1800048828125,
       "wedge_contraction": 0.9285068707369087,
       "rs_rank": 84.3,
-      "near_high_17_22_last_alert": "2026-10-22T05:07:40.547931",
-      "near_high_17_22_last_price": 683.7999877929688
+      "near_high_17_22_last_alert": "2026-10-22T07:53:30.182696",
+      "near_high_17_22_last_price": 674.5499877929688
     },
     "TECHNOE": {
       "sma50": 979.107001953125,
@@ -15250,8 +15256,8 @@
       "descending_res": 2090.5501708984375,
       "wedge_contraction": 0.817923303942102,
       "rs_rank": 62.1,
-      "near_high_17_22_last_alert": "2026-10-22T06:54:38.091728",
-      "near_high_17_22_last_price": 1770.4000244140625
+      "near_high_17_22_last_alert": "2026-10-22T07:53:32.522929",
+      "near_high_17_22_last_price": 1793.9000244140625
     },
     "TEJASNET": {
       "sma50": 510.09199890136716,
