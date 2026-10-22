@@ -1906,7 +1906,8 @@
     "day_low": 1677.5999755859375,
     "baseline_rsi": 36.25543910598561,
     "mcap_cr": 45829.579329,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-22T11:30:45.569164"
   },
   "FAIRCHEMOR": {
     "result_date": "2026-10-22T00:00:00",
@@ -1924,5 +1925,29 @@
     "mcap_cr": 1512.9257785189332,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-22T11:17:06.900778"
+  },
+  "HINDPETRO": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 347.5,
+    "day_low": 339.04998779296875,
+    "baseline_rsi": 46.059162271187915,
+    "mcap_cr": 72516.18878192041,
+    "exchange": "NSE"
+  },
+  "CIEINDIA": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 369.8500061035156,
+    "day_low": 363.0,
+    "baseline_rsi": 34.22533545990002,
+    "mcap_cr": 13833.44884576058,
+    "exchange": "NSE"
+  },
+  "VGL": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 58.08000183105469,
+    "day_low": 54.150001525878906,
+    "baseline_rsi": 33.316036620667035,
+    "mcap_cr": 289.48811457653045,
+    "exchange": "NSE"
   }
 }
