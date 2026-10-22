@@ -584,8 +584,8 @@
       "descending_res": 279.324951171875,
       "wedge_contraction": 0.7180597526237991,
       "rs_rank": 86.8,
-      "near_high_17_22_last_alert": "2026-10-22T05:02:30.990381",
-      "near_high_17_22_last_price": 261.5
+      "near_high_17_22_last_alert": "2026-10-22T06:02:37.776472",
+      "near_high_17_22_last_price": 258.75
     },
     "AEQUS": {
       "sma50": 251.3490005493164,
@@ -808,8 +808,8 @@
       "descending_res": 826.5555691189236,
       "wedge_contraction": 0.9500392877886522,
       "rs_rank": 86.4,
-      "near_high_17_22_last_alert": "2026-10-22T03:51:47.502539",
-      "near_high_17_22_last_price": 685.9500122070312
+      "near_high_17_22_last_alert": "2026-10-22T06:02:42.964160",
+      "near_high_17_22_last_price": 693.25
     },
     "ALKYLAMINE": {
       "sma50": 1897.1840063476564,
@@ -2595,7 +2595,9 @@
       "wedge_contraction": null,
       "rs_rank": 55.5,
       "mtf_last_alert": "2026-10-22T04:48:51.282783",
-      "mtf_last_price": 565.3499755859375
+      "mtf_last_price": 565.3499755859375,
+      "sos_pullback_curl_last_alert": "2026-10-22T06:03:23.834842",
+      "sos_pullback_curl_last_price": 560.0
     },
     "CAPLIPOINT": {
       "sma50": 2600.7480126953124,
@@ -4407,7 +4409,9 @@
       "box_low": 113.3499984741211,
       "descending_res": 138.5900115966797,
       "wedge_contraction": 0.9969707754653033,
-      "rs_rank": 61.9
+      "rs_rank": 61.9,
+      "near_high_17_22_last_alert": "2026-10-22T06:03:58.381284",
+      "near_high_17_22_last_price": 120.86000061035156
     },
     "EIDPARRY": {
       "sma50": 736.4279992675781,
@@ -4624,8 +4628,8 @@
       "descending_res": 583.8000244140625,
       "wedge_contraction": 0.9671469267678194,
       "rs_rank": 53.8,
-      "near_high_17_22_last_alert": "2026-10-22T04:49:30.752098",
-      "near_high_17_22_last_price": 530.5499877929688
+      "near_high_17_22_last_alert": "2026-10-22T06:04:03.880374",
+      "near_high_17_22_last_price": 540.0499877929688
     },
     "ELLEN": {
       "sma50": 340.9309991455078,
@@ -7196,12 +7200,14 @@
       "rs_rank": 15.5,
       "mtf_last_alert": "2026-10-22T05:50:25.341815",
       "mtf_last_price": 340.79998779296875,
-      "vol_breakout_last_alert": "2026-10-22T05:19:36.055443",
-      "vol_breakout_last_price": 336.75,
+      "vol_breakout_last_alert": "2026-10-22T06:05:01.530528",
+      "vol_breakout_last_price": 344.45001220703125,
       "rectangle_bounce_last_alert": "2026-10-22T04:50:25.638923",
       "rectangle_bounce_last_price": 330.8500061035156,
       "ema50_pullback_last_alert": "2026-10-22T04:50:26.788068",
-      "ema50_pullback_last_price": 330.8500061035156
+      "ema50_pullback_last_price": 330.8500061035156,
+      "zanger_last_alert": "2026-10-22T06:05:02.131644",
+      "zanger_last_price": 344.45001220703125
     },
     "INDIAGLYCO": {
       "sma50": 578.8250051879883,
@@ -7816,8 +7822,8 @@
       "descending_res": 103.79416847229004,
       "wedge_contraction": 1.3705926241368893,
       "rs_rank": 50.0,
-      "near_high_17_22_last_alert": "2026-10-22T04:50:41.629513",
-      "near_high_17_22_last_price": 93.83999633789062
+      "near_high_17_22_last_alert": "2026-10-22T06:05:17.229021",
+      "near_high_17_22_last_price": 92.69999694824219
     },
     "JBMA": {
       "sma50": 595.5839953613281,
@@ -9924,8 +9930,8 @@
       "descending_res": 456.6555684407552,
       "wedge_contraction": 0.8521737506591255,
       "rs_rank": 62.6,
-      "near_high_17_22_last_alert": "2026-10-22T05:05:53.073198",
-      "near_high_17_22_last_price": 390.0
+      "near_high_17_22_last_alert": "2026-10-22T06:06:02.145885",
+      "near_high_17_22_last_price": 385.04998779296875
     },
     "MINDACORP": {
       "sma50": 686.0889978027344,
