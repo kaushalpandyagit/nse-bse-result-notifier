@@ -36,7 +36,7 @@ jobs:
           git config user.name "breakout-notifier-bot"
           git config user.email "actions@github.com"
           FILES_TO_ADD=""
-          for f in breakout_state.json nifty500_symbols.json momentum_state.json; do
+          for f in breakout_state.json nifty500_symbols.json momentum_state.json fno_alert_state.json; do
             if [ -f "$f" ]; then
               FILES_TO_ADD="$FILES_TO_ADD $f"
             fi
