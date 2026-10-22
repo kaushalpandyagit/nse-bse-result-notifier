@@ -997,7 +997,11 @@
       "wedge_contraction": 1.1102458387590435,
       "rs_rank": 29.6,
       "near_high_17_22_last_alert": "2026-10-22T09:48:43.222985",
-      "near_high_17_22_last_price": 1109.5999755859375
+      "near_high_17_22_last_price": 1109.5999755859375,
+      "rectangle_bounce_last_alert": "2026-10-22T10:02:38.360767",
+      "rectangle_bounce_last_price": 1108.4000244140625,
+      "liquidity_sweep_last_alert": "2026-10-22T10:02:39.325735",
+      "liquidity_sweep_last_price": 1108.4000244140625
     },
     "APOLLO": {
       "sma50": 396.4960015869141,
@@ -9203,7 +9207,9 @@
       "box_low": 1790.0999755859375,
       "descending_res": 2015.5999755859375,
       "wedge_contraction": 0.7778647627857596,
-      "rs_rank": 83.8
+      "rs_rank": 83.8,
+      "rectangle_bounce_last_alert": "2026-10-22T10:04:58.488207",
+      "rectangle_bounce_last_price": 1843.699951171875
     },
     "LATENTVIEW": {
       "sma50": 257.0775991821289,
@@ -13558,8 +13564,8 @@
       "descending_res": 3136.900146484375,
       "wedge_contraction": 1.2533735498226029,
       "rs_rank": 93.8,
-      "near_high_17_22_last_alert": "2026-10-22T09:20:51.496230",
-      "near_high_17_22_last_price": 2875.0
+      "near_high_17_22_last_alert": "2026-10-22T10:06:14.765242",
+      "near_high_17_22_last_price": 2987.0
     },
     "SHAKTIPUMP": {
       "sma50": 467.06000061035155,
@@ -14578,8 +14584,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 22.6,
-      "rectangle_bounce_last_alert": "2026-10-22T06:54:23.981570",
-      "rectangle_bounce_last_price": 277.45001220703125,
+      "rectangle_bounce_last_alert": "2026-10-22T10:06:32.054076",
+      "rectangle_bounce_last_price": 282.5,
       "vol_breakout_last_alert": "2026-10-22T09:53:35.024190",
       "vol_breakout_last_price": 288.6499938964844,
       "ema50_pullback_last_alert": "2026-10-22T05:07:29.494636",
@@ -16894,8 +16900,8 @@
       "descending_res": 673.35009765625,
       "wedge_contraction": 0.8487630601237176,
       "rs_rank": 75.7,
-      "near_high_17_22_last_alert": "2026-10-22T09:07:25.138249",
-      "near_high_17_22_last_price": 642.9000244140625,
+      "near_high_17_22_last_alert": "2026-10-22T10:07:09.670518",
+      "near_high_17_22_last_price": 652.0999755859375,
       "liquidity_sweep_last_alert": "2026-10-22T09:21:45.355431",
       "liquidity_sweep_last_price": 646.0499877929688
     },
