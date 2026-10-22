@@ -932,16 +932,30 @@ def record_alert(entry: dict, alert_key_prefix: str, current_price: float = None
 # F&O 3-DAY HIGH/LOW MONITOR & ETF iNAV DISCOUNT SCANNER
 # ----------------------------------------------------------------------
 
+def get_trading_days_elapsed(start_date: datetime.date, end_date: datetime.date) -> int:
+    if end_date <= start_date:
+        return 0
+    trading_days = 0
+    curr = start_date + datetime.timedelta(days=1)
+    while curr <= end_date:
+        if not is_market_holiday(curr):
+            trading_days += 1
+        curr += datetime.timedelta(days=1)
+    return trading_days
+
 def check_fno_three_day_breakouts(momentum_state: dict, fyers):
     if not FNO_STATE_FILE.exists():
+        log.info("fno_alert_state.json not found; skipping F&O unusual volume breakout check.")
         return
     try:
         state = json.loads(FNO_STATE_FILE.read_text(encoding="utf-8"))
-    except Exception:
+    except Exception as e:
+        log.error("Failed to read fno_alert_state.json: %s", e)
         return
         
     today = datetime.date.today()
     updated = False
+    MAX_TRADING_DAYS_WINDOW = 7  # Track for 7 trading sessions (excludes weekends & holidays)
     
     for symbol, entry in state.items():
         if entry.get("status") != "Active":
@@ -952,45 +966,52 @@ def check_fno_three_day_breakouts(momentum_state: dict, fyers):
         except Exception:
             continue
             
-        days_elapsed = (today - trigger_date).days
-        if days_elapsed > 3:
+        if today <= trigger_date:
+            continue
+
+        trading_days_elapsed = get_trading_days_elapsed(trigger_date, today)
+        if trading_days_elapsed > MAX_TRADING_DAYS_WINDOW:
             entry["status"] = "Expired"
             updated = True
             continue
             
         metrics = get_live_metrics(fyers, symbol, "NSE")
         if not metrics:
+            metrics = get_live_metrics(fyers, symbol, "BSE")
+        if not metrics:
             continue
             
         price = metrics["price"]
-        ref_high = entry["ref_high"]
-        ref_low = entry["ref_low"]
+        day_high = metrics.get("high_price", price)
+        day_low = metrics.get("low_price", price)
+        ref_high = float(entry["ref_high"])
+        ref_low = float(entry["ref_low"])
         
         rs_tag = get_rs_and_sector_tag(symbol, metrics.get("rsi"), momentum_state)
         ern_tag = get_earnings_tag(symbol)
         
-        if price >= ref_high and alert_allowed(entry, "fno_high_breach", price):
+        if day_high > ref_high and alert_allowed(entry, "fno_high_breach", price):
             record_alert(entry, "fno_high_breach", price)
             entry["status"] = "Breached High"
             updated = True
             send_telegram_message(
-                f"🚀 <b>{symbol} — F&O Unusual Volume 3-Day High Breach!</b>\n"
-                f"• <b>Current Price:</b> ₹{price:.2f}\n"
-                f"• <b>Day Candle High:</b> ₹{ref_high:.2f}\n"
-                f"• <b>Window:</b> Day {days_elapsed} of 3\n"
-                f"📌 <i>Stock has broken above its unusual volume day high within 3 days.</i>"
+                f"🚀 <b>{symbol} — Unusual Volume High Breach!</b>\n"
+                f"• <b>Current Price:</b> ₹{price:.2f} (Today High: ₹{day_high:.2f})\n"
+                f"• <b>Signal Candle High:</b> ₹{ref_high:.2f} (from {trigger_date})\n"
+                f"• <b>Window:</b> Trading Day {trading_days_elapsed} of {MAX_TRADING_DAYS_WINDOW}\n"
+                f"📌 <i>Stock has broken above its unusual volume day high.</i>"
                 f"{rs_tag}{ern_tag}"
             )
-        elif price <= ref_low and alert_allowed(entry, "fno_low_breach", price):
+        elif day_low < ref_low and alert_allowed(entry, "fno_low_breach", price):
             record_alert(entry, "fno_low_breach", price)
             entry["status"] = "Breached Low"
             updated = True
             send_telegram_message(
-                f"🔻 <b>{symbol} — F&O Unusual Volume 3-Day Low Breach!</b>\n"
-                f"• <b>Current Price:</b> ₹{price:.2f}\n"
-                f"• <b>Day Candle Low:</b> ₹{ref_low:.2f}\n"
-                f"• <b>Window:</b> Day {days_elapsed} of 3\n"
-                f"📌 <i>Stock has broken below its unusual volume day low within 3 days.</i>"
+                f"🔻 <b>{symbol} — Unusual Volume Low Breach!</b>\n"
+                f"• <b>Current Price:</b> ₹{price:.2f} (Today Low: ₹{day_low:.2f})\n"
+                f"• <b>Signal Candle Low:</b> ₹{ref_low:.2f} (from {trigger_date})\n"
+                f"• <b>Window:</b> Trading Day {trading_days_elapsed} of {MAX_TRADING_DAYS_WINDOW}\n"
+                f"📌 <i>Stock has broken below its unusual volume day low.</i>"
                 f"{rs_tag}{ern_tag}"
             )
             
@@ -1000,7 +1021,11 @@ def check_fno_three_day_breakouts(momentum_state: dict, fyers):
         except Exception:
             pass
 
-def check_etf_inav_discount(session):
+def check_etf_inav_discount(session, state: dict):
+    state_key = "etf_inav_alerts"
+    if state_key not in state:
+        state[state_key] = {}
+        
     try:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -1009,6 +1034,9 @@ def check_etf_inav_discount(session):
             "Referer": "https://www.nseindia.com/market-data/exchange-traded-funds-etf",
             "X-Requested-With": "XMLHttpRequest"
         }
+        session.get("https://www.nseindia.com/market-data/exchange-traded-funds-etf", headers=headers, timeout=10)
+        time.sleep(1)
+        
         resp = session.get("https://www.nseindia.com/api/etf", headers=headers, timeout=15)
         if resp.status_code == 200:
             data = resp.json()
@@ -1024,15 +1052,22 @@ def check_etf_inav_discount(session):
                     if inav > 0 and ltp > 0:
                         discount_pct = ((inav - ltp) / inav) * 100.0
                         if discount_pct >= 5.0:
-                            send_telegram_message(
-                                f"🔥 <b>{symbol} — ETF iNAV Discount Alert!</b>\n"
-                                f"• <b>Discount:</b> <b>{discount_pct:.2f}%</b> below iNAV\n"
-                                f"• <b>LTP:</b> ₹{ltp:.2f}\n"
-                                f"• <b>iNAV:</b> ₹{inav:.2f}\n\n"
-                                f"📌 <i>Action: ETF is trading at a significant discount to its underlying portfolio value.</i>"
-                            )
+                            if symbol not in state[state_key]:
+                                state[state_key][symbol] = {}
+                            
+                            if alert_allowed(state[state_key][symbol], "etf_discount", ltp):
+                                record_alert(state[state_key][symbol], "etf_discount", ltp)
+                                send_telegram_message(
+                                    f"🔥 <b>{symbol} — ETF iNAV Discount Alert!</b>\n"
+                                    f"• <b>Discount:</b> <b>{discount_pct:.2f}%</b> below iNAV\n"
+                                    f"• <b>LTP:</b> ₹{ltp:.2f}\n"
+                                    f"• <b>iNAV:</b> ₹{inav:.2f}\n\n"
+                                    f"📌 <i>Action: ETF is trading at a significant discount to its underlying portfolio value.</i>"
+                                )
                 except (ValueError, TypeError):
                     continue
+        else:
+            log.warning("NSE ETF API returned status code: %s", resp.status_code)
     except Exception as e:
         log.warning("ETF iNAV check failed: %s", e)
 
@@ -1468,7 +1503,7 @@ def prune_expired(state: dict) -> dict:
     cutoff = datetime.datetime.now() - datetime.timedelta(days=TRACK_WINDOW_DAYS)
     kept = {}
     for symbol, entry in state.items():
-        if symbol.startswith("custom_alert_") or symbol.startswith("arb_"):
+        if symbol.startswith("custom_alert_") or symbol.startswith("arb_") or symbol == "etf_inav_alerts":
             kept[symbol] = entry
             continue
         try:
@@ -1587,7 +1622,7 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
         return state
     
     for symbol, entry in state.items():
-        if symbol.startswith("custom_alert_") or symbol.startswith("arb_") or "day_low" not in entry or "baseline_rsi" not in entry:
+        if symbol.startswith("custom_alert_") or symbol.startswith("arb_") or symbol == "etf_inav_alerts" or "day_low" not in entry or "baseline_rsi" not in entry:
             continue
 
         exchange = entry.get("exchange", "BSE" if symbol.isdigit() else "NSE")
@@ -1681,9 +1716,7 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
 
     session = requests.Session()
     try:
-        session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
-        time.sleep(1)
-        check_etf_inav_discount(session)
+        check_etf_inav_discount(session, state)
     except Exception:
         pass
 
