@@ -40,7 +40,7 @@ jobs:
           git config user.email "actions@github.com"
           
           # Safely add any state files that have been generated
-          for file in volume_history.json fno_participant_state.json etf_symbols.json; do
+          for file in volume_history.json fno_participant_state.json etf_symbols.json fno_alert_state.json; do
             if [ -f "$file" ]; then
               git add "$file"
             fi
