@@ -365,7 +365,9 @@
       "box_low": 1123.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 21.7
+      "rs_rank": 21.7,
+      "rectangle_bounce_last_alert": "2026-10-22T09:30:59.801642",
+      "rectangle_bounce_last_price": 1186.699951171875
     },
     "ACE": {
       "sma50": 1162.5319995117188,
@@ -7374,8 +7376,8 @@
       "descending_res": 2101.513248697917,
       "wedge_contraction": 0.7588357082817306,
       "rs_rank": 84.7,
-      "near_high_17_22_last_alert": "2026-10-22T03:53:58.847930",
-      "near_high_17_22_last_price": 1901.199951171875
+      "near_high_17_22_last_alert": "2026-10-22T09:33:06.318476",
+      "near_high_17_22_last_price": 1925.0
     },
     "INOXWIND": {
       "sma50": 71.99579956054687,
@@ -7924,8 +7926,8 @@
       "descending_res": 311.5625,
       "wedge_contraction": 1.4268395697099614,
       "rs_rank": 69.1,
-      "near_high_17_22_last_alert": "2026-10-22T06:19:31.736662",
-      "near_high_17_22_last_price": 252.35000610351562
+      "near_high_17_22_last_alert": "2026-10-22T09:33:16.739339",
+      "near_high_17_22_last_price": 249.8000030517578
     },
     "JKPAPER": {
       "sma50": 396.4599987792969,
@@ -8537,7 +8539,9 @@
       "box_low": 3135.800048828125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 9.1
+      "rs_rank": 9.1,
+      "rectangle_bounce_last_alert": "2026-10-22T09:33:27.503172",
+      "rectangle_bounce_last_price": 3303.300048828125
     },
     "KEC": {
       "sma50": 397.6089990234375,
@@ -11568,8 +11572,8 @@
       "descending_res": 610.8307542067307,
       "wedge_contraction": 0.8941401752246861,
       "rs_rank": 34.7,
-      "near_high_17_22_last_alert": "2026-10-22T05:21:07.547021",
-      "near_high_17_22_last_price": 583.9500122070312
+      "near_high_17_22_last_alert": "2026-10-22T09:34:23.009927",
+      "near_high_17_22_last_price": 577.3499755859375
     },
     "POLYMED": {
       "sma50": 1694.6019897460938,
@@ -15929,7 +15933,9 @@
       "ema50_pullback_last_alert": "2026-10-22T08:52:58.264579",
       "ema50_pullback_last_price": 35.470001220703125,
       "zanger_last_alert": "2026-10-22T09:07:07.135904",
-      "zanger_last_price": 36.38999938964844
+      "zanger_last_price": 36.38999938964844,
+      "resistance_last_alert": "2026-10-22T09:35:38.557757",
+      "resistance_last_price": 37.970001220703125
     },
     "TVSSCS": {
       "sma50": 127.18940002441406,

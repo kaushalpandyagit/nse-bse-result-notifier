@@ -1399,8 +1399,8 @@
     "baseline_rsi": 57.51266610761375,
     "mcap_cr": 4452.443805809509,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-22T04:30:09.079026",
-    "price_low_last_price": 1710.800048828125,
+    "price_low_last_alert": "2026-10-22T09:30:15.053950",
+    "price_low_last_price": 1693.199951171875,
     "rsi_down_last_alert": "2026-10-22T08:47:16.647398"
   },
   "LTTS": {
@@ -1757,7 +1757,7 @@
     "mcap_cr": 108.46499919891357,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-22T08:47:45.447756",
-    "rsi_down_last_alert": "2026-10-22T08:16:40.941377"
+    "rsi_down_last_alert": "2026-10-22T09:30:30.364715"
   },
   "SAPPHIRE": {
     "result_date": "2026-10-22T00:00:00",
@@ -1828,5 +1828,14 @@
     "rsi_down_last_alert": "2026-10-22T08:47:52.964055",
     "price_low_last_alert": "2026-10-22T09:01:57.789178",
     "price_low_last_price": 772.9500122070312
+  },
+  "ADANIENSOL": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 1336.800048828125,
+    "day_low": 1287.0,
+    "baseline_rsi": 41.55787005051975,
+    "mcap_cr": 159069.68168130264,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-22T09:30:35.207081"
   }
 }
