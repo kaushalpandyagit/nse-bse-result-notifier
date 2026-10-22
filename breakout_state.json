@@ -308,7 +308,7 @@
     "mcap_cr": 70.1028709,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-22T09:45:46.761041",
-    "rsi_down_last_alert": "2026-10-22T10:15:43.373074",
+    "rsi_down_last_alert": "2026-10-22T11:01:05.612882",
     "price_low_last_alert": "2026-10-09T06:00:54.616930",
     "price_low_last_price": 35.959999084472656,
     "price_high_last_alert": "2026-10-22T04:45:46.120936",
@@ -403,7 +403,7 @@
     "price_low_last_price": 100.86000061035156,
     "price_high_last_alert": "2026-10-16T05:45:56.595974",
     "price_high_last_price": 106.62000274658203,
-    "rsi_up_last_alert": "2026-10-22T10:01:04.475254"
+    "rsi_up_last_alert": "2026-10-22T11:01:09.596863"
   },
   "SWARAJENG": {
     "result_date": "2026-10-12T00:00:00",
@@ -1760,7 +1760,7 @@
     "mcap_cr": 108.46499919891357,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-22T08:47:45.447756",
-    "rsi_down_last_alert": "2026-10-22T10:16:31.585317"
+    "rsi_down_last_alert": "2026-10-22T11:01:58.829002"
   },
   "SAPPHIRE": {
     "result_date": "2026-10-22T00:00:00",
@@ -1873,6 +1873,30 @@
     "day_low": 207.6999969482422,
     "baseline_rsi": 24.15014302879642,
     "mcap_cr": 55447.07612839857,
+    "exchange": "NSE"
+  },
+  "CLEAN": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 752.7000122070312,
+    "day_low": 710.5499877929688,
+    "baseline_rsi": 35.747601831544756,
+    "mcap_cr": 7950.583541663641,
+    "exchange": "NSE"
+  },
+  "M&MFIN": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 290.0,
+    "day_low": 268.25,
+    "baseline_rsi": 23.382346553780323,
+    "mcap_cr": 39965.5926963593,
+    "exchange": "NSE"
+  },
+  "CYIENT": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 1183.199951171875,
+    "day_low": 1127.0,
+    "baseline_rsi": 54.91775044263576,
+    "mcap_cr": 11906.103944121216,
     "exchange": "NSE"
   }
 }
