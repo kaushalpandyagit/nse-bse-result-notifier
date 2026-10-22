@@ -334,8 +334,8 @@
     "price_high_last_price": 455.0,
     "rsi_up_last_alert": "2026-10-21T03:45:52.510998",
     "rsi_down_last_alert": "2026-10-22T06:45:50.838582",
-    "price_low_last_alert": "2026-10-22T03:45:58.775772",
-    "price_low_last_price": 429.3999938964844
+    "price_low_last_alert": "2026-10-22T07:29:36.706850",
+    "price_low_last_price": 435.75
   },
   "CANHLIFE": {
     "result_date": "2026-10-09T00:00:00",
@@ -1416,8 +1416,8 @@
     "baseline_rsi": 50.38200943548752,
     "mcap_cr": 8845.0700352,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-22T05:47:10.340749",
-    "price_low_last_price": 4975.0,
+    "price_low_last_alert": "2026-10-22T07:30:09.282740",
+    "price_low_last_price": 5042.0,
     "rsi_down_last_alert": "2026-10-22T06:47:28.467333"
   },
   "AYE": {
@@ -1521,7 +1521,7 @@
     "rsi_down_last_alert": "2026-10-22T06:47:39.426959",
     "price_low_last_alert": "2026-10-22T07:01:39.390029",
     "price_low_last_price": 1245.699951171875,
-    "rsi_up_last_alert": "2026-10-22T05:47:23.267914"
+    "rsi_up_last_alert": "2026-10-22T07:30:14.360826"
   },
   "arb_ABSLAMC": {
     "spread_last_alert": "2026-10-21T09:05:55.145187",
@@ -1743,6 +1743,7 @@
     "baseline_rsi": 49.82072761209914,
     "mcap_cr": 108.46499919891357,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-22T07:16:35.590033"
+    "rsi_up_last_alert": "2026-10-22T07:16:35.590033",
+    "rsi_down_last_alert": "2026-10-22T07:30:25.255393"
   }
 }

@@ -36,8 +36,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 44.9,
-      "near_high_17_22_last_alert": "2026-10-22T05:17:05.845210",
-      "near_high_17_22_last_price": 453.3500061035156
+      "near_high_17_22_last_alert": "2026-10-22T07:30:43.481140",
+      "near_high_17_22_last_price": 458.0
     },
     "AARTIIND": {
       "sma50": 499.8440008544922,
@@ -2161,7 +2161,11 @@
       "box_low": 778.0,
       "descending_res": 877.7284633091518,
       "wedge_contraction": 0.7767992790156638,
-      "rs_rank": 27.9
+      "rs_rank": 27.9,
+      "vol_breakout_last_alert": "2026-10-22T07:31:20.679600",
+      "vol_breakout_last_price": 796.8499755859375,
+      "rectangle_bounce_last_alert": "2026-10-22T07:31:21.222431",
+      "rectangle_bounce_last_price": 796.8499755859375
     },
     "BLACKBUCK": {
       "sma50": 596.21900390625,
