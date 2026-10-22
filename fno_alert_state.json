@@ -1,0 +1,62 @@
+{
+  "MAHAPEXLTD": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 49.45,
+    "ref_low": 46.11,
+    "status": "Active"
+  },
+  "GRWRHITECH": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 6900.5,
+    "ref_low": 5750.0,
+    "status": "Active"
+  },
+  "NGLFINE": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 2800.0,
+    "ref_low": 2551.2,
+    "status": "Active"
+  },
+  "DBEIL": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 6.61,
+    "ref_low": 5.56,
+    "status": "Active"
+  },
+  "SRF": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 2372.5,
+    "ref_low": 2178.3,
+    "status": "Active"
+  },
+  "EBGNG": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 728.9,
+    "ref_low": 670.0,
+    "status": "Active"
+  },
+  "BIRLACORPN": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 799.8,
+    "ref_low": 772.2,
+    "status": "Active"
+  },
+  "J&KBANK": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 142.28,
+    "ref_low": 132.62,
+    "status": "Active"
+  },
+  "BALMLAWRIE": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 155.15,
+    "ref_low": 148.0,
+    "status": "Active"
+  },
+  "TRITURBINE": {
+    "trigger_date": "2026-10-22",
+    "ref_high": 459.85,
+    "ref_low": 445.1,
+    "status": "Active"
+  }
+}
