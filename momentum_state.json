@@ -1941,7 +1941,9 @@
       "wedge_contraction": null,
       "rs_rank": 27.7,
       "ema50_pullback_last_alert": "2026-10-22T07:02:45.654388",
-      "ema50_pullback_last_price": 635.5499877929688
+      "ema50_pullback_last_price": 635.5499877929688,
+      "rectangle_bounce_last_alert": "2026-10-22T07:17:28.388600",
+      "rectangle_bounce_last_price": 636.4000244140625
     },
     "BBOX": {
       "sma50": 801.7189978027344,
@@ -6210,8 +6212,8 @@
       "descending_res": 7144.8,
       "wedge_contraction": 0.7753846153846153,
       "rs_rank": 96.4,
-      "near_high_17_22_last_alert": "2026-10-22T03:53:32.229905",
-      "near_high_17_22_last_price": 6557.5,
+      "near_high_17_22_last_alert": "2026-10-22T07:18:40.739908",
+      "near_high_17_22_last_price": 6285.0,
       "vol_breakout_last_alert": "2026-10-22T07:03:57.725717",
       "vol_breakout_last_price": 6185.0
     },
@@ -7216,8 +7218,8 @@
       "ema50_pullback_last_price": 330.8500061035156,
       "zanger_last_alert": "2026-10-22T06:51:21.834565",
       "zanger_last_price": 353.70001220703125,
-      "resistance_last_alert": "2026-10-22T06:19:17.354602",
-      "resistance_last_price": 348.8500061035156
+      "resistance_last_alert": "2026-10-22T07:18:57.236846",
+      "resistance_last_price": 352.70001220703125
     },
     "INDIAGLYCO": {
       "sma50": 578.8250051879883,

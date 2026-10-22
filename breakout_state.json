@@ -226,8 +226,8 @@
     "spread_last_price": 2.820854182104335
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-10-22T06:22:34.051425",
-    "spread_last_price": 2.786293243991194
+    "spread_last_alert": "2026-10-22T07:22:02.907601",
+    "spread_last_price": 2.6544329747392514
   },
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
@@ -1182,8 +1182,8 @@
     "baseline_rsi": 41.01175128104524,
     "mcap_cr": 3864.4094253854705,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-22T06:16:12.540421",
-    "price_low_last_price": 151.22999572753906,
+    "price_low_last_alert": "2026-10-22T07:16:10.800361",
+    "price_low_last_price": 149.1999969482422,
     "rsi_down_last_alert": "2026-10-22T06:47:03.356657",
     "rsi_up_last_alert": "2026-10-20T07:46:35.058120"
   },
@@ -1439,8 +1439,8 @@
     "baseline_rsi": null,
     "mcap_cr": 3117.2375001809996,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-22T06:01:47.507545",
-    "price_low_last_price": 390.79998779296875
+    "price_low_last_alert": "2026-10-22T07:16:20.987489",
+    "price_low_last_price": 383.5
   },
   "MGEL": {
     "result_date": "2026-10-21T00:00:00",
@@ -1615,8 +1615,8 @@
     "mcap_cr": 1481.2,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-22T06:47:48.148480",
-    "price_low_last_alert": "2026-10-22T06:30:34.157672",
-    "price_low_last_price": 7194.5
+    "price_low_last_alert": "2026-10-22T07:16:29.021248",
+    "price_low_last_price": 6897.0
   },
   "RAJRATAN": {
     "result_date": "2026-10-21T00:00:00",
@@ -1691,7 +1691,8 @@
     "day_low": 40.5,
     "baseline_rsi": 45.38099305637227,
     "mcap_cr": 2134.1573658812918,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-22T07:16:32.184467"
   },
   "BETA": {
     "result_date": "2026-10-22T00:00:00",
@@ -1741,6 +1742,7 @@
     "day_low": 29.0,
     "baseline_rsi": 49.82072761209914,
     "mcap_cr": 108.46499919891357,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-22T07:16:35.590033"
   }
 }
