@@ -473,7 +473,9 @@
       "box_low": 344.70001220703125,
       "descending_res": 425.2333272298177,
       "wedge_contraction": 0.9910273919726504,
-      "rs_rank": 87.2
+      "rs_rank": 87.2,
+      "near_high_17_22_last_alert": "2026-10-22T04:30:45.150407",
+      "near_high_17_22_last_price": 392.1499938964844
     },
     "ACUTAAS": {
       "sma50": 3229.3359912109377,
@@ -2409,7 +2411,9 @@
       "wedge_contraction": null,
       "rs_rank": 26.6,
       "resistance_last_alert": "2026-10-22T03:52:21.695818",
-      "resistance_last_price": 315.25
+      "resistance_last_price": 315.25,
+      "mtf_last_alert": "2026-10-22T04:31:19.809897",
+      "mtf_last_price": 316.6499938964844
     },
     "CAMPUS": {
       "sma50": 212.60979919433595,
@@ -7179,7 +7183,9 @@
       "wedge_contraction": null,
       "rs_rank": 15.5,
       "mtf_last_alert": "2026-10-22T04:04:34.663367",
-      "mtf_last_price": 324.6499938964844
+      "mtf_last_price": 324.6499938964844,
+      "vol_breakout_last_alert": "2026-10-22T04:32:35.412956",
+      "vol_breakout_last_price": 328.75
     },
     "INDIAGLYCO": {
       "sma50": 578.8250051879883,
@@ -8589,7 +8595,9 @@
       "box_low": 660.0,
       "descending_res": 778.0500640869141,
       "wedge_contraction": 0.6823684041188447,
-      "rs_rank": 54.0
+      "rs_rank": 54.0,
+      "near_high_17_22_last_alert": "2026-10-22T04:32:59.252515",
+      "near_high_17_22_last_price": 669.7999877929688
     },
     "KIRLOSBROS": {
       "sma50": 1816.966005859375,
@@ -10371,7 +10379,9 @@
       "box_low": 1965.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 91.5
+      "rs_rank": 91.5,
+      "near_high_17_22_last_alert": "2026-10-22T04:33:28.184554",
+      "near_high_17_22_last_price": 2231.10009765625
     },
     "NETWEB": {
       "sma50": 4929.2780078125,
@@ -11893,7 +11903,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 71.1
+      "rs_rank": 71.1,
+      "near_high_17_22_last_alert": "2026-10-22T04:33:54.149148",
+      "near_high_17_22_last_price": 1394.5
     },
     "QUESS": {
       "sma50": 344.2130017089844,
@@ -14477,7 +14489,9 @@
       "zanger_last_alert": "2026-10-22T04:22:34.053264",
       "zanger_last_price": 287.75,
       "mtf_last_alert": "2026-10-22T04:22:34.722181",
-      "mtf_last_price": 287.75
+      "mtf_last_price": 287.75,
+      "resistance_last_alert": "2026-10-22T04:34:36.027582",
+      "resistance_last_price": 289.70001220703125
     },
     "SUNTV": {
       "sma50": 519.2139996337891,
