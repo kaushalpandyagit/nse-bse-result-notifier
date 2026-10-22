@@ -10815,7 +10815,9 @@
       "resistance_last_alert": "2026-10-22T05:51:42.662666",
       "resistance_last_price": 340.3999938964844,
       "mtf_last_alert": "2026-10-22T05:51:43.269559",
-      "mtf_last_price": 340.3999938964844
+      "mtf_last_price": 340.3999938964844,
+      "ema50_pullback_last_alert": "2026-10-22T06:34:52.658703",
+      "ema50_pullback_last_price": 337.6000061035156
     },
     "OLAELEC": {
       "sma50": 37.41672912597656,
@@ -14448,8 +14450,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 82.8,
-      "near_high_17_22_last_alert": "2026-10-22T04:52:59.808794",
-      "near_high_17_22_last_price": 1069.699951171875
+      "near_high_17_22_last_alert": "2026-10-22T06:36:10.753484",
+      "near_high_17_22_last_price": 1058.0999755859375
     },
     "SUNFLAG": {
       "sma50": 381.7019976806641,
