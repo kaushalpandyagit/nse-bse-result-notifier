@@ -698,8 +698,8 @@
       "descending_res": 1802.8250427246094,
       "wedge_contraction": 0.983503586155125,
       "rs_rank": 80.4,
-      "near_high_17_22_last_alert": "2026-10-22T05:48:12.014061",
-      "near_high_17_22_last_price": 1470.9000244140625
+      "near_high_17_22_last_alert": "2026-10-22T08:17:13.642031",
+      "near_high_17_22_last_price": 1455.4000244140625
     },
     "AFCONS": {
       "sma50": 263.1051998901367,
@@ -2606,10 +2606,10 @@
       "rs_rank": 55.5,
       "mtf_last_alert": "2026-10-22T06:17:49.845958",
       "mtf_last_price": 556.0999755859375,
-      "sos_pullback_curl_last_alert": "2026-10-22T06:03:23.834842",
-      "sos_pullback_curl_last_price": 560.0,
-      "vol_breakout_last_alert": "2026-10-22T07:02:57.480427",
-      "vol_breakout_last_price": 557.0999755859375
+      "sos_pullback_curl_last_alert": "2026-10-22T08:17:49.411092",
+      "sos_pullback_curl_last_price": 551.3499755859375,
+      "vol_breakout_last_alert": "2026-10-22T08:17:48.727602",
+      "vol_breakout_last_price": 551.3499755859375
     },
     "CAPLIPOINT": {
       "sma50": 2600.7480126953124,
@@ -7697,7 +7697,9 @@
       "wedge_contraction": 1.047619671560952,
       "rs_rank": 59.6,
       "rectangle_bounce_last_alert": "2026-10-22T07:50:51.712088",
-      "rectangle_bounce_last_price": 137.7100067138672
+      "rectangle_bounce_last_price": 137.7100067138672,
+      "vol_breakout_last_alert": "2026-10-22T08:19:18.549053",
+      "vol_breakout_last_price": 137.83999633789062
     },
     "JAIBALAJI": {
       "sma50": 67.02240043640137,
@@ -7805,7 +7807,9 @@
       "box_low": 117.37999725341797,
       "descending_res": 146.39999389648438,
       "wedge_contraction": 0.8090063899602786,
-      "rs_rank": 67.2
+      "rs_rank": 67.2,
+      "near_high_17_22_last_alert": "2026-10-22T08:19:21.479257",
+      "near_high_17_22_last_price": 127.80000305175781
     },
     "JAYNECOIND": {
       "sma50": 93.40900039672852,
@@ -16530,8 +16534,8 @@
       "descending_res": 807.7998657226562,
       "wedge_contraction": 0.8291199491566275,
       "rs_rank": 76.6,
-      "near_high_17_22_last_alert": "2026-10-22T05:22:49.314949",
-      "near_high_17_22_last_price": 779.5499877929688
+      "near_high_17_22_last_alert": "2026-10-22T08:21:49.290176",
+      "near_high_17_22_last_price": 768.0
     },
     "VOLTAMP": {
       "sma50": 10629.28,

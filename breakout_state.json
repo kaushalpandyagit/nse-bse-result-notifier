@@ -146,8 +146,9 @@
     "custom_last_price": 1771.199951171875
   },
   "custom_alert_ESFL_news": {
-    "alerted": false,
-    "last_alert": null
+    "alerted": true,
+    "last_alert": "2026-10-22T08:16:58.920371",
+    "last_news_fingerprint": "Copy of Newspaper Publication Essen Speciality Films Limited"
   },
   "arb_ANGELONE": {
     "spread_last_alert": "2026-10-06T03:51:30.289390",
@@ -634,8 +635,8 @@
     "mcap_cr": 46216.16791985124,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-16T07:46:14.256562",
-    "price_low_last_alert": "2026-10-22T06:46:16.765008",
-    "price_low_last_price": 1909.0999755859375,
+    "price_low_last_alert": "2026-10-22T08:15:59.633281",
+    "price_low_last_price": 1931.4000244140625,
     "rsi_up_last_alert": "2026-10-22T07:46:13.253789"
   },
   "PETRONET": {
@@ -1024,8 +1025,8 @@
     "baseline_rsi": 68.4826117024826,
     "mcap_cr": 2439.8355085025755,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-22T05:46:38.186960",
-    "price_low_last_price": 219.60000610351562,
+    "price_low_last_alert": "2026-10-22T08:16:11.305860",
+    "price_low_last_price": 216.9199981689453,
     "rsi_down_last_alert": "2026-10-22T07:46:39.690892"
   },
   "MWL": {
@@ -1153,8 +1154,8 @@
     "mcap_cr": 9651.722693522574,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-22T07:46:48.051329",
-    "price_low_last_alert": "2026-10-22T06:16:11.248601",
-    "price_low_last_price": 92.4000015258789
+    "price_low_last_alert": "2026-10-22T08:16:14.974582",
+    "price_low_last_price": 91.45999908447266
   },
   "RPEL": {
     "result_date": "2026-10-16T00:00:00",
@@ -1416,8 +1417,8 @@
     "baseline_rsi": 50.38200943548752,
     "mcap_cr": 8845.0700352,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-22T07:30:09.282740",
-    "price_low_last_price": 5042.0,
+    "price_low_last_alert": "2026-10-22T08:16:25.542468",
+    "price_low_last_price": 4951.0,
     "rsi_down_last_alert": "2026-10-22T07:47:10.490705"
   },
   "AYE": {
@@ -1692,7 +1693,9 @@
     "baseline_rsi": 45.38099305637227,
     "mcap_cr": 2134.1573658812918,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-22T08:01:46.348831"
+    "rsi_down_last_alert": "2026-10-22T08:01:46.348831",
+    "price_low_last_alert": "2026-10-22T08:16:37.014680",
+    "price_low_last_price": 39.81999969482422
   },
   "BETA": {
     "result_date": "2026-10-22T00:00:00",
@@ -1746,7 +1749,7 @@
     "mcap_cr": 108.46499919891357,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-22T07:16:35.590033",
-    "rsi_down_last_alert": "2026-10-22T07:30:25.255393"
+    "rsi_down_last_alert": "2026-10-22T08:16:40.941377"
   },
   "SAPPHIRE": {
     "result_date": "2026-10-22T00:00:00",
@@ -1770,5 +1773,13 @@
     "price_high_last_alert": "2026-10-22T08:01:52.222130",
     "price_high_last_price": 138.6999969482422,
     "rsi_up_last_alert": "2026-10-22T08:01:52.703327"
+  },
+  "CHENNPETRO": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 1449.4000244140625,
+    "day_low": 1377.300048828125,
+    "baseline_rsi": 46.87922024441407,
+    "mcap_cr": 20878.867030446778,
+    "exchange": "NSE"
   }
 }
