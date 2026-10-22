@@ -3303,7 +3303,9 @@
       "wedge_contraction": 0.626396538308381,
       "rs_rank": 54.9,
       "near_high_17_22_last_alert": "2026-10-22T05:03:29.131540",
-      "near_high_17_22_last_price": 713.8499755859375
+      "near_high_17_22_last_price": 713.8499755859375,
+      "rectangle_bounce_last_alert": "2026-10-22T08:49:16.808678",
+      "rectangle_bounce_last_price": 715.25
     },
     "CHOLAHLDNG": {
       "sma50": 1479.6399951171875,
@@ -5704,8 +5706,8 @@
       "descending_res": 631.1428571428571,
       "wedge_contraction": 0.8256815235084798,
       "rs_rank": 67.7,
-      "near_high_17_22_last_alert": "2026-10-22T06:18:46.292874",
-      "near_high_17_22_last_price": 516.7999877929688
+      "near_high_17_22_last_alert": "2026-10-22T08:49:57.184762",
+      "near_high_17_22_last_price": 510.0
     },
     "GODFRYPHLP": {
       "sma50": 1981.9080078125,
@@ -6220,8 +6222,8 @@
       "rs_rank": 96.4,
       "near_high_17_22_last_alert": "2026-10-22T08:03:55.156501",
       "near_high_17_22_last_price": 6575.0,
-      "vol_breakout_last_alert": "2026-10-22T07:50:19.351033",
-      "vol_breakout_last_price": 6450.0
+      "vol_breakout_last_alert": "2026-10-22T08:50:08.300191",
+      "vol_breakout_last_price": 6569.5
     },
     "GSFC": {
       "sma50": 154.57019958496093,
@@ -7214,10 +7216,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 15.5,
-      "mtf_last_alert": "2026-10-22T08:04:12.760988",
-      "mtf_last_price": 347.5,
-      "vol_breakout_last_alert": "2026-10-22T08:04:11.805800",
-      "vol_breakout_last_price": 347.5,
+      "mtf_last_alert": "2026-10-22T08:50:26.652718",
+      "mtf_last_price": 335.0,
+      "vol_breakout_last_alert": "2026-10-22T08:50:25.899056",
+      "vol_breakout_last_price": 335.0,
       "rectangle_bounce_last_alert": "2026-10-22T04:50:25.638923",
       "rectangle_bounce_last_price": 330.8500061035156,
       "ema50_pullback_last_alert": "2026-10-22T04:50:26.788068",
@@ -7696,8 +7698,8 @@
       "descending_res": 147.27171071370444,
       "wedge_contraction": 1.047619671560952,
       "rs_rank": 59.6,
-      "rectangle_bounce_last_alert": "2026-10-22T07:50:51.712088",
-      "rectangle_bounce_last_price": 137.7100067138672,
+      "rectangle_bounce_last_alert": "2026-10-22T08:50:36.632750",
+      "rectangle_bounce_last_price": 135.60000610351562,
       "vol_breakout_last_alert": "2026-10-22T08:19:18.549053",
       "vol_breakout_last_price": 137.83999633789062
     },
@@ -13169,7 +13171,9 @@
       "box_low": 181.0,
       "descending_res": 222.0411646225873,
       "wedge_contraction": 0.6862649951371602,
-      "rs_rank": 68.7
+      "rs_rank": 68.7,
+      "rectangle_bounce_last_alert": "2026-10-22T08:52:12.147082",
+      "rectangle_bounce_last_price": 194.0
     },
     "SARDAEN": {
       "sma50": 501.8710015869141,
@@ -14256,8 +14260,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 59.4,
-      "near_high_17_22_last_alert": "2026-10-22T05:52:52.911131",
-      "near_high_17_22_last_price": 1025.800048828125
+      "near_high_17_22_last_alert": "2026-10-22T08:52:29.579660",
+      "near_high_17_22_last_price": 1011.9000244140625
     },
     "STYLAMIND": {
       "sma50": 3389.2559765625,
@@ -15910,14 +15914,14 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 10.2,
-      "rectangle_bounce_last_alert": "2026-10-22T05:53:28.521850",
-      "rectangle_bounce_last_price": 35.06999969482422,
-      "vol_breakout_last_alert": "2026-10-22T05:53:27.918870",
-      "vol_breakout_last_price": 35.06999969482422,
+      "rectangle_bounce_last_alert": "2026-10-22T08:52:57.433540",
+      "rectangle_bounce_last_price": 35.470001220703125,
+      "vol_breakout_last_alert": "2026-10-22T08:52:56.754959",
+      "vol_breakout_last_price": 35.470001220703125,
       "mtf_last_alert": "2026-10-22T05:36:32.853586",
       "mtf_last_price": 35.619998931884766,
-      "ema50_pullback_last_alert": "2026-10-22T07:06:37.842321",
-      "ema50_pullback_last_price": 35.08000183105469
+      "ema50_pullback_last_alert": "2026-10-22T08:52:58.264579",
+      "ema50_pullback_last_price": 35.470001220703125
     },
     "TVSSCS": {
       "sma50": 127.18940002441406,
@@ -16028,8 +16032,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 65.5,
-      "near_high_17_22_last_alert": "2026-10-22T05:22:38.099359",
-      "near_high_17_22_last_price": 61.15999984741211
+      "near_high_17_22_last_alert": "2026-10-22T08:53:00.188984",
+      "near_high_17_22_last_price": 60.45000076293945
     },
     "UNIMECH": {
       "sma50": 1606.0380053710937,
