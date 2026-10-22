@@ -563,8 +563,8 @@
     "baseline_rsi": 61.680037004706556,
     "mcap_cr": 9125.0413536,
     "exchange": "NSE",
-    "price_high_last_alert": "2026-10-22T04:46:06.009858",
-    "price_high_last_price": 313.54998779296875,
+    "price_high_last_alert": "2026-10-22T08:29:42.619985",
+    "price_high_last_price": 321.70001220703125,
     "rsi_up_last_alert": "2026-10-21T05:46:06.446712",
     "rsi_down_last_alert": "2026-10-22T07:46:06.990478"
   },
@@ -958,8 +958,8 @@
     "baseline_rsi": 66.07136496573195,
     "mcap_cr": 8177.280543872949,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-22T06:46:45.321324",
-    "price_low_last_price": 743.0,
+    "price_low_last_alert": "2026-10-22T08:29:53.632517",
+    "price_low_last_price": 752.2999877929688,
     "rsi_down_last_alert": "2026-10-22T07:46:35.791615"
   },
   "ORIENTHOT": {
@@ -1339,8 +1339,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-22T07:47:03.509949",
     "rsi_up_last_alert": "2026-10-21T03:46:51.288769",
-    "price_low_last_alert": "2026-10-22T06:47:19.582514",
-    "price_low_last_price": 54.5099983215332
+    "price_low_last_alert": "2026-10-22T08:30:05.017899",
+    "price_low_last_price": 53.40999984741211
   },
   "BEPL": {
     "result_date": "2026-10-19T00:00:00",
@@ -1649,7 +1649,7 @@
     "baseline_rsi": 41.89894783922748,
     "mcap_cr": 170.61000537872314,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-22T07:01:47.117790",
+    "rsi_down_last_alert": "2026-10-22T08:30:18.323591",
     "price_low_last_alert": "2026-10-22T04:02:04.834403",
     "price_low_last_price": 7.139999866485596,
     "rsi_up_last_alert": "2026-10-22T07:47:32.434485"
@@ -1704,7 +1704,10 @@
     "baseline_rsi": 45.23527960105136,
     "mcap_cr": 1907.1545093482666,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-22T07:47:35.281271"
+    "rsi_down_last_alert": "2026-10-22T07:47:35.281271",
+    "price_high_last_alert": "2026-10-22T08:30:20.549051",
+    "price_high_last_price": 1884.5999755859375,
+    "rsi_up_last_alert": "2026-10-22T08:30:21.067467"
   },
   "MAHSCOOTER": {
     "result_date": "2026-10-22T00:00:00",
