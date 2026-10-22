@@ -751,7 +751,7 @@
     "baseline_rsi": 53.9337629114403,
     "mcap_cr": 5818.824203498837,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-22T03:46:37.276713",
+    "rsi_down_last_alert": "2026-10-22T05:16:03.682219",
     "rsi_up_last_alert": "2026-10-22T04:46:20.654445"
   },
   "arb_APOLLO": {
@@ -1124,8 +1124,8 @@
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-16T09:01:51.000927",
     "rsi_down_last_alert": "2026-10-22T04:46:47.087910",
-    "price_low_last_alert": "2026-10-22T03:47:06.683414",
-    "price_low_last_price": 335.0
+    "price_low_last_alert": "2026-10-22T05:16:17.005836",
+    "price_low_last_price": 342.1499938964844
   },
   "MODISONLTD": {
     "result_date": "2026-10-16T00:00:00",
@@ -1312,7 +1312,7 @@
     "baseline_rsi": 55.38014239255843,
     "mcap_cr": 136030.84958714843,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-22T03:47:22.869734",
+    "rsi_up_last_alert": "2026-10-22T05:16:25.088705",
     "price_high_last_alert": "2026-10-22T04:16:28.661966",
     "price_high_last_price": 182.4499969482422
   },
@@ -1644,7 +1644,7 @@
     "baseline_rsi": 41.89894783922748,
     "mcap_cr": 170.61000537872314,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-22T03:47:58.216498",
+    "rsi_down_last_alert": "2026-10-22T05:16:43.048001",
     "price_low_last_alert": "2026-10-22T04:02:04.834403",
     "price_low_last_price": 7.139999866485596,
     "rsi_up_last_alert": "2026-10-22T04:47:30.798092"
@@ -1672,5 +1672,13 @@
   "arb_ACUTAAS": {
     "spread_last_alert": "2026-10-22T04:54:17.619721",
     "spread_last_price": 2.764629525271265
+  },
+  "PAISALO": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 80.70999908447266,
+    "day_low": 78.26000213623047,
+    "baseline_rsi": 45.69773237705447,
+    "mcap_cr": 7445.288076155948,
+    "exchange": "NSE"
   }
 }

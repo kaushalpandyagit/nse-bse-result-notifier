@@ -36,8 +36,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 44.9,
-      "near_high_17_22_last_alert": "2026-10-22T03:51:33.565973",
-      "near_high_17_22_last_price": 446.25
+      "near_high_17_22_last_alert": "2026-10-22T05:17:05.845210",
+      "near_high_17_22_last_price": 453.3500061035156
     },
     "AARTIIND": {
       "sma50": 499.8440008544922,
@@ -1356,8 +1356,8 @@
       "descending_res": 1682.0,
       "wedge_contraction": 1.0270599243203988,
       "rs_rank": 88.5,
-      "near_high_17_22_last_alert": "2026-10-22T03:52:00.288740",
-      "near_high_17_22_last_price": 1537.4000244140625
+      "near_high_17_22_last_alert": "2026-10-22T05:17:35.023546",
+      "near_high_17_22_last_price": 1562.699951171875
     },
     "ATLANTAELE": {
       "sma50": 1744.262001953125,
@@ -7194,8 +7194,8 @@
       "rs_rank": 15.5,
       "mtf_last_alert": "2026-10-22T04:50:26.235812",
       "mtf_last_price": 330.8500061035156,
-      "vol_breakout_last_alert": "2026-10-22T04:32:35.412956",
-      "vol_breakout_last_price": 328.75,
+      "vol_breakout_last_alert": "2026-10-22T05:19:36.055443",
+      "vol_breakout_last_price": 336.75,
       "rectangle_bounce_last_alert": "2026-10-22T04:50:25.638923",
       "rectangle_bounce_last_price": 330.8500061035156,
       "ema50_pullback_last_alert": "2026-10-22T04:50:26.788068",
@@ -7888,8 +7888,8 @@
       "descending_res": 311.5625,
       "wedge_contraction": 1.4268395697099614,
       "rs_rank": 69.1,
-      "near_high_17_22_last_alert": "2026-10-22T03:54:09.993878",
-      "near_high_17_22_last_price": 261.1000061035156
+      "near_high_17_22_last_alert": "2026-10-22T05:19:52.002105",
+      "near_high_17_22_last_price": 256.95001220703125
     },
     "JKPAPER": {
       "sma50": 396.4599987792969,
@@ -11522,8 +11522,8 @@
       "descending_res": 610.8307542067307,
       "wedge_contraction": 0.8941401752246861,
       "rs_rank": 34.7,
-      "near_high_17_22_last_alert": "2026-10-22T04:21:28.220006",
-      "near_high_17_22_last_price": 574.9000244140625
+      "near_high_17_22_last_alert": "2026-10-22T05:21:07.547021",
+      "near_high_17_22_last_price": 583.9500122070312
     },
     "POLYMED": {
       "sma50": 1694.6019897460938,
@@ -12289,7 +12289,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 88.7
+      "rs_rank": 88.7,
+      "near_high_17_22_last_alert": "2026-10-22T05:21:25.257780",
+      "near_high_17_22_last_price": 86.80000305175781
     },
     "RCF": {
       "sma50": 112.20919982910156,
@@ -12903,7 +12905,11 @@
       "box_low": 41.77000045776367,
       "descending_res": 45.56499099731445,
       "wedge_contraction": 0.8618414943570103,
-      "rs_rank": 69.8
+      "rs_rank": 69.8,
+      "resistance_last_alert": "2026-10-22T05:21:40.052025",
+      "resistance_last_price": 45.20000076293945,
+      "near_high_17_22_last_alert": "2026-10-22T05:21:40.661649",
+      "near_high_17_22_last_price": 45.20000076293945
     },
     "SAILIFE": {
       "sma50": 1510.7899975585938,
@@ -15972,8 +15978,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 65.5,
-      "near_high_17_22_last_alert": "2026-10-22T03:56:35.423998",
-      "near_high_17_22_last_price": 60.540000915527344
+      "near_high_17_22_last_alert": "2026-10-22T05:22:38.099359",
+      "near_high_17_22_last_price": 61.15999984741211
     },
     "UNIMECH": {
       "sma50": 1606.0380053710937,
@@ -16478,8 +16484,8 @@
       "descending_res": 807.7998657226562,
       "wedge_contraction": 0.8291199491566275,
       "rs_rank": 76.6,
-      "near_high_17_22_last_alert": "2026-10-22T03:56:44.253003",
-      "near_high_17_22_last_price": 764.8499755859375
+      "near_high_17_22_last_alert": "2026-10-22T05:22:49.314949",
+      "near_high_17_22_last_price": 779.5499877929688
     },
     "VOLTAMP": {
       "sma50": 10629.28,
@@ -16806,8 +16812,8 @@
       "descending_res": 673.35009765625,
       "wedge_contraction": 0.8487630601237176,
       "rs_rank": 75.7,
-      "near_high_17_22_last_alert": "2026-10-22T03:56:50.347816",
-      "near_high_17_22_last_price": 641.5499877929688
+      "near_high_17_22_last_alert": "2026-10-22T05:22:56.394505",
+      "near_high_17_22_last_price": 632.9000244140625
     },
     "WHIRLPOOL": {
       "sma50": 807.3380029296875,
