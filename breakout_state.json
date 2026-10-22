@@ -1881,7 +1881,8 @@
     "day_low": 710.5499877929688,
     "baseline_rsi": 35.747601831544756,
     "mcap_cr": 7950.583541663641,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-22T11:17:04.369067"
   },
   "M&MFIN": {
     "result_date": "2026-10-22T00:00:00",
@@ -1898,5 +1899,30 @@
     "baseline_rsi": 54.91775044263576,
     "mcap_cr": 11906.103944121216,
     "exchange": "NSE"
+  },
+  "COLPAL": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 1719.9000244140625,
+    "day_low": 1677.5999755859375,
+    "baseline_rsi": 36.25543910598561,
+    "mcap_cr": 45829.579329,
+    "exchange": "NSE"
+  },
+  "FAIRCHEMOR": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 783.25,
+    "day_low": 743.9500122070312,
+    "baseline_rsi": 62.1112206298683,
+    "mcap_cr": 961.2562918817139,
+    "exchange": "NSE"
+  },
+  "ACCELYA": {
+    "result_date": "2026-10-22T00:00:00",
+    "day_high": 1031.199951171875,
+    "day_low": 999.0,
+    "baseline_rsi": 38.28285834611646,
+    "mcap_cr": 1512.9257785189332,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-22T11:17:06.900778"
   }
 }
