@@ -3901,7 +3901,9 @@
       "box_low": 3820.10009765625,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 70.4
+      "rs_rank": 70.4,
+      "near_high_17_22_last_alert": "2026-10-22T05:32:17.020046",
+      "near_high_17_22_last_price": 3902.0
     },
     "DBL": {
       "sma50": 406.6290008544922,
@@ -11559,7 +11561,9 @@
       "box_low": 1455.0999755859375,
       "descending_res": 1668.8,
       "wedge_contraction": 0.9640290369194228,
-      "rs_rank": 58.1
+      "rs_rank": 58.1,
+      "rectangle_bounce_last_alert": "2026-10-22T05:35:03.463611",
+      "rectangle_bounce_last_price": 1485.199951171875
     },
     "POWERMECH": {
       "sma50": 2424.94599609375,
@@ -12946,8 +12950,8 @@
       "descending_res": 1564.84013671875,
       "wedge_contraction": 0.7730067686337626,
       "rs_rank": 90.2,
-      "near_high_17_22_last_alert": "2026-10-22T03:55:42.562156",
-      "near_high_17_22_last_price": 1384.4000244140625
+      "near_high_17_22_last_alert": "2026-10-22T05:35:34.885854",
+      "near_high_17_22_last_price": 1401.800048828125
     },
     "SAMHI": {
       "sma50": 155.08199981689452,
@@ -13597,7 +13601,9 @@
       "box_low": 165.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 79.1
+      "rs_rank": 79.1,
+      "near_high_17_22_last_alert": "2026-10-22T05:35:49.326753",
+      "near_high_17_22_last_price": 182.4600067138672
     },
     "SHILCTECH": {
       "sma50": 3999.817998046875,
@@ -15869,7 +15875,9 @@
       "rectangle_bounce_last_alert": "2026-10-22T04:53:28.861946",
       "rectangle_bounce_last_price": 34.09000015258789,
       "vol_breakout_last_alert": "2026-10-22T05:07:56.489882",
-      "vol_breakout_last_price": 34.06999969482422
+      "vol_breakout_last_price": 34.06999969482422,
+      "mtf_last_alert": "2026-10-22T05:36:32.853586",
+      "mtf_last_price": 35.619998931884766
     },
     "TVSSCS": {
       "sma50": 127.18940002441406,
@@ -15905,7 +15913,9 @@
       "box_low": 112.80000305175781,
       "descending_res": 137.06292006548713,
       "wedge_contraction": 0.9454828072725242,
-      "rs_rank": 56.0
+      "rs_rank": 56.0,
+      "near_high_17_22_last_alert": "2026-10-22T05:36:34.362404",
+      "near_high_17_22_last_price": 114.69999694824219
     },
     "UCOBANK": {
       "sma50": 24.32819995880127,
