@@ -5120,8 +5120,8 @@
       "descending_res": 164.8214351109096,
       "wedge_contraction": 1.257916252139573,
       "rs_rank": 61.1,
-      "ema50_pullback_last_alert": "2026-10-22T05:04:06.443147",
-      "ema50_pullback_last_price": 157.50999450683594
+      "ema50_pullback_last_alert": "2026-10-22T08:03:34.953408",
+      "ema50_pullback_last_price": 155.92999267578125
     },
     "FIEMIND": {
       "sma50": 2020.3439990234374,
@@ -6218,8 +6218,8 @@
       "descending_res": 7144.8,
       "wedge_contraction": 0.7753846153846153,
       "rs_rank": 96.4,
-      "near_high_17_22_last_alert": "2026-10-22T07:18:40.739908",
-      "near_high_17_22_last_price": 6285.0,
+      "near_high_17_22_last_alert": "2026-10-22T08:03:55.156501",
+      "near_high_17_22_last_price": 6575.0,
       "vol_breakout_last_alert": "2026-10-22T07:50:19.351033",
       "vol_breakout_last_price": 6450.0
     },
@@ -7214,16 +7214,16 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 15.5,
-      "mtf_last_alert": "2026-10-22T06:51:22.396560",
-      "mtf_last_price": 353.70001220703125,
-      "vol_breakout_last_alert": "2026-10-22T06:51:21.212386",
-      "vol_breakout_last_price": 353.70001220703125,
+      "mtf_last_alert": "2026-10-22T08:04:12.760988",
+      "mtf_last_price": 347.5,
+      "vol_breakout_last_alert": "2026-10-22T08:04:11.805800",
+      "vol_breakout_last_price": 347.5,
       "rectangle_bounce_last_alert": "2026-10-22T04:50:25.638923",
       "rectangle_bounce_last_price": 330.8500061035156,
       "ema50_pullback_last_alert": "2026-10-22T04:50:26.788068",
       "ema50_pullback_last_price": 330.8500061035156,
-      "zanger_last_alert": "2026-10-22T06:51:21.834565",
-      "zanger_last_price": 353.70001220703125,
+      "zanger_last_alert": "2026-10-22T08:04:12.287484",
+      "zanger_last_price": 347.5,
       "resistance_last_alert": "2026-10-22T07:18:57.236846",
       "resistance_last_price": 352.70001220703125
     },
@@ -16748,8 +16748,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 90.9,
-      "near_high_17_22_last_alert": "2026-10-22T03:56:49.102187",
-      "near_high_17_22_last_price": 676.3499755859375
+      "near_high_17_22_last_alert": "2026-10-22T08:06:47.449412",
+      "near_high_17_22_last_price": 669.3499755859375
     },
     "WELSPUNLIV": {
       "sma50": 206.6338003540039,
