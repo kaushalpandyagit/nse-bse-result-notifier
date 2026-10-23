@@ -394,8 +394,8 @@
     "baseline_rsi": 61.09650117443259,
     "mcap_cr": 95.61373289372712,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-23T04:46:04.685614",
-    "price_low_last_price": 79.0,
+    "price_low_last_alert": "2026-10-23T06:15:53.947487",
+    "price_low_last_price": 78.0,
     "rsi_down_last_alert": "2026-10-23T05:45:50.773746"
   },
   "ADROITIND": {
@@ -602,8 +602,8 @@
     "mcap_cr": 44100.0025872,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T05:46:03.191605",
-    "price_low_last_alert": "2026-10-23T05:29:49.724836",
-    "price_low_last_price": 284.6499938964844
+    "price_low_last_alert": "2026-10-23T06:15:59.940553",
+    "price_low_last_price": 281.54998779296875
   },
   "HDBFS": {
     "result_date": "2026-10-14T00:00:00",
@@ -1399,8 +1399,8 @@
     "baseline_rsi": 50.38200943548752,
     "mcap_cr": 8845.0700352,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-23T05:01:50.206378",
-    "price_low_last_price": 4889.5,
+    "price_low_last_alert": "2026-10-23T06:16:18.416917",
+    "price_low_last_price": 4975.5,
     "rsi_down_last_alert": "2026-10-23T05:46:53.677963"
   },
   "AYE": {
@@ -1478,7 +1478,7 @@
     "price_high_last_alert": "2026-10-22T09:16:23.079940",
     "price_high_last_price": 333.0,
     "rsi_up_last_alert": "2026-10-23T05:01:55.715110",
-    "rsi_down_last_alert": "2026-10-23T05:30:19.952909"
+    "rsi_down_last_alert": "2026-10-23T06:16:21.361605"
   },
   "CHEMBONDCH": {
     "result_date": "2026-10-21T00:00:00",
@@ -1765,7 +1765,7 @@
     "rsi_up_last_alert": "2026-10-23T05:47:22.160286",
     "price_high_last_alert": "2026-10-22T08:01:50.948198",
     "price_high_last_price": 195.25999450683594,
-    "rsi_down_last_alert": "2026-10-23T05:30:34.843143"
+    "rsi_down_last_alert": "2026-10-23T06:16:31.099700"
   },
   "J&KBANK": {
     "result_date": "2026-10-22T00:00:00",

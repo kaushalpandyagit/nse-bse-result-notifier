@@ -2700,8 +2700,8 @@
       "descending_res": 3253.0132731119793,
       "wedge_contraction": 0.9879399035682083,
       "rs_rank": 96.2,
-      "near_high_17_22_last_alert": "2026-10-23T04:31:54.045485",
-      "near_high_17_22_last_price": 2695.800048828125
+      "near_high_17_22_last_alert": "2026-10-23T06:17:36.311118",
+      "near_high_17_22_last_price": 2724.89990234375
     },
     "CASTROLIND": {
       "sma50": 192.16160064697266,
@@ -2953,7 +2953,9 @@
       "box_low": 1101.300048828125,
       "descending_res": 1325.690840287642,
       "wedge_contraction": 0.8390859305318595,
-      "rs_rank": 97.7
+      "rs_rank": 97.7,
+      "liquidity_sweep_last_alert": "2026-10-23T06:17:39.635278",
+      "liquidity_sweep_last_price": 1118.800048828125
     },
     "CENTRALBK": {
       "sma50": 30.735999946594237,
@@ -4404,8 +4406,8 @@
       "descending_res": 138.5900115966797,
       "wedge_contraction": 1.0376317404435949,
       "rs_rank": 56.4,
-      "near_high_17_22_last_alert": "2026-10-23T05:18:41.873959",
-      "near_high_17_22_last_price": 113.93000030517578
+      "near_high_17_22_last_alert": "2026-10-23T06:17:59.766718",
+      "near_high_17_22_last_price": 115.66000366210938
     },
     "EIDPARRY": {
       "sma50": 733.39,
@@ -4912,8 +4914,8 @@
       "descending_res": 252.05003356933594,
       "wedge_contraction": 0.9368225191177878,
       "rs_rank": 58.1,
-      "near_high_17_22_last_alert": "2026-10-23T04:50:14.433932",
-      "near_high_17_22_last_price": 215.80999755859375
+      "near_high_17_22_last_alert": "2026-10-23T06:18:07.941932",
+      "near_high_17_22_last_price": 218.2100067138672
     },
     "EQUITASBNK": {
       "sma50": 71.67159957885742,
@@ -7068,8 +7070,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 76.1,
-      "near_high_17_22_last_alert": "2026-10-23T04:06:00.782424",
-      "near_high_17_22_last_price": 1625.9000244140625
+      "near_high_17_22_last_alert": "2026-10-23T06:18:41.588912",
+      "near_high_17_22_last_price": 1605.5999755859375
     },
     "IMFA": {
       "sma50": 1276.6019970703126,
@@ -7287,7 +7289,9 @@
       "box_low": 999.0,
       "descending_res": 1031.7000732421875,
       "wedge_contraction": 0.7954365701471053,
-      "rs_rank": 74.0
+      "rs_rank": 74.0,
+      "rectangle_bounce_last_alert": "2026-10-23T06:18:45.130370",
+      "rectangle_bounce_last_price": 1026.800048828125
     },
     "INOXINDIA": {
       "sma50": 2058.3559912109376,
@@ -16862,8 +16866,8 @@
       "descending_res": 673.35009765625,
       "wedge_contraction": 0.8106524767255927,
       "rs_rank": 78.0,
-      "near_high_17_22_last_alert": "2026-10-23T04:53:52.280385",
-      "near_high_17_22_last_price": 627.0999755859375
+      "near_high_17_22_last_alert": "2026-10-23T06:20:58.948737",
+      "near_high_17_22_last_price": 633.4500122070312
     },
     "WHIRLPOOL": {
       "sma50": 807.1340026855469,
