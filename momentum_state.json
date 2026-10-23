@@ -7139,7 +7139,9 @@
       "box_low": 1075.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 10.1
+      "rs_rank": 10.1,
+      "rectangle_bounce_last_alert": "2026-10-23T10:04:57.316026",
+      "rectangle_bounce_last_price": 1099.699951171875
     },
     "INDGN": {
       "sma50": 585.5709997558594,
@@ -7214,8 +7216,8 @@
       "rs_rank": 18.6,
       "mtf_last_alert": "2026-10-23T03:55:32.592297",
       "mtf_last_price": 326.45001220703125,
-      "vol_breakout_last_alert": "2026-10-23T09:19:38.043064",
-      "vol_breakout_last_price": 310.70001220703125
+      "vol_breakout_last_alert": "2026-10-23T10:04:58.492124",
+      "vol_breakout_last_price": 315.79998779296875
     },
     "INDIAGLYCO": {
       "sma50": 547.3310049438477,
@@ -8163,7 +8165,9 @@
       "wedge_contraction": 0.8879756612014145,
       "rs_rank": 43.3,
       "rectangle_bounce_last_alert": "2026-10-23T08:20:37.524026",
-      "rectangle_bounce_last_price": 117.56999969482422
+      "rectangle_bounce_last_price": 117.56999969482422,
+      "vol_breakout_last_alert": "2026-10-23T10:05:16.108714",
+      "vol_breakout_last_price": 116.9800033569336
     },
     "JUBLFOOD": {
       "sma50": 470.8059997558594,
@@ -13037,7 +13041,9 @@
       "box_low": 140.91000366210938,
       "descending_res": 161.25,
       "wedge_contraction": 0.8456111024689198,
-      "rs_rank": 44.2
+      "rs_rank": 44.2,
+      "rectangle_bounce_last_alert": "2026-10-23T10:06:47.515843",
+      "rectangle_bounce_last_price": 152.85000610351562
     },
     "SAMMAANCAP": {
       "sma50": 142.5034001159668,
@@ -15907,7 +15913,9 @@
       "zanger_last_alert": "2026-10-23T09:55:15.479667",
       "zanger_last_price": 39.130001068115234,
       "mtf_last_alert": "2026-10-23T09:55:16.037045",
-      "mtf_last_price": 39.130001068115234
+      "mtf_last_price": 39.130001068115234,
+      "resistance_last_alert": "2026-10-23T10:07:36.732997",
+      "resistance_last_price": 37.68000030517578
     },
     "TVSSCS": {
       "sma50": 127.13040008544922,
