@@ -2295,5 +2295,29 @@
     "baseline_rsi": 33.516293899768726,
     "mcap_cr": 145838.4583392,
     "exchange": "NSE"
+  },
+  "REPRO": {
+    "result_date": "2026-10-23T00:00:00",
+    "day_high": 291.6499938964844,
+    "day_low": 276.0,
+    "baseline_rsi": 38.86355501004775,
+    "mcap_cr": 409.70286203569947,
+    "exchange": "NSE"
+  },
+  "INDUSINDBK": {
+    "result_date": "2026-10-23T00:00:00",
+    "day_high": 852.0499877929688,
+    "day_low": 831.3499755859375,
+    "baseline_rsi": 31.783263073480867,
+    "mcap_cr": 65058.583452,
+    "exchange": "NSE"
+  },
+  "ASAL": {
+    "result_date": "2026-10-23T00:00:00",
+    "day_high": 409.3500061035156,
+    "day_low": 383.29998779296875,
+    "baseline_rsi": 32.678117262089486,
+    "mcap_cr": 632.9894403,
+    "exchange": "NSE"
   }
 }
