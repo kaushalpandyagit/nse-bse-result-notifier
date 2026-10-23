@@ -112,8 +112,8 @@
       "descending_res": 920.2749328613281,
       "wedge_contraction": 0.7354516351037499,
       "rs_rank": 77.0,
-      "near_high_17_22_last_alert": "2026-10-23T03:53:08.281467",
-      "near_high_17_22_last_price": 800.5999755859375
+      "near_high_17_22_last_alert": "2026-10-23T05:17:22.416247",
+      "near_high_17_22_last_price": 789.7000122070312
     },
     "AAVAS": {
       "sma50": 1277.6280078125,
@@ -806,8 +806,8 @@
       "descending_res": 826.5555691189236,
       "wedge_contraction": 0.9300925101815142,
       "rs_rank": 85.0,
-      "near_high_17_22_last_alert": "2026-10-23T03:53:21.801346",
-      "near_high_17_22_last_price": 669.2000122070312
+      "near_high_17_22_last_alert": "2026-10-23T05:17:36.473610",
+      "near_high_17_22_last_price": 676.7000122070312
     },
     "ALKYLAMINE": {
       "sma50": 1896.5180053710938,
@@ -4404,8 +4404,8 @@
       "descending_res": 138.5900115966797,
       "wedge_contraction": 1.0376317404435949,
       "rs_rank": 56.4,
-      "near_high_17_22_last_alert": "2026-10-23T03:54:33.065532",
-      "near_high_17_22_last_price": 116.4000015258789
+      "near_high_17_22_last_alert": "2026-10-23T05:18:41.873959",
+      "near_high_17_22_last_price": 113.93000030517578
     },
     "EIDPARRY": {
       "sma50": 733.39,
@@ -5095,7 +5095,9 @@
       "box_low": 141.60000610351562,
       "descending_res": 164.8214351109096,
       "wedge_contraction": 1.2797827118256246,
-      "rs_rank": 65.1
+      "rs_rank": 65.1,
+      "near_high_17_22_last_alert": "2026-10-23T05:18:55.317475",
+      "near_high_17_22_last_price": 148.0800018310547
     },
     "FIEMIND": {
       "sma50": 2006.4919970703124,
@@ -6006,8 +6008,8 @@
       "descending_res": 853.1853099149816,
       "wedge_contraction": 0.9852355795582612,
       "rs_rank": 53.3,
-      "near_high_17_22_last_alert": "2026-10-23T03:55:08.679087",
-      "near_high_17_22_last_price": 695.8499755859375
+      "near_high_17_22_last_alert": "2026-10-23T05:19:14.080158",
+      "near_high_17_22_last_price": 684.0
     },
     "GRAVITA": {
       "sma50": 1619.9840014648437,
@@ -11626,8 +11628,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 77.8,
-      "near_high_17_22_last_alert": "2026-10-23T04:21:00.787954",
-      "near_high_17_22_last_price": 191.4600067138672
+      "near_high_17_22_last_alert": "2026-10-23T05:20:57.332264",
+      "near_high_17_22_last_price": 188.74000549316406
     },
     "PRAJIND": {
       "sma50": 318.582998046875,
@@ -15834,8 +15836,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 25.2,
-      "vol_breakout_last_alert": "2026-10-23T04:09:17.486872",
-      "vol_breakout_last_price": 34.83000183105469
+      "vol_breakout_last_alert": "2026-10-23T05:22:12.505832",
+      "vol_breakout_last_price": 34.0
     },
     "TVSSCS": {
       "sma50": 127.13040008544922,
