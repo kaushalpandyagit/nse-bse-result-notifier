@@ -3635,7 +3635,9 @@
       "box_low": null,
       "descending_res": 1282.0,
       "wedge_contraction": 1.248381567577522,
-      "rs_rank": 38.7
+      "rs_rank": 38.7,
+      "vol_breakout_last_alert": "2026-10-23T04:04:42.798203",
+      "vol_breakout_last_price": 1063.300048828125
     },
     "CROMPTON": {
       "sma50": 225.2493994140625,
@@ -4175,7 +4177,9 @@
       "box_low": 294.2200012207031,
       "descending_res": 384.2352941176471,
       "wedge_contraction": 0.9037516071357512,
-      "rs_rank": 99.2
+      "rs_rank": 99.2,
+      "near_high_17_22_last_alert": "2026-10-23T04:04:55.063259",
+      "near_high_17_22_last_price": 317.75
     },
     "DOMS": {
       "sma50": 2134.608000488281,
@@ -7005,7 +7009,9 @@
       "box_low": null,
       "descending_res": 348.2300170898437,
       "wedge_contraction": 0.8947647850442466,
-      "rs_rank": 68.9
+      "rs_rank": 68.9,
+      "near_high_17_22_last_alert": "2026-10-23T04:05:59.192718",
+      "near_high_17_22_last_price": 341.29998779296875
     },
     "IKS": {
       "sma50": 1768.0220043945312,
@@ -7041,7 +7047,9 @@
       "box_low": 1613.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 76.1
+      "rs_rank": 76.1,
+      "near_high_17_22_last_alert": "2026-10-23T04:06:00.782424",
+      "near_high_17_22_last_price": 1625.9000244140625
     },
     "IMFA": {
       "sma50": 1276.6019970703126,
@@ -7875,7 +7883,9 @@
       "box_low": 360.54998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 58.4
+      "rs_rank": 58.4,
+      "near_high_17_22_last_alert": "2026-10-23T04:06:20.242822",
+      "near_high_17_22_last_price": 368.5
     },
     "JKTYRE": {
       "sma50": 355.08599975585935,
@@ -9645,7 +9655,9 @@
       "box_low": 252.0500030517578,
       "descending_res": 326.9624252319336,
       "wedge_contraction": 0.7807309365880687,
-      "rs_rank": 93.9
+      "rs_rank": 93.9,
+      "near_high_17_22_last_alert": "2026-10-23T04:07:02.380836",
+      "near_high_17_22_last_price": 290.3500061035156
     },
     "MASTEK": {
       "sma50": 1688.5919970703126,
@@ -12861,7 +12873,11 @@
       "box_low": 41.77000045776367,
       "descending_res": 45.56499099731445,
       "wedge_contraction": 1.0555547542861616,
-      "rs_rank": 73.6
+      "rs_rank": 73.6,
+      "resistance_last_alert": "2026-10-23T04:08:17.719396",
+      "resistance_last_price": 46.060001373291016,
+      "near_high_17_22_last_alert": "2026-10-23T04:08:18.333596",
+      "near_high_17_22_last_price": 46.060001373291016
     },
     "SAILIFE": {
       "sma50": 1510.037998046875,
@@ -15793,7 +15809,9 @@
       "box_low": 31.649999618530273,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 25.2
+      "rs_rank": 25.2,
+      "vol_breakout_last_alert": "2026-10-23T04:09:17.486872",
+      "vol_breakout_last_price": 34.83000183105469
     },
     "TVSSCS": {
       "sma50": 127.13040008544922,
