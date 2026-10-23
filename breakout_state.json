@@ -2335,5 +2335,13 @@
     "baseline_rsi": 54.55287818458123,
     "mcap_cr": 84199.4901111,
     "exchange": "NSE"
+  },
+  "CUBEXTUB": {
+    "result_date": "2026-10-23T00:00:00",
+    "day_high": 212.1699981689453,
+    "day_low": 212.1699981689453,
+    "baseline_rsi": 72.06370381358407,
+    "mcap_cr": 303.8056899531174,
+    "exchange": "NSE"
   }
 }
