@@ -2343,5 +2343,14 @@
     "baseline_rsi": 72.06370381358407,
     "mcap_cr": 303.8056899531174,
     "exchange": "NSE"
+  },
+  "TORNTPHARM": {
+    "result_date": "2026-10-23T00:00:00",
+    "day_high": 4650.7001953125,
+    "day_low": 4476.10009765625,
+    "baseline_rsi": 33.8915038780046,
+    "mcap_cr": 172093.62905411015,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-23T11:30:54.273675"
   }
 }
