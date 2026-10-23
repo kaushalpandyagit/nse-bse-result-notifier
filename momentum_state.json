@@ -4914,8 +4914,8 @@
       "descending_res": 252.05003356933594,
       "wedge_contraction": 0.9368225191177878,
       "rs_rank": 58.1,
-      "near_high_17_22_last_alert": "2026-10-23T06:18:07.941932",
-      "near_high_17_22_last_price": 218.2100067138672
+      "near_high_17_22_last_alert": "2026-10-23T08:03:56.120908",
+      "near_high_17_22_last_price": 222.0
     },
     "EQUITASBNK": {
       "sma50": 71.67159957885742,
@@ -5428,8 +5428,8 @@
       "descending_res": 181.12824159509995,
       "wedge_contraction": 1.003346254720084,
       "rs_rank": 63.0,
-      "near_high_17_22_last_alert": "2026-10-23T07:05:00.137376",
-      "near_high_17_22_last_price": 149.6699981689453
+      "near_high_17_22_last_alert": "2026-10-23T08:04:06.062172",
+      "near_high_17_22_last_price": 151.8000030517578
     },
     "GALLANTT": {
       "sma50": 560.9510028076172,
@@ -6959,7 +6959,9 @@
       "box_low": 138.52000427246094,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 32.8
+      "rs_rank": 32.8,
+      "rectangle_bounce_last_alert": "2026-10-23T08:04:34.834570",
+      "rectangle_bounce_last_price": 142.02999877929688
     },
     "IIFL": {
       "sma50": 618.5590026855468,
@@ -9462,8 +9464,8 @@
       "descending_res": 1844.2,
       "wedge_contraction": 0.916731556919314,
       "rs_rank": 60.9,
-      "near_high_17_22_last_alert": "2026-10-23T05:50:59.943808",
-      "near_high_17_22_last_price": 1753.9000244140625
+      "near_high_17_22_last_alert": "2026-10-23T08:05:18.493065",
+      "near_high_17_22_last_price": 1772.9000244140625
     },
     "LXCHEM": {
       "sma50": 175.57580078125,
@@ -11167,7 +11169,9 @@
       "box_low": 325.1499938964844,
       "descending_res": 359.01761941348803,
       "wedge_contraction": 0.9583633840196085,
-      "rs_rank": 74.6
+      "rs_rank": 74.6,
+      "rectangle_bounce_last_alert": "2026-10-23T08:05:49.562584",
+      "rectangle_bounce_last_price": 333.54998779296875
     },
     "PFIZER": {
       "sma50": 4282.729990234375,
@@ -16183,7 +16187,9 @@
       "wedge_contraction": 0.8207323303359698,
       "rs_rank": 90.7,
       "liquidity_sweep_last_alert": "2026-10-23T07:36:57.675208",
-      "liquidity_sweep_last_price": 356.29998779296875
+      "liquidity_sweep_last_price": 356.29998779296875,
+      "rectangle_bounce_last_alert": "2026-10-23T08:07:16.136631",
+      "rectangle_bounce_last_price": 357.8500061035156
     },
     "V2RETAIL": {
       "sma50": 203.21719970703126,
@@ -16834,8 +16840,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 73.4,
-      "vol_breakout_last_alert": "2026-10-23T07:09:00.375664",
-      "vol_breakout_last_price": 544.25
+      "vol_breakout_last_alert": "2026-10-23T08:07:30.072128",
+      "vol_breakout_last_price": 556.7000122070312
     },
     "WEWORK": {
       "sma50": 674.4679992675781,
