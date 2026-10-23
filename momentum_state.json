@@ -1686,8 +1686,8 @@
       "descending_res": 2907.39990234375,
       "wedge_contraction": 0.94870745228128,
       "rs_rank": 86.0,
-      "near_high_17_22_last_alert": "2026-10-23T08:18:20.381319",
-      "near_high_17_22_last_price": 2515.0
+      "near_high_17_22_last_alert": "2026-10-23T09:32:20.038731",
+      "near_high_17_22_last_price": 2485.60009765625
     },
     "BAJAJCON": {
       "sma50": 490.0779998779297,
@@ -2963,7 +2963,9 @@
       "wedge_contraction": 0.8390859305318595,
       "rs_rank": 97.7,
       "liquidity_sweep_last_alert": "2026-10-23T06:17:39.635278",
-      "liquidity_sweep_last_price": 1118.800048828125
+      "liquidity_sweep_last_price": 1118.800048828125,
+      "rectangle_bounce_last_alert": "2026-10-23T09:32:50.114985",
+      "rectangle_bounce_last_price": 1145.5999755859375
     },
     "CENTRALBK": {
       "sma50": 30.735999946594237,
@@ -7093,7 +7095,9 @@
       "wedge_contraction": null,
       "rs_rank": 76.1,
       "near_high_17_22_last_alert": "2026-10-23T06:18:41.588912",
-      "near_high_17_22_last_price": 1605.5999755859375
+      "near_high_17_22_last_price": 1605.5999755859375,
+      "liquidity_sweep_last_alert": "2026-10-23T09:34:21.997834",
+      "liquidity_sweep_last_price": 1615.9000244140625
     },
     "IMFA": {
       "sma50": 1276.6019970703126,
@@ -11668,8 +11672,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 77.8,
-      "near_high_17_22_last_alert": "2026-10-23T05:20:57.332264",
-      "near_high_17_22_last_price": 188.74000549316406
+      "near_high_17_22_last_alert": "2026-10-23T09:36:04.161593",
+      "near_high_17_22_last_price": 191.10000610351562
     },
     "PRAJIND": {
       "sma50": 318.582998046875,
@@ -13528,8 +13532,8 @@
       "descending_res": 3136.900146484375,
       "wedge_contraction": 1.324875671755346,
       "rs_rank": 94.7,
-      "near_high_17_22_last_alert": "2026-10-23T08:35:15.272043",
-      "near_high_17_22_last_price": 2866.10009765625
+      "near_high_17_22_last_alert": "2026-10-23T09:36:46.047635",
+      "near_high_17_22_last_price": 2937.89990234375
     },
     "SHAKTIPUMP": {
       "sma50": 464.81800048828126,
@@ -14252,8 +14256,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 61.7,
-      "near_high_17_22_last_alert": "2026-10-23T06:35:08.029645",
-      "near_high_17_22_last_price": 1000.2999877929688
+      "near_high_17_22_last_alert": "2026-10-23T09:37:01.280775",
+      "near_high_17_22_last_price": 1017.2999877929688,
+      "rectangle_bounce_last_alert": "2026-10-23T09:37:00.738901",
+      "rectangle_bounce_last_price": 1017.2999877929688
     },
     "STYLAMIND": {
       "sma50": 3378.5539794921874,

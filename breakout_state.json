@@ -1219,8 +1219,8 @@
     "mcap_cr": 130146.474263,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-20T07:46:38.812221",
-    "price_low_last_alert": "2026-10-19T03:47:01.209200",
-    "price_low_last_price": 4169.0,
+    "price_low_last_alert": "2026-10-23T09:30:14.719890",
+    "price_low_last_price": 4125.0,
     "rsi_down_last_alert": "2026-10-23T08:46:41.537624"
   },
   "IXIGO": {
@@ -1753,7 +1753,9 @@
     "mcap_cr": 108.46499919891357,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-23T03:47:53.045961",
-    "rsi_down_last_alert": "2026-10-23T08:47:23.067045"
+    "rsi_down_last_alert": "2026-10-23T08:47:23.067045",
+    "price_low_last_alert": "2026-10-23T09:30:45.193528",
+    "price_low_last_price": 26.989999771118164
   },
   "SAPPHIRE": {
     "result_date": "2026-10-22T00:00:00",
@@ -1856,8 +1858,8 @@
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-22T18:52:24.679388",
     "rsi_down_last_alert": "2026-10-23T08:47:33.605823",
-    "price_low_last_alert": "2026-10-23T07:47:39.058215",
-    "price_low_last_price": 679.0
+    "price_low_last_alert": "2026-10-23T09:30:51.993598",
+    "price_low_last_price": 687.3499755859375
   },
   "JIOFIN": {
     "result_date": "2026-10-22T00:00:00",
@@ -1979,8 +1981,8 @@
     "mcap_cr": 13833.44884576058,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-22T18:52:35.685307",
-    "price_low_last_alert": "2026-10-23T05:16:59.493452",
-    "price_low_last_price": 347.6000061035156,
+    "price_low_last_alert": "2026-10-23T09:30:58.659844",
+    "price_low_last_price": 351.6000061035156,
     "rsi_down_last_alert": "2026-10-23T08:47:43.041042"
   },
   "VGL": {
@@ -2101,7 +2103,7 @@
     "baseline_rsi": 26.47895166537279,
     "mcap_cr": 967.3006090651475,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-23T08:17:19.005591",
+    "rsi_up_last_alert": "2026-10-23T09:31:06.576749",
     "rsi_down_last_alert": "2026-10-23T09:02:44.919940"
   },
   "STLTECH": {
@@ -2169,7 +2171,8 @@
     "baseline_rsi": 40.54184934056495,
     "mcap_cr": 6476.398100606146,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-23T09:17:01.241767"
+    "rsi_up_last_alert": "2026-10-23T09:17:01.241767",
+    "rsi_down_last_alert": "2026-10-23T09:31:11.508989"
   },
   "ATUL": {
     "result_date": "2026-10-23T00:00:00",
@@ -2229,7 +2232,8 @@
     "baseline_rsi": 28.718903160239563,
     "mcap_cr": 200530.0592866604,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-23T09:17:06.896822"
+    "rsi_down_last_alert": "2026-10-23T09:17:06.896822",
+    "rsi_up_last_alert": "2026-10-23T09:31:16.208805"
   },
   "SBICARD": {
     "result_date": "2026-10-23T00:00:00",
@@ -2247,6 +2251,16 @@
     "baseline_rsi": 35.40754270370657,
     "mcap_cr": 351907.1007375295,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-23T09:17:08.958411"
+    "rsi_up_last_alert": "2026-10-23T09:17:08.958411",
+    "rsi_down_last_alert": "2026-10-23T09:31:18.231591"
+  },
+  "JSWSTEEL": {
+    "result_date": "2026-10-23T00:00:00",
+    "day_high": 1223.699951171875,
+    "day_low": 1182.4000244140625,
+    "baseline_rsi": 39.59723630920331,
+    "mcap_cr": 289231.5161951395,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-23T09:31:19.137300"
   }
 }
