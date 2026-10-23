@@ -134,5 +134,11 @@
     "ref_high": 116.95,
     "ref_low": 110.71,
     "status": "Active"
+  },
+  "TUTIALKA": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 49.4,
+    "ref_low": 44.0,
+    "status": "Active"
   }
 }
