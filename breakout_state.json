@@ -348,7 +348,7 @@
     "baseline_rsi": 36.86499581916251,
     "mcap_cr": 629.8200073242188,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-23T10:01:00.500439",
+    "rsi_down_last_alert": "2026-10-23T11:01:07.839755",
     "price_low_last_alert": "2026-10-23T10:00:59.995580",
     "price_low_last_price": 100.0,
     "price_high_last_alert": "2026-10-16T05:45:56.595974",
@@ -589,7 +589,7 @@
     "baseline_rsi": 35.913970878277794,
     "mcap_cr": 46216.16791985124,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-23T10:01:09.688516",
+    "rsi_down_last_alert": "2026-10-23T11:01:16.997062",
     "price_low_last_alert": "2026-10-23T10:01:09.192018",
     "price_low_last_price": 1861.0,
     "rsi_up_last_alert": "2026-10-23T07:46:06.749849"
@@ -2105,7 +2105,7 @@
     "baseline_rsi": 26.47895166537279,
     "mcap_cr": 967.3006090651475,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-23T10:16:54.634666",
+    "rsi_up_last_alert": "2026-10-23T11:02:19.991391",
     "rsi_down_last_alert": "2026-10-23T09:02:44.919940"
   },
   "STLTECH": {
@@ -2176,7 +2176,7 @@
     "mcap_cr": 6476.398100606146,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-23T09:17:01.241767",
-    "rsi_down_last_alert": "2026-10-23T10:16:58.413342"
+    "rsi_down_last_alert": "2026-10-23T11:02:24.249088"
   },
   "ATUL": {
     "result_date": "2026-10-23T00:00:00",
@@ -2237,7 +2237,7 @@
     "mcap_cr": 200530.0592866604,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T09:17:06.896822",
-    "rsi_up_last_alert": "2026-10-23T10:17:02.276330"
+    "rsi_up_last_alert": "2026-10-23T11:02:28.382903"
   },
   "SBICARD": {
     "result_date": "2026-10-23T00:00:00",
@@ -2256,7 +2256,7 @@
     "mcap_cr": 351907.1007375295,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-23T09:17:08.958411",
-    "rsi_down_last_alert": "2026-10-23T10:17:03.934637"
+    "rsi_down_last_alert": "2026-10-23T11:02:30.150811"
   },
   "JSWSTEEL": {
     "result_date": "2026-10-23T00:00:00",
@@ -2265,7 +2265,7 @@
     "baseline_rsi": 39.59723630920331,
     "mcap_cr": 289231.5161951395,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-23T10:17:04.718299",
+    "rsi_up_last_alert": "2026-10-23T11:02:31.124240",
     "price_low_last_alert": "2026-10-23T09:48:38.133246",
     "price_low_last_price": 1182.0,
     "rsi_down_last_alert": "2026-10-23T09:48:38.668918"
@@ -2326,6 +2326,14 @@
     "day_low": 1038.050048828125,
     "baseline_rsi": 63.83631848433398,
     "mcap_cr": 467330.66999569326,
+    "exchange": "NSE"
+  },
+  "COFORGE": {
+    "result_date": "2026-10-23T00:00:00",
+    "day_high": 1992.4000244140625,
+    "day_low": 1890.0,
+    "baseline_rsi": 54.55287818458123,
+    "mcap_cr": 84199.4901111,
     "exchange": "NSE"
   }
 }
