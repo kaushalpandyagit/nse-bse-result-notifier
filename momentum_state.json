@@ -112,8 +112,8 @@
       "descending_res": 920.2749328613281,
       "wedge_contraction": 0.7354516351037499,
       "rs_rank": 77.0,
-      "near_high_17_22_last_alert": "2026-10-23T06:02:54.777188",
-      "near_high_17_22_last_price": 804.9500122070312
+      "near_high_17_22_last_alert": "2026-10-23T08:17:43.642382",
+      "near_high_17_22_last_price": 813.1500244140625
     },
     "AAVAS": {
       "sma50": 1277.6280078125,
@@ -622,8 +622,8 @@
       "descending_res": 258.70001220703125,
       "wedge_contraction": 0.7112007103495908,
       "rs_rank": 86.3,
-      "near_high_17_22_last_alert": "2026-10-23T05:48:16.724911",
-      "near_high_17_22_last_price": 236.64999389648438
+      "near_high_17_22_last_alert": "2026-10-23T08:17:55.118555",
+      "near_high_17_22_last_price": 239.60000610351562
     },
     "AEROFLEX": {
       "sma50": 518.9470007324219,
@@ -1026,8 +1026,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 86.9,
-      "near_high_17_22_last_alert": "2026-10-23T05:48:24.354869",
-      "near_high_17_22_last_price": 369.25
+      "near_high_17_22_last_alert": "2026-10-23T08:18:04.397094",
+      "near_high_17_22_last_price": 375.6000061035156
     },
     "APOLLOTYRE": {
       "sma50": 419.0430004882812,
@@ -1246,8 +1246,8 @@
       "descending_res": 994.6429443359375,
       "wedge_contraction": 0.8015592636424563,
       "rs_rank": 67.2,
-      "near_high_17_22_last_alert": "2026-10-23T07:18:09.907641",
-      "near_high_17_22_last_price": 877.8499755859375
+      "near_high_17_22_last_alert": "2026-10-23T08:18:10.074170",
+      "near_high_17_22_last_price": 891.1500244140625
     },
     "ASHAPURMIN": {
       "sma50": 534.3210003662109,
@@ -1682,8 +1682,8 @@
       "descending_res": 2907.39990234375,
       "wedge_contraction": 0.94870745228128,
       "rs_rank": 86.0,
-      "near_high_17_22_last_alert": "2026-10-23T05:48:38.571499",
-      "near_high_17_22_last_price": 2487.10009765625
+      "near_high_17_22_last_alert": "2026-10-23T08:18:20.381319",
+      "near_high_17_22_last_price": 2515.0
     },
     "BAJAJCON": {
       "sma50": 490.0779998779297,
@@ -4406,8 +4406,8 @@
       "descending_res": 138.5900115966797,
       "wedge_contraction": 1.0376317404435949,
       "rs_rank": 56.4,
-      "near_high_17_22_last_alert": "2026-10-23T07:19:16.956131",
-      "near_high_17_22_last_price": 114.41000366210938
+      "near_high_17_22_last_alert": "2026-10-23T08:19:15.152405",
+      "near_high_17_22_last_price": 117.41000366210938
     },
     "EIDPARRY": {
       "sma50": 733.39,
@@ -5352,8 +5352,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 87.3,
-      "resistance_last_alert": "2026-10-23T03:54:53.992350",
-      "resistance_last_price": 292.04998779296875
+      "resistance_last_alert": "2026-10-23T08:19:36.925015",
+      "resistance_last_price": 288.6000061035156
     },
     "GABRIEL": {
       "sma50": 1383.3720043945314,
@@ -5429,7 +5429,9 @@
       "wedge_contraction": 1.003346254720084,
       "rs_rank": 63.0,
       "near_high_17_22_last_alert": "2026-10-23T08:04:06.062172",
-      "near_high_17_22_last_price": 151.8000030517578
+      "near_high_17_22_last_price": 151.8000030517578,
+      "liquidity_sweep_last_alert": "2026-10-23T08:19:39.544721",
+      "liquidity_sweep_last_price": 153.86000061035156
     },
     "GALLANTT": {
       "sma50": 560.9510028076172,
@@ -6010,8 +6012,8 @@
       "descending_res": 853.1853099149816,
       "wedge_contraction": 0.9852355795582612,
       "rs_rank": 53.3,
-      "near_high_17_22_last_alert": "2026-10-23T05:19:14.080158",
-      "near_high_17_22_last_price": 684.0
+      "near_high_17_22_last_alert": "2026-10-23T08:19:52.695846",
+      "near_high_17_22_last_price": 690.9000244140625
     },
     "GRAVITA": {
       "sma50": 1619.9840014648437,
@@ -7183,7 +7185,9 @@
       "wedge_contraction": null,
       "rs_rank": 18.6,
       "mtf_last_alert": "2026-10-23T03:55:32.592297",
-      "mtf_last_price": 326.45001220703125
+      "mtf_last_price": 326.45001220703125,
+      "vol_breakout_last_alert": "2026-10-23T08:20:17.270706",
+      "vol_breakout_last_price": 316.29998779296875
     },
     "INDIAGLYCO": {
       "sma50": 547.3310049438477,
@@ -8129,7 +8133,9 @@
       "box_low": 109.62000274658203,
       "descending_res": 113.95834096272786,
       "wedge_contraction": 0.8879756612014145,
-      "rs_rank": 43.3
+      "rs_rank": 43.3,
+      "rectangle_bounce_last_alert": "2026-10-23T08:20:37.524026",
+      "rectangle_bounce_last_price": 117.56999969482422
     },
     "JUBLFOOD": {
       "sma50": 470.8059997558594,
@@ -15854,8 +15860,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 25.2,
-      "vol_breakout_last_alert": "2026-10-23T07:23:27.078561",
-      "vol_breakout_last_price": 33.060001373291016
+      "vol_breakout_last_alert": "2026-10-23T08:23:14.815897",
+      "vol_breakout_last_price": 34.150001525878906
     },
     "TVSSCS": {
       "sma50": 127.13040008544922,
