@@ -11,7 +11,9 @@
     "trigger_date": "2026-10-22",
     "ref_high": 6900.5,
     "ref_low": 5750.0,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-23T07:03:02.640638",
+    "fno_high_breach_last_price": 6875.0
   },
   "NGLFINE": {
     "trigger_date": "2026-10-22",
