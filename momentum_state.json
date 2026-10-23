@@ -16181,7 +16181,9 @@
       "box_low": 352.1000061035156,
       "descending_res": 385.3500061035156,
       "wedge_contraction": 0.8207323303359698,
-      "rs_rank": 90.7
+      "rs_rank": 90.7,
+      "liquidity_sweep_last_alert": "2026-10-23T07:36:57.675208",
+      "liquidity_sweep_last_price": 356.29998779296875
     },
     "V2RETAIL": {
       "sma50": 203.21719970703126,

@@ -197,8 +197,8 @@
     "spread_last_price": 2.9976880108868635
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-23T06:09:25.010730",
-    "spread_last_price": 2.608695652173913
+    "spread_last_alert": "2026-10-23T07:37:37.922388",
+    "spread_last_price": 2.857142857142857
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-13T03:57:17.405657",
@@ -777,8 +777,8 @@
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-15T08:16:20.548205",
     "rsi_down_last_alert": "2026-10-23T06:46:29.503334",
-    "price_low_last_alert": "2026-10-23T05:01:20.200001",
-    "price_low_last_price": 147.5
+    "price_low_last_alert": "2026-10-23T07:29:56.902133",
+    "price_low_last_price": 146.02000427246094
   },
   "TIPSMUSIC": {
     "result_date": "2026-10-15T00:00:00",
@@ -1580,8 +1580,8 @@
     "mcap_cr": 2425.952411,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-22T18:52:01.938510",
-    "price_low_last_alert": "2026-10-23T05:47:07.844908",
-    "price_low_last_price": 1291.0,
+    "price_low_last_alert": "2026-10-23T07:30:33.084019",
+    "price_low_last_price": 1266.699951171875,
     "rsi_down_last_alert": "2026-10-23T06:47:41.013921"
   },
   "SWASTIKAIN": {
@@ -1648,8 +1648,8 @@
     "mcap_cr": 170.61000537872314,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T06:47:46.741091",
-    "price_low_last_alert": "2026-10-23T04:16:46.289323",
-    "price_low_last_price": 7.159999847412109,
+    "price_low_last_alert": "2026-10-23T07:30:36.837024",
+    "price_low_last_price": 6.980000019073486,
     "rsi_up_last_alert": "2026-10-23T03:47:43.180278"
   },
   "INDHOTEL": {
@@ -1902,7 +1902,9 @@
     "baseline_rsi": 35.747601831544756,
     "mcap_cr": 7950.583541663641,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-23T06:48:10.234054"
+    "rsi_down_last_alert": "2026-10-23T06:48:10.234054",
+    "price_low_last_alert": "2026-10-23T07:30:50.064170",
+    "price_low_last_price": 707.75
   },
   "M&MFIN": {
     "result_date": "2026-10-22T00:00:00",
@@ -2067,7 +2069,8 @@
     "baseline_rsi": 37.980192934476634,
     "mcap_cr": 8350.6079956,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-23T07:02:39.733990"
+    "rsi_up_last_alert": "2026-10-23T07:02:39.733990",
+    "rsi_down_last_alert": "2026-10-23T07:30:59.400113"
   },
   "KSOLVES": {
     "result_date": "2026-10-23T00:00:00",
@@ -2095,5 +2098,13 @@
     "mcap_cr": 967.3006090651475,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-23T07:17:20.285695"
+  },
+  "STLTECH": {
+    "result_date": "2026-10-23T00:00:00",
+    "day_high": 820.5,
+    "day_low": 760.8499755859375,
+    "baseline_rsi": 42.27920204826307,
+    "mcap_cr": 42147.57018669303,
+    "exchange": "NSE"
   }
 }
