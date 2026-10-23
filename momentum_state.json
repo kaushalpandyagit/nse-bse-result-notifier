@@ -2697,7 +2697,9 @@
       "box_low": 2690.89990234375,
       "descending_res": 3253.0132731119793,
       "wedge_contraction": 0.9879399035682083,
-      "rs_rank": 96.2
+      "rs_rank": 96.2,
+      "near_high_17_22_last_alert": "2026-10-23T04:31:54.045485",
+      "near_high_17_22_last_price": 2695.800048828125
     },
     "CASTROLIND": {
       "sma50": 192.16160064697266,
@@ -6905,7 +6907,13 @@
       "box_low": 304.1000061035156,
       "descending_res": 316.25,
       "wedge_contraction": 1.1523866414780588,
-      "rs_rank": 63.2
+      "rs_rank": 63.2,
+      "vol_breakout_last_alert": "2026-10-23T04:33:08.153827",
+      "vol_breakout_last_price": 354.70001220703125,
+      "zanger_last_alert": "2026-10-23T04:33:08.626710",
+      "zanger_last_price": 354.70001220703125,
+      "near_high_17_22_last_alert": "2026-10-23T04:33:09.111383",
+      "near_high_17_22_last_price": 354.70001220703125
     },
     "IGL": {
       "sma50": 147.53799987792968,
@@ -12883,7 +12891,9 @@
       "resistance_last_alert": "2026-10-23T04:08:17.719396",
       "resistance_last_price": 46.060001373291016,
       "near_high_17_22_last_alert": "2026-10-23T04:08:18.333596",
-      "near_high_17_22_last_price": 46.060001373291016
+      "near_high_17_22_last_price": 46.060001373291016,
+      "zanger_last_alert": "2026-10-23T04:34:56.420757",
+      "zanger_last_price": 45.720001220703125
     },
     "SAILIFE": {
       "sma50": 1510.037998046875,
@@ -12919,7 +12929,9 @@
       "box_low": 1291.5,
       "descending_res": 1560.1201416015624,
       "wedge_contraction": 0.6876695641698629,
-      "rs_rank": 90.1
+      "rs_rank": 90.1,
+      "near_high_17_22_last_alert": "2026-10-23T04:34:57.170241",
+      "near_high_17_22_last_price": 1395.800048828125
     },
     "SAMHI": {
       "sma50": 154.66899963378907,

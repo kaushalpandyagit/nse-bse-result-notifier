@@ -17,7 +17,9 @@
     "trigger_date": "2026-10-22",
     "ref_high": 2800.0,
     "ref_low": 2551.2,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-23T04:31:00.728041",
+    "fno_low_breach_last_price": 2546.89990234375
   },
   "DBEIL": {
     "trigger_date": "2026-10-22",
