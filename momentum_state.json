@@ -3140,8 +3140,8 @@
       "descending_res": 257.85908647017044,
       "wedge_contraction": 0.9765884857793875,
       "rs_rank": 83.7,
-      "near_high_17_22_last_alert": "2026-10-23T07:18:52.080216",
-      "near_high_17_22_last_price": 231.6999969482422
+      "near_high_17_22_last_alert": "2026-10-23T09:04:33.115624",
+      "near_high_17_22_last_price": 235.25
     },
     "CHALET": {
       "sma50": 858.4760021972656,
@@ -3286,8 +3286,8 @@
       "descending_res": 724.9083506266276,
       "wedge_contraction": 0.8362324608222941,
       "rs_rank": 61.9,
-      "near_high_17_22_last_alert": "2026-10-23T07:04:16.478224",
-      "near_high_17_22_last_price": 683.5999755859375
+      "near_high_17_22_last_alert": "2026-10-23T09:04:36.973721",
+      "near_high_17_22_last_price": 692.5499877929688
     },
     "CHOLAHLDNG": {
       "sma50": 1474.18599609375,
@@ -5585,7 +5585,9 @@
       "wedge_contraction": null,
       "rs_rank": 45.9,
       "rectangle_bounce_last_alert": "2026-10-23T08:50:04.772734",
-      "rectangle_bounce_last_price": 7220.5
+      "rectangle_bounce_last_price": 7220.5,
+      "resistance_last_alert": "2026-10-23T09:05:26.927393",
+      "resistance_last_price": 7264.0
     },
     "GMDCLTD": {
       "sma50": 532.6760009765625,
@@ -5948,8 +5950,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 64.5,
-      "near_high_17_22_last_alert": "2026-10-23T04:50:34.826164",
-      "near_high_17_22_last_price": 156.19000244140625
+      "near_high_17_22_last_alert": "2026-10-23T09:05:36.435904",
+      "near_high_17_22_last_price": 157.77999877929688
     },
     "GRANULES": {
       "sma50": 846.5869982910157,
@@ -6784,8 +6786,8 @@
       "descending_res": 465.4722086588542,
       "wedge_contraction": 0.9521390387882562,
       "rs_rank": 93.0,
-      "near_high_17_22_last_alert": "2026-10-23T05:50:11.982673",
-      "near_high_17_22_last_price": 393.5
+      "near_high_17_22_last_alert": "2026-10-23T09:05:56.229361",
+      "near_high_17_22_last_price": 397.5
     },
     "IEX": {
       "sma50": 114.16060012817383,
@@ -7672,8 +7674,8 @@
       "descending_res": 147.09337870279947,
       "wedge_contraction": 1.5502330103461262,
       "rs_rank": 60.7,
-      "vol_breakout_last_alert": "2026-10-23T07:50:43.116907",
-      "vol_breakout_last_price": 116.20999908447266
+      "vol_breakout_last_alert": "2026-10-23T09:06:16.096525",
+      "vol_breakout_last_price": 113.62000274658203
     },
     "JAIBALAJI": {
       "sma50": 66.99220039367675,
@@ -7782,8 +7784,8 @@
       "descending_res": 146.39999389648438,
       "wedge_contraction": 0.8577640206226276,
       "rs_rank": 59.8,
-      "near_high_17_22_last_alert": "2026-10-23T06:05:42.959702",
-      "near_high_17_22_last_price": 123.0
+      "near_high_17_22_last_alert": "2026-10-23T09:06:19.368109",
+      "near_high_17_22_last_price": 124.2699966430664
     },
     "JAYNECOIND": {
       "sma50": 93.3738003540039,
@@ -10503,7 +10505,9 @@
       "box_low": 18500.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 83.1
+      "rs_rank": 83.1,
+      "near_high_17_22_last_alert": "2026-10-23T09:07:19.860900",
+      "near_high_17_22_last_price": 18920.0
     },
     "NEWGEN": {
       "sma50": 500.8659985351562,
@@ -11190,8 +11194,8 @@
       "descending_res": 359.01761941348803,
       "wedge_contraction": 0.9583633840196085,
       "rs_rank": 74.6,
-      "rectangle_bounce_last_alert": "2026-10-23T08:05:49.562584",
-      "rectangle_bounce_last_price": 333.54998779296875
+      "rectangle_bounce_last_alert": "2026-10-23T09:07:35.793067",
+      "rectangle_bounce_last_price": 337.25
     },
     "PFIZER": {
       "sma50": 4282.729990234375,
@@ -15876,8 +15880,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 25.2,
-      "vol_breakout_last_alert": "2026-10-23T08:23:14.815897",
-      "vol_breakout_last_price": 34.150001525878906
+      "vol_breakout_last_alert": "2026-10-23T09:09:17.485229",
+      "vol_breakout_last_price": 34.66999816894531
     },
     "TVSSCS": {
       "sma50": 127.13040008544922,
@@ -16208,8 +16212,8 @@
       "descending_res": 385.3500061035156,
       "wedge_contraction": 0.8207323303359698,
       "rs_rank": 90.7,
-      "liquidity_sweep_last_alert": "2026-10-23T07:36:57.675208",
-      "liquidity_sweep_last_price": 356.29998779296875,
+      "liquidity_sweep_last_alert": "2026-10-23T09:09:22.721213",
+      "liquidity_sweep_last_price": 360.54998779296875,
       "rectangle_bounce_last_alert": "2026-10-23T08:07:16.136631",
       "rectangle_bounce_last_price": 357.8500061035156
     },
@@ -16536,8 +16540,8 @@
       "descending_res": 780.4501037597656,
       "wedge_contraction": 0.9049707517542032,
       "rs_rank": 78.2,
-      "near_high_17_22_last_alert": "2026-10-23T06:35:46.809729",
-      "near_high_17_22_last_price": 760.0
+      "near_high_17_22_last_alert": "2026-10-23T09:09:31.709475",
+      "near_high_17_22_last_price": 769.5999755859375
     },
     "VOLTAMP": {
       "sma50": 10624.44,
