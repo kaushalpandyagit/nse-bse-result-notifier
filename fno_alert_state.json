@@ -74,5 +74,65 @@
     "status": "Breached Low",
     "fno_low_breach_last_alert": "2026-10-23T03:48:53.448296",
     "fno_low_breach_last_price": 444.1499938964844
+  },
+  "ARYAMAN": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 624.8,
+    "ref_low": 620.65,
+    "status": "Active"
+  },
+  "TINNARUBR": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 806.45,
+    "ref_low": 715.4,
+    "status": "Active"
+  },
+  "TTML": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 40.99,
+    "ref_low": 32.8,
+    "status": "Active"
+  },
+  "BRIGHOTEL": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 51.88,
+    "ref_low": 46.89,
+    "status": "Active"
+  },
+  "GLOBECIVIL": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 37.24,
+    "ref_low": 35.2,
+    "status": "Active"
+  },
+  "MGL": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 1043.6,
+    "ref_low": 1004.0,
+    "status": "Active"
+  },
+  "BALKRISIND": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 2130.0,
+    "ref_low": 2054.2,
+    "status": "Active"
+  },
+  "AJOONI": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 3.01,
+    "ref_low": 2.75,
+    "status": "Active"
+  },
+  "SILGO": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 68.9,
+    "ref_low": 67.41,
+    "status": "Active"
+  },
+  "ORIENTCEM": {
+    "trigger_date": "2026-10-23",
+    "ref_high": 116.95,
+    "ref_low": 110.71,
+    "status": "Active"
   }
 }
