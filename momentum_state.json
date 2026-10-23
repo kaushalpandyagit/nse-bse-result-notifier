@@ -1935,7 +1935,9 @@
       "box_low": 599.5999755859375,
       "descending_res": 656.4375,
       "wedge_contraction": 1.2253248096582265,
-      "rs_rank": 33.0
+      "rs_rank": 33.0,
+      "ema50_pullback_last_alert": "2026-10-23T04:18:00.201947",
+      "ema50_pullback_last_price": 639.5
     },
     "BBOX": {
       "sma50": 800.9929968261719,
@@ -5377,7 +5379,9 @@
       "box_low": 1268.199951171875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 87.5
+      "rs_rank": 87.5,
+      "near_high_17_22_last_alert": "2026-10-23T04:19:07.034237",
+      "near_high_17_22_last_price": 1327.9000244140625
     },
     "GAEL": {
       "sma50": 167.00179962158202,
@@ -11607,7 +11611,9 @@
       "box_low": 188.22000122070312,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 77.8
+      "rs_rank": 77.8,
+      "near_high_17_22_last_alert": "2026-10-23T04:21:00.787954",
+      "near_high_17_22_last_price": 191.4600067138672
     },
     "PRAJIND": {
       "sma50": 318.582998046875,
@@ -15993,7 +15999,9 @@
       "box_low": null,
       "descending_res": 1816.6666666666667,
       "wedge_contraction": 1.1238255462578575,
-      "rs_rank": 95.6
+      "rs_rank": 95.6,
+      "near_high_17_22_last_alert": "2026-10-23T04:22:15.323298",
+      "near_high_17_22_last_price": 1487.9000244140625
     },
     "URBANCO": {
       "sma50": 161.09059967041014,

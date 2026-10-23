@@ -45,7 +45,9 @@
     "trigger_date": "2026-10-22",
     "ref_high": 799.8,
     "ref_low": 772.2,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-23T04:17:22.963766",
+    "fno_low_breach_last_price": 771.2000122070312
   },
   "J&KBANK": {
     "trigger_date": "2026-10-22",
