@@ -1246,8 +1246,8 @@
       "descending_res": 994.6429443359375,
       "wedge_contraction": 0.8015592636424563,
       "rs_rank": 67.2,
-      "near_high_17_22_last_alert": "2026-10-23T05:48:28.963726",
-      "near_high_17_22_last_price": 888.0
+      "near_high_17_22_last_alert": "2026-10-23T07:18:09.907641",
+      "near_high_17_22_last_price": 877.8499755859375
     },
     "ASHAPURMIN": {
       "sma50": 534.3210003662109,
@@ -3136,8 +3136,8 @@
       "descending_res": 257.85908647017044,
       "wedge_contraction": 0.9765884857793875,
       "rs_rank": 83.7,
-      "near_high_17_22_last_alert": "2026-10-23T03:54:10.424853",
-      "near_high_17_22_last_price": 234.3699951171875
+      "near_high_17_22_last_alert": "2026-10-23T07:18:52.080216",
+      "near_high_17_22_last_price": 231.6999969482422
     },
     "CHALET": {
       "sma50": 858.4760021972656,
@@ -4406,8 +4406,8 @@
       "descending_res": 138.5900115966797,
       "wedge_contraction": 1.0376317404435949,
       "rs_rank": 56.4,
-      "near_high_17_22_last_alert": "2026-10-23T06:17:59.766718",
-      "near_high_17_22_last_price": 115.66000366210938
+      "near_high_17_22_last_alert": "2026-10-23T07:19:16.956131",
+      "near_high_17_22_last_price": 114.41000366210938
     },
     "EIDPARRY": {
       "sma50": 733.39,
@@ -9280,8 +9280,8 @@
       "descending_res": 101.20001411437988,
       "wedge_contraction": 1.0394056130733522,
       "rs_rank": 93.4,
-      "near_high_17_22_last_alert": "2026-10-23T05:50:56.003308",
-      "near_high_17_22_last_price": 84.47000122070312
+      "near_high_17_22_last_alert": "2026-10-23T07:21:03.111094",
+      "near_high_17_22_last_price": 83.55999755859375
     },
     "LLOYDSENT": {
       "sma50": 73.48960006713867,
@@ -12912,8 +12912,8 @@
       "near_high_17_22_last_price": 46.060001373291016,
       "zanger_last_alert": "2026-10-23T04:34:56.420757",
       "zanger_last_price": 45.720001220703125,
-      "vol_breakout_last_alert": "2026-10-23T06:34:48.658050",
-      "vol_breakout_last_price": 44.189998626708984
+      "vol_breakout_last_alert": "2026-10-23T07:22:23.105845",
+      "vol_breakout_last_price": 43.52000045776367
     },
     "SAILIFE": {
       "sma50": 1510.037998046875,
@@ -13203,7 +13203,9 @@
       "box_low": 473.0,
       "descending_res": 514.3722466362847,
       "wedge_contraction": 0.960048197414321,
-      "rs_rank": 93.2
+      "rs_rank": 93.2,
+      "near_high_17_22_last_alert": "2026-10-23T07:22:29.266470",
+      "near_high_17_22_last_price": 485.8500061035156
     },
     "SBFC": {
       "sma50": 91.57700012207032,
@@ -15848,8 +15850,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 25.2,
-      "vol_breakout_last_alert": "2026-10-23T06:35:36.251437",
-      "vol_breakout_last_price": 33.630001068115234
+      "vol_breakout_last_alert": "2026-10-23T07:23:27.078561",
+      "vol_breakout_last_price": 33.060001373291016
     },
     "TVSSCS": {
       "sma50": 127.13040008544922,
