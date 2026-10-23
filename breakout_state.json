@@ -482,7 +482,10 @@
     "day_low": 2151.199951171875,
     "baseline_rsi": 48.24843928025735,
     "mcap_cr": 1280.58147,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "price_low_last_alert": "2026-10-23T05:29:44.863529",
+    "price_low_last_price": 2108.0,
+    "rsi_down_last_alert": "2026-10-23T05:29:45.408474"
   },
   "PNBGILTS": {
     "result_date": "2026-10-13T00:00:00",
@@ -599,8 +602,8 @@
     "mcap_cr": 44100.0025872,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T04:46:20.188187",
-    "price_low_last_alert": "2026-10-23T04:01:24.942420",
-    "price_low_last_price": 288.3999938964844
+    "price_low_last_alert": "2026-10-23T05:29:49.724836",
+    "price_low_last_price": 284.6499938964844
   },
   "HDBFS": {
     "result_date": "2026-10-14T00:00:00",
@@ -673,7 +676,10 @@
     "day_low": 907.0999755859375,
     "baseline_rsi": 78.58271404127524,
     "mcap_cr": 1071.2423611917968,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "price_low_last_alert": "2026-10-23T05:29:51.513113",
+    "price_low_last_price": 803.5,
+    "rsi_down_last_alert": "2026-10-23T05:29:51.994187"
   },
   "VIVIMEDLAB": {
     "result_date": "2026-10-15T00:00:00",
@@ -696,8 +702,8 @@
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-15T08:46:31.277048",
     "rsi_down_last_alert": "2026-10-23T04:46:26.501882",
-    "price_low_last_alert": "2026-10-23T04:16:05.672744",
-    "price_low_last_price": 1176.699951171875
+    "price_low_last_alert": "2026-10-23T05:29:53.495784",
+    "price_low_last_price": 1164.5999755859375
   },
   "FEDFINA": {
     "result_date": "2026-10-15T00:00:00",
@@ -883,8 +889,8 @@
     "mcap_cr": 172195.28020041747,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-15T10:30:00.230494",
-    "price_high_last_alert": "2026-10-23T04:01:39.554828",
-    "price_high_last_price": 193.11000061035156,
+    "price_high_last_alert": "2026-10-23T05:29:59.132501",
+    "price_high_last_price": 191.0,
     "rsi_up_last_alert": "2026-10-23T05:01:25.782752"
   },
   "HDFCLIFE": {
@@ -1066,7 +1072,9 @@
     "mcap_cr": 4249.898105438232,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T04:46:50.183275",
-    "rsi_up_last_alert": "2026-10-21T03:46:36.800820"
+    "rsi_up_last_alert": "2026-10-21T03:46:36.800820",
+    "price_low_last_alert": "2026-10-23T05:30:04.529001",
+    "price_low_last_price": 608.5499877929688
   },
   "CROMPTON": {
     "result_date": "2026-10-16T00:00:00",
@@ -1470,7 +1478,7 @@
     "price_high_last_alert": "2026-10-22T09:16:23.079940",
     "price_high_last_price": 333.0,
     "rsi_up_last_alert": "2026-10-23T05:01:55.715110",
-    "rsi_down_last_alert": "2026-10-23T04:16:37.056814"
+    "rsi_down_last_alert": "2026-10-23T05:30:19.952909"
   },
   "CHEMBONDCH": {
     "result_date": "2026-10-21T00:00:00",
@@ -1522,7 +1530,7 @@
     "mcap_cr": 1730.5196456484375,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-23T04:47:32.105005",
-    "rsi_down_last_alert": "2026-10-22T03:47:44.069878"
+    "rsi_down_last_alert": "2026-10-23T05:30:22.881823"
   },
   "LMW": {
     "result_date": "2026-10-21T00:00:00",
@@ -1593,8 +1601,8 @@
     "baseline_rsi": null,
     "mcap_cr": 5135.140903116364,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-23T04:30:24.900945",
-    "price_low_last_price": 289.29998779296875
+    "price_low_last_alert": "2026-10-23T05:30:26.878920",
+    "price_low_last_price": 281.8999938964844
   },
   "WENDT": {
     "result_date": "2026-10-21T00:00:00",
@@ -1757,7 +1765,7 @@
     "rsi_up_last_alert": "2026-10-23T04:47:52.188365",
     "price_high_last_alert": "2026-10-22T08:01:50.948198",
     "price_high_last_price": 195.25999450683594,
-    "rsi_down_last_alert": "2026-10-23T04:02:33.701087"
+    "rsi_down_last_alert": "2026-10-23T05:30:34.843143"
   },
   "J&KBANK": {
     "result_date": "2026-10-22T00:00:00",

@@ -1792,8 +1792,8 @@
       "descending_res": 734.5,
       "wedge_contraction": 0.8389553835047598,
       "rs_rank": 80.1,
-      "near_high_17_22_last_alert": "2026-10-23T03:53:43.725040",
-      "near_high_17_22_last_price": 643.7999877929688
+      "near_high_17_22_last_alert": "2026-10-23T05:31:35.601595",
+      "near_high_17_22_last_price": 635.0
     },
     "BALUFORGE": {
       "sma50": 523.740004272461,
@@ -12901,7 +12901,9 @@
       "near_high_17_22_last_alert": "2026-10-23T04:08:18.333596",
       "near_high_17_22_last_price": 46.060001373291016,
       "zanger_last_alert": "2026-10-23T04:34:56.420757",
-      "zanger_last_price": 45.720001220703125
+      "zanger_last_price": 45.720001220703125,
+      "vol_breakout_last_alert": "2026-10-23T05:34:54.779723",
+      "vol_breakout_last_price": 44.869998931884766
     },
     "SAILIFE": {
       "sma50": 1510.037998046875,
@@ -16093,7 +16095,9 @@
       "box_low": 458.54998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 68.3
+      "rs_rank": 68.3,
+      "near_high_17_22_last_alert": "2026-10-23T05:35:47.111837",
+      "near_high_17_22_last_price": 449.95001220703125
     },
     "UTIAMC": {
       "sma50": 891.7550012207031,
