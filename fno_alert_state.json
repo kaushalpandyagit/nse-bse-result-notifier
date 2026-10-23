@@ -3,7 +3,9 @@
     "trigger_date": "2026-10-22",
     "ref_high": 49.45,
     "ref_low": 46.11,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-23T03:48:45.804165",
+    "fno_high_breach_last_price": 48.560001373291016
   },
   "GRWRHITECH": {
     "trigger_date": "2026-10-22",
@@ -33,7 +35,9 @@
     "trigger_date": "2026-10-22",
     "ref_high": 728.9,
     "ref_low": 670.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-23T03:48:49.541703",
+    "fno_low_breach_last_price": 660.5999755859375
   },
   "BIRLACORPN": {
     "trigger_date": "2026-10-22",
@@ -45,7 +49,9 @@
     "trigger_date": "2026-10-22",
     "ref_high": 142.28,
     "ref_low": 132.62,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-23T03:48:51.523316",
+    "fno_low_breach_last_price": 127.73999786376953
   },
   "BALMLAWRIE": {
     "trigger_date": "2026-10-22",
@@ -57,6 +63,8 @@
     "trigger_date": "2026-10-22",
     "ref_high": 459.85,
     "ref_low": 445.1,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-23T03:48:53.448296",
+    "fno_low_breach_last_price": 444.1499938964844
   }
 }
