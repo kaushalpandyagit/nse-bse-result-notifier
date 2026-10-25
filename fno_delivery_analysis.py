@@ -4,7 +4,8 @@ Daily F&O, Delivery Data, and Ace Investor Analysis -> Telegram
 
 Runs ONCE per trading day, after market close (when NSE's daily
 Bhavcopy and Bulk/Block deal files are finalized, typically by ~6:30 PM IST).
-Includes automated Day-over-Day Delta & Percentage Directional Shift tracking.
+Includes automated Day-over-Day Delta, Percentage Directional Shift tracking,
+and Daily/MTD Margin Flow (₹ Cr) tracking.
 """
 
 import os
@@ -36,6 +37,7 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "PUT_YOUR_CHAT_ID_HERE")
 
 PARTICIPANT_STATE_FILE = Path(__file__).parent / "fno_participant_state.json"
 FNO_STATE_FILE = Path(__file__).parent / "fno_alert_state.json"
+MARGIN_TRENDS_FILE = Path(__file__).parent / "margin_trends_state.json"
 
 # ----------------------------------------------------------------------
 # ACE INVESTOR & INSTITUTIONAL WATCHLIST
@@ -468,6 +470,72 @@ def analyze_long_short_buildup(df: pd.DataFrame) -> dict:
 
     return categories
 
+def analyze_position_flows(df: pd.DataFrame, date: datetime.date) -> str:
+    """Calculates the ₹ Crore value of F&O position closures vs additions daily & month-to-date."""
+    try:
+        fut = df[df["FinInstrmTp"].str.strip() == "STF"].copy()
+        if fut.empty: return ""
+        
+        fut["ChngInOpnIntrst"] = pd.to_numeric(fut["ChngInOpnIntrst"], errors="coerce").fillna(0)
+        fut["ClsPric"] = pd.to_numeric(fut["ClsPric"], errors="coerce").fillna(0)
+        
+        fut["Flow_Cr"] = (fut["ChngInOpnIntrst"] * fut["ClsPric"]) / 10000000.0
+        
+        stock_flows = fut.groupby("TckrSymb")["Flow_Cr"].sum()
+        
+        added_flows = stock_flows[stock_flows > 0]
+        closed_flows = stock_flows[stock_flows < 0]
+        
+        today_added_cr = added_flows.sum()
+        today_closed_cr = abs(closed_flows.sum())
+        today_net = today_added_cr - today_closed_cr
+        
+        added_count = len(added_flows)
+        closed_count = len(closed_flows)
+        
+        state = {}
+        if MARGIN_TRENDS_FILE.exists():
+            try: state = json.loads(MARGIN_TRENDS_FILE.read_text())
+            except Exception: pass
+        
+        month_key = date.strftime("%Y-%m")
+        if month_key not in state:
+            state[month_key] = {"mtd_added": 0.0, "mtd_closed": 0.0, "mtd_net": 0.0, "last_updated": ""}
+        
+        if state[month_key].get("last_updated") != date.isoformat():
+            state[month_key]["mtd_added"] += today_added_cr
+            state[month_key]["mtd_closed"] += today_closed_cr
+            state[month_key]["mtd_net"] += today_net
+            state[month_key]["last_updated"] = date.isoformat()
+            
+            try: MARGIN_TRENDS_FILE.write_text(json.dumps(state, indent=2))
+            except Exception: pass
+        
+        mtd_added = state[month_key]["mtd_added"]
+        mtd_closed = state[month_key]["mtd_closed"]
+        mtd_net = state[month_key]["mtd_net"]
+        
+        month_name = date.strftime("%B")
+        
+        lines = [
+            "🏦 <b>Margin & Position Flow Trends (₹ Cr)</b>",
+            "<i>Total value of positions added vs paid down/closed</i>\n",
+            f"<b>Today's Flow ({date.strftime('%d %b')}):</b>",
+            f"🟢 <b>Added:</b> ₹{today_added_cr:,.1f} Cr ({added_count} stocks borrowed into)",
+            f"🔴 <b>Paid Down:</b> ₹{today_closed_cr:,.1f} Cr ({closed_count} stocks paid down)",
+            f"📊 <b>Net Daily:</b> ₹{today_net:,.1f} Cr\n",
+            f"<b>Month-to-Date ({month_name}):</b>",
+            f"🟢 <b>MTD Added:</b> ₹{mtd_added:,.1f} Cr",
+            f"🔴 <b>MTD Closed:</b> ₹{mtd_closed:,.1f} Cr",
+            f"📊 <b>Total Owed (Net MTD):</b> ₹{mtd_net:,.1f} Cr\n",
+            f"📝 <i>In {month_name} alone, ₹{mtd_closed:,.0f} crore worth of positions have been closed so far, compared with ₹{mtd_added:,.0f} crore added. On a daily basis, today saw a net {'addition' if today_net > 0 else 'closure'} of ₹{abs(today_net):,.0f} crore.</i>"
+        ]
+        return "\n".join(lines)
+        
+    except Exception as e:
+        log.error("Position flows analysis failed: %s", e)
+        return ""
+
 def analyze_pcr(df: pd.DataFrame) -> tuple:
     per_stock_pcr = []
     try:
@@ -823,6 +891,12 @@ def main():
             sections.append(
                 f"{emoji} <b>{cat}</b>\n<i>{buildup_notes[cat]}</i>\n" + format_stock_list(buildup[cat])
             )
+
+        # ====== NEW POSITIONAL MARGIN FLOW ENGINE ======
+        flows_text = analyze_position_flows(fo_df, date)
+        if flows_text:
+            sections.append(flows_text)
+        # ===============================================
 
         overall_pcr, stock_pcr = analyze_pcr(fo_df)
         stock_pcr.sort(key=lambda x: x[1], reverse=True)
