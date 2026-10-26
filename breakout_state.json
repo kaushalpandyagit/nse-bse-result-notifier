@@ -368,8 +368,8 @@
     "baseline_rsi": null,
     "mcap_cr": 866.0108063241883,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-26T09:01:06.018755",
-    "price_low_last_price": 159.6699981689453
+    "price_low_last_alert": "2026-10-26T10:15:47.130680",
+    "price_low_last_price": 162.24000549316406
   },
   "RBLBANK": {
     "result_date": "2026-10-12T00:00:00",
@@ -2142,8 +2142,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T08:30:52.947138",
     "rsi_up_last_alert": "2026-10-26T09:47:53.484075",
-    "price_high_last_alert": "2026-10-26T09:31:03.327059",
-    "price_high_last_price": 41.11000061035156
+    "price_high_last_alert": "2026-10-26T10:17:24.960682",
+    "price_high_last_price": 41.529998779296875
   },
   "GNA": {
     "result_date": "2026-10-23T00:00:00",
@@ -2346,7 +2346,7 @@
     "mcap_cr": 467330.66999569326,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-26T08:48:00.451704",
-    "rsi_up_last_alert": "2026-10-26T09:31:15.652883"
+    "rsi_up_last_alert": "2026-10-26T10:17:38.634645"
   },
   "COFORGE": {
     "result_date": "2026-10-23T00:00:00",
@@ -2420,7 +2420,7 @@
     "mcap_cr": 57253.163111,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-26T08:48:05.373394",
-    "rsi_up_last_alert": "2026-10-26T09:31:20.665562"
+    "rsi_up_last_alert": "2026-10-26T10:17:43.062211"
   },
   "RAJOOENG": {
     "result_date": "2026-10-26T00:00:00",
@@ -2471,7 +2471,7 @@
     "baseline_rsi": 36.3625986754284,
     "mcap_cr": 1561.5303945159912,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-26T09:31:25.268318",
+    "rsi_down_last_alert": "2026-10-26T10:17:48.822620",
     "rsi_up_last_alert": "2026-10-26T09:17:04.617556"
   },
   "DEEPA": {
@@ -2622,6 +2622,24 @@
     "day_low": 72.7699966430664,
     "baseline_rsi": 37.09988109438149,
     "mcap_cr": 58548.11839194866,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-26T10:18:04.713503"
+  },
+  "KEC": {
+    "result_date": "2026-10-26T00:00:00",
+    "day_high": 348.25,
+    "day_low": 328.6000061035156,
+    "baseline_rsi": 32.16544039654718,
+    "mcap_cr": 8965.615675048828,
     "exchange": "NSE"
+  },
+  "OFSS": {
+    "result_date": "2026-10-26T00:00:00",
+    "day_high": 9977.0,
+    "day_low": 9540.0,
+    "baseline_rsi": 36.51751767646622,
+    "mcap_cr": 86344.2294521,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-26T10:18:07.182586"
   }
 }
