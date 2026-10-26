@@ -1429,7 +1429,9 @@
       "box_low": 5252.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 23.2
+      "rs_rank": 23.2,
+      "liquidity_sweep_last_alert": "2026-10-26T05:04:24.277176",
+      "liquidity_sweep_last_price": 5350.5
     },
     "AURIONPRO": {
       "sma50": 659.1849987792968,
@@ -3180,8 +3182,8 @@
       "descending_res": 255.88635808771306,
       "wedge_contraction": 1.0855327830223906,
       "rs_rank": 84.3,
-      "near_high_17_22_last_alert": "2026-10-26T03:54:03.042536",
-      "near_high_17_22_last_price": 234.08999633789062
+      "near_high_17_22_last_alert": "2026-10-26T05:05:13.200416",
+      "near_high_17_22_last_price": 231.39999389648438
     },
     "CHALET": {
       "sma50": 856.9380017089844,
@@ -3975,7 +3977,9 @@
       "box_low": 352.79998779296875,
       "descending_res": 410.458257039388,
       "wedge_contraction": 1.2029497530938835,
-      "rs_rank": 24.5
+      "rs_rank": 24.5,
+      "rectangle_bounce_last_alert": "2026-10-26T05:05:30.659524",
+      "rectangle_bounce_last_price": 376.6499938964844
     },
     "DBREALTY": {
       "sma50": 96.74700057983398,
@@ -5726,8 +5730,8 @@
       "descending_res": 630.5714285714286,
       "wedge_contraction": 1.0517172128845582,
       "rs_rank": 69.7,
-      "near_high_17_22_last_alert": "2026-10-26T04:19:14.223990",
-      "near_high_17_22_last_price": 497.8500061035156
+      "near_high_17_22_last_alert": "2026-10-26T05:06:18.716879",
+      "near_high_17_22_last_price": 506.1000061035156
     },
     "GODFRYPHLP": {
       "sma50": 1959.7160083007811,
