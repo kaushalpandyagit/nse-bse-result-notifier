@@ -804,8 +804,8 @@
       "descending_res": 825.2666829427084,
       "wedge_contraction": 0.8518687120126056,
       "rs_rank": 86.4,
-      "near_high_17_22_last_alert": "2026-10-26T04:49:46.796073",
-      "near_high_17_22_last_price": 679.5
+      "near_high_17_22_last_alert": "2026-10-26T05:48:54.918723",
+      "near_high_17_22_last_price": 671.0499877929688
     },
     "ALKYLAMINE": {
       "sma50": 1885.7500048828124,
@@ -1798,8 +1798,8 @@
       "descending_res": 734.25,
       "wedge_contraction": 0.860606139071808,
       "rs_rank": 82.2,
-      "near_high_17_22_last_alert": "2026-10-26T04:50:11.047952",
-      "near_high_17_22_last_price": 641.7999877929688
+      "near_high_17_22_last_alert": "2026-10-26T05:49:09.739591",
+      "near_high_17_22_last_price": 631.6500244140625
     },
     "BALUFORGE": {
       "sma50": 522.2560034179687,
@@ -9352,8 +9352,8 @@
       "descending_res": 101.00001525878906,
       "wedge_contraction": 0.8386054742441087,
       "rs_rank": 93.3,
-      "near_high_17_22_last_alert": "2026-10-26T04:53:01.141879",
-      "near_high_17_22_last_price": 83.66999816894531
+      "near_high_17_22_last_alert": "2026-10-26T05:50:56.545869",
+      "near_high_17_22_last_price": 82.62999725341797
     },
     "LLOYDSENT": {
       "sma50": 72.83220008850098,
@@ -12797,7 +12797,9 @@
       "box_low": 578.3499755859375,
       "descending_res": 702.5,
       "wedge_contraction": 1.1919423185244955,
-      "rs_rank": 70.3
+      "rs_rank": 70.3,
+      "near_high_17_22_last_alert": "2026-10-26T05:51:46.715182",
+      "near_high_17_22_last_price": 603.0999755859375
     },
     "ROUTE": {
       "sma50": 471.3300006103516,
@@ -13125,7 +13127,9 @@
       "box_low": 140.91000366210938,
       "descending_res": 160.41666666666666,
       "wedge_contraction": 1.0639666416461486,
-      "rs_rank": 52.5
+      "rs_rank": 52.5,
+      "rectangle_bounce_last_alert": "2026-10-26T05:51:52.152023",
+      "rectangle_bounce_last_price": 153.25999450683594
     },
     "SAMMAANCAP": {
       "sma50": 141.52140029907227,
@@ -13632,8 +13636,8 @@
       "descending_res": 3111.843017578125,
       "wedge_contraction": 1.6863377321256245,
       "rs_rank": 76.2,
-      "near_high_17_22_last_alert": "2026-10-26T04:54:38.441236",
-      "near_high_17_22_last_price": 2912.699951171875
+      "near_high_17_22_last_alert": "2026-10-26T05:51:59.854192",
+      "near_high_17_22_last_price": 2980.300048828125
     },
     "SHAKTIPUMP": {
       "sma50": 461.81400024414063,
@@ -14029,7 +14033,9 @@
       "box_low": null,
       "descending_res": 52.83000946044922,
       "wedge_contraction": 1.0514722759770634,
-      "rs_rank": 2.7
+      "rs_rank": 2.7,
+      "vol_breakout_last_alert": "2026-10-26T05:52:05.904811",
+      "vol_breakout_last_price": 50.380001068115234
     },
     "SKIPPER": {
       "sma50": 542.7230023193359,
