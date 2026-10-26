@@ -1026,8 +1026,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 91.8,
-      "bonde_last_alert": "2026-10-26T05:18:18.051716",
-      "bonde_last_price": 402.29998779296875
+      "bonde_last_alert": "2026-10-26T06:18:00.025697",
+      "bonde_last_price": 410.29998779296875
     },
     "APOLLOTYRE": {
       "sma50": 416.62800048828126,
@@ -1650,8 +1650,8 @@
       "descending_res": 2000.0,
       "wedge_contraction": 0.8532286368572327,
       "rs_rank": 63.0,
-      "near_high_17_22_last_alert": "2026-10-26T03:53:34.938058",
-      "near_high_17_22_last_price": 1917.0
+      "near_high_17_22_last_alert": "2026-10-26T06:18:12.013691",
+      "near_high_17_22_last_price": 1886.800048828125
     },
     "AZAD": {
       "sma50": 2789.31599609375,
@@ -1688,8 +1688,8 @@
       "descending_res": 2875.89990234375,
       "wedge_contraction": 0.8269356992569034,
       "rs_rank": 77.6,
-      "near_high_17_22_last_alert": "2026-10-26T03:53:36.255793",
-      "near_high_17_22_last_price": 2445.10009765625
+      "near_high_17_22_last_alert": "2026-10-26T06:18:13.366253",
+      "near_high_17_22_last_price": 2479.0
     },
     "BAJAJCON": {
       "sma50": 486.5820001220703,
@@ -3072,8 +3072,8 @@
       "descending_res": 4975.875,
       "wedge_contraction": 0.7193444163488016,
       "rs_rank": 89.5,
-      "near_high_17_22_last_alert": "2026-10-26T05:19:03.245481",
-      "near_high_17_22_last_price": 3900.0
+      "near_high_17_22_last_alert": "2026-10-26T06:18:39.292459",
+      "near_high_17_22_last_price": 3958.10009765625
     },
     "CERA": {
       "sma50": 5414.2,
@@ -3328,8 +3328,8 @@
       "descending_res": 720.5500183105469,
       "wedge_contraction": 1.1145694755711437,
       "rs_rank": 59.6,
-      "near_high_17_22_last_alert": "2026-10-26T04:50:48.242793",
-      "near_high_17_22_last_price": 687.5
+      "near_high_17_22_last_alert": "2026-10-26T06:18:44.517872",
+      "near_high_17_22_last_price": 680.0999755859375
     },
     "CHOLAHLDNG": {
       "sma50": 1461.3579956054687,
@@ -5142,8 +5142,8 @@
       "descending_res": 164.54286411830358,
       "wedge_contraction": 1.0634601670928587,
       "rs_rank": 61.7,
-      "near_high_17_22_last_alert": "2026-10-26T03:54:35.031510",
-      "near_high_17_22_last_price": 146.5
+      "near_high_17_22_last_alert": "2026-10-26T06:19:15.676967",
+      "near_high_17_22_last_price": 148.11000061035156
     },
     "FIEMIND": {
       "sma50": 1972.2559985351563,
@@ -6094,8 +6094,10 @@
       "descending_res": 851.6735480813419,
       "wedge_contraction": 0.9725478443942062,
       "rs_rank": 54.8,
-      "near_high_17_22_last_alert": "2026-10-26T03:54:54.464441",
-      "near_high_17_22_last_price": 683.1500244140625
+      "near_high_17_22_last_alert": "2026-10-26T06:19:35.589288",
+      "near_high_17_22_last_price": 723.1500244140625,
+      "rectangle_bounce_last_alert": "2026-10-26T06:19:35.020295",
+      "rectangle_bounce_last_price": 723.1500244140625
     },
     "GRAVITA": {
       "sma50": 1610.4960009765625,
@@ -8235,7 +8237,9 @@
       "box_low": 397.79998779296875,
       "descending_res": 495.83751487731934,
       "wedge_contraction": 0.7843298099748272,
-      "rs_rank": 30.3
+      "rs_rank": 30.3,
+      "rectangle_bounce_last_alert": "2026-10-26T06:20:14.927488",
+      "rectangle_bounce_last_price": 409.8999938964844
     },
     "JUBLINGREA": {
       "sma50": 659.8459997558593,
@@ -15094,8 +15098,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 35.4,
-      "sos_pullback_curl_last_alert": "2026-10-26T05:23:16.221209",
-      "sos_pullback_curl_last_price": 623.1500244140625
+      "sos_pullback_curl_last_alert": "2026-10-26T06:22:18.809744",
+      "sos_pullback_curl_last_price": 615.2999877929688
     },
     "TATAELXSI": {
       "sma50": 3473.6039990234376,
@@ -15277,7 +15281,9 @@
       "box_low": null,
       "descending_res": 843.360009765625,
       "wedge_contraction": 0.8474104650768256,
-      "rs_rank": 77.2
+      "rs_rank": 77.2,
+      "near_high_17_22_last_alert": "2026-10-26T06:22:22.142675",
+      "near_high_17_22_last_price": 668.5499877929688
     },
     "TECHNOE": {
       "sma50": 971.0150012207031,
