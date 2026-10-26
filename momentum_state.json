@@ -8690,8 +8690,8 @@
       "descending_res": 793.6750793457031,
       "wedge_contraction": 1.116890347686732,
       "rs_rank": 32.4,
-      "rectangle_bounce_last_alert": "2026-10-26T09:19:42.987850",
-      "rectangle_bounce_last_price": 818.5
+      "rectangle_bounce_last_alert": "2026-10-26T10:06:35.521320",
+      "rectangle_bounce_last_price": 829.0
     },
     "KIMS": {
       "sma50": 749.4520007324219,
@@ -10841,7 +10841,9 @@
       "box_low": 241.8000030517578,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 55.6
+      "rs_rank": 55.6,
+      "liquidity_sweep_last_alert": "2026-10-26T10:07:22.843457",
+      "liquidity_sweep_last_price": 244.35000610351562
     },
     "NSLNISP": {
       "sma50": 41.98680015563965,
@@ -10955,7 +10957,9 @@
       "resistance_last_alert": "2026-10-26T06:34:37.994190",
       "resistance_last_price": 339.3999938964844,
       "mtf_last_alert": "2026-10-26T08:20:54.249752",
-      "mtf_last_price": 340.54998779296875
+      "mtf_last_price": 340.54998779296875,
+      "ema50_pullback_last_alert": "2026-10-26T10:07:25.608300",
+      "ema50_pullback_last_price": 340.45001220703125
     },
     "OLAELEC": {
       "sma50": 37.00572910308838,
@@ -15032,8 +15036,8 @@
       "descending_res": 1585.9750671386719,
       "wedge_contraction": 1.0361427439724848,
       "rs_rank": 93.7,
-      "near_high_17_22_last_alert": "2026-10-26T06:35:51.342004",
-      "near_high_17_22_last_price": 1480.199951171875
+      "near_high_17_22_last_alert": "2026-10-26T10:08:52.775031",
+      "near_high_17_22_last_price": 1495.4000244140625
     },
     "TANLA": {
       "sma50": 526.3799993896484,
