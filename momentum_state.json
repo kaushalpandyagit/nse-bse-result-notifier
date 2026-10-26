@@ -804,8 +804,8 @@
       "descending_res": 825.2666829427084,
       "wedge_contraction": 0.8518687120126056,
       "rs_rank": 86.4,
-      "near_high_17_22_last_alert": "2026-10-26T05:48:54.918723",
-      "near_high_17_22_last_price": 671.0499877929688
+      "near_high_17_22_last_alert": "2026-10-26T07:32:08.221494",
+      "near_high_17_22_last_price": 678.0
     },
     "ALKYLAMINE": {
       "sma50": 1885.7500048828124,
@@ -3591,7 +3591,9 @@
       "box_low": 1212.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 81.2
+      "rs_rank": 81.2,
+      "rectangle_bounce_last_alert": "2026-10-26T07:33:06.332087",
+      "rectangle_bounce_last_price": 1295.4000244140625
     },
     "CRAFTSMAN": {
       "sma50": 10824.31,
@@ -6106,8 +6108,8 @@
       "rs_rank": 54.8,
       "near_high_17_22_last_alert": "2026-10-26T06:19:35.589288",
       "near_high_17_22_last_price": 723.1500244140625,
-      "rectangle_bounce_last_alert": "2026-10-26T06:19:35.020295",
-      "rectangle_bounce_last_price": 723.1500244140625
+      "rectangle_bounce_last_alert": "2026-10-26T07:33:57.905008",
+      "rectangle_bounce_last_price": 733.5
     },
     "GRAVITA": {
       "sma50": 1610.4960009765625,
@@ -8250,8 +8252,8 @@
       "descending_res": 495.83751487731934,
       "wedge_contraction": 0.7843298099748272,
       "rs_rank": 30.3,
-      "rectangle_bounce_last_alert": "2026-10-26T06:20:14.927488",
-      "rectangle_bounce_last_price": 409.8999938964844
+      "rectangle_bounce_last_alert": "2026-10-26T07:34:42.600940",
+      "rectangle_bounce_last_price": 414.70001220703125
     },
     "JUBLINGREA": {
       "sma50": 659.8459997558593,
@@ -16035,7 +16037,9 @@
       "zanger_last_alert": "2026-10-26T07:22:04.303508",
       "zanger_last_price": 40.650001525878906,
       "resistance_last_alert": "2026-10-26T07:22:04.974703",
-      "resistance_last_price": 40.650001525878906
+      "resistance_last_price": 40.650001525878906,
+      "vol_breakout_last_alert": "2026-10-26T07:37:19.484089",
+      "vol_breakout_last_price": 39.189998626708984
     },
     "TVSSCS": {
       "sma50": 126.43880004882813,
