@@ -1015,7 +1015,9 @@
       "box_low": 361.3999938964844,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 91.8
+      "rs_rank": 91.8,
+      "bonde_last_alert": "2026-10-26T04:17:50.696076",
+      "bonde_last_price": 396.1499938964844
     },
     "APOLLOTYRE": {
       "sma50": 416.62800048828126,
@@ -5695,7 +5697,9 @@
       "box_low": 490.1499938964844,
       "descending_res": 630.5714285714286,
       "wedge_contraction": 1.0517172128845582,
-      "rs_rank": 69.7
+      "rs_rank": 69.7,
+      "near_high_17_22_last_alert": "2026-10-26T04:19:14.223990",
+      "near_high_17_22_last_price": 497.8500061035156
     },
     "GODFRYPHLP": {
       "sma50": 1959.7160083007811,
@@ -15035,7 +15039,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 35.4
+      "rs_rank": 35.4,
+      "sos_pullback_curl_last_alert": "2026-10-26T04:21:59.906096",
+      "sos_pullback_curl_last_price": 612.1500244140625
     },
     "TATAELXSI": {
       "sma50": 3473.6039990234376,
