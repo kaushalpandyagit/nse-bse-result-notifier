@@ -694,8 +694,8 @@
       "descending_res": 1800.7750549316406,
       "wedge_contraction": 0.6810155482459601,
       "rs_rank": 84.5,
-      "near_high_17_22_last_alert": "2026-10-26T06:31:30.021218",
-      "near_high_17_22_last_price": 1435.800048828125
+      "near_high_17_22_last_alert": "2026-10-26T07:18:31.928942",
+      "near_high_17_22_last_price": 1461.5999755859375
     },
     "AFCONS": {
       "sma50": 261.1599996948242,
@@ -1694,8 +1694,8 @@
       "descending_res": 2875.89990234375,
       "wedge_contraction": 0.8269356992569034,
       "rs_rank": 77.6,
-      "near_high_17_22_last_alert": "2026-10-26T06:18:13.366253",
-      "near_high_17_22_last_price": 2479.0
+      "near_high_17_22_last_alert": "2026-10-26T07:18:45.998625",
+      "near_high_17_22_last_price": 2512.39990234375
     },
     "BAJAJCON": {
       "sma50": 486.5820001220703,
@@ -4970,8 +4970,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 60.5,
-      "near_high_17_22_last_alert": "2026-10-26T04:51:21.657864",
-      "near_high_17_22_last_price": 222.3699951171875
+      "near_high_17_22_last_alert": "2026-10-26T07:19:31.659044",
+      "near_high_17_22_last_price": 219.5
     },
     "EQUITASBNK": {
       "sma50": 71.30219955444336,
@@ -7412,8 +7412,8 @@
       "descending_res": 2074.0532389322916,
       "wedge_contraction": 0.959273508522612,
       "rs_rank": 81.4,
-      "near_high_17_22_last_alert": "2026-10-26T06:33:33.912008",
-      "near_high_17_22_last_price": 1860.5999755859375
+      "near_high_17_22_last_alert": "2026-10-26T07:20:06.570296",
+      "near_high_17_22_last_price": 1885.699951171875
     },
     "INOXWIND": {
       "sma50": 71.38619956970214,
@@ -16028,8 +16028,14 @@
       "descending_res": 38.35722351074219,
       "wedge_contraction": 2.027159357253617,
       "rs_rank": 27.4,
-      "mtf_last_alert": "2026-10-26T06:36:08.720476",
-      "mtf_last_price": 38.13999938964844
+      "mtf_last_alert": "2026-10-26T07:22:05.632446",
+      "mtf_last_price": 40.650001525878906,
+      "momentum_ignition_last_alert": "2026-10-26T07:22:03.447727",
+      "momentum_ignition_last_price": 40.650001525878906,
+      "zanger_last_alert": "2026-10-26T07:22:04.303508",
+      "zanger_last_price": 40.650001525878906,
+      "resistance_last_alert": "2026-10-26T07:22:04.974703",
+      "resistance_last_price": 40.650001525878906
     },
     "TVSSCS": {
       "sma50": 126.43880004882813,
