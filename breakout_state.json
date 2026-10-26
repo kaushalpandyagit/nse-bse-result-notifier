@@ -2690,5 +2690,13 @@
     "baseline_rsi": 61.844608450908325,
     "mcap_cr": 4180.1012907312015,
     "exchange": "NSE"
+  },
+  "ASTEC": {
+    "result_date": "2026-10-26T00:00:00",
+    "day_high": 662.2999877929688,
+    "day_low": 630.0,
+    "baseline_rsi": 40.79170199047979,
+    "mcap_cr": 1454.695853430005,
+    "exchange": "NSE"
   }
 }
