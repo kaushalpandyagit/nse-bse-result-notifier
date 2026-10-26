@@ -78,12 +78,10 @@
     "fno_low_breach_last_price": 444.1499938964844
   },
   "ARYAMAN": {
-    "trigger_date": "2026-10-23",
-    "ref_high": 624.8,
-    "ref_low": 620.65,
-    "status": "Breached High",
-    "fno_high_breach_last_alert": "2026-10-26T09:31:58.752086",
-    "fno_high_breach_last_price": 625.0
+    "trigger_date": "2026-10-26",
+    "ref_high": 625.05,
+    "ref_low": 607.7,
+    "status": "Active"
   },
   "TINNARUBR": {
     "trigger_date": "2026-10-23",
@@ -100,12 +98,10 @@
     "fno_high_breach_last_price": 41.630001068115234
   },
   "BRIGHOTEL": {
-    "trigger_date": "2026-10-23",
-    "ref_high": 51.88,
-    "ref_low": 46.89,
-    "status": "Breached High",
-    "fno_high_breach_last_alert": "2026-10-26T03:49:52.459590",
-    "fno_high_breach_last_price": 50.22999954223633
+    "trigger_date": "2026-10-26",
+    "ref_high": 53.0,
+    "ref_low": 48.81,
+    "status": "Active"
   },
   "GLOBECIVIL": {
     "trigger_date": "2026-10-23",
@@ -153,6 +149,54 @@
     "trigger_date": "2026-10-23",
     "ref_high": 49.4,
     "ref_low": 44.0,
+    "status": "Active"
+  },
+  "HINDWAREAP": {
+    "trigger_date": "2026-10-26",
+    "ref_high": 166.06,
+    "ref_low": 157.55,
+    "status": "Active"
+  },
+  "CRISIL": {
+    "trigger_date": "2026-10-26",
+    "ref_high": 4827.6,
+    "ref_low": 4402.5,
+    "status": "Active"
+  },
+  "AVANTEL": {
+    "trigger_date": "2026-10-26",
+    "ref_high": 149.65,
+    "ref_low": 130.0,
+    "status": "Active"
+  },
+  "TMB": {
+    "trigger_date": "2026-10-26",
+    "ref_high": 810.95,
+    "ref_low": 770.3,
+    "status": "Active"
+  },
+  "MSL": {
+    "trigger_date": "2026-10-26",
+    "ref_high": 145.0,
+    "ref_low": 111.0,
+    "status": "Active"
+  },
+  "VASWANI": {
+    "trigger_date": "2026-10-26",
+    "ref_high": 43.69,
+    "ref_low": 39.7,
+    "status": "Active"
+  },
+  "SURYALAXMI": {
+    "trigger_date": "2026-10-26",
+    "ref_high": 54.0,
+    "ref_low": 47.5,
+    "status": "Active"
+  },
+  "JBMA": {
+    "trigger_date": "2026-10-26",
+    "ref_high": 510.9,
+    "ref_low": 477.0,
     "status": "Active"
   }
 }
