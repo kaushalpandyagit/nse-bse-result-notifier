@@ -9625,7 +9625,9 @@
       "box_low": 275.79998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 55.9
+      "rs_rank": 55.9,
+      "rectangle_bounce_last_alert": "2026-10-26T07:51:58.755023",
+      "rectangle_bounce_last_price": 287.29998779296875
     },
     "MANORAMA": {
       "sma50": 1914.8119995117188,
@@ -12206,8 +12208,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 95.4,
-      "near_high_17_22_last_alert": "2026-10-26T04:54:06.216461",
-      "near_high_17_22_last_price": 203.33999633789062
+      "near_high_17_22_last_alert": "2026-10-26T07:52:48.022096",
+      "near_high_17_22_last_price": 205.57000732421875
     },
     "RAINBOW": {
       "sma50": 1371.1739916992187,
@@ -13370,8 +13372,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 91.2,
-      "near_high_17_22_last_alert": "2026-10-26T06:05:36.947051",
-      "near_high_17_22_last_price": 484.79998779296875
+      "near_high_17_22_last_alert": "2026-10-26T07:53:10.770165",
+      "near_high_17_22_last_price": 489.70001220703125
     },
     "SBFC": {
       "sma50": 91.00640014648438,
@@ -14642,8 +14644,8 @@
       "descending_res": 409.5000061035156,
       "wedge_contraction": 0.868233753469425,
       "rs_rank": 87.9,
-      "near_high_17_22_last_alert": "2026-10-26T04:54:59.948642",
-      "near_high_17_22_last_price": 385.0
+      "near_high_17_22_last_alert": "2026-10-26T07:53:35.499674",
+      "near_high_17_22_last_price": 391.79998779296875
     },
     "SUNTECK": {
       "sma50": 287.24,
