@@ -694,8 +694,8 @@
       "descending_res": 1800.7750549316406,
       "wedge_contraction": 0.6810155482459601,
       "rs_rank": 84.5,
-      "near_high_17_22_last_alert": "2026-10-26T07:18:31.928942",
-      "near_high_17_22_last_price": 1461.5999755859375
+      "near_high_17_22_last_alert": "2026-10-26T08:17:56.106513",
+      "near_high_17_22_last_price": 1482.699951171875
     },
     "AFCONS": {
       "sma50": 261.1599996948242,
@@ -2021,7 +2021,9 @@
       "box_low": 185.52000427246094,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 58.6
+      "rs_rank": 58.6,
+      "liquidity_sweep_last_alert": "2026-10-26T08:18:20.408969",
+      "liquidity_sweep_last_price": 186.64999389648438
     },
     "BELRISE": {
       "sma50": 233.41979919433595,
@@ -7850,8 +7852,8 @@
       "descending_res": 144.87999267578124,
       "wedge_contraction": 0.8858026899111833,
       "rs_rank": 62.6,
-      "near_high_17_22_last_alert": "2026-10-26T07:05:25.962214",
-      "near_high_17_22_last_price": 125.94999694824219
+      "near_high_17_22_last_alert": "2026-10-26T08:20:00.182011",
+      "near_high_17_22_last_price": 124.33000183105469
     },
     "JAYNECOIND": {
       "sma50": 93.240400390625,
@@ -8252,8 +8254,8 @@
       "descending_res": 495.83751487731934,
       "wedge_contraction": 0.7843298099748272,
       "rs_rank": 30.3,
-      "rectangle_bounce_last_alert": "2026-10-26T07:34:42.600940",
-      "rectangle_bounce_last_price": 414.70001220703125
+      "rectangle_bounce_last_alert": "2026-10-26T08:20:06.691031",
+      "rectangle_bounce_last_price": 419.70001220703125
     },
     "JUBLINGREA": {
       "sma50": 659.8459997558593,
@@ -9225,7 +9227,9 @@
       "box_low": 1801.199951171875,
       "descending_res": 2012.5999755859375,
       "wedge_contraction": 0.717540806933459,
-      "rs_rank": 86.2
+      "rs_rank": 86.2,
+      "rectangle_bounce_last_alert": "2026-10-26T08:20:24.213506",
+      "rectangle_bounce_last_price": 1847.5
     },
     "LATENTVIEW": {
       "sma50": 254.22139953613282,
@@ -10903,7 +10907,9 @@
       "wedge_contraction": 1.1039710691851308,
       "rs_rank": 74.1,
       "resistance_last_alert": "2026-10-26T06:34:37.994190",
-      "resistance_last_price": 339.3999938964844
+      "resistance_last_price": 339.3999938964844,
+      "mtf_last_alert": "2026-10-26T08:20:54.249752",
+      "mtf_last_price": 340.54998779296875
     },
     "OLAELEC": {
       "sma50": 37.00572910308838,
@@ -11159,7 +11165,9 @@
       "wedge_contraction": 1.0388768839457843,
       "rs_rank": 94.4,
       "near_high_17_22_last_alert": "2026-10-26T08:05:10.088506",
-      "near_high_17_22_last_price": 1243.199951171875
+      "near_high_17_22_last_price": 1243.199951171875,
+      "rectangle_bounce_last_alert": "2026-10-26T08:20:59.084342",
+      "rectangle_bounce_last_price": 1248.0999755859375
     },
     "PARKHOSPS": {
       "sma50": 269.6809985351563,
@@ -15120,10 +15128,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 35.4,
-      "sos_pullback_curl_last_alert": "2026-10-26T07:07:34.929193",
-      "sos_pullback_curl_last_price": 602.75,
-      "vol_breakout_last_alert": "2026-10-26T06:53:31.320264",
-      "vol_breakout_last_price": 603.6500244140625
+      "sos_pullback_curl_last_alert": "2026-10-26T08:22:07.861578",
+      "sos_pullback_curl_last_price": 596.1500244140625,
+      "vol_breakout_last_alert": "2026-10-26T08:22:07.155102",
+      "vol_breakout_last_price": 596.1500244140625
     },
     "TATAELXSI": {
       "sma50": 3473.6039990234376,
@@ -15343,7 +15351,9 @@
       "box_low": 811.0999755859375,
       "descending_res": 943.5915730794271,
       "wedge_contraction": 1.1152056020867869,
-      "rs_rank": 7.9
+      "rs_rank": 7.9,
+      "liquidity_sweep_last_alert": "2026-10-26T08:22:11.835275",
+      "liquidity_sweep_last_price": 820.7000122070312
     },
     "TEGA": {
       "sma50": 1824.73400390625,
@@ -16034,8 +16044,8 @@
       "descending_res": 38.35722351074219,
       "wedge_contraction": 2.027159357253617,
       "rs_rank": 27.4,
-      "mtf_last_alert": "2026-10-26T07:22:05.632446",
-      "mtf_last_price": 40.650001525878906,
+      "mtf_last_alert": "2026-10-26T08:22:24.166082",
+      "mtf_last_price": 38.86000061035156,
       "momentum_ignition_last_alert": "2026-10-26T07:22:03.447727",
       "momentum_ignition_last_price": 40.650001525878906,
       "zanger_last_alert": "2026-10-26T07:22:04.303508",
