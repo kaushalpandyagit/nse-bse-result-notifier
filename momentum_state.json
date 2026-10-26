@@ -1027,7 +1027,11 @@
       "wedge_contraction": null,
       "rs_rank": 91.8,
       "bonde_last_alert": "2026-10-26T06:18:00.025697",
-      "bonde_last_price": 410.29998779296875
+      "bonde_last_price": 410.29998779296875,
+      "vol_breakout_last_alert": "2026-10-26T06:49:19.428450",
+      "vol_breakout_last_price": 418.70001220703125,
+      "zanger_last_alert": "2026-10-26T06:49:20.152489",
+      "zanger_last_price": 418.70001220703125
     },
     "APOLLOTYRE": {
       "sma50": 416.62800048828126,
@@ -1355,7 +1359,9 @@
       "box_low": 1470.800048828125,
       "descending_res": 1674.0,
       "wedge_contraction": 1.117257978068003,
-      "rs_rank": 88.7
+      "rs_rank": 88.7,
+      "near_high_17_22_last_alert": "2026-10-26T06:49:27.457890",
+      "near_high_17_22_last_price": 1538.5999755859375
     },
     "ATLANTAELE": {
       "sma50": 1744.7760009765625,
@@ -7623,7 +7629,9 @@
       "box_low": 98.77999877929688,
       "descending_res": 116.52428327287946,
       "wedge_contraction": 1.1152900575273776,
-      "rs_rank": 15.7
+      "rs_rank": 15.7,
+      "rectangle_bounce_last_alert": "2026-10-26T06:51:19.749936",
+      "rectangle_bounce_last_price": 102.43000030517578
     },
     "ITI": {
       "sma50": 256.9664007568359,
@@ -14046,8 +14054,8 @@
       "descending_res": 52.83000946044922,
       "wedge_contraction": 1.0514722759770634,
       "rs_rank": 2.7,
-      "vol_breakout_last_alert": "2026-10-26T05:52:05.904811",
-      "vol_breakout_last_price": 50.380001068115234
+      "vol_breakout_last_alert": "2026-10-26T06:53:13.182179",
+      "vol_breakout_last_price": 49.27000045776367
     },
     "SKIPPER": {
       "sma50": 542.7230023193359,
@@ -15105,7 +15113,9 @@
       "wedge_contraction": null,
       "rs_rank": 35.4,
       "sos_pullback_curl_last_alert": "2026-10-26T06:22:18.809744",
-      "sos_pullback_curl_last_price": 615.2999877929688
+      "sos_pullback_curl_last_price": 615.2999877929688,
+      "vol_breakout_last_alert": "2026-10-26T06:53:31.320264",
+      "vol_breakout_last_price": 603.6500244140625
     },
     "TATAELXSI": {
       "sma50": 3473.6039990234376,
