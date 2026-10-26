@@ -10116,8 +10116,10 @@
       "descending_res": 191.38305199664572,
       "wedge_contraction": 0.6783899231847051,
       "rs_rank": 43.7,
-      "near_high_17_22_last_alert": "2026-10-26T04:05:49.560107",
-      "near_high_17_22_last_price": 169.2899932861328
+      "near_high_17_22_last_alert": "2026-10-26T06:04:48.849555",
+      "near_high_17_22_last_price": 176.0399932861328,
+      "vol_breakout_last_alert": "2026-10-26T06:04:48.127437",
+      "vol_breakout_last_price": 176.0399932861328
     },
     "MSTCLTD": {
       "sma50": 698.6829992675781,
@@ -10842,8 +10844,8 @@
       "descending_res": 1876.2181673916903,
       "wedge_contraction": 0.711785615627563,
       "rs_rank": 79.9,
-      "near_high_17_22_last_alert": "2026-10-26T04:53:34.945856",
-      "near_high_17_22_last_price": 1662.0
+      "near_high_17_22_last_alert": "2026-10-26T06:05:00.695791",
+      "near_high_17_22_last_price": 1643.199951171875
     },
     "NUVOCO": {
       "sma50": 328.95300048828125,
@@ -13346,8 +13348,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 91.2,
-      "near_high_17_22_last_alert": "2026-10-26T04:54:31.680777",
-      "near_high_17_22_last_price": 490.3500061035156
+      "near_high_17_22_last_alert": "2026-10-26T06:05:36.947051",
+      "near_high_17_22_last_price": 484.79998779296875
     },
     "SBFC": {
       "sma50": 91.00640014648438,
@@ -14362,8 +14364,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 57.1,
-      "near_high_17_22_last_alert": "2026-10-26T04:54:53.387572",
-      "near_high_17_22_last_price": 1044.9000244140625
+      "near_high_17_22_last_alert": "2026-10-26T06:05:51.185035",
+      "near_high_17_22_last_price": 1034.4000244140625
     },
     "STYLAMIND": {
       "sma50": 3360.813984375,
@@ -14579,7 +14581,9 @@
       "box_low": 957.3499755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 86.6
+      "rs_rank": 86.6,
+      "near_high_17_22_last_alert": "2026-10-26T06:05:55.164623",
+      "near_high_17_22_last_price": 1054.0
     },
     "SUNFLAG": {
       "sma50": 382.1339971923828,
@@ -15636,8 +15640,8 @@
       "descending_res": 534.2999877929688,
       "wedge_contraction": 1.2002657768885698,
       "rs_rank": 69.5,
-      "near_high_17_22_last_alert": "2026-10-26T04:55:22.308734",
-      "near_high_17_22_last_price": 497.0
+      "near_high_17_22_last_alert": "2026-10-26T06:06:10.043189",
+      "near_high_17_22_last_price": 491.5
     },
     "TIMETECHNO": {
       "sma50": 181.60899993896484,
