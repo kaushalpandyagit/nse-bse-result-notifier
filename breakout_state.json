@@ -2641,5 +2641,38 @@
     "mcap_cr": 86344.2294521,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-26T10:18:07.182586"
+  },
+  "PARACABLES": {
+    "result_date": "2026-10-26T00:00:00",
+    "day_high": 60.77000045776367,
+    "day_low": 56.650001525878906,
+    "baseline_rsi": 49.7698750475072,
+    "mcap_cr": 1951.6561969988877,
+    "exchange": "NSE"
+  },
+  "DALBHARAT": {
+    "result_date": "2026-10-26T00:00:00",
+    "day_high": 1631.0,
+    "day_low": 1574.300048828125,
+    "baseline_rsi": 44.54835839832761,
+    "mcap_cr": 30520.9482451645,
+    "exchange": "NSE"
+  },
+  "SHANTIGEAR": {
+    "result_date": "2026-10-26T00:00:00",
+    "day_high": 497.8999938964844,
+    "day_low": 459.6000061035156,
+    "baseline_rsi": 28.477816160930672,
+    "mcap_cr": 3652.0712584714324,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-26T10:31:05.664729"
+  },
+  "SUMICHEM": {
+    "result_date": "2026-10-26T00:00:00",
+    "day_high": 365.0,
+    "day_low": 351.20001220703125,
+    "baseline_rsi": 14.923198684679292,
+    "mcap_cr": 17684.73281717124,
+    "exchange": "NSE"
   }
 }
