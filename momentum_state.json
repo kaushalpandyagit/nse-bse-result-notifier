@@ -806,8 +806,8 @@
       "descending_res": 825.2666829427084,
       "wedge_contraction": 0.8518687120126056,
       "rs_rank": 86.4,
-      "near_high_17_22_last_alert": "2026-10-26T07:32:08.221494",
-      "near_high_17_22_last_price": 678.0
+      "near_high_17_22_last_alert": "2026-10-26T09:32:22.789896",
+      "near_high_17_22_last_price": 686.0
     },
     "ALKYLAMINE": {
       "sma50": 1885.7500048828124,
@@ -990,8 +990,8 @@
       "descending_res": 1230.300048828125,
       "wedge_contraction": 1.163199680468802,
       "rs_rank": 31.8,
-      "near_high_17_22_last_alert": "2026-10-26T04:32:19.819085",
-      "near_high_17_22_last_price": 1104.4000244140625
+      "near_high_17_22_last_alert": "2026-10-26T09:32:27.055232",
+      "near_high_17_22_last_price": 1119.699951171875
     },
     "APOLLO": {
       "sma50": 396.48900146484374,
@@ -1069,7 +1069,9 @@
       "box_low": 377.20001220703125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 45.2
+      "rs_rank": 45.2,
+      "rectangle_bounce_last_alert": "2026-10-26T09:32:29.542429",
+      "rectangle_bounce_last_price": 384.6499938964844
     },
     "APTUS": {
       "sma50": 238.76320037841796,
@@ -1363,7 +1365,9 @@
       "wedge_contraction": 1.117257978068003,
       "rs_rank": 88.7,
       "near_high_17_22_last_alert": "2026-10-26T06:49:27.457890",
-      "near_high_17_22_last_price": 1538.5999755859375
+      "near_high_17_22_last_price": 1538.5999755859375,
+      "rectangle_bounce_last_alert": "2026-10-26T09:32:37.587098",
+      "rectangle_bounce_last_price": 1500.199951171875
     },
     "ATLANTAELE": {
       "sma50": 1744.7760009765625,
@@ -2717,7 +2721,9 @@
       "box_low": 987.2999877929688,
       "descending_res": 1160.3285958426338,
       "wedge_contraction": 0.9049352351430411,
-      "rs_rank": 72.2
+      "rs_rank": 72.2,
+      "near_high_17_22_last_alert": "2026-10-26T09:33:10.060234",
+      "near_high_17_22_last_price": 1080.0999755859375
     },
     "CARTRADE": {
       "sma50": 2966.857998046875,
@@ -7143,7 +7149,9 @@
       "wedge_contraction": 1.2742035311907989,
       "rs_rank": 69.2,
       "near_high_17_22_last_alert": "2026-10-26T03:55:12.315458",
-      "near_high_17_22_last_price": 336.25
+      "near_high_17_22_last_price": 336.25,
+      "resistance_last_alert": "2026-10-26T09:34:45.704153",
+      "resistance_last_price": 342.20001220703125
     },
     "IKS": {
       "sma50": 1761.8520043945311,
@@ -8633,7 +8641,9 @@
       "box_low": null,
       "descending_res": 424.42503356933594,
       "wedge_contraction": 0.9238489479672805,
-      "rs_rank": 2.5
+      "rs_rank": 2.5,
+      "vol_breakout_last_alert": "2026-10-26T09:35:18.166338",
+      "vol_breakout_last_price": 336.3500061035156
     },
     "KFINTECH": {
       "sma50": 901.6620007324219,
@@ -14425,7 +14435,9 @@
       "wedge_contraction": null,
       "rs_rank": 57.1,
       "near_high_17_22_last_alert": "2026-10-26T06:05:51.185035",
-      "near_high_17_22_last_price": 1034.4000244140625
+      "near_high_17_22_last_price": 1034.4000244140625,
+      "sos_pullback_curl_last_alert": "2026-10-26T09:37:26.927910",
+      "sos_pullback_curl_last_price": 1033.699951171875
     },
     "STYLAMIND": {
       "sma50": 3360.813984375,
@@ -15635,7 +15647,9 @@
       "wedge_contraction": null,
       "rs_rank": 47.1,
       "liquidity_sweep_last_alert": "2026-10-26T08:53:11.338874",
-      "liquidity_sweep_last_price": 88.63999938964844
+      "liquidity_sweep_last_price": 88.63999938964844,
+      "rectangle_bounce_last_alert": "2026-10-26T09:37:54.451334",
+      "rectangle_bounce_last_price": 89.4800033569336
     },
     "THYROCARE": {
       "sma50": 549.7219995117188,
@@ -15893,7 +15907,9 @@
       "near_high_17_22_last_alert": "2026-10-26T04:55:25.848610",
       "near_high_17_22_last_price": 786.9000244140625,
       "rectangle_bounce_last_alert": "2026-10-26T09:21:26.621678",
-      "rectangle_bounce_last_price": 802.0999755859375
+      "rectangle_bounce_last_price": 802.0999755859375,
+      "vol_breakout_last_alert": "2026-10-26T09:37:59.705149",
+      "vol_breakout_last_price": 803.9000244140625
     },
     "TRANSRAILL": {
       "sma50": 450.64099975585935,
@@ -16078,8 +16094,8 @@
       "mtf_last_price": 40.09000015258789,
       "momentum_ignition_last_alert": "2026-10-26T07:22:03.447727",
       "momentum_ignition_last_price": 40.650001525878906,
-      "zanger_last_alert": "2026-10-26T08:37:50.266914",
-      "zanger_last_price": 39.0,
+      "zanger_last_alert": "2026-10-26T09:38:04.174822",
+      "zanger_last_price": 41.66999816894531,
       "resistance_last_alert": "2026-10-26T09:07:37.495319",
       "resistance_last_price": 40.09000015258789,
       "vol_breakout_last_alert": "2026-10-26T09:07:36.939929",
@@ -16769,7 +16785,9 @@
       "box_low": 9212.0,
       "descending_res": 9603.0,
       "wedge_contraction": 1.0226600985221674,
-      "rs_rank": 45.6
+      "rs_rank": 45.6,
+      "rectangle_bounce_last_alert": "2026-10-26T09:38:19.047553",
+      "rectangle_bounce_last_price": 9796.0
     },
     "VOLTAS": {
       "sma50": 1128.0980029296875,
