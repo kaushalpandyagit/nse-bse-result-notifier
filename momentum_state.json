@@ -5363,7 +5363,11 @@
       "box_low": 246.64999389648438,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 90.4
+      "rs_rank": 90.4,
+      "resistance_last_alert": "2026-10-26T04:04:26.126979",
+      "resistance_last_price": 291.95001220703125,
+      "mtf_last_alert": "2026-10-26T04:04:26.614343",
+      "mtf_last_price": 291.95001220703125
     },
     "GABRIEL": {
       "sma50": 1378.482001953125,
@@ -5435,7 +5439,9 @@
       "box_low": 144.1300048828125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 56.1
+      "rs_rank": 56.1,
+      "near_high_17_22_last_alert": "2026-10-26T04:04:28.637584",
+      "near_high_17_22_last_price": 145.44000244140625
     },
     "GALLANTT": {
       "sma50": 560.068002319336,
@@ -10069,7 +10075,9 @@
       "box_low": 159.0,
       "descending_res": 191.38305199664572,
       "wedge_contraction": 0.6783899231847051,
-      "rs_rank": 43.7
+      "rs_rank": 43.7,
+      "near_high_17_22_last_alert": "2026-10-26T04:05:49.560107",
+      "near_high_17_22_last_price": 169.2899932861328
     },
     "MSTCLTD": {
       "sma50": 698.6829992675781,
@@ -10393,7 +10401,9 @@
       "box_low": 1965.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 89.3
+      "rs_rank": 89.3,
+      "near_high_17_22_last_alert": "2026-10-26T04:05:56.318381",
+      "near_high_17_22_last_price": 2187.10009765625
     },
     "NEPHROPLUS": {
       "sma50": 678.9490014648437,
@@ -14551,7 +14561,9 @@
       "box_low": null,
       "descending_res": 409.5000061035156,
       "wedge_contraction": 0.868233753469425,
-      "rs_rank": 87.9
+      "rs_rank": 87.9,
+      "near_high_17_22_last_alert": "2026-10-26T04:07:08.495766",
+      "near_high_17_22_last_price": 379.0
     },
     "SUNTECK": {
       "sma50": 287.24,
@@ -14875,7 +14887,9 @@
       "box_low": 1351.5999755859375,
       "descending_res": 1585.9750671386719,
       "wedge_contraction": 1.0361427439724848,
-      "rs_rank": 93.7
+      "rs_rank": 93.7,
+      "near_high_17_22_last_alert": "2026-10-26T04:07:14.508426",
+      "near_high_17_22_last_price": 1427.0999755859375
     },
     "TANLA": {
       "sma50": 526.3799993896484,
@@ -14911,7 +14925,9 @@
       "box_low": 480.79998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 74.9
+      "rs_rank": 74.9,
+      "mtf_last_alert": "2026-10-26T04:07:15.699732",
+      "mtf_last_price": 563.4000244140625
     },
     "TARC": {
       "sma50": 123.96979934692382,
@@ -17081,7 +17097,9 @@
       "box_low": null,
       "descending_res": 1115.0,
       "wedge_contraction": 0.9399342361435415,
-      "rs_rank": 86.8
+      "rs_rank": 86.8,
+      "near_high_17_22_last_alert": "2026-10-26T04:07:51.482082",
+      "near_high_17_22_last_price": 931.0
     },
     "ZAGGLE": {
       "sma50": 177.4055990600586,
