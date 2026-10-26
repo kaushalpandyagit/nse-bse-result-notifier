@@ -65,7 +65,9 @@
     "trigger_date": "2026-10-22",
     "ref_high": 155.15,
     "ref_low": 148.0,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-26T04:49:20.439618",
+    "fno_high_breach_last_price": 155.25999450683594
   },
   "TRITURBINE": {
     "trigger_date": "2026-10-22",
