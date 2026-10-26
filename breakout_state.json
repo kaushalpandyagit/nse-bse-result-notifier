@@ -2346,7 +2346,7 @@
     "mcap_cr": 467330.66999569326,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-26T08:48:00.451704",
-    "rsi_up_last_alert": "2026-10-26T10:17:38.634645"
+    "rsi_up_last_alert": "2026-10-26T11:17:22.770473"
   },
   "COFORGE": {
     "result_date": "2026-10-23T00:00:00",
@@ -2420,7 +2420,7 @@
     "mcap_cr": 57253.163111,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-26T08:48:05.373394",
-    "rsi_up_last_alert": "2026-10-26T10:17:43.062211"
+    "rsi_up_last_alert": "2026-10-26T11:17:26.601422"
   },
   "RAJOOENG": {
     "result_date": "2026-10-26T00:00:00",
@@ -2471,7 +2471,7 @@
     "baseline_rsi": 36.3625986754284,
     "mcap_cr": 1561.5303945159912,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-26T10:17:48.822620",
+    "rsi_down_last_alert": "2026-10-26T11:17:31.845685",
     "rsi_up_last_alert": "2026-10-26T09:17:04.617556"
   },
   "DEEPA": {
@@ -2623,7 +2623,7 @@
     "baseline_rsi": 37.09988109438149,
     "mcap_cr": 58548.11839194866,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-26T10:18:04.713503"
+    "rsi_down_last_alert": "2026-10-26T11:17:44.563321"
   },
   "KEC": {
     "result_date": "2026-10-26T00:00:00",
@@ -2640,7 +2640,7 @@
     "baseline_rsi": 36.51751767646622,
     "mcap_cr": 86344.2294521,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-26T10:18:07.182586"
+    "rsi_up_last_alert": "2026-10-26T11:17:47.062611"
   },
   "PARACABLES": {
     "result_date": "2026-10-26T00:00:00",
@@ -2665,7 +2665,7 @@
     "baseline_rsi": 28.477816160930672,
     "mcap_cr": 3652.0712584714324,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-26T10:31:05.664729"
+    "rsi_down_last_alert": "2026-10-26T11:17:50.479605"
   },
   "SUMICHEM": {
     "result_date": "2026-10-26T00:00:00",
@@ -2673,6 +2673,22 @@
     "day_low": 351.20001220703125,
     "baseline_rsi": 14.923198684679292,
     "mcap_cr": 17684.73281717124,
+    "exchange": "NSE"
+  },
+  "TATACONSUM": {
+    "result_date": "2026-10-26T00:00:00",
+    "day_high": 960.0,
+    "day_low": 916.0,
+    "baseline_rsi": 35.826089664409466,
+    "mcap_cr": 92685.2197603,
+    "exchange": "NSE"
+  },
+  "ANTELOPUS": {
+    "result_date": "2026-10-26T00:00:00",
+    "day_high": 1225.0,
+    "day_low": 1120.0999755859375,
+    "baseline_rsi": 61.844608450908325,
+    "mcap_cr": 4180.1012907312015,
     "exchange": "NSE"
   }
 }
