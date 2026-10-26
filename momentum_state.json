@@ -3078,8 +3078,8 @@
       "descending_res": 4975.875,
       "wedge_contraction": 0.7193444163488016,
       "rs_rank": 89.5,
-      "near_high_17_22_last_alert": "2026-10-26T06:18:39.292459",
-      "near_high_17_22_last_price": 3958.10009765625
+      "near_high_17_22_last_alert": "2026-10-26T08:03:17.507845",
+      "near_high_17_22_last_price": 4005.0
     },
     "CERA": {
       "sma50": 5414.2,
@@ -3334,8 +3334,8 @@
       "descending_res": 720.5500183105469,
       "wedge_contraction": 1.1145694755711437,
       "rs_rank": 59.6,
-      "near_high_17_22_last_alert": "2026-10-26T06:18:44.517872",
-      "near_high_17_22_last_price": 680.0999755859375
+      "near_high_17_22_last_alert": "2026-10-26T08:03:21.870024",
+      "near_high_17_22_last_price": 691.7000122070312
     },
     "CHOLAHLDNG": {
       "sma50": 1461.3579956054687,
@@ -11157,7 +11157,9 @@
       "box_low": 1133.199951171875,
       "descending_res": 1154.0111355251736,
       "wedge_contraction": 1.0388768839457843,
-      "rs_rank": 94.4
+      "rs_rank": 94.4,
+      "near_high_17_22_last_alert": "2026-10-26T08:05:10.088506",
+      "near_high_17_22_last_price": 1243.199951171875
     },
     "PARKHOSPS": {
       "sma50": 269.6809985351563,
