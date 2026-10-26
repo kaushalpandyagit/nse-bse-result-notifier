@@ -97,13 +97,17 @@
     "trigger_date": "2026-10-23",
     "ref_high": 51.88,
     "ref_low": 46.89,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-26T03:49:52.459590",
+    "fno_high_breach_last_price": 50.22999954223633
   },
   "GLOBECIVIL": {
     "trigger_date": "2026-10-23",
     "ref_high": 37.24,
     "ref_low": 35.2,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-26T03:49:54.006977",
+    "fno_high_breach_last_price": 37.290000915527344
   },
   "MGL": {
     "trigger_date": "2026-10-23",
