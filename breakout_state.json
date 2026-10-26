@@ -229,8 +229,8 @@
     "spread_last_price": 2.820854182104335
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-10-23T04:36:23.858252",
-    "spread_last_price": 3.3179748503904247
+    "spread_last_alert": "2026-10-26T05:36:25.833987",
+    "spread_last_price": 2.9999987284342446
   },
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
@@ -419,8 +419,8 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-23T10:17:20.089195",
-    "custom_last_price": 156.0
+    "custom_last_alert": "2026-10-26T05:31:10.226909",
+    "custom_last_price": 160.8000030517578
   },
   "arb_AETHER": {
     "spread_last_alert": "2026-10-14T03:56:29.004278",
@@ -1581,7 +1581,7 @@
     "rsi_down_last_alert": "2026-10-26T05:16:40.769787",
     "price_low_last_alert": "2026-10-26T04:47:40.750839",
     "price_low_last_price": 7190.0,
-    "rsi_up_last_alert": "2026-10-26T04:30:41.387867"
+    "rsi_up_last_alert": "2026-10-26T05:30:19.649489"
   },
   "RAJRATAN": {
     "result_date": "2026-10-21T00:00:00",
@@ -1923,8 +1923,8 @@
     "baseline_rsi": 62.1112206298683,
     "mcap_cr": 961.2562918817139,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-23T09:16:49.523126",
-    "price_low_last_price": 733.0,
+    "price_low_last_alert": "2026-10-26T05:30:33.328080",
+    "price_low_last_price": 720.3499755859375,
     "rsi_down_last_alert": "2026-10-26T05:16:58.365893"
   },
   "ACCELYA": {
@@ -2075,8 +2075,8 @@
     "mcap_cr": 2393.269933399887,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-26T04:48:31.383251",
-    "price_high_last_alert": "2026-10-26T04:31:09.684084",
-    "price_high_last_price": 376.45001220703125
+    "price_high_last_alert": "2026-10-26T05:30:40.870356",
+    "price_high_last_price": 371.75
   },
   "SKMEGGPROD": {
     "result_date": "2026-10-23T00:00:00",
@@ -2086,7 +2086,7 @@
     "mcap_cr": 967.3006090651475,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-26T05:17:09.105210",
-    "rsi_down_last_alert": "2026-10-26T03:48:43.356989",
+    "rsi_down_last_alert": "2026-10-26T05:30:41.860827",
     "price_low_last_alert": "2026-10-26T04:02:15.329395",
     "price_low_last_price": 179.6199951171875
   },
@@ -2150,7 +2150,7 @@
     "mcap_cr": 2301.7349468115235,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-26T03:48:50.477954",
-    "rsi_up_last_alert": "2026-10-26T04:02:18.673876"
+    "rsi_up_last_alert": "2026-10-26T05:30:44.994542"
   },
   "NEWGEN": {
     "result_date": "2026-10-23T00:00:00",
@@ -2375,7 +2375,8 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-26T03:49:17.123665",
     "price_low_last_price": 188.17999267578125,
-    "rsi_down_last_alert": "2026-10-26T04:48:59.481579"
+    "rsi_down_last_alert": "2026-10-26T04:48:59.481579",
+    "rsi_up_last_alert": "2026-10-26T05:30:54.919217"
   },
   "arb_ATUL": {
     "spread_last_alert": "2026-10-26T03:58:11.915176",

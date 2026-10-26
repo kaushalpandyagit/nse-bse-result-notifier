@@ -12069,7 +12069,9 @@
       "box_low": null,
       "descending_res": 1287.75,
       "wedge_contraction": 0.858232862258742,
-      "rs_rank": 49.0
+      "rs_rank": 49.0,
+      "near_high_17_22_last_alert": "2026-10-26T05:34:52.807799",
+      "near_high_17_22_last_price": 1314.9000244140625
     },
     "QUESS": {
       "sma50": 343.3400018310547,
