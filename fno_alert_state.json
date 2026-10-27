@@ -216,5 +216,65 @@
     "ref_high": 510.9,
     "ref_low": 477.0,
     "status": "Active"
+  },
+  "ATLASCYCLE": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 103.4,
+    "ref_low": 90.05,
+    "status": "Active"
+  },
+  "KALPATARU": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 257.95,
+    "ref_low": 242.65,
+    "status": "Active"
+  },
+  "JINDALPHOT": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 1117.9,
+    "ref_low": 1065.8,
+    "status": "Active"
+  },
+  "PALASHSECU": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 79.97,
+    "ref_low": 77.55,
+    "status": "Active"
+  },
+  "ITCHOTELS": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 174.4,
+    "ref_low": 165.49,
+    "status": "Active"
+  },
+  "GNRL": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 99.99,
+    "ref_low": 84.12,
+    "status": "Active"
+  },
+  "WEWORK": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 648.0,
+    "ref_low": 607.15,
+    "status": "Active"
+  },
+  "CIPLA": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 1372.7,
+    "ref_low": 1319.0,
+    "status": "Active"
+  },
+  "SIRCA": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 418.75,
+    "ref_low": 408.0,
+    "status": "Active"
+  },
+  "UMIYA-MRO": {
+    "trigger_date": "2026-10-27",
+    "ref_high": 92.45,
+    "ref_low": 84.5,
+    "status": "Active"
   }
 }
