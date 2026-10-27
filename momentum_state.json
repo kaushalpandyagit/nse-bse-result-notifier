@@ -2086,8 +2086,8 @@
       "descending_res": 1983.5714285714284,
       "wedge_contraction": 1.2478598392136895,
       "rs_rank": 68.9,
-      "near_high_17_22_last_alert": "2026-10-27T06:48:02.837604",
-      "near_high_17_22_last_price": 1962.5
+      "near_high_17_22_last_alert": "2026-10-27T07:33:16.467089",
+      "near_high_17_22_last_price": 1989.5
     },
     "BIRET": {
       "sma50": 335.19340087890623,
@@ -3546,10 +3546,10 @@
       "descending_res": 468.1363636363636,
       "wedge_contraction": 0.7926331444064008,
       "rs_rank": 84.2,
-      "resistance_last_alert": "2026-10-27T05:32:34.535880",
-      "resistance_last_price": 470.45001220703125,
-      "mtf_last_alert": "2026-10-27T05:32:34.996306",
-      "mtf_last_price": 470.45001220703125
+      "resistance_last_alert": "2026-10-27T07:33:50.263718",
+      "resistance_last_price": 476.6000061035156,
+      "mtf_last_alert": "2026-10-27T07:33:50.840760",
+      "mtf_last_price": 476.6000061035156
     },
     "CONCORDBIO": {
       "sma50": 1437.6800024414063,
@@ -4672,8 +4672,8 @@
       "descending_res": 576.6000244140625,
       "wedge_contraction": 1.2743896111856272,
       "rs_rank": 55.2,
-      "near_high_17_22_last_alert": "2026-10-27T04:12:27.842217",
-      "near_high_17_22_last_price": 527.0
+      "near_high_17_22_last_alert": "2026-10-27T07:34:15.170615",
+      "near_high_17_22_last_price": 520.75
     },
     "ELLEN": {
       "sma50": 340.78299926757813,
@@ -8644,8 +8644,8 @@
       "descending_res": 770.2500762939453,
       "wedge_contraction": 0.7814221063231074,
       "rs_rank": 60.3,
-      "near_high_17_22_last_alert": "2026-10-27T05:52:10.731283",
-      "near_high_17_22_last_price": 696.7000122070312
+      "near_high_17_22_last_alert": "2026-10-27T07:35:50.726241",
+      "near_high_17_22_last_price": 688.9500122070312
     },
     "KIRLOSBROS": {
       "sma50": 1790.6880102539062,
@@ -10348,8 +10348,8 @@
       "descending_res": 2459.000244140625,
       "wedge_contraction": 1.012001432859663,
       "rs_rank": 87.3,
-      "near_high_17_22_last_alert": "2026-10-27T06:34:13.296833",
-      "near_high_17_22_last_price": 2248.60009765625
+      "near_high_17_22_last_alert": "2026-10-27T07:36:35.892560",
+      "near_high_17_22_last_price": 2222.0
     },
     "NEPHROPLUS": {
       "sma50": 679.4240014648437,
@@ -10569,7 +10569,9 @@
       "box_low": 56.04999923706055,
       "descending_res": 68.48999404907227,
       "wedge_contraction": 1.0667525585775244,
-      "rs_rank": 15.9
+      "rs_rank": 15.9,
+      "rectangle_bounce_last_alert": "2026-10-27T07:36:42.176349",
+      "rectangle_bounce_last_price": 58.599998474121094
     },
     "NIACL": {
       "sma50": 182.97799987792968,
