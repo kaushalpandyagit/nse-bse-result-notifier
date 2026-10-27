@@ -1929,7 +1929,11 @@
       "box_low": 599.5999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 36.3
+      "rs_rank": 36.3,
+      "resistance_last_alert": "2026-10-27T04:20:52.480101",
+      "resistance_last_price": 649.9500122070312,
+      "mtf_last_alert": "2026-10-27T04:20:53.026568",
+      "mtf_last_price": 649.9500122070312
     },
     "BBOX": {
       "sma50": 803.4959973144531,
@@ -2037,7 +2041,9 @@
       "box_low": 194.19000244140625,
       "descending_res": 232.0183359781901,
       "wedge_contraction": 1.2112691052070328,
-      "rs_rank": 55.9
+      "rs_rank": 55.9,
+      "near_high_17_22_last_alert": "2026-10-27T04:20:56.250822",
+      "near_high_17_22_last_price": 209.4199981689453
     },
     "BEML": {
       "sma50": 1982.467998046875,
@@ -2327,7 +2333,9 @@
       "box_low": null,
       "descending_res": 675.2099975585937,
       "wedge_contraction": 1.374632982184346,
-      "rs_rank": 89.0
+      "rs_rank": 89.0,
+      "near_high_17_22_last_alert": "2026-10-27T04:21:03.480276",
+      "near_high_17_22_last_price": 763.2000122070312
     },
     "BORORENEW": {
       "sma50": 477.282001953125,
@@ -3525,7 +3533,11 @@
       "box_low": 416.20001220703125,
       "descending_res": 468.1363636363636,
       "wedge_contraction": 0.7926331444064008,
-      "rs_rank": 84.2
+      "rs_rank": 84.2,
+      "resistance_last_alert": "2026-10-27T04:21:29.387109",
+      "resistance_last_price": 463.29998779296875,
+      "mtf_last_alert": "2026-10-27T04:21:29.975529",
+      "mtf_last_price": 463.29998779296875
     },
     "CONCORDBIO": {
       "sma50": 1437.502001953125,
@@ -4863,7 +4875,9 @@
       "box_low": null,
       "descending_res": 319.23997192382814,
       "wedge_contraction": 0.8332665773997985,
-      "rs_rank": 67.3
+      "rs_rank": 67.3,
+      "near_high_17_22_last_alert": "2026-10-27T04:21:56.152455",
+      "near_high_17_22_last_price": 255.1999969482422
     },
     "ENTERO": {
       "sma50": 1671.2100048828124,
@@ -4899,7 +4913,9 @@
       "box_low": null,
       "descending_res": 1796.25,
       "wedge_contraction": 0.8244464676161067,
-      "rs_rank": 78.1
+      "rs_rank": 78.1,
+      "near_high_17_22_last_alert": "2026-10-27T04:21:57.515030",
+      "near_high_17_22_last_price": 1507.800048828125
     },
     "EPL": {
       "sma50": 240.9544009399414,
@@ -5443,7 +5459,9 @@
       "box_low": 138.99000549316406,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 50.6
+      "rs_rank": 50.6,
+      "near_high_17_22_last_alert": "2026-10-27T04:22:08.850146",
+      "near_high_17_22_last_price": 144.61000061035156
     },
     "GALLANTT": {
       "sma50": 559.9830023193359,
@@ -5587,7 +5605,9 @@
       "box_low": 6860.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 43.5
+      "rs_rank": 43.5,
+      "resistance_last_alert": "2026-10-27T04:22:11.888561",
+      "resistance_last_price": 7245.0
     },
     "GMDCLTD": {
       "sma50": 525.9090014648438,
@@ -7795,7 +7815,9 @@
       "box_low": 85.22000122070312,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 37.6
+      "rs_rank": 37.6,
+      "near_high_17_22_last_alert": "2026-10-27T04:23:00.985805",
+      "near_high_17_22_last_price": 91.5
     },
     "JBMA": {
       "sma50": 587.149995727539,
@@ -8553,7 +8575,9 @@
       "box_low": 784.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 40.7
+      "rs_rank": 40.7,
+      "rectangle_bounce_last_alert": "2026-10-27T04:23:16.039454",
+      "rectangle_bounce_last_price": 866.9500122070312
     },
     "KIMS": {
       "sma50": 746.9320007324219,
@@ -12971,7 +12995,9 @@
       "box_low": 140.91000366210938,
       "descending_res": 160.41666666666666,
       "wedge_contraction": 1.0538137088396788,
-      "rs_rank": 54.9
+      "rs_rank": 54.9,
+      "mtf_last_alert": "2026-10-27T04:24:54.364577",
+      "mtf_last_price": 155.32000732421875
     },
     "SAMMAANCAP": {
       "sma50": 140.51760025024413,
@@ -14891,7 +14917,9 @@
       "box_low": 266.6000061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 43.9
+      "rs_rank": 43.9,
+      "mtf_last_alert": "2026-10-27T04:25:29.644881",
+      "mtf_last_price": 310.8500061035156
     },
     "TATACHEM": {
       "sma50": 636.7620007324218,
@@ -15797,7 +15825,9 @@
       "box_low": 497.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 62.7
+      "rs_rank": 62.7,
+      "resistance_last_alert": "2026-10-27T04:25:48.463613",
+      "resistance_last_price": 534.1500244140625
     },
     "TTML": {
       "sma50": 36.141799774169925,
