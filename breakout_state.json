@@ -3053,6 +3053,31 @@
     "baseline_rsi": 35.46749429393067,
     "mcap_cr": 75441.8676,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-27T11:17:45.610167"
+    "rsi_down_last_alert": "2026-10-27T11:17:45.610167",
+    "rsi_up_last_alert": "2026-10-27T11:31:39.861842"
+  },
+  "LUMAXIND": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 5078.0,
+    "day_low": 4915.0,
+    "baseline_rsi": 35.34040616488976,
+    "mcap_cr": 4721.5394332,
+    "exchange": "NSE"
+  },
+  "TATACAP": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 303.3500061035156,
+    "day_low": 298.3500061035156,
+    "baseline_rsi": 30.038471514205398,
+    "mcap_cr": 126690.538670855,
+    "exchange": "NSE"
+  },
+  "OMAXE": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 107.48999786376953,
+    "day_low": 102.4000015258789,
+    "baseline_rsi": 45.522410562908796,
+    "mcap_cr": 1907.0660177997925,
+    "exchange": "NSE"
   }
 }
