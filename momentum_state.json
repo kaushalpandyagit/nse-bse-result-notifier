@@ -72,8 +72,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 48.8,
-      "near_high_17_22_last_alert": "2026-10-27T04:11:03.284431",
-      "near_high_17_22_last_price": 438.0
+      "near_high_17_22_last_alert": "2026-10-27T05:31:35.742769",
+      "near_high_17_22_last_price": 433.45001220703125
     },
     "AARTIPHARM": {
       "sma50": 867.5390014648438,
@@ -3325,7 +3325,9 @@
       "box_low": 678.9500122070312,
       "descending_res": 720.5500183105469,
       "wedge_contraction": 1.248326415916816,
-      "rs_rank": 66.6
+      "rs_rank": 66.6,
+      "near_high_17_22_last_alert": "2026-10-27T05:32:30.832555",
+      "near_high_17_22_last_price": 713.3499755859375
     },
     "CHOLAHLDNG": {
       "sma50": 1455.32599609375,
@@ -3542,10 +3544,10 @@
       "descending_res": 468.1363636363636,
       "wedge_contraction": 0.7926331444064008,
       "rs_rank": 84.2,
-      "resistance_last_alert": "2026-10-27T04:21:29.387109",
-      "resistance_last_price": 463.29998779296875,
-      "mtf_last_alert": "2026-10-27T04:21:29.975529",
-      "mtf_last_price": 463.29998779296875
+      "resistance_last_alert": "2026-10-27T05:32:34.535880",
+      "resistance_last_price": 470.45001220703125,
+      "mtf_last_alert": "2026-10-27T05:32:34.996306",
+      "mtf_last_price": 470.45001220703125
     },
     "CONCORDBIO": {
       "sma50": 1437.6800024414063,
@@ -7905,7 +7907,9 @@
       "box_low": 228.3000030517578,
       "descending_res": 310.625,
       "wedge_contraction": 1.3892831945582993,
-      "rs_rank": 57.9
+      "rs_rank": 57.9,
+      "rectangle_bounce_last_alert": "2026-10-27T05:33:50.461383",
+      "rectangle_bounce_last_price": 245.10000610351562
     },
     "JKPAPER": {
       "sma50": 394.78599853515624,
@@ -10889,7 +10893,9 @@
       "rectangle_bounce_last_alert": "2026-10-27T04:51:15.666052",
       "rectangle_bounce_last_price": 1480.0999755859375,
       "mtf_last_alert": "2026-10-27T05:07:49.285869",
-      "mtf_last_price": 1510.0999755859375
+      "mtf_last_price": 1510.0999755859375,
+      "vol_breakout_last_alert": "2026-10-27T05:34:43.789877",
+      "vol_breakout_last_price": 1513.0
     },
     "OSWALPUMPS": {
       "sma50": 271.81900115966795,
@@ -13931,7 +13937,9 @@
       "wedge_contraction": null,
       "rs_rank": 66.8,
       "near_high_17_22_last_alert": "2026-10-27T05:08:42.409471",
-      "near_high_17_22_last_price": 508.5
+      "near_high_17_22_last_price": 508.5,
+      "rectangle_bounce_last_alert": "2026-10-27T05:35:35.216538",
+      "rectangle_bounce_last_price": 516.8499755859375
     },
     "SKYGOLD": {
       "sma50": 850.9760009765625,
@@ -16881,7 +16889,9 @@
       "box_low": 612.5999755859375,
       "descending_res": 671.2501046316964,
       "wedge_contraction": 1.2443317756586274,
-      "rs_rank": 74.8
+      "rs_rank": 74.8,
+      "near_high_17_22_last_alert": "2026-10-27T05:36:20.976388",
+      "near_high_17_22_last_price": 620.9500122070312
     },
     "WHIRLPOOL": {
       "sma50": 807.6610034179688,

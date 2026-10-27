@@ -704,8 +704,8 @@
     "mcap_cr": 3720.1915833618164,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T04:45:58.488704",
-    "price_low_last_alert": "2026-10-27T04:17:41.506741",
-    "price_low_last_price": 348.0
+    "price_low_last_alert": "2026-10-27T05:29:49.840050",
+    "price_low_last_price": 344.1000061035156
   },
   "GROWW": {
     "result_date": "2026-10-15T00:00:00",
@@ -1559,8 +1559,8 @@
     "mcap_cr": 2134.1573658812918,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T04:46:38.215176",
-    "price_low_last_alert": "2026-10-27T04:18:32.136044",
-    "price_low_last_price": 37.9900016784668
+    "price_low_last_alert": "2026-10-27T05:30:18.697604",
+    "price_low_last_price": 38.38999938964844
   },
   "BETA": {
     "result_date": "2026-10-22T00:00:00",
@@ -1702,8 +1702,8 @@
     "mcap_cr": 1581.9635781862182,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T05:02:34.427311",
-    "price_low_last_alert": "2026-10-27T04:06:10.542904",
-    "price_low_last_price": 776.9000244140625,
+    "price_low_last_alert": "2026-10-27T05:30:25.619890",
+    "price_low_last_price": 784.7000122070312,
     "rsi_up_last_alert": "2026-10-22T18:52:22.191275"
   },
   "ADANIENSOL": {
@@ -1714,7 +1714,7 @@
     "mcap_cr": 159069.68168130264,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-27T05:16:49.962234",
-    "rsi_down_last_alert": "2026-10-27T04:18:41.394041",
+    "rsi_down_last_alert": "2026-10-27T05:30:26.508574",
     "price_low_last_alert": "2026-10-27T03:47:57.024301",
     "price_low_last_price": 1274.5999755859375
   },
@@ -2290,7 +2290,7 @@
     "baseline_rsi": 50.914724183089184,
     "mcap_cr": 756.7101,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-26T09:31:18.265733",
+    "rsi_up_last_alert": "2026-10-27T05:30:49.762420",
     "rsi_down_last_alert": "2026-10-26T09:16:59.570079"
   },
   "RRKABEL": {
@@ -2366,7 +2366,7 @@
     "baseline_rsi": 36.3625986754284,
     "mcap_cr": 1561.5303945159912,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-27T03:49:21.986023",
+    "rsi_down_last_alert": "2026-10-27T05:30:54.742358",
     "rsi_up_last_alert": "2026-10-27T05:17:28.115729"
   },
   "DEEPA": {
@@ -2478,8 +2478,8 @@
     "mcap_cr": 1323.8199823897592,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T04:47:23.978407",
-    "price_low_last_alert": "2026-10-27T04:19:31.302954",
-    "price_low_last_price": 31.989999771118164
+    "price_low_last_alert": "2026-10-27T05:31:01.430306",
+    "price_low_last_price": 31.360000610351562
   },
   "ATHERENERG": {
     "result_date": "2026-10-26T00:00:00",
@@ -2640,6 +2640,8 @@
     "mcap_cr": 17129.97145951062,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T04:47:33.443750",
-    "rsi_up_last_alert": "2026-10-27T05:04:03.025877"
+    "rsi_up_last_alert": "2026-10-27T05:04:03.025877",
+    "price_high_last_alert": "2026-10-27T05:31:10.411822",
+    "price_high_last_price": 1518.699951171875
   }
 }
