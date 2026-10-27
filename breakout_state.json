@@ -2955,7 +2955,8 @@
     "day_low": 380.79998779296875,
     "baseline_rsi": 40.16887235862242,
     "mcap_cr": 13596.688598427247,
-    "exchange": "NSE"
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-27T11:17:38.449735"
   },
   "KIRLOSBROS": {
     "result_date": "2026-10-27T00:00:00",
@@ -3012,5 +3013,46 @@
     "baseline_rsi": 41.341917346574014,
     "mcap_cr": 22781.204781687913,
     "exchange": "NSE"
+  },
+  "JSWINFRA": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 321.8999938964844,
+    "day_low": 313.0,
+    "baseline_rsi": 35.98560065675359,
+    "mcap_cr": 73795.996503225,
+    "exchange": "NSE"
+  },
+  "SGMART": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 805.0,
+    "day_low": 791.6500244140625,
+    "baseline_rsi": 58.38987808506452,
+    "mcap_cr": 10078.387843798828,
+    "exchange": "NSE"
+  },
+  "KANPRPLA": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 245.0,
+    "day_low": 230.0,
+    "baseline_rsi": 50.24748327881685,
+    "mcap_cr": 592.3663180886932,
+    "exchange": "NSE"
+  },
+  "CINEVISTA": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 13.699999809265137,
+    "day_low": 12.949999809265137,
+    "baseline_rsi": 41.84928167493409,
+    "mcap_cr": 76.04589158538342,
+    "exchange": "NSE"
+  },
+  "RECLTD": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 296.79998779296875,
+    "day_low": 283.6499938964844,
+    "baseline_rsi": 35.46749429393067,
+    "mcap_cr": 75441.8676,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-27T11:17:45.610167"
   }
 }
