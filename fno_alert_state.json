@@ -101,7 +101,9 @@
     "trigger_date": "2026-10-26",
     "ref_high": 53.0,
     "ref_low": 48.81,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-27T04:08:17.943450",
+    "fno_high_breach_last_price": 51.15999984741211
   },
   "GLOBECIVIL": {
     "trigger_date": "2026-10-23",
@@ -115,7 +117,9 @@
     "trigger_date": "2026-10-23",
     "ref_high": 1043.6,
     "ref_low": 1004.0,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-27T04:08:19.540358",
+    "fno_high_breach_last_price": 1043.699951171875
   },
   "BALKRISIND": {
     "trigger_date": "2026-10-23",
@@ -173,7 +177,9 @@
     "trigger_date": "2026-10-26",
     "ref_high": 810.95,
     "ref_low": 770.3,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-27T04:08:23.689513",
+    "fno_high_breach_last_price": 813.0
   },
   "MSL": {
     "trigger_date": "2026-10-26",
@@ -191,7 +197,9 @@
     "trigger_date": "2026-10-26",
     "ref_high": 54.0,
     "ref_low": 47.5,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-27T04:08:26.569291",
+    "fno_low_breach_last_price": 48.15999984741211
   },
   "JBMA": {
     "trigger_date": "2026-10-26",
