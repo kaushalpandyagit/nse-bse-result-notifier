@@ -449,7 +449,7 @@ def rsi_fyers_tradingview(close_prices, period=RSI_PERIOD):
 
 def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
     if fyers and is_market_hours_now():
-        time.sleep(0.15) 
+        time.sleep(0.35) 
         fyers_sym = f"{exchange}:{symbol}-EQ" if not symbol.isdigit() else f"BSE:{symbol}-EQ"
         data = {
             "symbol": fyers_sym, "resolution": "D", "date_format": "1",
@@ -457,14 +457,28 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
             "range_to": datetime.date.today().strftime("%Y-%m-%d"), "cont_flag": "1"
         }
         resp = fyers.history(data=data)
+        
+        # Handle Rate Limit / -360 Error
+        if isinstance(resp, dict) and (resp.get("code") == -360 or "limit" in str(resp.get("message", "")).lower() or "429" in str(resp.get("message", ""))):
+            log.warning(f"Fyers Rate Limit hit (-360) on {symbol} (history). Sleeping 3s...")
+            time.sleep(3.0)
+            resp = fyers.history(data=data)
+            
         if resp.get("s") != "ok" or "candles" not in resp:
             fyers_sym = f"{exchange}:{symbol}-SM"
             data["symbol"] = fyers_sym
             resp = fyers.history(data=data)
+            if isinstance(resp, dict) and (resp.get("code") == -360 or "limit" in str(resp.get("message", "")).lower()):
+                time.sleep(3.0)
+                resp = fyers.history(data=data)
+            
             if resp.get("s") != "ok" or "candles" not in resp:
                 fyers_sym = f"{exchange}:{symbol}-BE"
                 data["symbol"] = fyers_sym
                 resp = fyers.history(data=data)
+                if isinstance(resp, dict) and (resp.get("code") == -360 or "limit" in str(resp.get("message", "")).lower()):
+                    time.sleep(3.0)
+                    resp = fyers.history(data=data)
                 
         if resp.get("s") == "ok" and "candles" in resp:
             candles = resp["candles"]
@@ -475,6 +489,12 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
                 
                 try:
                     q_resp = fyers.quotes(data={"symbols": fyers_sym})
+                    # Handle Rate Limit on Quotes
+                    if isinstance(q_resp, dict) and (q_resp.get("code") == -360 or "limit" in str(q_resp.get("message", "")).lower() or "429" in str(q_resp.get("message", ""))):
+                        log.warning(f"Fyers Rate Limit hit (-360) on {symbol} (quotes). Sleeping 3s...")
+                        time.sleep(3.0)
+                        q_resp = fyers.quotes(data={"symbols": fyers_sym})
+                        
                     if q_resp.get("s") == "ok" and q_resp.get("d"):
                         v = q_resp["d"][0]["v"]
                         live_price, live_open, live_vol, live_high, live_low = float(v["lp"]), float(v["open_price"]), float(v["volume"]), float(v["high_price"]), float(v["low_price"])
@@ -556,7 +576,7 @@ def get_live_metrics(fyers, symbol: str, exchange: str = "NSE") -> dict:
 
 def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"):
     if fyers and is_market_hours_now():
-        time.sleep(0.15)
+        time.sleep(0.35)
         fyers_sym = f"{exchange}:{symbol}-EQ" if not symbol.isdigit() else f"BSE:{symbol}-EQ"
         data = {
             "symbol": fyers_sym, "resolution": "D", "date_format": "1",
@@ -564,10 +584,20 @@ def get_baseline_metrics(fyers, symbol: str, date: datetime.date, exchange="NSE"
             "range_to": (date + datetime.timedelta(days=7)).strftime("%Y-%m-%d"), "cont_flag": "1"
         }
         resp = fyers.history(data=data)
+        
+        # Handle Rate Limit / -360 Error
+        if isinstance(resp, dict) and (resp.get("code") == -360 or "limit" in str(resp.get("message", "")).lower() or "429" in str(resp.get("message", ""))):
+            log.warning(f"Fyers Rate Limit hit (-360) on {symbol} (baseline). Sleeping 3s...")
+            time.sleep(3.0)
+            resp = fyers.history(data=data)
+            
         if resp.get("s") != "ok" or "candles" not in resp:
             data["symbol"] = f"{exchange}:{symbol}-SM"
             resp = fyers.history(data=data)
-            
+            if isinstance(resp, dict) and (resp.get("code") == -360 or "limit" in str(resp.get("message", "")).lower()):
+                time.sleep(3.0)
+                resp = fyers.history(data=data)
+                
         if resp.get("s") == "ok" and "candles" in resp:
             candles = resp["candles"]
             if len(candles) >= 2:
@@ -1611,8 +1641,10 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
             "exchange": exchange
         }
         
-        rsi_line = f"Result-day RSI({RSI_PERIOD}): {metrics['baseline_rsi']:.1f}\n" if metrics["baseline_rsi"] else ""
-        send_telegram_message(f"📌 <b>{symbol}</b> result filed today.\nMarket Cap: ₹{mcap_cr:.0f} Cr\nResult-day High: ₹{metrics['day_high']:.2f} | Low: ₹{metrics['day_low']:.2f}\n{rsi_line}Will alert if price breaks this High/Low or RSI crosses.")
+        # Suppress result filed notification after market hours (3:30 PM)
+        if is_market_hours_now():
+            rsi_line = f"Result-day RSI({RSI_PERIOD}): {metrics['baseline_rsi']:.1f}\n" if metrics["baseline_rsi"] else ""
+            send_telegram_message(f"📌 <b>{symbol}</b> result filed today.\nMarket Cap: ₹{mcap_cr:.0f} Cr\nResult-day High: ₹{metrics['day_high']:.2f} | Low: ₹{metrics['day_low']:.2f}\n{rsi_line}Will alert if price breaks this High/Low or RSI crosses.")
 
     state = prune_expired(state)
 
