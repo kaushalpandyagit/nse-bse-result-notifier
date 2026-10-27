@@ -946,8 +946,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 46.1,
-      "near_high_17_22_last_alert": "2026-10-27T04:11:19.404414",
-      "near_high_17_22_last_price": 285.5
+      "near_high_17_22_last_alert": "2026-10-27T05:04:46.232405",
+      "near_high_17_22_last_price": 289.0
     },
     "ANURAS": {
       "sma50": 1192.8280029296875,
@@ -2782,8 +2782,8 @@
       "descending_res": 194.8500213623047,
       "wedge_contraction": 0.8440316826073816,
       "rs_rank": 67.4,
-      "near_high_17_22_last_alert": "2026-10-27T04:11:57.137351",
-      "near_high_17_22_last_price": 190.27999877929688
+      "near_high_17_22_last_alert": "2026-10-27T05:05:21.147953",
+      "near_high_17_22_last_price": 187.27999877929688
     },
     "CCL": {
       "sma50": 1059.7240014648437,
@@ -5397,7 +5397,9 @@
       "box_low": 246.64999389648438,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 90.1
+      "rs_rank": 90.1,
+      "resistance_last_alert": "2026-10-27T05:06:05.326655",
+      "resistance_last_price": 292.8500061035156
     },
     "GABRIEL": {
       "sma50": 1378.5560034179687,
@@ -7865,7 +7867,9 @@
       "box_low": 477.25,
       "descending_res": 574.7798217773437,
       "wedge_contraction": 1.2752779980041398,
-      "rs_rank": 22.6
+      "rs_rank": 22.6,
+      "rectangle_bounce_last_alert": "2026-10-27T05:06:50.630448",
+      "rectangle_bounce_last_price": 497.79998779296875
     },
     "JINDALSAW": {
       "sma50": 285.6980010986328,
@@ -8626,8 +8630,8 @@
       "descending_res": 770.2500762939453,
       "wedge_contraction": 0.7814221063231074,
       "rs_rank": 60.3,
-      "near_high_17_22_last_alert": "2026-10-27T04:13:42.206505",
-      "near_high_17_22_last_price": 670.5499877929688
+      "near_high_17_22_last_alert": "2026-10-27T05:07:03.822769",
+      "near_high_17_22_last_price": 682.5499877929688
     },
     "KIRLOSBROS": {
       "sma50": 1790.6880102539062,
@@ -10368,8 +10372,8 @@
       "descending_res": 690.966552734375,
       "wedge_contraction": 0.8353242586414963,
       "rs_rank": 74.6,
-      "near_high_17_22_last_alert": "2026-10-27T04:14:18.441256",
-      "near_high_17_22_last_price": 616.9000244140625
+      "near_high_17_22_last_alert": "2026-10-27T05:07:38.896797",
+      "near_high_17_22_last_price": 627.0
     },
     "NETWEB": {
       "sma50": 4891.754013671875,
@@ -10883,7 +10887,9 @@
       "wedge_contraction": 0.9654803962837941,
       "rs_rank": 20.1,
       "rectangle_bounce_last_alert": "2026-10-27T04:51:15.666052",
-      "rectangle_bounce_last_price": 1480.0999755859375
+      "rectangle_bounce_last_price": 1480.0999755859375,
+      "mtf_last_alert": "2026-10-27T05:07:49.285869",
+      "mtf_last_price": 1510.0999755859375
     },
     "OSWALPUMPS": {
       "sma50": 271.81900115966795,
@@ -13924,8 +13930,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 66.8,
-      "near_high_17_22_last_alert": "2026-10-27T04:15:21.582320",
-      "near_high_17_22_last_price": 501.54998779296875
+      "near_high_17_22_last_alert": "2026-10-27T05:08:42.409471",
+      "near_high_17_22_last_price": 508.5
     },
     "SKYGOLD": {
       "sma50": 850.9760009765625,
@@ -14507,7 +14513,9 @@
       "zanger_last_alert": "2026-10-27T04:15:31.436869",
       "zanger_last_price": 287.0,
       "resistance_last_alert": "2026-10-27T04:15:32.078685",
-      "resistance_last_price": 287.0
+      "resistance_last_price": 287.0,
+      "vol_breakout_last_alert": "2026-10-27T05:08:52.084253",
+      "vol_breakout_last_price": 279.6000061035156
     },
     "SUNTV": {
       "sma50": 527.2579992675782,
@@ -15490,8 +15498,8 @@
       "descending_res": 530.7999877929688,
       "wedge_contraction": 1.2265199809540512,
       "rs_rank": 70.2,
-      "near_high_17_22_last_alert": "2026-10-27T04:15:49.543787",
-      "near_high_17_22_last_price": 496.54998779296875
+      "near_high_17_22_last_alert": "2026-10-27T05:09:08.625888",
+      "near_high_17_22_last_price": 488.1000061035156
     },
     "TIMETECHNO": {
       "sma50": 181.70100006103516,
