@@ -89,7 +89,9 @@
     "trigger_date": "2026-10-23",
     "ref_high": 806.45,
     "ref_low": 715.4,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-27T09:31:38.849388",
+    "fno_high_breach_last_price": 807.1500244140625
   },
   "TTML": {
     "trigger_date": "2026-10-23",
