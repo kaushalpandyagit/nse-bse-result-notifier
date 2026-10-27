@@ -553,7 +553,7 @@
       "stage2": false,
       "fifty2w_high": 318.29998779296875,
       "fifty2w_low": 161.64999389648438,
-      "near_high": true,
+      "near_high": false,
       "ath_high": 320.95001220703125,
       "vcp_contracting": false,
       "rs_return_6m": 28.813653072037717,
@@ -8339,7 +8339,7 @@
       "box_low": 171.27000427246094,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 8.2
+      "rs_rank": 7.8
     },
     "JYOTICNC": {
       "sma50": 998.0330041503906,
@@ -9713,7 +9713,7 @@
       "box_low": 152.16000366210938,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 96.0
+      "rs_rank": 94.7
     },
     "MEDPLUS": {
       "sma50": 650.5909997558593,
@@ -12729,7 +12729,7 @@
       "stage2": false,
       "fifty2w_high": 2928.39990234375,
       "fifty2w_low": 1245.5,
-      "near_high": false,
+      "near_high": true,
       "ath_high": 2983.800048828125,
       "vcp_contracting": false,
       "rs_return_6m": 51.78175345064011,
@@ -13958,7 +13958,7 @@
       "sma200_rising": false,
       "stage2": false,
       "fifty2w_high": 1701.199951171875,
-      "fifty2w_low": 1156.4000244140625,
+      "fifty2w_low": 1150.5,
       "near_high": false,
       "ath_high": 1732.5,
       "vcp_contracting": false,
@@ -16703,7 +16703,7 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 83.1
+      "rs_rank": 82.7
     },
     "WELSPUNLIV": {
       "sma50": 209.6206005859375,
