@@ -2086,8 +2086,8 @@
       "descending_res": 1983.5714285714284,
       "wedge_contraction": 1.2478598392136895,
       "rs_rank": 68.9,
-      "near_high_17_22_last_alert": "2026-10-27T04:48:38.533789",
-      "near_high_17_22_last_price": 1902.300048828125
+      "near_high_17_22_last_alert": "2026-10-27T05:49:38.682212",
+      "near_high_17_22_last_price": 1928.699951171875
     },
     "BIRET": {
       "sma50": 335.19340087890623,
@@ -2634,8 +2634,8 @@
       "descending_res": 571.2500122070312,
       "wedge_contraction": 1.0318340086630664,
       "rs_rank": 63.4,
-      "mtf_last_alert": "2026-10-27T04:11:53.502975",
-      "mtf_last_price": 571.0999755859375
+      "mtf_last_alert": "2026-10-27T05:49:53.510319",
+      "mtf_last_price": 581.3499755859375
     },
     "CAPLIPOINT": {
       "sma50": 2582.166015625,
@@ -8634,8 +8634,8 @@
       "descending_res": 770.2500762939453,
       "wedge_contraction": 0.7814221063231074,
       "rs_rank": 60.3,
-      "near_high_17_22_last_alert": "2026-10-27T05:07:03.822769",
-      "near_high_17_22_last_price": 682.5499877929688
+      "near_high_17_22_last_alert": "2026-10-27T05:52:10.731283",
+      "near_high_17_22_last_price": 696.7000122070312
     },
     "KIRLOSBROS": {
       "sma50": 1790.6880102539062,
@@ -10892,8 +10892,8 @@
       "rs_rank": 20.1,
       "rectangle_bounce_last_alert": "2026-10-27T04:51:15.666052",
       "rectangle_bounce_last_price": 1480.0999755859375,
-      "mtf_last_alert": "2026-10-27T05:07:49.285869",
-      "mtf_last_price": 1510.0999755859375,
+      "mtf_last_alert": "2026-10-27T05:53:08.614190",
+      "mtf_last_price": 1527.199951171875,
       "vol_breakout_last_alert": "2026-10-27T05:34:43.789877",
       "vol_breakout_last_price": 1513.0
     },
@@ -14922,8 +14922,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 43.9,
-      "mtf_last_alert": "2026-10-27T04:25:29.644881",
-      "mtf_last_price": 310.8500061035156
+      "mtf_last_alert": "2026-10-27T05:54:38.739062",
+      "mtf_last_price": 315.5
     },
     "TATACHEM": {
       "sma50": 636.7980004882812,
@@ -15216,8 +15216,8 @@
       "descending_res": 2067.5252075195312,
       "wedge_contraction": 0.8005776833863082,
       "rs_rank": 63.8,
-      "near_high_17_22_last_alert": "2026-10-27T04:15:43.870401",
-      "near_high_17_22_last_price": 1740.800048828125
+      "near_high_17_22_last_alert": "2026-10-27T05:54:45.947995",
+      "near_high_17_22_last_price": 1761.199951171875
     },
     "TEJASNET": {
       "sma50": 502.5979986572266,
@@ -16891,7 +16891,9 @@
       "wedge_contraction": 1.2443317756586274,
       "rs_rank": 74.8,
       "near_high_17_22_last_alert": "2026-10-27T05:36:20.976388",
-      "near_high_17_22_last_price": 620.9500122070312
+      "near_high_17_22_last_price": 620.9500122070312,
+      "liquidity_sweep_last_alert": "2026-10-27T05:55:22.906529",
+      "liquidity_sweep_last_price": 626.9000244140625
     },
     "WHIRLPOOL": {
       "sma50": 807.6610034179688,
