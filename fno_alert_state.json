@@ -81,7 +81,9 @@
     "trigger_date": "2026-10-26",
     "ref_high": 625.05,
     "ref_low": 607.7,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-27T07:03:47.077947",
+    "fno_high_breach_last_price": 634.9500122070312
   },
   "TINNARUBR": {
     "trigger_date": "2026-10-23",

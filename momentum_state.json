@@ -616,8 +616,8 @@
       "descending_res": 252.70001220703125,
       "wedge_contraction": 0.9598646042813294,
       "rs_rank": 60.9,
-      "vol_breakout_last_alert": "2026-10-27T06:04:08.488078",
-      "vol_breakout_last_price": 216.1999969482422
+      "vol_breakout_last_alert": "2026-10-27T07:04:02.099210",
+      "vol_breakout_last_price": 213.5
     },
     "AEROFLEX": {
       "sma50": 519.7210003662109,
@@ -2452,8 +2452,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 27.7,
-      "mtf_last_alert": "2026-10-27T04:32:07.465996",
-      "mtf_last_price": 303.1000061035156
+      "mtf_last_alert": "2026-10-27T07:04:35.158581",
+      "mtf_last_price": 306.20001220703125
     },
     "CAMPUS": {
       "sma50": 210.84599914550782,
@@ -3182,8 +3182,8 @@
       "descending_res": 255.88635808771306,
       "wedge_contraction": 1.103911069712215,
       "rs_rank": 82.9,
-      "near_high_17_22_last_alert": "2026-10-27T06:04:52.662018",
-      "near_high_17_22_last_price": 234.3000030517578
+      "near_high_17_22_last_alert": "2026-10-27T07:04:46.206445",
+      "near_high_17_22_last_price": 236.88999938964844
     },
     "CHALET": {
       "sma50": 857.372001953125,
@@ -5040,8 +5040,8 @@
       "descending_res": 1313.6998291015625,
       "wedge_contraction": 0.9878230086084018,
       "rs_rank": 33.8,
-      "rectangle_bounce_last_alert": "2026-10-27T06:05:23.665682",
-      "rectangle_bounce_last_price": 1172.9000244140625,
+      "rectangle_bounce_last_alert": "2026-10-27T07:05:15.507028",
+      "rectangle_bounce_last_price": 1186.5,
       "vol_breakout_last_alert": "2026-10-27T06:48:41.125695",
       "vol_breakout_last_price": 1186.5999755859375
     },
@@ -8460,8 +8460,8 @@
       "descending_res": 1258.2556016710068,
       "wedge_contraction": 1.043222425612864,
       "rs_rank": 52.0,
-      "rectangle_bounce_last_alert": "2026-10-27T06:06:21.650789",
-      "rectangle_bounce_last_price": 1149.4000244140625
+      "rectangle_bounce_last_alert": "2026-10-27T07:06:14.741520",
+      "rectangle_bounce_last_price": 1160.9000244140625
     },
     "KANSAINER": {
       "sma50": 188.70079986572264,
@@ -10386,8 +10386,8 @@
       "descending_res": 690.966552734375,
       "wedge_contraction": 0.8353242586414963,
       "rs_rank": 74.6,
-      "near_high_17_22_last_alert": "2026-10-27T05:07:38.896797",
-      "near_high_17_22_last_price": 627.0
+      "near_high_17_22_last_alert": "2026-10-27T07:06:49.957322",
+      "near_high_17_22_last_price": 634.5999755859375
     },
     "NETWEB": {
       "sma50": 4891.754013671875,
@@ -10904,8 +10904,8 @@
       "rectangle_bounce_last_price": 1480.0999755859375,
       "mtf_last_alert": "2026-10-27T06:50:07.112047",
       "mtf_last_price": 1589.199951171875,
-      "vol_breakout_last_alert": "2026-10-27T06:21:27.571541",
-      "vol_breakout_last_price": 1571.0,
+      "vol_breakout_last_alert": "2026-10-27T07:06:59.352284",
+      "vol_breakout_last_price": 1589.800048828125,
       "zanger_last_alert": "2026-10-27T06:50:06.464306",
       "zanger_last_price": 1589.199951171875
     },
@@ -11307,7 +11307,9 @@
       "box_low": 461.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 42.3
+      "rs_rank": 42.3,
+      "rectangle_bounce_last_alert": "2026-10-27T07:07:06.242720",
+      "rectangle_bounce_last_price": 510.0
     },
     "PGHL": {
       "sma50": 5477.73,
@@ -15894,8 +15896,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 48.4,
-      "mtf_last_alert": "2026-10-27T06:23:02.813854",
-      "mtf_last_price": 42.060001373291016,
+      "mtf_last_alert": "2026-10-27T07:08:19.752202",
+      "mtf_last_price": 41.56999969482422,
       "resistance_last_alert": "2026-10-27T06:08:25.926665",
       "resistance_last_price": 41.59000015258789
     },
@@ -17142,10 +17144,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 47.8,
-      "resistance_last_alert": "2026-10-27T04:16:16.747765",
-      "resistance_last_price": 503.54998779296875,
-      "mtf_last_alert": "2026-10-27T04:16:17.421117",
-      "mtf_last_price": 503.54998779296875
+      "resistance_last_alert": "2026-10-27T07:08:40.820177",
+      "resistance_last_price": 510.8500061035156,
+      "mtf_last_alert": "2026-10-27T07:08:41.309341",
+      "mtf_last_price": 510.8500061035156
     },
     "ZENTEC": {
       "sma50": 1718.632001953125,
