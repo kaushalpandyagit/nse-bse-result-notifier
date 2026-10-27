@@ -3954,8 +3954,8 @@
       "rs_rank": 63.0,
       "near_high_17_22_last_alert": "2026-10-27T06:05:03.366850",
       "near_high_17_22_last_price": 4052.699951171875,
-      "rectangle_bounce_last_alert": "2026-10-27T04:32:28.039988",
-      "rectangle_bounce_last_price": 4070.60009765625
+      "rectangle_bounce_last_alert": "2026-10-27T08:33:36.312595",
+      "rectangle_bounce_last_price": 4020.0
     },
     "DBL": {
       "sma50": 403.4379998779297,
@@ -7808,8 +7808,8 @@
       "descending_res": 144.1199920654297,
       "wedge_contraction": 1.0172669870102984,
       "rs_rank": 64.9,
-      "near_high_17_22_last_alert": "2026-10-27T04:13:28.573646",
-      "near_high_17_22_last_price": 127.31999969482422
+      "near_high_17_22_last_alert": "2026-10-27T08:35:03.234356",
+      "near_high_17_22_last_price": 125.8499984741211
     },
     "JAYNECOIND": {
       "sma50": 93.28000030517578,
@@ -8539,7 +8539,9 @@
       "box_low": 3130.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 22.4
+      "rs_rank": 22.4,
+      "rectangle_bounce_last_alert": "2026-10-27T08:35:18.176805",
+      "rectangle_bounce_last_price": 3368.199951171875
     },
     "KEC": {
       "sma50": 390.9509991455078,
@@ -8615,7 +8617,9 @@
       "rectangle_bounce_last_alert": "2026-10-27T04:23:16.039454",
       "rectangle_bounce_last_price": 866.9500122070312,
       "ema50_pullback_last_alert": "2026-10-27T08:07:26.191893",
-      "ema50_pullback_last_price": 879.2000122070312
+      "ema50_pullback_last_price": 879.2000122070312,
+      "vol_breakout_last_alert": "2026-10-27T08:35:19.838151",
+      "vol_breakout_last_price": 877.5
     },
     "KIMS": {
       "sma50": 746.9280004882812,
@@ -9306,8 +9310,8 @@
       "descending_res": 101.00001525878906,
       "wedge_contraction": 0.8781119684664013,
       "rs_rank": 93.0,
-      "near_high_17_22_last_alert": "2026-10-27T06:49:42.198729",
-      "near_high_17_22_last_price": 84.69000244140625
+      "near_high_17_22_last_alert": "2026-10-27T08:35:36.606059",
+      "near_high_17_22_last_price": 83.83999633789062
     },
     "LLOYDSENT": {
       "sma50": 72.53880004882812,
@@ -11064,8 +11068,8 @@
       "descending_res": 1154.0111355251736,
       "wedge_contraction": 1.1879774877260207,
       "rs_rank": 96.6,
-      "near_high_17_22_last_alert": "2026-10-27T04:51:18.376906",
-      "near_high_17_22_last_price": 1308.800048828125
+      "near_high_17_22_last_alert": "2026-10-27T08:36:16.119518",
+      "near_high_17_22_last_price": 1288.5999755859375
     },
     "PARKHOSPS": {
       "sma50": 269.90899841308595,
@@ -12012,8 +12016,8 @@
       "descending_res": 1257.5,
       "wedge_contraction": 1.0534509999687716,
       "rs_rank": 61.5,
-      "near_high_17_22_last_alert": "2026-10-27T06:21:50.659961",
-      "near_high_17_22_last_price": 1371.0
+      "near_high_17_22_last_alert": "2026-10-27T08:36:38.337188",
+      "near_high_17_22_last_price": 1345.800048828125
     },
     "QUESS": {
       "sma50": 343.60000183105467,
@@ -12736,8 +12740,8 @@
       "descending_res": 700.75,
       "wedge_contraction": 1.330970761186857,
       "rs_rank": 71.9,
-      "near_high_17_22_last_alert": "2026-10-27T04:14:59.513849",
-      "near_high_17_22_last_price": 627.4000244140625
+      "near_high_17_22_last_alert": "2026-10-27T08:36:53.559308",
+      "near_high_17_22_last_price": 620.9500122070312
     },
     "ROUTE": {
       "sma50": 471.5170007324219,
@@ -14450,8 +14454,8 @@
       "descending_res": 395.37489318847656,
       "wedge_contraction": 1.026134148779605,
       "rs_rank": 16.5,
-      "vol_breakout_last_alert": "2026-10-27T06:08:02.908320",
-      "vol_breakout_last_price": 337.3500061035156
+      "vol_breakout_last_alert": "2026-10-27T08:37:28.148916",
+      "vol_breakout_last_price": 341.1499938964844
     },
     "SUNDRMFAST": {
       "sma50": 1178.102998046875,
@@ -15188,8 +15192,8 @@
       "descending_res": 843.360009765625,
       "wedge_contraction": 0.8907206806911099,
       "rs_rank": 83.3,
-      "near_high_17_22_last_alert": "2026-10-27T04:15:41.737208",
-      "near_high_17_22_last_price": 705.5
+      "near_high_17_22_last_alert": "2026-10-27T08:37:42.095164",
+      "near_high_17_22_last_price": 695.0
     },
     "TECHNOE": {
       "sma50": 971.7450012207031,
