@@ -310,8 +310,8 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-27T04:08:12.554985",
-    "custom_last_price": 157.25
+    "custom_last_alert": "2026-10-27T06:17:49.058923",
+    "custom_last_price": 167.75
   },
   "arb_AETHER": {
     "spread_last_alert": "2026-10-14T03:56:29.004278",
@@ -704,8 +704,8 @@
     "mcap_cr": 3720.1915833618164,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T05:46:04.691384",
-    "price_low_last_alert": "2026-10-27T05:29:49.840050",
-    "price_low_last_price": 344.1000061035156
+    "price_low_last_alert": "2026-10-27T06:15:57.890733",
+    "price_low_last_price": 349.54998779296875
   },
   "GROWW": {
     "result_date": "2026-10-15T00:00:00",
@@ -828,7 +828,7 @@
     "baseline_rsi": 35.98389299651974,
     "mcap_cr": 138.70413047087098,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-27T05:01:32.063479",
+    "rsi_down_last_alert": "2026-10-27T06:16:01.989456",
     "rsi_up_last_alert": "2026-10-27T05:46:11.644904",
     "price_high_last_alert": "2026-10-21T03:46:31.587558",
     "price_high_last_price": 9.979999542236328,
@@ -1570,8 +1570,8 @@
     "mcap_cr": 1907.1545093482666,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T04:47:46.885027",
-    "price_high_last_alert": "2026-10-26T09:16:32.932291",
-    "price_high_last_price": 1989.9000244140625,
+    "price_high_last_alert": "2026-10-27T06:16:34.746437",
+    "price_high_last_price": 1966.0,
     "rsi_up_last_alert": "2026-10-27T06:02:09.910120"
   },
   "MAHSCOOTER": {
@@ -1817,8 +1817,8 @@
     "baseline_rsi": 62.1112206298683,
     "mcap_cr": 961.2562918817139,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-27T05:16:55.379365",
-    "price_low_last_price": 702.3499755859375,
+    "price_low_last_alert": "2026-10-27T06:16:46.792854",
+    "price_low_last_price": 692.5999755859375,
     "rsi_down_last_alert": "2026-10-27T06:02:26.598037"
   },
   "ACCELYA": {
@@ -2290,7 +2290,7 @@
     "baseline_rsi": 50.914724183089184,
     "mcap_cr": 756.7101,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-27T05:30:49.762420",
+    "rsi_up_last_alert": "2026-10-27T06:17:09.693193",
     "rsi_down_last_alert": "2026-10-26T09:16:59.570079"
   },
   "RRKABEL": {
@@ -2357,7 +2357,9 @@
     "mcap_cr": 167.85474395373345,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T06:03:06.190574",
-    "rsi_up_last_alert": "2026-10-26T07:48:30.134974"
+    "rsi_up_last_alert": "2026-10-26T07:48:30.134974",
+    "price_low_last_alert": "2026-10-27T06:17:13.954169",
+    "price_low_last_price": 11.039999961853027
   },
   "VIDHIING": {
     "result_date": "2026-10-26T00:00:00",
@@ -2366,7 +2368,7 @@
     "baseline_rsi": 36.3625986754284,
     "mcap_cr": 1561.5303945159912,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-27T05:30:54.742358",
+    "rsi_down_last_alert": "2026-10-27T06:17:15.305049",
     "rsi_up_last_alert": "2026-10-27T06:03:07.379674"
   },
   "DEEPA": {
@@ -2641,8 +2643,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T04:47:33.443750",
     "rsi_up_last_alert": "2026-10-27T06:03:32.046086",
-    "price_high_last_alert": "2026-10-27T05:31:10.411822",
-    "price_high_last_price": 1518.699951171875
+    "price_high_last_alert": "2026-10-27T06:17:32.136877",
+    "price_high_last_price": 1566.9000244140625
   },
   "FIVESTAR": {
     "result_date": "2026-10-27T00:00:00",
