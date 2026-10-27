@@ -2130,8 +2130,8 @@
       "descending_res": 320.7480041503906,
       "wedge_contraction": 1.1054858535127936,
       "rs_rank": 51.2,
-      "near_high_17_22_last_alert": "2026-10-27T04:11:43.980850",
-      "near_high_17_22_last_price": 304.4599914550781
+      "near_high_17_22_last_alert": "2026-10-27T09:04:47.254183",
+      "near_high_17_22_last_price": 309.6300048828125
     },
     "BIRLACORPN": {
       "sma50": 841.5460046386719,
@@ -2421,7 +2421,9 @@
       "box_low": 532.75,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 52.6
+      "rs_rank": 52.6,
+      "rectangle_bounce_last_alert": "2026-10-27T09:04:52.881567",
+      "rectangle_bounce_last_price": 564.0999755859375
     },
     "BSOFT": {
       "sma50": 290.71699890136716,
@@ -3554,10 +3556,10 @@
       "descending_res": 468.1363636363636,
       "wedge_contraction": 0.7926331444064008,
       "rs_rank": 84.2,
-      "resistance_last_alert": "2026-10-27T07:33:50.263718",
-      "resistance_last_price": 476.6000061035156,
-      "mtf_last_alert": "2026-10-27T07:33:50.840760",
-      "mtf_last_price": 476.6000061035156
+      "resistance_last_alert": "2026-10-27T09:05:10.886151",
+      "resistance_last_price": 471.3999938964844,
+      "mtf_last_alert": "2026-10-27T09:05:11.422456",
+      "mtf_last_price": 471.3999938964844
     },
     "CONCORDBIO": {
       "sma50": 1437.6800024414063,
@@ -5375,7 +5377,9 @@
       "box_low": 16184.0,
       "descending_res": 17875.8,
       "wedge_contraction": 1.1985947509816077,
-      "rs_rank": 29.8
+      "rs_rank": 29.8,
+      "rectangle_bounce_last_alert": "2026-10-27T09:05:40.589224",
+      "rectangle_bounce_last_price": 17277.0
     },
     "FSL": {
       "sma50": 269.276999206543,
@@ -8253,7 +8257,11 @@
       "wedge_contraction": 0.9567478463506794,
       "rs_rank": 32.8,
       "rectangle_bounce_last_alert": "2026-10-27T08:51:43.575153",
-      "rectangle_bounce_last_price": 634.25
+      "rectangle_bounce_last_price": 634.25,
+      "vol_breakout_last_alert": "2026-10-27T09:06:27.531482",
+      "vol_breakout_last_price": 638.7000122070312,
+      "ema50_pullback_last_alert": "2026-10-27T09:06:28.067271",
+      "ema50_pullback_last_price": 638.7000122070312
     },
     "JUBLPHARMA": {
       "sma50": 957.6769982910156,
@@ -8770,8 +8778,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 32.3,
-      "vol_breakout_last_alert": "2026-10-27T08:20:23.578798",
-      "vol_breakout_last_price": 553.0
+      "vol_breakout_last_alert": "2026-10-27T09:06:36.927824",
+      "vol_breakout_last_price": 542.2999877929688
     },
     "KITEX": {
       "sma50": 121.20940017700195,
@@ -17106,8 +17114,8 @@
       "descending_res": 170.87747955322266,
       "wedge_contraction": 1.221298266425095,
       "rs_rank": 3.0,
-      "rectangle_bounce_last_alert": "2026-10-27T08:10:19.508188",
-      "rectangle_bounce_last_price": 163.33999633789062
+      "rectangle_bounce_last_alert": "2026-10-27T09:08:49.385558",
+      "rectangle_bounce_last_price": 166.0
     },
     "ZEEL": {
       "sma50": 83.14220001220703,
