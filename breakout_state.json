@@ -197,8 +197,8 @@
     "spread_last_price": 6.54073487769333
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-27T04:36:17.551865",
-    "spread_last_price": 3.7037037037037033
+    "spread_last_alert": "2026-10-27T06:36:27.515593",
+    "spread_last_price": 3.0864197530864197
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-13T03:57:17.405657",
@@ -1078,8 +1078,8 @@
     "mcap_cr": 130146.474263,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-20T07:46:38.812221",
-    "price_low_last_alert": "2026-10-27T04:46:14.328717",
-    "price_low_last_price": 4030.199951171875,
+    "price_low_last_alert": "2026-10-27T06:29:53.512196",
+    "price_low_last_price": 4070.699951171875,
     "rsi_down_last_alert": "2026-10-27T06:01:40.185863"
   },
   "IXIGO": {
@@ -1104,8 +1104,8 @@
     "mcap_cr": 2440.3877127602295,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-19T07:01:27.123730",
-    "price_low_last_alert": "2026-10-26T03:47:10.061036",
-    "price_low_last_price": 408.70001220703125,
+    "price_low_last_alert": "2026-10-27T06:29:55.072052",
+    "price_low_last_price": 414.25,
     "rsi_down_last_alert": "2026-10-27T06:01:42.110353"
   },
   "CENTRALBK": {
@@ -1238,8 +1238,8 @@
     "baseline_rsi": 57.51266610761375,
     "mcap_cr": 4452.443805809509,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-27T05:02:00.671276",
-    "price_low_last_price": 1584.9000244140625,
+    "price_low_last_alert": "2026-10-27T06:30:00.288687",
+    "price_low_last_price": 1604.300048828125,
     "rsi_down_last_alert": "2026-10-27T06:01:50.705153"
   },
   "LTTS": {
@@ -1509,8 +1509,8 @@
     "mcap_cr": 170.61000537872314,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T05:46:58.605042",
-    "price_low_last_alert": "2026-10-26T10:02:07.842758",
-    "price_low_last_price": 7.03000020980835,
+    "price_low_last_alert": "2026-10-27T06:30:12.047943",
+    "price_low_last_price": 7.150000095367432,
     "rsi_up_last_alert": "2026-10-27T05:02:19.095509"
   },
   "INDHOTEL": {
@@ -1702,8 +1702,8 @@
     "mcap_cr": 1581.9635781862182,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T06:02:19.353566",
-    "price_low_last_alert": "2026-10-27T05:30:25.619890",
-    "price_low_last_price": 784.7000122070312,
+    "price_low_last_alert": "2026-10-27T06:30:19.879319",
+    "price_low_last_price": 793.0999755859375,
     "rsi_up_last_alert": "2026-10-22T18:52:22.191275"
   },
   "ADANIENSOL": {
@@ -1739,8 +1739,8 @@
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-23T03:48:06.261645",
     "rsi_down_last_alert": "2026-10-27T06:02:21.668914",
-    "price_low_last_alert": "2026-10-23T08:47:34.538892",
-    "price_low_last_price": 205.0
+    "price_low_last_alert": "2026-10-27T06:30:21.817363",
+    "price_low_last_price": 207.44000244140625
   },
   "ATGL": {
     "result_date": "2026-10-22T00:00:00",
@@ -1776,7 +1776,7 @@
     "rsi_down_last_alert": "2026-10-27T06:02:23.961059",
     "price_low_last_alert": "2026-10-23T07:30:50.064170",
     "price_low_last_price": 707.75,
-    "rsi_up_last_alert": "2026-10-27T03:48:04.566282"
+    "rsi_up_last_alert": "2026-10-27T06:30:23.646091"
   },
   "M&MFIN": {
     "result_date": "2026-10-22T00:00:00",
@@ -2066,8 +2066,8 @@
     "mcap_cr": 16871.59770275,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T06:02:44.761555",
-    "price_low_last_alert": "2026-10-27T04:06:47.775324",
-    "price_low_last_price": 5238.5
+    "price_low_last_alert": "2026-10-27T06:30:35.122057",
+    "price_low_last_price": 5303.0
   },
   "NAVKARCORP": {
     "result_date": "2026-10-23T00:00:00",
@@ -2413,7 +2413,7 @@
     "baseline_rsi": 35.176029036065,
     "mcap_cr": 109.23865575416565,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-26T09:31:29.711450",
+    "rsi_down_last_alert": "2026-10-27T06:30:50.469279",
     "rsi_up_last_alert": "2026-10-27T06:03:12.277872",
     "price_high_last_alert": "2026-10-27T05:03:39.297568",
     "price_high_last_price": 22.59000015258789

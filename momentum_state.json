@@ -1166,8 +1166,8 @@
       "descending_res": 497.8750244140625,
       "wedge_contraction": 1.0400002517700435,
       "rs_rank": 81.8,
-      "near_high_17_22_last_alert": "2026-10-27T04:11:24.194085",
-      "near_high_17_22_last_price": 486.1000061035156
+      "near_high_17_22_last_alert": "2026-10-27T06:31:42.031493",
+      "near_high_17_22_last_price": 496.8999938964844
     },
     "ARVINDFASN": {
       "sma50": 421.1579998779297,
@@ -2048,8 +2048,8 @@
       "descending_res": 232.0183359781901,
       "wedge_contraction": 1.2112691052070328,
       "rs_rank": 55.9,
-      "near_high_17_22_last_alert": "2026-10-27T05:18:55.828980",
-      "near_high_17_22_last_price": 213.30999755859375
+      "near_high_17_22_last_alert": "2026-10-27T06:31:57.434921",
+      "near_high_17_22_last_price": 215.85000610351562
     },
     "BEML": {
       "sma50": 1982.6199975585937,
@@ -10346,8 +10346,8 @@
       "descending_res": 2459.000244140625,
       "wedge_contraction": 1.012001432859663,
       "rs_rank": 87.3,
-      "near_high_17_22_last_alert": "2026-10-27T04:14:17.044963",
-      "near_high_17_22_last_price": 2225.0
+      "near_high_17_22_last_alert": "2026-10-27T06:34:13.296833",
+      "near_high_17_22_last_price": 2248.60009765625
     },
     "NEPHROPLUS": {
       "sma50": 679.4240014648437,
@@ -10748,8 +10748,8 @@
       "descending_res": 1875.4272571910512,
       "wedge_contraction": 0.7742222480308971,
       "rs_rank": 80.1,
-      "near_high_17_22_last_alert": "2026-10-27T04:14:26.675016",
-      "near_high_17_22_last_price": 1668.699951171875
+      "near_high_17_22_last_alert": "2026-10-27T06:34:21.306622",
+      "near_high_17_22_last_price": 1689.9000244140625
     },
     "NUVOCO": {
       "sma50": 329.15100036621095,
@@ -14239,7 +14239,9 @@
       "box_low": 931.2999877929688,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 61.1
+      "rs_rank": 61.1,
+      "sos_pullback_curl_last_alert": "2026-10-27T06:35:17.169575",
+      "sos_pullback_curl_last_price": 1107.800048828125
     },
     "STYLAMIND": {
       "sma50": 3362.103984375,
@@ -16911,7 +16913,9 @@
       "near_high_17_22_last_alert": "2026-10-27T06:23:21.681029",
       "near_high_17_22_last_price": 627.7999877929688,
       "liquidity_sweep_last_alert": "2026-10-27T05:55:22.906529",
-      "liquidity_sweep_last_price": 626.9000244140625
+      "liquidity_sweep_last_price": 626.9000244140625,
+      "rectangle_bounce_last_alert": "2026-10-27T06:35:57.232208",
+      "rectangle_bounce_last_price": 638.0499877929688
     },
     "WHIRLPOOL": {
       "sma50": 807.6610034179688,
