@@ -1645,7 +1645,9 @@
       "box_low": null,
       "descending_res": 2000.0,
       "wedge_contraction": 0.9084301692735154,
-      "rs_rank": 65.3
+      "rs_rank": 65.3,
+      "near_high_17_22_last_alert": "2026-10-27T09:17:48.352849",
+      "near_high_17_22_last_price": 1958.5
     },
     "AZAD": {
       "sma50": 2790.0899951171873,
@@ -1901,7 +1903,9 @@
       "box_low": 143.69000244140625,
       "descending_res": 150.70498657226562,
       "wedge_contraction": 0.9177178470257477,
-      "rs_rank": 30.2
+      "rs_rank": 30.2,
+      "rectangle_bounce_last_alert": "2026-10-27T09:17:52.906869",
+      "rectangle_bounce_last_price": 152.3300018310547
     },
     "BATAINDIA": {
       "sma50": 652.4539965820312,
@@ -5636,8 +5640,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 43.5,
-      "resistance_last_alert": "2026-10-27T04:22:11.888561",
-      "resistance_last_price": 7245.0
+      "resistance_last_alert": "2026-10-27T09:18:43.917040",
+      "resistance_last_price": 7330.0
     },
     "GMDCLTD": {
       "sma50": 525.9650012207031,
@@ -7269,7 +7273,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 0.2
+      "rs_rank": 0.2,
+      "vol_breakout_last_alert": "2026-10-27T09:19:08.018226",
+      "vol_breakout_last_price": 323.20001220703125
     },
     "INDIAMART": {
       "sma50": 1672.376005859375,
@@ -8668,8 +8674,8 @@
       "descending_res": 770.2500762939453,
       "wedge_contraction": 0.7814221063231074,
       "rs_rank": 60.3,
-      "near_high_17_22_last_alert": "2026-10-27T07:35:50.726241",
-      "near_high_17_22_last_price": 688.9500122070312
+      "near_high_17_22_last_alert": "2026-10-27T09:19:27.434776",
+      "near_high_17_22_last_price": 697.0
     },
     "KIRLOSBROS": {
       "sma50": 1790.6880102539062,
@@ -9285,7 +9291,9 @@
       "wedge_contraction": 0.7605386952321248,
       "rs_rank": 49.5,
       "near_high_17_22_last_alert": "2026-10-27T06:06:36.891350",
-      "near_high_17_22_last_price": 511.04998779296875
+      "near_high_17_22_last_price": 511.04998779296875,
+      "rectangle_bounce_last_alert": "2026-10-27T09:19:37.567595",
+      "rectangle_bounce_last_price": 512.0
     },
     "LLOYDSENGG": {
       "sma50": 89.73940002441407,
@@ -12138,8 +12146,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 96.2,
-      "near_high_17_22_last_alert": "2026-10-27T08:08:42.270222",
-      "near_high_17_22_last_price": 206.5399932861328
+      "near_high_17_22_last_alert": "2026-10-27T09:20:19.323887",
+      "near_high_17_22_last_price": 202.97999572753906
     },
     "RAINBOW": {
       "sma50": 1371.4939916992187,
@@ -13703,7 +13711,9 @@
       "box_low": 3451.300048828125,
       "descending_res": 3910.3333333333335,
       "wedge_contraction": 1.2372203534004311,
-      "rs_rank": 11.0
+      "rs_rank": 11.0,
+      "mtf_last_alert": "2026-10-27T09:20:41.485951",
+      "mtf_last_price": 4005.300048828125
     },
     "SHILPAMED": {
       "sma50": 941.9369958496094,
@@ -14584,8 +14594,8 @@
       "zanger_last_price": 287.0,
       "resistance_last_alert": "2026-10-27T04:15:32.078685",
       "resistance_last_price": 287.0,
-      "vol_breakout_last_alert": "2026-10-27T08:09:30.536398",
-      "vol_breakout_last_price": 282.29998779296875
+      "vol_breakout_last_alert": "2026-10-27T09:20:52.549879",
+      "vol_breakout_last_price": 277.8500061035156
     },
     "SUNTV": {
       "sma50": 527.2579992675782,
