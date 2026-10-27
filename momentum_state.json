@@ -2048,8 +2048,8 @@
       "descending_res": 232.0183359781901,
       "wedge_contraction": 1.2112691052070328,
       "rs_rank": 55.9,
-      "near_high_17_22_last_alert": "2026-10-27T06:31:57.434921",
-      "near_high_17_22_last_price": 215.85000610351562
+      "near_high_17_22_last_alert": "2026-10-27T07:18:45.969654",
+      "near_high_17_22_last_price": 213.0500030517578
     },
     "BEML": {
       "sma50": 1982.6199975585937,
@@ -6424,8 +6424,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 56.2,
-      "mtf_last_alert": "2026-10-27T04:33:10.828773",
-      "mtf_last_price": 778.0
+      "mtf_last_alert": "2026-10-27T07:20:11.180235",
+      "mtf_last_price": 786.5
     },
     "HCC": {
       "sma50": 21.05799991607666,
@@ -12975,7 +12975,13 @@
       "box_low": 41.77000045776367,
       "descending_res": 45.39999008178711,
       "wedge_contraction": 1.3514228867126128,
-      "rs_rank": 70.6
+      "rs_rank": 70.6,
+      "resistance_last_alert": "2026-10-27T07:22:21.163750",
+      "resistance_last_price": 45.310001373291016,
+      "ema50_pullback_last_alert": "2026-10-27T07:22:21.896386",
+      "ema50_pullback_last_price": 45.310001373291016,
+      "near_high_17_22_last_alert": "2026-10-27T07:22:22.407714",
+      "near_high_17_22_last_price": 45.310001373291016
     },
     "SAMHI": {
       "sma50": 154.29239990234376,
@@ -16916,8 +16922,8 @@
       "descending_res": 671.2501046316964,
       "wedge_contraction": 1.2443317756586274,
       "rs_rank": 74.8,
-      "near_high_17_22_last_alert": "2026-10-27T06:23:21.681029",
-      "near_high_17_22_last_price": 627.7999877929688,
+      "near_high_17_22_last_alert": "2026-10-27T07:23:31.783862",
+      "near_high_17_22_last_price": 635.2999877929688,
       "liquidity_sweep_last_alert": "2026-10-27T05:55:22.906529",
       "liquidity_sweep_last_price": 626.9000244140625,
       "rectangle_bounce_last_alert": "2026-10-27T06:35:57.232208",
@@ -17070,8 +17076,8 @@
       "descending_res": 170.87747955322266,
       "wedge_contraction": 1.221298266425095,
       "rs_rank": 3.0,
-      "rectangle_bounce_last_alert": "2026-10-27T05:23:53.893750",
-      "rectangle_bounce_last_price": 168.72000122070312
+      "rectangle_bounce_last_alert": "2026-10-27T07:23:35.679287",
+      "rectangle_bounce_last_price": 165.74000549316406
     },
     "ZEEL": {
       "sma50": 83.14220001220703,
