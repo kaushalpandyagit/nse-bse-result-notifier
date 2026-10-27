@@ -129,7 +129,9 @@
     "trigger_date": "2026-10-23",
     "ref_high": 2130.0,
     "ref_low": 2054.2,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-27T09:48:34.632469",
+    "fno_high_breach_last_price": 2145.60009765625
   },
   "AJOONI": {
     "trigger_date": "2026-10-23",
