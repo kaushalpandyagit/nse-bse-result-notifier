@@ -2930,5 +2930,46 @@
     "baseline_rsi": 33.12980178354472,
     "mcap_cr": 189.02316748081495,
     "exchange": "NSE"
+  },
+  "LEAPIND": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 128.0,
+    "day_low": 122.30000305175781,
+    "baseline_rsi": 33.822805157863996,
+    "mcap_cr": 5451.63866775,
+    "exchange": "NSE"
+  },
+  "SIYSIL": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 498.8999938964844,
+    "day_low": 452.5,
+    "baseline_rsi": 22.660938011232133,
+    "mcap_cr": 2088.838823828296,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-27T10:32:23.380549"
+  },
+  "LTFOODS": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 394.54998779296875,
+    "day_low": 380.79998779296875,
+    "baseline_rsi": 40.16887235862242,
+    "mcap_cr": 13596.688598427247,
+    "exchange": "NSE"
+  },
+  "KIRLOSBROS": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 1599.0,
+    "day_low": 1538.0,
+    "baseline_rsi": 27.80741681596325,
+    "mcap_cr": 12319.500973509448,
+    "exchange": "NSE"
+  },
+  "HONAUT": {
+    "result_date": "2026-10-27T00:00:00",
+    "day_high": 31745.0,
+    "day_low": 31300.0,
+    "baseline_rsi": 34.79337577635424,
+    "mcap_cr": 27886.875568,
+    "exchange": "NSE"
   }
 }
