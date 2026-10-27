@@ -2086,8 +2086,8 @@
       "descending_res": 1983.5714285714284,
       "wedge_contraction": 1.2478598392136895,
       "rs_rank": 68.9,
-      "near_high_17_22_last_alert": "2026-10-27T05:49:38.682212",
-      "near_high_17_22_last_price": 1928.699951171875
+      "near_high_17_22_last_alert": "2026-10-27T06:48:02.837604",
+      "near_high_17_22_last_price": 1962.5
     },
     "BIRET": {
       "sma50": 335.19340087890623,
@@ -5041,7 +5041,9 @@
       "wedge_contraction": 0.9878230086084018,
       "rs_rank": 33.8,
       "rectangle_bounce_last_alert": "2026-10-27T06:05:23.665682",
-      "rectangle_bounce_last_price": 1172.9000244140625
+      "rectangle_bounce_last_price": 1172.9000244140625,
+      "vol_breakout_last_alert": "2026-10-27T06:48:41.125695",
+      "vol_breakout_last_price": 1186.5999755859375
     },
     "ESCORTS": {
       "sma50": 2860.90599609375,
@@ -9294,8 +9296,8 @@
       "descending_res": 101.00001525878906,
       "wedge_contraction": 0.8781119684664013,
       "rs_rank": 93.0,
-      "near_high_17_22_last_alert": "2026-10-27T04:13:56.069150",
-      "near_high_17_22_last_price": 85.83000183105469
+      "near_high_17_22_last_alert": "2026-10-27T06:49:42.198729",
+      "near_high_17_22_last_price": 84.69000244140625
     },
     "LLOYDSENT": {
       "sma50": 72.53880004882812,
@@ -10900,10 +10902,12 @@
       "rs_rank": 20.1,
       "rectangle_bounce_last_alert": "2026-10-27T04:51:15.666052",
       "rectangle_bounce_last_price": 1480.0999755859375,
-      "mtf_last_alert": "2026-10-27T05:53:08.614190",
-      "mtf_last_price": 1527.199951171875,
+      "mtf_last_alert": "2026-10-27T06:50:07.112047",
+      "mtf_last_price": 1589.199951171875,
       "vol_breakout_last_alert": "2026-10-27T06:21:27.571541",
-      "vol_breakout_last_price": 1571.0
+      "vol_breakout_last_price": 1571.0,
+      "zanger_last_alert": "2026-10-27T06:50:06.464306",
+      "zanger_last_price": 1589.199951171875
     },
     "OSWALPUMPS": {
       "sma50": 271.81900115966795,
@@ -16580,8 +16584,8 @@
       "descending_res": 9544.0,
       "wedge_contraction": 1.2233424992361746,
       "rs_rank": 42.9,
-      "near_high_17_22_last_alert": "2026-10-27T05:23:43.478945",
-      "near_high_17_22_last_price": 10183.0
+      "near_high_17_22_last_alert": "2026-10-27T06:51:20.588810",
+      "near_high_17_22_last_price": 10062.0
     },
     "VTL": {
       "sma50": 561.2770013427735,
@@ -16951,7 +16955,9 @@
       "box_low": 706.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 35.1
+      "rs_rank": 35.1,
+      "mtf_last_alert": "2026-10-27T06:51:25.819732",
+      "mtf_last_price": 846.5499877929688
     },
     "WOCKPHARMA": {
       "sma50": 2020.98599609375,

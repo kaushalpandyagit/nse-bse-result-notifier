@@ -167,7 +167,9 @@
     "trigger_date": "2026-10-26",
     "ref_high": 4827.6,
     "ref_low": 4402.5,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-27T06:47:32.495698",
+    "fno_high_breach_last_price": 4802.0
   },
   "AVANTEL": {
     "trigger_date": "2026-10-26",
