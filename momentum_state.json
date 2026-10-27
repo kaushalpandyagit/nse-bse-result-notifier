@@ -873,7 +873,9 @@
       "box_low": 5873.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 19.2
+      "rs_rank": 19.2,
+      "rectangle_bounce_last_alert": "2026-10-27T07:47:58.394389",
+      "rectangle_bounce_last_price": 6035.5
     },
     "ANANTRAJ": {
       "sma50": 589.5299987792969,
@@ -1939,7 +1941,9 @@
       "mtf_last_alert": "2026-10-27T04:20:53.026568",
       "mtf_last_price": 649.9500122070312,
       "rectangle_bounce_last_alert": "2026-10-27T04:48:34.710219",
-      "rectangle_bounce_last_price": 649.1500244140625
+      "rectangle_bounce_last_price": 649.1500244140625,
+      "ema50_pullback_last_alert": "2026-10-27T07:48:13.544765",
+      "ema50_pullback_last_price": 648.2000122070312
     },
     "BBOX": {
       "sma50": 803.6309973144531,
@@ -2634,8 +2638,8 @@
       "descending_res": 571.2500122070312,
       "wedge_contraction": 1.0318340086630664,
       "rs_rank": 63.4,
-      "mtf_last_alert": "2026-10-27T05:49:53.510319",
-      "mtf_last_price": 581.3499755859375
+      "mtf_last_alert": "2026-10-27T07:48:25.462548",
+      "mtf_last_price": 575.0
     },
     "CAPLIPOINT": {
       "sma50": 2582.166015625,
@@ -4890,8 +4894,8 @@
       "descending_res": 319.23997192382814,
       "wedge_contraction": 0.8332665773997985,
       "rs_rank": 67.3,
-      "near_high_17_22_last_alert": "2026-10-27T04:21:56.152455",
-      "near_high_17_22_last_price": 255.1999969482422
+      "near_high_17_22_last_alert": "2026-10-27T07:48:53.968605",
+      "near_high_17_22_last_price": 252.1999969482422
     },
     "ENTERO": {
       "sma50": 1671.246005859375,
@@ -7916,8 +7920,8 @@
       "descending_res": 310.625,
       "wedge_contraction": 1.3892831945582993,
       "rs_rank": 57.9,
-      "rectangle_bounce_last_alert": "2026-10-27T05:33:50.461383",
-      "rectangle_bounce_last_price": 245.10000610351562
+      "rectangle_bounce_last_alert": "2026-10-27T07:49:36.999739",
+      "rectangle_bounce_last_price": 242.1999969482422
     },
     "JKPAPER": {
       "sma50": 394.78599853515624,
@@ -10130,8 +10134,8 @@
       "descending_res": 7403.833333333333,
       "wedge_contraction": 1.031500926497838,
       "rs_rank": 85.2,
-      "near_high_17_22_last_alert": "2026-10-27T04:14:12.727447",
-      "near_high_17_22_last_price": 6911.5
+      "near_high_17_22_last_alert": "2026-10-27T07:50:10.045025",
+      "near_high_17_22_last_price": 6836.0
     },
     "NATCOPHARM": {
       "sma50": 831.1269519042969,
@@ -11455,7 +11459,9 @@
       "box_low": 2005.199951171875,
       "descending_res": 2260.7998490767045,
       "wedge_contraction": 0.8325580031255281,
-      "rs_rank": 5.9
+      "rs_rank": 5.9,
+      "rectangle_bounce_last_alert": "2026-10-27T07:50:29.262298",
+      "rectangle_bounce_last_price": 2065.10009765625
     },
     "PINELABS": {
       "sma50": 169.63240020751954,
@@ -16556,8 +16562,8 @@
       "descending_res": 843.1615553635818,
       "wedge_contraction": 0.9818552618995277,
       "rs_rank": 82.7,
-      "near_high_17_22_last_alert": "2026-10-27T04:16:05.441682",
-      "near_high_17_22_last_price": 776.1500244140625
+      "near_high_17_22_last_alert": "2026-10-27T07:51:35.028813",
+      "near_high_17_22_last_price": 768.2999877929688
     },
     "VOLTAMP": {
       "sma50": 10615.99,
