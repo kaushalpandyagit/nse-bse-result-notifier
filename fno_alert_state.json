@@ -245,7 +245,9 @@
     "trigger_date": "2026-10-27",
     "ref_high": 174.4,
     "ref_low": 165.49,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-28T03:50:16.802823",
+    "fno_low_breach_last_price": 165.0
   },
   "GNRL": {
     "trigger_date": "2026-10-27",
