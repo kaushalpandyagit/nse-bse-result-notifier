@@ -263,7 +263,9 @@
     "trigger_date": "2026-10-27",
     "ref_high": 648.0,
     "ref_low": 607.15,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-28T04:18:26.213658",
+    "fno_high_breach_last_price": 654.0
   },
   "CIPLA": {
     "trigger_date": "2026-10-27",
