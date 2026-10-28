@@ -3617,5 +3617,13 @@
     "baseline_rsi": 19.933688629387575,
     "mcap_cr": 3262.867684959381,
     "exchange": "NSE"
+  },
+  "PNCINFRA": {
+    "result_date": "2026-10-28T00:00:00",
+    "day_high": 136.50999450683594,
+    "day_low": 133.0500030517578,
+    "baseline_rsi": 38.60873870886556,
+    "mcap_cr": 3463.2787275,
+    "exchange": "NSE"
   }
 }
