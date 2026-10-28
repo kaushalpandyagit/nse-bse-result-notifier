@@ -324,5 +324,11 @@
     "ref_high": 1642.9,
     "ref_low": 1560.0,
     "status": "Active"
+  },
+  "RHL": {
+    "trigger_date": "2026-10-28",
+    "ref_high": 169.0,
+    "ref_low": 157.01,
+    "status": "Active"
   }
 }
