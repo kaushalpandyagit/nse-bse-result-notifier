@@ -2,8 +2,8 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-28T03:49:54.440121",
-    "custom_last_price": 128.5
+    "custom_last_alert": "2026-10-28T06:32:32.878709",
+    "custom_last_price": 132.4499969482422
   },
   "custom_alert_AERON_price": {
     "alerted": false,
@@ -1504,8 +1504,8 @@
     "mcap_cr": 1907.1545093482666,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T04:47:46.885027",
-    "price_high_last_alert": "2026-10-27T10:02:29.286234",
-    "price_high_last_price": 1934.199951171875,
+    "price_high_last_alert": "2026-10-28T06:30:34.784507",
+    "price_high_last_price": 1973.800048828125,
     "rsi_up_last_alert": "2026-10-28T05:46:52.829437"
   },
   "MAHSCOOTER": {
@@ -1625,8 +1625,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T05:47:01.309864",
     "rsi_up_last_alert": "2026-10-27T17:27:35.365329",
-    "price_low_last_alert": "2026-10-28T05:16:48.610929",
-    "price_low_last_price": 923.4000244140625
+    "price_low_last_alert": "2026-10-28T06:30:41.629123",
+    "price_low_last_price": 934.2999877929688
   },
   "TINNARUBR": {
     "result_date": "2026-10-22T00:00:00",
@@ -1896,8 +1896,8 @@
     "mcap_cr": 568.0798726300048,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T05:47:22.345310",
-    "price_low_last_alert": "2026-10-28T04:02:09.942496",
-    "price_low_last_price": 204.0
+    "price_low_last_alert": "2026-10-28T06:30:56.194230",
+    "price_low_last_price": 211.92999267578125
   },
   "MARATHON": {
     "result_date": "2026-10-23T00:00:00",
@@ -2230,7 +2230,7 @@
     "baseline_rsi": 50.914724183089184,
     "mcap_cr": 756.7101,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-27T09:03:01.232819",
+    "rsi_up_last_alert": "2026-10-28T06:31:14.836844",
     "rsi_down_last_alert": "2026-10-28T05:47:46.957598"
   },
   "RRKABEL": {
@@ -2358,8 +2358,8 @@
     "rsi_up_last_alert": "2026-10-28T05:30:55.971213",
     "price_high_last_alert": "2026-10-27T05:03:39.297568",
     "price_high_last_price": 22.59000015258789,
-    "price_low_last_alert": "2026-10-27T09:47:25.530725",
-    "price_low_last_price": 22.0
+    "price_low_last_alert": "2026-10-28T06:31:24.143109",
+    "price_low_last_price": 21.739999771118164
   },
   "VINYLINDIA": {
     "result_date": "2026-10-26T00:00:00",
@@ -2501,8 +2501,10 @@
     "baseline_rsi": 36.51751767646622,
     "mcap_cr": 86344.2294521,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-27T17:29:08.275251",
-    "rsi_down_last_alert": "2026-10-28T05:48:09.024395"
+    "rsi_up_last_alert": "2026-10-28T06:31:33.979994",
+    "rsi_down_last_alert": "2026-10-28T05:48:09.024395",
+    "price_high_last_alert": "2026-10-28T06:31:33.403883",
+    "price_high_last_price": 10006.0
   },
   "PARACABLES": {
     "result_date": "2026-10-26T00:00:00",
@@ -2715,8 +2717,8 @@
     "mcap_cr": 7276.453998484863,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T06:17:34.423715",
-    "price_low_last_alert": "2026-10-28T03:49:02.653047",
-    "price_low_last_price": 530.0,
+    "price_low_last_alert": "2026-10-28T06:31:49.138595",
+    "price_low_last_price": 538.0499877929688,
     "rsi_up_last_alert": "2026-10-28T05:17:57.502771"
   },
   "CIPLA": {
@@ -2905,7 +2907,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-28T03:49:22.578302",
     "price_low_last_price": 5.199999809265137,
-    "rsi_down_last_alert": "2026-10-28T03:49:23.108114",
+    "rsi_down_last_alert": "2026-10-28T06:32:01.156934",
     "rsi_up_last_alert": "2026-10-28T05:48:43.893998"
   },
   "LEAPIND": {
@@ -2937,8 +2939,8 @@
     "mcap_cr": 13596.688598427247,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T05:48:47.346039",
-    "price_low_last_alert": "2026-10-28T04:49:01.552804",
-    "price_low_last_price": 366.5
+    "price_low_last_alert": "2026-10-28T06:32:04.422180",
+    "price_low_last_price": 373.1499938964844
   },
   "KIRLOSBROS": {
     "result_date": "2026-10-27T00:00:00",
@@ -3108,7 +3110,7 @@
     "baseline_rsi": 44.8540418436602,
     "mcap_cr": 749.8773878524689,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-28T04:49:18.464826",
+    "rsi_down_last_alert": "2026-10-28T06:32:16.712022",
     "rsi_up_last_alert": "2026-10-28T05:49:02.384502"
   },
   "RELIANCE": {
@@ -3159,6 +3161,57 @@
     "baseline_rsi": 46.08254357879857,
     "mcap_cr": 274.8742258842163,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-28T06:18:02.428393"
+    "rsi_down_last_alert": "2026-10-28T06:18:02.428393",
+    "rsi_up_last_alert": "2026-10-28T06:32:21.473958"
+  },
+  "OMNI": {
+    "result_date": "2026-10-28T00:00:00",
+    "day_high": 704.9000244140625,
+    "day_low": 677.25,
+    "baseline_rsi": 63.63619936293623,
+    "mcap_cr": 8638.071497,
+    "exchange": "NSE"
+  },
+  "VARDHACRLC": {
+    "result_date": "2026-10-28T00:00:00",
+    "day_high": 42.29999923706055,
+    "day_low": 40.31999969482422,
+    "baseline_rsi": 41.98240764274925,
+    "mcap_cr": 331.500456375,
+    "exchange": "NSE"
+  },
+  "KPRMILL": {
+    "result_date": "2026-10-28T00:00:00",
+    "day_high": 1078.0999755859375,
+    "day_low": 1009.2000122070312,
+    "baseline_rsi": 37.411275663385354,
+    "mcap_cr": 34944.150867098346,
+    "exchange": "NSE"
+  },
+  "NAUKRI": {
+    "result_date": "2026-10-28T00:00:00",
+    "day_high": 1253.4000244140625,
+    "day_low": 1194.300048828125,
+    "baseline_rsi": 52.69101364163263,
+    "mcap_cr": 80955.50418165616,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-28T06:32:24.520806"
+  },
+  "CARTRADE": {
+    "result_date": "2026-10-28T00:00:00",
+    "day_high": 2912.300048828125,
+    "day_low": 2345.89990234375,
+    "baseline_rsi": 28.45272131411228,
+    "mcap_cr": 11774.525147,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-28T06:32:26.083929"
+  },
+  "PFS": {
+    "result_date": "2026-10-28T00:00:00",
+    "day_high": 24.799999237060547,
+    "day_low": 23.90999984741211,
+    "baseline_rsi": 33.564330120943765,
+    "mcap_cr": 1547.260563815466,
+    "exchange": "NSE"
   }
 }
