@@ -3665,5 +3665,21 @@
     "baseline_rsi": 69.98377570481392,
     "mcap_cr": 2633.1258570572663,
     "exchange": "NSE"
+  },
+  "VNL": {
+    "result_date": "2026-10-28T00:00:00",
+    "day_high": 98.56999969482422,
+    "day_low": 89.19000244140625,
+    "baseline_rsi": null,
+    "mcap_cr": 260.1351892076134,
+    "exchange": "NSE"
+  },
+  "PNBHOUSING": {
+    "result_date": "2026-10-28T00:00:00",
+    "day_high": 1123.0,
+    "day_low": 1073.9000244140625,
+    "baseline_rsi": 47.545321307858615,
+    "mcap_cr": 29262.1990386,
+    "exchange": "NSE"
   }
 }
