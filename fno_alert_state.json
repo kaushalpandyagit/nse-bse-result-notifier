@@ -232,20 +232,16 @@
     "status": "Active"
   },
   "JINDALPHOT": {
-    "trigger_date": "2026-10-27",
-    "ref_high": 1117.9,
-    "ref_low": 1065.8,
-    "status": "Breached High",
-    "fno_high_breach_last_alert": "2026-10-28T04:03:49.352671",
-    "fno_high_breach_last_price": 1121.0
+    "trigger_date": "2026-10-28",
+    "ref_high": 1127.3,
+    "ref_low": 1100.0,
+    "status": "Active"
   },
   "PALASHSECU": {
-    "trigger_date": "2026-10-27",
-    "ref_high": 79.97,
-    "ref_low": 77.55,
-    "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-28T04:03:50.523609",
-    "fno_low_breach_last_price": 77.11000061035156
+    "trigger_date": "2026-10-28",
+    "ref_high": 79.8,
+    "ref_low": 77.11,
+    "status": "Active"
   },
   "ITCHOTELS": {
     "trigger_date": "2026-10-27",
@@ -276,17 +272,57 @@
     "status": "Active"
   },
   "SIRCA": {
-    "trigger_date": "2026-10-27",
-    "ref_high": 418.75,
-    "ref_low": 408.0,
-    "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-28T04:32:36.204135",
-    "fno_low_breach_last_price": 407.1000061035156
+    "trigger_date": "2026-10-28",
+    "ref_high": 416.0,
+    "ref_low": 405.15,
+    "status": "Active"
   },
   "UMIYA-MRO": {
     "trigger_date": "2026-10-27",
     "ref_high": 92.45,
     "ref_low": 84.5,
+    "status": "Active"
+  },
+  "JSWDULUX": {
+    "trigger_date": "2026-10-28",
+    "ref_high": 281.5,
+    "ref_low": 272.8,
+    "status": "Active"
+  },
+  "SNOWMAN": {
+    "trigger_date": "2026-10-28",
+    "ref_high": 38.79,
+    "ref_low": 33.4,
+    "status": "Active"
+  },
+  "NEAGI": {
+    "trigger_date": "2026-10-28",
+    "ref_high": 3200.0,
+    "ref_low": 3022.1,
+    "status": "Active"
+  },
+  "CNL": {
+    "trigger_date": "2026-10-28",
+    "ref_high": 1172.1,
+    "ref_low": 1038.4,
+    "status": "Active"
+  },
+  "BSL": {
+    "trigger_date": "2026-10-28",
+    "ref_high": 118.5,
+    "ref_low": 115.51,
+    "status": "Active"
+  },
+  "GATEWAY": {
+    "trigger_date": "2026-10-28",
+    "ref_high": 47.93,
+    "ref_low": 44.64,
+    "status": "Active"
+  },
+  "ONESOURCE": {
+    "trigger_date": "2026-10-28",
+    "ref_high": 1642.9,
+    "ref_low": 1560.0,
     "status": "Active"
   }
 }
