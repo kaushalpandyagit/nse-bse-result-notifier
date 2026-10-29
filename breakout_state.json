@@ -1349,7 +1349,7 @@
     "rsi_down_last_alert": "2026-10-29T09:03:11.295327",
     "price_low_last_alert": "2026-10-29T09:16:24.380424",
     "price_low_last_price": 7.070000171661377,
-    "rsi_up_last_alert": "2026-10-29T09:30:18.355901"
+    "rsi_up_last_alert": "2026-10-29T10:16:21.385366"
   },
   "INDHOTEL": {
     "result_date": "2026-10-21T00:00:00",
@@ -4022,7 +4022,7 @@
     "mcap_cr": 807.5438401897126,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-29T09:18:47.620358",
-    "rsi_down_last_alert": "2026-10-29T09:32:56.240915"
+    "rsi_down_last_alert": "2026-10-29T10:18:26.469421"
   },
   "GREAVESCOT": {
     "result_date": "2026-10-29T00:00:00",
@@ -4079,7 +4079,7 @@
     "baseline_rsi": 47.77946947020306,
     "mcap_cr": 7728.608570866221,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T09:32:59.836268",
+    "rsi_down_last_alert": "2026-10-29T10:18:29.569113",
     "price_low_last_alert": "2026-10-29T09:48:50.052449",
     "price_low_last_price": 56.22999954223633
   },
@@ -4091,5 +4091,22 @@
     "mcap_cr": 8640.7917395,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-29T10:07:37.965441"
+  },
+  "GODREJCP": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 844.1500244140625,
+    "day_low": 810.0999755859375,
+    "baseline_rsi": 40.65469346003371,
+    "mcap_cr": 85663.7756775,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-29T10:18:31.100912"
+  },
+  "MONARCH": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 362.0,
+    "day_low": 345.45001220703125,
+    "baseline_rsi": 54.77565785996084,
+    "mcap_cr": 2800.110994935315,
+    "exchange": "NSE"
   }
 }
