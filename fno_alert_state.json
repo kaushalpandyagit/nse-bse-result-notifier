@@ -313,7 +313,9 @@
     "trigger_date": "2026-10-28",
     "ref_high": 1172.1,
     "ref_low": 1038.4,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-29T04:04:24.049278",
+    "fno_high_breach_last_price": 1175.800048828125
   },
   "BSL": {
     "trigger_date": "2026-10-28",
@@ -327,7 +329,9 @@
     "trigger_date": "2026-10-28",
     "ref_high": 47.93,
     "ref_low": 44.64,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-29T04:04:25.190563",
+    "fno_low_breach_last_price": 44.869998931884766
   },
   "ONESOURCE": {
     "trigger_date": "2026-10-28",

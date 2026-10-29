@@ -2439,7 +2439,9 @@
       "box_low": 639.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 44.6
+      "rs_rank": 44.6,
+      "near_high_17_22_last_alert": "2026-10-29T04:05:08.201870",
+      "near_high_17_22_last_price": 687.2000122070312
     },
     "CANFINHOME": {
       "sma50": 765.1290026855469,
@@ -4907,7 +4909,9 @@
       "box_low": 63.439998626708984,
       "descending_res": 69.33052825927734,
       "wedge_contraction": 0.8772898240127063,
-      "rs_rank": 59.5
+      "rs_rank": 59.5,
+      "near_high_17_22_last_alert": "2026-10-29T04:05:48.865969",
+      "near_high_17_22_last_price": 65.75
     },
     "ERIS": {
       "sma50": 1249.517998046875,
@@ -8233,7 +8237,9 @@
       "box_low": null,
       "descending_res": 217.59995651245117,
       "wedge_contraction": 1.0054859821791593,
-      "rs_rank": 8.5
+      "rs_rank": 8.5,
+      "vol_breakout_last_alert": "2026-10-29T04:06:47.497935",
+      "vol_breakout_last_price": 195.97000122070312
     },
     "JYOTHYLAB": {
       "sma50": 193.16340026855468,
@@ -11179,7 +11185,9 @@
       "wedge_contraction": null,
       "rs_rank": 58.4,
       "mtf_last_alert": "2026-10-29T03:57:38.253306",
-      "mtf_last_price": 545.4500122070312
+      "mtf_last_price": 545.4500122070312,
+      "resistance_last_alert": "2026-10-29T04:07:38.679015",
+      "resistance_last_price": 543.9500122070312
     },
     "PGHL": {
       "sma50": 5474.72,
@@ -12265,7 +12273,9 @@
       "box_low": 319.5,
       "descending_res": 413.4624824523926,
       "wedge_contraction": 0.9064162571514314,
-      "rs_rank": 95.7
+      "rs_rank": 95.7,
+      "near_high_17_22_last_alert": "2026-10-29T04:07:57.446566",
+      "near_high_17_22_last_price": 347.3999938964844
     },
     "REFEX": {
       "sma50": 269.1969989013672,
@@ -14839,7 +14849,9 @@
       "wedge_contraction": null,
       "rs_rank": 48.6,
       "resistance_last_alert": "2026-10-29T03:58:35.596509",
-      "resistance_last_price": 3796.300048828125
+      "resistance_last_price": 3796.300048828125,
+      "mtf_last_alert": "2026-10-29T04:08:36.883226",
+      "mtf_last_price": 3813.10009765625
     },
     "TATAINVEST": {
       "sma50": 632.1729968261719,
@@ -15311,7 +15323,9 @@
       "box_low": null,
       "descending_res": 563.6,
       "wedge_contraction": 1.3009685041534662,
-      "rs_rank": 84.2
+      "rs_rank": 84.2,
+      "near_high_17_22_last_alert": "2026-10-29T04:08:46.136534",
+      "near_high_17_22_last_price": 517.5
     },
     "TI": {
       "sma50": 548.0719958496094,
