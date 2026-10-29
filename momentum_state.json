@@ -74,8 +74,8 @@
       "descending_res": 430.57863943917414,
       "wedge_contraction": 0.7239553620319058,
       "rs_rank": 38.4,
-      "near_high_17_22_last_alert": "2026-10-29T07:19:11.407335",
-      "near_high_17_22_last_price": 449.1499938964844,
+      "near_high_17_22_last_alert": "2026-10-29T09:19:17.645777",
+      "near_high_17_22_last_price": 443.0,
       "rectangle_bounce_last_alert": "2026-10-29T08:05:01.145748",
       "rectangle_bounce_last_price": 446.8500061035156
     },
@@ -2638,8 +2638,8 @@
       "descending_res": 1139.471452985491,
       "wedge_contraction": 1.3825097251578633,
       "rs_rank": 73.6,
-      "near_high_17_22_last_alert": "2026-10-29T06:06:34.039216",
-      "near_high_17_22_last_price": 1068.5
+      "near_high_17_22_last_alert": "2026-10-29T09:20:01.013858",
+      "near_high_17_22_last_price": 1081.0999755859375
     },
     "CARTRADE": {
       "sma50": 2955.1660009765624,
@@ -3151,7 +3151,9 @@
       "box_low": 764.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 62.0
+      "rs_rank": 62.0,
+      "rectangle_bounce_last_alert": "2026-10-29T09:20:09.480344",
+      "rectangle_bounce_last_price": 816.2000122070312
     },
     "CHAMBLFERT": {
       "sma50": 406.0119989013672,
@@ -5818,8 +5820,8 @@
       "near_high_17_22_last_price": 213.39999389648438,
       "rectangle_bounce_last_alert": "2026-10-29T09:10:06.993373",
       "rectangle_bounce_last_price": 216.3800048828125,
-      "ema50_pullback_last_alert": "2026-10-29T06:07:47.581287",
-      "ema50_pullback_last_price": 214.9600067138672
+      "ema50_pullback_last_alert": "2026-10-29T09:20:53.107223",
+      "ema50_pullback_last_price": 217.50999450683594
     },
     "GOLDIAM": {
       "sma50": 327.64499938964843,
@@ -6038,8 +6040,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 35.2,
-      "rectangle_bounce_last_alert": "2026-10-29T08:34:24.969094",
-      "rectangle_bounce_last_price": 1385.9000244140625
+      "rectangle_bounce_last_alert": "2026-10-29T09:20:58.413958",
+      "rectangle_bounce_last_price": 1400.4000244140625
     },
     "GREAVESCOT": {
       "sma50": 200.79180053710937,
@@ -6115,7 +6117,9 @@
       "vol_breakout_last_alert": "2026-10-29T09:10:14.777865",
       "vol_breakout_last_price": 1903.0,
       "rectangle_bounce_last_alert": "2026-10-29T09:10:15.323442",
-      "rectangle_bounce_last_price": 1903.0
+      "rectangle_bounce_last_price": 1903.0,
+      "near_high_17_22_last_alert": "2026-10-29T09:21:00.152100",
+      "near_high_17_22_last_price": 1923.0999755859375
     },
     "GRSE": {
       "sma50": 2302.902004394531,
@@ -6585,7 +6589,9 @@
       "box_low": 981.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 45.6
+      "rs_rank": 45.6,
+      "rectangle_bounce_last_alert": "2026-10-29T09:21:09.731771",
+      "rectangle_bounce_last_price": 1066.800048828125
     },
     "HONASA": {
       "sma50": 465.4289959716797,
@@ -8542,8 +8548,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 40.1,
-      "ema50_pullback_last_alert": "2026-10-29T07:53:44.189111",
-      "ema50_pullback_last_price": 861.25
+      "ema50_pullback_last_alert": "2026-10-29T09:21:41.109596",
+      "ema50_pullback_last_price": 872.5
     },
     "KIMS": {
       "sma50": 745.4130017089843,
@@ -11252,8 +11258,8 @@
       "rs_rank": 58.4,
       "mtf_last_alert": "2026-10-29T08:21:47.974034",
       "mtf_last_price": 538.4500122070312,
-      "resistance_last_alert": "2026-10-29T04:55:55.842995",
-      "resistance_last_price": 534.2999877929688,
+      "resistance_last_alert": "2026-10-29T09:22:27.991872",
+      "resistance_last_price": 539.9000244140625,
       "ema50_pullback_last_alert": "2026-10-29T08:21:48.452378",
       "ema50_pullback_last_price": 538.4500122070312
     },
