@@ -2270,8 +2270,8 @@
     "rsi_up_last_alert": "2026-10-29T04:02:30.992877",
     "price_high_last_alert": "2026-10-27T05:03:39.297568",
     "price_high_last_price": 22.59000015258789,
-    "price_low_last_alert": "2026-10-29T09:47:03.506616",
-    "price_low_last_price": 21.299999237060547
+    "price_low_last_alert": "2026-10-29T10:46:43.281085",
+    "price_low_last_price": 21.530000686645508
   },
   "VINYLINDIA": {
     "result_date": "2026-10-26T00:00:00",
@@ -3826,7 +3826,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T09:48:33.745966",
     "price_low_last_price": 253.9499969482422,
-    "rsi_down_last_alert": "2026-10-29T09:48:34.244514"
+    "rsi_down_last_alert": "2026-10-29T10:47:50.127826"
   },
   "PINELABS": {
     "result_date": "2026-10-29T00:00:00",
@@ -3875,7 +3875,7 @@
     "baseline_rsi": 45.27982234832993,
     "mcap_cr": 12409.889883960725,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T09:48:38.608891",
+    "rsi_up_last_alert": "2026-10-29T10:47:53.837751",
     "rsi_down_last_alert": "2026-10-29T09:07:25.815151"
   },
   "TARACHAND": {
@@ -4080,8 +4080,8 @@
     "mcap_cr": 7728.608570866221,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-29T10:18:29.569113",
-    "price_low_last_alert": "2026-10-29T09:48:50.052449",
-    "price_low_last_price": 56.22999954223633
+    "price_low_last_alert": "2026-10-29T10:48:02.596308",
+    "price_low_last_price": 57.16999816894531
   },
   "PNGJL": {
     "result_date": "2026-10-29T00:00:00",
@@ -4099,7 +4099,8 @@
     "baseline_rsi": 40.65469346003371,
     "mcap_cr": 85663.7756775,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T10:18:31.100912"
+    "rsi_down_last_alert": "2026-10-29T10:18:31.100912",
+    "rsi_up_last_alert": "2026-10-29T10:48:04.138337"
   },
   "MONARCH": {
     "result_date": "2026-10-29T00:00:00",
@@ -4139,6 +4140,47 @@
     "day_low": 498.70001220703125,
     "baseline_rsi": 52.055182117593056,
     "mcap_cr": 8204.97198825,
+    "exchange": "NSE"
+  },
+  "GREENPLY": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 305.0,
+    "day_low": 293.1499938964844,
+    "baseline_rsi": 51.98995858847851,
+    "mcap_cr": 3757.0533611316832,
+    "exchange": "NSE"
+  },
+  "NIITMTS": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 195.97000122070312,
+    "day_low": 186.0,
+    "baseline_rsi": 36.84864857134705,
+    "mcap_cr": 2600.336762030763,
+    "exchange": "NSE"
+  },
+  "PRAJIND": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 258.0,
+    "day_low": 243.75,
+    "baseline_rsi": 24.04984572993473,
+    "mcap_cr": 4672.528640864697,
+    "exchange": "NSE"
+  },
+  "GARFIBRES": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 763.0,
+    "day_low": 740.2000122070312,
+    "baseline_rsi": 45.83897077701195,
+    "mcap_cr": 7340.714335375,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-29T10:48:10.550344"
+  },
+  "OMAXAUTO": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 219.44000244140625,
+    "day_low": 208.27000427246094,
+    "baseline_rsi": 59.616060750786595,
+    "mcap_cr": 458.19848019666443,
     "exchange": "NSE"
   }
 }
