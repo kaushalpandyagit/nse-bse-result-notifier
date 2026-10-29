@@ -1124,8 +1124,8 @@
       "descending_res": 490.8250244140625,
       "wedge_contraction": 1.3562119745915484,
       "rs_rank": 85.7,
-      "near_high_17_22_last_alert": "2026-10-29T07:19:27.247514",
-      "near_high_17_22_last_price": 489.20001220703125
+      "near_high_17_22_last_alert": "2026-10-29T08:19:06.908265",
+      "near_high_17_22_last_price": 494.79998779296875
     },
     "ARVINDFASN": {
       "sma50": 417.74400024414064,
@@ -4898,8 +4898,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 52.9,
-      "near_high_17_22_last_alert": "2026-10-29T03:55:47.659658",
-      "near_high_17_22_last_price": 214.10000610351562
+      "near_high_17_22_last_alert": "2026-10-29T08:20:05.383764",
+      "near_high_17_22_last_price": 217.66000366210938
     },
     "EQUITASBNK": {
       "sma50": 70.89539978027344,
@@ -8274,8 +8274,8 @@
       "descending_res": 217.59995651245117,
       "wedge_contraction": 1.0054859821791593,
       "rs_rank": 8.5,
-      "vol_breakout_last_alert": "2026-10-29T05:52:53.746652",
-      "vol_breakout_last_price": 189.25
+      "vol_breakout_last_alert": "2026-10-29T08:20:58.215889",
+      "vol_breakout_last_price": 191.1999969482422
     },
     "JYOTHYLAB": {
       "sma50": 193.16340026855468,
@@ -9184,8 +9184,8 @@
       "descending_res": 571.5249888102213,
       "wedge_contraction": 0.7567719309970287,
       "rs_rank": 50.1,
-      "near_high_17_22_last_alert": "2026-10-29T03:57:00.635763",
-      "near_high_17_22_last_price": 508.70001220703125
+      "near_high_17_22_last_alert": "2026-10-29T08:21:12.387214",
+      "near_high_17_22_last_price": 514.4500122070312
     },
     "LLOYDSENGG": {
       "sma50": 89.33959991455077,
@@ -10352,8 +10352,8 @@
       "descending_res": 684.4998779296875,
       "wedge_contraction": 1.1208812564917032,
       "rs_rank": 77.6,
-      "near_high_17_22_last_alert": "2026-10-29T06:09:38.016158",
-      "near_high_17_22_last_price": 636.6500244140625
+      "near_high_17_22_last_alert": "2026-10-29T08:21:31.541651",
+      "near_high_17_22_last_price": 628.7000122070312
     },
     "NETWEB": {
       "sma50": 4862.47400390625,
@@ -10645,7 +10645,9 @@
       "wedge_contraction": null,
       "rs_rank": 64.6,
       "near_high_17_22_last_alert": "2026-10-29T04:55:43.184852",
-      "near_high_17_22_last_price": 268.45001220703125
+      "near_high_17_22_last_price": 268.45001220703125,
+      "rectangle_bounce_last_alert": "2026-10-29T08:21:37.376946",
+      "rectangle_bounce_last_price": 267.79998779296875
     },
     "NSLNISP": {
       "sma50": 41.73040016174316,
@@ -10972,8 +10974,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 95.3,
-      "near_high_17_22_last_alert": "2026-10-29T06:36:34.823560",
-      "near_high_17_22_last_price": 1286.0
+      "near_high_17_22_last_alert": "2026-10-29T08:21:43.129211",
+      "near_high_17_22_last_price": 1310.5999755859375,
+      "rectangle_bounce_last_alert": "2026-10-29T08:21:42.650657",
+      "rectangle_bounce_last_price": 1310.5999755859375
     },
     "PARKHOSPS": {
       "sma50": 267.64399810791014,
@@ -11228,10 +11232,12 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 58.4,
-      "mtf_last_alert": "2026-10-29T03:57:38.253306",
-      "mtf_last_price": 545.4500122070312,
+      "mtf_last_alert": "2026-10-29T08:21:47.974034",
+      "mtf_last_price": 538.4500122070312,
       "resistance_last_alert": "2026-10-29T04:55:55.842995",
-      "resistance_last_price": 534.2999877929688
+      "resistance_last_price": 534.2999877929688,
+      "ema50_pullback_last_alert": "2026-10-29T08:21:48.452378",
+      "ema50_pullback_last_price": 538.4500122070312
     },
     "PGHL": {
       "sma50": 5474.72,
@@ -12917,7 +12923,9 @@
       "box_low": 140.91000366210938,
       "descending_res": 159.58333333333334,
       "wedge_contraction": 1.2535772854685194,
-      "rs_rank": 53.5
+      "rs_rank": 53.5,
+      "mtf_last_alert": "2026-10-29T08:22:13.769758",
+      "mtf_last_price": 155.42999267578125
     },
     "SAMMAANCAP": {
       "sma50": 139.06240020751954,
@@ -13316,8 +13324,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 92.8,
-      "near_high_17_22_last_alert": "2026-10-29T06:37:14.182720",
-      "near_high_17_22_last_price": 1296.0
+      "near_high_17_22_last_alert": "2026-10-29T08:22:20.144580",
+      "near_high_17_22_last_price": 1315.0999755859375
     },
     "SFL": {
       "sma50": 632.6599975585938,
