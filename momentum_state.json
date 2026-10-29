@@ -1415,7 +1415,9 @@
       "box_low": null,
       "descending_res": 648.3750712076823,
       "wedge_contraction": 0.9342261675473944,
-      "rs_rank": 2.1
+      "rs_rank": 2.1,
+      "vol_breakout_last_alert": "2026-10-29T07:33:47.865537",
+      "vol_breakout_last_price": 579.0
     },
     "AVALON": {
       "sma50": 2235.214013671875,
@@ -3868,8 +3870,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 56.3,
-      "near_high_17_22_last_alert": "2026-10-29T05:19:43.570692",
-      "near_high_17_22_last_price": 4007.89990234375
+      "near_high_17_22_last_alert": "2026-10-29T07:34:34.858700",
+      "near_high_17_22_last_price": 3963.0
     },
     "DBL": {
       "sma50": 402.3890002441406,
@@ -4231,7 +4233,9 @@
       "box_low": 10356.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 66.3
+      "rs_rank": 66.3,
+      "near_high_17_22_last_alert": "2026-10-29T07:34:43.317706",
+      "near_high_17_22_last_price": 12007.0
     },
     "E2E": {
       "sma50": 631.8359997558593,
@@ -10044,8 +10048,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 41.6,
-      "resistance_last_alert": "2026-10-29T06:25:43.505598",
-      "resistance_last_price": 35.709999084472656
+      "resistance_last_alert": "2026-10-29T07:36:40.212030",
+      "resistance_last_price": 35.29999923706055
     },
     "MTARTECH": {
       "sma50": 7194.92,
@@ -11982,8 +11986,8 @@
       "descending_res": 205.07500457763672,
       "wedge_contraction": 0.9463297388768982,
       "rs_rank": 94.7,
-      "near_high_17_22_last_alert": "2026-10-29T06:36:52.065103",
-      "near_high_17_22_last_price": 208.35000610351562
+      "near_high_17_22_last_alert": "2026-10-29T07:37:21.500246",
+      "near_high_17_22_last_price": 204.64999389648438
     },
     "RAINBOW": {
       "sma50": 1360.77798828125,
@@ -16207,7 +16211,11 @@
       "box_low": 256.5,
       "descending_res": 311.43750762939453,
       "wedge_contraction": 1.0270599316657694,
-      "rs_rank": 22.4
+      "rs_rank": 22.4,
+      "vol_breakout_last_alert": "2026-10-29T07:38:39.135791",
+      "vol_breakout_last_price": 280.8500061035156,
+      "rectangle_bounce_last_alert": "2026-10-29T07:38:39.726850",
+      "rectangle_bounce_last_price": 280.8500061035156
     },
     "VIJAYA": {
       "sma50": 1467.1559985351562,
@@ -16536,8 +16544,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 80.4,
-      "near_high_17_22_last_alert": "2026-10-29T03:59:04.442455",
-      "near_high_17_22_last_price": 1814.0
+      "near_high_17_22_last_alert": "2026-10-29T07:38:47.849571",
+      "near_high_17_22_last_price": 1836.0
     },
     "WAKEFIT": {
       "sma50": 141.46199966430663,
