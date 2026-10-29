@@ -286,18 +286,16 @@
     "fno_high_breach_last_price": 416.20001220703125
   },
   "UMIYA-MRO": {
-    "trigger_date": "2026-10-27",
-    "ref_high": 92.45,
-    "ref_low": 84.5,
+    "trigger_date": "2026-10-29",
+    "ref_high": 90.19,
+    "ref_low": 86.11,
     "status": "Active"
   },
   "JSWDULUX": {
-    "trigger_date": "2026-10-28",
-    "ref_high": 281.5,
-    "ref_low": 272.8,
-    "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-29T03:51:19.187665",
-    "fno_low_breach_last_price": 272.3999938964844
+    "trigger_date": "2026-10-29",
+    "ref_high": 287.2,
+    "ref_low": 270.2,
+    "status": "Active"
   },
   "SNOWMAN": {
     "trigger_date": "2026-10-28",
@@ -347,6 +345,54 @@
     "trigger_date": "2026-10-28",
     "ref_high": 169.0,
     "ref_low": 157.01,
+    "status": "Active"
+  },
+  "TRANSCOR": {
+    "trigger_date": "2026-10-29",
+    "ref_high": 26.5,
+    "ref_low": 24.0,
+    "status": "Active"
+  },
+  "METROGLOBL": {
+    "trigger_date": "2026-10-29",
+    "ref_high": 119.0,
+    "ref_low": 110.01,
+    "status": "Active"
+  },
+  "KAMANWALA": {
+    "trigger_date": "2026-10-29",
+    "ref_high": 17.0,
+    "ref_low": 16.1,
+    "status": "Active"
+  },
+  "JSWHL": {
+    "trigger_date": "2026-10-29",
+    "ref_high": 12370.0,
+    "ref_low": 11100.0,
+    "status": "Active"
+  },
+  "SHILGRAVQ": {
+    "trigger_date": "2026-10-29",
+    "ref_high": 137.9,
+    "ref_low": 125.25,
+    "status": "Active"
+  },
+  "TARACHAND": {
+    "trigger_date": "2026-10-29",
+    "ref_high": 49.0,
+    "ref_low": 44.53,
+    "status": "Active"
+  },
+  "PNBHOUSING": {
+    "trigger_date": "2026-10-29",
+    "ref_high": 1177.3,
+    "ref_low": 1083.1,
+    "status": "Active"
+  },
+  "SUNDRMFAST": {
+    "trigger_date": "2026-10-29",
+    "ref_high": 1083.4,
+    "ref_low": 991.9,
     "status": "Active"
   }
 }
