@@ -4108,5 +4108,37 @@
     "baseline_rsi": 54.77565785996084,
     "mcap_cr": 2800.110994935315,
     "exchange": "NSE"
+  },
+  "SUZLON": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 37.869998931884766,
+    "day_low": 36.33000183105469,
+    "baseline_rsi": 33.59310451974555,
+    "mcap_cr": 50573.0911848816,
+    "exchange": "NSE"
+  },
+  "INDIGO": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 4710.2998046875,
+    "day_low": 4659.2001953125,
+    "baseline_rsi": 42.50322747676038,
+    "mcap_cr": 180766.6340975,
+    "exchange": "NSE"
+  },
+  "VENTIVE": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 550.0999755859375,
+    "day_low": 531.0,
+    "baseline_rsi": 40.65123526829856,
+    "mcap_cr": 12576.21564465,
+    "exchange": "NSE"
+  },
+  "THYROCARE": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 520.7999877929688,
+    "day_low": 498.70001220703125,
+    "baseline_rsi": 52.055182117593056,
+    "mcap_cr": 8204.97198825,
+    "exchange": "NSE"
   }
 }
