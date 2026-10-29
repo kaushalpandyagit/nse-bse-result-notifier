@@ -4099,7 +4099,7 @@
     "baseline_rsi": 40.65469346003371,
     "mcap_cr": 85663.7756775,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T10:18:31.100912",
+    "rsi_down_last_alert": "2026-10-29T11:33:03.064799",
     "rsi_up_last_alert": "2026-10-29T10:48:04.138337"
   },
   "MONARCH": {
@@ -4246,5 +4246,22 @@
     "baseline_rsi": 42.381860733016154,
     "mcap_cr": 2917.9514780944824,
     "exchange": "NSE"
+  },
+  "HORIZONIND": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 49.900001525878906,
+    "day_low": 47.20000076293945,
+    "baseline_rsi": 48.40195710127829,
+    "mcap_cr": 13947.484218819245,
+    "exchange": "NSE"
+  },
+  "DCW": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 45.5,
+    "day_low": 43.709999084472656,
+    "baseline_rsi": 53.72230315131145,
+    "mcap_cr": 1330.5588706804976,
+    "exchange": "NSE",
+    "rsi_up_last_alert": "2026-10-29T11:33:19.851006"
   }
 }
