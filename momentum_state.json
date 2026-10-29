@@ -2779,7 +2779,9 @@
       "box_low": 1159.0999755859375,
       "descending_res": 1268.4445393880208,
       "wedge_contraction": 1.1379480581290762,
-      "rs_rank": 55.4
+      "rs_rank": 55.4,
+      "rectangle_bounce_last_alert": "2026-10-29T07:04:47.737038",
+      "rectangle_bounce_last_price": 1273.4000244140625
     },
     "CEATLTD": {
       "sma50": 3348.863984375,
@@ -13759,7 +13761,9 @@
       "box_low": 1819.0,
       "descending_res": 2319.60009765625,
       "wedge_contraction": 0.939342518057032,
-      "rs_rank": 82.7
+      "rs_rank": 82.7,
+      "near_high_17_22_last_alert": "2026-10-29T07:07:44.442871",
+      "near_high_17_22_last_price": 2026.300048828125
     },
     "SJVN": {
       "sma50": 60.22340019226074,
