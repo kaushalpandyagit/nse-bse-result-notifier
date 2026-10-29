@@ -2367,7 +2367,11 @@
       "box_low": 267.04998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 46.3
+      "rs_rank": 46.3,
+      "vol_breakout_last_alert": "2026-10-29T04:18:40.254150",
+      "vol_breakout_last_price": 329.3999938964844,
+      "zanger_last_alert": "2026-10-29T04:18:40.916635",
+      "zanger_last_price": 329.3999938964844
     },
     "CAMPUS": {
       "sma50": 210.2105990600586,
@@ -9435,7 +9439,9 @@
       "box_low": 270.8500061035156,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 63.8
+      "rs_rank": 63.8,
+      "near_high_17_22_last_alert": "2026-10-29T04:20:08.639275",
+      "near_high_17_22_last_price": 300.75
     },
     "MANORAMA": {
       "sma50": 1921.0260009765625,
@@ -15543,7 +15549,9 @@
       "box_low": 770.2999877929688,
       "descending_res": 880.6998956853694,
       "wedge_contraction": 1.3895333201314766,
-      "rs_rank": 69.5
+      "rs_rank": 69.5,
+      "near_high_17_22_last_alert": "2026-10-29T04:21:22.834987",
+      "near_high_17_22_last_price": 791.8499755859375
     },
     "TRANSRAILL": {
       "sma50": 448.2559991455078,
@@ -16085,7 +16093,9 @@
       "box_low": null,
       "descending_res": 202.7913840157645,
       "wedge_contraction": 1.177062647248353,
-      "rs_rank": 16.2
+      "rs_rank": 16.2,
+      "vol_breakout_last_alert": "2026-10-29T04:21:29.348823",
+      "vol_breakout_last_price": 161.14999389648438
     },
     "VESUVIUS": {
       "sma50": 409.03199951171877,
