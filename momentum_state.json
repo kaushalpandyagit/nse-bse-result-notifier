@@ -2592,8 +2592,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 89.1,
-      "near_high_17_22_last_alert": "2026-10-29T04:52:52.668204",
-      "near_high_17_22_last_price": 2375.0
+      "near_high_17_22_last_alert": "2026-10-29T05:51:19.012483",
+      "near_high_17_22_last_price": 2404.10009765625
     },
     "CARBORUNIV": {
       "sma50": 1142.2839892578124,
@@ -3789,7 +3789,9 @@
       "box_low": 1412.0,
       "descending_res": 1665.4714093889509,
       "wedge_contraction": 1.0027011248660183,
-      "rs_rank": 14.9
+      "rs_rank": 14.9,
+      "vol_breakout_last_alert": "2026-10-29T05:51:35.374029",
+      "vol_breakout_last_price": 1418.0999755859375
     },
     "DATAMATICS": {
       "sma50": 775.8239990234375,
@@ -5646,8 +5648,8 @@
       "descending_res": 630.0,
       "wedge_contraction": 0.9934576154660816,
       "rs_rank": 69.9,
-      "near_high_17_22_last_alert": "2026-10-29T03:55:59.748754",
-      "near_high_17_22_last_price": 511.1000061035156
+      "near_high_17_22_last_alert": "2026-10-29T05:52:07.945211",
+      "near_high_17_22_last_price": 518.0
     },
     "GODFRYPHLP": {
       "sma50": 1934.0660083007813,
@@ -8252,8 +8254,8 @@
       "descending_res": 217.59995651245117,
       "wedge_contraction": 1.0054859821791593,
       "rs_rank": 8.5,
-      "vol_breakout_last_alert": "2026-10-29T04:54:52.545866",
-      "vol_breakout_last_price": 191.8000030517578
+      "vol_breakout_last_alert": "2026-10-29T05:52:53.746652",
+      "vol_breakout_last_price": 189.25
     },
     "JYOTHYLAB": {
       "sma50": 193.16340026855468,
@@ -14648,8 +14650,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 54.4,
-      "resistance_last_alert": "2026-10-29T03:58:31.932160",
-      "resistance_last_price": 410.3999938964844,
+      "resistance_last_alert": "2026-10-29T05:54:36.537545",
+      "resistance_last_price": 405.8999938964844,
       "mtf_last_alert": "2026-10-29T03:58:32.495189",
       "mtf_last_price": 410.3999938964844
     },
@@ -16364,8 +16366,8 @@
       "descending_res": 842.2538639948918,
       "wedge_contraction": 0.8586095644171936,
       "rs_rank": 79.1,
-      "near_high_17_22_last_alert": "2026-10-29T03:59:00.407634",
-      "near_high_17_22_last_price": 756.5499877929688
+      "near_high_17_22_last_alert": "2026-10-29T05:55:03.169130",
+      "near_high_17_22_last_price": 748.2000122070312
     },
     "VOLTAMP": {
       "sma50": 10620.49,
