@@ -235,13 +235,17 @@
     "trigger_date": "2026-10-28",
     "ref_high": 1127.3,
     "ref_low": 1100.0,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-29T03:51:14.127668",
+    "fno_high_breach_last_price": 1106.0
   },
   "PALASHSECU": {
     "trigger_date": "2026-10-28",
     "ref_high": 79.8,
     "ref_low": 77.11,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-29T03:51:15.229847",
+    "fno_high_breach_last_price": 77.6500015258789
   },
   "ITCHOTELS": {
     "trigger_date": "2026-10-27",
@@ -275,7 +279,9 @@
     "trigger_date": "2026-10-28",
     "ref_high": 416.0,
     "ref_low": 405.15,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-29T03:51:17.196064",
+    "fno_high_breach_last_price": 416.20001220703125
   },
   "UMIYA-MRO": {
     "trigger_date": "2026-10-27",
@@ -287,7 +293,9 @@
     "trigger_date": "2026-10-28",
     "ref_high": 281.5,
     "ref_low": 272.8,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-29T03:51:19.187665",
+    "fno_low_breach_last_price": 272.3999938964844
   },
   "SNOWMAN": {
     "trigger_date": "2026-10-28",
@@ -311,7 +319,9 @@
     "trigger_date": "2026-10-28",
     "ref_high": 118.5,
     "ref_low": 115.51,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-29T03:51:22.421997",
+    "fno_low_breach_last_price": 117.44000244140625
   },
   "GATEWAY": {
     "trigger_date": "2026-10-28",
