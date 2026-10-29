@@ -4585,7 +4585,9 @@
       "box_low": 504.79998779296875,
       "descending_res": 569.4000244140625,
       "wedge_contraction": 0.7991033358720461,
-      "rs_rank": 45.4
+      "rs_rank": 45.4,
+      "near_high_17_22_last_alert": "2026-10-29T05:05:39.611637",
+      "near_high_17_22_last_price": 509.70001220703125
     },
     "ELLEN": {
       "sma50": 339.9479992675781,
@@ -9190,8 +9192,8 @@
       "descending_res": 100.60001754760742,
       "wedge_contraction": 0.7320959252826826,
       "rs_rank": 91.9,
-      "near_high_17_22_last_alert": "2026-10-29T03:57:01.609979",
-      "near_high_17_22_last_price": 84.48999786376953
+      "near_high_17_22_last_alert": "2026-10-29T05:07:00.065617",
+      "near_high_17_22_last_price": 85.56999969482422
     },
     "LLOYDSENT": {
       "sma50": 71.96020004272461,
@@ -16104,8 +16106,8 @@
       "descending_res": 202.7913840157645,
       "wedge_contraction": 1.177062647248353,
       "rs_rank": 16.2,
-      "vol_breakout_last_alert": "2026-10-29T04:21:29.348823",
-      "vol_breakout_last_price": 161.14999389648438
+      "vol_breakout_last_alert": "2026-10-29T05:08:54.875766",
+      "vol_breakout_last_price": 158.3699951171875
     },
     "VESUVIUS": {
       "sma50": 409.03199951171877,
@@ -16396,8 +16398,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 42.4,
-      "near_high_17_22_last_alert": "2026-10-29T03:59:01.796444",
-      "near_high_17_22_last_price": 10231.0
+      "near_high_17_22_last_alert": "2026-10-29T05:09:00.856110",
+      "near_high_17_22_last_price": 10370.0
     },
     "VTL": {
       "sma50": 555.6800030517578,
