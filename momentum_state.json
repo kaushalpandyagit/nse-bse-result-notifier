@@ -35,7 +35,9 @@
       "box_low": 427.29998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 38.8
+      "rs_rank": 38.8,
+      "near_high_17_22_last_alert": "2026-10-29T08:32:45.636401",
+      "near_high_17_22_last_price": 440.0
     },
     "AARTIIND": {
       "sma50": 490.10100036621094,
@@ -3876,8 +3878,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 56.3,
-      "near_high_17_22_last_alert": "2026-10-29T07:34:34.858700",
-      "near_high_17_22_last_price": 3963.0
+      "near_high_17_22_last_alert": "2026-10-29T08:33:46.719286",
+      "near_high_17_22_last_price": 4016.89990234375
     },
     "DBL": {
       "sma50": 402.3890002441406,
@@ -5407,7 +5409,9 @@
       "box_low": 138.99000549316406,
       "descending_res": 147.81497955322266,
       "wedge_contraction": 0.9170943261056302,
-      "rs_rank": 54.8
+      "rs_rank": 54.8,
+      "near_high_17_22_last_alert": "2026-10-29T08:34:13.269858",
+      "near_high_17_22_last_price": 144.5800018310547
     },
     "GALLANTT": {
       "sma50": 557.5490020751953,
@@ -6033,7 +6037,9 @@
       "box_low": 1300.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 35.2
+      "rs_rank": 35.2,
+      "rectangle_bounce_last_alert": "2026-10-29T08:34:24.969094",
+      "rectangle_bounce_last_price": 1385.9000244140625
     },
     "GREAVESCOT": {
       "sma50": 200.79180053710937,
@@ -10096,8 +10102,8 @@
       "descending_res": 7306.0,
       "wedge_contraction": 1.0097789465034102,
       "rs_rank": 80.2,
-      "near_high_17_22_last_alert": "2026-10-29T05:21:28.438270",
-      "near_high_17_22_last_price": 6919.0
+      "near_high_17_22_last_alert": "2026-10-29T08:35:31.361227",
+      "near_high_17_22_last_price": 7120.0
     },
     "NATCOPHARM": {
       "sma50": 823.7169506835937,
@@ -10462,8 +10468,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 90.4,
-      "near_high_17_22_last_alert": "2026-10-29T06:55:08.200279",
-      "near_high_17_22_last_price": 19390.0
+      "near_high_17_22_last_alert": "2026-10-29T08:35:38.103999",
+      "near_high_17_22_last_price": 19185.0
     },
     "NEWGEN": {
       "sma50": 493.057998046875,
@@ -14375,7 +14381,9 @@
       "wedge_contraction": null,
       "rs_rank": 81.7,
       "near_high_17_22_last_alert": "2026-10-29T06:37:29.765234",
-      "near_high_17_22_last_price": 1054.300048828125
+      "near_high_17_22_last_price": 1054.300048828125,
+      "rectangle_bounce_last_alert": "2026-10-29T08:36:39.322090",
+      "rectangle_bounce_last_price": 1062.0
     },
     "SUNFLAG": {
       "sma50": 384.822998046875,
@@ -16572,8 +16580,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 80.4,
-      "near_high_17_22_last_alert": "2026-10-29T07:38:47.849571",
-      "near_high_17_22_last_price": 1836.0,
+      "near_high_17_22_last_alert": "2026-10-29T08:37:12.785205",
+      "near_high_17_22_last_price": 1860.4000244140625,
       "rectangle_bounce_last_alert": "2026-10-29T07:55:48.748881",
       "rectangle_bounce_last_price": 1844.0999755859375
     },
