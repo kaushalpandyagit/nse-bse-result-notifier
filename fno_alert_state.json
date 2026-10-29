@@ -201,7 +201,9 @@
     "trigger_date": "2026-10-26",
     "ref_high": 43.69,
     "ref_low": 39.7,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-29T10:08:17.022669",
+    "fno_low_breach_last_price": 39.9900016784668
   },
   "SURYALAXMI": {
     "trigger_date": "2026-10-26",
