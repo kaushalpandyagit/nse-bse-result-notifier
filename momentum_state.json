@@ -73,7 +73,9 @@
       "wedge_contraction": 0.7239553620319058,
       "rs_rank": 38.4,
       "near_high_17_22_last_alert": "2026-10-29T06:05:30.441592",
-      "near_high_17_22_last_price": 454.54998779296875
+      "near_high_17_22_last_price": 454.54998779296875,
+      "rectangle_bounce_last_alert": "2026-10-29T06:33:35.575472",
+      "rectangle_bounce_last_price": 452.54998779296875
     },
     "AARTIPHARM": {
       "sma50": 868.3920007324218,
@@ -10950,8 +10952,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 95.3,
-      "near_high_17_22_last_alert": "2026-10-29T03:57:33.059274",
-      "near_high_17_22_last_price": 1302.5999755859375
+      "near_high_17_22_last_alert": "2026-10-29T06:36:34.823560",
+      "near_high_17_22_last_price": 1286.0
     },
     "PARKHOSPS": {
       "sma50": 267.64399810791014,
@@ -11973,7 +11975,9 @@
       "box_low": 191.0399932861328,
       "descending_res": 205.07500457763672,
       "wedge_contraction": 0.9463297388768982,
-      "rs_rank": 94.7
+      "rs_rank": 94.7,
+      "near_high_17_22_last_alert": "2026-10-29T06:36:52.065103",
+      "near_high_17_22_last_price": 208.35000610351562
     },
     "RAINBOW": {
       "sma50": 1360.77798828125,
@@ -13278,8 +13282,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 92.8,
-      "near_high_17_22_last_alert": "2026-10-29T04:56:40.662793",
-      "near_high_17_22_last_price": 1315.4000244140625
+      "near_high_17_22_last_alert": "2026-10-29T06:37:14.182720",
+      "near_high_17_22_last_price": 1296.0
     },
     "SFL": {
       "sma50": 632.6599975585938,
@@ -14325,7 +14329,9 @@
       "box_low": 978.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 81.7
+      "rs_rank": 81.7,
+      "near_high_17_22_last_alert": "2026-10-29T06:37:29.765234",
+      "near_high_17_22_last_price": 1054.300048828125
     },
     "SUNFLAG": {
       "sma50": 384.822998046875,
@@ -14800,8 +14806,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 50.3,
-      "mtf_last_alert": "2026-10-29T05:22:43.300795",
-      "mtf_last_price": 317.29998779296875
+      "mtf_last_alert": "2026-10-29T06:37:36.077980",
+      "mtf_last_price": 313.8999938964844
     },
     "TATACHEM": {
       "sma50": 634.15,
