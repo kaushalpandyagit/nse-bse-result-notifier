@@ -301,7 +301,9 @@
     "trigger_date": "2026-10-28",
     "ref_high": 38.79,
     "ref_low": 33.4,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-29T08:04:56.741314",
+    "fno_low_breach_last_price": 33.310001373291016
   },
   "NEAGI": {
     "trigger_date": "2026-10-28",
