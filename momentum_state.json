@@ -906,8 +906,8 @@
       "descending_res": 299.45997314453126,
       "wedge_contraction": 0.9414489049125605,
       "rs_rank": 51.2,
-      "near_high_17_22_last_alert": "2026-10-29T03:54:34.818053",
-      "near_high_17_22_last_price": 291.75
+      "near_high_17_22_last_alert": "2026-10-29T09:49:27.608467",
+      "near_high_17_22_last_price": 294.8999938964844
     },
     "ANURAS": {
       "sma50": 1190.732001953125,
@@ -3735,7 +3735,9 @@
       "box_low": 200.74000549316406,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 72.5
+      "rs_rank": 72.5,
+      "zanger_last_alert": "2026-10-29T09:50:13.564945",
+      "zanger_last_price": 227.1300048828125
     },
     "CYIENT": {
       "sma50": 1088.0420043945312,
@@ -4356,8 +4358,8 @@
       "descending_res": 2010.7799682617188,
       "wedge_contraction": 1.2347338972772224,
       "rs_rank": 76.8,
-      "vol_breakout_last_alert": "2026-10-29T08:06:21.987056",
-      "vol_breakout_last_price": 1681.199951171875
+      "vol_breakout_last_alert": "2026-10-29T09:50:24.547925",
+      "vol_breakout_last_price": 1657.9000244140625
     },
     "EDELWEISS": {
       "sma50": 130.9731996154785,
@@ -6085,7 +6087,9 @@
       "wedge_contraction": null,
       "rs_rank": 71.0,
       "rectangle_bounce_last_alert": "2026-10-29T09:35:25.248754",
-      "rectangle_bounce_last_price": 185.39999389648438
+      "rectangle_bounce_last_price": 185.39999389648438,
+      "sos_pullback_curl_last_alert": "2026-10-29T09:50:56.275948",
+      "sos_pullback_curl_last_price": 190.97999572753906
     },
     "GRINDWELL": {
       "sma50": 1957.1340063476562,
@@ -8636,8 +8640,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 42.2,
-      "rectangle_bounce_last_alert": "2026-10-29T08:07:48.695523",
-      "rectangle_bounce_last_price": 1602.0999755859375
+      "rectangle_bounce_last_alert": "2026-10-29T09:51:38.564153",
+      "rectangle_bounce_last_price": 1626.199951171875
     },
     "KIRLOSENG": {
       "sma50": 2119.7440014648437,
@@ -11501,7 +11505,9 @@
       "box_low": 1051.9000244140625,
       "descending_res": 1085.6497802734375,
       "wedge_contraction": 1.3715431235140594,
-      "rs_rank": 70.1
+      "rs_rank": 70.1,
+      "vol_breakout_last_alert": "2026-10-29T09:52:27.147541",
+      "vol_breakout_last_price": 1111.0
     },
     "PNCINFRA": {
       "sma50": 158.79199920654298,
@@ -12746,8 +12752,8 @@
       "descending_res": 17.808571406773158,
       "wedge_contraction": 1.1061601985342413,
       "rs_rank": 3.4,
-      "vol_breakout_last_alert": "2026-10-29T06:55:54.466974",
-      "vol_breakout_last_price": 18.790000915527344
+      "vol_breakout_last_alert": "2026-10-29T09:52:48.683382",
+      "vol_breakout_last_price": 19.040000915527344
     },
     "RRKABEL": {
       "sma50": 2568.04,
