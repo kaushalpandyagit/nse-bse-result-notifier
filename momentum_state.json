@@ -2371,7 +2371,9 @@
       "vol_breakout_last_alert": "2026-10-29T04:18:40.254150",
       "vol_breakout_last_price": 329.3999938964844,
       "zanger_last_alert": "2026-10-29T04:18:40.916635",
-      "zanger_last_price": 329.3999938964844
+      "zanger_last_price": 329.3999938964844,
+      "mtf_last_alert": "2026-10-29T04:33:17.535379",
+      "mtf_last_price": 335.8999938964844
     },
     "CAMPUS": {
       "sma50": 210.2105990600586,
@@ -5785,7 +5787,9 @@
       "wedge_contraction": 1.0675743530377373,
       "rs_rank": 49.0,
       "near_high_17_22_last_alert": "2026-10-29T03:56:03.176863",
-      "near_high_17_22_last_price": 212.5800018310547
+      "near_high_17_22_last_price": 212.5800018310547,
+      "rectangle_bounce_last_alert": "2026-10-29T04:34:14.368219",
+      "rectangle_bounce_last_price": 214.1699981689453
     },
     "GOLDIAM": {
       "sma50": 327.64499938964843,
@@ -10021,7 +10025,9 @@
       "box_low": 32.70000076293945,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 41.6
+      "rs_rank": 41.6,
+      "resistance_last_alert": "2026-10-29T04:35:27.107234",
+      "resistance_last_price": 35.27000045776367
     },
     "MTARTECH": {
       "sma50": 7194.92,
