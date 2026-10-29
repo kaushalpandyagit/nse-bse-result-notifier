@@ -4918,8 +4918,8 @@
       "descending_res": 69.33052825927734,
       "wedge_contraction": 0.8772898240127063,
       "rs_rank": 59.5,
-      "near_high_17_22_last_alert": "2026-10-29T04:05:48.865969",
-      "near_high_17_22_last_price": 65.75
+      "near_high_17_22_last_alert": "2026-10-29T05:35:32.612382",
+      "near_high_17_22_last_price": 66.41000366210938
     },
     "ERIS": {
       "sma50": 1249.517998046875,
@@ -16730,8 +16730,8 @@
       "descending_res": 669.1501116071429,
       "wedge_contraction": 1.19021728989756,
       "rs_rank": 77.2,
-      "near_high_17_22_last_alert": "2026-10-29T03:59:07.287771",
-      "near_high_17_22_last_price": 636.3499755859375
+      "near_high_17_22_last_alert": "2026-10-29T05:40:00.015045",
+      "near_high_17_22_last_price": 646.0
     },
     "WHIRLPOOL": {
       "sma50": 810.6300024414063,
@@ -16952,8 +16952,10 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 54.6,
-      "mtf_last_alert": "2026-10-29T03:59:12.350188",
-      "mtf_last_price": 499.6499938964844
+      "mtf_last_alert": "2026-10-29T05:40:06.703809",
+      "mtf_last_price": 508.1499938964844,
+      "resistance_last_alert": "2026-10-29T05:40:06.153332",
+      "resistance_last_price": 508.1499938964844
     },
     "ZENTEC": {
       "sma50": 1701.112001953125,
