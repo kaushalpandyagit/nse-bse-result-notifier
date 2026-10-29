@@ -3106,8 +3106,8 @@
       "descending_res": 253.9136297052557,
       "wedge_contraction": 0.7489640783389095,
       "rs_rank": 84.4,
-      "near_high_17_22_last_alert": "2026-10-29T03:55:18.474277",
-      "near_high_17_22_last_price": 232.0
+      "near_high_17_22_last_alert": "2026-10-29T06:52:44.561721",
+      "near_high_17_22_last_price": 234.47999572753906
     },
     "CHALET": {
       "sma50": 856.4960034179687,
@@ -4337,7 +4337,9 @@
       "box_low": 1681.9000244140625,
       "descending_res": 2010.7799682617188,
       "wedge_contraction": 1.2347338972772224,
-      "rs_rank": 76.8
+      "rs_rank": 76.8,
+      "vol_breakout_last_alert": "2026-10-29T06:53:05.759543",
+      "vol_breakout_last_price": 1662.699951171875
     },
     "EDELWEISS": {
       "sma50": 130.9731996154785,
@@ -10442,8 +10444,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 90.4,
-      "near_high_17_22_last_alert": "2026-10-29T05:21:35.893207",
-      "near_high_17_22_last_price": 19635.0
+      "near_high_17_22_last_alert": "2026-10-29T06:55:08.200279",
+      "near_high_17_22_last_price": 19390.0
     },
     "NEWGEN": {
       "sma50": 493.057998046875,
@@ -12629,7 +12631,9 @@
       "wedge_contraction": 1.1389438436548647,
       "rs_rank": 34.1,
       "mtf_last_alert": "2026-10-29T06:26:58.678542",
-      "mtf_last_price": 458.0
+      "mtf_last_price": 458.0,
+      "rectangle_bounce_last_alert": "2026-10-29T06:55:52.783607",
+      "rectangle_bounce_last_price": 453.0
     },
     "RPOWER": {
       "sma50": 20.498200035095216,
@@ -12665,7 +12669,9 @@
       "box_low": null,
       "descending_res": 17.808571406773158,
       "wedge_contraction": 1.1061601985342413,
-      "rs_rank": 3.4
+      "rs_rank": 3.4,
+      "vol_breakout_last_alert": "2026-10-29T06:55:54.466974",
+      "vol_breakout_last_price": 18.790000915527344
     },
     "RRKABEL": {
       "sma50": 2568.04,

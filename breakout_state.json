@@ -177,8 +177,8 @@
     "spread_last_price": 3.699995561079546
   },
   "arb_PRADPME": {
-    "spread_last_alert": "2026-10-29T03:59:31.862395",
-    "spread_last_price": 2.9880478087649402
+    "spread_last_alert": "2026-10-29T06:57:33.875213",
+    "spread_last_price": 2.8670467166056297
   },
   "arb_BENGALASM": {
     "spread_last_alert": "2026-10-23T05:09:52.173506",
@@ -355,8 +355,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-29T05:45:47.896238",
     "rsi_up_last_alert": "2026-10-29T06:30:25.246699",
-    "price_low_last_alert": "2026-10-29T05:01:02.784386",
-    "price_low_last_price": 777.9000244140625
+    "price_low_last_alert": "2026-10-29T06:45:43.624705",
+    "price_low_last_price": 785.9000244140625
   },
   "SEJALLTD": {
     "result_date": "2026-10-15T00:00:00",
@@ -376,7 +376,7 @@
     "baseline_rsi": 60.29070931731652,
     "mcap_cr": 55.63523728129149,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:45:49.323310",
+    "rsi_down_last_alert": "2026-10-29T06:45:45.361331",
     "rsi_up_last_alert": "2026-10-16T03:46:16.732055",
     "price_low_last_alert": "2026-10-29T04:45:45.312088",
     "price_low_last_price": 5.639999866485596
@@ -389,7 +389,7 @@
     "mcap_cr": 249080.35129880274,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-15T08:46:31.277048",
-    "rsi_down_last_alert": "2026-10-29T05:45:50.085060",
+    "rsi_down_last_alert": "2026-10-29T06:45:46.396337",
     "price_low_last_alert": "2026-10-29T05:01:05.356177",
     "price_low_last_price": 1181.4000244140625
   },
@@ -400,7 +400,7 @@
     "baseline_rsi": 53.9337629114403,
     "mcap_cr": 5818.824203498837,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:45:50.831794",
+    "rsi_down_last_alert": "2026-10-29T06:45:47.396250",
     "rsi_up_last_alert": "2026-10-22T10:01:17.633044",
     "price_low_last_alert": "2026-10-29T04:01:09.746829",
     "price_low_last_price": 150.41000366210938
@@ -416,7 +416,7 @@
     "baseline_rsi": 47.5364195582079,
     "mcap_cr": 111090.854332975,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:45:52.177834",
+    "rsi_up_last_alert": "2026-10-29T06:45:48.868775",
     "price_high_last_alert": "2026-10-21T05:01:29.321391",
     "price_high_last_price": 859.2000122070312,
     "rsi_down_last_alert": "2026-10-26T11:01:16.972673"
@@ -455,7 +455,7 @@
     "rsi_up_last_alert": "2026-10-19T07:01:15.408563",
     "price_low_last_alert": "2026-10-28T04:01:11.684166",
     "price_low_last_price": 22.049999237060547,
-    "rsi_down_last_alert": "2026-10-29T05:45:53.797870"
+    "rsi_down_last_alert": "2026-10-29T06:45:51.001441"
   },
   "DBCORP": {
     "result_date": "2026-10-15T00:00:00",
@@ -465,7 +465,7 @@
     "mcap_cr": 3026.942660579791,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-15T08:16:20.548205",
-    "rsi_down_last_alert": "2026-10-29T05:45:54.563979",
+    "rsi_down_last_alert": "2026-10-29T06:45:52.081589",
     "price_low_last_alert": "2026-10-28T07:45:56.945359",
     "price_low_last_price": 148.8000030517578
   },
@@ -490,7 +490,7 @@
     "rsi_up_last_alert": "2026-10-15T08:46:38.154540",
     "price_high_last_alert": "2026-10-27T11:01:29.442950",
     "price_high_last_price": 187.44000244140625,
-    "rsi_down_last_alert": "2026-10-29T05:45:55.495735"
+    "rsi_down_last_alert": "2026-10-29T06:45:53.412798"
   },
   "KARURVYSYA": {
     "result_date": "2026-10-15T00:00:00",
@@ -510,7 +510,7 @@
     "baseline_rsi": 54.14343776241393,
     "mcap_cr": 103591.19257422494,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:45:56.405529",
+    "rsi_down_last_alert": "2026-10-29T06:45:54.650313",
     "rsi_up_last_alert": "2026-10-16T08:46:31.082333",
     "price_low_last_alert": "2026-10-27T06:01:20.219126",
     "price_low_last_price": 2273.5
@@ -522,7 +522,7 @@
     "baseline_rsi": 65.93129046145098,
     "mcap_cr": 1099.5923865,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:45:57.154043",
+    "rsi_down_last_alert": "2026-10-29T06:45:55.655399",
     "rsi_up_last_alert": "2026-10-16T06:46:36.921604",
     "price_low_last_alert": "2026-10-26T03:46:29.187473",
     "price_low_last_price": 550.0
@@ -534,7 +534,7 @@
     "baseline_rsi": 52.16005751998441,
     "mcap_cr": 3720.1915833618164,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:45:57.958706",
+    "rsi_down_last_alert": "2026-10-29T06:45:56.679138",
     "price_low_last_alert": "2026-10-29T04:01:14.623301",
     "price_low_last_price": 355.3500061035156
   },
@@ -548,7 +548,7 @@
     "rsi_up_last_alert": "2026-10-19T08:46:30.167219",
     "price_high_last_alert": "2026-10-16T03:46:25.739737",
     "price_high_last_price": 201.13999938964844,
-    "rsi_down_last_alert": "2026-10-29T05:45:58.751104",
+    "rsi_down_last_alert": "2026-10-29T06:45:57.696788",
     "price_low_last_alert": "2026-10-28T05:45:58.582038",
     "price_low_last_price": 189.5
   },
@@ -566,7 +566,7 @@
     "rsi_up_last_alert": "2026-10-19T05:46:25.698252",
     "price_low_last_alert": "2026-10-28T07:15:56.647329",
     "price_low_last_price": 75.08000183105469,
-    "rsi_down_last_alert": "2026-10-29T05:45:59.531029",
+    "rsi_down_last_alert": "2026-10-29T06:45:58.693850",
     "price_high_last_alert": "2026-10-16T05:29:53.350102",
     "price_high_last_price": 80.33000183105469
   },
@@ -580,7 +580,7 @@
     "rsi_down_last_alert": "2026-10-28T03:46:13.778673",
     "price_high_last_alert": "2026-10-29T06:16:09.949978",
     "price_high_last_price": 189.52999877929688,
-    "rsi_up_last_alert": "2026-10-29T05:46:00.341427"
+    "rsi_up_last_alert": "2026-10-29T06:45:59.718052"
   },
   "HDFCLIFE": {
     "result_date": "2026-10-15T00:00:00",
@@ -589,7 +589,7 @@
     "baseline_rsi": 53.49057227559344,
     "mcap_cr": 119582.16313665781,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:01.100131",
+    "rsi_down_last_alert": "2026-10-29T06:46:00.732025",
     "price_low_last_alert": "2026-10-29T06:01:08.578420",
     "price_low_last_price": 521.5999755859375,
     "rsi_up_last_alert": "2026-10-19T03:46:37.594642",
@@ -644,7 +644,7 @@
     "price_high_last_alert": "2026-10-19T05:16:03.956485",
     "price_high_last_price": 344.5,
     "rsi_up_last_alert": "2026-10-21T03:46:30.410288",
-    "rsi_down_last_alert": "2026-10-29T05:46:02.509207",
+    "rsi_down_last_alert": "2026-10-29T06:46:02.498610",
     "price_low_last_alert": "2026-10-29T06:30:33.758139",
     "price_low_last_price": 329.75
   },
@@ -659,7 +659,7 @@
     "baseline_rsi": 35.98389299651974,
     "mcap_cr": 138.70413047087098,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:03.629316",
+    "rsi_down_last_alert": "2026-10-29T06:46:03.869317",
     "rsi_up_last_alert": "2026-10-28T04:16:05.884442",
     "price_high_last_alert": "2026-10-21T03:46:31.587558",
     "price_high_last_price": 9.979999542236328,
@@ -683,7 +683,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T04:15:48.053662",
     "price_low_last_price": 212.10000610351562,
-    "rsi_down_last_alert": "2026-10-29T05:46:04.587444"
+    "rsi_down_last_alert": "2026-10-29T06:46:05.302918"
   },
   "MWL": {
     "result_date": "2026-10-16T00:00:00",
@@ -692,7 +692,7 @@
     "baseline_rsi": 45.49226239617927,
     "mcap_cr": 1202.2832699241103,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:06.041602",
+    "rsi_down_last_alert": "2026-10-29T06:46:06.338467",
     "price_low_last_alert": "2026-10-29T05:46:05.452219",
     "price_low_last_price": 38.41999816894531
   },
@@ -726,7 +726,7 @@
     "baseline_rsi": 59.84842928849905,
     "mcap_cr": 3512.396079939551,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:07.334905",
+    "rsi_down_last_alert": "2026-10-29T06:46:08.016822",
     "price_low_last_alert": "2026-10-28T05:29:50.648237",
     "price_low_last_price": 642.75
   },
@@ -739,7 +739,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T03:46:31.784253",
     "price_low_last_price": 525.0,
-    "rsi_down_last_alert": "2026-10-29T05:46:08.516745"
+    "rsi_down_last_alert": "2026-10-29T06:46:09.526070"
   },
   "UJJIVANSFB": {
     "result_date": "2026-10-16T00:00:00",
@@ -748,7 +748,7 @@
     "baseline_rsi": 46.92015534421145,
     "mcap_cr": 12479.446136798797,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:09.282732",
+    "rsi_down_last_alert": "2026-10-29T06:46:10.596768",
     "price_low_last_alert": "2026-10-29T03:46:33.071524",
     "price_low_last_price": 54.9900016784668,
     "rsi_up_last_alert": "2026-10-19T05:01:25.888045"
@@ -772,7 +772,7 @@
     "baseline_rsi": 50.83240859678935,
     "mcap_cr": 14108.818865426447,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:10.246164",
+    "rsi_down_last_alert": "2026-10-29T06:46:11.783778",
     "price_high_last_alert": "2026-10-19T03:46:47.665420",
     "price_high_last_price": 221.6699981689453,
     "rsi_up_last_alert": "2026-10-19T03:46:48.249775",
@@ -786,7 +786,7 @@
     "baseline_rsi": 39.46513531716119,
     "mcap_cr": 4093.589449518396,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:46:10.996677",
+    "rsi_up_last_alert": "2026-10-29T06:46:12.869065",
     "rsi_down_last_alert": "2026-10-29T06:30:38.860728",
     "price_low_last_alert": "2026-10-29T03:46:35.926440",
     "price_low_last_price": 352.3500061035156
@@ -800,7 +800,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T06:01:19.059765",
     "price_low_last_price": 357.79998779296875,
-    "rsi_down_last_alert": "2026-10-29T05:46:11.756522"
+    "rsi_down_last_alert": "2026-10-29T06:46:13.890143"
   },
   "INDORAMA": {
     "result_date": "2026-10-16T00:00:00",
@@ -811,7 +811,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-28T10:16:11.104058",
     "price_low_last_price": 74.12999725341797,
-    "rsi_down_last_alert": "2026-10-29T05:46:12.544500"
+    "rsi_down_last_alert": "2026-10-29T06:46:14.899779"
   },
   "JAYNECOIND": {
     "result_date": "2026-10-16T00:00:00",
@@ -820,7 +820,7 @@
     "baseline_rsi": 61.65444011129658,
     "mcap_cr": 9651.722693522574,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:13.324504",
+    "rsi_down_last_alert": "2026-10-29T06:46:15.972045",
     "price_low_last_alert": "2026-10-28T09:46:32.427667",
     "price_low_last_price": 89.5199966430664
   },
@@ -844,7 +844,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-27T09:46:12.865164",
     "price_low_last_price": 77.3499984741211,
-    "rsi_down_last_alert": "2026-10-29T05:46:14.216315"
+    "rsi_down_last_alert": "2026-10-29T06:46:17.162414"
   },
   "SWSOLAR": {
     "result_date": "2026-10-16T00:00:00",
@@ -855,7 +855,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-28T09:46:35.467399",
     "price_low_last_price": 144.08999633789062,
-    "rsi_down_last_alert": "2026-10-29T05:46:14.980095",
+    "rsi_down_last_alert": "2026-10-29T06:46:18.214677",
     "rsi_up_last_alert": "2026-10-20T07:46:35.058120"
   },
   "CARRARO": {
@@ -868,7 +868,7 @@
     "price_low_last_alert": "2026-10-29T06:30:41.580567",
     "price_low_last_price": 489.6499938964844,
     "rsi_down_last_alert": "2026-10-26T08:46:34.302177",
-    "rsi_up_last_alert": "2026-10-29T05:46:16.227464"
+    "rsi_up_last_alert": "2026-10-29T06:46:19.622449"
   },
   "URBANCO": {
     "result_date": "2026-10-16T00:00:00",
@@ -877,9 +877,9 @@
     "baseline_rsi": 45.849646884241956,
     "mcap_cr": 23445.908973148387,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-28T07:01:29.643256",
-    "price_low_last_price": 145.07000732421875,
-    "rsi_down_last_alert": "2026-10-29T05:46:16.968819"
+    "price_low_last_alert": "2026-10-29T06:46:20.614804",
+    "price_low_last_price": 147.2899932861328,
+    "rsi_down_last_alert": "2026-10-29T06:46:21.247116"
   },
   "PNB": {
     "result_date": "2026-10-16T00:00:00",
@@ -897,7 +897,7 @@
     "mcap_cr": 61921.4609611,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-19T03:46:59.058735",
-    "rsi_down_last_alert": "2026-10-29T05:46:17.918780",
+    "rsi_down_last_alert": "2026-10-29T06:46:22.456791",
     "price_low_last_alert": "2026-10-29T04:01:26.617508",
     "price_low_last_price": 1594.199951171875
   },
@@ -911,7 +911,7 @@
     "rsi_up_last_alert": "2026-10-20T07:46:38.812221",
     "price_low_last_alert": "2026-10-28T07:29:55.657360",
     "price_low_last_price": 4092.0,
-    "rsi_down_last_alert": "2026-10-29T05:46:18.719274"
+    "rsi_down_last_alert": "2026-10-29T06:46:23.468630"
   },
   "IXIGO": {
     "result_date": "2026-10-19T00:00:00",
@@ -923,7 +923,7 @@
     "price_high_last_alert": "2026-10-19T10:01:37.291168",
     "price_high_last_price": 157.0800018310547,
     "rsi_up_last_alert": "2026-10-21T03:46:46.457591",
-    "rsi_down_last_alert": "2026-10-29T05:46:19.910004",
+    "rsi_down_last_alert": "2026-10-29T06:46:24.889254",
     "price_low_last_alert": "2026-10-28T03:46:37.083243",
     "price_low_last_price": 140.8000030517578
   },
@@ -937,7 +937,7 @@
     "rsi_up_last_alert": "2026-10-19T07:01:27.123730",
     "price_low_last_alert": "2026-10-28T07:46:23.231780",
     "price_low_last_price": 408.8500061035156,
-    "rsi_down_last_alert": "2026-10-29T05:46:20.733553"
+    "rsi_down_last_alert": "2026-10-29T06:46:25.912032"
   },
   "CENTRALBK": {
     "result_date": "2026-10-19T00:00:00",
@@ -949,7 +949,7 @@
     "rsi_up_last_alert": "2026-10-19T03:47:06.118147",
     "price_low_last_alert": "2026-10-29T04:46:29.750730",
     "price_low_last_price": 29.059999465942383,
-    "rsi_down_last_alert": "2026-10-29T05:46:21.967552"
+    "rsi_down_last_alert": "2026-10-29T06:46:27.521876"
   },
   "KROSS": {
     "result_date": "2026-10-19T00:00:00",
@@ -998,7 +998,7 @@
     "baseline_rsi": 52.28314618687073,
     "mcap_cr": 19218.595015,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:23.709098",
+    "rsi_down_last_alert": "2026-10-29T06:46:29.561814",
     "price_low_last_alert": "2026-10-29T06:16:33.525922",
     "price_low_last_price": 1090.5999755859375
   },
@@ -1009,7 +1009,7 @@
     "baseline_rsi": 70.51848922312021,
     "mcap_cr": 657.2719513657814,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:25.431570",
+    "rsi_down_last_alert": "2026-10-29T06:46:31.022643",
     "rsi_up_last_alert": "2026-10-21T03:46:51.288769",
     "price_low_last_alert": "2026-10-29T05:46:24.955683",
     "price_low_last_price": 50.15999984741211
@@ -1023,7 +1023,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T05:46:26.738132",
     "price_low_last_price": 109.08000183105469,
-    "rsi_down_last_alert": "2026-10-29T05:46:27.224701"
+    "rsi_down_last_alert": "2026-10-29T06:46:32.513210"
   },
   "ULTRACEMCO": {
     "result_date": "2026-10-19T00:00:00",
@@ -1032,7 +1032,7 @@
     "baseline_rsi": 43.875059768280956,
     "mcap_cr": 314090.4227582,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:46:27.989214",
+    "rsi_up_last_alert": "2026-10-29T06:46:33.630714",
     "rsi_down_last_alert": "2026-10-20T10:47:13.778375",
     "price_low_last_alert": "2026-10-19T09:01:33.368464",
     "price_low_last_price": 10620.0
@@ -1046,7 +1046,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-28T09:46:54.952756",
     "price_low_last_price": 15.59000015258789,
-    "rsi_down_last_alert": "2026-10-29T05:46:28.787834"
+    "rsi_down_last_alert": "2026-10-29T06:46:34.711103"
   },
   "HINDZINC": {
     "result_date": "2026-10-19T00:00:00",
@@ -1058,7 +1058,7 @@
     "price_high_last_alert": "2026-10-21T03:46:55.714118",
     "price_high_last_price": 555.2000122070312,
     "rsi_up_last_alert": "2026-10-21T05:46:57.739796",
-    "rsi_down_last_alert": "2026-10-29T05:46:30.047046",
+    "rsi_down_last_alert": "2026-10-29T06:46:36.331894",
     "price_low_last_alert": "2026-10-29T05:30:04.384463",
     "price_low_last_price": 512.7999877929688
   },
@@ -1071,7 +1071,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T05:46:30.788537",
     "price_low_last_price": 1606.0,
-    "rsi_down_last_alert": "2026-10-29T05:46:31.285061"
+    "rsi_down_last_alert": "2026-10-29T06:46:37.339512"
   },
   "LTTS": {
     "result_date": "2026-10-19T00:00:00",
@@ -1089,9 +1089,9 @@
     "baseline_rsi": 50.38200943548752,
     "mcap_cr": 8845.0700352,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-29T04:46:42.947349",
-    "price_low_last_price": 4937.0,
-    "rsi_down_last_alert": "2026-10-29T05:46:32.213786"
+    "price_low_last_alert": "2026-10-29T06:46:38.641934",
+    "price_low_last_price": 4875.0,
+    "rsi_down_last_alert": "2026-10-29T06:46:39.256748"
   },
   "AYE": {
     "result_date": "2026-10-21T00:00:00",
@@ -1101,7 +1101,7 @@
     "mcap_cr": 3390.875897855148,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-29T03:46:59.758474",
-    "rsi_up_last_alert": "2026-10-29T05:46:32.956049",
+    "rsi_up_last_alert": "2026-10-29T06:46:40.256734",
     "price_low_last_alert": "2026-10-29T04:46:44.578144",
     "price_low_last_price": 134.2899932861328
   },
@@ -1132,7 +1132,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T05:16:12.235383",
     "price_low_last_price": 500.45001220703125,
-    "rsi_down_last_alert": "2026-10-29T05:46:34.958957"
+    "rsi_down_last_alert": "2026-10-29T06:46:42.024905"
   },
   "VMM": {
     "result_date": "2026-10-21T00:00:00",
@@ -1141,7 +1141,7 @@
     "baseline_rsi": 27.33449369046795,
     "mcap_cr": 41863.45028404203,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:46:36.149348",
+    "rsi_up_last_alert": "2026-10-29T06:46:43.571560",
     "rsi_down_last_alert": "2026-10-26T09:01:40.347929",
     "price_low_last_alert": "2026-10-26T05:16:31.311755",
     "price_low_last_price": 86.58000183105469
@@ -1153,7 +1153,7 @@
     "baseline_rsi": 55.94468927415723,
     "mcap_cr": 4102.912420869495,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:36.946815",
+    "rsi_down_last_alert": "2026-10-29T06:46:44.757212",
     "rsi_up_last_alert": "2026-10-21T09:01:37.650761",
     "price_low_last_alert": "2026-10-29T04:01:38.572558",
     "price_low_last_price": 182.47999572753906
@@ -1168,7 +1168,7 @@
     "price_high_last_alert": "2026-10-22T09:16:23.079940",
     "price_high_last_price": 333.0,
     "rsi_up_last_alert": "2026-10-23T05:01:55.715110",
-    "rsi_down_last_alert": "2026-10-29T05:46:38.493490",
+    "rsi_down_last_alert": "2026-10-29T06:46:46.204074",
     "price_low_last_alert": "2026-10-29T05:46:38.022835",
     "price_low_last_price": 297.0
   },
@@ -1182,9 +1182,9 @@
     "price_high_last_alert": "2026-10-21T10:16:27.793478",
     "price_high_last_price": 233.22999572753906,
     "rsi_up_last_alert": "2026-10-23T09:16:28.347681",
-    "rsi_down_last_alert": "2026-10-29T05:46:39.690986",
-    "price_low_last_alert": "2026-10-29T06:01:41.544592",
-    "price_low_last_price": 197.0
+    "rsi_down_last_alert": "2026-10-29T06:46:48.398441",
+    "price_low_last_alert": "2026-10-29T06:46:47.768323",
+    "price_low_last_price": 213.0
   },
   "ABSLAMC": {
     "result_date": "2026-10-21T00:00:00",
@@ -1194,7 +1194,7 @@
     "mcap_cr": 26583.447483257263,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-22T18:51:53.945460",
-    "rsi_down_last_alert": "2026-10-29T05:46:41.258204",
+    "rsi_down_last_alert": "2026-10-29T06:46:49.954406",
     "price_low_last_alert": "2026-10-29T04:16:02.056527",
     "price_low_last_price": 857.5499877929688
   },
@@ -1208,7 +1208,7 @@
     "rsi_down_last_alert": "2026-10-26T08:46:58.461397",
     "price_low_last_alert": "2026-10-26T08:46:57.946226",
     "price_low_last_price": 1234.9000244140625,
-    "rsi_up_last_alert": "2026-10-29T05:46:42.023780",
+    "rsi_up_last_alert": "2026-10-29T06:46:50.960627",
     "price_high_last_alert": "2026-10-29T05:16:16.166135",
     "price_high_last_price": 1302.5999755859375
   },
@@ -1233,7 +1233,7 @@
     "baseline_rsi": 37.58455565166012,
     "mcap_cr": 17197.4934,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:46:42.979270",
+    "rsi_up_last_alert": "2026-10-29T06:46:52.161693",
     "rsi_down_last_alert": "2026-10-23T08:47:07.213867",
     "price_low_last_alert": "2026-10-23T04:47:32.889600",
     "price_low_last_price": 15704.0
@@ -1246,7 +1246,7 @@
     "mcap_cr": 67580.5737,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-22T06:47:42.930791",
-    "rsi_up_last_alert": "2026-10-29T05:46:44.199287",
+    "rsi_up_last_alert": "2026-10-29T06:46:53.658526",
     "price_low_last_alert": "2026-10-22T06:47:42.349211",
     "price_low_last_price": 2245.0
   },
@@ -1261,7 +1261,7 @@
     "baseline_rsi": 31.455047855333845,
     "mcap_cr": 5986.216095,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:46:45.406605",
+    "rsi_up_last_alert": "2026-10-29T06:46:55.022102",
     "rsi_down_last_alert": "2026-10-23T07:47:15.984121",
     "price_low_last_alert": "2026-10-23T06:02:04.411518",
     "price_low_last_price": 864.9000244140625,
@@ -1275,7 +1275,7 @@
     "baseline_rsi": 32.24675973194435,
     "mcap_cr": 2425.952411,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:46:46.598216",
+    "rsi_up_last_alert": "2026-10-29T06:46:56.584012",
     "price_low_last_alert": "2026-10-27T09:02:03.313812",
     "price_low_last_price": 1365.800048828125,
     "rsi_down_last_alert": "2026-10-27T03:47:28.997754"
@@ -1307,7 +1307,7 @@
     "baseline_rsi": 32.61790423451768,
     "mcap_cr": 1481.2,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:48.868491",
+    "rsi_down_last_alert": "2026-10-29T06:46:58.376899",
     "price_low_last_alert": "2026-10-29T06:01:51.079029",
     "price_low_last_price": 6900.0,
     "rsi_up_last_alert": "2026-10-29T04:01:47.530891"
@@ -1322,7 +1322,7 @@
     "price_low_last_alert": "2026-10-29T05:01:43.781570",
     "price_low_last_price": 408.5,
     "rsi_down_last_alert": "2026-10-29T04:16:07.220262",
-    "rsi_up_last_alert": "2026-10-29T05:46:50.054749"
+    "rsi_up_last_alert": "2026-10-29T06:47:00.044439"
   },
   "IGIL": {
     "result_date": "2026-10-21T00:00:00",
@@ -1343,7 +1343,7 @@
     "baseline_rsi": 41.89894783922748,
     "mcap_cr": 170.61000537872314,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:51.442552",
+    "rsi_down_last_alert": "2026-10-29T06:47:01.741083",
     "price_low_last_alert": "2026-10-29T06:31:01.446307",
     "price_low_last_price": 6.989999771118164,
     "rsi_up_last_alert": "2026-10-27T05:02:19.095509"
@@ -1408,7 +1408,7 @@
     "rsi_down_last_alert": "2026-10-23T04:47:46.885027",
     "price_high_last_alert": "2026-10-29T06:17:04.254935",
     "price_high_last_price": 1951.199951171875,
-    "rsi_up_last_alert": "2026-10-29T05:46:53.140053"
+    "rsi_up_last_alert": "2026-10-29T06:47:03.984955"
   },
   "MAHSCOOTER": {
     "result_date": "2026-10-22T00:00:00",
@@ -1417,7 +1417,7 @@
     "baseline_rsi": 40.002160926179386,
     "mcap_cr": 14039.995788,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:53.939574",
+    "rsi_down_last_alert": "2026-10-29T06:47:05.103889",
     "rsi_up_last_alert": "2026-10-22T10:47:17.689910",
     "price_low_last_alert": "2026-10-27T08:47:01.553235",
     "price_low_last_price": 11685.0
@@ -1444,7 +1444,7 @@
     "mcap_cr": 4704.506238157288,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T07:47:26.876192",
-    "rsi_up_last_alert": "2026-10-29T05:46:55.159828",
+    "rsi_up_last_alert": "2026-10-29T06:47:06.818574",
     "price_low_last_alert": "2026-10-29T06:31:04.315038",
     "price_low_last_price": 57.650001525878906
   },
@@ -1456,7 +1456,7 @@
     "mcap_cr": 108.46499919891357,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-28T05:46:55.886697",
-    "rsi_down_last_alert": "2026-10-29T05:46:56.330093",
+    "rsi_down_last_alert": "2026-10-29T06:47:08.284105",
     "price_low_last_alert": "2026-10-23T10:16:38.336884",
     "price_low_last_price": 28.40999984741211
   },
@@ -1467,7 +1467,7 @@
     "baseline_rsi": 30.3903959254654,
     "mcap_cr": 6178.074950841058,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:46:57.607017",
+    "rsi_up_last_alert": "2026-10-29T06:47:09.816350",
     "price_high_last_alert": "2026-10-28T04:47:05.589912",
     "price_high_last_price": 200.27000427246094,
     "rsi_down_last_alert": "2026-10-23T06:16:31.099700"
@@ -1479,7 +1479,7 @@
     "baseline_rsi": 42.465644125669755,
     "mcap_cr": 15095.009404436529,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:46:58.803779",
+    "rsi_down_last_alert": "2026-10-29T06:47:11.348023",
     "price_high_last_alert": "2026-10-22T08:01:52.222130",
     "price_high_last_price": 138.6999969482422,
     "rsi_up_last_alert": "2026-10-22T08:01:52.703327",
@@ -1502,7 +1502,7 @@
     "mcap_cr": 7396.48980225,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-23T03:47:57.615677",
-    "rsi_down_last_alert": "2026-10-29T05:46:59.757021",
+    "rsi_down_last_alert": "2026-10-29T06:47:12.571492",
     "price_low_last_alert": "2026-10-29T03:47:27.640921",
     "price_low_last_price": 307.1000061035156
   },
@@ -1516,7 +1516,7 @@
     "rsi_up_last_alert": "2026-10-23T03:47:58.575277",
     "price_low_last_alert": "2026-10-29T06:02:02.459096",
     "price_low_last_price": 1016.9000244140625,
-    "rsi_down_last_alert": "2026-10-29T05:47:00.531907"
+    "rsi_down_last_alert": "2026-10-29T06:47:13.671911"
   },
   "NAM-INDIA": {
     "result_date": "2026-10-22T00:00:00",
@@ -1526,7 +1526,7 @@
     "mcap_cr": 61975.26433575875,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T07:47:04.432014",
-    "rsi_up_last_alert": "2026-10-29T05:47:01.739645",
+    "rsi_up_last_alert": "2026-10-29T06:47:15.262155",
     "price_low_last_alert": "2026-10-29T04:47:21.233268",
     "price_low_last_price": 929.0999755859375
   },
@@ -1540,7 +1540,7 @@
     "rsi_down_last_alert": "2026-10-27T09:02:19.880792",
     "price_low_last_alert": "2026-10-29T03:47:31.875933",
     "price_low_last_price": 830.0,
-    "rsi_up_last_alert": "2026-10-29T05:47:02.983873"
+    "rsi_up_last_alert": "2026-10-29T06:47:16.685373"
   },
   "ADANIENSOL": {
     "result_date": "2026-10-22T00:00:00",
@@ -1549,10 +1549,12 @@
     "baseline_rsi": 41.55787005051975,
     "mcap_cr": 159069.68168130264,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:03.728158",
+    "rsi_up_last_alert": "2026-10-29T06:47:18.338152",
     "rsi_down_last_alert": "2026-10-27T05:30:26.508574",
     "price_low_last_alert": "2026-10-27T03:47:57.024301",
-    "price_low_last_price": 1274.5999755859375
+    "price_low_last_price": 1274.5999755859375,
+    "price_high_last_alert": "2026-10-29T06:47:17.722936",
+    "price_high_last_price": 1337.699951171875
   },
   "JSL": {
     "result_date": "2026-10-22T00:00:00",
@@ -1562,7 +1564,7 @@
     "mcap_cr": 58385.08251704375,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-28T03:47:29.709957",
-    "rsi_down_last_alert": "2026-10-29T05:47:05.037812",
+    "rsi_down_last_alert": "2026-10-29T06:47:20.019734",
     "price_low_last_alert": "2026-10-29T04:47:26.049672",
     "price_low_last_price": 685.6500244140625
   },
@@ -1574,7 +1576,7 @@
     "mcap_cr": 139194.22742795892,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-29T05:01:54.887314",
-    "rsi_down_last_alert": "2026-10-29T05:47:05.829690",
+    "rsi_down_last_alert": "2026-10-29T06:47:21.100041",
     "price_low_last_alert": "2026-10-28T09:16:47.319369",
     "price_low_last_price": 204.88999938964844
   },
@@ -1585,7 +1587,7 @@
     "baseline_rsi": 33.55285218813542,
     "mcap_cr": 60802.99775357179,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:06.606591",
+    "rsi_up_last_alert": "2026-10-29T06:47:22.142132",
     "rsi_down_last_alert": "2026-10-29T03:47:36.170131",
     "price_low_last_alert": "2026-10-29T04:16:14.688971",
     "price_low_last_price": 539.7999877929688
@@ -1597,7 +1599,7 @@
     "baseline_rsi": 24.15014302879642,
     "mcap_cr": 55447.07612839857,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:07.345281",
+    "rsi_up_last_alert": "2026-10-29T06:47:23.229308",
     "price_low_last_alert": "2026-10-29T06:31:11.265685",
     "price_low_last_price": 182.10000610351562,
     "rsi_down_last_alert": "2026-10-26T10:47:25.940005"
@@ -1612,7 +1614,7 @@
     "rsi_down_last_alert": "2026-10-27T06:02:23.961059",
     "price_low_last_alert": "2026-10-23T07:30:50.064170",
     "price_low_last_price": 707.75,
-    "rsi_up_last_alert": "2026-10-29T05:47:08.777354"
+    "rsi_up_last_alert": "2026-10-29T06:47:24.746614"
   },
   "M&MFIN": {
     "result_date": "2026-10-22T00:00:00",
@@ -1622,7 +1624,7 @@
     "mcap_cr": 39965.5926963593,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-26T09:30:49.871904",
-    "rsi_down_last_alert": "2026-10-29T05:47:09.604079",
+    "rsi_down_last_alert": "2026-10-29T06:47:25.845046",
     "price_low_last_alert": "2026-10-29T04:16:16.319106",
     "price_low_last_price": 258.70001220703125
   },
@@ -1644,7 +1646,7 @@
     "rsi_up_last_alert": "2026-10-22T18:52:31.586446",
     "price_low_last_alert": "2026-10-28T07:47:12.788708",
     "price_low_last_price": 1605.5999755859375,
-    "rsi_down_last_alert": "2026-10-29T05:47:10.641356"
+    "rsi_down_last_alert": "2026-10-29T06:47:27.136876"
   },
   "FAIRCHEMOR": {
     "result_date": "2026-10-22T00:00:00",
@@ -1655,7 +1657,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T05:47:11.417642",
     "price_low_last_price": 662.3499755859375,
-    "rsi_down_last_alert": "2026-10-29T05:47:11.899471"
+    "rsi_down_last_alert": "2026-10-29T06:47:28.194367"
   },
   "ACCELYA": {
     "result_date": "2026-10-22T00:00:00",
@@ -1664,7 +1666,7 @@
     "baseline_rsi": 38.28285834611646,
     "mcap_cr": 1512.9257785189332,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:13.204020",
+    "rsi_down_last_alert": "2026-10-29T06:47:29.895928",
     "rsi_up_last_alert": "2026-10-22T18:52:33.203008",
     "price_low_last_alert": "2026-10-29T05:30:40.511086",
     "price_low_last_price": 939.7999877929688
@@ -1676,7 +1678,7 @@
     "baseline_rsi": 46.059162271187915,
     "mcap_cr": 72516.18878192041,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:14.467114",
+    "rsi_up_last_alert": "2026-10-29T06:47:31.469890",
     "rsi_down_last_alert": "2026-10-27T03:48:12.093068",
     "price_low_last_alert": "2026-10-23T09:48:07.753702",
     "price_low_last_price": 336.6499938964844,
@@ -1690,9 +1692,9 @@
     "baseline_rsi": 34.22533545990002,
     "mcap_cr": 13833.44884576058,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:15.259328",
-    "price_low_last_alert": "2026-10-29T05:02:00.016217",
-    "price_low_last_price": 361.75,
+    "rsi_up_last_alert": "2026-10-29T06:47:33.201813",
+    "price_low_last_alert": "2026-10-29T06:47:32.529126",
+    "price_low_last_price": 357.45001220703125,
     "rsi_down_last_alert": "2026-10-27T03:48:13.159095"
   },
   "VGL": {
@@ -1702,7 +1704,7 @@
     "baseline_rsi": 33.316036620667035,
     "mcap_cr": 289.48811457653045,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:16.408599",
+    "rsi_up_last_alert": "2026-10-29T06:47:35.055206",
     "rsi_down_last_alert": "2026-10-27T03:48:15.377069",
     "price_low_last_alert": "2026-10-28T07:02:24.001080",
     "price_low_last_price": 53.7599983215332
@@ -1715,7 +1717,7 @@
     "mcap_cr": 189.29914921399998,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-29T06:31:16.754743",
-    "rsi_up_last_alert": "2026-10-29T05:47:17.623069"
+    "rsi_up_last_alert": "2026-10-29T06:47:36.584432"
   },
   "etf_inav_alerts": {},
   "arb_PILANIINVS": {
@@ -1738,7 +1740,7 @@
     "mcap_cr": 80153.381682,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T06:48:23.129610",
-    "rsi_up_last_alert": "2026-10-29T05:47:18.668413",
+    "rsi_up_last_alert": "2026-10-29T06:47:37.860707",
     "price_high_last_alert": "2026-10-28T04:02:06.742739",
     "price_high_last_price": 23050.0
   },
@@ -1749,7 +1751,7 @@
     "baseline_rsi": 29.326287026187543,
     "mcap_cr": 45123.7292506,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:19.463850",
+    "rsi_up_last_alert": "2026-10-29T06:47:38.889276",
     "price_low_last_alert": "2026-10-23T07:17:12.947957",
     "price_low_last_price": 1482.5999755859375,
     "rsi_down_last_alert": "2026-10-26T03:48:34.645556",
@@ -1766,7 +1768,7 @@
     "rsi_down_last_alert": "2026-10-26T03:48:36.140476",
     "price_low_last_alert": "2026-10-23T07:17:15.009419",
     "price_low_last_price": 368.0,
-    "rsi_up_last_alert": "2026-10-29T05:47:20.714978",
+    "rsi_up_last_alert": "2026-10-29T06:47:40.344267",
     "price_high_last_alert": "2026-10-29T06:31:18.659284",
     "price_high_last_price": 395.29998779296875
   },
@@ -1777,7 +1779,7 @@
     "baseline_rsi": 35.2908427464173,
     "mcap_cr": 1956.6150309886475,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:21.857400",
+    "rsi_up_last_alert": "2026-10-29T06:47:41.802882",
     "rsi_down_last_alert": "2026-10-23T07:17:16.371354"
   },
   "WESTLIFE": {
@@ -1799,7 +1801,7 @@
     "baseline_rsi": 38.528448903451306,
     "mcap_cr": 568.0798726300048,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:23.162379",
+    "rsi_down_last_alert": "2026-10-29T06:47:43.469012",
     "price_low_last_alert": "2026-10-29T03:47:53.203443",
     "price_low_last_price": 205.5
   },
@@ -1810,7 +1812,7 @@
     "baseline_rsi": 37.393636024425746,
     "mcap_cr": 2393.269933399887,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:24.444675",
+    "rsi_up_last_alert": "2026-10-29T06:47:44.892443",
     "price_high_last_alert": "2026-10-27T06:46:44.955566",
     "price_high_last_price": 371.54998779296875
   },
@@ -1821,7 +1823,7 @@
     "baseline_rsi": 26.47895166537279,
     "mcap_cr": 967.3006090651475,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:25.254952",
+    "rsi_up_last_alert": "2026-10-29T06:47:45.999469",
     "rsi_down_last_alert": "2026-10-26T10:47:43.222723",
     "price_low_last_alert": "2026-10-26T04:02:15.329395",
     "price_low_last_price": 179.6199951171875,
@@ -1843,7 +1845,7 @@
     "baseline_rsi": 50.34811440574406,
     "mcap_cr": 470.2534268371582,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:26.158603",
+    "rsi_down_last_alert": "2026-10-29T06:47:47.209094",
     "rsi_up_last_alert": "2026-10-27T03:48:29.076557"
   },
   "SHREDIGCEM": {
@@ -1855,7 +1857,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-28T04:47:36.064353",
     "price_low_last_price": 52.849998474121094,
-    "rsi_down_last_alert": "2026-10-29T05:47:26.919877",
+    "rsi_down_last_alert": "2026-10-29T06:47:48.211077",
     "rsi_up_last_alert": "2026-10-23T09:02:46.577213"
   },
   "CSBBANK": {
@@ -1866,7 +1868,7 @@
     "mcap_cr": 5083.915131268588,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T08:30:51.738993",
-    "rsi_up_last_alert": "2026-10-29T05:47:27.703983",
+    "rsi_up_last_alert": "2026-10-29T06:47:49.215633",
     "price_high_last_alert": "2026-10-29T03:47:58.188773",
     "price_high_last_price": 308.3999938964844
   },
@@ -1878,7 +1880,7 @@
     "mcap_cr": 6705.401954460851,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T08:30:52.947138",
-    "rsi_up_last_alert": "2026-10-29T05:47:28.856433",
+    "rsi_up_last_alert": "2026-10-29T06:47:50.605342",
     "price_high_last_alert": "2026-10-27T09:30:37.761637",
     "price_high_last_price": 42.08000183105469
   },
@@ -1909,7 +1911,7 @@
     "baseline_rsi": 33.58295925867024,
     "mcap_cr": 16871.59770275,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:30.982605",
+    "rsi_down_last_alert": "2026-10-29T06:47:52.774803",
     "price_low_last_alert": "2026-10-29T04:02:13.267045",
     "price_low_last_price": 5160.5
   },
@@ -1923,7 +1925,7 @@
     "rsi_down_last_alert": "2026-10-28T06:47:47.738268",
     "price_low_last_alert": "2026-10-28T07:16:41.690774",
     "price_low_last_price": 77.5,
-    "rsi_up_last_alert": "2026-10-29T05:47:32.162920"
+    "rsi_up_last_alert": "2026-10-29T06:47:54.575875"
   },
   "CGPOWER": {
     "result_date": "2026-10-23T00:00:00",
@@ -1932,7 +1934,7 @@
     "baseline_rsi": 38.04366952794291,
     "mcap_cr": 127455.3861981,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:33.860293",
+    "rsi_up_last_alert": "2026-10-29T06:47:56.134987",
     "rsi_down_last_alert": "2026-10-26T04:02:22.236251",
     "price_high_last_alert": "2026-10-29T05:47:33.395611",
     "price_high_last_price": 834.0
@@ -1947,7 +1949,7 @@
     "rsi_up_last_alert": "2026-10-28T08:02:12.539967",
     "price_low_last_alert": "2026-10-23T09:17:04.907454",
     "price_low_last_price": 329.0,
-    "rsi_down_last_alert": "2026-10-29T05:47:34.697221"
+    "rsi_down_last_alert": "2026-10-29T06:47:57.156564"
   },
   "MAHLOG": {
     "result_date": "2026-10-23T00:00:00",
@@ -1969,7 +1971,7 @@
     "mcap_cr": 200530.0592866604,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-29T03:48:07.122116",
-    "rsi_up_last_alert": "2026-10-29T05:47:36.035909",
+    "rsi_up_last_alert": "2026-10-29T06:47:58.887592",
     "price_low_last_alert": "2026-10-29T04:30:36.520835",
     "price_low_last_price": 834.6500244140625
   },
@@ -1980,7 +1982,7 @@
     "baseline_rsi": 33.84369072021114,
     "mcap_cr": 51707.56262595592,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T06:02:32.600257",
+    "rsi_up_last_alert": "2026-10-29T06:48:00.337665",
     "rsi_down_last_alert": "2026-10-29T03:48:08.359522",
     "price_low_last_alert": "2026-10-28T03:48:03.637351",
     "price_low_last_price": 523.7000122070312
@@ -1992,7 +1994,7 @@
     "baseline_rsi": 35.40754270370657,
     "mcap_cr": 351907.1007375295,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:37.497401",
+    "rsi_up_last_alert": "2026-10-29T06:48:01.354522",
     "rsi_down_last_alert": "2026-10-26T03:49:04.071226",
     "price_high_last_alert": "2026-10-29T05:16:48.838949",
     "price_high_last_price": 188.24000549316406
@@ -2004,7 +2006,7 @@
     "baseline_rsi": 39.59723630920331,
     "mcap_cr": 289231.5161951395,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:38.316845",
+    "rsi_up_last_alert": "2026-10-29T06:48:02.463085",
     "price_low_last_alert": "2026-10-23T09:48:38.133246",
     "price_low_last_price": 1182.0,
     "rsi_down_last_alert": "2026-10-23T09:48:38.668918",
@@ -2019,7 +2021,7 @@
     "mcap_cr": 4079.970782102637,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T08:47:36.957443",
-    "rsi_up_last_alert": "2026-10-29T05:47:39.088999"
+    "rsi_up_last_alert": "2026-10-29T06:48:03.541405"
   },
   "JINDALSTEL": {
     "result_date": "2026-10-23T00:00:00",
@@ -2028,7 +2030,7 @@
     "baseline_rsi": 34.66948015499139,
     "mcap_cr": 103173.2930358,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:39.975096",
+    "rsi_up_last_alert": "2026-10-29T06:48:04.631911",
     "price_high_last_alert": "2026-10-28T10:02:38.704490",
     "price_high_last_price": 1048.0999755859375
   },
@@ -2042,7 +2044,7 @@
     "price_low_last_alert": "2026-10-26T09:31:12.397545",
     "price_low_last_price": 384.3500061035156,
     "rsi_down_last_alert": "2026-10-26T10:47:59.694654",
-    "rsi_up_last_alert": "2026-10-29T05:47:40.818117"
+    "rsi_up_last_alert": "2026-10-29T06:48:05.629419"
   },
   "REPRO": {
     "result_date": "2026-10-23T00:00:00",
@@ -2054,7 +2056,7 @@
     "rsi_down_last_alert": "2026-10-26T03:49:10.525605",
     "price_high_last_alert": "2026-10-29T04:48:14.306093",
     "price_high_last_price": 310.5,
-    "rsi_up_last_alert": "2026-10-29T05:47:42.102149"
+    "rsi_up_last_alert": "2026-10-29T06:48:07.294308"
   },
   "INDUSINDBK": {
     "result_date": "2026-10-23T00:00:00",
@@ -2063,7 +2065,7 @@
     "baseline_rsi": 31.783263073480867,
     "mcap_cr": 65058.583452,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:42.863306",
+    "rsi_up_last_alert": "2026-10-29T06:48:08.325131",
     "price_high_last_alert": "2026-10-26T04:31:26.389417",
     "price_high_last_price": 852.7999877929688
   },
@@ -2076,7 +2078,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-29T04:48:17.516824",
     "price_high_last_price": 442.25,
-    "rsi_up_last_alert": "2026-10-29T05:47:44.110151"
+    "rsi_up_last_alert": "2026-10-29T06:48:09.804328"
   },
   "INFY": {
     "result_date": "2026-10-23T00:00:00",
@@ -2085,7 +2087,7 @@
     "baseline_rsi": 63.83631848433398,
     "mcap_cr": 467330.66999569326,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:44.894000",
+    "rsi_down_last_alert": "2026-10-29T06:48:10.834139",
     "rsi_up_last_alert": "2026-10-27T17:28:32.438904"
   },
   "COFORGE": {
@@ -2112,7 +2114,7 @@
     "mcap_cr": 172093.62905411015,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-26T09:02:23.445873",
-    "rsi_up_last_alert": "2026-10-29T05:47:45.964314"
+    "rsi_up_last_alert": "2026-10-29T06:48:12.314357"
   },
   "CASTROLIND": {
     "result_date": "2026-10-26T00:00:00",
@@ -2123,7 +2125,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-26T03:49:17.123665",
     "price_low_last_price": 188.17999267578125,
-    "rsi_down_last_alert": "2026-10-29T05:47:46.760477",
+    "rsi_down_last_alert": "2026-10-29T06:48:13.392883",
     "rsi_up_last_alert": "2026-10-26T10:48:05.363195"
   },
   "arb_ATUL": {
@@ -2147,7 +2149,7 @@
     "baseline_rsi": 30.149616294746238,
     "mcap_cr": 24509.9629335,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T06:02:42.097793",
+    "rsi_down_last_alert": "2026-10-29T06:48:15.205958",
     "rsi_up_last_alert": "2026-10-29T05:47:48.138958",
     "price_high_last_alert": "2026-10-29T04:16:33.141958",
     "price_high_last_price": 2178.0
@@ -2171,7 +2173,7 @@
     "baseline_rsi": 37.09503010575489,
     "mcap_cr": 904.0969553163139,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:49.454679",
+    "rsi_up_last_alert": "2026-10-29T06:48:16.835117",
     "rsi_down_last_alert": "2026-10-27T08:03:28.223867"
   },
   "PNGSREVA": {
@@ -2192,7 +2194,7 @@
     "baseline_rsi": 37.43413006401536,
     "mcap_cr": 56845.45395633673,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:47:50.792476",
+    "rsi_up_last_alert": "2026-10-29T06:48:18.568812",
     "price_high_last_alert": "2026-10-26T09:02:28.767110",
     "price_high_last_price": 30.440000534057617,
     "rsi_down_last_alert": "2026-10-28T10:48:01.018458"
@@ -2204,7 +2206,7 @@
     "baseline_rsi": 39.2615174092249,
     "mcap_cr": 167.85474395373345,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:51.952432",
+    "rsi_down_last_alert": "2026-10-29T06:48:20.211177",
     "rsi_up_last_alert": "2026-10-26T07:48:30.134974",
     "price_low_last_alert": "2026-10-27T06:17:13.954169",
     "price_low_last_price": 11.039999961853027
@@ -2216,7 +2218,7 @@
     "baseline_rsi": 36.3625986754284,
     "mcap_cr": 1561.5303945159912,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:53.158465",
+    "rsi_down_last_alert": "2026-10-29T06:48:21.709446",
     "rsi_up_last_alert": "2026-10-29T04:16:35.971718"
   },
   "DEEPA": {
@@ -2229,7 +2231,7 @@
     "rsi_up_last_alert": "2026-10-29T05:31:14.855211",
     "price_low_last_alert": "2026-10-29T06:31:37.823364",
     "price_low_last_price": 206.88999938964844,
-    "rsi_down_last_alert": "2026-10-29T05:47:54.378734"
+    "rsi_down_last_alert": "2026-10-29T06:48:23.125099"
   },
   "ABREL": {
     "result_date": "2026-10-26T00:00:00",
@@ -2238,7 +2240,7 @@
     "baseline_rsi": 38.943253792072895,
     "mcap_cr": 11884.752271747802,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:55.665688",
+    "rsi_down_last_alert": "2026-10-29T06:48:24.645621",
     "rsi_up_last_alert": "2026-10-28T05:47:55.354894",
     "price_high_last_alert": "2026-10-27T04:19:24.622892",
     "price_high_last_price": 1108.199951171875
@@ -2250,7 +2252,7 @@
     "baseline_rsi": 41.3700789561108,
     "mcap_cr": 43046.415347216556,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:56.893667",
+    "rsi_down_last_alert": "2026-10-29T06:48:26.186740",
     "price_low_last_alert": "2026-10-29T03:48:30.201634",
     "price_low_last_price": 3198.60009765625
   },
@@ -2261,7 +2263,7 @@
     "baseline_rsi": 35.176029036065,
     "mcap_cr": 109.23865575416565,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:47:58.043676",
+    "rsi_down_last_alert": "2026-10-29T06:48:27.667707",
     "rsi_up_last_alert": "2026-10-29T04:02:30.992877",
     "price_high_last_alert": "2026-10-27T05:03:39.297568",
     "price_high_last_price": 22.59000015258789,
@@ -2278,7 +2280,7 @@
     "price_high_last_alert": "2026-10-28T05:02:26.396135",
     "price_high_last_price": 246.99000549316406,
     "rsi_up_last_alert": "2026-10-28T07:31:10.150996",
-    "rsi_down_last_alert": "2026-10-29T05:47:59.215639"
+    "rsi_down_last_alert": "2026-10-29T06:48:29.099943"
   },
   "ITCHOTELS": {
     "result_date": "2026-10-26T00:00:00",
@@ -2287,9 +2289,9 @@
     "baseline_rsi": 53.72689444678302,
     "mcap_cr": 33689.45266150444,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:48:00.797539",
-    "price_high_last_alert": "2026-10-29T05:48:00.330774",
-    "price_high_last_price": 168.1300048828125
+    "rsi_up_last_alert": "2026-10-29T06:48:31.226932",
+    "price_high_last_alert": "2026-10-29T06:48:30.615523",
+    "price_high_last_price": 170.11000061035156
   },
   "AEGISVOPAK": {
     "result_date": "2026-10-26T00:00:00",
@@ -2299,7 +2301,7 @@
     "mcap_cr": 27256.5906294,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-26T08:17:23.108797",
-    "rsi_down_last_alert": "2026-10-29T05:48:02.028107",
+    "rsi_down_last_alert": "2026-10-29T06:48:32.660439",
     "price_low_last_alert": "2026-10-28T07:31:13.008694",
     "price_low_last_price": 233.9499969482422
   },
@@ -2311,7 +2313,7 @@
     "mcap_cr": 15391.65718357721,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-26T10:48:22.399973",
-    "rsi_up_last_alert": "2026-10-29T05:48:03.388541",
+    "rsi_up_last_alert": "2026-10-29T06:48:34.104271",
     "price_high_last_alert": "2026-10-28T03:48:32.154949",
     "price_high_last_price": 1180.300048828125
   },
@@ -2322,7 +2324,7 @@
     "baseline_rsi": 28.150292896375305,
     "mcap_cr": 12369.624215810229,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:48:04.139657",
+    "rsi_up_last_alert": "2026-10-29T06:48:35.112366",
     "price_high_last_alert": "2026-10-27T04:07:33.379472",
     "price_high_last_price": 814.0
   },
@@ -2333,9 +2335,9 @@
     "baseline_rsi": 52.24318715347645,
     "mcap_cr": 1323.8199823897592,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:05.350128",
-    "price_low_last_alert": "2026-10-29T05:17:05.333885",
-    "price_low_last_price": 32.40999984741211
+    "rsi_down_last_alert": "2026-10-29T06:48:37.210723",
+    "price_low_last_alert": "2026-10-29T06:48:36.564307",
+    "price_low_last_price": 32.0
   },
   "ATHERENERG": {
     "result_date": "2026-10-26T00:00:00",
@@ -2367,7 +2369,7 @@
     "mcap_cr": 3695.081832554657,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-27T07:17:24.333536",
-    "rsi_down_last_alert": "2026-10-29T05:48:07.576995"
+    "rsi_down_last_alert": "2026-10-29T06:48:39.422026"
   },
   "MANKIND": {
     "result_date": "2026-10-26T00:00:00",
@@ -2378,7 +2380,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-28T08:30:54.103269",
     "price_high_last_price": 2481.0,
-    "rsi_up_last_alert": "2026-10-29T05:48:08.338415"
+    "rsi_up_last_alert": "2026-10-29T06:48:40.440999"
   },
   "MAHABANK": {
     "result_date": "2026-10-26T00:00:00",
@@ -2390,7 +2392,7 @@
     "rsi_down_last_alert": "2026-10-26T11:17:44.563321",
     "price_high_last_alert": "2026-10-28T07:31:18.488622",
     "price_high_last_price": 80.0199966430664,
-    "rsi_up_last_alert": "2026-10-29T05:48:09.534031"
+    "rsi_up_last_alert": "2026-10-29T06:48:42.041624"
   },
   "KEC": {
     "result_date": "2026-10-26T00:00:00",
@@ -2400,7 +2402,7 @@
     "mcap_cr": 8965.615675048828,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T04:48:20.831422",
-    "rsi_up_last_alert": "2026-10-29T05:48:10.972999"
+    "rsi_up_last_alert": "2026-10-29T06:48:43.487948"
   },
   "OFSS": {
     "result_date": "2026-10-26T00:00:00",
@@ -2409,10 +2411,10 @@
     "baseline_rsi": 36.51751767646622,
     "mcap_cr": 86344.2294521,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:48:12.512035",
+    "rsi_up_last_alert": "2026-10-29T06:48:45.664943",
     "rsi_down_last_alert": "2026-10-28T05:48:09.024395",
-    "price_high_last_alert": "2026-10-29T03:48:45.406386",
-    "price_high_last_price": 10143.0
+    "price_high_last_alert": "2026-10-29T06:48:45.053536",
+    "price_high_last_price": 10027.0
   },
   "PARACABLES": {
     "result_date": "2026-10-26T00:00:00",
@@ -2434,7 +2436,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T04:48:55.096761",
     "price_low_last_price": 1415.5999755859375,
-    "rsi_down_last_alert": "2026-10-29T05:48:13.899995"
+    "rsi_down_last_alert": "2026-10-29T06:48:47.314248"
   },
   "SHANTIGEAR": {
     "result_date": "2026-10-26T00:00:00",
@@ -2444,7 +2446,7 @@
     "mcap_cr": 3652.0712584714324,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-26T11:17:50.479605",
-    "rsi_up_last_alert": "2026-10-29T05:48:15.291364",
+    "rsi_up_last_alert": "2026-10-29T06:48:48.826723",
     "price_high_last_alert": "2026-10-28T03:48:43.873159",
     "price_high_last_price": 510.1499938964844
   },
@@ -2457,7 +2459,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T06:31:51.169869",
     "price_low_last_price": 330.70001220703125,
-    "rsi_down_last_alert": "2026-10-29T05:48:16.085787",
+    "rsi_down_last_alert": "2026-10-29T06:48:49.850142",
     "rsi_up_last_alert": "2026-10-28T07:17:04.517981"
   },
   "TATACONSUM": {
@@ -2469,7 +2471,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-29T04:49:00.017685",
     "price_high_last_price": 1007.0499877929688,
-    "rsi_up_last_alert": "2026-10-29T05:48:17.273689"
+    "rsi_up_last_alert": "2026-10-29T06:48:51.447809"
   },
   "ANTELOPUS": {
     "result_date": "2026-10-26T00:00:00",
@@ -2480,7 +2482,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T05:48:18.515791",
     "price_low_last_price": 1024.5,
-    "rsi_down_last_alert": "2026-10-29T05:48:19.027299"
+    "rsi_down_last_alert": "2026-10-29T06:48:52.850554"
   },
   "ASTEC": {
     "result_date": "2026-10-26T00:00:00",
@@ -2489,9 +2491,9 @@
     "baseline_rsi": 40.79170199047979,
     "mcap_cr": 1454.695853430005,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-29T03:48:54.005342",
-    "price_low_last_price": 591.9000244140625,
-    "rsi_down_last_alert": "2026-10-29T05:48:20.279460",
+    "price_low_last_alert": "2026-10-29T06:48:54.399931",
+    "price_low_last_price": 578.0499877929688,
+    "rsi_down_last_alert": "2026-10-29T06:48:55.016826",
     "rsi_up_last_alert": "2026-10-28T07:31:25.143769"
   },
   "ONESOURCE": {
@@ -2502,7 +2504,7 @@
     "mcap_cr": 17129.97145951062,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T04:47:33.443750",
-    "rsi_up_last_alert": "2026-10-29T05:48:21.422342",
+    "rsi_up_last_alert": "2026-10-29T06:48:56.482310",
     "price_high_last_alert": "2026-10-29T04:02:46.937692",
     "price_high_last_price": 1587.199951171875
   },
@@ -2513,7 +2515,7 @@
     "baseline_rsi": 23.935949028996873,
     "mcap_cr": 12389.484679009827,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:22.614711",
+    "rsi_down_last_alert": "2026-10-29T06:48:57.916820",
     "rsi_up_last_alert": "2026-10-27T08:31:37.790041",
     "price_low_last_alert": "2026-10-28T06:02:35.693689",
     "price_low_last_price": 409.79998779296875
@@ -2527,7 +2529,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T06:31:55.965544",
     "price_low_last_price": 323.3500061035156,
-    "rsi_down_last_alert": "2026-10-29T05:48:23.895026"
+    "rsi_down_last_alert": "2026-10-29T06:48:59.327103"
   },
   "ODIGMA": {
     "result_date": "2026-10-27T00:00:00",
@@ -2536,7 +2538,7 @@
     "baseline_rsi": 25.514839992997295,
     "mcap_cr": 57.859391665449145,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:48:25.086490",
+    "rsi_up_last_alert": "2026-10-29T06:49:00.745819",
     "rsi_down_last_alert": "2026-10-28T07:17:09.508196",
     "price_high_last_alert": "2026-10-28T05:31:11.753772",
     "price_high_last_price": 19.1299991607666
@@ -2548,7 +2550,7 @@
     "baseline_rsi": 22.929737927163316,
     "mcap_cr": 1688.0566843068054,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:26.303557",
+    "rsi_down_last_alert": "2026-10-29T06:49:02.293624",
     "rsi_up_last_alert": "2026-10-28T10:48:36.615513"
   },
   "ACUTAAS": {
@@ -2566,7 +2568,7 @@
     "baseline_rsi": 47.39464311323765,
     "mcap_cr": 1114.2004428053665,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:27.558117",
+    "rsi_down_last_alert": "2026-10-29T06:49:03.925289",
     "price_low_last_alert": "2026-10-29T04:02:50.961708",
     "price_low_last_price": 55.97999954223633
   },
@@ -2577,7 +2579,7 @@
     "baseline_rsi": 46.576190763721016,
     "mcap_cr": 2141.1951952791824,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:29.229139",
+    "rsi_down_last_alert": "2026-10-29T06:49:05.423568",
     "price_low_last_alert": "2026-10-29T05:48:28.756251",
     "price_low_last_price": 209.1999969482422
   },
@@ -2588,7 +2590,7 @@
     "baseline_rsi": 49.59124862585908,
     "mcap_cr": 790.0551501343018,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:30.536780",
+    "rsi_down_last_alert": "2026-10-29T06:49:07.150503",
     "price_low_last_alert": "2026-10-28T06:48:48.132446",
     "price_low_last_price": 204.0
   },
@@ -2611,7 +2613,7 @@
     "mcap_cr": 1281.3083923339843,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-28T10:48:41.887919",
-    "rsi_down_last_alert": "2026-10-29T05:48:31.927952"
+    "rsi_down_last_alert": "2026-10-29T06:49:08.785686"
   },
   "MOREPENLAB": {
     "result_date": "2026-10-27T00:00:00",
@@ -2631,7 +2633,7 @@
     "rsi_down_last_alert": "2026-10-29T03:49:08.107258",
     "price_low_last_alert": "2026-10-28T06:31:49.138595",
     "price_low_last_price": 538.0499877929688,
-    "rsi_up_last_alert": "2026-10-29T06:03:20.433283"
+    "rsi_up_last_alert": "2026-10-29T06:49:10.521799"
   },
   "CIPLA": {
     "result_date": "2026-10-27T00:00:00",
@@ -2641,7 +2643,7 @@
     "mcap_cr": 107083.25001825,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-27T08:17:29.607781",
-    "rsi_up_last_alert": "2026-10-29T05:48:33.697639"
+    "rsi_up_last_alert": "2026-10-29T06:49:11.544399"
   },
   "BBL": {
     "result_date": "2026-10-27T00:00:00",
@@ -2651,7 +2653,7 @@
     "mcap_cr": 2936.663717582031,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-27T17:29:32.424617",
-    "rsi_down_last_alert": "2026-10-29T05:48:34.466570"
+    "rsi_down_last_alert": "2026-10-29T06:49:12.585501"
   },
   "RADICO": {
     "result_date": "2026-10-27T00:00:00",
@@ -2660,7 +2662,7 @@
     "baseline_rsi": 45.19176031933162,
     "mcap_cr": 57733.20571022607,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:35.247683",
+    "rsi_down_last_alert": "2026-10-29T06:49:13.615133",
     "price_low_last_alert": "2026-10-28T03:49:05.626184",
     "price_low_last_price": 4150.89990234375
   },
@@ -2671,7 +2673,7 @@
     "baseline_rsi": 26.058256269051924,
     "mcap_cr": 1035.7179186,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:48:36.508280",
+    "rsi_up_last_alert": "2026-10-29T06:49:15.162213",
     "price_low_last_alert": "2026-10-28T08:02:58.591304",
     "price_low_last_price": 455.8999938964844,
     "rsi_down_last_alert": "2026-10-29T03:49:11.874998"
@@ -2683,9 +2685,9 @@
     "baseline_rsi": 26.57968100707842,
     "mcap_cr": 1419.6612830655488,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:48:37.743851",
-    "price_high_last_alert": "2026-10-29T06:03:25.057158",
-    "price_high_last_price": 231.5800018310547
+    "rsi_up_last_alert": "2026-10-29T06:49:17.457045",
+    "price_high_last_alert": "2026-10-29T06:49:16.704177",
+    "price_high_last_price": 228.5
   },
   "MANBA": {
     "result_date": "2026-10-27T00:00:00",
@@ -2702,7 +2704,7 @@
     "baseline_rsi": 35.615122085180985,
     "mcap_cr": 9042.10810119685,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:39.016380",
+    "rsi_down_last_alert": "2026-10-29T06:49:19.216829",
     "price_low_last_alert": "2026-10-29T03:49:15.045396",
     "price_low_last_price": 1111.5999755859375
   },
@@ -2726,7 +2728,7 @@
     "mcap_cr": 69986.43,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-29T05:48:40.335406",
-    "rsi_down_last_alert": "2026-10-29T06:03:28.252766"
+    "rsi_down_last_alert": "2026-10-29T06:49:21.041253"
   },
   "ENDURANCE": {
     "result_date": "2026-10-27T00:00:00",
@@ -2735,7 +2737,7 @@
     "baseline_rsi": 24.802044275733394,
     "mcap_cr": 32028.9304896,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:48:41.103822",
+    "rsi_up_last_alert": "2026-10-29T06:49:22.096464",
     "price_high_last_alert": "2026-10-29T06:32:06.232931",
     "price_high_last_price": 2340.39990234375
   },
@@ -2747,7 +2749,7 @@
     "mcap_cr": 9622.11584,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-28T07:17:18.711496",
-    "rsi_down_last_alert": "2026-10-29T05:48:42.420963",
+    "rsi_down_last_alert": "2026-10-29T06:49:23.552784",
     "price_low_last_alert": "2026-10-29T03:49:19.090429",
     "price_low_last_price": 1560.699951171875
   },
@@ -2758,7 +2760,7 @@
     "baseline_rsi": 31.331584796248876,
     "mcap_cr": 14298.740437416245,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T06:03:31.462676",
+    "rsi_up_last_alert": "2026-10-29T06:49:25.098523",
     "rsi_down_last_alert": "2026-10-29T04:49:35.057071"
   },
   "TCI": {
@@ -2771,7 +2773,7 @@
     "rsi_down_last_alert": "2026-10-28T03:49:17.191460",
     "price_high_last_alert": "2026-10-29T05:02:55.802550",
     "price_high_last_price": 882.0,
-    "rsi_up_last_alert": "2026-10-29T05:48:44.344106"
+    "rsi_up_last_alert": "2026-10-29T06:49:26.676927"
   },
   "ACC": {
     "result_date": "2026-10-27T00:00:00",
@@ -2780,7 +2782,7 @@
     "baseline_rsi": 42.59638636865511,
     "mcap_cr": 21809.613183284997,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:45.103315"
+    "rsi_down_last_alert": "2026-10-29T06:49:27.726427"
   },
   "KFINTECH": {
     "result_date": "2026-10-27T00:00:00",
@@ -2789,7 +2791,7 @@
     "baseline_rsi": 50.07938006110537,
     "mcap_cr": 15033.820772285973,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:45.887263"
+    "rsi_down_last_alert": "2026-10-29T06:49:28.745733"
   },
   "MARUTI": {
     "result_date": "2026-10-27T00:00:00",
@@ -2800,7 +2802,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-28T03:49:19.503136",
     "price_high_last_price": 11553.0,
-    "rsi_up_last_alert": "2026-10-29T05:48:46.657217",
+    "rsi_up_last_alert": "2026-10-29T06:49:29.772680",
     "rsi_down_last_alert": "2026-10-29T04:31:19.309536"
   },
   "BAJAJ-AUTO": {
@@ -2813,7 +2815,7 @@
     "price_high_last_alert": "2026-10-28T08:31:17.439870",
     "price_high_last_price": 10465.0,
     "rsi_up_last_alert": "2026-10-29T05:02:57.521212",
-    "rsi_down_last_alert": "2026-10-29T06:03:35.367954"
+    "rsi_down_last_alert": "2026-10-29T06:49:30.938008"
   },
   "RADIOCITY": {
     "result_date": "2026-10-27T00:00:00",
@@ -2825,7 +2827,7 @@
     "price_low_last_alert": "2026-10-28T03:49:22.578302",
     "price_low_last_price": 5.199999809265137,
     "rsi_down_last_alert": "2026-10-29T05:48:48.206024",
-    "rsi_up_last_alert": "2026-10-29T06:03:37.055396"
+    "rsi_up_last_alert": "2026-10-29T06:49:32.496452"
   },
   "LEAPIND": {
     "result_date": "2026-10-27T00:00:00",
@@ -2836,7 +2838,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T05:48:50.130760",
     "price_low_last_price": 121.58999633789062,
-    "rsi_down_last_alert": "2026-10-29T05:48:50.594685",
+    "rsi_down_last_alert": "2026-10-29T06:49:33.939852",
     "rsi_up_last_alert": "2026-10-28T08:49:37.410768"
   },
   "SIYSIL": {
@@ -2847,7 +2849,7 @@
     "mcap_cr": 2088.838823828296,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-29T05:03:00.169062",
-    "rsi_up_last_alert": "2026-10-29T05:48:51.780125",
+    "rsi_up_last_alert": "2026-10-29T06:49:35.476486",
     "price_low_last_alert": "2026-10-28T08:31:19.921253",
     "price_low_last_price": 449.0
   },
@@ -2858,7 +2860,7 @@
     "baseline_rsi": 40.16887235862242,
     "mcap_cr": 13596.688598427247,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:48:53.036879",
+    "rsi_down_last_alert": "2026-10-29T06:49:37.240648",
     "price_low_last_alert": "2026-10-28T07:17:25.357162",
     "price_low_last_price": 377.29998779296875
   },
@@ -2869,7 +2871,7 @@
     "baseline_rsi": 27.80741681596325,
     "mcap_cr": 12319.500973509448,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:48:54.268819",
+    "rsi_up_last_alert": "2026-10-29T06:49:38.765635",
     "price_low_last_alert": "2026-10-28T04:03:12.473002",
     "price_low_last_price": 1529.0,
     "rsi_down_last_alert": "2026-10-29T06:03:42.022647"
@@ -2881,9 +2883,9 @@
     "baseline_rsi": 34.79337577635424,
     "mcap_cr": 27886.875568,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-10-29T04:17:05.725270",
-    "price_low_last_price": 30055.0,
-    "rsi_down_last_alert": "2026-10-29T05:48:55.151050"
+    "price_low_last_alert": "2026-10-29T06:49:39.849945",
+    "price_low_last_price": 30420.0,
+    "rsi_down_last_alert": "2026-10-29T06:49:40.459012"
   },
   "TBZ": {
     "result_date": "2026-10-27T00:00:00",
@@ -2910,7 +2912,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T05:03:04.112050",
     "price_low_last_price": 69.11000061035156,
-    "rsi_down_last_alert": "2026-10-29T05:48:56.791199"
+    "rsi_down_last_alert": "2026-10-29T06:49:42.529421"
   },
   "UGARSUGAR": {
     "result_date": "2026-10-27T00:00:00",
@@ -2922,7 +2924,7 @@
     "price_low_last_alert": "2026-10-29T04:49:52.504647",
     "price_low_last_price": 42.63999938964844,
     "rsi_down_last_alert": "2026-10-29T05:32:06.649311",
-    "rsi_up_last_alert": "2026-10-29T06:03:45.918360"
+    "rsi_up_last_alert": "2026-10-29T06:49:43.968423"
   },
   "AWL": {
     "result_date": "2026-10-27T00:00:00",
@@ -2933,7 +2935,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T06:32:16.434854",
     "price_low_last_price": 164.07000732421875,
-    "rsi_down_last_alert": "2026-10-29T05:48:58.567283"
+    "rsi_down_last_alert": "2026-10-29T06:49:45.518008"
   },
   "JSWINFRA": {
     "result_date": "2026-10-27T00:00:00",
@@ -2945,7 +2947,9 @@
     "price_low_last_alert": "2026-10-28T03:49:37.174086",
     "price_low_last_price": 311.3500061035156,
     "rsi_down_last_alert": "2026-10-28T10:49:12.959221",
-    "rsi_up_last_alert": "2026-10-29T05:48:59.795131"
+    "rsi_up_last_alert": "2026-10-29T06:49:47.594857",
+    "price_high_last_alert": "2026-10-29T06:49:46.973898",
+    "price_high_last_price": 322.8500061035156
   },
   "SGMART": {
     "result_date": "2026-10-27T00:00:00",
@@ -2964,7 +2968,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-29T04:17:09.478025",
     "price_high_last_price": 245.02000427246094,
-    "rsi_up_last_alert": "2026-10-29T05:49:01.077040"
+    "rsi_up_last_alert": "2026-10-29T06:49:49.307108"
   },
   "CINEVISTA": {
     "result_date": "2026-10-27T00:00:00",
@@ -2973,7 +2977,7 @@
     "baseline_rsi": 41.84928167493409,
     "mcap_cr": 76.04589158538342,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:02.271937",
+    "rsi_down_last_alert": "2026-10-29T06:49:50.748896",
     "rsi_up_last_alert": "2026-10-28T08:03:17.564499",
     "price_low_last_alert": "2026-10-29T04:31:29.359379",
     "price_low_last_price": 12.75
@@ -2986,7 +2990,7 @@
     "mcap_cr": 75441.8676,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T03:49:40.462885",
-    "rsi_up_last_alert": "2026-10-29T05:49:03.545253",
+    "rsi_up_last_alert": "2026-10-29T06:49:52.202449",
     "price_high_last_alert": "2026-10-29T04:03:14.773124",
     "price_high_last_price": 297.0
   },
@@ -2998,7 +3002,7 @@
     "mcap_cr": 4721.5394332,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T05:03:12.421034",
-    "rsi_up_last_alert": "2026-10-29T05:49:04.929161",
+    "rsi_up_last_alert": "2026-10-29T06:49:53.801131",
     "price_high_last_alert": "2026-10-28T09:17:56.192993",
     "price_high_last_price": 5086.0
   },
@@ -3011,7 +3015,7 @@
     "exchange": "NSE",
     "price_high_last_alert": "2026-10-29T05:03:10.718296",
     "price_high_last_price": 313.8999938964844,
-    "rsi_up_last_alert": "2026-10-29T05:49:06.123384"
+    "rsi_up_last_alert": "2026-10-29T06:49:55.331410"
   },
   "OMAXE": {
     "result_date": "2026-10-27T00:00:00",
@@ -3022,7 +3026,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T06:32:22.309535",
     "price_low_last_price": 98.20999908447266,
-    "rsi_down_last_alert": "2026-10-29T05:49:07.257319"
+    "rsi_down_last_alert": "2026-10-29T06:49:56.931787"
   },
   "UNIMECH": {
     "result_date": "2026-10-27T00:00:00",
@@ -3039,7 +3043,7 @@
     "baseline_rsi": 44.8540418436602,
     "mcap_cr": 749.8773878524689,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:08.614919",
+    "rsi_down_last_alert": "2026-10-29T06:49:58.550085",
     "rsi_up_last_alert": "2026-10-28T08:18:08.501853",
     "price_low_last_alert": "2026-10-29T04:03:18.429735",
     "price_low_last_price": 136.13999938964844
@@ -3051,7 +3055,7 @@
     "baseline_rsi": 46.27055804523274,
     "mcap_cr": 1618754.3105221735,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:09.817124",
+    "rsi_down_last_alert": "2026-10-29T06:50:00.143206",
     "rsi_up_last_alert": "2026-10-28T04:17:58.734356",
     "price_low_last_alert": "2026-10-29T04:17:14.917481",
     "price_low_last_price": 1177.199951171875
@@ -3077,7 +3081,7 @@
     "baseline_rsi": 28.848289247615057,
     "mcap_cr": 3169.7982455197266,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:12.211154",
+    "rsi_down_last_alert": "2026-10-29T06:50:02.524552",
     "rsi_up_last_alert": "2026-10-28T10:49:25.782866",
     "price_low_last_alert": "2026-10-29T06:32:26.734045",
     "price_low_last_price": 1743.800048828125
@@ -3090,7 +3094,7 @@
     "mcap_cr": 3627.7183413309203,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-29T04:03:21.775649",
-    "rsi_down_last_alert": "2026-10-29T05:49:13.447077",
+    "rsi_down_last_alert": "2026-10-29T06:50:03.962960",
     "price_low_last_alert": "2026-10-29T04:50:13.473642",
     "price_low_last_price": 540.5
   },
@@ -3121,7 +3125,7 @@
     "baseline_rsi": 41.98240764274925,
     "mcap_cr": 331.500456375,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:49:14.995160",
+    "rsi_up_last_alert": "2026-10-29T06:50:06.055788",
     "rsi_down_last_alert": "2026-10-29T06:32:29.714614",
     "price_low_last_alert": "2026-10-28T07:49:04.894389",
     "price_low_last_price": 40.060001373291016
@@ -3133,7 +3137,7 @@
     "baseline_rsi": 37.411275663385354,
     "mcap_cr": 34944.150867098346,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:49:16.249763",
+    "rsi_up_last_alert": "2026-10-29T06:50:07.592555",
     "price_high_last_alert": "2026-10-29T04:03:24.780277",
     "price_high_last_price": 1080.5
   },
@@ -3144,7 +3148,7 @@
     "baseline_rsi": 52.69101364163263,
     "mcap_cr": 80955.50418165616,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:17.451247",
+    "rsi_down_last_alert": "2026-10-29T06:50:09.189595",
     "rsi_up_last_alert": "2026-10-28T08:03:32.721385",
     "price_high_last_alert": "2026-10-28T07:17:42.355326",
     "price_high_last_price": 1256.800048828125,
@@ -3158,7 +3162,7 @@
     "baseline_rsi": 28.45272131411228,
     "mcap_cr": 11774.525147,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:18.572875",
+    "rsi_down_last_alert": "2026-10-29T06:50:10.812574",
     "price_low_last_alert": "2026-10-28T07:04:13.566372",
     "price_low_last_price": 2338.0,
     "rsi_up_last_alert": "2026-10-28T10:49:33.234887"
@@ -3173,7 +3177,7 @@
     "rsi_up_last_alert": "2026-10-29T03:49:59.430098",
     "price_low_last_alert": "2026-10-28T07:04:15.313739",
     "price_low_last_price": 23.719999313354492,
-    "rsi_down_last_alert": "2026-10-29T05:49:19.679769"
+    "rsi_down_last_alert": "2026-10-29T06:50:12.313951"
   },
   "STYLAMIND": {
     "result_date": "2026-10-28T00:00:00",
@@ -3182,7 +3186,7 @@
     "baseline_rsi": 30.20045111445043,
     "mcap_cr": 4890.390617513672,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:49:20.933370",
+    "rsi_up_last_alert": "2026-10-29T06:50:13.798848",
     "rsi_down_last_alert": "2026-10-28T08:31:38.889779",
     "price_low_last_alert": "2026-10-29T03:50:00.672085",
     "price_low_last_price": 2849.800048828125
@@ -3194,7 +3198,7 @@
     "baseline_rsi": 31.90482691681386,
     "mcap_cr": 698.6106270051773,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:49:21.717869",
+    "rsi_up_last_alert": "2026-10-29T06:50:14.832200",
     "price_high_last_alert": "2026-10-29T03:50:01.968713",
     "price_high_last_price": 63.16999816894531,
     "rsi_down_last_alert": "2026-10-29T06:32:34.088621"
@@ -3206,7 +3210,7 @@
     "baseline_rsi": 48.07710417324592,
     "mcap_cr": 13988.329526680847,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:23.124816",
+    "rsi_down_last_alert": "2026-10-29T06:50:16.395108",
     "price_high_last_alert": "2026-10-28T07:32:12.927741",
     "price_high_last_price": 529.0,
     "rsi_up_last_alert": "2026-10-28T08:18:20.783948"
@@ -3219,7 +3223,7 @@
     "mcap_cr": 22288.750348753394,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-29T04:17:23.324861",
-    "rsi_up_last_alert": "2026-10-29T05:49:23.946456"
+    "rsi_up_last_alert": "2026-10-29T06:50:17.484092"
   },
   "SNOWMAN": {
     "result_date": "2026-10-28T00:00:00",
@@ -3228,7 +3232,7 @@
     "baseline_rsi": 58.48104910542262,
     "mcap_cr": 599.123647086586,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:25.208126",
+    "rsi_down_last_alert": "2026-10-29T06:50:18.997594",
     "price_low_last_alert": "2026-10-29T04:17:24.541790",
     "price_low_last_price": 33.630001068115234
   },
@@ -3250,7 +3254,7 @@
     "price_high_last_alert": "2026-10-28T07:32:16.009147",
     "price_high_last_price": 29.5,
     "rsi_up_last_alert": "2026-10-29T04:03:30.961519",
-    "rsi_down_last_alert": "2026-10-29T05:49:26.085399"
+    "rsi_down_last_alert": "2026-10-29T06:50:20.363719"
   },
   "ADANIPORTS": {
     "result_date": "2026-10-28T00:00:00",
@@ -3273,7 +3277,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T05:49:27.428365",
     "price_low_last_price": 252.3000030517578,
-    "rsi_down_last_alert": "2026-10-29T05:49:27.920213"
+    "rsi_down_last_alert": "2026-10-29T06:50:21.914017"
   },
   "YASHO": {
     "result_date": "2026-10-28T00:00:00",
@@ -3282,7 +3286,7 @@
     "baseline_rsi": 37.65672847052309,
     "mcap_cr": 3937.003289222534,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:49:29.094728",
+    "rsi_up_last_alert": "2026-10-29T06:50:23.372714",
     "rsi_down_last_alert": "2026-10-29T03:50:09.996629"
   },
   "KPITTECH": {
@@ -3325,7 +3329,7 @@
     "rsi_up_last_alert": "2026-10-29T05:17:58.283698",
     "price_low_last_alert": "2026-10-28T10:04:15.903487",
     "price_low_last_price": 229.67999267578125,
-    "rsi_down_last_alert": "2026-10-29T05:49:32.438632"
+    "rsi_down_last_alert": "2026-10-29T06:50:26.076815"
   },
   "CHOLAFIN": {
     "result_date": "2026-10-28T00:00:00",
@@ -3337,7 +3341,7 @@
     "rsi_down_last_alert": "2026-10-28T08:03:46.290834",
     "price_high_last_alert": "2026-10-29T04:50:39.210713",
     "price_high_last_price": 1552.0,
-    "rsi_up_last_alert": "2026-10-29T05:49:33.729076"
+    "rsi_up_last_alert": "2026-10-29T06:50:27.156234"
   },
   "ATLASCYCLE": {
     "result_date": "2026-10-28T00:00:00",
@@ -3359,7 +3363,7 @@
     "mcap_cr": 3123.3218362376588,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T08:03:49.056287",
-    "rsi_up_last_alert": "2026-10-29T05:49:36.241034"
+    "rsi_up_last_alert": "2026-10-29T06:50:29.471857"
   },
   "ADANIENT": {
     "result_date": "2026-10-28T00:00:00",
@@ -3369,9 +3373,9 @@
     "mcap_cr": 336670.81062,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T10:49:51.638640",
-    "price_high_last_alert": "2026-10-29T04:50:45.134609",
-    "price_high_last_price": 2550.39990234375,
-    "rsi_up_last_alert": "2026-10-29T05:49:37.495159"
+    "price_high_last_alert": "2026-10-29T06:50:31.028801",
+    "price_high_last_price": 2581.0,
+    "rsi_up_last_alert": "2026-10-29T06:50:31.721901"
   },
   "GATEWAY": {
     "result_date": "2026-10-28T00:00:00",
@@ -3380,7 +3384,7 @@
     "baseline_rsi": 23.308246861837432,
     "mcap_cr": 2335.8349333,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:38.692977",
+    "rsi_down_last_alert": "2026-10-29T06:50:33.113821",
     "price_low_last_alert": "2026-10-29T05:32:43.087271",
     "price_low_last_price": 43.9900016784668
   },
@@ -3392,7 +3396,7 @@
     "mcap_cr": 953.955206632837,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-28T08:18:36.476517",
-    "rsi_down_last_alert": "2026-10-29T05:49:39.863419",
+    "rsi_down_last_alert": "2026-10-29T06:50:34.609613",
     "price_low_last_alert": "2026-10-29T04:17:33.723040",
     "price_low_last_price": 575.2000122070312
   },
@@ -3403,8 +3407,10 @@
     "baseline_rsi": 43.49782364463876,
     "mcap_cr": 12380.59732,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:41.072085",
-    "rsi_up_last_alert": "2026-10-28T08:50:27.625762"
+    "rsi_down_last_alert": "2026-10-29T06:50:36.701787",
+    "rsi_up_last_alert": "2026-10-28T08:50:27.625762",
+    "price_low_last_alert": "2026-10-29T06:50:36.096244",
+    "price_low_last_price": 2848.199951171875
   },
   "KSCL": {
     "result_date": "2026-10-28T00:00:00",
@@ -3413,7 +3419,7 @@
     "baseline_rsi": 35.97217310245483,
     "mcap_cr": 3440.4097126392517,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:49:42.287298",
+    "rsi_up_last_alert": "2026-10-29T06:50:38.202854",
     "price_high_last_alert": "2026-10-29T04:17:35.470984",
     "price_high_last_price": 692.5499877929688
   },
@@ -3424,7 +3430,7 @@
     "baseline_rsi": 46.528772707660934,
     "mcap_cr": 3965.880501,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:43.570832",
+    "rsi_down_last_alert": "2026-10-29T06:50:39.604270",
     "rsi_up_last_alert": "2026-10-28T09:04:04.950085",
     "price_low_last_alert": "2026-10-29T04:50:53.406655",
     "price_low_last_price": 855.2000122070312
@@ -3437,7 +3443,7 @@
     "mcap_cr": 89927.58507961092,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T08:50:31.080188",
-    "rsi_up_last_alert": "2026-10-29T05:49:44.828041",
+    "rsi_up_last_alert": "2026-10-29T06:50:41.117752",
     "price_high_last_alert": "2026-10-29T04:03:43.389881",
     "price_high_last_price": 235.6999969482422
   },
@@ -3459,7 +3465,7 @@
     "rsi_up_last_alert": "2026-10-28T09:04:07.974654",
     "price_low_last_alert": "2026-10-29T04:03:44.815609",
     "price_low_last_price": 158.75,
-    "rsi_down_last_alert": "2026-10-29T05:49:46.110714"
+    "rsi_down_last_alert": "2026-10-29T06:50:42.842115"
   },
   "KTKBANK": {
     "result_date": "2026-10-28T00:00:00",
@@ -3468,7 +3474,7 @@
     "baseline_rsi": 42.51739014285444,
     "mcap_cr": 11712.969246921803,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:47.349939",
+    "rsi_down_last_alert": "2026-10-29T06:50:44.309603",
     "price_low_last_alert": "2026-10-29T04:31:56.853017",
     "price_low_last_price": 296.54998779296875
   },
@@ -3479,7 +3485,7 @@
     "baseline_rsi": 34.7236925844696,
     "mcap_cr": 152847.10433725707,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:49:48.570556",
+    "rsi_up_last_alert": "2026-10-29T06:50:45.725863",
     "rsi_down_last_alert": "2026-10-28T10:50:01.774072",
     "price_high_last_alert": "2026-10-29T03:50:30.149079",
     "price_high_last_price": 1955.0
@@ -3494,7 +3500,7 @@
     "rsi_down_last_alert": "2026-10-29T06:20:04.587459",
     "price_high_last_alert": "2026-10-29T05:49:49.810797",
     "price_high_last_price": 19.0,
-    "rsi_up_last_alert": "2026-10-29T05:49:50.291714"
+    "rsi_up_last_alert": "2026-10-29T06:50:47.083209"
   },
   "SUDARCOLOR": {
     "result_date": "2026-10-28T00:00:00",
@@ -3521,7 +3527,7 @@
     "baseline_rsi": 29.81978596667126,
     "mcap_cr": 2680.384432,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:52.508858",
+    "rsi_down_last_alert": "2026-10-29T06:50:49.612892",
     "price_low_last_alert": "2026-10-29T04:51:04.705622",
     "price_low_last_price": 472.6499938964844
   },
@@ -3540,7 +3546,7 @@
     "baseline_rsi": 22.881690718521725,
     "mcap_cr": 16635.31108925,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:53.540192",
+    "rsi_down_last_alert": "2026-10-29T06:50:50.845632",
     "rsi_up_last_alert": "2026-10-29T05:18:12.200959"
   },
   "SECMARK": {
@@ -3567,7 +3573,7 @@
     "mcap_cr": 4685.126415640704,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-28T10:50:08.466001",
-    "rsi_down_last_alert": "2026-10-29T05:49:54.989548"
+    "rsi_down_last_alert": "2026-10-29T06:50:52.703322"
   },
   "VSTIND": {
     "result_date": "2026-10-28T00:00:00",
@@ -3576,7 +3582,7 @@
     "baseline_rsi": 19.933688629387575,
     "mcap_cr": 3262.867684959381,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:49:56.172738",
+    "rsi_down_last_alert": "2026-10-29T06:50:54.138753",
     "price_low_last_alert": "2026-10-29T04:17:43.249163",
     "price_low_last_price": 190.0
   },
@@ -3589,7 +3595,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T04:51:11.666722",
     "price_low_last_price": 132.22999572753906,
-    "rsi_down_last_alert": "2026-10-29T05:49:57.425365"
+    "rsi_down_last_alert": "2026-10-29T06:50:55.759822"
   },
   "BANDHANBNK": {
     "result_date": "2026-10-28T00:00:00",
@@ -3598,7 +3604,7 @@
     "baseline_rsi": 40.66633043488705,
     "mcap_cr": 25030.859015184917,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:49:58.727391",
+    "rsi_up_last_alert": "2026-10-29T06:50:57.200190",
     "price_high_last_alert": "2026-10-29T04:17:44.984727",
     "price_high_last_price": 158.0
   },
@@ -3630,7 +3636,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T03:50:44.353817",
     "price_low_last_price": 67.4000015258789,
-    "rsi_down_last_alert": "2026-10-29T05:50:00.222209"
+    "rsi_down_last_alert": "2026-10-29T06:50:59.492913"
   },
   "AJMERA": {
     "result_date": "2026-10-28T00:00:00",
@@ -3661,7 +3667,7 @@
     "price_high_last_alert": "2026-10-29T04:03:56.831248",
     "price_high_last_price": 1123.4000244140625,
     "rsi_up_last_alert": "2026-10-29T04:03:57.362456",
-    "rsi_down_last_alert": "2026-10-29T05:50:02.440673"
+    "rsi_down_last_alert": "2026-10-29T06:51:01.377451"
   },
   "VAIBHAVGBL": {
     "result_date": "2026-10-29T00:00:00",
@@ -3672,7 +3678,7 @@
     "exchange": "NSE",
     "price_low_last_alert": "2026-10-29T04:51:20.492078",
     "price_low_last_price": 159.3000030517578,
-    "rsi_down_last_alert": "2026-10-29T05:50:03.654077"
+    "rsi_down_last_alert": "2026-10-29T06:51:03.039256"
   },
   "arb_ARVINDFASN": {
     "spread_last_alert": "2026-10-29T03:59:20.982274",
@@ -3698,7 +3704,7 @@
     "mcap_cr": 5848.032016875,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-10-29T05:50:04.940940",
-    "rsi_down_last_alert": "2026-10-29T06:04:49.802997"
+    "rsi_down_last_alert": "2026-10-29T06:51:04.840447"
   },
   "GULFOILLUB": {
     "result_date": "2026-10-29T00:00:00",
@@ -3707,7 +3713,7 @@
     "baseline_rsi": 47.304704124339196,
     "mcap_cr": 5258.336742874829,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T05:50:06.138426",
+    "rsi_down_last_alert": "2026-10-29T06:51:06.486374",
     "price_low_last_alert": "2026-10-29T06:33:04.145718",
     "price_low_last_price": 1052.199951171875
   },
@@ -3718,7 +3724,7 @@
     "baseline_rsi": 42.47927524355159,
     "mcap_cr": 1254.24,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T05:50:07.387723"
+    "rsi_up_last_alert": "2026-10-29T06:51:08.047952"
   },
   "GKENERGY": {
     "result_date": "2026-10-29T00:00:00",
@@ -3727,7 +3733,8 @@
     "baseline_rsi": 36.67956720391212,
     "mcap_cr": 2082.730554069934,
     "exchange": "NSE",
-    "rsi_up_last_alert": "2026-10-29T06:33:06.000603"
+    "rsi_up_last_alert": "2026-10-29T06:33:06.000603",
+    "rsi_down_last_alert": "2026-10-29T06:51:09.522777"
   },
   "ABDL": {
     "result_date": "2026-10-29T00:00:00",
@@ -3749,5 +3756,22 @@
   "arb_TVSHLTD": {
     "spread_last_alert": "2026-10-29T06:38:38.206568",
     "spread_last_price": 2.888245326415032
+  },
+  "AEROFLEX": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 578.5,
+    "day_low": 511.1000061035156,
+    "baseline_rsi": 59.096007733932375,
+    "mcap_cr": 7562.7033912,
+    "exchange": "NSE"
+  },
+  "AGI": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 689.9500122070312,
+    "day_low": 645.4000244140625,
+    "baseline_rsi": 29.67652331494638,
+    "mcap_cr": 4247.38306265,
+    "exchange": "NSE",
+    "rsi_down_last_alert": "2026-10-29T06:51:12.122193"
   }
 }
