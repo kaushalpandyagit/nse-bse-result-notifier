@@ -4230,5 +4230,21 @@
     "baseline_rsi": 46.163065744682555,
     "mcap_cr": 22209.9072272,
     "exchange": "NSE"
+  },
+  "NINSYS": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 906.6500244140625,
+    "day_low": 848.25,
+    "baseline_rsi": 69.59212047565177,
+    "mcap_cr": 1677.4128,
+    "exchange": "NSE"
+  },
+  "INDRAMEDCO": {
+    "result_date": "2026-10-29T00:00:00",
+    "day_high": 320.8999938964844,
+    "day_low": 311.79998779296875,
+    "baseline_rsi": 42.381860733016154,
+    "mcap_cr": 2917.9514780944824,
+    "exchange": "NSE"
   }
 }
