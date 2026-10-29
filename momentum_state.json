@@ -3862,8 +3862,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 56.3,
-      "near_high_17_22_last_alert": "2026-10-29T03:55:28.237936",
-      "near_high_17_22_last_price": 3960.10009765625
+      "near_high_17_22_last_alert": "2026-10-29T05:19:43.570692",
+      "near_high_17_22_last_price": 4007.89990234375
     },
     "DBL": {
       "sma50": 402.3890002441406,
@@ -5135,7 +5135,9 @@
       "box_low": null,
       "descending_res": 1412.875,
       "wedge_contraction": 1.0408062315987847,
-      "rs_rank": 75.7
+      "rs_rank": 75.7,
+      "near_high_17_22_last_alert": "2026-10-29T05:20:06.254082",
+      "near_high_17_22_last_price": 1171.0
     },
     "FINPIPE": {
       "sma50": 153.52359985351563,
@@ -5423,7 +5425,9 @@
       "box_low": 500.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 4.1
+      "rs_rank": 4.1,
+      "mtf_last_alert": "2026-10-29T05:20:11.403753",
+      "mtf_last_price": 577.5499877929688
     },
     "GENUSPOWER": {
       "sma50": 306.68599975585937,
@@ -7706,8 +7710,8 @@
       "descending_res": 142.59999084472656,
       "wedge_contraction": 0.7572369117685321,
       "rs_rank": 62.9,
-      "near_high_17_22_last_alert": "2026-10-29T03:56:37.141592",
-      "near_high_17_22_last_price": 124.83000183105469
+      "near_high_17_22_last_alert": "2026-10-29T05:20:50.881960",
+      "near_high_17_22_last_price": 126.5999984741211
     },
     "JAYNECOIND": {
       "sma50": 93.3122004699707,
@@ -10066,8 +10070,8 @@
       "descending_res": 7306.0,
       "wedge_contraction": 1.0097789465034102,
       "rs_rank": 80.2,
-      "near_high_17_22_last_alert": "2026-10-29T03:57:16.021184",
-      "near_high_17_22_last_price": 6805.0
+      "near_high_17_22_last_alert": "2026-10-29T05:21:28.438270",
+      "near_high_17_22_last_price": 6919.0
     },
     "NATCOPHARM": {
       "sma50": 823.7169506835937,
@@ -10432,8 +10436,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 90.4,
-      "near_high_17_22_last_alert": "2026-10-29T03:57:23.513840",
-      "near_high_17_22_last_price": 19865.0
+      "near_high_17_22_last_alert": "2026-10-29T05:21:35.893207",
+      "near_high_17_22_last_price": 19635.0
     },
     "NEWGEN": {
       "sma50": 493.057998046875,
@@ -14792,8 +14796,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 50.3,
-      "mtf_last_alert": "2026-10-29T03:58:34.130744",
-      "mtf_last_price": 314.04998779296875
+      "mtf_last_alert": "2026-10-29T05:22:43.300795",
+      "mtf_last_price": 317.29998779296875
     },
     "TATACHEM": {
       "sma50": 634.15,
@@ -15088,8 +15092,8 @@
       "descending_res": 2052.1752319335938,
       "wedge_contraction": 0.8306945139996986,
       "rs_rank": 67.4,
-      "near_high_17_22_last_alert": "2026-10-29T03:58:40.472947",
-      "near_high_17_22_last_price": 1739.9000244140625
+      "near_high_17_22_last_alert": "2026-10-29T05:22:48.683364",
+      "near_high_17_22_last_price": 1772.9000244140625
     },
     "TEJASNET": {
       "sma50": 497.7529992675781,
