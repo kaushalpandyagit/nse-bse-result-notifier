@@ -1638,8 +1638,8 @@
       "descending_res": 2828.64990234375,
       "wedge_contraction": 0.678867033920274,
       "rs_rank": 78.7,
-      "near_high_17_22_last_alert": "2026-10-29T04:52:29.103739",
-      "near_high_17_22_last_price": 2549.699951171875
+      "near_high_17_22_last_alert": "2026-10-29T07:51:48.272163",
+      "near_high_17_22_last_price": 2518.39990234375
     },
     "BAJAJCON": {
       "sma50": 481.50199951171874,
@@ -1857,7 +1857,9 @@
       "box_low": 143.69000244140625,
       "descending_res": 146.8599853515625,
       "wedge_contraction": 1.0044945777243643,
-      "rs_rank": 24.3
+      "rs_rank": 24.3,
+      "rectangle_bounce_last_alert": "2026-10-29T07:51:52.716975",
+      "rectangle_bounce_last_price": 160.2100067138672
     },
     "BATAINDIA": {
       "sma50": 651.3719970703125,
@@ -2596,8 +2598,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 89.1,
-      "near_high_17_22_last_alert": "2026-10-29T05:51:19.012483",
-      "near_high_17_22_last_price": 2404.10009765625
+      "near_high_17_22_last_alert": "2026-10-29T07:52:06.543741",
+      "near_high_17_22_last_price": 2376.5
     },
     "CARBORUNIV": {
       "sma50": 1142.2839892578124,
@@ -3471,7 +3473,11 @@
       "box_low": 416.20001220703125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 65.0
+      "rs_rank": 65.0,
+      "resistance_last_alert": "2026-10-29T07:52:21.239089",
+      "resistance_last_price": 477.6000061035156,
+      "mtf_last_alert": "2026-10-29T07:52:21.990349",
+      "mtf_last_price": 477.6000061035156
     },
     "CONCORDBIO": {
       "sma50": 1427.0540014648439,
@@ -4854,8 +4860,8 @@
       "descending_res": 1792.5,
       "wedge_contraction": 0.9470471442248485,
       "rs_rank": 87.2,
-      "near_high_17_22_last_alert": "2026-10-29T03:55:46.446743",
-      "near_high_17_22_last_price": 1576.800048828125
+      "near_high_17_22_last_alert": "2026-10-29T07:52:43.686087",
+      "near_high_17_22_last_price": 1555.699951171875
     },
     "EPL": {
       "sma50": 239.30100036621093,
@@ -5658,8 +5664,8 @@
       "descending_res": 630.0,
       "wedge_contraction": 0.9934576154660816,
       "rs_rank": 69.9,
-      "near_high_17_22_last_alert": "2026-10-29T05:52:07.945211",
-      "near_high_17_22_last_price": 518.0
+      "near_high_17_22_last_alert": "2026-10-29T07:52:56.489471",
+      "near_high_17_22_last_price": 512.5999755859375
     },
     "GODFRYPHLP": {
       "sma50": 1934.0660083007813,
@@ -8523,7 +8529,9 @@
       "box_low": 784.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 40.1
+      "rs_rank": 40.1,
+      "ema50_pullback_last_alert": "2026-10-29T07:53:44.189111",
+      "ema50_pullback_last_price": 861.25
     },
     "KIMS": {
       "sma50": 745.4130017089843,
@@ -15120,8 +15128,8 @@
       "descending_res": 2052.1752319335938,
       "wedge_contraction": 0.8306945139996986,
       "rs_rank": 67.4,
-      "near_high_17_22_last_alert": "2026-10-29T05:22:48.683364",
-      "near_high_17_22_last_price": 1772.9000244140625
+      "near_high_17_22_last_alert": "2026-10-29T07:55:26.743298",
+      "near_high_17_22_last_price": 1754.699951171875
     },
     "TEJASNET": {
       "sma50": 497.7529992675781,
@@ -16545,7 +16553,9 @@
       "wedge_contraction": null,
       "rs_rank": 80.4,
       "near_high_17_22_last_alert": "2026-10-29T07:38:47.849571",
-      "near_high_17_22_last_price": 1836.0
+      "near_high_17_22_last_price": 1836.0,
+      "rectangle_bounce_last_alert": "2026-10-29T07:55:48.748881",
+      "rectangle_bounce_last_price": 1844.0999755859375
     },
     "WAKEFIT": {
       "sma50": 141.46199966430663,
