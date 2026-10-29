@@ -72,8 +72,8 @@
       "descending_res": 430.57863943917414,
       "wedge_contraction": 0.7239553620319058,
       "rs_rank": 38.4,
-      "near_high_17_22_last_alert": "2026-10-29T04:51:58.278936",
-      "near_high_17_22_last_price": 448.6499938964844
+      "near_high_17_22_last_alert": "2026-10-29T06:05:30.441592",
+      "near_high_17_22_last_price": 454.54998779296875
     },
     "AARTIPHARM": {
       "sma50": 868.3920007324218,
@@ -940,8 +940,8 @@
       "descending_res": 1226.925048828125,
       "wedge_contraction": 0.7758461994278285,
       "rs_rank": 43.7,
-      "near_high_17_22_last_alert": "2026-10-29T03:54:36.015290",
-      "near_high_17_22_last_price": 1152.300048828125
+      "near_high_17_22_last_alert": "2026-10-29T06:05:48.818035",
+      "near_high_17_22_last_price": 1164.199951171875
     },
     "APOLLO": {
       "sma50": 398.3830010986328,
@@ -2630,8 +2630,8 @@
       "descending_res": 1139.471452985491,
       "wedge_contraction": 1.3825097251578633,
       "rs_rank": 73.6,
-      "near_high_17_22_last_alert": "2026-10-29T03:55:11.223410",
-      "near_high_17_22_last_price": 1080.9000244140625
+      "near_high_17_22_last_alert": "2026-10-29T06:06:34.039216",
+      "near_high_17_22_last_price": 1068.5
     },
     "CARTRADE": {
       "sma50": 2955.1660009765624,
@@ -2994,8 +2994,8 @@
       "descending_res": 4972.5,
       "wedge_contraction": 0.9876951510021769,
       "rs_rank": 91.5,
-      "near_high_17_22_last_alert": "2026-10-29T04:53:00.167209",
-      "near_high_17_22_last_price": 4010.10009765625
+      "near_high_17_22_last_alert": "2026-10-29T06:06:41.214998",
+      "near_high_17_22_last_price": 4074.199951171875
     },
     "CERA": {
       "sma50": 5356.91,
@@ -5797,7 +5797,9 @@
       "near_high_17_22_last_alert": "2026-10-29T04:54:00.355602",
       "near_high_17_22_last_price": 215.57000732421875,
       "rectangle_bounce_last_alert": "2026-10-29T04:34:14.368219",
-      "rectangle_bounce_last_price": 214.1699981689453
+      "rectangle_bounce_last_price": 214.1699981689453,
+      "ema50_pullback_last_alert": "2026-10-29T06:07:47.581287",
+      "ema50_pullback_last_price": 214.9600067138672
     },
     "GOLDIAM": {
       "sma50": 327.64499938964843,
@@ -10328,8 +10330,8 @@
       "descending_res": 684.4998779296875,
       "wedge_contraction": 1.1208812564917032,
       "rs_rank": 77.6,
-      "near_high_17_22_last_alert": "2026-10-29T03:57:20.981592",
-      "near_high_17_22_last_price": 629.4000244140625
+      "near_high_17_22_last_alert": "2026-10-29T06:09:38.016158",
+      "near_high_17_22_last_price": 636.6500244140625
     },
     "NETWEB": {
       "sma50": 4862.47400390625,
@@ -11496,8 +11498,8 @@
       "descending_res": 606.7153648963341,
       "wedge_contraction": 0.8780845258272697,
       "rs_rank": 37.5,
-      "near_high_17_22_last_alert": "2026-10-29T03:57:43.063380",
-      "near_high_17_22_last_price": 574.9500122070312
+      "near_high_17_22_last_alert": "2026-10-29T06:10:06.847191",
+      "near_high_17_22_last_price": 581.0
     },
     "POLYMED": {
       "sma50": 1663.5159887695313,
@@ -16404,8 +16406,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 42.4,
-      "near_high_17_22_last_alert": "2026-10-29T05:09:00.856110",
-      "near_high_17_22_last_price": 10370.0
+      "near_high_17_22_last_alert": "2026-10-29T06:11:58.032596",
+      "near_high_17_22_last_price": 10521.0
     },
     "VTL": {
       "sma50": 555.6800030517578,
@@ -16844,8 +16846,8 @@
       "descending_res": 1109.25,
       "wedge_contraction": 0.8043657981582286,
       "rs_rank": 79.7,
-      "near_high_17_22_last_alert": "2026-10-29T03:59:10.188763",
-      "near_high_17_22_last_price": 943.0
+      "near_high_17_22_last_alert": "2026-10-29T06:12:09.608351",
+      "near_high_17_22_last_price": 933.5
     },
     "ZAGGLE": {
       "sma50": 176.01039947509764,
