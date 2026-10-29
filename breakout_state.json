@@ -578,8 +578,8 @@
     "mcap_cr": 172195.28020041747,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-28T03:46:13.778673",
-    "price_high_last_alert": "2026-10-29T03:46:23.099738",
-    "price_high_last_price": 187.58999633789062,
+    "price_high_last_alert": "2026-10-29T06:16:09.949978",
+    "price_high_last_price": 189.52999877929688,
     "rsi_up_last_alert": "2026-10-29T05:46:00.341427"
   },
   "HDFCLIFE": {
@@ -999,8 +999,8 @@
     "mcap_cr": 19218.595015,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-29T05:46:23.709098",
-    "price_low_last_alert": "2026-10-29T03:46:49.825397",
-    "price_low_last_price": 1102.300048828125
+    "price_low_last_alert": "2026-10-29T06:16:33.525922",
+    "price_low_last_price": 1090.5999755859375
   },
   "ONMOBILE": {
     "result_date": "2026-10-19T00:00:00",
@@ -1406,8 +1406,8 @@
     "mcap_cr": 1907.1545093482666,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-10-23T04:47:46.885027",
-    "price_high_last_alert": "2026-10-28T10:46:59.065145",
-    "price_high_last_price": 1976.800048828125,
+    "price_high_last_alert": "2026-10-29T06:17:04.254935",
+    "price_high_last_price": 1951.199951171875,
     "rsi_up_last_alert": "2026-10-29T05:46:53.140053"
   },
   "MAHSCOOTER": {
@@ -3491,7 +3491,7 @@
     "baseline_rsi": 45.521986221955146,
     "mcap_cr": 95.481463125,
     "exchange": "NSE",
-    "rsi_down_last_alert": "2026-10-29T04:51:02.108302",
+    "rsi_down_last_alert": "2026-10-29T06:20:04.587459",
     "price_high_last_alert": "2026-10-29T05:49:49.810797",
     "price_high_last_price": 19.0,
     "rsi_up_last_alert": "2026-10-29T05:49:50.291714"

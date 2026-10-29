@@ -1124,8 +1124,8 @@
       "descending_res": 490.8250244140625,
       "wedge_contraction": 1.3562119745915484,
       "rs_rank": 85.7,
-      "near_high_17_22_last_alert": "2026-10-29T03:54:39.088517",
-      "near_high_17_22_last_price": 501.54998779296875
+      "near_high_17_22_last_alert": "2026-10-29T06:21:37.624242",
+      "near_high_17_22_last_price": 494.54998779296875
     },
     "ARVINDFASN": {
       "sma50": 417.74400024414064,
@@ -5796,8 +5796,8 @@
       "descending_res": 201.91995849609376,
       "wedge_contraction": 1.0675743530377373,
       "rs_rank": 49.0,
-      "near_high_17_22_last_alert": "2026-10-29T04:54:00.355602",
-      "near_high_17_22_last_price": 215.57000732421875,
+      "near_high_17_22_last_alert": "2026-10-29T06:23:46.180254",
+      "near_high_17_22_last_price": 213.39999389648438,
       "rectangle_bounce_last_alert": "2026-10-29T04:34:14.368219",
       "rectangle_bounce_last_price": 214.1699981689453,
       "ema50_pullback_last_alert": "2026-10-29T06:07:47.581287",
@@ -10038,8 +10038,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 41.6,
-      "resistance_last_alert": "2026-10-29T04:35:27.107234",
-      "resistance_last_price": 35.27000045776367
+      "resistance_last_alert": "2026-10-29T06:25:43.505598",
+      "resistance_last_price": 35.709999084472656
     },
     "MTARTECH": {
       "sma50": 7194.92,
@@ -12627,7 +12627,9 @@
       "box_low": 407.1000061035156,
       "descending_res": 409.6199584960938,
       "wedge_contraction": 1.1389438436548647,
-      "rs_rank": 34.1
+      "rs_rank": 34.1,
+      "mtf_last_alert": "2026-10-29T06:26:58.678542",
+      "mtf_last_price": 458.0
     },
     "RPOWER": {
       "sma50": 20.498200035095216,
@@ -15394,8 +15396,8 @@
       "descending_res": 527.2999877929688,
       "wedge_contraction": 0.9695510911337814,
       "rs_rank": 71.4,
-      "near_high_17_22_last_alert": "2026-10-29T03:58:45.973278",
-      "near_high_17_22_last_price": 499.6000061035156
+      "near_high_17_22_last_alert": "2026-10-29T06:28:10.538247",
+      "near_high_17_22_last_price": 494.25
     },
     "TIMETECHNO": {
       "sma50": 180.23720031738281,
