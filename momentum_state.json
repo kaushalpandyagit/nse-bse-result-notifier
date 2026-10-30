@@ -1450,8 +1450,8 @@
       "descending_res": 2296.25,
       "wedge_contraction": 1.1998788798181996,
       "rs_rank": 99.1,
-      "near_high_17_22_last_alert": "2026-10-30T06:33:27.623282",
-      "near_high_17_22_last_price": 2067.10009765625
+      "near_high_17_22_last_alert": "2026-10-30T08:20:02.019638",
+      "near_high_17_22_last_price": 2042.5
     },
     "AVANTIFEED": {
       "sma50": 762.6930017089844,
@@ -1598,8 +1598,8 @@
       "descending_res": 1922.857142857143,
       "wedge_contraction": 0.7222756220464446,
       "rs_rank": 61.8,
-      "near_high_17_22_last_alert": "2026-10-30T04:37:49.683133",
-      "near_high_17_22_last_price": 1949.9000244140625
+      "near_high_17_22_last_alert": "2026-10-30T08:20:05.201119",
+      "near_high_17_22_last_price": 1889.4000244140625
     },
     "AZAD": {
       "sma50": 2778.1519921875,
@@ -10968,8 +10968,8 @@
       "descending_res": 147.59998575846353,
       "wedge_contraction": 0.9709442919236871,
       "rs_rank": 59.9,
-      "vol_breakout_last_alert": "2026-10-30T07:11:13.826507",
-      "vol_breakout_last_price": 127.0199966430664,
+      "vol_breakout_last_alert": "2026-10-30T08:22:38.118729",
+      "vol_breakout_last_price": 125.52999877929688,
       "liquidity_sweep_last_alert": "2026-10-30T07:11:14.386183",
       "liquidity_sweep_last_price": 127.0199966430664
     },
@@ -13527,7 +13527,9 @@
       "box_low": 622.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 2.1
+      "rs_rank": 2.1,
+      "vol_breakout_last_alert": "2026-10-30T08:23:18.925571",
+      "vol_breakout_last_price": 674.0999755859375
     },
     "SHAREINDIA": {
       "sma50": 189.42760009765624,
@@ -14728,12 +14730,12 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 36.0,
-      "mtf_last_alert": "2026-10-30T07:36:46.464869",
-      "mtf_last_price": 408.29998779296875,
+      "mtf_last_alert": "2026-10-30T08:23:36.433856",
+      "mtf_last_price": 404.1499938964844,
       "ema50_pullback_last_alert": "2026-10-30T06:11:05.112643",
       "ema50_pullback_last_price": 399.45001220703125,
-      "resistance_last_alert": "2026-10-30T07:36:45.986260",
-      "resistance_last_price": 408.29998779296875
+      "resistance_last_alert": "2026-10-30T08:23:35.951668",
+      "resistance_last_price": 404.1499938964844
     },
     "TANLA": {
       "sma50": 528.988999633789,
