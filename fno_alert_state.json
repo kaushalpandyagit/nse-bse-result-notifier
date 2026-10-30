@@ -420,5 +420,65 @@
     "ref_high": 1083.4,
     "ref_low": 991.9,
     "status": "Active"
+  },
+  "AYMSYNTEX": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 278.2,
+    "ref_low": 240.2,
+    "status": "Active"
+  },
+  "SMARTWORKS": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 517.0,
+    "ref_low": 466.0,
+    "status": "Active"
+  },
+  "SECMARK": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 152.99,
+    "ref_low": 150.0,
+    "status": "Active"
+  },
+  "AJANTPHARM": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 3619.9,
+    "ref_low": 3460.5,
+    "status": "Active"
+  },
+  "ALIVUS": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 1499.0,
+    "ref_low": 1380.0,
+    "status": "Active"
+  },
+  "SANOFI": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 3422.6,
+    "ref_low": 3175.1,
+    "status": "Active"
+  },
+  "SAKUMA": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 2.34,
+    "ref_low": 1.7,
+    "status": "Active"
+  },
+  "GARFIBRES": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 796.15,
+    "ref_low": 731.7,
+    "status": "Active"
+  },
+  "DYNPRO": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 268.89,
+    "ref_low": 220.68,
+    "status": "Active"
+  },
+  "SURYODAY": {
+    "trigger_date": "2026-10-30",
+    "ref_high": 142.0,
+    "ref_low": 134.17,
+    "status": "Active"
   }
 }
