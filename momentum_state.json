@@ -1892,10 +1892,10 @@
       "sma150": 799.1023347981771,
       "sma200": 728.9745016479492,
       "sma200_rising": true,
-      "stage2": false,
+      "stage2": true,
       "fifty2w_high": 1078.199951171875,
       "fifty2w_low": 447.1499938964844,
-      "near_high": false,
+      "near_high": true,
       "ath_high": 1103.0,
       "vcp_contracting": false,
       "rs_return_6m": 25.64885164009563,
@@ -2321,7 +2321,7 @@
       "box_low": 523.5499877929688,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 42.0
+      "rs_rank": 43.3
     },
     "BSOFT": {
       "sma50": 291.9920001220703,
@@ -2829,7 +2829,7 @@
       "box_low": 302.29998779296875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 77.0
+      "rs_rank": 77.1
     },
     "CELLO": {
       "sma50": 347.3310009765625,
@@ -3735,7 +3735,7 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 88.7
+      "rs_rank": 89.3
     },
     "DALBHARAT": {
       "sma50": 1699.1259936523438,
@@ -6931,7 +6931,7 @@
       "box_low": 137.32000732421875,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 35.0
+      "rs_rank": 35.1
     },
     "IIFL": {
       "sma50": 608.3550048828125,
@@ -7331,7 +7331,7 @@
       "box_low": 57.15999984741211,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 1.5
+      "rs_rank": 1.7
     },
     "INTELLECT": {
       "sma50": 645.1100012207031,
@@ -9501,7 +9501,7 @@
       "box_low": 1588.9000244140625,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 83.2
+      "rs_rank": 82.0
     },
     "MANYAVAR": {
       "sma50": 530.5869970703125,
@@ -11061,7 +11061,7 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 97.2
+      "rs_rank": 97.9
     },
     "PDSL": {
       "sma50": 349.2479992675781,
@@ -11836,7 +11836,7 @@
       "sma150": 1248.5716650390625,
       "sma200": 1129.3179992675782,
       "sma200_rising": true,
-      "stage2": false,
+      "stage2": true,
       "fifty2w_high": 1648.800048828125,
       "fifty2w_low": 595.0999755859375,
       "near_high": true,
@@ -11987,7 +11987,7 @@
       "stage2": false,
       "fifty2w_high": 1598.5999755859375,
       "fifty2w_low": 1103.800048828125,
-      "near_high": true,
+      "near_high": false,
       "ath_high": 1645.699951171875,
       "vcp_contracting": false,
       "rs_return_6m": -3.58540466848013,
@@ -12771,7 +12771,9 @@
       "box_low": 1390.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 95.5
+      "rs_rank": 95.3,
+      "near_high_17_22_last_alert": "2026-10-30T04:00:23.144281",
+      "near_high_17_22_last_price": 1541.9000244140625
     },
     "SAFARI": {
       "sma50": 1414.429990234375,
@@ -12855,7 +12857,7 @@
       "stage2": false,
       "fifty2w_high": 206.85000610351562,
       "fifty2w_low": 128.14999389648438,
-      "near_high": false,
+      "near_high": true,
       "ath_high": 254.5,
       "vcp_contracting": false,
       "rs_return_6m": -3.206409914849684,
@@ -13536,7 +13538,7 @@
       "sma150": 673.6673313395182,
       "sma200": 583.1874983215332,
       "sma200_rising": true,
-      "stage2": false,
+      "stage2": true,
       "fifty2w_high": 1073.699951171875,
       "fifty2w_low": 267.0,
       "near_high": true,
@@ -14883,7 +14885,7 @@
       "stage2": false,
       "fifty2w_high": 879.1500244140625,
       "fifty2w_low": 509.20001220703125,
-      "near_high": false,
+      "near_high": true,
       "ath_high": 891.0,
       "vcp_contracting": false,
       "rs_return_6m": 13.167636026985452,

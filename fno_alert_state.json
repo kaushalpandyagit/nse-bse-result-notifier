@@ -371,7 +371,9 @@
     "trigger_date": "2026-10-29",
     "ref_high": 119.0,
     "ref_low": 110.01,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-10-30T03:53:12.295813",
+    "fno_high_breach_last_price": 115.94999694824219
   },
   "KAMANWALA": {
     "trigger_date": "2026-10-29",
