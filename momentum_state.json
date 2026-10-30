@@ -72,8 +72,8 @@
       "descending_res": 462.7249450683594,
       "wedge_contraction": 0.8750156717078351,
       "rs_rank": 40.5,
-      "near_high_17_22_last_alert": "2026-10-30T04:14:53.321123",
-      "near_high_17_22_last_price": 442.20001220703125
+      "near_high_17_22_last_alert": "2026-10-30T05:49:45.410627",
+      "near_high_17_22_last_price": 436.04998779296875
     },
     "AARTIPHARM": {
       "sma50": 869.7600012207031,
@@ -4038,8 +4038,8 @@
       "rs_rank": 40.9,
       "vol_breakout_last_alert": "2026-10-30T04:16:21.171830",
       "vol_breakout_last_price": 1520.5,
-      "rectangle_bounce_last_alert": "2026-10-30T04:38:39.927360",
-      "rectangle_bounce_last_price": 1565.199951171875,
+      "rectangle_bounce_last_alert": "2026-10-30T05:50:50.505999",
+      "rectangle_bounce_last_price": 1532.0,
       "ema50_pullback_last_alert": "2026-10-30T04:38:40.663432",
       "ema50_pullback_last_price": 1565.199951171875
     },
@@ -6595,7 +6595,9 @@
       "box_low": 981.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 52.2
+      "rs_rank": 52.2,
+      "mtf_last_alert": "2026-10-30T05:51:35.424085",
+      "mtf_last_price": 1108.0
     },
     "HONASA": {
       "sma50": 464.7629962158203,
@@ -9994,8 +9996,8 @@
       "descending_res": 191.32957524838656,
       "wedge_contraction": 1.3072194930727075,
       "rs_rank": 60.8,
-      "near_high_17_22_last_alert": "2026-10-30T04:18:32.910409",
-      "near_high_17_22_last_price": 171.6999969482422
+      "near_high_17_22_last_alert": "2026-10-30T05:52:33.010825",
+      "near_high_17_22_last_price": 174.75999450683594
     },
     "MSTCLTD": {
       "sma50": 692.3349987792968,
@@ -12008,8 +12010,8 @@
       "descending_res": 201.67250442504883,
       "wedge_contraction": 0.9655764588591553,
       "rs_rank": 95.9,
-      "near_high_17_22_last_alert": "2026-10-30T04:19:21.281039",
-      "near_high_17_22_last_price": 201.8800048828125
+      "near_high_17_22_last_alert": "2026-10-30T05:53:12.738688",
+      "near_high_17_22_last_price": 198.82000732421875
     },
     "RAINBOW": {
       "sma50": 1350.2299926757812,

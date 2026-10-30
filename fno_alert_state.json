@@ -409,7 +409,9 @@
     "trigger_date": "2026-10-29",
     "ref_high": 1177.3,
     "ref_low": 1083.1,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-30T05:49:42.328733",
+    "fno_low_breach_last_price": 1083.0
   },
   "SUNDRMFAST": {
     "trigger_date": "2026-10-29",
