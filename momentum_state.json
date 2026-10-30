@@ -1746,8 +1746,8 @@
       "descending_res": 733.25,
       "wedge_contraction": 0.7816091000387136,
       "rs_rank": 78.7,
-      "near_high_17_22_last_alert": "2026-10-30T04:15:30.148928",
-      "near_high_17_22_last_price": 620.5
+      "near_high_17_22_last_alert": "2026-10-30T06:19:31.257747",
+      "near_high_17_22_last_price": 613.7000122070312
     },
     "BALUFORGE": {
       "sma50": 519.9380035400391,
@@ -4036,8 +4036,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 40.9,
-      "vol_breakout_last_alert": "2026-10-30T04:16:21.171830",
-      "vol_breakout_last_price": 1520.5,
+      "vol_breakout_last_alert": "2026-10-30T06:20:06.560760",
+      "vol_breakout_last_price": 1536.300048828125,
       "rectangle_bounce_last_alert": "2026-10-30T05:50:50.505999",
       "rectangle_bounce_last_price": 1532.0,
       "ema50_pullback_last_alert": "2026-10-30T04:38:40.663432",
@@ -4331,7 +4331,9 @@
       "box_low": 1490.0,
       "descending_res": 2011.3962221498844,
       "wedge_contraction": 1.3609476835371872,
-      "rs_rank": 68.7
+      "rs_rank": 68.7,
+      "vol_breakout_last_alert": "2026-10-30T06:20:11.116114",
+      "vol_breakout_last_price": 1540.0
     },
     "EDELWEISS": {
       "sma50": 130.939599609375,
@@ -13786,8 +13788,8 @@
       "descending_res": 2325.2252197265625,
       "wedge_contraction": 1.020916305277753,
       "rs_rank": 77.8,
-      "near_high_17_22_last_alert": "2026-10-30T04:19:56.733385",
-      "near_high_17_22_last_price": 2041.300048828125
+      "near_high_17_22_last_alert": "2026-10-30T06:22:32.746841",
+      "near_high_17_22_last_price": 2064.5
     },
     "SJVN": {
       "sma50": 59.95440017700195,
@@ -13860,8 +13862,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 69.7,
-      "near_high_17_22_last_alert": "2026-10-30T04:19:59.141665",
-      "near_high_17_22_last_price": 511.45001220703125
+      "near_high_17_22_last_alert": "2026-10-30T06:22:34.670473",
+      "near_high_17_22_last_price": 502.5
     },
     "SKYGOLD": {
       "sma50": 856.1480004882812,
@@ -14696,10 +14698,12 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 36.0,
-      "mtf_last_alert": "2026-10-30T04:30:56.337814",
-      "mtf_last_price": 398.20001220703125,
+      "mtf_last_alert": "2026-10-30T06:22:46.493761",
+      "mtf_last_price": 404.1000061035156,
       "ema50_pullback_last_alert": "2026-10-30T06:11:05.112643",
-      "ema50_pullback_last_price": 399.45001220703125
+      "ema50_pullback_last_price": 399.45001220703125,
+      "resistance_last_alert": "2026-10-30T06:22:45.997014",
+      "resistance_last_price": 404.1000061035156
     },
     "TANLA": {
       "sma50": 528.988999633789,
@@ -16734,8 +16738,8 @@
       "descending_res": 666.6817848899148,
       "wedge_contraction": 1.0893572341419748,
       "rs_rank": 77.4,
-      "near_high_17_22_last_alert": "2026-10-30T05:13:25.167313",
-      "near_high_17_22_last_price": 630.7000122070312
+      "near_high_17_22_last_alert": "2026-10-30T06:23:15.558662",
+      "near_high_17_22_last_price": 623.5
     },
     "WHIRLPOOL": {
       "sma50": 810.5040026855469,
