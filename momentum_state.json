@@ -5573,7 +5573,9 @@
       "box_low": null,
       "descending_res": 440.771484375,
       "wedge_contraction": 0.937224854174454,
-      "rs_rank": 1.9
+      "rs_rank": 1.9,
+      "liquidity_sweep_last_alert": "2026-10-30T07:09:23.557831",
+      "liquidity_sweep_last_price": 425.6499938964844
     },
     "GMRP&UI": {
       "sma50": 96.64260009765626,
@@ -5646,8 +5648,8 @@
       "descending_res": 629.4285714285714,
       "wedge_contraction": 0.9201235054233625,
       "rs_rank": 71.2,
-      "near_high_17_22_last_alert": "2026-10-30T05:09:31.809619",
-      "near_high_17_22_last_price": 499.1000061035156
+      "near_high_17_22_last_alert": "2026-10-30T07:09:25.603090",
+      "near_high_17_22_last_price": 506.0
     },
     "GODFRYPHLP": {
       "sma50": 1934.0860083007813,
@@ -9891,7 +9893,9 @@
       "box_low": 580.0,
       "descending_res": 650.820166015625,
       "wedge_contraction": 1.0283933907119625,
-      "rs_rank": 81.9
+      "rs_rank": 81.9,
+      "near_high_17_22_last_alert": "2026-10-30T07:10:49.898130",
+      "near_high_17_22_last_price": 637.6500244140625
     },
     "MMTC": {
       "sma50": 58.894599761962894,
@@ -10441,7 +10445,9 @@
       "wedge_contraction": 0.8956067831683767,
       "rs_rank": 11.1,
       "rectangle_bounce_last_alert": "2026-10-30T06:09:55.430826",
-      "rectangle_bounce_last_price": 24.5
+      "rectangle_bounce_last_price": 24.5,
+      "vol_breakout_last_alert": "2026-10-30T07:11:02.377816",
+      "vol_breakout_last_price": 23.81999969482422
     },
     "NEULANDLAB": {
       "sma50": 21824.36,
@@ -10950,8 +10956,10 @@
       "descending_res": 147.59998575846353,
       "wedge_contraction": 0.9709442919236871,
       "rs_rank": 59.9,
-      "vol_breakout_last_alert": "2026-10-30T05:11:26.640274",
-      "vol_breakout_last_price": 125.0
+      "vol_breakout_last_alert": "2026-10-30T07:11:13.826507",
+      "vol_breakout_last_price": 127.0199966430664,
+      "liquidity_sweep_last_alert": "2026-10-30T07:11:14.386183",
+      "liquidity_sweep_last_price": 127.0199966430664
     },
     "PARAS": {
       "sma50": 1360.7299975585938,
@@ -10988,8 +10996,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 94.9,
-      "near_high_17_22_last_alert": "2026-10-30T05:22:21.965567",
-      "near_high_17_22_last_price": 1258.0
+      "near_high_17_22_last_alert": "2026-10-30T07:11:15.425452",
+      "near_high_17_22_last_price": 1273.0
     },
     "PARKHOSPS": {
       "sma50": 266.5159979248047,
@@ -12269,7 +12277,9 @@
       "box_low": 84.05999755859375,
       "descending_res": 97.7118730545044,
       "wedge_contraction": 1.398408096016793,
-      "rs_rank": 92.5
+      "rs_rank": 92.5,
+      "near_high_17_22_last_alert": "2026-10-30T07:11:41.021835",
+      "near_high_17_22_last_price": 88.4000015258789
     },
     "RCF": {
       "sma50": 108.82579956054687,
@@ -13465,7 +13475,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 5.1
+      "rs_rank": 5.1,
+      "liquidity_sweep_last_alert": "2026-10-30T07:12:05.075613",
+      "liquidity_sweep_last_price": 356.6499938964844
     },
     "SHARDACROP": {
       "sma50": 739.0049975585938,
@@ -13790,8 +13802,8 @@
       "descending_res": 2325.2252197265625,
       "wedge_contraction": 1.020916305277753,
       "rs_rank": 77.8,
-      "near_high_17_22_last_alert": "2026-10-30T06:22:32.746841",
-      "near_high_17_22_last_price": 2064.5
+      "near_high_17_22_last_alert": "2026-10-30T07:12:11.547185",
+      "near_high_17_22_last_price": 2099.89990234375
     },
     "SJVN": {
       "sma50": 59.95440017700195,
