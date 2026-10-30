@@ -1450,8 +1450,8 @@
       "descending_res": 2296.25,
       "wedge_contraction": 1.1998788798181996,
       "rs_rank": 99.1,
-      "near_high_17_22_last_alert": "2026-10-30T05:19:41.624072",
-      "near_high_17_22_last_price": 2046.0999755859375
+      "near_high_17_22_last_alert": "2026-10-30T06:33:27.623282",
+      "near_high_17_22_last_price": 2067.10009765625
     },
     "AVANTIFEED": {
       "sma50": 762.6930017089844,
@@ -10875,7 +10875,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 1.1
+      "rs_rank": 1.1,
+      "liquidity_sweep_last_alert": "2026-10-30T06:36:04.025384",
+      "liquidity_sweep_last_price": 208.5500030517578
     },
     "PAISALO": {
       "sma50": 78.63240005493164,
@@ -11242,8 +11244,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 57.4,
-      "resistance_last_alert": "2026-10-30T05:11:33.760028",
-      "resistance_last_price": 537.0499877929688,
+      "resistance_last_alert": "2026-10-30T06:36:10.344343",
+      "resistance_last_price": 543.0999755859375,
       "mtf_last_alert": "2026-10-30T04:30:00.781348",
       "mtf_last_price": 540.8499755859375,
       "ema50_pullback_last_alert": "2026-10-30T05:11:34.327184",
@@ -14516,8 +14518,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 82.9,
-      "near_high_17_22_last_alert": "2026-10-30T04:20:11.274477",
-      "near_high_17_22_last_price": 865.75
+      "near_high_17_22_last_alert": "2026-10-30T06:37:00.598017",
+      "near_high_17_22_last_price": 856.7999877929688
     },
     "SURYAROSNI": {
       "sma50": 214.34180084228515,
@@ -15360,8 +15362,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 78.9,
-      "vol_breakout_last_alert": "2026-10-30T05:38:10.253804",
-      "vol_breakout_last_price": 469.79998779296875
+      "vol_breakout_last_alert": "2026-10-30T06:37:14.114988",
+      "vol_breakout_last_price": 455.79998779296875
     },
     "TI": {
       "sma50": 546.3929956054687,
@@ -16194,8 +16196,8 @@
       "descending_res": 317.9227211692116,
       "wedge_contraction": 1.5493579726028737,
       "rs_rank": 32.0,
-      "vol_breakout_last_alert": "2026-10-30T05:38:23.550308",
-      "vol_breakout_last_price": 270.29998779296875
+      "vol_breakout_last_alert": "2026-10-30T06:37:26.818869",
+      "vol_breakout_last_price": 275.20001220703125
     },
     "VIJAYA": {
       "sma50": 1466.6639990234376,
