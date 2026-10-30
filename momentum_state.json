@@ -6082,12 +6082,12 @@
       "rs_rank": 81.0,
       "bonde_last_alert": "2026-10-30T05:09:43.077020",
       "bonde_last_price": 206.1199951171875,
-      "vol_breakout_last_alert": "2026-10-30T04:39:23.528888",
-      "vol_breakout_last_price": 207.3000030517578,
-      "sos_pullback_curl_last_alert": "2026-10-30T04:39:24.157050",
-      "sos_pullback_curl_last_price": 207.3000030517578,
-      "mtf_last_alert": "2026-10-30T04:39:24.765135",
-      "mtf_last_price": 207.3000030517578,
+      "vol_breakout_last_alert": "2026-10-30T05:35:28.991402",
+      "vol_breakout_last_price": 204.1199951171875,
+      "sos_pullback_curl_last_alert": "2026-10-30T05:35:29.636331",
+      "sos_pullback_curl_last_price": 204.1199951171875,
+      "mtf_last_alert": "2026-10-30T05:35:30.237968",
+      "mtf_last_price": 204.1199951171875,
       "ema50_pullback_last_alert": "2026-10-30T05:09:43.656126",
       "ema50_pullback_last_price": 206.1199951171875
     },
@@ -15350,8 +15350,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 78.9,
-      "vol_breakout_last_alert": "2026-10-30T04:42:31.918654",
-      "vol_breakout_last_price": 477.8500061035156
+      "vol_breakout_last_alert": "2026-10-30T05:38:10.253804",
+      "vol_breakout_last_price": 469.79998779296875
     },
     "TI": {
       "sma50": 546.3929956054687,
@@ -16183,7 +16183,9 @@
       "box_low": 252.4499969482422,
       "descending_res": 317.9227211692116,
       "wedge_contraction": 1.5493579726028737,
-      "rs_rank": 32.0
+      "rs_rank": 32.0,
+      "vol_breakout_last_alert": "2026-10-30T05:38:23.550308",
+      "vol_breakout_last_price": 270.29998779296875
     },
     "VIJAYA": {
       "sma50": 1466.6639990234376,
