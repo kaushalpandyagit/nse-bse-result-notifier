@@ -217,7 +217,9 @@
     "trigger_date": "2026-10-26",
     "ref_high": 510.9,
     "ref_low": 477.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-30T04:49:53.131701",
+    "fno_low_breach_last_price": 474.25
   },
   "ATLASCYCLE": {
     "trigger_date": "2026-10-27",

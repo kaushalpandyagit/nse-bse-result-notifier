@@ -2145,7 +2145,9 @@
       "box_low": 524.4000244140625,
       "descending_res": 548.3332926432291,
       "wedge_contraction": 1.1309017248264548,
-      "rs_rank": 68.2
+      "rs_rank": 68.2,
+      "near_high_17_22_last_alert": "2026-10-30T04:50:36.159790",
+      "near_high_17_22_last_price": 583.7000122070312
     },
     "BLS": {
       "sma50": 229.2683999633789,
