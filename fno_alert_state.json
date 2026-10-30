@@ -348,8 +348,8 @@
     "ref_high": 1642.9,
     "ref_low": 1560.0,
     "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-30T04:10:53.426546",
-    "fno_low_breach_last_price": 1566.9000244140625
+    "fno_low_breach_last_alert": "2026-10-30T04:26:39.090042",
+    "fno_low_breach_last_price": 1563.300048828125
   },
   "RHL": {
     "trigger_date": "2026-10-28",

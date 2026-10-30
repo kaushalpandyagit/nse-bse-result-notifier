@@ -1302,8 +1302,10 @@
       "box_high": 1869.9000244140625,
       "box_low": 1470.800048828125,
       "descending_res": 1662.0,
-      "wedge_contraction": 1.1653662673112506,
-      "rs_rank": 90.2
+      "wedge_contraction": 1.10925661703863,
+      "rs_rank": 91.2,
+      "near_high_17_22_last_alert": "2026-10-30T04:27:02.689370",
+      "near_high_17_22_last_price": 1529.9000244140625
     },
     "ATLANTAELE": {
       "sma50": 1740.1060009765624,
@@ -6367,9 +6369,9 @@
       "box_low": 648.0,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 64.2,
-      "resistance_last_alert": "2026-10-30T04:17:16.346047",
-      "resistance_last_price": 811.5499877929688
+      "rs_rank": 62.7,
+      "resistance_last_alert": "2026-10-30T04:28:35.470692",
+      "resistance_last_price": 812.5
     },
     "HCC": {
       "sma50": 20.910399932861328,
@@ -11221,11 +11223,11 @@
       "box_low": 454.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 57.6,
-      "resistance_last_alert": "2026-10-30T04:19:03.824365",
-      "resistance_last_price": 532.5999755859375,
-      "mtf_last_alert": "2026-10-30T04:19:04.350409",
-      "mtf_last_price": 532.5999755859375
+      "rs_rank": 57.4,
+      "resistance_last_alert": "2026-10-30T03:59:53.740332",
+      "resistance_last_price": 531.3499755859375,
+      "mtf_last_alert": "2026-10-30T04:30:00.781348",
+      "mtf_last_price": 540.8499755859375
     },
     "PGHL": {
       "sma50": 5467.77,
@@ -14673,9 +14675,9 @@
       "box_low": 344.45001220703125,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 35.2,
-      "mtf_last_alert": "2026-10-30T04:20:15.293665",
-      "mtf_last_price": 397.45001220703125
+      "rs_rank": 36.0,
+      "mtf_last_alert": "2026-10-30T04:30:56.337814",
+      "mtf_last_price": 398.20001220703125
     },
     "TANLA": {
       "sma50": 528.988999633789,
