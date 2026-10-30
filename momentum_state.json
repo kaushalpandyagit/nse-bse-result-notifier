@@ -1593,7 +1593,9 @@
       "box_low": null,
       "descending_res": 1922.857142857143,
       "wedge_contraction": 0.7222756220464446,
-      "rs_rank": 61.8
+      "rs_rank": 61.8,
+      "near_high_17_22_last_alert": "2026-10-30T04:37:49.683133",
+      "near_high_17_22_last_price": 1949.9000244140625
     },
     "AZAD": {
       "sma50": 2778.1519921875,
@@ -4027,7 +4029,11 @@
       "wedge_contraction": null,
       "rs_rank": 40.9,
       "vol_breakout_last_alert": "2026-10-30T04:16:21.171830",
-      "vol_breakout_last_price": 1520.5
+      "vol_breakout_last_price": 1520.5,
+      "rectangle_bounce_last_alert": "2026-10-30T04:38:39.927360",
+      "rectangle_bounce_last_price": 1565.199951171875,
+      "ema50_pullback_last_alert": "2026-10-30T04:38:40.663432",
+      "ema50_pullback_last_price": 1565.199951171875
     },
     "DELHIVERY": {
       "sma50": 424.91,
@@ -4353,7 +4359,9 @@
       "box_low": 112.01000213623047,
       "descending_res": 136.6400146484375,
       "wedge_contraction": 1.090566956617965,
-      "rs_rank": 61.4
+      "rs_rank": 61.4,
+      "near_high_17_22_last_alert": "2026-10-30T04:38:47.207253",
+      "near_high_17_22_last_price": 121.12000274658203
     },
     "EIDPARRY": {
       "sma50": 717.3210021972657,
@@ -6065,7 +6073,13 @@
       "wedge_contraction": null,
       "rs_rank": 81.0,
       "bonde_last_alert": "2026-10-30T04:17:09.411575",
-      "bonde_last_price": 203.44000244140625
+      "bonde_last_price": 203.44000244140625,
+      "vol_breakout_last_alert": "2026-10-30T04:39:23.528888",
+      "vol_breakout_last_price": 207.3000030517578,
+      "sos_pullback_curl_last_alert": "2026-10-30T04:39:24.157050",
+      "sos_pullback_curl_last_price": 207.3000030517578,
+      "mtf_last_alert": "2026-10-30T04:39:24.765135",
+      "mtf_last_price": 207.3000030517578
     },
     "GRINDWELL": {
       "sma50": 1952.51400390625,
@@ -11865,7 +11879,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 66.3
+      "rs_rank": 66.3,
+      "near_high_17_22_last_alert": "2026-10-30T04:41:23.500007",
+      "near_high_17_22_last_price": 1392.0999755859375
     },
     "QUESS": {
       "sma50": 342.47400268554685,
@@ -14257,7 +14273,9 @@
       "box_low": null,
       "descending_res": 1097.5626068115234,
       "wedge_contraction": 0.9945458517804197,
-      "rs_rank": 95.1
+      "rs_rank": 95.1,
+      "near_high_17_22_last_alert": "2026-10-30T04:42:11.161854",
+      "near_high_17_22_last_price": 1075.0999755859375
     },
     "SUMICHEM": {
       "sma50": 446.567001953125,
@@ -14839,7 +14857,9 @@
       "wedge_contraction": null,
       "rs_rank": 49.3,
       "resistance_last_alert": "2026-10-30T04:20:18.633742",
-      "resistance_last_price": 3801.0
+      "resistance_last_price": 3801.0,
+      "mtf_last_alert": "2026-10-30T04:42:21.376998",
+      "mtf_last_price": 3812.10009765625
     },
     "TATAINVEST": {
       "sma50": 628.9829968261719,
@@ -15311,7 +15331,9 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 78.9
+      "rs_rank": 78.9,
+      "vol_breakout_last_alert": "2026-10-30T04:42:31.918654",
+      "vol_breakout_last_price": 477.8500061035156
     },
     "TI": {
       "sma50": 546.3929956054687,
