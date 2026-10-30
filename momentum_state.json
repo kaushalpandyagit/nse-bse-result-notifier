@@ -1449,7 +1449,9 @@
       "box_low": null,
       "descending_res": 2296.25,
       "wedge_contraction": 1.1998788798181996,
-      "rs_rank": 99.1
+      "rs_rank": 99.1,
+      "near_high_17_22_last_alert": "2026-10-30T05:19:41.624072",
+      "near_high_17_22_last_price": 2046.0999755859375
     },
     "AVANTIFEED": {
       "sma50": 762.6930017089844,
@@ -2617,7 +2619,9 @@
       "box_low": 987.2999877929688,
       "descending_res": 1129.0428815569196,
       "wedge_contraction": 1.3695979497114035,
-      "rs_rank": 72.5
+      "rs_rank": 72.5,
+      "near_high_17_22_last_alert": "2026-10-30T05:20:04.380985",
+      "near_high_17_22_last_price": 1069.0
     },
     "CARTRADE": {
       "sma50": 2944.747998046875,
@@ -10100,8 +10104,8 @@
       "descending_res": 7257.083333333333,
       "wedge_contraction": 1.1924015078719787,
       "rs_rank": 70.4,
-      "near_high_17_22_last_alert": "2026-10-30T04:18:36.315861",
-      "near_high_17_22_last_price": 6930.0
+      "near_high_17_22_last_alert": "2026-10-30T05:22:05.393615",
+      "near_high_17_22_last_price": 6853.0
     },
     "NATCOPHARM": {
       "sma50": 823.7629504394531,
@@ -10429,7 +10433,9 @@
       "box_low": 22.860000610351562,
       "descending_res": 27.442307985745945,
       "wedge_contraction": 0.8956067831683767,
-      "rs_rank": 11.1
+      "rs_rank": 11.1,
+      "rectangle_bounce_last_alert": "2026-10-30T05:22:11.824273",
+      "rectangle_bounce_last_price": 24.1299991607666
     },
     "NEULANDLAB": {
       "sma50": 21824.36,
@@ -10466,8 +10472,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 87.6,
-      "near_high_17_22_last_alert": "2026-10-30T04:18:46.258563",
-      "near_high_17_22_last_price": 19365.0
+      "near_high_17_22_last_alert": "2026-10-30T05:22:13.085442",
+      "near_high_17_22_last_price": 19125.0
     },
     "NEWGEN": {
       "sma50": 491.5189984130859,
@@ -10974,8 +10980,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 94.9,
-      "near_high_17_22_last_alert": "2026-10-30T04:18:57.034359",
-      "near_high_17_22_last_price": 1271.0
+      "near_high_17_22_last_alert": "2026-10-30T05:22:21.965567",
+      "near_high_17_22_last_price": 1258.0
     },
     "PARKHOSPS": {
       "sma50": 266.5159979248047,
@@ -11708,8 +11714,8 @@
       "descending_res": 767.7856924874442,
       "wedge_contraction": 0.8065109214552446,
       "rs_rank": 74.8,
-      "near_high_17_22_last_alert": "2026-10-30T04:19:14.442449",
-      "near_high_17_22_last_price": 649.1500244140625
+      "near_high_17_22_last_alert": "2026-10-30T05:22:34.684069",
+      "near_high_17_22_last_price": 642.4500122070312
     },
     "PRIVISCL": {
       "sma50": 3446.97201171875,
@@ -15959,7 +15965,9 @@
       "box_low": 448.75,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 63.1
+      "rs_rank": 63.1,
+      "near_high_17_22_last_alert": "2026-10-30T05:23:39.795902",
+      "near_high_17_22_last_price": 450.3500061035156
     },
     "UTIAMC": {
       "sma50": 882.1750036621094,
