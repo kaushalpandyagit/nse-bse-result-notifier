@@ -72,8 +72,8 @@
       "descending_res": 462.7249450683594,
       "wedge_contraction": 0.8750156717078351,
       "rs_rank": 40.5,
-      "near_high_17_22_last_alert": "2026-10-30T05:49:45.410627",
-      "near_high_17_22_last_price": 436.04998779296875
+      "near_high_17_22_last_alert": "2026-10-30T07:18:46.812515",
+      "near_high_17_22_last_price": 441.95001220703125
     },
     "AARTIPHARM": {
       "sma50": 869.7600012207031,
@@ -4918,8 +4918,8 @@
       "descending_res": 68.90210723876953,
       "wedge_contraction": 1.8836127868985717,
       "rs_rank": 16.4,
-      "vol_breakout_last_alert": "2026-10-30T06:08:19.834631",
-      "vol_breakout_last_price": 49.84000015258789
+      "vol_breakout_last_alert": "2026-10-30T07:19:52.041647",
+      "vol_breakout_last_price": 50.45000076293945
     },
     "ERIS": {
       "sma50": 1246.017998046875,
@@ -10845,7 +10845,9 @@
       "box_low": 1320.5999755859375,
       "descending_res": 1548.75,
       "wedge_contraction": 1.4298929290179614,
-      "rs_rank": 43.5
+      "rs_rank": 43.5,
+      "mtf_last_alert": "2026-10-30T07:21:13.901903",
+      "mtf_last_price": 1569.0999755859375
     },
     "OSWALPUMPS": {
       "sma50": 268.04900115966797,
