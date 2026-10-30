@@ -232,8 +232,8 @@
     "ref_high": 257.95,
     "ref_low": 242.65,
     "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-30T03:53:01.826507",
-    "fno_low_breach_last_price": 239.35000610351562
+    "fno_low_breach_last_alert": "2026-10-30T04:10:46.438011",
+    "fno_low_breach_last_price": 240.5500030517578
   },
   "JINDALPHOT": {
     "trigger_date": "2026-10-28",
@@ -278,8 +278,8 @@
     "ref_high": 1372.7,
     "ref_low": 1319.0,
     "status": "Breached High",
-    "fno_high_breach_last_alert": "2026-10-30T03:53:03.347613",
-    "fno_high_breach_last_price": 1373.9000244140625
+    "fno_high_breach_last_alert": "2026-10-30T04:10:48.048084",
+    "fno_high_breach_last_price": 1371.300048828125
   },
   "SIRCA": {
     "trigger_date": "2026-10-28",
@@ -294,7 +294,7 @@
     "ref_high": 90.19,
     "ref_low": 86.11,
     "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-30T03:53:04.858306",
+    "fno_low_breach_last_alert": "2026-10-30T04:10:49.710458",
     "fno_low_breach_last_price": 88.4000015258789
   },
   "JSWDULUX": {
@@ -302,8 +302,8 @@
     "ref_high": 287.2,
     "ref_low": 270.2,
     "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-30T03:53:06.377516",
-    "fno_low_breach_last_price": 270.0
+    "fno_low_breach_last_alert": "2026-10-30T04:10:51.441466",
+    "fno_low_breach_last_price": 267.29998779296875
   },
   "SNOWMAN": {
     "trigger_date": "2026-10-28",
@@ -356,7 +356,7 @@
     "ref_high": 169.0,
     "ref_low": 157.01,
     "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-30T03:53:09.131976",
+    "fno_low_breach_last_alert": "2026-10-30T04:10:54.966914",
     "fno_low_breach_last_price": 165.9600067138672
   },
   "TRANSCOR": {
@@ -364,7 +364,7 @@
     "ref_high": 26.5,
     "ref_low": 24.0,
     "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-30T03:53:10.753167",
+    "fno_low_breach_last_alert": "2026-10-30T04:10:56.615930",
     "fno_low_breach_last_price": 24.899999618530273
   },
   "METROGLOBL": {
@@ -392,16 +392,16 @@
     "ref_high": 137.9,
     "ref_low": 125.25,
     "status": "Breached High",
-    "fno_high_breach_last_alert": "2026-10-30T03:53:15.148511",
-    "fno_high_breach_last_price": 131.5
+    "fno_high_breach_last_alert": "2026-10-30T04:11:00.909573",
+    "fno_high_breach_last_price": 131.42999267578125
   },
   "TARACHAND": {
     "trigger_date": "2026-10-29",
     "ref_high": 49.0,
     "ref_low": 44.53,
     "status": "Breached High",
-    "fno_high_breach_last_alert": "2026-10-30T03:53:16.394174",
-    "fno_high_breach_last_price": 48.099998474121094
+    "fno_high_breach_last_alert": "2026-10-30T04:11:02.146370",
+    "fno_high_breach_last_price": 49.029998779296875
   },
   "PNBHOUSING": {
     "trigger_date": "2026-10-29",
