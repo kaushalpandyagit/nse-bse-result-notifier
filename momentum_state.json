@@ -4038,8 +4038,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 40.9,
-      "vol_breakout_last_alert": "2026-10-30T07:54:33.234068",
-      "vol_breakout_last_price": 1511.4000244140625,
+      "vol_breakout_last_alert": "2026-10-30T08:56:18.437935",
+      "vol_breakout_last_price": 1531.300048828125,
       "rectangle_bounce_last_alert": "2026-10-30T05:50:50.505999",
       "rectangle_bounce_last_price": 1532.0,
       "ema50_pullback_last_alert": "2026-10-30T04:38:40.663432",
@@ -4846,8 +4846,8 @@
       "descending_res": 1785.0,
       "wedge_contraction": 0.9899409866970267,
       "rs_rank": 85.9,
-      "near_high_17_22_last_alert": "2026-10-30T05:09:15.303118",
-      "near_high_17_22_last_price": 1556.0
+      "near_high_17_22_last_alert": "2026-10-30T08:56:39.491676",
+      "near_high_17_22_last_price": 1572.5999755859375
     },
     "EPL": {
       "sma50": 239.35140045166017,
@@ -4922,8 +4922,8 @@
       "descending_res": 68.90210723876953,
       "wedge_contraction": 1.8836127868985717,
       "rs_rank": 16.4,
-      "vol_breakout_last_alert": "2026-10-30T08:07:09.658936",
-      "vol_breakout_last_price": 51.459999084472656
+      "vol_breakout_last_alert": "2026-10-30T08:56:41.951717",
+      "vol_breakout_last_price": 53.5099983215332
     },
     "ERIS": {
       "sma50": 1246.017998046875,
@@ -5837,7 +5837,9 @@
       "wedge_contraction": 1.1005253134722353,
       "rs_rank": 50.5,
       "near_high_17_22_last_alert": "2026-10-30T08:37:14.713374",
-      "near_high_17_22_last_price": 212.75
+      "near_high_17_22_last_price": 212.75,
+      "ema50_pullback_last_alert": "2026-10-30T08:57:04.015069",
+      "ema50_pullback_last_price": 217.1999969482422
     },
     "GOLDIAM": {
       "sma50": 326.0259997558594,
@@ -10458,8 +10460,8 @@
       "rs_rank": 11.1,
       "rectangle_bounce_last_alert": "2026-10-30T06:09:55.430826",
       "rectangle_bounce_last_price": 24.5,
-      "vol_breakout_last_alert": "2026-10-30T08:08:59.621158",
-      "vol_breakout_last_price": 23.5
+      "vol_breakout_last_alert": "2026-10-30T08:58:56.920115",
+      "vol_breakout_last_price": 23.770000457763672
     },
     "NEULANDLAB": {
       "sma50": 21824.36,
@@ -10496,8 +10498,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 87.6,
-      "near_high_17_22_last_alert": "2026-10-30T06:52:41.774883",
-      "near_high_17_22_last_price": 19535.0
+      "near_high_17_22_last_alert": "2026-10-30T08:58:58.630072",
+      "near_high_17_22_last_price": 19875.0
     },
     "NEWGEN": {
       "sma50": 491.5189984130859,
