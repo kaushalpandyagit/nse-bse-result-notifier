@@ -902,8 +902,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 51.6,
-      "near_high_17_22_last_alert": "2026-10-30T04:15:08.470164",
-      "near_high_17_22_last_price": 288.79998779296875
+      "near_high_17_22_last_alert": "2026-10-30T08:35:22.212897",
+      "near_high_17_22_last_price": 285.6000061035156
     },
     "ANURAS": {
       "sma50": 1190.9060009765626,
@@ -4334,8 +4334,8 @@
       "descending_res": 2011.3962221498844,
       "wedge_contraction": 1.3609476835371872,
       "rs_rank": 68.7,
-      "vol_breakout_last_alert": "2026-10-30T06:20:11.116114",
-      "vol_breakout_last_price": 1540.0
+      "vol_breakout_last_alert": "2026-10-30T08:36:39.737725",
+      "vol_breakout_last_price": 1560.5999755859375
     },
     "EDELWEISS": {
       "sma50": 130.939599609375,
@@ -5836,8 +5836,8 @@
       "descending_res": 228.86363636363637,
       "wedge_contraction": 1.1005253134722353,
       "rs_rank": 50.5,
-      "near_high_17_22_last_alert": "2026-10-30T04:17:02.836433",
-      "near_high_17_22_last_price": 215.0
+      "near_high_17_22_last_alert": "2026-10-30T08:37:14.713374",
+      "near_high_17_22_last_price": 212.75
     },
     "GOLDIAM": {
       "sma50": 326.0259997558594,
@@ -8599,7 +8599,9 @@
       "wedge_contraction": 0.8522334913788525,
       "rs_rank": 68.4,
       "near_high_17_22_last_alert": "2026-10-30T06:52:09.536222",
-      "near_high_17_22_last_price": 707.9500122070312
+      "near_high_17_22_last_price": 707.9500122070312,
+      "rectangle_bounce_last_alert": "2026-10-30T08:38:17.029474",
+      "rectangle_bounce_last_price": 703.0999755859375
     },
     "KIRLOSBROS": {
       "sma50": 1776.2640087890625,
@@ -11308,8 +11310,8 @@
       "rs_rank": 69.9,
       "near_high_17_22_last_alert": "2026-10-30T08:09:17.232173",
       "near_high_17_22_last_price": 5537.5,
-      "mtf_last_alert": "2026-10-30T07:35:56.067234",
-      "mtf_last_price": 5497.0
+      "mtf_last_alert": "2026-10-30T08:39:18.639816",
+      "mtf_last_price": 5561.0
     },
     "PGIL": {
       "sma50": 1216.3740014648438,
@@ -13344,8 +13346,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 82.7,
-      "vol_breakout_last_alert": "2026-10-30T07:36:28.063738",
-      "vol_breakout_last_price": 1113.9000244140625
+      "vol_breakout_last_alert": "2026-10-30T08:40:03.309358",
+      "vol_breakout_last_price": 1125.199951171875
     },
     "SFL": {
       "sma50": 630.567998046875,
@@ -13892,8 +13894,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 69.7,
-      "near_high_17_22_last_alert": "2026-10-30T06:22:34.670473",
-      "near_high_17_22_last_price": 502.5
+      "near_high_17_22_last_alert": "2026-10-30T08:40:14.121964",
+      "near_high_17_22_last_price": 489.25
     },
     "SKYGOLD": {
       "sma50": 856.1480004882812,
@@ -14182,8 +14184,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 60.6,
-      "near_high_17_22_last_alert": "2026-10-30T07:36:39.105997",
-      "near_high_17_22_last_price": 1013.7999877929688,
+      "near_high_17_22_last_alert": "2026-10-30T08:40:20.371890",
+      "near_high_17_22_last_price": 1037.800048828125,
       "vol_breakout_last_alert": "2026-10-30T07:57:58.857750",
       "vol_breakout_last_price": 1021.7999877929688
     },

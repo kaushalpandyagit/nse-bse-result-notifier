@@ -387,7 +387,9 @@
     "trigger_date": "2026-10-29",
     "ref_high": 12370.0,
     "ref_low": 11100.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-10-30T08:35:03.958608",
+    "fno_low_breach_last_price": 11086.0
   },
   "SHILGRAVQ": {
     "trigger_date": "2026-10-29",
