@@ -904,8 +904,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 51.6,
-      "near_high_17_22_last_alert": "2026-10-30T08:35:22.212897",
-      "near_high_17_22_last_price": 285.6000061035156
+      "near_high_17_22_last_alert": "2026-10-30T10:07:45.489748",
+      "near_high_17_22_last_price": 282.25
     },
     "ANURAS": {
       "sma50": 1190.9060009765626,
@@ -3968,8 +3968,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 65.2,
-      "near_high_17_22_last_alert": "2026-10-30T07:54:30.635026",
-      "near_high_17_22_last_price": 194.6999969482422
+      "near_high_17_22_last_alert": "2026-10-30T10:08:37.848217",
+      "near_high_17_22_last_price": 192.61000061035156
     },
     "DEEPAKFERT": {
       "sma50": 1346.4539990234375,
@@ -5072,8 +5072,8 @@
       "descending_res": 163.9857221330915,
       "wedge_contraction": 0.83372248044544,
       "rs_rank": 62.0,
-      "near_high_17_22_last_alert": "2026-10-30T09:11:58.035642",
-      "near_high_17_22_last_price": 146.25
+      "near_high_17_22_last_alert": "2026-10-30T10:08:57.337109",
+      "near_high_17_22_last_price": 143.64999389648438
     },
     "FIEMIND": {
       "sma50": 1931.252001953125,
@@ -5954,8 +5954,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 64.4,
-      "near_high_17_22_last_alert": "2026-10-30T06:51:26.314895",
-      "near_high_17_22_last_price": 160.6999969482422
+      "near_high_17_22_last_alert": "2026-10-30T10:09:13.041020",
+      "near_high_17_22_last_price": 159.08999633789062
     },
     "GRANULES": {
       "sma50": 843.5249987792969,
@@ -7418,8 +7418,8 @@
       "descending_res": 630.4331868489584,
       "wedge_contraction": 0.984732540885851,
       "rs_rank": 28.1,
-      "vol_breakout_last_alert": "2026-10-30T09:22:49.318102",
-      "vol_breakout_last_price": 526.0
+      "vol_breakout_last_alert": "2026-10-30T10:09:37.412705",
+      "vol_breakout_last_price": 504.54998779296875
     },
     "IONEXCHANG": {
       "sma50": 392.48200073242185,
@@ -11248,8 +11248,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 52.7,
-      "near_high_17_22_last_alert": "2026-10-30T04:19:02.256361",
-      "near_high_17_22_last_price": 292.0
+      "near_high_17_22_last_alert": "2026-10-30T10:10:44.443640",
+      "near_high_17_22_last_price": 288.1000061035156
     },
     "PGEL": {
       "sma50": 536.0750006103516,
@@ -13881,7 +13881,9 @@
       "box_low": null,
       "descending_res": 50.763343811035156,
       "wedge_contraction": 1.1490619580565864,
-      "rs_rank": 6.4
+      "rs_rank": 6.4,
+      "vol_breakout_last_alert": "2026-10-30T10:11:26.571256",
+      "vol_breakout_last_price": 53.38999938964844
     },
     "SKIPPER": {
       "sma50": 540.6180017089844,
@@ -14210,8 +14212,8 @@
       "rs_rank": 60.6,
       "near_high_17_22_last_alert": "2026-10-30T08:40:20.371890",
       "near_high_17_22_last_price": 1037.800048828125,
-      "vol_breakout_last_alert": "2026-10-30T09:24:42.258352",
-      "vol_breakout_last_price": 1053.0
+      "vol_breakout_last_alert": "2026-10-30T10:11:32.045300",
+      "vol_breakout_last_price": 1068.800048828125
     },
     "STYLAMIND": {
       "sma50": 3304.0039892578125,
@@ -16476,8 +16478,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 36.2,
-      "near_high_17_22_last_alert": "2026-10-30T09:25:17.558834",
-      "near_high_17_22_last_price": 10199.0
+      "near_high_17_22_last_alert": "2026-10-30T10:12:07.609199",
+      "near_high_17_22_last_price": 10351.0
     },
     "VTL": {
       "sma50": 555.4410028076172,
