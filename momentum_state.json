@@ -940,8 +940,8 @@
       "descending_res": 1226.925048828125,
       "wedge_contraction": 0.7980265937033659,
       "rs_rank": 45.2,
-      "near_high_17_22_last_alert": "2026-10-30T07:33:10.153385",
-      "near_high_17_22_last_price": 1150.199951171875
+      "near_high_17_22_last_alert": "2026-10-30T09:20:57.261984",
+      "near_high_17_22_last_price": 1138.5999755859375
     },
     "APOLLO": {
       "sma50": 399.0280010986328,
@@ -1524,8 +1524,8 @@
       "descending_res": 592.44013671875,
       "wedge_contraction": 0.7145420081313328,
       "rs_rank": 69.5,
-      "near_high_17_22_last_alert": "2026-10-30T04:15:24.269812",
-      "near_high_17_22_last_price": 558.4000244140625
+      "near_high_17_22_last_alert": "2026-10-30T09:21:07.778831",
+      "near_high_17_22_last_price": 552.2000122070312
     },
     "AWL": {
       "sma50": 184.40019958496094,
@@ -2437,7 +2437,9 @@
       "box_low": 639.0999755859375,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 45.8
+      "rs_rank": 45.8,
+      "vol_breakout_last_alert": "2026-10-30T09:21:25.946396",
+      "vol_breakout_last_price": 657.4000244140625
     },
     "CANFINHOME": {
       "sma50": 763.3620031738282,
@@ -4224,8 +4226,8 @@
       "descending_res": 12480.5,
       "wedge_contraction": 0.765686520901399,
       "rs_rank": 64.0,
-      "near_high_17_22_last_alert": "2026-10-30T05:09:00.251530",
-      "near_high_17_22_last_price": 11819.0
+      "near_high_17_22_last_alert": "2026-10-30T09:21:55.247505",
+      "near_high_17_22_last_price": 11683.0
     },
     "E2E": {
       "sma50": 629.4280004882812,
@@ -4808,8 +4810,8 @@
       "descending_res": 318.7599670410156,
       "wedge_contraction": 0.908939861210369,
       "rs_rank": 64.6,
-      "near_high_17_22_last_alert": "2026-10-30T04:16:38.705667",
-      "near_high_17_22_last_price": 256.0
+      "near_high_17_22_last_alert": "2026-10-30T09:22:06.185538",
+      "near_high_17_22_last_price": 252.9499969482422
     },
     "ENTERO": {
       "sma50": 1682.3680078125,
@@ -5581,7 +5583,9 @@
       "wedge_contraction": 0.937224854174454,
       "rs_rank": 1.9,
       "liquidity_sweep_last_alert": "2026-10-30T07:09:23.557831",
-      "liquidity_sweep_last_price": 425.6499938964844
+      "liquidity_sweep_last_price": 425.6499938964844,
+      "vol_breakout_last_alert": "2026-10-30T09:22:18.166527",
+      "vol_breakout_last_price": 411.45001220703125
     },
     "GMRP&UI": {
       "sma50": 96.64260009765626,
@@ -7407,7 +7411,9 @@
       "box_low": 564.0499877929688,
       "descending_res": 630.4331868489584,
       "wedge_contraction": 0.984732540885851,
-      "rs_rank": 28.1
+      "rs_rank": 28.1,
+      "vol_breakout_last_alert": "2026-10-30T09:22:49.318102",
+      "vol_breakout_last_price": 526.0
     },
     "IONEXCHANG": {
       "sma50": 392.48200073242185,
@@ -9761,7 +9767,9 @@
       "box_low": 576.2999877929688,
       "descending_res": 647.8750508626302,
       "wedge_contraction": 1.5081969002520361,
-      "rs_rank": 9.0
+      "rs_rank": 9.0,
+      "liquidity_sweep_last_alert": "2026-10-30T09:23:27.885644",
+      "liquidity_sweep_last_price": 580.0
     },
     "METROPOLIS": {
       "sma50": 561.4570007324219,
@@ -10972,10 +10980,10 @@
       "descending_res": 147.59998575846353,
       "wedge_contraction": 0.9709442919236871,
       "rs_rank": 59.9,
-      "vol_breakout_last_alert": "2026-10-30T08:22:38.118729",
-      "vol_breakout_last_price": 125.52999877929688,
-      "liquidity_sweep_last_alert": "2026-10-30T07:11:14.386183",
-      "liquidity_sweep_last_price": 127.0199966430664
+      "vol_breakout_last_alert": "2026-10-30T09:23:50.216242",
+      "vol_breakout_last_price": 129.05999755859375,
+      "liquidity_sweep_last_alert": "2026-10-30T09:23:50.679457",
+      "liquidity_sweep_last_price": 129.05999755859375
     },
     "PARAS": {
       "sma50": 1360.7299975585938,
@@ -11968,8 +11976,8 @@
       "descending_res": 345.9999782017299,
       "wedge_contraction": 1.1855799703311374,
       "rs_rank": 94.0,
-      "near_high_17_22_last_alert": "2026-10-30T04:19:19.393903",
-      "near_high_17_22_last_price": 310.95001220703125
+      "near_high_17_22_last_alert": "2026-10-30T09:24:06.718855",
+      "near_high_17_22_last_price": 307.04998779296875
     },
     "RAILTEL": {
       "sma50": 259.9179968261719,
@@ -12297,7 +12305,9 @@
       "wedge_contraction": 1.398408096016793,
       "rs_rank": 92.5,
       "near_high_17_22_last_alert": "2026-10-30T07:11:41.021835",
-      "near_high_17_22_last_price": 88.4000015258789
+      "near_high_17_22_last_price": 88.4000015258789,
+      "vol_breakout_last_alert": "2026-10-30T09:24:13.346773",
+      "vol_breakout_last_price": 87.83000183105469
     },
     "RCF": {
       "sma50": 108.82579956054687,
@@ -13532,8 +13542,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 2.1,
-      "vol_breakout_last_alert": "2026-10-30T08:23:18.925571",
-      "vol_breakout_last_price": 674.0999755859375
+      "vol_breakout_last_alert": "2026-10-30T09:24:32.856788",
+      "vol_breakout_last_price": 660.9000244140625
     },
     "SHAREINDIA": {
       "sma50": 189.42760009765624,
@@ -14188,8 +14198,8 @@
       "rs_rank": 60.6,
       "near_high_17_22_last_alert": "2026-10-30T08:40:20.371890",
       "near_high_17_22_last_price": 1037.800048828125,
-      "vol_breakout_last_alert": "2026-10-30T07:57:58.857750",
-      "vol_breakout_last_price": 1021.7999877929688
+      "vol_breakout_last_alert": "2026-10-30T09:24:42.258352",
+      "vol_breakout_last_price": 1053.0
     },
     "STYLAMIND": {
       "sma50": 3304.0039892578125,
@@ -15396,8 +15406,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 78.9,
-      "vol_breakout_last_alert": "2026-10-30T08:10:33.824305",
-      "vol_breakout_last_price": 449.04998779296875
+      "vol_breakout_last_alert": "2026-10-30T09:25:00.926392",
+      "vol_breakout_last_price": 455.95001220703125
     },
     "TI": {
       "sma50": 546.3929956054687,
@@ -16411,7 +16421,9 @@
       "box_low": 728.3499755859375,
       "descending_res": 841.8000183105469,
       "wedge_contraction": 0.8184421272584304,
-      "rs_rank": 76.1
+      "rs_rank": 76.1,
+      "near_high_17_22_last_alert": "2026-10-30T09:25:16.391828",
+      "near_high_17_22_last_price": 739.7999877929688
     },
     "VOLTAMP": {
       "sma50": 10623.55,
@@ -16448,8 +16460,8 @@
       "descending_res": null,
       "wedge_contraction": null,
       "rs_rank": 36.2,
-      "near_high_17_22_last_alert": "2026-10-30T07:58:40.690067",
-      "near_high_17_22_last_price": 10049.0
+      "near_high_17_22_last_alert": "2026-10-30T09:25:17.558834",
+      "near_high_17_22_last_price": 10199.0
     },
     "VTL": {
       "sma50": 555.4410028076172,
@@ -16776,8 +16788,8 @@
       "descending_res": 666.6817848899148,
       "wedge_contraction": 1.0893572341419748,
       "rs_rank": 77.4,
-      "near_high_17_22_last_alert": "2026-10-30T06:23:15.558662",
-      "near_high_17_22_last_price": 623.5
+      "near_high_17_22_last_alert": "2026-10-30T09:25:23.329728",
+      "near_high_17_22_last_price": 632.0999755859375
     },
     "WHIRLPOOL": {
       "sma50": 810.5040026855469,
