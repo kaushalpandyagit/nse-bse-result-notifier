@@ -383,7 +383,9 @@
     "trigger_date": "2026-10-29",
     "ref_high": 17.0,
     "ref_low": 16.1,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-11-02T04:55:13.049506",
+    "fno_low_breach_last_price": 16.0
   },
   "JSWHL": {
     "trigger_date": "2026-10-29",
