@@ -494,5 +494,65 @@
     "status": "Breached Low",
     "fno_low_breach_last_alert": "2026-11-02T04:14:55.620011",
     "fno_low_breach_last_price": 134.8000030517578
+  },
+  "CPL": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 71.55,
+    "ref_low": 57.28,
+    "status": "Active"
+  },
+  "CAPILLARY": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 555.6,
+    "ref_low": 484.5,
+    "status": "Active"
+  },
+  "BHARATGEAR": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 109.99,
+    "ref_low": 95.31,
+    "status": "Active"
+  },
+  "KRSNAA": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 536.65,
+    "ref_low": 464.0,
+    "status": "Active"
+  },
+  "ZUARI": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 192.0,
+    "ref_low": 173.92,
+    "status": "Active"
+  },
+  "MEDIASSIST": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 319.0,
+    "ref_low": 292.25,
+    "status": "Active"
+  },
+  "FINKURVE": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 64.19,
+    "ref_low": 62.0,
+    "status": "Active"
+  },
+  "SPORTKING": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 209.4,
+    "ref_low": 185.0,
+    "status": "Active"
+  },
+  "MASKINVEST": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 148.0,
+    "ref_low": 130.01,
+    "status": "Active"
+  },
+  "NGIL": {
+    "trigger_date": "2026-11-02",
+    "ref_high": 46.79,
+    "ref_low": 43.0,
+    "status": "Active"
   }
 }
