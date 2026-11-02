@@ -265,7 +265,9 @@
     "trigger_date": "2026-10-27",
     "ref_high": 99.99,
     "ref_low": 84.12,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-11-02T03:54:31.198742",
+    "fno_high_breach_last_price": 98.47000122070312
   },
   "WEWORK": {
     "trigger_date": "2026-10-27",
@@ -425,7 +427,9 @@
     "trigger_date": "2026-10-30",
     "ref_high": 278.2,
     "ref_low": 240.2,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-11-02T03:54:35.234097",
+    "fno_low_breach_last_price": 253.77000427246094
   },
   "SMARTWORKS": {
     "trigger_date": "2026-10-30",
@@ -437,19 +441,25 @@
     "trigger_date": "2026-10-30",
     "ref_high": 152.99,
     "ref_low": 150.0,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-11-02T03:54:36.641003",
+    "fno_high_breach_last_price": 153.19000244140625
   },
   "AJANTPHARM": {
     "trigger_date": "2026-10-30",
     "ref_high": 3619.9,
     "ref_low": 3460.5,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-11-02T03:54:37.841616",
+    "fno_low_breach_last_price": 3432.10009765625
   },
   "ALIVUS": {
     "trigger_date": "2026-10-30",
     "ref_high": 1499.0,
     "ref_low": 1380.0,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-11-02T03:54:39.357131",
+    "fno_high_breach_last_price": 1488.5
   },
   "SANOFI": {
     "trigger_date": "2026-10-30",
@@ -479,6 +489,8 @@
     "trigger_date": "2026-10-30",
     "ref_high": 142.0,
     "ref_low": 134.17,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-11-02T03:54:43.419698",
+    "fno_low_breach_last_price": 135.4499969482422
   }
 }
