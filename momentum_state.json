@@ -3737,7 +3737,7 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 89.3
+      "rs_rank": 88.5
     },
     "DALBHARAT": {
       "sma50": 1687.5459936523437,
@@ -5785,7 +5785,7 @@
       "stage2": false,
       "fifty2w_high": 384.04998779296875,
       "fifty2w_low": 201.4875030517578,
-      "near_high": true,
+      "near_high": false,
       "ath_high": 398.20001220703125,
       "vcp_contracting": false,
       "rs_return_6m": -3.7148342176356985,
@@ -6865,7 +6865,7 @@
       "box_low": null,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 58.8
+      "rs_rank": 57.8
     },
     "IGIL": {
       "sma50": 334.51099975585936,
@@ -10245,7 +10245,7 @@
       "box_low": 113.5,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 13.0
+      "rs_rank": 13.4
     },
     "NEOGEN": {
       "sma50": 2313.9999951171876,
@@ -12506,7 +12506,7 @@
       "sma150": 624.7840010579428,
       "sma200": 602.6332514953614,
       "sma200_rising": true,
-      "stage2": false,
+      "stage2": true,
       "fifty2w_high": 755.0,
       "fifty2w_low": 462.70001220703125,
       "near_high": true,
@@ -12799,7 +12799,7 @@
       "stage2": false,
       "fifty2w_high": 206.85000610351562,
       "fifty2w_low": 128.14999389648438,
-      "near_high": true,
+      "near_high": false,
       "ath_high": 254.5,
       "vcp_contracting": false,
       "rs_return_6m": -3.594362729276457,
@@ -13588,7 +13588,7 @@
       "sma150": 578.341598815918,
       "sma200": 476.95209922790525,
       "sma200_rising": true,
-      "stage2": true,
+      "stage2": false,
       "fifty2w_high": 1130.5999755859375,
       "fifty2w_low": 144.27999877929688,
       "near_high": true,
@@ -14867,7 +14867,7 @@
       "stage2": false,
       "fifty2w_high": 879.1500244140625,
       "fifty2w_low": 509.20001220703125,
-      "near_high": true,
+      "near_high": false,
       "ath_high": 891.0,
       "vcp_contracting": false,
       "rs_return_6m": 11.84332991214263,
@@ -15769,7 +15769,7 @@
       "stage2": false,
       "fifty2w_high": 72.47000122070312,
       "fifty2w_low": 50.439998626708984,
-      "near_high": true,
+      "near_high": false,
       "ath_high": 73.94000244140625,
       "vcp_contracting": false,
       "rs_return_6m": -10.379662771307686,
@@ -17073,5 +17073,6 @@
     "CI_SOFTWARE_PRODUCTS": 34.7989541127281,
     "CI_SPECIALTY_RETAIL": 36.04798490752595,
     "CI_SOLAR_PV_RENEWABLE_EPC_COMPONENTS": 32.9991293763789
-  }
+  },
+  "last_sector_report_date": "2026-11-02"
 }
