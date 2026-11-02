@@ -1309,7 +1309,9 @@
       "box_low": 1470.800048828125,
       "descending_res": 1654.0,
       "wedge_contraction": 0.9047757951915026,
-      "rs_rank": 91.7
+      "rs_rank": 91.7,
+      "near_high_17_22_last_alert": "2026-11-02T04:44:32.410415",
+      "near_high_17_22_last_price": 1533.300048828125
     },
     "ATLANTAELE": {
       "sma50": 1731.3780004882813,
@@ -1998,10 +2000,10 @@
       "box_high": 268.20001220703125,
       "box_low": 194.19000244140625,
       "descending_res": 227.33167012532553,
-      "wedge_contraction": 0.76039169271291,
-      "rs_rank": 60.8,
-      "near_high_17_22_last_alert": "2026-11-02T04:33:12.267778",
-      "near_high_17_22_last_price": 210.58999633789062
+      "wedge_contraction": 0.7930600257409883,
+      "rs_rank": 59.0,
+      "near_high_17_22_last_alert": "2026-11-02T04:44:44.272257",
+      "near_high_17_22_last_price": 210.22000122070312
     },
     "BEML": {
       "sma50": 1989.10599609375,
@@ -6377,11 +6379,11 @@
       "box_low": 648.0,
       "descending_res": 820.2499694824219,
       "wedge_contraction": 0.8107651674621029,
-      "rs_rank": 64.2,
-      "resistance_last_alert": "2026-11-02T04:34:41.592725",
-      "resistance_last_price": 811.6500244140625,
-      "mtf_last_alert": "2026-11-02T04:34:42.130485",
-      "mtf_last_price": 811.6500244140625
+      "rs_rank": 63.5,
+      "mtf_last_alert": "2026-11-02T04:21:22.196103",
+      "mtf_last_price": 807.8499755859375,
+      "resistance_last_alert": "2026-11-02T04:45:59.248809",
+      "resistance_last_price": 816.5
     },
     "HCC": {
       "sma50": 20.853999900817872,
@@ -9227,9 +9229,9 @@
       "box_low": 100.87999725341797,
       "descending_res": null,
       "wedge_contraction": null,
-      "rs_rank": 50.5,
-      "mtf_last_alert": "2026-11-02T04:35:41.947437",
-      "mtf_last_price": 113.0199966430664
+      "rs_rank": 49.6,
+      "mtf_last_alert": "2026-11-02T04:46:49.627615",
+      "mtf_last_price": 112.72000122070312
     },
     "LICHSGFIN": {
       "sma50": 532.9110040283203,
@@ -11311,7 +11313,9 @@
       "wedge_contraction": 1.3555715312724659,
       "rs_rank": 73.7,
       "near_high_17_22_last_alert": "2026-11-02T04:23:21.692280",
-      "near_high_17_22_last_price": 5635.0
+      "near_high_17_22_last_price": 5635.0,
+      "resistance_last_alert": "2026-11-02T04:47:27.420986",
+      "resistance_last_price": 5650.5
     },
     "PGIL": {
       "sma50": 1217.067001953125,
@@ -12611,11 +12615,11 @@
       "box_low": 571.0999755859375,
       "descending_res": 737.625,
       "wedge_contraction": 1.4053303664207066,
-      "rs_rank": 78.9,
-      "bonde_last_alert": "2026-11-02T04:03:36.463167",
-      "bonde_last_price": 693.7999877929688,
-      "vol_breakout_last_alert": "2026-11-02T04:36:52.340186",
-      "vol_breakout_last_price": 686.3499755859375
+      "rs_rank": 77.1,
+      "vol_breakout_last_alert": "2026-11-02T04:23:49.642056",
+      "vol_breakout_last_price": 687.0999755859375,
+      "bonde_last_alert": "2026-11-02T04:47:49.100332",
+      "bonde_last_price": 684.5
     },
     "ROUTE": {
       "sma50": 465.2420007324219,
@@ -14687,7 +14691,9 @@
       "wedge_contraction": null,
       "rs_rank": 39.5,
       "resistance_last_alert": "2026-11-02T04:24:33.045579",
-      "resistance_last_price": 412.6000061035156
+      "resistance_last_price": 412.6000061035156,
+      "mtf_last_alert": "2026-11-02T04:48:23.880873",
+      "mtf_last_price": 414.1000061035156
     },
     "SYRMA": {
       "sma50": 1596.3360034179686,
@@ -14905,7 +14911,9 @@
       "wedge_contraction": null,
       "rs_rank": 48.5,
       "resistance_last_alert": "2026-11-02T04:24:36.861053",
-      "resistance_last_price": 3819.5
+      "resistance_last_price": 3819.5,
+      "mtf_last_alert": "2026-11-02T04:48:27.294668",
+      "mtf_last_price": 3827.199951171875
     },
     "TATAINVEST": {
       "sma50": 627.2929968261719,
