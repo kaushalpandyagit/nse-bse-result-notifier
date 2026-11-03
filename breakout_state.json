@@ -5306,5 +5306,37 @@
     "baseline_rsi": 40.31051258243241,
     "mcap_cr": 2339.0591097592405,
     "exchange": "NSE"
+  },
+  "LINDEINDIA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 5899.0,
+    "day_low": 5680.5,
+    "baseline_rsi": 44.75034735975313,
+    "mcap_cr": 49878.47782155,
+    "exchange": "NSE"
+  },
+  "JTLIND": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 79.0,
+    "day_low": 73.55000305175781,
+    "baseline_rsi": 38.165651326167485,
+    "mcap_cr": 2906.8385338910066,
+    "exchange": "NSE"
+  },
+  "PVSL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 94.87999725341797,
+    "day_low": 91.62999725341797,
+    "baseline_rsi": 45.75427718814647,
+    "mcap_cr": 658.7257039952377,
+    "exchange": "NSE"
+  },
+  "VMART": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 750.5999755859375,
+    "day_low": 708.0499877929688,
+    "baseline_rsi": 26.932364891157093,
+    "mcap_cr": 5710.7280576258545,
+    "exchange": "NSE"
   }
 }
