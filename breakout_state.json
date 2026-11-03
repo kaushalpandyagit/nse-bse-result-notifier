@@ -228,10 +228,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-02T04:26:16.428322",
-    "spread_last_price": 3.7511709216486597,
+    "spread_last_alert": "2026-11-03T09:36:11.785897",
+    "spread_last_price": 4.25118362659288,
     "session_date": "2026-11-03",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-10-29T06:57:33.875213",
@@ -414,8 +416,12 @@
     "spread_last_price": 3.0634819529093837
   },
   "arb_AZAD": {
-    "spread_last_alert": "2026-10-21T03:55:34.650660",
-    "spread_last_price": 2.506459102170621
+    "spread_last_alert": "2026-11-03T09:35:54.939082",
+    "spread_last_price": 2.682370219747545,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "arb_APOLLOTYRE": {
     "spread_last_alert": "2026-10-15T03:56:19.847106",
@@ -5076,5 +5082,29 @@
     ],
     "spread_last_alert": "2026-11-03T09:21:14.114026",
     "spread_last_price": 4.475298042980999
+  },
+  "BHAGCHEM": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 209.02999877929688,
+    "day_low": 181.60000610351562,
+    "baseline_rsi": 29.645879657743194,
+    "mcap_cr": 2424.682198149353,
+    "exchange": "NSE"
+  },
+  "RTNINDIA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 26.260000228881836,
+    "day_low": 24.5,
+    "baseline_rsi": 47.82989903020554,
+    "mcap_cr": 3425.9820717766456,
+    "exchange": "NSE"
+  },
+  "CPEDU": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 175.0,
+    "day_low": 165.02000427246094,
+    "baseline_rsi": 45.47976946777975,
+    "mcap_cr": 309.279963,
+    "exchange": "NSE"
   }
 }

@@ -2190,7 +2190,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 82.7,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-03T09:30:30.853387",
+      "near_high_17_22_last_price": 2574.89990234375
     },
     "BAJAJCON": {
       "sma50": 473.0769995117187,
@@ -3267,14 +3271,16 @@
       "dtl_floor": 639.0999755859375,
       "dtl_floor_touches": 1,
       "rs_rank": 39.4,
-      "near_high_17_22_last_alert": "2026-11-03T05:19:35.252531",
-      "near_high_17_22_last_price": 695.0,
+      "near_high_17_22_last_alert": "2026-11-03T09:30:48.961378",
+      "near_high_17_22_last_price": 686.4500122070312,
       "resistance_last_alert": "2026-11-03T05:31:04.376301",
       "resistance_last_price": 696.25,
       "ema50_pullback_last_alert": "2026-11-03T05:31:04.989970",
       "ema50_pullback_last_price": 696.25,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "CANFINHOME": {
       "sma50": 759.8490014648437,
@@ -5128,8 +5134,11 @@
       "near_high_17_22_last_price": 3974.10009765625,
       "session_date": "2026-11-03",
       "alert_slots": [
-        "H1"
-      ]
+        "H1",
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T09:31:14.851590",
+      "rectangle_bounce_last_price": 3947.60009765625
     },
     "DBL": {
       "sma50": 400.0649987792969,
@@ -9596,7 +9605,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 14.6,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T09:32:24.442349",
+      "rectangle_bounce_last_price": 1536.0
     },
     "INDIGOPNTS": {
       "sma50": 1079.5370068359375,
@@ -9644,7 +9657,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 61.2,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-03T09:32:25.919634",
+      "vol_breakout_last_price": 871.1500244140625
     },
     "INOXINDIA": {
       "sma50": 2050.9879907226564,
@@ -13073,7 +13090,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 48.6,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-03T09:33:18.992626",
+      "vol_breakout_last_price": 1032.9000244140625
     },
     "MIDHANI": {
       "sma50": 415.9329992675781,
@@ -15813,7 +15834,13 @@
       "dtl_touches": 3,
       "dtl_floor": 240.58999633789062,
       "dtl_floor_touches": 1,
-      "rs_rank": 94.2
+      "rs_rank": 94.2,
+      "session_date": "2026-11-03",
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-03T09:34:02.295737",
+      "near_high_17_22_last_price": 320.1499938964844
     },
     "RAILTEL": {
       "sma50": 256.89739685058595,
@@ -20763,10 +20790,12 @@
       "dtl_floor": 726.0,
       "dtl_floor_touches": 1,
       "rs_rank": 69.2,
-      "near_high_17_22_last_alert": "2026-11-03T05:23:38.083078",
-      "near_high_17_22_last_price": 790.6500244140625,
+      "near_high_17_22_last_alert": "2026-11-03T09:35:15.272668",
+      "near_high_17_22_last_price": 782.2000122070312,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "TRANSRAILL": {
       "sma50": 447.3239990234375,
