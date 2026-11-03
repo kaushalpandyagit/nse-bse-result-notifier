@@ -925,7 +925,10 @@
       "dtl_touches": null,
       "dtl_floor": 1283.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 69.4
+      "rs_rank": 69.4,
+      "mtf_last_alert": "2026-11-03T05:30:22.435258",
+      "mtf_last_price": 1530.0,
+      "hva_sent": true
     },
     "AKUMS": {
       "sma50": 764.6599975585938,
@@ -1157,7 +1160,9 @@
       "dtl_floor_touches": 1,
       "rs_rank": 55.5,
       "mtf_last_alert": "2026-11-03T05:19:06.218678",
-      "mtf_last_price": 308.79998779296875
+      "mtf_last_price": 308.79998779296875,
+      "resistance_last_alert": "2026-11-03T05:30:26.607547",
+      "resistance_last_price": 309.3999938964844
     },
     "ANURAS": {
       "sma50": 1188.4080004882812,
@@ -1527,7 +1532,9 @@
       "dtl_touches": null,
       "dtl_floor": 830.2000122070312,
       "dtl_floor_touches": 1,
-      "rs_rank": 75.8
+      "rs_rank": 75.8,
+      "resistance_last_alert": "2026-11-03T05:30:34.620035",
+      "resistance_last_price": 960.0
     },
     "ASHAPURMIN": {
       "sma50": 507.3009997558594,
@@ -2223,7 +2230,8 @@
       "dtl_floor_touches": 1,
       "rs_rank": 82.9,
       "near_high_17_22_last_alert": "2026-11-03T05:19:21.474968",
-      "near_high_17_22_last_price": 647.1500244140625
+      "near_high_17_22_last_price": 647.1500244140625,
+      "dtl_bo_sent": true
     },
     "BALUFORGE": {
       "sma50": 515.490004272461,
@@ -3105,7 +3113,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 39.4,
       "near_high_17_22_last_alert": "2026-11-03T05:19:35.252531",
-      "near_high_17_22_last_price": 695.0
+      "near_high_17_22_last_price": 695.0,
+      "resistance_last_alert": "2026-11-03T05:31:04.376301",
+      "resistance_last_price": 696.25,
+      "ema50_pullback_last_alert": "2026-11-03T05:31:04.989970",
+      "ema50_pullback_last_price": 696.25
     },
     "CANFINHOME": {
       "sma50": 759.8490014648437,
@@ -9551,7 +9563,9 @@
       "vol_breakout_last_alert": "2026-11-03T05:21:07.348509",
       "vol_breakout_last_price": 254.5500030517578,
       "resistance_last_alert": "2026-11-03T05:21:07.820252",
-      "resistance_last_price": 254.5500030517578
+      "resistance_last_price": 254.5500030517578,
+      "mtf_last_alert": "2026-11-03T05:32:56.296599",
+      "mtf_last_price": 257.67999267578125
     },
     "IXIGO": {
       "sma50": 156.75160003662108,
@@ -10798,7 +10812,9 @@
       "dtl_touches": 3,
       "dtl_floor": 784.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 62.5
+      "rs_rank": 62.5,
+      "ema50_pullback_last_alert": "2026-11-03T05:33:18.966649",
+      "ema50_pullback_last_price": 880.9000244140625
     },
     "KIMS": {
       "sma50": 738.8040002441406,
@@ -13038,7 +13054,9 @@
       "dtl_touches": null,
       "dtl_floor": 1845.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 86.9
+      "rs_rank": 86.9,
+      "near_high_17_22_last_alert": "2026-11-03T05:33:59.594287",
+      "near_high_17_22_last_price": 2204.199951171875
     },
     "NEPHROPLUS": {
       "sma50": 672.6820007324219,
@@ -15466,7 +15484,9 @@
       "dtl_floor_touches": 1,
       "rs_rank": 88.0,
       "near_high_17_22_last_alert": "2026-11-03T05:22:40.705899",
-      "near_high_17_22_last_price": 87.41999816894531
+      "near_high_17_22_last_price": 87.41999816894531,
+      "rectangle_bounce_last_alert": "2026-11-03T05:34:47.032977",
+      "rectangle_bounce_last_price": 87.91999816894531
     },
     "RCF": {
       "sma50": 107.9711994934082,
