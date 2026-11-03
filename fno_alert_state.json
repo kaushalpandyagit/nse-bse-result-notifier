@@ -636,5 +636,11 @@
     "ref_high": 137.61,
     "ref_low": 126.1,
     "status": "Active"
+  },
+  "VMSTMT": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 43.99,
+    "ref_low": 42.46,
+    "status": "Active"
   }
 }
