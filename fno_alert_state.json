@@ -576,5 +576,65 @@
     "status": "Breached Low",
     "fno_low_breach_last_alert": "2026-11-03T03:53:09.001758",
     "fno_low_breach_last_price": 43.06999969482422
+  },
+  "ITI": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 279.99,
+    "ref_low": 252.03,
+    "status": "Active"
+  },
+  "GAYAHWS": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 2.24,
+    "ref_low": 1.86,
+    "status": "Active"
+  },
+  "PURVA": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 215.92,
+    "ref_low": 198.01,
+    "status": "Active"
+  },
+  "BALAJEE": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 19.55,
+    "ref_low": 18.9,
+    "status": "Active"
+  },
+  "LOYALTEX": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 233.9,
+    "ref_low": 206.1,
+    "status": "Active"
+  },
+  "GOPAL": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 260.0,
+    "ref_low": 247.63,
+    "status": "Active"
+  },
+  "AKCAPIT": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 1784.9,
+    "ref_low": 1738.8,
+    "status": "Active"
+  },
+  "RAMCOCEM": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 784.85,
+    "ref_low": 742.0,
+    "status": "Active"
+  },
+  "CENTURYPLY": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 653.9,
+    "ref_low": 644.55,
+    "status": "Active"
+  },
+  "SHK": {
+    "trigger_date": "2026-11-03",
+    "ref_high": 137.61,
+    "ref_low": 126.1,
+    "status": "Active"
   }
 }
