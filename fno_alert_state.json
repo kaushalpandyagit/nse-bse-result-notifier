@@ -27,7 +27,7 @@
     "trigger_date": "2026-10-22",
     "ref_high": 6.61,
     "ref_low": 5.56,
-    "status": "Active"
+    "status": "Expired"
   },
   "SRF": {
     "trigger_date": "2026-10-22",
@@ -423,7 +423,9 @@
     "trigger_date": "2026-10-29",
     "ref_high": 1083.4,
     "ref_low": 991.9,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-11-03T03:52:57.543830",
+    "fno_high_breach_last_price": 1088.5
   },
   "AYMSYNTEX": {
     "trigger_date": "2026-10-30",
@@ -517,7 +519,9 @@
     "trigger_date": "2026-11-02",
     "ref_high": 536.65,
     "ref_low": 464.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-11-03T03:53:03.354892",
+    "fno_low_breach_last_price": 469.25
   },
   "ZUARI": {
     "trigger_date": "2026-11-02",
@@ -535,7 +539,9 @@
     "trigger_date": "2026-11-02",
     "ref_high": 64.19,
     "ref_low": 62.0,
-    "status": "Active"
+    "status": "Breached High",
+    "fno_high_breach_last_alert": "2026-11-03T03:53:06.157479",
+    "fno_high_breach_last_price": 62.529998779296875
   },
   "SPORTKING": {
     "trigger_date": "2026-11-02",
@@ -547,12 +553,16 @@
     "trigger_date": "2026-11-02",
     "ref_high": 148.0,
     "ref_low": 130.01,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-11-03T03:53:07.826426",
+    "fno_low_breach_last_price": 134.77000427246094
   },
   "NGIL": {
     "trigger_date": "2026-11-02",
     "ref_high": 46.79,
     "ref_low": 43.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-11-03T03:53:09.001758",
+    "fno_low_breach_last_price": 43.06999969482422
   }
 }
