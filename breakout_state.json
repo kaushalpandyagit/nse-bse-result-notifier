@@ -2,8 +2,8 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T04:53:31.585915",
-    "custom_last_price": 132.0
+    "custom_last_alert": "2026-11-03T05:45:48.080502",
+    "custom_last_price": 129.9499969482422
   },
   "custom_alert_AERON_price": {
     "alerted": false,
@@ -88,8 +88,8 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T04:53:41.688535",
-    "custom_last_price": 55.20000076293945
+    "custom_last_alert": "2026-11-03T05:45:57.239460",
+    "custom_last_price": 56.5
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
@@ -4533,5 +4533,13 @@
     "price_low_last_alert": "2026-11-03T04:53:25.157609",
     "price_low_last_price": 161.0800018310547,
     "rsi_down_last_alert": "2026-11-03T04:53:25.756953"
+  },
+  "JAYBARMARU": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 129.91000366210938,
+    "day_low": 122.0,
+    "baseline_rsi": 51.685928899019395,
+    "mcap_cr": 1329.9595066070556,
+    "exchange": "NSE"
   }
 }

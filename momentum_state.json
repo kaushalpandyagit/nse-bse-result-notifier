@@ -928,7 +928,9 @@
       "rs_rank": 69.4,
       "mtf_last_alert": "2026-11-03T05:30:22.435258",
       "mtf_last_price": 1530.0,
-      "hva_sent": true
+      "hva_sent": true,
+      "zanger_last_alert": "2026-11-03T05:46:31.552676",
+      "zanger_last_price": 1542.5
     },
     "AKUMS": {
       "sma50": 764.6599975585938,
@@ -1440,7 +1442,9 @@
       "dtl_touches": 3,
       "dtl_floor": 471.20001220703125,
       "dtl_floor_touches": 1,
-      "rs_rank": 86.5
+      "rs_rank": 86.5,
+      "near_high_17_22_last_alert": "2026-11-03T05:46:40.206565",
+      "near_high_17_22_last_price": 502.95001220703125
     },
     "ARVINDFASN": {
       "sma50": 412.92200073242185,
@@ -3950,7 +3954,9 @@
       "dtl_touches": 3,
       "dtl_floor": 215.1699981689453,
       "dtl_floor_touches": 3,
-      "rs_rank": 83.3
+      "rs_rank": 83.3,
+      "near_high_17_22_last_alert": "2026-11-03T05:47:23.258454",
+      "near_high_17_22_last_price": 237.35000610351562
     },
     "CHALET": {
       "sma50": 855.1830029296875,
@@ -7241,7 +7247,9 @@
       "dtl_floor_touches": 1,
       "rs_rank": 67.0,
       "resistance_last_alert": "2026-11-03T05:20:32.911485",
-      "resistance_last_price": 715.0
+      "resistance_last_price": 715.0,
+      "mtf_last_alert": "2026-11-03T05:48:18.724591",
+      "mtf_last_price": 717.5
     },
     "GOKULAGRO": {
       "sma50": 220.6179998779297,
@@ -10674,7 +10682,9 @@
       "dtl_touches": 4,
       "dtl_floor": 173.1300048828125,
       "dtl_floor_touches": 4,
-      "rs_rank": 51.4
+      "rs_rank": 51.4,
+      "resistance_last_alert": "2026-11-03T05:49:18.747529",
+      "resistance_last_price": 186.72000122070312
     },
     "KAYNES": {
       "sma50": 3469.98400390625,
@@ -10766,7 +10776,9 @@
       "dtl_touches": 4,
       "dtl_floor": 317.25,
       "dtl_floor_touches": 1,
-      "rs_rank": 1.5
+      "rs_rank": 1.5,
+      "vol_breakout_last_alert": "2026-11-03T05:49:21.006472",
+      "vol_breakout_last_price": 317.5
     },
     "KFINTECH": {
       "sma50": 893.8090014648437,
@@ -11055,7 +11067,9 @@
       "vol_breakout_last_price": 130.5,
       "zanger_last_alert": "2026-11-03T05:21:31.012416",
       "zanger_last_price": 130.5,
-      "dtl_bo_sent": true
+      "dtl_bo_sent": true,
+      "mtf_last_alert": "2026-11-03T05:49:26.743337",
+      "mtf_last_price": 132.89999389648438
     },
     "KMEW": {
       "sma50": 3022.4360107421876,
@@ -11712,7 +11726,9 @@
       "dtl_touches": null,
       "dtl_floor": 77.68000030517578,
       "dtl_floor_touches": 1,
-      "rs_rank": 91.0
+      "rs_rank": 91.0,
+      "near_high_17_22_last_alert": "2026-11-03T05:49:39.455798",
+      "near_high_17_22_last_price": 81.66000366210938
     },
     "LLOYDSENT": {
       "sma50": 70.88400001525879,
@@ -14080,7 +14096,11 @@
       "dtl_touches": 5,
       "dtl_floor": 320.1000061035156,
       "dtl_floor_touches": 2,
-      "rs_rank": 84.8
+      "rs_rank": 84.8,
+      "mtf_last_alert": "2026-11-03T05:50:20.559332",
+      "mtf_last_price": 351.0,
+      "near_high_17_22_last_alert": "2026-11-03T05:50:21.224078",
+      "near_high_17_22_last_price": 351.0
     },
     "PFIZER": {
       "sma50": 4114.3519921875,
