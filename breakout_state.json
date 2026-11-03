@@ -4785,5 +4785,21 @@
     "baseline_rsi": 24.53021229847279,
     "mcap_cr": 31713.993629468263,
     "exchange": "NSE"
+  },
+  "DEEPINDS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 693.0,
+    "day_low": 604.0499877929688,
+    "baseline_rsi": 32.35355656285388,
+    "mcap_cr": 3985.919921875,
+    "exchange": "NSE"
+  },
+  "ALKYLAMINE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1710.9000244140625,
+    "day_low": 1546.9000244140625,
+    "baseline_rsi": 33.49613207590649,
+    "mcap_cr": 8229.7492416,
+    "exchange": "NSE"
   }
 }

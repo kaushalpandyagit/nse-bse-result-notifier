@@ -1060,7 +1060,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 65.3,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-03T08:01:36.353644",
+      "liquidity_sweep_last_price": 1616.300048828125
     },
     "AMBER": {
       "sma50": 6863.63,
@@ -8018,10 +8022,12 @@
       "dtl_floor": 1786.300048828125,
       "dtl_floor_touches": 3,
       "rs_rank": 84.2,
-      "near_high_17_22_last_alert": "2026-11-03T05:20:39.990977",
-      "near_high_17_22_last_price": 1975.4000244140625,
+      "near_high_17_22_last_alert": "2026-11-03T08:03:09.714726",
+      "near_high_17_22_last_price": 1953.0,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "GRSE": {
       "sma50": 2268.62400390625,
@@ -10204,7 +10210,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 2.4,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T08:03:39.867692",
+      "rectangle_bounce_last_price": 282.1499938964844
     },
     "JAMNAAUTO": {
       "sma50": 130.78160064697266,
@@ -14342,7 +14352,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 42.8,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-03T08:04:36.472985",
+      "mtf_last_price": 1563.5
     },
     "OSWALPUMPS": {
       "sma50": 264.6702008056641,
@@ -19168,7 +19182,9 @@
       "dtl_touches": null,
       "dtl_floor": 447.20001220703125,
       "dtl_floor_touches": 3,
-      "rs_rank": 64.7
+      "rs_rank": 64.7,
+      "session_date": "2026-11-03",
+      "alert_slots": []
     },
     "SUPRIYA": {
       "sma50": 876.245,
