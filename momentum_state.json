@@ -13629,10 +13629,12 @@
       "dtl_floor": 1845.0,
       "dtl_floor_touches": 1,
       "rs_rank": 86.9,
-      "near_high_17_22_last_alert": "2026-11-03T06:19:09.477202",
-      "near_high_17_22_last_price": 2182.0,
+      "near_high_17_22_last_alert": "2026-11-03T07:19:55.432486",
+      "near_high_17_22_last_price": 2209.0,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "NEPHROPLUS": {
       "sma50": 672.6820007324219,
@@ -20009,10 +20011,12 @@
       "dtl_floor": 1473.0,
       "dtl_floor_touches": 2,
       "rs_rank": 69.0,
-      "near_high_17_22_last_alert": "2026-11-03T05:23:30.066326",
-      "near_high_17_22_last_price": 1732.4000244140625,
+      "near_high_17_22_last_alert": "2026-11-03T07:21:35.417034",
+      "near_high_17_22_last_price": 1715.0,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "TEJASNET": {
       "sma50": 493.7439996337891,

@@ -365,8 +365,12 @@
     "spread_last_price": 4.085032592642286
   },
   "arb_KAMAHOLD": {
-    "spread_last_alert": "2026-11-03T06:07:52.966702",
-    "spread_last_price": 3.4482758620689653
+    "spread_last_alert": "2026-11-03T07:22:33.539112",
+    "spread_last_price": 5.6000000000000005,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "arb_GFLLIMITED": {
     "spread_last_alert": "2026-11-03T05:24:33.624848",
@@ -4656,6 +4660,46 @@
     "day_low": 130.11000061035156,
     "baseline_rsi": 45.46730183645878,
     "mcap_cr": 1821.0640241618592,
+    "exchange": "NSE"
+  },
+  "SURANAT&P": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 16.5,
+    "day_low": 15.170000076293945,
+    "baseline_rsi": 54.58098974233814,
+    "mcap_cr": 212.7358630567663,
+    "exchange": "NSE"
+  },
+  "GEECEE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 367.5,
+    "day_low": 352.0,
+    "baseline_rsi": 45.91915508835505,
+    "mcap_cr": 739.752413375,
+    "exchange": "NSE"
+  },
+  "ZYDUSWELL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 525.4500122070312,
+    "day_low": 466.79998779296875,
+    "baseline_rsi": 53.759009005138246,
+    "mcap_cr": 16202.334666,
+    "exchange": "NSE"
+  },
+  "BALAMINES": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1933.5,
+    "day_low": 1744.199951171875,
+    "baseline_rsi": 32.90764422206122,
+    "mcap_cr": 5752.473619104004,
+    "exchange": "NSE"
+  },
+  "ARFIN": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 98.0999984741211,
+    "day_low": 90.93000030517578,
+    "baseline_rsi": 54.47142722058083,
+    "mcap_cr": 1636.7768339250106,
     "exchange": "NSE"
   }
 }
