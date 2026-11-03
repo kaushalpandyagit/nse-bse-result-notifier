@@ -5202,5 +5202,45 @@
     "baseline_rsi": 38.78227151237252,
     "mcap_cr": 24920.7763936,
     "exchange": "NSE"
+  },
+  "EBGNG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 692.0,
+    "day_low": 657.9500122070312,
+    "baseline_rsi": 50.56453419381883,
+    "mcap_cr": 7834.871587414215,
+    "exchange": "NSE"
+  },
+  "BIGBLOC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 36.95000076293945,
+    "day_low": 35.2599983215332,
+    "baseline_rsi": 43.99528805110115,
+    "mcap_cr": 504.151254391098,
+    "exchange": "NSE"
+  },
+  "SOTL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 703.0,
+    "day_low": 671.4000244140625,
+    "baseline_rsi": 48.6305236643075,
+    "mcap_cr": 4781.746227866913,
+    "exchange": "NSE"
+  },
+  "SEAMECLTD": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1656.0,
+    "day_low": 1580.0,
+    "baseline_rsi": 46.09976738190832,
+    "mcap_cr": 4072.5471093398437,
+    "exchange": "NSE"
+  },
+  "SIGMA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 43.95000076293945,
+    "day_low": 42.400001525878906,
+    "baseline_rsi": 48.879596532301306,
+    "mcap_cr": 442.2407263942261,
+    "exchange": "NSE"
   }
 }
