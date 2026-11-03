@@ -952,7 +952,28 @@ def send_morning_sector_rs_report(momentum_state: dict) -> dict:
 # COOLDOWN & 1% PRICE CHANGE ENGINE
 # ----------------------------------------------------------------------
 
+
+def check_half_day_slot(entry: dict) -> bool:
+    now_ist = get_ist_now()
+    today_str = now_ist.date().isoformat()
+    current_slot = "H1" if now_ist.time() < datetime.time(12, 30) else "H2"
+    if entry.get("session_date") != today_str:
+        entry["session_date"] = today_str
+        entry["alert_slots"] = []
+    if current_slot in entry.get("alert_slots", []):
+        return False
+    return True
+
+def record_half_day_slot(entry: dict):
+    now_ist = get_ist_now()
+    current_slot = "H1" if now_ist.time() < datetime.time(12, 30) else "H2"
+    slots = entry.setdefault("alert_slots", [])
+    if current_slot not in slots:
+        slots.append(current_slot)
+
 def alert_allowed(entry: dict, alert_key_prefix: str, current_price: float = None) -> bool:
+    if not check_half_day_slot(entry):
+        return False
     last_time_str = entry.get(f"{alert_key_prefix}_last_alert")
     if not last_time_str: return True
     try:
@@ -975,6 +996,7 @@ def alert_allowed(entry: dict, alert_key_prefix: str, current_price: float = Non
     return True
 
 def record_alert(entry: dict, alert_key_prefix: str, current_price: float = None):
+    record_half_day_slot(entry)
     entry[f"{alert_key_prefix}_last_alert"] = datetime.datetime.now().isoformat()
     if current_price is not None:
         entry[f"{alert_key_prefix}_last_price"] = float(current_price)
@@ -1308,12 +1330,13 @@ def scan_hva_and_dtl_setups(symbol: str, entry: dict, metrics: dict) -> list:
 
         # ---- SETUP 6: High-Volume Anchor Day ----
         a_high, a_low, a_mid = entry.get("hva_high"), entry.get("hva_low"), entry.get("hva_mid")
-        if a_high and a_low and a_mid and not entry.get("hva_sent"):
+        if a_high and a_low and a_mid and not entry.get("hva_sent") and check_half_day_slot(entry):
             ext = (entry.get("hva_max_high_since", a_high) / a_high - 1) * 100
             risk_pct = (price - a_low) / price * 100
             a_info = f"{entry.get('hva_date')} | {entry.get('hva_vol_mult', 0):.1f}x avg vol"
             if ext <= 1.0 and a_high < price <= a_high * (1 + HVA_MAX_CHASE_PCT / 100) and vol_x >= 1.3:
                 entry["hva_sent"] = True
+                record_half_day_slot(entry)
                 msgs.append(
                     f"🔊 <b>{symbol}</b> High-Volume Anchor BREAKOUT!\n"
                     f"• <b>Price:</b> ₹{price:.2f} crossed Anchor-Day High ₹{a_high:.2f} ({a_info})\n"
@@ -1323,6 +1346,7 @@ def scan_hva_and_dtl_setups(symbol: str, entry: dict, metrics: dict) -> list:
             elif (ext >= HVA_PULLBACK_MIN_EXTENSION_PCT and a_mid <= price <= a_high * 1.03
                   and price >= prev_close and c_rsi and y_rsi and c_rsi > y_rsi and vol_x >= 1.0):
                 entry["hva_sent"] = True
+                record_half_day_slot(entry)
                 msgs.append(
                     f"🧱 <b>{symbol}</b> High-Volume Anchor PULLBACK HOLD!\n"
                     f"• <b>Price:</b> ₹{price:.2f} back in Anchor zone ₹{a_mid:.2f}-₹{a_high:.2f} ({a_info})\n"
@@ -1333,10 +1357,11 @@ def scan_hva_and_dtl_setups(symbol: str, entry: dict, metrics: dict) -> list:
         # ---- SETUP 7: Descending trendline (3+ touches) + floor ----
         res, touches = entry.get("dtl_res"), entry.get("dtl_touches")
         floor_, f_touches = entry.get("dtl_floor"), entry.get("dtl_floor_touches")
-        if res and touches and touches >= DTL_MIN_TOUCHES:
+        if res and touches and touches >= DTL_MIN_TOUCHES and check_half_day_slot(entry):
             if (not entry.get("dtl_bo_sent") and not entry.get("descending_wedge_last_alert")
                     and price > res * 1.005 and prev_close <= res * 1.015 and vol_x >= 1.5):
                 entry["dtl_bo_sent"] = True
+                record_half_day_slot(entry)
                 msgs.append(
                     f"📉➡️📈 <b>{symbol}</b> Multi-Touch Downtrend Line BREAKOUT!\n"
                     f"• <b>Price:</b> ₹{price:.2f} above falling resistance ₹{res:.2f} ({touches} touches)\n"
@@ -1349,6 +1374,7 @@ def scan_hva_and_dtl_setups(symbol: str, entry: dict, metrics: dict) -> list:
                 risk, reward = price - stop, res - price
                 if risk > 0 and reward / risk >= DTL_MIN_RR:
                     entry["dtl_floor_sent"] = True
+                    record_half_day_slot(entry)
                     msgs.append(
                         f"🛟 <b>{symbol}</b> Downtrend Floor Bounce (low-risk)!\n"
                         f"• <b>Price:</b> ₹{price:.2f} holding floor ₹{floor_:.2f} ({f_touches} touches), RSI {y_rsi:.1f} → {c_rsi:.1f}\n"
