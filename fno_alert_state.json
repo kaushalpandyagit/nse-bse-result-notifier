@@ -323,7 +323,13 @@
     "trigger_date": "2026-10-28",
     "ref_high": 3200.0,
     "ref_low": 3022.1,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_high_breach_last_alert": "2026-11-03T08:46:21.228639",
+    "fno_high_breach_last_price": 3250.0
   },
   "CNL": {
     "trigger_date": "2026-10-28",

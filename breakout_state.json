@@ -2,11 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T06:45:52.346932",
-    "custom_last_price": 128.5500030517578,
+    "custom_last_alert": "2026-11-03T08:45:58.527744",
+    "custom_last_price": 127.05000305175781,
     "session_date": "2026-11-03",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_AERON_price": {
@@ -24,10 +25,12 @@
   "custom_alert_BASILIC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-29T09:07:45.561822",
-    "custom_last_price": 175.1999969482422,
+    "custom_last_alert": "2026-11-03T08:46:01.365715",
+    "custom_last_price": 173.0,
     "session_date": "2026-11-03",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BEACON_price": {
     "alerted": false,
@@ -60,18 +63,22 @@
   "custom_alert_EMMIL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-29T09:07:51.294912",
-    "custom_last_price": 109.5,
+    "custom_last_alert": "2026-11-03T08:46:05.598460",
+    "custom_last_price": 111.94999694824219,
     "session_date": "2026-11-03",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_ESFL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-02T04:14:27.428843",
-    "custom_last_price": 101.55000305175781,
+    "custom_last_alert": "2026-11-03T08:46:06.988257",
+    "custom_last_price": 100.0,
     "session_date": "2026-11-03",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_GPIL_news": {
     "alerted": false,
@@ -148,10 +155,12 @@
   "custom_alert_SPCL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-02T04:14:34.456914",
-    "custom_last_price": 40.349998474121094,
+    "custom_last_alert": "2026-11-03T08:46:12.901429",
+    "custom_last_price": 39.20000076293945,
     "session_date": "2026-11-03",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_SSEGL_price": {
     "alerted": false,
@@ -160,10 +169,12 @@
   "custom_alert_TECHLABS_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-02T04:14:36.147473",
-    "custom_last_price": 101.94999694824219,
+    "custom_last_alert": "2026-11-03T08:46:14.674895",
+    "custom_last_price": 99.8499984741211,
     "session_date": "2026-11-03",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_CIRCULAR_news": {
     "alerted": true,
@@ -291,10 +302,12 @@
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-29T09:07:44.947498",
-    "custom_last_price": 175.1999969482422,
+    "custom_last_alert": "2026-11-03T08:46:00.616328",
+    "custom_last_price": 173.0,
     "session_date": "2026-11-03",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
@@ -4902,6 +4915,54 @@
     "day_low": 85.0,
     "baseline_rsi": 46.14446652120354,
     "mcap_cr": 919.8822386116791,
+    "exchange": "NSE"
+  },
+  "SOLARINDS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 20823.0,
+    "day_low": 19438.0,
+    "baseline_rsi": 58.97271739463538,
+    "mcap_cr": 186210.435179,
+    "exchange": "NSE"
+  },
+  "SIKKO": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 5.130000114440918,
+    "day_low": 4.78000020980835,
+    "baseline_rsi": 36.090178950558276,
+    "mcap_cr": 217.9631900024414,
+    "exchange": "NSE"
+  },
+  "PFIZER": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 3833.699951171875,
+    "day_low": 3633.10009765625,
+    "baseline_rsi": 46.177821080311865,
+    "mcap_cr": 17348.9126297376,
+    "exchange": "NSE"
+  },
+  "YATHARTH": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 983.7999877929688,
+    "day_low": 914.0,
+    "baseline_rsi": 51.37686474889933,
+    "mcap_cr": 9455.73458895487,
+    "exchange": "NSE"
+  },
+  "FLUOROCHEM": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 4600.0,
+    "day_low": 4345.7001953125,
+    "baseline_rsi": 54.89652629889533,
+    "mcap_cr": 49311.665,
+    "exchange": "NSE"
+  },
+  "GRAPHITE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 761.3499755859375,
+    "day_low": 738.0,
+    "baseline_rsi": 48.48085994361816,
+    "mcap_cr": 14701.036809025598,
     "exchange": "NSE"
   }
 }
