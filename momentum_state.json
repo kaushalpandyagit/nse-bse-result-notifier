@@ -1208,7 +1208,11 @@
       "resistance_last_alert": "2026-11-03T05:30:26.607547",
       "resistance_last_price": 309.3999938964844,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "zanger_last_alert": "2026-11-03T07:30:24.225723",
+      "zanger_last_price": 313.79998779296875
     },
     "ANURAS": {
       "sma50": 1188.4080004882812,
@@ -2619,7 +2623,10 @@
       "mtf_last_alert": "2026-11-03T05:19:26.507488",
       "mtf_last_price": 208.39999389648438,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "dtl_bo_sent": true
     },
     "BELRISE": {
       "sma50": 230.3357992553711,
@@ -3495,7 +3502,11 @@
       "near_high_17_22_last_alert": "2026-11-03T05:19:39.654069",
       "near_high_17_22_last_price": 1110.0,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T07:30:57.834850",
+      "rectangle_bounce_last_price": 1120.5
     },
     "CARTRADE": {
       "sma50": 2933.4260009765626,
@@ -4608,7 +4619,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 62.1,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T07:31:11.911476",
+      "rectangle_bounce_last_price": 1241.300048828125
     },
     "CRAFTSMAN": {
       "sma50": 10843.12,
@@ -9644,10 +9659,12 @@
       "dtl_floor": 1788.4000244140625,
       "dtl_floor_touches": 4,
       "rs_rank": 83.9,
-      "near_high_17_22_last_alert": "2026-11-03T05:21:01.997405",
-      "near_high_17_22_last_price": 1881.699951171875,
+      "near_high_17_22_last_alert": "2026-11-03T07:32:19.273170",
+      "near_high_17_22_last_price": 1861.0,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "INOXWIND": {
       "sma50": 69.45919982910156,
@@ -9982,14 +9999,16 @@
       "dtl_floor": 210.75999450683594,
       "dtl_floor_touches": 2,
       "rs_rank": 33.6,
-      "vol_breakout_last_alert": "2026-11-03T06:18:19.351509",
-      "vol_breakout_last_price": 257.2799987792969,
+      "vol_breakout_last_alert": "2026-11-03T07:32:25.135284",
+      "vol_breakout_last_price": 254.6199951171875,
       "resistance_last_alert": "2026-11-03T06:18:19.817095",
       "resistance_last_price": 257.2799987792969,
       "mtf_last_alert": "2026-11-03T05:32:56.296599",
       "mtf_last_price": 257.67999267578125,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "IXIGO": {
       "sma50": 156.75160003662108,
@@ -11245,10 +11264,12 @@
       "dtl_floor": 317.25,
       "dtl_floor_touches": 1,
       "rs_rank": 1.5,
-      "vol_breakout_last_alert": "2026-11-03T05:49:21.006472",
-      "vol_breakout_last_price": 317.5,
+      "vol_breakout_last_alert": "2026-11-03T07:32:43.132113",
+      "vol_breakout_last_price": 314.25,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "KFINTECH": {
       "sma50": 893.8090014648437,
@@ -13293,10 +13314,12 @@
       "dtl_floor": 32.70000076293945,
       "dtl_floor_touches": 2,
       "rs_rank": 52.5,
-      "resistance_last_alert": "2026-11-03T05:21:57.185536",
-      "resistance_last_price": 39.59000015258789,
+      "resistance_last_alert": "2026-11-03T07:33:10.601622",
+      "resistance_last_price": 39.130001068115234,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "MTARTECH": {
       "sma50": 7170.23,
@@ -14903,14 +14926,16 @@
       "dtl_floor": 4735.0,
       "dtl_floor_touches": 1,
       "rs_rank": 73.4,
-      "resistance_last_alert": "2026-11-03T05:22:22.473258",
-      "resistance_last_price": 5752.5,
+      "resistance_last_alert": "2026-11-03T07:33:32.748500",
+      "resistance_last_price": 5820.0,
       "mtf_last_alert": "2026-11-03T05:22:22.952611",
       "mtf_last_price": 5752.5,
       "near_high_17_22_last_alert": "2026-11-03T05:22:23.425208",
       "near_high_17_22_last_price": 5752.5,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "PGIL": {
       "sma50": 1219.5369995117187,
@@ -20735,8 +20760,8 @@
       "dtl_floor": 20.149999618530273,
       "dtl_floor_touches": 1,
       "rs_rank": 47.8,
-      "vol_breakout_last_alert": "2026-11-03T06:34:40.436126",
-      "vol_breakout_last_price": 23.950000762939453,
+      "vol_breakout_last_alert": "2026-11-03T07:34:46.253672",
+      "vol_breakout_last_price": 23.579999923706055,
       "zanger_last_alert": "2026-11-03T06:34:40.995831",
       "zanger_last_price": 23.950000762939453,
       "mtf_last_alert": "2026-11-03T05:23:40.896309",
@@ -20745,7 +20770,9 @@
       "resistance_last_alert": "2026-11-03T06:34:41.462962",
       "resistance_last_price": 23.950000762939453,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "TRITURBINE": {
       "sma50": 532.7670001220703,
@@ -21126,10 +21153,12 @@
       "dtl_floor": 126.51000213623047,
       "dtl_floor_touches": 4,
       "rs_rank": 65.7,
-      "near_high_17_22_last_alert": "2026-11-03T06:20:44.362439",
-      "near_high_17_22_last_price": 157.5399932861328,
+      "near_high_17_22_last_alert": "2026-11-03T07:34:50.930709",
+      "near_high_17_22_last_price": 159.8000030517578,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "USHAMART": {
       "sma50": 494.1420001220703,

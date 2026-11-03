@@ -759,8 +759,12 @@
     "price_low_last_price": 11870.0
   },
   "arb_NSIL": {
-    "spread_last_alert": "2026-10-27T09:08:56.672043",
-    "spread_last_price": 4.204906219559164
+    "spread_last_alert": "2026-11-03T07:35:35.001878",
+    "spread_last_price": 2.556701030927835,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "GRWRHITECH": {
     "result_date": "2026-10-22T00:00:00",
@@ -4700,6 +4704,38 @@
     "day_low": 90.93000030517578,
     "baseline_rsi": 54.47142722058083,
     "mcap_cr": 1636.7768339250106,
+    "exchange": "NSE"
+  },
+  "BAJAJFINSV": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1722.0,
+    "day_low": 1689.0,
+    "baseline_rsi": 47.176801674084984,
+    "mcap_cr": 275002.0561631,
+    "exchange": "NSE"
+  },
+  "PCBL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 284.45001220703125,
+    "day_low": 273.54998779296875,
+    "baseline_rsi": 33.72579024480672,
+    "mcap_cr": 10887.110732981031,
+    "exchange": "NSE"
+  },
+  "GANESHCP": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 181.97999572753906,
+    "day_low": 163.5,
+    "baseline_rsi": 59.275027199278426,
+    "mcap_cr": 694.213581454779,
+    "exchange": "NSE"
+  },
+  "SANGHVIMOV": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 333.20001220703125,
+    "day_low": 316.0,
+    "baseline_rsi": 33.68597921419692,
+    "mcap_cr": 2750.519625683594,
     "exchange": "NSE"
   }
 }
