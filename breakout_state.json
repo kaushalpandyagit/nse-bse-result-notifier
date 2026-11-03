@@ -114,10 +114,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T05:45:57.239460",
-    "custom_last_price": 56.5,
+    "custom_last_alert": "2026-11-03T07:45:57.467172",
+    "custom_last_price": 55.310001373291016,
     "session_date": "2026-11-03",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
@@ -257,8 +259,12 @@
     "spread_last_price": 2.513980051332058
   },
   "arb_ALKYLAMINE": {
-    "spread_last_alert": "2026-10-14T06:34:45.113972",
-    "spread_last_price": 2.7652997949464515
+    "spread_last_alert": "2026-11-03T07:51:19.991599",
+    "spread_last_price": 2.902332224303804,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "arb_VHL": {
     "spread_last_alert": "2026-11-02T05:00:55.144922",
@@ -4556,10 +4562,12 @@
     "price_high_last_price": 2175.0
   },
   "arb_MAHSCOOTER": {
-    "spread_last_alert": "2026-11-03T06:08:32.958097",
-    "spread_last_price": 3.595890410958904,
+    "spread_last_alert": "2026-11-03T07:51:16.075203",
+    "spread_last_price": 2.791095890410959,
     "session_date": "2026-11-03",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "HAPPSTMNDS": {
     "result_date": "2026-11-02T00:00:00",
@@ -4736,6 +4744,46 @@
     "day_low": 316.0,
     "baseline_rsi": 33.68597921419692,
     "mcap_cr": 2750.519625683594,
+    "exchange": "NSE"
+  },
+  "DIACABS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 367.5,
+    "day_low": 352.04998779296875,
+    "baseline_rsi": 57.032267809563,
+    "mcap_cr": 21979.111455,
+    "exchange": "NSE"
+  },
+  "SHEMAROO": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 104.38999938964844,
+    "day_low": 101.0,
+    "baseline_rsi": 44.86220381188271,
+    "mcap_cr": 298.4790745574417,
+    "exchange": "NSE"
+  },
+  "BANSWRAS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 105.5,
+    "day_low": 100.70999908447266,
+    "baseline_rsi": 48.43457362758111,
+    "mcap_cr": 349.338427666803,
+    "exchange": "NSE"
+  },
+  "HMAAGRO": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 25.899999618530273,
+    "day_low": 24.719999313354492,
+    "baseline_rsi": 60.8063986599578,
+    "mcap_cr": 1265.9460129451313,
+    "exchange": "NSE"
+  },
+  "AIAENG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 3747.0,
+    "day_low": 3387.300048828125,
+    "baseline_rsi": 24.53021229847279,
+    "mcap_cr": 31713.993629468263,
     "exchange": "NSE"
   }
 }

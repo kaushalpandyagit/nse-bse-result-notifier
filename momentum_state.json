@@ -7477,10 +7477,11 @@
       "dtl_bo_sent": true,
       "session_date": "2026-11-03",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "vol_breakout_last_alert": "2026-11-03T06:48:26.816921",
-      "vol_breakout_last_price": 1757.5
+      "vol_breakout_last_alert": "2026-11-03T07:47:48.387167",
+      "vol_breakout_last_price": 1739.0
     },
     "GODREJAGRO": {
       "sma50": 631.6440002441407,
@@ -16184,10 +16185,12 @@
       "rs_rank": 88.0,
       "near_high_17_22_last_alert": "2026-11-03T05:22:40.705899",
       "near_high_17_22_last_price": 87.41999816894531,
-      "rectangle_bounce_last_alert": "2026-11-03T05:34:47.032977",
-      "rectangle_bounce_last_price": 87.91999816894531,
+      "rectangle_bounce_last_alert": "2026-11-03T07:49:41.213219",
+      "rectangle_bounce_last_price": 88.98999786376953,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "RCF": {
       "sma50": 107.9711994934082,
@@ -22314,7 +22317,11 @@
       "near_high_17_22_last_alert": "2026-11-03T05:24:01.605498",
       "near_high_17_22_last_price": 1889.5,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T07:50:55.317184",
+      "rectangle_bounce_last_price": 1908.0
     },
     "YATHARTH": {
       "sma50": 998.3190002441406,
