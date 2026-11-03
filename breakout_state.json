@@ -218,7 +218,9 @@
   },
   "arb_WELINV": {
     "spread_last_alert": "2026-11-02T04:26:16.428322",
-    "spread_last_price": 3.7511709216486597
+    "spread_last_price": 3.7511709216486597,
+    "session_date": "2026-11-03",
+    "alert_slots": []
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-10-29T06:57:33.875213",
@@ -279,8 +281,12 @@
     "spread_last_price": 2.820854182104335
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-11-02T04:25:32.889798",
-    "spread_last_price": 9.306930693069306
+    "spread_last_alert": "2026-11-03T08:24:24.412035",
+    "spread_last_price": 3.033220991815118,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
@@ -4800,6 +4806,54 @@
     "day_low": 1546.9000244140625,
     "baseline_rsi": 33.49613207590649,
     "mcap_cr": 8229.7492416,
+    "exchange": "NSE"
+  },
+  "SIL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 16.989999771118164,
+    "day_low": 15.869999885559082,
+    "baseline_rsi": 44.88575029595682,
+    "mcap_cr": 102.86197518662739,
+    "exchange": "NSE"
+  },
+  "PUNJABCHEM": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 930.25,
+    "day_low": 880.0,
+    "baseline_rsi": 21.64665627765514,
+    "mcap_cr": 1091.334465,
+    "exchange": "NSE"
+  },
+  "JOCIL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 143.39999389648438,
+    "day_low": 136.82000732421875,
+    "baseline_rsi": 42.627844620326016,
+    "mcap_cr": 121.671755,
+    "exchange": "NSE"
+  },
+  "ASAHIINDIA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 986.8499755859375,
+    "day_low": 944.7999877929688,
+    "baseline_rsi": 61.504980535374635,
+    "mcap_cr": 24837.55600536958,
+    "exchange": "NSE"
+  },
+  "EMCURE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1979.800048828125,
+    "day_low": 1882.5,
+    "baseline_rsi": 64.83276920431535,
+    "mcap_cr": 37439.39618545,
+    "exchange": "NSE"
+  },
+  "PRINCEPIPE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 295.29998779296875,
+    "day_low": 261.75,
+    "baseline_rsi": 52.2407929513841,
+    "mcap_cr": 2939.8291305740477,
     "exchange": "NSE"
   }
 }
