@@ -2391,7 +2391,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 38.3,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-03T09:46:44.131388",
+      "mtf_last_price": 488.70001220703125
     },
     "BANCOINDIA": {
       "sma50": 603.3360034179688,
@@ -8402,10 +8406,12 @@
       "dtl_floor": 648.0,
       "dtl_floor_touches": 1,
       "rs_rank": 64.0,
-      "resistance_last_alert": "2026-11-03T05:20:46.295280",
-      "resistance_last_price": 821.5999755859375,
+      "resistance_last_alert": "2026-11-03T09:48:03.246244",
+      "resistance_last_price": 812.6500244140625,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "HCC": {
       "sma50": 20.79199993133545,
@@ -10500,7 +10506,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 63.2,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-03T09:48:30.145307",
+      "near_high_17_22_last_price": 364.75
     },
     "JKTYRE": {
       "sma50": 344.99199951171875,
@@ -11080,7 +11090,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 11.6,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-03T09:48:38.752206",
+      "mtf_last_price": 188.5
     },
     "JYOTICNC": {
       "sma50": 1001.7050024414062,
@@ -13192,7 +13206,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 86.7,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-03T09:49:06.234674",
+      "vol_breakout_last_price": 658.8499755859375
     },
     "MMTC": {
       "sma50": 58.46419967651367,
@@ -15788,7 +15806,9 @@
       "dtl_touches": null,
       "dtl_floor": 1060.5999755859375,
       "dtl_floor_touches": 2,
-      "rs_rank": 71.1
+      "rs_rank": 71.1,
+      "session_date": "2026-11-03",
+      "alert_slots": []
     },
     "QUESS": {
       "sma50": 341.8460028076172,
@@ -17730,7 +17750,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 59.5,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-03T09:50:07.556299",
+      "vol_breakout_last_price": 510.3999938964844
     },
     "SGMART": {
       "sma50": 778.2170007324219,
@@ -17823,10 +17847,12 @@
       "dtl_floor": 2627.89990234375,
       "dtl_floor_touches": 2,
       "rs_rank": 76.4,
-      "near_high_17_22_last_alert": "2026-11-03T05:23:00.515657",
-      "near_high_17_22_last_price": 2992.0,
+      "near_high_17_22_last_alert": "2026-11-03T09:50:09.178579",
+      "near_high_17_22_last_price": 2960.0,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "SHAKTIPUMP": {
       "sma50": 445.2040002441406,
@@ -20649,7 +20675,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 38.5,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-03T09:50:44.289491",
+      "mtf_last_price": 3019.0
     },
     "TIPSMUSIC": {
       "sma50": 680.6479992675781,
@@ -22702,7 +22732,11 @@
       "mtf_last_alert": "2026-11-03T05:24:06.227114",
       "mtf_last_price": 1717.5,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-03T09:51:09.772926",
+      "vol_breakout_last_price": 1707.800048828125
     },
     "ZFCVINDIA": {
       "sma50": 2341.53798828125,

@@ -5106,5 +5106,37 @@
     "baseline_rsi": 45.47976946777975,
     "mcap_cr": 309.279963,
     "exchange": "NSE"
+  },
+  "GENCON": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 27.1299991607666,
+    "day_low": 26.149999618530273,
+    "baseline_rsi": 31.212579477192108,
+    "mcap_cr": 150.67156607939242,
+    "exchange": "NSE"
+  },
+  "RML": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1388.0,
+    "day_low": 1240.0,
+    "baseline_rsi": 56.94950209395582,
+    "mcap_cr": 3634.2835155,
+    "exchange": "NSE"
+  },
+  "ARIHANTSUP": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 217.0,
+    "day_low": 203.1999969482422,
+    "baseline_rsi": 43.07942699020363,
+    "mcap_cr": 911.1043262446198,
+    "exchange": "NSE"
+  },
+  "PTC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 140.27999877929688,
+    "day_low": 136.66000366210938,
+    "baseline_rsi": 36.76657948275943,
+    "mcap_cr": 4048.2096353937727,
+    "exchange": "NSE"
   }
 }
