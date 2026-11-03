@@ -926,8 +926,8 @@
       "dtl_floor": 1283.0,
       "dtl_floor_touches": 1,
       "rs_rank": 69.4,
-      "mtf_last_alert": "2026-11-03T05:30:22.435258",
-      "mtf_last_price": 1530.0,
+      "mtf_last_alert": "2026-11-03T06:30:28.116953",
+      "mtf_last_price": 1546.0,
       "hva_sent": true,
       "zanger_last_alert": "2026-11-03T05:46:31.552676",
       "zanger_last_price": 1542.5
@@ -2047,8 +2047,8 @@
       "dtl_floor": 1416.0999755859375,
       "dtl_floor_touches": 1,
       "rs_rank": 41.3,
-      "near_high_17_22_last_alert": "2026-11-03T05:19:18.661231",
-      "near_high_17_22_last_price": 1879.0
+      "near_high_17_22_last_alert": "2026-11-03T06:30:43.607455",
+      "near_high_17_22_last_price": 1859.0
     },
     "AZAD": {
       "sma50": 2762.1819970703127,
@@ -3590,7 +3590,9 @@
       "dtl_touches": 4,
       "dtl_floor": 3012.60009765625,
       "dtl_floor_touches": 2,
-      "rs_rank": 60.0
+      "rs_rank": 60.0,
+      "mtf_last_alert": "2026-11-03T06:31:03.910252",
+      "mtf_last_price": 3324.699951171875
     },
     "CEIGALL": {
       "sma50": 371.66400024414065,
@@ -4192,7 +4194,9 @@
       "dtl_touches": 5,
       "dtl_floor": 1236.699951171875,
       "dtl_floor_touches": 1,
-      "rs_rank": 33.0
+      "rs_rank": 33.0,
+      "mtf_last_alert": "2026-11-03T06:31:12.400780",
+      "mtf_last_price": 1408.699951171875
     },
     "CIEINDIA": {
       "sma50": 380.0639996337891,
@@ -5765,8 +5769,8 @@
       "dtl_floor": 502.8999938964844,
       "dtl_floor_touches": 2,
       "rs_rank": 54.0,
-      "near_high_17_22_last_alert": "2026-11-03T05:20:10.697794",
-      "near_high_17_22_last_price": 535.6500244140625
+      "near_high_17_22_last_alert": "2026-11-03T06:31:33.733181",
+      "near_high_17_22_last_price": 529.2999877929688
     },
     "ELLEN": {
       "sma50": 339.52399963378906,
@@ -6276,7 +6280,9 @@
       "dtl_touches": 7,
       "dtl_floor": 2411.60009765625,
       "dtl_floor_touches": 1,
-      "rs_rank": 16.3
+      "rs_rank": 16.3,
+      "rectangle_bounce_last_alert": "2026-11-03T06:31:41.369330",
+      "rectangle_bounce_last_price": 2434.0
     },
     "EXIDEIND": {
       "sma50": 401.83000122070314,
@@ -14156,7 +14162,9 @@
       "dtl_touches": 3,
       "dtl_floor": 3589.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 21.8
+      "rs_rank": 21.8,
+      "rectangle_bounce_last_alert": "2026-11-03T06:33:27.557964",
+      "rectangle_bounce_last_price": 3714.699951171875
     },
     "PFOCUS": {
       "sma50": 300.1170007324219,
@@ -19925,13 +19933,15 @@
       "dtl_floor": 20.149999618530273,
       "dtl_floor_touches": 1,
       "rs_rank": 47.8,
-      "vol_breakout_last_alert": "2026-11-03T05:23:39.937460",
-      "vol_breakout_last_price": 24.3700008392334,
-      "zanger_last_alert": "2026-11-03T05:23:40.415895",
-      "zanger_last_price": 24.3700008392334,
+      "vol_breakout_last_alert": "2026-11-03T06:34:40.436126",
+      "vol_breakout_last_price": 23.950000762939453,
+      "zanger_last_alert": "2026-11-03T06:34:40.995831",
+      "zanger_last_price": 23.950000762939453,
       "mtf_last_alert": "2026-11-03T05:23:40.896309",
       "mtf_last_price": 24.3700008392334,
-      "dtl_bo_sent": true
+      "dtl_bo_sent": true,
+      "resistance_last_alert": "2026-11-03T06:34:41.462962",
+      "resistance_last_price": 23.950000762939453
     },
     "TRITURBINE": {
       "sma50": 532.7670001220703,
