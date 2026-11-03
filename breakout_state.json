@@ -5138,5 +5138,29 @@
     "baseline_rsi": 36.76657948275943,
     "mcap_cr": 4048.2096353937727,
     "exchange": "NSE"
+  },
+  "PATINTLOG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 12.739999771118164,
+    "day_low": 12.109999656677246,
+    "baseline_rsi": 42.215013726928234,
+    "mcap_cr": 78.04986615660324,
+    "exchange": "NSE"
+  },
+  "ABINFRA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 12.449999809265137,
+    "day_low": 11.899999618530273,
+    "baseline_rsi": 46.33903156144301,
+    "mcap_cr": 785.7109249839401,
+    "exchange": "NSE"
+  },
+  "MANGLMCEM": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 909.3499755859375,
+    "day_low": 836.0,
+    "baseline_rsi": 32.71975595772483,
+    "mcap_cr": 2433.510873,
+    "exchange": "NSE"
   }
 }
