@@ -8094,15 +8094,16 @@
       "dtl_floor": 1842.0,
       "dtl_floor_touches": 1,
       "rs_rank": 16.7,
-      "vol_breakout_last_alert": "2026-11-03T06:48:38.849205",
-      "vol_breakout_last_price": 2177.0,
+      "vol_breakout_last_alert": "2026-11-03T09:03:41.809951",
+      "vol_breakout_last_price": 2136.0,
       "mtf_last_alert": "2026-11-03T05:20:41.602658",
       "mtf_last_price": 2202.300048828125,
       "ema50_pullback_last_alert": "2026-11-03T05:20:42.113429",
       "ema50_pullback_last_price": 2202.300048828125,
       "session_date": "2026-11-03",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ]
     },
     "GRWRHITECH": {
@@ -16778,7 +16779,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 34.0,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-03T09:05:55.330227",
+      "mtf_last_price": 456.6499938964844
     },
     "RPOWER": {
       "sma50": 20.297999992370606,
@@ -18747,10 +18752,12 @@
       "dtl_floor": 931.2999877929688,
       "dtl_floor_touches": 1,
       "rs_rank": 54.2,
-      "near_high_17_22_last_alert": "2026-11-03T06:20:13.981034",
-      "near_high_17_22_last_price": 1034.699951171875,
+      "near_high_17_22_last_alert": "2026-11-03T09:06:23.879721",
+      "near_high_17_22_last_price": 1045.0999755859375,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "STARHEALTH": {
       "sma50": 551.9449987792968,
@@ -20215,7 +20222,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 13.5,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T09:06:45.663254",
+      "rectangle_bounce_last_price": 458.8500061035156
     },
     "TEXRAIL": {
       "sma50": 112.53379989624024,
