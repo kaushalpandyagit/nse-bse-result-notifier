@@ -5162,5 +5162,13 @@
     "baseline_rsi": 32.71975595772483,
     "mcap_cr": 2433.510873,
     "exchange": "NSE"
+  },
+  "WABAG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1842.0,
+    "day_low": 1788.0,
+    "baseline_rsi": 40.94800538347637,
+    "mcap_cr": 11218.911059715905,
+    "exchange": "NSE"
   }
 }
