@@ -2924,7 +2924,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 21.4,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T09:16:49.634772",
+      "rectangle_bounce_last_price": 223.91000366210938
     },
     "BLUEJET": {
       "sma50": 548.9909973144531,
@@ -13263,7 +13267,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 10.7,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-03T09:19:00.011692",
+      "vol_breakout_last_price": 204.75999450683594
     },
     "MSTCLTD": {
       "sma50": 686.6059985351562,
@@ -18951,7 +18959,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 71.5,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T09:20:11.557182",
+      "rectangle_bounce_last_price": 1081.050048828125
     },
     "SUDEEPPHRM": {
       "sma50": 1135.2370068359376,

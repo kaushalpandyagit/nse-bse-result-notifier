@@ -402,8 +402,12 @@
     ]
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-11-03T05:24:33.624848",
-    "spread_last_price": 3.5080588691130106
+    "spread_last_alert": "2026-11-03T09:21:22.192090",
+    "spread_last_price": 3.0404680245532436,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "arb_JINDALPHOT": {
     "spread_last_alert": "2026-11-02T04:26:18.305927",
@@ -5016,5 +5020,61 @@
     "baseline_rsi": 43.19242893768058,
     "mcap_cr": 732.0299844957398,
     "exchange": "NSE"
+  },
+  "BLS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 224.8000030517578,
+    "day_low": 211.47999572753906,
+    "baseline_rsi": 50.913247537305644,
+    "mcap_cr": 9119.64808350459,
+    "exchange": "NSE"
+  },
+  "MGL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1058.0,
+    "day_low": 1000.0,
+    "baseline_rsi": 40.52444133032103,
+    "mcap_cr": 10129.66123645,
+    "exchange": "NSE"
+  },
+  "MONTECARLO": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 520.0,
+    "day_low": 478.04998779296875,
+    "baseline_rsi": 39.59019572641154,
+    "mcap_cr": 1024.6822632,
+    "exchange": "NSE"
+  },
+  "ARCHIDPLY": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 103.98999786376953,
+    "day_low": 96.08999633789062,
+    "baseline_rsi": 47.44883592003026,
+    "mcap_cr": 194.26882099797896,
+    "exchange": "NSE"
+  },
+  "SAIPARENT": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 494.8999938964844,
+    "day_low": 471.29998779296875,
+    "baseline_rsi": 45.17270921860629,
+    "mcap_cr": 2111.104628084863,
+    "exchange": "NSE"
+  },
+  "BORANA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 218.0,
+    "day_low": 199.44000244140625,
+    "baseline_rsi": 27.929564973471344,
+    "mcap_cr": 557.552797875,
+    "exchange": "NSE"
+  },
+  "arb_ASAHIINDIA": {
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ],
+    "spread_last_alert": "2026-11-03T09:21:14.114026",
+    "spread_last_price": 4.475298042980999
   }
 }
