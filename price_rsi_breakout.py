@@ -14,6 +14,8 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 3: Wyckoff SOS + Range Shift Pullback Curl.
 - SETUP 4: Rectangle Box Consolidation Bounce (Electrosteel Darvas Type).
 - SETUP 5: Descending Trendline Contraction (Tight Wedge Breakout).
+- SETUP 6: High-Volume Anchor Day (breakout above anchor high / pullback hold in anchor zone).
+- SETUP 7: Descending Trendline 3+ touches + Floor (floor bounce RR / trendline breakout).
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
 - Custom Synthetic Index Engine (Equal-Weighted Basket RSI via custom_indices.json).
 - NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
@@ -84,6 +86,21 @@ TOKEN_FILE = os.path.join(CACHE_DIR, ".fyers_token.txt")
 POLL_INTERVAL_MINUTES = 15
 ALERT_COOLDOWN_MINUTES = 45
 MIN_PRICE_CHANGE_FOR_REPEAT_PCT = 1.0
+
+# --- Result-day High/Low + RSI break alerts (very noisy) -> OFF by default ---
+ENABLE_RESULT_DAY_BREAK_ALERTS = False   # set True to bring back the old messages
+
+# --- SETUP 6: High-Volume Anchor Day ---
+HVA_LOOKBACK_DAYS = 25            # anchor must be within last N sessions
+HVA_MIN_VOL_MULT = 4.0            # anchor-day volume >= 4x 50d avg
+HVA_PULLBACK_MIN_EXTENSION_PCT = 6.0   # price ran >= 6% above anchor high before pulling back
+HVA_MAX_CHASE_PCT = 5.0           # breakout alert only within 5% above anchor high
+
+# --- SETUP 7: Descending trendline (multi-touch) + horizontal floor ---
+DTL_LOOKBACK_DAYS = 90
+DTL_MIN_TOUCHES = 3               # swing-high touches on the falling line
+DTL_TOUCH_TOL_PCT = 1.5
+DTL_MIN_RR = 2.5                  # floor-bounce reward:risk (line vs floor-3%)
 
 RSI_PERIOD = 14
 TRACK_WINDOW_DAYS = 15
@@ -819,6 +836,9 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
                                     descending_res = projected_res
                                     wedge_contraction = contraction
         
+        hva_fields = detect_volume_anchor(df)
+        dtl_fields = detect_descending_channel(df)
+
         rs_return = (float(closes.iloc[-1]) / float(closes.iloc[-RS_LOOKBACK_DAYS]) - 1) * 100 if len(closes) > RS_LOOKBACK_DAYS and float(closes.iloc[-RS_LOOKBACK_DAYS]) > 0 else None
         
         per_symbol_data[symbol] = {
@@ -843,6 +863,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             "sos_thrust_peak_price": sos_peak_p, "sos_thrust_peak_rsi": sos_peak_rsi,
             "box_high": box_high, "box_low": box_low, 
             "descending_res": descending_res, "wedge_contraction": wedge_contraction,
+            **hva_fields, **dtl_fields,
         }
         if rs_return is not None: returns_6m[symbol] = rs_return
 
@@ -1175,6 +1196,169 @@ def check_nse_bse_arbitrage(momentum_state: dict, state: dict, fyers):
 # INTRADAY MOMENTUM SCANNER HEADS
 # ----------------------------------------------------------------------
 
+# ----------------------------------------------------------------------
+# SETUP 6 / SETUP 7 : HIGH-VOLUME ANCHOR DAY & DESCENDING TRENDLINE + FLOOR
+# ----------------------------------------------------------------------
+
+def detect_volume_anchor(df: pd.DataFrame) -> dict:
+    """Most recent clear high-volume bullish day (>= HVA_MIN_VOL_MULT x 50d avg) whose low
+    has not been closed below since. Returns JSON-safe fields for the watchlist."""
+    out = {"hva_high": None, "hva_low": None, "hva_mid": None, "hva_date": None,
+           "hva_vol_mult": None, "hva_max_high_since": None}
+    try:
+        d = df[["Open", "High", "Low", "Close", "Volume"]].dropna()
+        if len(d) < 80:
+            return out
+        if d.index[-1].date() == datetime.date.today():
+            d = d.iloc[:-1]          # ignore today's partial candle
+        avg50 = d["Volume"].rolling(50).mean().shift(1)
+        mult = (d["Volume"] / avg50).iloc[-HVA_LOOKBACK_DAYS:]
+        w = d.iloc[-HVA_LOOKBACK_DAYS:]
+        rng = (w["High"] - w["Low"]).replace(0, np.nan)
+        close_pos = (w["Close"] - w["Low"]) / rng
+        chg = (w["Close"] / d["Close"].shift(1).iloc[-HVA_LOOKBACK_DAYS:] - 1) * 100
+        big = mult >= HVA_MIN_VOL_MULT
+        bullish = ((w["Close"] > w["Open"]) & (close_pos >= 0.5)) | (chg >= 3.0)
+        ok = (big & bullish).fillna(False)
+        if not ok.any():
+            return out
+        a_idx = mult[ok].idxmax()
+        a = w.loc[a_idx]
+        after = d.loc[d.index > a_idx]
+        a_high, a_low = float(a["High"]), float(a["Low"])
+        if not after.empty and float(after["Close"].min()) < a_low:
+            return out                # anchor base broken -> invalid
+        max_since = float(after["High"].max()) if not after.empty else a_high
+        out.update({
+            "hva_high": a_high, "hva_low": a_low, "hva_mid": (a_high + a_low) / 2.0,
+            "hva_date": a_idx.date().isoformat(), "hva_vol_mult": float(mult.loc[a_idx]),
+            "hva_max_high_since": max(max_since, a_high),
+        })
+    except Exception:
+        pass
+    return out
+
+def detect_descending_channel(df: pd.DataFrame) -> dict:
+    """Falling trendline through >= DTL_MIN_TOUCHES swing highs (wicks may pierce <= 2%)
+    + horizontal floor (lowest low, counted by separate touches)."""
+    out = {"dtl_res": None, "dtl_touches": None, "dtl_floor": None, "dtl_floor_touches": None}
+    try:
+        d = df[["High", "Low", "Close"]].dropna()
+        if d.index[-1].date() == datetime.date.today():
+            d = d.iloc[:-1]
+        d = d.iloc[-DTL_LOOKBACK_DAYS:]
+        n = len(d)
+        if n < 60:
+            return out
+        hi = d["High"].values.astype(float)
+        lo = d["Low"].values.astype(float)
+        cl = d["Close"].values.astype(float)
+        k = 3
+        swings = [i for i in range(k, n - k) if hi[i] >= hi[i - k:i + k + 1].max()]
+        tol = DTL_TOUCH_TOL_PCT / 100.0
+        best = None
+        for ai in range(len(swings)):
+            a = swings[ai]
+            for bi in range(ai + 1, len(swings)):
+                b = swings[bi]
+                if b - a < 8 or hi[b] >= hi[a]:
+                    continue
+                slope = (hi[b] - hi[a]) / (b - a)
+                line_today = hi[a] + slope * (n - a)
+                if line_today <= 0 or (hi[a] - line_today) / hi[a] < 0.05 or cl[-1] > line_today * 1.03:
+                    continue
+                touches = []
+                for j in swings:
+                    if j < a:
+                        continue
+                    lj = hi[a] + slope * (j - a)
+                    if lj > 0 and abs(hi[j] - lj) / lj <= tol:
+                        touches.append(j)
+                if len(touches) < DTL_MIN_TOUCHES:
+                    continue
+                last_t = max(touches)
+                seg = np.arange(a, last_t + 1)
+                if (hi[a:last_t + 1] > (hi[a] + slope * (seg - a)) * 1.02).any():
+                    continue
+                key = (len(touches), last_t)
+                if best is None or key > best[0]:
+                    best = (key, float(line_today), len(touches))
+        floor = float(lo.min())
+        f_touch, last_c = 0, -99
+        for i in np.where(lo <= floor * 1.02)[0]:
+            if i - last_c >= 5:
+                f_touch += 1
+                last_c = i
+        out["dtl_floor"], out["dtl_floor_touches"] = floor, int(f_touch)
+        if best:
+            out["dtl_res"], out["dtl_touches"] = best[1], int(best[2])
+    except Exception:
+        pass
+    return out
+
+def scan_hva_and_dtl_setups(symbol: str, entry: dict, metrics: dict) -> list:
+    """Intraday trigger check for SETUP 6 and 7. Each alert fires at most once per symbol per
+    day (watchlist is rebuilt daily). Returns a list of Telegram messages (HTML)."""
+    msgs = []
+    try:
+        price, volume, prev_close = metrics["price"], metrics["volume"], metrics["prev_close"]
+        c_rsi, y_rsi = metrics.get("rsi"), entry.get("yesterday_rsi")
+        sma20 = metrics.get("sma_vol_20") or 0.0
+        vol_x = (volume / sma20) if sma20 else 0.0
+
+        # ---- SETUP 6: High-Volume Anchor Day ----
+        a_high, a_low, a_mid = entry.get("hva_high"), entry.get("hva_low"), entry.get("hva_mid")
+        if a_high and a_low and a_mid and not entry.get("hva_sent"):
+            ext = (entry.get("hva_max_high_since", a_high) / a_high - 1) * 100
+            risk_pct = (price - a_low) / price * 100
+            a_info = f"{entry.get('hva_date')} | {entry.get('hva_vol_mult', 0):.1f}x avg vol"
+            if ext <= 1.0 and a_high < price <= a_high * (1 + HVA_MAX_CHASE_PCT / 100) and vol_x >= 1.3:
+                entry["hva_sent"] = True
+                msgs.append(
+                    f"🔊 <b>{symbol}</b> High-Volume Anchor BREAKOUT!\n"
+                    f"• <b>Price:</b> ₹{price:.2f} crossed Anchor-Day High ₹{a_high:.2f} ({a_info})\n"
+                    f"• <b>Live Volume:</b> {vol_x:.1f}x 20-day avg\n"
+                    f"• <b>Risk:</b> Anchor-Day Low ₹{a_low:.2f} ({risk_pct:.1f}% below)"
+                )
+            elif (ext >= HVA_PULLBACK_MIN_EXTENSION_PCT and a_mid <= price <= a_high * 1.03
+                  and price >= prev_close and c_rsi and y_rsi and c_rsi > y_rsi and vol_x >= 1.0):
+                entry["hva_sent"] = True
+                msgs.append(
+                    f"🧱 <b>{symbol}</b> High-Volume Anchor PULLBACK HOLD!\n"
+                    f"• <b>Price:</b> ₹{price:.2f} back in Anchor zone ₹{a_mid:.2f}-₹{a_high:.2f} ({a_info})\n"
+                    f"• <b>Ran:</b> +{ext:.1f}% above anchor high before cooling | RSI curling {y_rsi:.1f} → {c_rsi:.1f}\n"
+                    f"• <b>Risk:</b> Anchor-Day Low ₹{a_low:.2f} ({risk_pct:.1f}% below)"
+                )
+
+        # ---- SETUP 7: Descending trendline (3+ touches) + floor ----
+        res, touches = entry.get("dtl_res"), entry.get("dtl_touches")
+        floor_, f_touches = entry.get("dtl_floor"), entry.get("dtl_floor_touches")
+        if res and touches and touches >= DTL_MIN_TOUCHES:
+            if (not entry.get("dtl_bo_sent") and not entry.get("descending_wedge_last_alert")
+                    and price > res * 1.005 and prev_close <= res * 1.015 and vol_x >= 1.5):
+                entry["dtl_bo_sent"] = True
+                msgs.append(
+                    f"📉➡️📈 <b>{symbol}</b> Multi-Touch Downtrend Line BREAKOUT!\n"
+                    f"• <b>Price:</b> ₹{price:.2f} above falling resistance ₹{res:.2f} ({touches} touches)\n"
+                    f"• <b>Volume:</b> {vol_x:.1f}x 20-day avg"
+                )
+            if (floor_ and f_touches and f_touches >= 2 and not entry.get("dtl_floor_sent")
+                    and floor_ * 0.99 <= price <= floor_ * 1.04 and price >= prev_close
+                    and c_rsi and y_rsi and c_rsi > y_rsi and vol_x >= 1.0):
+                stop = floor_ * 0.97
+                risk, reward = price - stop, res - price
+                if risk > 0 and reward / risk >= DTL_MIN_RR:
+                    entry["dtl_floor_sent"] = True
+                    msgs.append(
+                        f"🛟 <b>{symbol}</b> Downtrend Floor Bounce (low-risk)!\n"
+                        f"• <b>Price:</b> ₹{price:.2f} holding floor ₹{floor_:.2f} ({f_touches} touches), RSI {y_rsi:.1f} → {c_rsi:.1f}\n"
+                        f"• <b>Target:</b> falling resistance ₹{res:.2f} ({touches} touches, +{reward / price * 100:.1f}%)\n"
+                        f"• <b>Stop idea:</b> ₹{stop:.2f} | <b>RR:</b> {reward / risk:.1f}"
+                    )
+    except Exception as e:
+        log.warning("hva/dtl scan failed for %s: %s", symbol, e)
+    return msgs
+
 def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
     watchlist = momentum_state.get("watchlist", {})
     if not watchlist: return momentum_state
@@ -1383,6 +1567,9 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                         f"Price ₹{price:.2f} is hovering near 50 EMA (₹{ema_50:.2f}) with expanding volume.\n"
                         f"RSI: {c_rsi:.1f} (Up from {y_rsi:.1f}) | Mcap: ₹{mcap:.0f} Cr{open_low_tag}{rs_tag}{ern_tag}"
                     )
+
+        for _m in scan_hva_and_dtl_setups(symbol, entry, metrics):
+            send_telegram_message(_m + f"{open_low_tag}{rs_tag}{ern_tag}")
 
         if alert_allowed(entry, "near_high_17_22", price):
             ref_high = max(entry.get("fifty2w_high") or 0.0, entry.get("ath_high") or 0.0)
@@ -1644,7 +1831,7 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
         # Suppress result filed notification after market hours (3:30 PM)
         if is_market_hours_now():
             rsi_line = f"Result-day RSI({RSI_PERIOD}): {metrics['baseline_rsi']:.1f}\n" if metrics["baseline_rsi"] else ""
-            send_telegram_message(f"📌 <b>{symbol}</b> result filed today.\nMarket Cap: ₹{mcap_cr:.0f} Cr\nResult-day High: ₹{metrics['day_high']:.2f} | Low: ₹{metrics['day_low']:.2f}\n{rsi_line}Will alert if price breaks this High/Low or RSI crosses.")
+            send_telegram_message(f"📌 <b>{symbol}</b> result filed today.\nMarket Cap: ₹{mcap_cr:.0f} Cr\nResult-day High: ₹{metrics['day_high']:.2f} | Low: ₹{metrics['day_low']:.2f}\n{rsi_line}{'Will alert if price breaks this High/Low or RSI crosses.' if ENABLE_RESULT_DAY_BREAK_ALERTS else ''}")
 
     state = prune_expired(state)
 
@@ -1653,7 +1840,7 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
         log.info("Today is a market holiday. Pausing live price scanners and momentum triggers.")
         return state
     
-    for symbol, entry in state.items():
+    for symbol, entry in (list(state.items()) if ENABLE_RESULT_DAY_BREAK_ALERTS else []):
         if symbol.startswith("custom_alert_") or symbol.startswith("arb_") or symbol == "etf_inav_alerts" or "day_low" not in entry or "baseline_rsi" not in entry:
             continue
 
