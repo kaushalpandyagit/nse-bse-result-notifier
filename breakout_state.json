@@ -315,8 +315,8 @@
     "spread_last_price": 4.085032592642286
   },
   "arb_KAMAHOLD": {
-    "spread_last_alert": "2026-11-02T05:00:53.002017",
-    "spread_last_price": 2.528089887640449
+    "spread_last_alert": "2026-11-03T06:07:52.966702",
+    "spread_last_price": 3.4482758620689653
   },
   "arb_GFLLIMITED": {
     "spread_last_alert": "2026-11-03T05:24:33.624848",
@@ -4498,8 +4498,8 @@
     "price_high_last_price": 2175.0
   },
   "arb_MAHSCOOTER": {
-    "spread_last_alert": "2026-11-02T05:00:42.991961",
-    "spread_last_price": 3.1729055258467023
+    "spread_last_alert": "2026-11-03T06:08:32.958097",
+    "spread_last_price": 3.595890410958904
   },
   "HAPPSTMNDS": {
     "result_date": "2026-11-02T00:00:00",
@@ -4540,6 +4540,22 @@
     "day_low": 122.0,
     "baseline_rsi": 51.685928899019395,
     "mcap_cr": 1329.9595066070556,
+    "exchange": "NSE"
+  },
+  "FLAIR": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 244.4499969482422,
+    "day_low": 231.0,
+    "baseline_rsi": 48.87780829106093,
+    "mcap_cr": 2441.1676937734132,
+    "exchange": "NSE"
+  },
+  "IGCL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 65.4800033569336,
+    "day_low": 61.88999938964844,
+    "baseline_rsi": 56.17482519983654,
+    "mcap_cr": 397.6157132741135,
     "exchange": "NSE"
   }
 }

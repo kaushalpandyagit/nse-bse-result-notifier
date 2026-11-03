@@ -2235,7 +2235,9 @@
       "rs_rank": 82.9,
       "near_high_17_22_last_alert": "2026-11-03T05:19:21.474968",
       "near_high_17_22_last_price": 647.1500244140625,
-      "dtl_bo_sent": true
+      "dtl_bo_sent": true,
+      "rectangle_bounce_last_alert": "2026-11-03T06:02:08.422853",
+      "rectangle_bounce_last_price": 653.5999755859375
     },
     "BALUFORGE": {
       "sma50": 515.490004272461,
@@ -7199,7 +7201,9 @@
       "dtl_touches": null,
       "dtl_floor": 534.2999877929688,
       "dtl_floor_touches": 1,
-      "rs_rank": 56.3
+      "rs_rank": 56.3,
+      "rectangle_bounce_last_alert": "2026-11-03T06:03:35.299694",
+      "rectangle_bounce_last_price": 579.2000122070312
     },
     "GOKEX": {
       "sma50": 716.3529992675781,
@@ -18286,7 +18290,9 @@
       "dtl_touches": null,
       "dtl_floor": 323.29998779296875,
       "dtl_floor_touches": 2,
-      "rs_rank": 73.9
+      "rs_rank": 73.9,
+      "near_high_17_22_last_alert": "2026-11-03T06:06:50.615569",
+      "near_high_17_22_last_price": 392.45001220703125
     },
     "SUNTECK": {
       "sma50": 285.6540002441406,

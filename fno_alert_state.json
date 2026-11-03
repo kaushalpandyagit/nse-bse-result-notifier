@@ -489,7 +489,9 @@
     "trigger_date": "2026-10-30",
     "ref_high": 268.89,
     "ref_low": 220.68,
-    "status": "Active"
+    "status": "Breached Low",
+    "fno_low_breach_last_alert": "2026-11-03T06:01:25.428537",
+    "fno_low_breach_last_price": 222.5
   },
   "SURYODAY": {
     "trigger_date": "2026-10-30",
