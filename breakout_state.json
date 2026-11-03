@@ -4855,5 +4855,53 @@
     "baseline_rsi": 52.2407929513841,
     "mcap_cr": 2939.8291305740477,
     "exchange": "NSE"
+  },
+  "SGIL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 560.0,
+    "day_low": 525.0,
+    "baseline_rsi": 34.99345535099165,
+    "mcap_cr": 821.723843963623,
+    "exchange": "NSE"
+  },
+  "SUMMITSEC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1396.5,
+    "day_low": 1356.0,
+    "baseline_rsi": 56.08122750805712,
+    "mcap_cr": 1496.3183921055909,
+    "exchange": "NSE"
+  },
+  "SBIN": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1006.5499877929688,
+    "day_low": 975.5499877929688,
+    "baseline_rsi": 54.888178033028986,
+    "mcap_cr": 908353.5943083041,
+    "exchange": "NSE"
+  },
+  "GNFC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 498.75,
+    "day_low": 466.3500061035156,
+    "baseline_rsi": 28.171273024007675,
+    "mcap_cr": 6876.8239644,
+    "exchange": "NSE"
+  },
+  "RBZJEWEL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 178.83999633789062,
+    "day_low": 167.1999969482422,
+    "baseline_rsi": 47.806833171534244,
+    "mcap_cr": 715.3599853515625,
+    "exchange": "NSE"
+  },
+  "ESTER": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 93.5999984741211,
+    "day_low": 85.0,
+    "baseline_rsi": 46.14446652120354,
+    "mcap_cr": 919.8822386116791,
+    "exchange": "NSE"
   }
 }

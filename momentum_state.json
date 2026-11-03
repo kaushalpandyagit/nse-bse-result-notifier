@@ -965,10 +965,12 @@
       "mtf_last_alert": "2026-11-03T06:30:28.116953",
       "mtf_last_price": 1546.0,
       "hva_sent": true,
-      "zanger_last_alert": "2026-11-03T05:46:31.552676",
-      "zanger_last_price": 1542.5,
+      "zanger_last_alert": "2026-11-03T08:30:27.819894",
+      "zanger_last_price": 1563.5999755859375,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "AKUMS": {
       "sma50": 764.6599975585938,
@@ -3114,7 +3116,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 42.2,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T08:31:10.509098",
+      "rectangle_bounce_last_price": 528.4000244140625
     },
     "BSOFT": {
       "sma50": 292.57600036621096,
@@ -4485,7 +4491,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 25.1,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-03T08:31:34.522409",
+      "liquidity_sweep_last_price": 661.5999755859375
     },
     "CMSINFO": {
       "sma50": 226.76800018310547,
@@ -17910,7 +17920,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 81.2,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T08:35:53.265011",
+      "rectangle_bounce_last_price": 185.36000061035156
     },
     "SHILCTECH": {
       "sma50": 3953.785986328125,
@@ -19547,10 +19561,12 @@
       "dtl_floor": 1257.0,
       "dtl_floor_touches": 1,
       "rs_rank": 92.3,
-      "near_high_17_22_last_alert": "2026-11-03T05:23:23.052205",
-      "near_high_17_22_last_price": 1484.199951171875,
+      "near_high_17_22_last_alert": "2026-11-03T08:36:22.275819",
+      "near_high_17_22_last_price": 1504.699951171875,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ]
     },
     "TANLA": {
       "sma50": 531.6500006103515,
@@ -22415,7 +22431,11 @@
       "near_high_17_22_last_alert": "2026-11-03T06:21:00.267276",
       "near_high_17_22_last_price": 953.5,
       "session_date": "2026-11-03",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-03T08:37:15.120413",
+      "rectangle_bounce_last_price": 948.7999877929688
     },
     "ZAGGLE": {
       "sma50": 174.39379974365235,
