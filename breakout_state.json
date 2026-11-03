@@ -5242,5 +5242,37 @@
     "baseline_rsi": 48.879596532301306,
     "mcap_cr": 442.2407263942261,
     "exchange": "NSE"
+  },
+  "XTRANET": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 305.3999938964844,
+    "day_low": 276.3999938964844,
+    "baseline_rsi": 49.390121402803494,
+    "mcap_cr": 1454.5882378253175,
+    "exchange": "NSE"
+  },
+  "IL&FSENGG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 39.0,
+    "day_low": 37.5,
+    "baseline_rsi": 47.04763113256038,
+    "mcap_cr": 495.37541667800906,
+    "exchange": "NSE"
+  },
+  "EPIGRAL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 956.25,
+    "day_low": 904.0999755859375,
+    "baseline_rsi": 40.14010208251191,
+    "mcap_cr": 3937.941279977234,
+    "exchange": "NSE"
+  },
+  "COSMOFIRST": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 775.0499877929688,
+    "day_low": 742.5499877929688,
+    "baseline_rsi": 44.21813959273083,
+    "mcap_cr": 1990.211775537201,
+    "exchange": "NSE"
   }
 }
