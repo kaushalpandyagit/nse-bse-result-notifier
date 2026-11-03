@@ -3542,7 +3542,9 @@
       "dtl_floor": 1159.0999755859375,
       "dtl_floor_touches": 1,
       "rs_rank": 67.7,
-      "dtl_bo_sent": true
+      "dtl_bo_sent": true,
+      "mtf_last_alert": "2026-11-03T06:16:57.948005",
+      "mtf_last_price": 1325.300048828125
     },
     "CEATLTD": {
       "sma50": 3324.81998046875,
@@ -5346,7 +5348,9 @@
       "dtl_touches": null,
       "dtl_floor": 366.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 96.8
+      "rs_rank": 96.8,
+      "liquidity_sweep_last_alert": "2026-11-03T06:17:21.156561",
+      "liquidity_sweep_last_price": 494.0
     },
     "EBGNG": {
       "sma50": 668.8310021972657,
@@ -6969,8 +6973,8 @@
       "dtl_floor": 6860.0,
       "dtl_floor_touches": 4,
       "rs_rank": 43.7,
-      "resistance_last_alert": "2026-11-03T05:20:28.107956",
-      "resistance_last_price": 7198.5
+      "resistance_last_alert": "2026-11-03T06:17:43.120696",
+      "resistance_last_price": 7342.5
     },
     "GMDCLTD": {
       "sma50": 512.0580004882812,
@@ -8601,7 +8605,9 @@
       "dtl_touches": null,
       "dtl_floor": 99.5,
       "dtl_floor_touches": 2,
-      "rs_rank": 36.6
+      "rs_rank": 36.6,
+      "mtf_last_alert": "2026-11-03T06:18:06.457664",
+      "mtf_last_price": 109.56999969482422
     },
     "IFBIND": {
       "sma50": 1220.8780029296875,
@@ -9572,10 +9578,10 @@
       "dtl_floor": 210.75999450683594,
       "dtl_floor_touches": 2,
       "rs_rank": 33.6,
-      "vol_breakout_last_alert": "2026-11-03T05:21:07.348509",
-      "vol_breakout_last_price": 254.5500030517578,
-      "resistance_last_alert": "2026-11-03T05:21:07.820252",
-      "resistance_last_price": 254.5500030517578,
+      "vol_breakout_last_alert": "2026-11-03T06:18:19.351509",
+      "vol_breakout_last_price": 257.2799987792969,
+      "resistance_last_alert": "2026-11-03T06:18:19.817095",
+      "resistance_last_price": 257.2799987792969,
       "mtf_last_alert": "2026-11-03T05:32:56.296599",
       "mtf_last_price": 257.67999267578125
     },
@@ -11067,10 +11073,10 @@
       "dtl_floor": 110.0,
       "dtl_floor_touches": 2,
       "rs_rank": 21.2,
-      "vol_breakout_last_alert": "2026-11-03T05:21:30.509470",
-      "vol_breakout_last_price": 130.5,
-      "zanger_last_alert": "2026-11-03T05:21:31.012416",
-      "zanger_last_price": 130.5,
+      "vol_breakout_last_alert": "2026-11-03T06:18:40.892574",
+      "vol_breakout_last_price": 135.13999938964844,
+      "zanger_last_alert": "2026-11-03T06:18:41.461584",
+      "zanger_last_price": 135.13999938964844,
       "dtl_bo_sent": true,
       "mtf_last_alert": "2026-11-03T05:49:26.743337",
       "mtf_last_price": 132.89999389648438
@@ -12519,8 +12525,8 @@
       "dtl_floor": 356.3999938964844,
       "dtl_floor_touches": 2,
       "rs_rank": 53.3,
-      "near_high_17_22_last_alert": "2026-11-03T05:21:53.170106",
-      "near_high_17_22_last_price": 381.0
+      "near_high_17_22_last_alert": "2026-11-03T06:19:00.342426",
+      "near_high_17_22_last_price": 377.0
     },
     "MINDACORP": {
       "sma50": 671.6119970703126,
@@ -13075,8 +13081,8 @@
       "dtl_floor": 1845.0,
       "dtl_floor_touches": 1,
       "rs_rank": 86.9,
-      "near_high_17_22_last_alert": "2026-11-03T05:33:59.594287",
-      "near_high_17_22_last_price": 2204.199951171875
+      "near_high_17_22_last_alert": "2026-11-03T06:19:09.477202",
+      "near_high_17_22_last_price": 2182.0
     },
     "NEPHROPLUS": {
       "sma50": 672.6820007324219,
@@ -17917,8 +17923,8 @@
       "dtl_floor": 931.2999877929688,
       "dtl_floor_touches": 1,
       "rs_rank": 54.2,
-      "near_high_17_22_last_alert": "2026-11-03T05:23:12.276309",
-      "near_high_17_22_last_price": 1017.2999877929688
+      "near_high_17_22_last_alert": "2026-11-03T06:20:13.981034",
+      "near_high_17_22_last_price": 1034.699951171875
     },
     "STARHEALTH": {
       "sma50": 551.9449987792968,
@@ -18243,8 +18249,8 @@
       "dtl_floor": 872.6500244140625,
       "dtl_floor_touches": 1,
       "rs_rank": 85.4,
-      "near_high_17_22_last_alert": "2026-11-03T05:23:16.819239",
-      "near_high_17_22_last_price": 1086.5
+      "near_high_17_22_last_alert": "2026-11-03T06:20:18.231089",
+      "near_high_17_22_last_price": 1071.0
     },
     "SUNFLAG": {
       "sma50": 387.24499877929685,
@@ -20294,8 +20300,8 @@
       "dtl_floor": 126.51000213623047,
       "dtl_floor_touches": 4,
       "rs_rank": 65.7,
-      "near_high_17_22_last_alert": "2026-11-03T05:23:45.337355",
-      "near_high_17_22_last_price": 159.30999755859375
+      "near_high_17_22_last_alert": "2026-11-03T06:20:44.362439",
+      "near_high_17_22_last_price": 157.5399932861328
     },
     "USHAMART": {
       "sma50": 494.1420001220703,
@@ -21456,8 +21462,8 @@
       "dtl_floor": 794.9500122070312,
       "dtl_floor_touches": 1,
       "rs_rank": 76.7,
-      "near_high_17_22_last_alert": "2026-11-03T05:24:02.720290",
-      "near_high_17_22_last_price": 943.6500244140625
+      "near_high_17_22_last_alert": "2026-11-03T06:21:00.267276",
+      "near_high_17_22_last_price": 953.5
     },
     "ZAGGLE": {
       "sma50": 174.39379974365235,
