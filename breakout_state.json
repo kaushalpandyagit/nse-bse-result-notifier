@@ -700,8 +700,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-11-03T04:16:09.558116",
     "rsi_up_last_alert": "2026-11-03T03:46:11.098222",
-    "price_low_last_alert": "2026-10-27T08:47:01.553235",
-    "price_low_last_price": 11685.0
+    "price_low_last_alert": "2026-11-03T04:29:50.500688",
+    "price_low_last_price": 11870.0
   },
   "arb_NSIL": {
     "spread_last_alert": "2026-10-27T09:08:56.672043",
@@ -1554,7 +1554,8 @@
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-11-03T03:47:30.600900",
     "price_low_last_alert": "2026-11-03T04:02:07.936051",
-    "price_low_last_price": 3237.89990234375
+    "price_low_last_price": 3237.89990234375,
+    "rsi_up_last_alert": "2026-11-03T04:30:38.854875"
   },
   "SURANASOL": {
     "result_date": "2026-10-26T00:00:00",
@@ -1590,8 +1591,8 @@
     "mcap_cr": 33689.45266150444,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-11-03T03:47:34.253897",
-    "price_high_last_alert": "2026-11-02T04:08:50.124832",
-    "price_high_last_price": 170.02999877929688
+    "price_high_last_alert": "2026-11-03T04:30:42.437081",
+    "price_high_last_price": 171.77000427246094
   },
   "AEGISVOPAK": {
     "result_date": "2026-10-26T00:00:00",
@@ -2105,7 +2106,7 @@
     "mcap_cr": 15033.820772285973,
     "exchange": "NSE",
     "rsi_down_last_alert": "2026-11-03T03:48:26.979822",
-    "rsi_up_last_alert": "2026-10-29T09:17:31.912593"
+    "rsi_up_last_alert": "2026-11-03T04:31:18.310428"
   },
   "MARUTI": {
     "result_date": "2026-10-27T00:00:00",
@@ -2465,8 +2466,8 @@
     "mcap_cr": 34944.150867098346,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-11-03T03:49:05.530290",
-    "price_high_last_alert": "2026-11-02T04:10:30.409260",
-    "price_high_last_price": 1126.800048828125
+    "price_high_last_alert": "2026-11-03T04:31:42.797954",
+    "price_high_last_price": 1138.9000244140625
   },
   "NAUKRI": {
     "result_date": "2026-10-28T00:00:00",
@@ -2649,7 +2650,7 @@
     "mcap_cr": 27192.7639901,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-11-03T03:49:21.127827",
-    "rsi_down_last_alert": "2026-11-02T18:49:47.050665"
+    "rsi_down_last_alert": "2026-11-03T04:31:54.278763"
   },
   "SMARTLINK": {
     "result_date": "2026-10-28T00:00:00",
@@ -2951,8 +2952,8 @@
     "baseline_rsi": 38.60873870886556,
     "mcap_cr": 3463.2787275,
     "exchange": "NSE",
-    "price_low_last_alert": "2026-11-02T04:11:22.250430",
-    "price_low_last_price": 128.57000732421875,
+    "price_low_last_alert": "2026-11-03T04:32:16.089762",
+    "price_low_last_price": 126.97000122070312,
     "rsi_down_last_alert": "2026-11-03T03:49:51.450022"
   },
   "BANDHANBNK": {
@@ -4265,7 +4266,7 @@
     "mcap_cr": 940.943733257486,
     "exchange": "NSE",
     "rsi_up_last_alert": "2026-11-03T03:52:08.236196",
-    "rsi_down_last_alert": "2026-11-02T04:13:49.680526"
+    "rsi_down_last_alert": "2026-11-03T04:33:48.605399"
   },
   "ZEEL": {
     "result_date": "2026-10-30T00:00:00",
