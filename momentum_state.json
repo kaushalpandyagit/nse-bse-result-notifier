@@ -6600,10 +6600,11 @@
       "rs_rank": 64.5,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-04T03:49:37.825322",
-      "near_high_17_22_last_price": 222.9600067138672
+      "near_high_17_22_last_alert": "2026-11-04T09:17:56.947333",
+      "near_high_17_22_last_price": 226.30999755859375
     },
     "EQUITASBNK": {
       "sma50": 68.72579971313476,
@@ -8323,10 +8324,11 @@
       "rs_rank": 10.2,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-04T04:18:09.538697",
-      "mtf_last_price": 2126.39990234375
+      "mtf_last_alert": "2026-11-04T09:18:24.908439",
+      "mtf_last_price": 2149.0
     },
     "GRWRHITECH": {
       "sma50": 6934.74,
@@ -9073,7 +9075,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 53.2,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T09:18:40.537479",
+      "rectangle_bounce_last_price": 29930.0
     },
     "HSCL": {
       "sma50": 633.5809997558594,
@@ -13091,7 +13097,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 44.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-04T09:19:42.182397",
+      "mtf_last_price": 905.0499877929688
     },
     "MARKSANS": {
       "sma50": 320.42399963378904,
@@ -19101,7 +19111,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 84.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T09:21:11.153680",
+      "rectangle_bounce_last_price": 184.61000061035156
     },
     "SPLPETRO": {
       "sma50": 771.7969995117187,
@@ -20885,7 +20899,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 51.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T09:21:37.361576",
+      "rectangle_bounce_last_price": 89.12999725341797
     },
     "THYROCARE": {
       "sma50": 534.3089996337891,

@@ -406,11 +406,12 @@
     ]
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-11-04T03:53:08.086636",
-    "spread_last_price": 4.150866821619546,
+    "spread_last_alert": "2026-11-04T09:22:19.808387",
+    "spread_last_price": 3.668261878359677,
     "session_date": "2026-11-04",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_JINDALPHOT": {
@@ -5763,6 +5764,38 @@
     "day_low": 794.75,
     "baseline_rsi": 53.969964063249414,
     "mcap_cr": 2773.7313129657896,
+    "exchange": "NSE"
+  },
+  "MOLDTECH": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 101.7699966430664,
+    "day_low": 98.87000274658203,
+    "baseline_rsi": 56.25498950528344,
+    "mcap_cr": 586.2993524326264,
+    "exchange": "NSE"
+  },
+  "ZIMLAB": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 143.8000030517578,
+    "day_low": 133.5,
+    "baseline_rsi": 49.01007180476199,
+    "mcap_cr": 727.0725124,
+    "exchange": "NSE"
+  },
+  "SUMIT": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 48.47999954223633,
+    "day_low": 44.310001373291016,
+    "baseline_rsi": 48.09053139471735,
+    "mcap_cr": 219.67168357266615,
+    "exchange": "NSE"
+  },
+  "BALRAMCHIN": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 681.6500244140625,
+    "day_low": 642.0,
+    "baseline_rsi": 52.76004743933562,
+    "mcap_cr": 14244.549946463214,
     "exchange": "NSE"
   }
 }
