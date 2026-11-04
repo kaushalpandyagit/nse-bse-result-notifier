@@ -5600,5 +5600,37 @@
     "baseline_rsi": 63.81311073706581,
     "mcap_cr": 1808.1079449201661,
     "exchange": "NSE"
+  },
+  "MOL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 57.79999923706055,
+    "day_low": 54.7400016784668,
+    "baseline_rsi": 49.40133453747896,
+    "mcap_cr": 1429.2458852226346,
+    "exchange": "NSE"
+  },
+  "MARKSANS": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 327.0,
+    "day_low": 296.6000061035156,
+    "baseline_rsi": 51.43332505403086,
+    "mcap_cr": 14220.2777963016,
+    "exchange": "NSE"
+  },
+  "REDINGTON": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 359.75,
+    "day_low": 330.6499938964844,
+    "baseline_rsi": 45.97168413909234,
+    "mcap_cr": 28007.068990575,
+    "exchange": "NSE"
+  },
+  "GLASSWALL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 241.72999572753906,
+    "day_low": 207.97999572753906,
+    "baseline_rsi": 52.838681911093076,
+    "mcap_cr": 2117.041215975,
+    "exchange": "NSE"
   }
 }

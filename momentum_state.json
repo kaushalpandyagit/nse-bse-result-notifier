@@ -3666,10 +3666,11 @@
       "rs_rank": 74.9,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-04T03:49:09.115206",
-      "near_high_17_22_last_price": 1101.199951171875
+      "near_high_17_22_last_alert": "2026-11-04T08:16:58.028179",
+      "near_high_17_22_last_price": 1089.5
     },
     "CARTRADE": {
       "sma50": 2911.3480029296875,
@@ -6694,7 +6695,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 40.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-04T08:17:34.638497",
+      "mtf_last_price": 1207.800048828125
     },
     "ESCORTS": {
       "sma50": 2795.3039892578126,
@@ -8136,7 +8141,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 21.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-04T08:17:52.817212",
+      "mtf_last_price": 1470.9000244140625
     },
     "GREAVESCOT": {
       "sma50": 201.38120056152343,
@@ -10558,7 +10567,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 26.8,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T08:18:23.088123",
+      "near_high_17_22_last_price": 91.27999877929688
     },
     "JBMA": {
       "sma50": 570.3369964599609,
@@ -11050,7 +11063,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 45.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T08:18:29.190232",
+      "rectangle_bounce_last_price": 434.20001220703125
     },
     "JUBLINGREA": {
       "sma50": 642.5389978027343,
@@ -21807,10 +21824,11 @@
       "rs_rank": 86.6,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-04T06:22:13.323884",
-      "near_high_17_22_last_price": 386.8500061035156
+      "near_high_17_22_last_alert": "2026-11-04T08:20:35.100892",
+      "near_high_17_22_last_price": 396.0
     },
     "V2RETAIL": {
       "sma50": 193.3977993774414,
