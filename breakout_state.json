@@ -6022,5 +6022,21 @@
     "baseline_rsi": 37.944303194027746,
     "mcap_cr": 1739.184922939605,
     "exchange": "NSE"
+  },
+  "TAINWALCHM": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 198.0,
+    "day_low": 193.0,
+    "baseline_rsi": 44.311941432712445,
+    "mcap_cr": 181.893038775,
+    "exchange": "NSE"
+  },
+  "ATLANTAA": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 40.38999938964844,
+    "day_low": 34.81999969482422,
+    "baseline_rsi": 58.370216275291405,
+    "mcap_cr": 314.2640111923218,
+    "exchange": "NSE"
   }
 }
