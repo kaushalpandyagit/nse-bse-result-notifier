@@ -10548,7 +10548,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 69.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T06:19:19.625340",
+      "near_high_17_22_last_price": 249.7899932861328
     },
     "JKPAPER": {
       "sma50": 393.7279986572266,
@@ -21596,7 +21600,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 86.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T06:22:13.323884",
+      "near_high_17_22_last_price": 386.8500061035156
     },
     "V2RETAIL": {
       "sma50": 193.3977993774414,
