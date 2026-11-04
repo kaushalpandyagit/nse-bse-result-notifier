@@ -61,10 +61,12 @@
   "custom_alert_EMMIL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T08:46:05.598460",
-    "custom_last_price": 111.94999694824219,
+    "custom_last_alert": "2026-11-04T08:46:01.332390",
+    "custom_last_price": 108.0,
     "session_date": "2026-11-04",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_ESFL_price": {
     "alerted": false,
@@ -150,10 +152,12 @@
   "custom_alert_SPCL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T08:46:12.901429",
-    "custom_last_price": 39.20000076293945,
+    "custom_last_alert": "2026-11-04T08:46:06.205112",
+    "custom_last_price": 43.099998474121094,
     "session_date": "2026-11-04",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_SSEGL_price": {
     "alerted": false,
@@ -5687,6 +5691,62 @@
     "day_low": 128.60000610351562,
     "baseline_rsi": 47.10120601501403,
     "mcap_cr": 1750.8074695334885,
+    "exchange": "NSE"
+  },
+  "EXICOM": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 141.1999969482422,
+    "day_low": 129.0,
+    "baseline_rsi": 48.60131398162177,
+    "mcap_cr": 1941.7913016578918,
+    "exchange": "NSE"
+  },
+  "SJS": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 2238.300048828125,
+    "day_low": 2156.60009765625,
+    "baseline_rsi": 61.345188592395026,
+    "mcap_cr": 7148.752935961596,
+    "exchange": "NSE"
+  },
+  "HUDCO": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 152.5,
+    "day_low": 144.25,
+    "baseline_rsi": 43.95095251875878,
+    "mcap_cr": 30368.822389068602,
+    "exchange": "NSE"
+  },
+  "THANGAMAYL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 4690.0,
+    "day_low": 4235.7001953125,
+    "baseline_rsi": 36.46552464441513,
+    "mcap_cr": 13876.87939919536,
+    "exchange": "NSE"
+  },
+  "IMFA": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 1176.9000244140625,
+    "day_low": 1080.0999755859375,
+    "baseline_rsi": 48.267123697394005,
+    "mcap_cr": 6190.154844827784,
+    "exchange": "NSE"
+  },
+  "CARYSIL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 1030.300048828125,
+    "day_low": 962.75,
+    "baseline_rsi": 39.626381644552076,
+    "mcap_cr": 2746.1336093,
+    "exchange": "NSE"
+  },
+  "SBCL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 1144.0,
+    "day_low": 1020.0999755859375,
+    "baseline_rsi": 49.12810492886202,
+    "mcap_cr": 5898.094178635254,
     "exchange": "NSE"
   }
 }

@@ -1689,10 +1689,13 @@
       "rs_rank": 27.2,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "liquidity_sweep_last_alert": "2026-11-04T06:47:12.526617",
-      "liquidity_sweep_last_price": 352.5
+      "liquidity_sweep_last_price": 352.5,
+      "rectangle_bounce_last_alert": "2026-11-04T08:46:30.888012",
+      "rectangle_bounce_last_price": 351.75
     },
     "ASAHIINDIA": {
       "sma50": 946.5860009765624,
@@ -4509,10 +4512,13 @@
       "rs_rank": 76.4,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-04T04:47:08.539608",
-      "mtf_last_price": 753.5499877929688
+      "mtf_last_price": 753.5499877929688,
+      "ema50_pullback_last_alert": "2026-11-04T08:46:58.270273",
+      "ema50_pullback_last_price": 751.25
     },
     "CHOLAHLDNG": {
       "sma50": 1434.08599609375,
@@ -9154,7 +9160,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 8.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T08:47:43.883954",
+      "rectangle_bounce_last_price": 151.32000732421875
     },
     "ICIL": {
       "sma50": 440.8820007324219,
@@ -9736,7 +9746,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 27.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-04T08:47:48.730009",
+      "mtf_last_price": 325.1499938964844
     },
     "INDIAGLYCO": {
       "sma50": 424.2340036010742,
@@ -10474,7 +10488,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 2.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T08:47:57.822656",
+      "rectangle_bounce_last_price": 277.6499938964844
     },
     "JAMNAAUTO": {
       "sma50": 130.81960067749023,
@@ -13110,7 +13128,9 @@
       "dtl_touches": null,
       "dtl_floor": 239.64999389648438,
       "dtl_floor_touches": 1,
-      "rs_rank": 96.2
+      "rs_rank": 96.2,
+      "session_date": "2026-11-04",
+      "alert_slots": []
     },
     "MASTEK": {
       "sma50": 1648.1599926757813,
@@ -22283,7 +22303,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 74.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T08:49:48.124275",
+      "rectangle_bounce_last_price": 719.5499877929688
     },
     "VOLTAMP": {
       "sma50": 10627.87,
