@@ -5974,5 +5974,21 @@
     "baseline_rsi": 52.03145974271218,
     "mcap_cr": 25455.072494062995,
     "exchange": "NSE"
+  },
+  "MINDTECK": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 140.0,
+    "day_low": 134.25,
+    "baseline_rsi": 46.68788404569156,
+    "mcap_cr": 442.40617999334563,
+    "exchange": "NSE"
+  },
+  "SWANCORP": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 245.30999755859375,
+    "day_low": 240.0500030517578,
+    "baseline_rsi": 41.35559709901031,
+    "mcap_cr": 7666.84185988266,
+    "exchange": "NSE"
   }
 }
