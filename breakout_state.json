@@ -5878,5 +5878,45 @@
     "baseline_rsi": 63.602114012951986,
     "mcap_cr": 6949.273810584595,
     "exchange": "NSE"
+  },
+  "VASCONEQ": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 32.20000076293945,
+    "day_low": 30.920000076293945,
+    "baseline_rsi": 52.6379053765908,
+    "mcap_cr": 727.2972172873307,
+    "exchange": "NSE"
+  },
+  "PRICOLLTD": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 681.0,
+    "day_low": 657.9000244140625,
+    "baseline_rsi": 50.39798454556185,
+    "mcap_cr": 8246.50185711775,
+    "exchange": "NSE"
+  },
+  "JISLDVREQS": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 19.799999237060547,
+    "day_low": 17.81999969482422,
+    "baseline_rsi": 53.16842152474681,
+    "mcap_cr": 1392.9359498602828,
+    "exchange": "NSE"
+  },
+  "LENSKART": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 694.9000244140625,
+    "day_low": 673.8499755859375,
+    "baseline_rsi": 58.25568597489463,
+    "mcap_cr": 119417.43105229443,
+    "exchange": "NSE"
+  },
+  "JASH": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 505.0,
+    "day_low": 479.3500061035156,
+    "baseline_rsi": 44.79417311572658,
+    "mcap_cr": 3171.0607924592287,
+    "exchange": "NSE"
   }
 }
