@@ -5918,5 +5918,21 @@
     "baseline_rsi": 44.79417311572658,
     "mcap_cr": 3171.0607924592287,
     "exchange": "NSE"
+  },
+  "ADVENTHTL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 122.27999877929688,
+    "day_low": 116.05000305175781,
+    "baseline_rsi": 41.503095694046934,
+    "mcap_cr": 629.4595615726502,
+    "exchange": "NSE"
+  },
+  "THOMASCOOK": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 90.33999633789062,
+    "day_low": 85.70999908447266,
+    "baseline_rsi": 39.21533213708506,
+    "mcap_cr": 4180.782853934464,
+    "exchange": "NSE"
   }
 }
