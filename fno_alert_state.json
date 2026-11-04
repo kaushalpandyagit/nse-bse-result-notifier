@@ -668,16 +668,10 @@
     "status": "Active"
   },
   "CENTURYPLY": {
-    "trigger_date": "2026-11-03",
-    "ref_high": 653.9,
-    "ref_low": 644.55,
-    "status": "Breached High",
-    "session_date": "2026-11-04",
-    "alert_slots": [
-      "H1"
-    ],
-    "fno_high_breach_last_alert": "2026-11-04T04:01:39.290623",
-    "fno_high_breach_last_price": 660.5499877929688
+    "trigger_date": "2026-11-04",
+    "ref_high": 689.95,
+    "ref_low": 648.05,
+    "status": "Active"
   },
   "SHK": {
     "trigger_date": "2026-11-03",
@@ -702,5 +696,59 @@
     ],
     "fno_high_breach_last_alert": "2026-11-04T03:46:18.656098",
     "fno_high_breach_last_price": 42.86000061035156
+  },
+  "JYOTHYLAB": {
+    "trigger_date": "2026-11-04",
+    "ref_high": 194.9,
+    "ref_low": 177.1,
+    "status": "Active"
+  },
+  "UNICHEMLAB": {
+    "trigger_date": "2026-11-04",
+    "ref_high": 542.1,
+    "ref_low": 490.45,
+    "status": "Active"
+  },
+  "GLOBALE": {
+    "trigger_date": "2026-11-04",
+    "ref_high": 10.94,
+    "ref_low": 9.86,
+    "status": "Active"
+  },
+  "RUSTOMJEE": {
+    "trigger_date": "2026-11-04",
+    "ref_high": 382.0,
+    "ref_low": 354.75,
+    "status": "Active"
+  },
+  "AAVAS": {
+    "trigger_date": "2026-11-04",
+    "ref_high": 1152.6,
+    "ref_low": 1100.1,
+    "status": "Active"
+  },
+  "VARROC": {
+    "trigger_date": "2026-11-04",
+    "ref_high": 805.4,
+    "ref_low": 746.25,
+    "status": "Active"
+  },
+  "BECTORFOOD": {
+    "trigger_date": "2026-11-04",
+    "ref_high": 220.5,
+    "ref_low": 205.55,
+    "status": "Active"
+  },
+  "SUVIDHAA": {
+    "trigger_date": "2026-11-04",
+    "ref_high": 2.24,
+    "ref_low": 1.98,
+    "status": "Active"
+  },
+  "REDTAPE": {
+    "trigger_date": "2026-11-04",
+    "ref_high": 108.56,
+    "ref_low": 101.0,
+    "status": "Active"
   }
 }
