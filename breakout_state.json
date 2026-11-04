@@ -5934,5 +5934,45 @@
     "baseline_rsi": 39.21533213708506,
     "mcap_cr": 4180.782853934464,
     "exchange": "NSE"
+  },
+  "ORKLAINDIA": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 534.9000244140625,
+    "day_low": 523.0,
+    "baseline_rsi": 44.42013804845867,
+    "mcap_cr": 7234.400954663635,
+    "exchange": "NSE"
+  },
+  "IVP": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 188.89999389648438,
+    "day_low": 181.77000427246094,
+    "baseline_rsi": 36.15105432096876,
+    "mcap_cr": 191.96522286734924,
+    "exchange": "NSE"
+  },
+  "CHEMPLASTS": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 215.0,
+    "day_low": 197.39999389648438,
+    "baseline_rsi": 56.39917512438988,
+    "mcap_cr": 3281.7222793430296,
+    "exchange": "NSE"
+  },
+  "NYKAA": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 355.6000061035156,
+    "day_low": 342.04998779296875,
+    "baseline_rsi": 61.67187013189225,
+    "mcap_cr": 101874.30887835,
+    "exchange": "NSE"
+  },
+  "APOLLOTYRE": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 403.8500061035156,
+    "day_low": 394.5,
+    "baseline_rsi": 52.03145974271218,
+    "mcap_cr": 25455.072494062995,
+    "exchange": "NSE"
   }
 }
