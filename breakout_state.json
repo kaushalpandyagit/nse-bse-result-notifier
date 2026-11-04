@@ -5748,5 +5748,21 @@
     "baseline_rsi": 49.12810492886202,
     "mcap_cr": 5898.094178635254,
     "exchange": "NSE"
+  },
+  "APLLTD": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 917.4000244140625,
+    "day_low": 803.6500244140625,
+    "baseline_rsi": 77.1392956251499,
+    "mcap_cr": 17973.73253845044,
+    "exchange": "NSE"
+  },
+  "STOVEKRAFT": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 846.9000244140625,
+    "day_low": 794.75,
+    "baseline_rsi": 53.969964063249414,
+    "mcap_cr": 2773.7313129657896,
+    "exchange": "NSE"
   }
 }
