@@ -1551,7 +1551,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 27.7,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-04T04:30:24.486087",
+      "vol_breakout_last_price": 738.4000244140625
     },
     "ARVIND": {
       "sma50": 533.2309973144531,
@@ -5449,7 +5453,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 35.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-04T04:31:16.610884",
+      "ema50_pullback_last_price": 1540.0999755859375
     },
     "DEVYANI": {
       "sma50": 131.23319961547853,
@@ -7577,7 +7585,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 24.0,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T04:31:44.670544",
+      "rectangle_bounce_last_price": 1803.0
     },
     "GODREJAGRO": {
       "sma50": 631.2469995117187,
@@ -14649,7 +14661,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 94.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:33:18.018032",
+      "near_high_17_22_last_price": 1238.199951171875
     },
     "PARKHOSPS": {
       "sma50": 263.47239776611326,
@@ -16209,7 +16225,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 90.4,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:33:38.457635",
+      "near_high_17_22_last_price": 820.3499755859375
     },
     "RATNAMANI": {
       "sma50": 2604.11,
@@ -17221,7 +17241,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 57.7,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:33:52.451680",
+      "mtf_last_price": 156.4499969482422
     },
     "SAMMAANCAP": {
       "sma50": 136.57800018310547,
@@ -20955,7 +20979,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 45.5,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:34:39.011073",
+      "mtf_last_price": 23.90999984741211
     },
     "TRITURBINE": {
       "sma50": 532.4470001220703,
@@ -21051,7 +21079,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 58.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-04T04:34:40.597909",
+      "resistance_last_price": 534.75
     },
     "TTML": {
       "sma50": 35.88019981384277,

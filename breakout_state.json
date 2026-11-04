@@ -3229,8 +3229,12 @@
     "price_high_last_price": 109.33999633789062
   },
   "arb_TVSHLTD": {
-    "spread_last_alert": "2026-10-29T06:38:38.206568",
-    "spread_last_price": 2.888245326415032
+    "spread_last_alert": "2026-11-04T04:35:22.672136",
+    "spread_last_price": 2.528205550522935,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "AEROFLEX": {
     "result_date": "2026-10-29T00:00:00",
@@ -5359,5 +5363,13 @@
     ],
     "spread_last_alert": "2026-11-04T03:52:57.876832",
     "spread_last_price": 3.900865576733118
+  },
+  "GARUDA": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 163.0,
+    "day_low": 155.5,
+    "baseline_rsi": 51.63001550568292,
+    "mcap_cr": 1475.6420849081726,
+    "exchange": "NSE"
   }
 }
