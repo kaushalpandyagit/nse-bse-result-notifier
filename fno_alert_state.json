@@ -543,7 +543,13 @@
     "trigger_date": "2026-11-02",
     "ref_high": 192.0,
     "ref_low": 173.92,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-04T04:46:09.046626",
+    "fno_high_breach_last_price": 190.3300018310547
   },
   "MEDIASSIST": {
     "trigger_date": "2026-11-02",
@@ -629,7 +635,13 @@
     "trigger_date": "2026-11-03",
     "ref_high": 260.0,
     "ref_low": 247.63,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-04T04:46:13.144673",
+    "fno_low_breach_last_price": 247.7100067138672
   },
   "AKCAPIT": {
     "trigger_date": "2026-11-03",

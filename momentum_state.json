@@ -4439,7 +4439,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 76.4,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:47:08.539608",
+      "mtf_last_price": 753.5499877929688
     },
     "CHOLAHLDNG": {
       "sma50": 1434.08599609375,
@@ -12025,7 +12029,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 31.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-04T04:48:45.185218",
+      "vol_breakout_last_price": 993.5999755859375
     },
     "KSB": {
       "sma50": 774.5079968261718,
@@ -12369,7 +12377,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 91.5,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:48:50.895130",
+      "near_high_17_22_last_price": 81.52999877929688
     },
     "LLOYDSENT": {
       "sma50": 70.8773999786377,
@@ -13333,7 +13345,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 7.7,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T04:49:02.464351",
+      "rectangle_bounce_last_price": 211.82000732421875
     },
     "MSTCLTD": {
       "sma50": 683.3869982910156,
@@ -15353,7 +15369,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 33.0,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:49:29.972894",
+      "near_high_17_22_last_price": 575.4500122070312
     },
     "POLYMED": {
       "sma50": 1640.5039916992187,
