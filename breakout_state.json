@@ -2,8 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T05:45:48.080502",
-    "custom_last_price": 129.9499969482422
+    "custom_last_alert": "2026-11-04T03:45:53.613606",
+    "custom_last_price": 139.4499969482422,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_AERON_price": {
     "alerted": false,
@@ -13,17 +17,23 @@
     "alerted": false,
     "last_alert": null,
     "custom_last_alert": "2026-10-30T09:10:12.916826",
-    "custom_last_price": 113.55000305175781
+    "custom_last_price": 113.55000305175781,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_BASILIC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-29T09:07:45.561822",
-    "custom_last_price": 175.1999969482422
+    "custom_last_alert": "2026-11-03T08:46:01.365715",
+    "custom_last_price": 173.0,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_BEACON_price": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_CNINFOTECH_price": {
     "alerted": false,
@@ -31,13 +41,17 @@
   },
   "custom_alert_DELAPLEX_price": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_DENEERS_price": {
     "alerted": false,
     "last_alert": null,
     "custom_last_alert": "2026-10-29T09:07:49.372171",
-    "custom_last_price": 147.75
+    "custom_last_price": 147.75,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_EMAPARTNERS_price": {
     "alerted": false,
@@ -46,14 +60,18 @@
   "custom_alert_EMMIL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-29T09:07:51.294912",
-    "custom_last_price": 109.5
+    "custom_last_alert": "2026-11-03T08:46:05.598460",
+    "custom_last_price": 111.94999694824219,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_ESFL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-02T04:14:27.428843",
-    "custom_last_price": 101.55000305175781
+    "custom_last_alert": "2026-11-03T08:46:06.988257",
+    "custom_last_price": 100.0,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_GPIL_news": {
     "alerted": false,
@@ -66,20 +84,26 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T03:52:44.644038",
-    "custom_last_price": 166.16000366210938
+    "custom_last_alert": "2026-11-03T07:01:07.676725",
+    "custom_last_price": 164.47999572753906,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
     "last_alert": null,
     "custom_last_alert": "2026-10-22T18:52:50.050056",
-    "custom_last_price": NaN
+    "custom_last_price": NaN,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
     "last_alert": null,
     "custom_last_alert": "2026-11-02T18:52:58.103212",
-    "custom_last_price": NaN
+    "custom_last_price": NaN,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_LAKSHYA_price": {
     "alerted": false,
@@ -88,22 +112,32 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T05:45:57.239460",
-    "custom_last_price": 56.5
+    "custom_last_alert": "2026-11-04T03:45:59.405344",
+    "custom_last_price": 55.91999816894531,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
     "last_alert": null,
     "custom_last_alert": "2026-10-30T04:10:31.365665",
-    "custom_last_price": 180.10000610351562
+    "custom_last_price": 180.10000610351562,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_PRADPME_weekly_rsi": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_PRESSTONIC_price": {
     "alerted": false,
-    "last_alert": null
+    "last_alert": null,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_BSE:RAVELCARE_price": {
     "alerted": false,
@@ -112,8 +146,10 @@
   "custom_alert_SPCL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-02T04:14:34.456914",
-    "custom_last_price": 40.349998474121094
+    "custom_last_alert": "2026-11-03T08:46:12.901429",
+    "custom_last_price": 39.20000076293945,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_SSEGL_price": {
     "alerted": false,
@@ -122,8 +158,10 @@
   "custom_alert_TECHLABS_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-02T04:14:36.147473",
-    "custom_last_price": 101.94999694824219
+    "custom_last_alert": "2026-11-03T08:46:14.674895",
+    "custom_last_price": 99.8499984741211,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_CIRCULAR_news": {
     "alerted": true,
@@ -139,13 +177,17 @@
     "alerted": false,
     "last_alert": null,
     "custom_last_alert": "2026-10-23T08:31:09.699331",
-    "custom_last_price": 1872.199951171875
+    "custom_last_price": 1872.199951171875,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_PHOENIXLTD_rsi": {
     "alerted": false,
     "last_alert": null,
     "custom_last_alert": "2026-10-08T10:16:00.163403",
-    "custom_last_price": 1771.199951171875
+    "custom_last_price": 1771.199951171875,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_ESFL_news": {
     "alerted": true,
@@ -173,8 +215,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-02T04:26:16.428322",
-    "spread_last_price": 3.7511709216486597
+    "spread_last_alert": "2026-11-04T03:53:03.566074",
+    "spread_last_price": 7.19915922228061,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-10-29T06:57:33.875213",
@@ -185,8 +231,12 @@
     "spread_last_price": 3.524734982332155
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-11-03T05:24:30.841241",
-    "spread_last_price": 2.740337231567678
+    "spread_last_alert": "2026-11-04T03:52:48.841672",
+    "spread_last_price": 3.1919545255793667,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_BALRAMCHIN": {
     "spread_last_alert": "2026-10-06T03:51:55.290909",
@@ -197,8 +247,12 @@
     "spread_last_price": 6.54073487769333
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-10-29T05:40:15.303000",
-    "spread_last_price": 3.5459230928486596
+    "spread_last_alert": "2026-11-04T03:52:43.979265",
+    "spread_last_price": 2.8793676682767764,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_BALAMINES": {
     "spread_last_alert": "2026-10-13T03:57:17.405657",
@@ -209,12 +263,20 @@
     "spread_last_price": 3.734554697572893
   },
   "arb_RPSGVENT": {
-    "spread_last_alert": "2026-10-21T05:52:24.295329",
-    "spread_last_price": 2.513980051332058
+    "spread_last_alert": "2026-11-04T03:52:51.856305",
+    "spread_last_price": 6.4792486725332,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_ALKYLAMINE": {
-    "spread_last_alert": "2026-10-14T06:34:45.113972",
-    "spread_last_price": 2.7652997949464515
+    "spread_last_alert": "2026-11-04T03:52:58.741028",
+    "spread_last_price": 4.067878037534716,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_VHL": {
     "spread_last_alert": "2026-11-02T05:00:55.144922",
@@ -229,20 +291,28 @@
     "spread_last_price": 2.820854182104335
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-11-02T04:25:32.889798",
-    "spread_last_price": 9.306930693069306
+    "spread_last_alert": "2026-11-03T08:24:24.412035",
+    "spread_last_price": 3.033220991815118,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-29T09:07:44.947498",
-    "custom_last_price": 175.1999969482422
+    "custom_last_alert": "2026-11-03T08:46:00.616328",
+    "custom_last_price": 173.0,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
     "last_alert": null,
     "custom_last_alert": "2026-10-30T04:10:30.728845",
-    "custom_last_price": 180.10000610351562
+    "custom_last_price": 180.10000610351562,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "arb_RANEHOLDIN": {
     "spread_last_alert": "2026-11-02T04:05:07.059954",
@@ -274,7 +344,9 @@
   },
   "arb_AKUMS": {
     "spread_last_alert": "2026-10-15T03:56:16.040314",
-    "spread_last_price": 3.019511451575955
+    "spread_last_price": 3.019511451575955,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "arb_GPIL": {
     "spread_last_alert": "2026-10-12T03:49:45.325909",
@@ -300,7 +372,9 @@
     "alerted": false,
     "last_alert": null,
     "custom_last_alert": "2026-10-27T06:17:49.058923",
-    "custom_last_price": 167.75
+    "custom_last_price": 167.75,
+    "session_date": "2026-11-04",
+    "alert_slots": []
   },
   "arb_AETHER": {
     "spread_last_alert": "2026-11-02T04:05:26.197403",
@@ -315,20 +389,32 @@
     "spread_last_price": 4.085032592642286
   },
   "arb_KAMAHOLD": {
-    "spread_last_alert": "2026-11-03T06:07:52.966702",
-    "spread_last_price": 3.4482758620689653
+    "spread_last_alert": "2026-11-04T03:52:49.870707",
+    "spread_last_price": 2.810304449648712,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-11-03T05:24:33.624848",
-    "spread_last_price": 3.5080588691130106
+    "spread_last_alert": "2026-11-04T03:53:08.086636",
+    "spread_last_price": 4.150866821619546,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_JINDALPHOT": {
     "spread_last_alert": "2026-11-02T04:26:18.305927",
     "spread_last_price": 3.0634819529093837
   },
   "arb_AZAD": {
-    "spread_last_alert": "2026-10-21T03:55:34.650660",
-    "spread_last_price": 2.506459102170621
+    "spread_last_alert": "2026-11-03T09:35:54.939082",
+    "spread_last_price": 2.682370219747545,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "arb_APOLLOTYRE": {
     "spread_last_alert": "2026-10-15T03:56:19.847106",
@@ -347,8 +433,12 @@
     "spread_last_price": 3.183023872679045
   },
   "arb_APOLLO": {
-    "spread_last_alert": "2026-10-27T04:02:53.730133",
-    "spread_last_price": 3.763626998133809
+    "spread_last_alert": "2026-11-04T04:21:59.045774",
+    "spread_last_price": 2.6963236252699203,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_AURIONPRO": {
     "spread_last_alert": "2026-10-29T05:40:13.144169",
@@ -705,8 +795,12 @@
     "price_low_last_price": 11870.0
   },
   "arb_NSIL": {
-    "spread_last_alert": "2026-10-27T09:08:56.672043",
-    "spread_last_price": 4.204906219559164
+    "spread_last_alert": "2026-11-03T07:35:35.001878",
+    "spread_last_price": 2.556701030927835,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "GRWRHITECH": {
     "result_date": "2026-10-22T00:00:00",
@@ -3135,8 +3229,12 @@
     "price_high_last_price": 109.33999633789062
   },
   "arb_TVSHLTD": {
-    "spread_last_alert": "2026-10-29T06:38:38.206568",
-    "spread_last_price": 2.888245326415032
+    "spread_last_alert": "2026-11-04T04:35:22.672136",
+    "spread_last_price": 2.528205550522935,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "AEROFLEX": {
     "result_date": "2026-10-29T00:00:00",
@@ -4498,8 +4596,12 @@
     "price_high_last_price": 2175.0
   },
   "arb_MAHSCOOTER": {
-    "spread_last_alert": "2026-11-03T06:08:32.958097",
-    "spread_last_price": 3.595890410958904
+    "spread_last_alert": "2026-11-03T07:51:16.075203",
+    "spread_last_price": 2.791095890410959,
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "HAPPSTMNDS": {
     "result_date": "2026-11-02T00:00:00",
@@ -4564,6 +4666,726 @@
     "day_low": 201.41000366210938,
     "baseline_rsi": 50.84863210401578,
     "mcap_cr": 4805.838242045319,
+    "exchange": "NSE"
+  },
+  "JAINREC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 285.0,
+    "day_low": 264.29998779296875,
+    "baseline_rsi": 44.720664867142894,
+    "mcap_cr": 9615.815996486333,
+    "exchange": "NSE"
+  },
+  "JYOTICNC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 962.0,
+    "day_low": 912.9500122070312,
+    "baseline_rsi": 42.984658181268124,
+    "mcap_cr": 21036.63638,
+    "exchange": "NSE"
+  },
+  "KRYSTAL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 589.0999755859375,
+    "day_low": 571.0,
+    "baseline_rsi": 36.5560697708565,
+    "mcap_cr": 804.0858376,
+    "exchange": "NSE"
+  },
+  "SIGNPOST": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 233.17999267578125,
+    "day_low": 219.22000122070312,
+    "baseline_rsi": 34.43351445253022,
+    "mcap_cr": 1181.245,
+    "exchange": "NSE"
+  },
+  "SHK": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 137.61000061035156,
+    "day_low": 130.11000061035156,
+    "baseline_rsi": 45.46730183645878,
+    "mcap_cr": 1821.0640241618592,
+    "exchange": "NSE"
+  },
+  "SURANAT&P": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 16.5,
+    "day_low": 15.170000076293945,
+    "baseline_rsi": 54.58098974233814,
+    "mcap_cr": 212.7358630567663,
+    "exchange": "NSE"
+  },
+  "GEECEE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 367.5,
+    "day_low": 352.0,
+    "baseline_rsi": 45.91915508835505,
+    "mcap_cr": 739.752413375,
+    "exchange": "NSE"
+  },
+  "ZYDUSWELL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 525.4500122070312,
+    "day_low": 466.79998779296875,
+    "baseline_rsi": 53.759009005138246,
+    "mcap_cr": 16202.334666,
+    "exchange": "NSE"
+  },
+  "BALAMINES": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1933.5,
+    "day_low": 1744.199951171875,
+    "baseline_rsi": 32.90764422206122,
+    "mcap_cr": 5752.473619104004,
+    "exchange": "NSE"
+  },
+  "ARFIN": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 98.0999984741211,
+    "day_low": 90.93000030517578,
+    "baseline_rsi": 54.47142722058083,
+    "mcap_cr": 1636.7768339250106,
+    "exchange": "NSE"
+  },
+  "BAJAJFINSV": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1722.0,
+    "day_low": 1689.0,
+    "baseline_rsi": 47.176801674084984,
+    "mcap_cr": 275002.0561631,
+    "exchange": "NSE"
+  },
+  "PCBL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 284.45001220703125,
+    "day_low": 273.54998779296875,
+    "baseline_rsi": 33.72579024480672,
+    "mcap_cr": 10887.110732981031,
+    "exchange": "NSE"
+  },
+  "GANESHCP": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 181.97999572753906,
+    "day_low": 163.5,
+    "baseline_rsi": 59.275027199278426,
+    "mcap_cr": 694.213581454779,
+    "exchange": "NSE"
+  },
+  "SANGHVIMOV": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 333.20001220703125,
+    "day_low": 316.0,
+    "baseline_rsi": 33.68597921419692,
+    "mcap_cr": 2750.519625683594,
+    "exchange": "NSE"
+  },
+  "DIACABS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 367.5,
+    "day_low": 352.04998779296875,
+    "baseline_rsi": 57.032267809563,
+    "mcap_cr": 21979.111455,
+    "exchange": "NSE"
+  },
+  "SHEMAROO": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 104.38999938964844,
+    "day_low": 101.0,
+    "baseline_rsi": 44.86220381188271,
+    "mcap_cr": 298.4790745574417,
+    "exchange": "NSE"
+  },
+  "BANSWRAS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 105.5,
+    "day_low": 100.70999908447266,
+    "baseline_rsi": 48.43457362758111,
+    "mcap_cr": 349.338427666803,
+    "exchange": "NSE"
+  },
+  "HMAAGRO": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 25.899999618530273,
+    "day_low": 24.719999313354492,
+    "baseline_rsi": 60.8063986599578,
+    "mcap_cr": 1265.9460129451313,
+    "exchange": "NSE"
+  },
+  "AIAENG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 3747.0,
+    "day_low": 3387.300048828125,
+    "baseline_rsi": 24.53021229847279,
+    "mcap_cr": 31713.993629468263,
+    "exchange": "NSE"
+  },
+  "DEEPINDS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 693.0,
+    "day_low": 604.0499877929688,
+    "baseline_rsi": 32.35355656285388,
+    "mcap_cr": 3985.919921875,
+    "exchange": "NSE"
+  },
+  "ALKYLAMINE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1710.9000244140625,
+    "day_low": 1546.9000244140625,
+    "baseline_rsi": 33.49613207590649,
+    "mcap_cr": 8229.7492416,
+    "exchange": "NSE"
+  },
+  "SIL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 16.989999771118164,
+    "day_low": 15.869999885559082,
+    "baseline_rsi": 44.88575029595682,
+    "mcap_cr": 102.86197518662739,
+    "exchange": "NSE"
+  },
+  "PUNJABCHEM": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 930.25,
+    "day_low": 880.0,
+    "baseline_rsi": 21.64665627765514,
+    "mcap_cr": 1091.334465,
+    "exchange": "NSE"
+  },
+  "JOCIL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 143.39999389648438,
+    "day_low": 136.82000732421875,
+    "baseline_rsi": 42.627844620326016,
+    "mcap_cr": 121.671755,
+    "exchange": "NSE"
+  },
+  "ASAHIINDIA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 986.8499755859375,
+    "day_low": 944.7999877929688,
+    "baseline_rsi": 61.504980535374635,
+    "mcap_cr": 24837.55600536958,
+    "exchange": "NSE"
+  },
+  "EMCURE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1979.800048828125,
+    "day_low": 1882.5,
+    "baseline_rsi": 64.83276920431535,
+    "mcap_cr": 37439.39618545,
+    "exchange": "NSE"
+  },
+  "PRINCEPIPE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 295.29998779296875,
+    "day_low": 261.75,
+    "baseline_rsi": 52.2407929513841,
+    "mcap_cr": 2939.8291305740477,
+    "exchange": "NSE"
+  },
+  "SGIL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 560.0,
+    "day_low": 525.0,
+    "baseline_rsi": 34.99345535099165,
+    "mcap_cr": 821.723843963623,
+    "exchange": "NSE"
+  },
+  "SUMMITSEC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1396.5,
+    "day_low": 1356.0,
+    "baseline_rsi": 56.08122750805712,
+    "mcap_cr": 1496.3183921055909,
+    "exchange": "NSE"
+  },
+  "SBIN": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1006.5499877929688,
+    "day_low": 975.5499877929688,
+    "baseline_rsi": 54.888178033028986,
+    "mcap_cr": 908353.5943083041,
+    "exchange": "NSE"
+  },
+  "GNFC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 498.75,
+    "day_low": 466.3500061035156,
+    "baseline_rsi": 28.171273024007675,
+    "mcap_cr": 6876.8239644,
+    "exchange": "NSE"
+  },
+  "RBZJEWEL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 178.83999633789062,
+    "day_low": 167.1999969482422,
+    "baseline_rsi": 47.806833171534244,
+    "mcap_cr": 715.3599853515625,
+    "exchange": "NSE"
+  },
+  "ESTER": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 93.5999984741211,
+    "day_low": 85.0,
+    "baseline_rsi": 46.14446652120354,
+    "mcap_cr": 919.8822386116791,
+    "exchange": "NSE"
+  },
+  "SOLARINDS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 20823.0,
+    "day_low": 19438.0,
+    "baseline_rsi": 58.97271739463538,
+    "mcap_cr": 186210.435179,
+    "exchange": "NSE"
+  },
+  "SIKKO": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 5.130000114440918,
+    "day_low": 4.78000020980835,
+    "baseline_rsi": 36.090178950558276,
+    "mcap_cr": 217.9631900024414,
+    "exchange": "NSE"
+  },
+  "PFIZER": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 3833.699951171875,
+    "day_low": 3633.10009765625,
+    "baseline_rsi": 46.177821080311865,
+    "mcap_cr": 17348.9126297376,
+    "exchange": "NSE"
+  },
+  "YATHARTH": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 983.7999877929688,
+    "day_low": 914.0,
+    "baseline_rsi": 51.37686474889933,
+    "mcap_cr": 9455.73458895487,
+    "exchange": "NSE"
+  },
+  "FLUOROCHEM": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 4600.0,
+    "day_low": 4345.7001953125,
+    "baseline_rsi": 54.89652629889533,
+    "mcap_cr": 49311.665,
+    "exchange": "NSE"
+  },
+  "GRAPHITE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 761.3499755859375,
+    "day_low": 738.0,
+    "baseline_rsi": 48.48085994361816,
+    "mcap_cr": 14701.036809025598,
+    "exchange": "NSE"
+  },
+  "BODALCHEM": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 181.3699951171875,
+    "day_low": 164.5,
+    "baseline_rsi": 60.89025779017114,
+    "mcap_cr": 2284.2474454088747,
+    "exchange": "NSE"
+  },
+  "NITCO": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 76.0999984741211,
+    "day_low": 70.83000183105469,
+    "baseline_rsi": 36.188453562349636,
+    "mcap_cr": 1790.5119929289779,
+    "exchange": "NSE"
+  },
+  "LUXIND": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1194.9000244140625,
+    "day_low": 1155.4000244140625,
+    "baseline_rsi": 55.6488079669092,
+    "mcap_cr": 3517.48437973562,
+    "exchange": "NSE"
+  },
+  "HIKAL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 231.0,
+    "day_low": 217.02999877929688,
+    "baseline_rsi": 56.868180058503434,
+    "mcap_cr": 2731.2348012168763,
+    "exchange": "NSE"
+  },
+  "TFCILTD": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 161.47999572753906,
+    "day_low": 155.4499969482422,
+    "baseline_rsi": 64.57815526666539,
+    "mcap_cr": 7442.359133,
+    "exchange": "NSE"
+  },
+  "RADHIKAJWE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 62.0,
+    "day_low": 58.79999923706055,
+    "baseline_rsi": 43.19242893768058,
+    "mcap_cr": 732.0299844957398,
+    "exchange": "NSE"
+  },
+  "BLS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 224.8000030517578,
+    "day_low": 211.47999572753906,
+    "baseline_rsi": 50.913247537305644,
+    "mcap_cr": 9119.64808350459,
+    "exchange": "NSE"
+  },
+  "MGL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1058.0,
+    "day_low": 1000.0,
+    "baseline_rsi": 40.52444133032103,
+    "mcap_cr": 10129.66123645,
+    "exchange": "NSE"
+  },
+  "MONTECARLO": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 520.0,
+    "day_low": 478.04998779296875,
+    "baseline_rsi": 39.59019572641154,
+    "mcap_cr": 1024.6822632,
+    "exchange": "NSE"
+  },
+  "ARCHIDPLY": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 103.98999786376953,
+    "day_low": 96.08999633789062,
+    "baseline_rsi": 47.44883592003026,
+    "mcap_cr": 194.26882099797896,
+    "exchange": "NSE"
+  },
+  "SAIPARENT": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 494.8999938964844,
+    "day_low": 471.29998779296875,
+    "baseline_rsi": 45.17270921860629,
+    "mcap_cr": 2111.104628084863,
+    "exchange": "NSE"
+  },
+  "BORANA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 218.0,
+    "day_low": 199.44000244140625,
+    "baseline_rsi": 27.929564973471344,
+    "mcap_cr": 557.552797875,
+    "exchange": "NSE"
+  },
+  "arb_ASAHIINDIA": {
+    "session_date": "2026-11-03",
+    "alert_slots": [
+      "H2"
+    ],
+    "spread_last_alert": "2026-11-03T09:21:14.114026",
+    "spread_last_price": 4.475298042980999
+  },
+  "BHAGCHEM": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 209.02999877929688,
+    "day_low": 181.60000610351562,
+    "baseline_rsi": 29.645879657743194,
+    "mcap_cr": 2424.682198149353,
+    "exchange": "NSE"
+  },
+  "RTNINDIA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 26.260000228881836,
+    "day_low": 24.5,
+    "baseline_rsi": 47.82989903020554,
+    "mcap_cr": 3425.9820717766456,
+    "exchange": "NSE"
+  },
+  "CPEDU": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 175.0,
+    "day_low": 165.02000427246094,
+    "baseline_rsi": 45.47976946777975,
+    "mcap_cr": 309.279963,
+    "exchange": "NSE"
+  },
+  "GENCON": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 27.1299991607666,
+    "day_low": 26.149999618530273,
+    "baseline_rsi": 31.212579477192108,
+    "mcap_cr": 150.67156607939242,
+    "exchange": "NSE"
+  },
+  "RML": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1388.0,
+    "day_low": 1240.0,
+    "baseline_rsi": 56.94950209395582,
+    "mcap_cr": 3634.2835155,
+    "exchange": "NSE"
+  },
+  "ARIHANTSUP": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 217.0,
+    "day_low": 203.1999969482422,
+    "baseline_rsi": 43.07942699020363,
+    "mcap_cr": 911.1043262446198,
+    "exchange": "NSE"
+  },
+  "PTC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 140.27999877929688,
+    "day_low": 136.66000366210938,
+    "baseline_rsi": 36.76657948275943,
+    "mcap_cr": 4048.2096353937727,
+    "exchange": "NSE"
+  },
+  "PATINTLOG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 12.739999771118164,
+    "day_low": 12.109999656677246,
+    "baseline_rsi": 42.215013726928234,
+    "mcap_cr": 78.04986615660324,
+    "exchange": "NSE"
+  },
+  "ABINFRA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 12.449999809265137,
+    "day_low": 11.899999618530273,
+    "baseline_rsi": 46.33903156144301,
+    "mcap_cr": 785.7109249839401,
+    "exchange": "NSE"
+  },
+  "MANGLMCEM": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 909.3499755859375,
+    "day_low": 836.0,
+    "baseline_rsi": 32.71975595772483,
+    "mcap_cr": 2433.510873,
+    "exchange": "NSE"
+  },
+  "WABAG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1842.0,
+    "day_low": 1788.0,
+    "baseline_rsi": 40.94800538347637,
+    "mcap_cr": 11218.911059715905,
+    "exchange": "NSE"
+  },
+  "MAXIND": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 147.7899932861328,
+    "day_low": 140.10000610351562,
+    "baseline_rsi": 39.52797130389462,
+    "mcap_cr": 811.2824866632568,
+    "exchange": "NSE"
+  },
+  "CAMLINFINE": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 93.0,
+    "day_low": 87.45999908447266,
+    "baseline_rsi": 52.152945274089014,
+    "mcap_cr": 1755.3787968330894,
+    "exchange": "NSE"
+  },
+  "ASKAUTOLTD": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 609.0,
+    "day_low": 585.2999877929688,
+    "baseline_rsi": 50.65928792787691,
+    "mcap_cr": 11689.570707652589,
+    "exchange": "NSE"
+  },
+  "NEULANDLAB": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 19798.0,
+    "day_low": 19115.0,
+    "baseline_rsi": 38.78227151237252,
+    "mcap_cr": 24920.7763936,
+    "exchange": "NSE"
+  },
+  "EBGNG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 692.0,
+    "day_low": 657.9500122070312,
+    "baseline_rsi": 50.56453419381883,
+    "mcap_cr": 7834.871587414215,
+    "exchange": "NSE"
+  },
+  "BIGBLOC": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 36.95000076293945,
+    "day_low": 35.2599983215332,
+    "baseline_rsi": 43.99528805110115,
+    "mcap_cr": 504.151254391098,
+    "exchange": "NSE"
+  },
+  "SOTL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 703.0,
+    "day_low": 671.4000244140625,
+    "baseline_rsi": 48.6305236643075,
+    "mcap_cr": 4781.746227866913,
+    "exchange": "NSE"
+  },
+  "SEAMECLTD": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1656.0,
+    "day_low": 1580.0,
+    "baseline_rsi": 46.09976738190832,
+    "mcap_cr": 4072.5471093398437,
+    "exchange": "NSE"
+  },
+  "SIGMA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 43.95000076293945,
+    "day_low": 42.400001525878906,
+    "baseline_rsi": 48.879596532301306,
+    "mcap_cr": 442.2407263942261,
+    "exchange": "NSE"
+  },
+  "XTRANET": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 305.3999938964844,
+    "day_low": 276.3999938964844,
+    "baseline_rsi": 49.390121402803494,
+    "mcap_cr": 1454.5882378253175,
+    "exchange": "NSE"
+  },
+  "IL&FSENGG": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 39.0,
+    "day_low": 37.5,
+    "baseline_rsi": 47.04763113256038,
+    "mcap_cr": 495.37541667800906,
+    "exchange": "NSE"
+  },
+  "EPIGRAL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 956.25,
+    "day_low": 904.0999755859375,
+    "baseline_rsi": 40.14010208251191,
+    "mcap_cr": 3937.941279977234,
+    "exchange": "NSE"
+  },
+  "COSMOFIRST": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 775.0499877929688,
+    "day_low": 742.5499877929688,
+    "baseline_rsi": 44.21813959273083,
+    "mcap_cr": 1990.211775537201,
+    "exchange": "NSE"
+  },
+  "DREAMFOLKS": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 61.5,
+    "day_low": 58.66999816894531,
+    "baseline_rsi": 50.49763849203788,
+    "mcap_cr": 321.7499746083359,
+    "exchange": "NSE"
+  },
+  "RHETAN": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 14.079999923706055,
+    "day_low": 13.489999771118164,
+    "baseline_rsi": 38.491213500563376,
+    "mcap_cr": 1121.203100681305,
+    "exchange": "NSE"
+  },
+  "CHAMBLFERT": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 388.20001220703125,
+    "day_low": 368.29998779296875,
+    "baseline_rsi": 49.37403453238847,
+    "mcap_cr": 15292.89866556751,
+    "exchange": "NSE"
+  },
+  "XPROINDIA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 1013.5,
+    "day_low": 960.2000122070312,
+    "baseline_rsi": 40.31051258243241,
+    "mcap_cr": 2339.0591097592405,
+    "exchange": "NSE"
+  },
+  "LINDEINDIA": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 5899.0,
+    "day_low": 5680.5,
+    "baseline_rsi": 44.75034735975313,
+    "mcap_cr": 49878.47782155,
+    "exchange": "NSE"
+  },
+  "JTLIND": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 79.0,
+    "day_low": 73.55000305175781,
+    "baseline_rsi": 38.165651326167485,
+    "mcap_cr": 2906.8385338910066,
+    "exchange": "NSE"
+  },
+  "PVSL": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 94.87999725341797,
+    "day_low": 91.62999725341797,
+    "baseline_rsi": 45.75427718814647,
+    "mcap_cr": 658.7257039952377,
+    "exchange": "NSE"
+  },
+  "VMART": {
+    "result_date": "2026-11-03T00:00:00",
+    "day_high": 750.5999755859375,
+    "day_low": 708.0499877929688,
+    "baseline_rsi": 26.932364891157093,
+    "mcap_cr": 5710.7280576258545,
+    "exchange": "NSE"
+  },
+  "BELDING": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 779.0999755859375,
+    "day_low": 756.0,
+    "baseline_rsi": 17.408835424346563,
+    "mcap_cr": 1094.6009844,
+    "exchange": "NSE"
+  },
+  "arb_AIAENG": {
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "spread_last_alert": "2026-11-04T03:52:45.596144",
+    "spread_last_price": 5.117626124486869
+  },
+  "arb_ARE&M": {
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "spread_last_alert": "2026-11-04T03:52:57.876832",
+    "spread_last_price": 3.900865576733118
+  },
+  "GARUDA": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 163.0,
+    "day_low": 155.5,
+    "baseline_rsi": 51.63001550568292,
+    "mcap_cr": 1475.6420849081726,
+    "exchange": "NSE"
+  },
+  "AZAD": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 2598.89990234375,
+    "day_low": 2510.0,
+    "baseline_rsi": 44.489182135166494,
+    "mcap_cr": 16653.048880661085,
+    "exchange": "NSE"
+  },
+  "RAJRILTD": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 20.280000686645508,
+    "day_low": 20.280000686645508,
+    "baseline_rsi": 44.094613194647316,
+    "mcap_cr": 1141.9462260723105,
     "exchange": "NSE"
   }
 }
