@@ -14958,7 +14958,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 23.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T05:35:17.845524",
+      "rectangle_bounce_last_price": 3900.89990234375
     },
     "PFOCUS": {
       "sma50": 300.07599975585936,
@@ -21776,7 +21780,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 39.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-04T05:37:29.660337",
+      "ema50_pullback_last_price": 291.0
     },
     "VIJAYA": {
       "sma50": 1463.5199975585938,
