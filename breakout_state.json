@@ -5862,5 +5862,21 @@
     "baseline_rsi": 61.84150337544432,
     "mcap_cr": 33498.92125296257,
     "exchange": "NSE"
+  },
+  "NAVNETEDUL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 134.1699981689453,
+    "day_low": 129.9199981689453,
+    "baseline_rsi": 68.18893616315334,
+    "mcap_cr": 2939.4808571422486,
+    "exchange": "NSE"
+  },
+  "ISGEC": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 958.0,
+    "day_low": 904.4500122070312,
+    "baseline_rsi": 63.602114012951986,
+    "mcap_cr": 6949.273810584595,
+    "exchange": "NSE"
   }
 }

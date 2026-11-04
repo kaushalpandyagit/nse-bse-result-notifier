@@ -3236,7 +3236,10 @@
       "dtl_floor_touches": 2,
       "rs_rank": 11.5,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "dtl_bo_sent": true
     },
     "BRIGADE": {
       "sma50": 601.6219982910156,
@@ -4818,7 +4821,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 57.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T10:03:09.000480",
+      "rectangle_bounce_last_price": 655.5
     },
     "CRAFTSMAN": {
       "sma50": 10838.13,
@@ -6281,7 +6288,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 82.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-04T10:03:32.595679",
+      "mtf_last_price": 347.54998779296875
     },
     "EMAMILTD": {
       "sma50": 376.9070001220703,
@@ -7985,7 +7996,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 6.0,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T10:03:59.335556",
+      "rectangle_bounce_last_price": 205.72000122070312
     },
     "GPPL": {
       "sma50": 164.4220001220703,
@@ -10038,7 +10053,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 1.7,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T10:04:30.064116",
+      "rectangle_bounce_last_price": 63.5
     },
     "INTELLECT": {
       "sma50": 631.5879986572265,
@@ -16778,7 +16797,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 20.2,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T10:06:13.791797",
+      "rectangle_bounce_last_price": 100.61000061035156
     },
     "REDINGTON": {
       "sma50": 378.197001953125,
@@ -21911,7 +21934,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 32.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T10:07:29.788492",
+      "rectangle_bounce_last_price": 820.0499877929688
     },
     "UTLSOLAR": {
       "sma50": 413.4779986572266,
