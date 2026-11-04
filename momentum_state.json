@@ -5423,10 +5423,11 @@
       "rs_rank": 67.0,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-04T03:49:25.873934",
-      "near_high_17_22_last_price": 186.2100067138672
+      "near_high_17_22_last_alert": "2026-11-04T08:02:56.420131",
+      "near_high_17_22_last_price": 188.17999267578125
     },
     "DEEPAKFERT": {
       "sma50": 1319.9360034179688,
@@ -8391,7 +8392,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 23.2,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T08:03:43.711576",
+      "rectangle_bounce_last_price": 140.30999755859375
     },
     "GUJALKALI": {
       "sma50": 635.8559985351562,
@@ -8535,7 +8540,10 @@
       "dtl_floor_touches": 2,
       "rs_rank": 88.5,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "dtl_bo_sent": true
     },
     "HBLENGINE": {
       "sma50": 744.5439990234376,
@@ -8983,7 +8991,9 @@
       "dtl_touches": 4,
       "dtl_floor": 402.29998779296875,
       "dtl_floor_touches": 1,
-      "rs_rank": 91.1
+      "rs_rank": 91.1,
+      "session_date": "2026-11-04",
+      "alert_slots": []
     },
     "HONAUT": {
       "sma50": 33563.9,
@@ -13857,10 +13867,13 @@
       "rs_rank": 24.3,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-04T04:19:29.312780",
-      "mtf_last_price": 76.58000183105469
+      "mtf_last_price": 76.58000183105469,
+      "ema50_pullback_last_alert": "2026-11-04T08:05:05.851262",
+      "ema50_pullback_last_price": 77.0199966430664
     },
     "NCC": {
       "sma50": 132.24879974365234,
@@ -20108,10 +20121,11 @@
       "rs_rank": 55.3,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-04T05:05:39.599692",
-      "mtf_last_price": 312.5
+      "mtf_last_alert": "2026-11-04T08:06:40.287695",
+      "mtf_last_price": 317.29998779296875
     },
     "TATACHEM": {
       "sma50": 631.675,
@@ -20942,7 +20956,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 47.7,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T08:06:54.715704",
+      "rectangle_bounce_last_price": 170.36000061035156
     },
     "TIMKEN": {
       "sma50": 3057.1540087890626,

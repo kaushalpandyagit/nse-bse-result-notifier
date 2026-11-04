@@ -5536,5 +5536,69 @@
     "baseline_rsi": 53.71181735064744,
     "mcap_cr": 3900.756484,
     "exchange": "NSE"
+  },
+  "LALPATHLAB": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 1962.0,
+    "day_low": 1901.0,
+    "baseline_rsi": 57.1135573801269,
+    "mcap_cr": 32584.352189941405,
+    "exchange": "NSE"
+  },
+  "JTEKTINDIA": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 125.5,
+    "day_low": 117.0,
+    "baseline_rsi": 65.07568123557446,
+    "mcap_cr": 3439.721436,
+    "exchange": "NSE"
+  },
+  "REDTAPE": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 108.55999755859375,
+    "day_low": 101.0,
+    "baseline_rsi": 34.63244950518221,
+    "mcap_cr": 5736.48427962616,
+    "exchange": "NSE"
+  },
+  "CENTURYPLY": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 683.2000122070312,
+    "day_low": 648.0499877929688,
+    "baseline_rsi": 52.412779505962,
+    "mcap_cr": 14952.242227,
+    "exchange": "NSE"
+  },
+  "BIOCON": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 349.0,
+    "day_low": 336.95001220703125,
+    "baseline_rsi": 40.124016388671635,
+    "mcap_cr": 55888.354192125,
+    "exchange": "NSE"
+  },
+  "SMSPHARMA": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 535.0,
+    "day_low": 498.3500061035156,
+    "baseline_rsi": 65.91346243086393,
+    "mcap_cr": 4756.118400710663,
+    "exchange": "NSE"
+  },
+  "VESUVIUS": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 374.75,
+    "day_low": 365.8999938964844,
+    "baseline_rsi": 39.70947270023855,
+    "mcap_cr": 7542.023451877441,
+    "exchange": "NSE"
+  },
+  "NDRAUTO": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 782.0,
+    "day_low": 723.5,
+    "baseline_rsi": 63.81311073706581,
+    "mcap_cr": 1808.1079449201661,
+    "exchange": "NSE"
   }
 }

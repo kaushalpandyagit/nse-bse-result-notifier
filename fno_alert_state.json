@@ -605,7 +605,13 @@
     "trigger_date": "2026-11-03",
     "ref_high": 2.24,
     "ref_low": 1.86,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-04T08:01:31.188326",
+    "fno_low_breach_last_price": 1.840000033378601
   },
   "PURVA": {
     "trigger_date": "2026-11-03",
