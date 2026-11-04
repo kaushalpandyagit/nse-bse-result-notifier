@@ -5488,5 +5488,29 @@
     "baseline_rsi": 50.404784497119074,
     "mcap_cr": 2891.5939844,
     "exchange": "NSE"
+  },
+  "STEELXIND": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 11.479999542236328,
+    "day_low": 10.899999618530273,
+    "baseline_rsi": 61.61174199178631,
+    "mcap_cr": 1437.5093087125992,
+    "exchange": "NSE"
+  },
+  "SUNCLAY": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 1147.4000244140625,
+    "day_low": 1072.5,
+    "baseline_rsi": 50.610182897930166,
+    "mcap_cr": 2503.5621028963624,
+    "exchange": "NSE"
+  },
+  "RAMCOIND": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 311.6000061035156,
+    "day_low": 288.6499938964844,
+    "baseline_rsi": 56.083843616110485,
+    "mcap_cr": 2672.9831107922364,
+    "exchange": "NSE"
   }
 }

@@ -492,7 +492,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 33.4,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T07:30:38.309089",
+      "rectangle_bounce_last_price": 1184.5
     },
     "ACE": {
       "sma50": 1145.0419982910157,
@@ -13652,7 +13656,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 59.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-04T07:34:03.866567",
+      "liquidity_sweep_last_price": 6149.0
     },
     "NATCOPHARM": {
       "sma50": 815.5119506835938,
@@ -14353,10 +14361,11 @@
       "rs_rank": 54.7,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-04T03:51:08.580516",
-      "near_high_17_22_last_price": 75.75
+      "near_high_17_22_last_alert": "2026-11-04T07:34:16.549148",
+      "near_high_17_22_last_price": 74.93000030517578
     },
     "NORTHARC": {
       "sma50": 287.86299987792967,
@@ -15100,10 +15109,11 @@
       "rs_rank": 23.6,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "rectangle_bounce_last_alert": "2026-11-04T05:35:17.845524",
-      "rectangle_bounce_last_price": 3900.89990234375
+      "rectangle_bounce_last_alert": "2026-11-04T07:34:28.999437",
+      "rectangle_bounce_last_price": 3856.699951171875
     },
     "PFOCUS": {
       "sma50": 300.07599975585936,
@@ -18715,10 +18725,11 @@
       "rs_rank": 69.8,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-04T03:51:53.601904",
-      "mtf_last_price": 522.4000244140625
+      "mtf_last_alert": "2026-11-04T07:35:24.847319",
+      "mtf_last_price": 529.9500122070312
     },
     "SKYGOLD": {
       "sma50": 860.2380004882813,
