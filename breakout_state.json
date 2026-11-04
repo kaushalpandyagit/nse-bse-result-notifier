@@ -5797,5 +5797,53 @@
     "baseline_rsi": 52.76004743933562,
     "mcap_cr": 14244.549946463214,
     "exchange": "NSE"
+  },
+  "CAPACITE": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 164.27999877929688,
+    "day_low": 149.5,
+    "baseline_rsi": 43.15465080090267,
+    "mcap_cr": 1348.673080445926,
+    "exchange": "NSE"
+  },
+  "GAYAPROJ": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 21.360000610351562,
+    "day_low": 19.899999618530273,
+    "baseline_rsi": 53.724868940885166,
+    "mcap_cr": 991.742692338562,
+    "exchange": "NSE"
+  },
+  "CHOICEIN": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 755.5,
+    "day_low": 742.0,
+    "baseline_rsi": 54.760642472232675,
+    "mcap_cr": 16631.37933555603,
+    "exchange": "NSE"
+  },
+  "SUNDARMFIN": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 4146.89990234375,
+    "day_low": 3922.199951171875,
+    "baseline_rsi": 34.31871284627445,
+    "mcap_cr": 43272.52162665347,
+    "exchange": "NSE"
+  },
+  "CPCAP": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 150.0,
+    "day_low": 142.2100067138672,
+    "baseline_rsi": 49.57976752553554,
+    "mcap_cr": 269.3452888,
+    "exchange": "NSE"
+  },
+  "UYFINCORP": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 30.200000762939453,
+    "day_low": 28.0,
+    "baseline_rsi": 66.61428823252703,
+    "mcap_cr": 542.17923765,
+    "exchange": "NSE"
   }
 }

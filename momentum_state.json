@@ -10304,10 +10304,11 @@
       "rs_rank": 34.7,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-04T03:50:19.045782",
-      "mtf_last_price": 253.0800018310547
+      "mtf_last_alert": "2026-11-04T09:32:16.450735",
+      "mtf_last_price": 256.29998779296875
     },
     "IXIGO": {
       "sma50": 155.65260009765626,
@@ -11005,7 +11006,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 0.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-04T09:32:25.666961",
+      "liquidity_sweep_last_price": 336.8500061035156
     },
     "JSWCEMENT": {
       "sma50": 117.79979949951172,
@@ -12607,10 +12612,11 @@
       "rs_rank": 91.5,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-04T04:48:50.895130",
-      "near_high_17_22_last_price": 81.52999877929688
+      "near_high_17_22_last_alert": "2026-11-04T09:32:48.189371",
+      "near_high_17_22_last_price": 83.08000183105469
     },
     "LLOYDSENT": {
       "sma50": 70.8773999786377,
@@ -21100,10 +21106,11 @@
       "rs_rank": 42.3,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-04T04:07:33.240580",
-      "mtf_last_price": 3025.5
+      "mtf_last_alert": "2026-11-04T09:34:33.876140",
+      "mtf_last_price": 3060.10009765625
     },
     "TIPSMUSIC": {
       "sma50": 680.5790002441406,
