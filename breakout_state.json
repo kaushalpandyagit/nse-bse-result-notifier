@@ -5472,5 +5472,21 @@
     "baseline_rsi": 55.93321079196562,
     "mcap_cr": 1191.337,
     "exchange": "NSE"
+  },
+  "BECTORFOOD": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 214.61000061035156,
+    "day_low": 205.55999755859375,
+    "baseline_rsi": 56.03727572165163,
+    "mcap_cr": 6475.045573528343,
+    "exchange": "NSE"
+  },
+  "PANAMAPET": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 483.95001220703125,
+    "day_low": 451.8500061035156,
+    "baseline_rsi": 50.404784497119074,
+    "mcap_cr": 2891.5939844,
+    "exchange": "NSE"
   }
 }
