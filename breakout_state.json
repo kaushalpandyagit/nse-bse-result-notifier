@@ -5371,5 +5371,21 @@
     "baseline_rsi": 51.63001550568292,
     "mcap_cr": 1475.6420849081726,
     "exchange": "NSE"
+  },
+  "AZAD": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 2598.89990234375,
+    "day_low": 2510.0,
+    "baseline_rsi": 44.489182135166494,
+    "mcap_cr": 16653.048880661085,
+    "exchange": "NSE"
+  },
+  "RAJRILTD": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 20.280000686645508,
+    "day_low": 20.280000686645508,
+    "baseline_rsi": 44.094613194647316,
+    "mcap_cr": 1141.9462260723105,
+    "exchange": "NSE"
   }
 }

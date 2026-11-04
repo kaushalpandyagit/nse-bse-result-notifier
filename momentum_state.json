@@ -47,7 +47,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 31.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T05:16:08.659000",
+      "rectangle_bounce_last_price": 426.0
     },
     "AARTIIND": {
       "sma50": 482.9620001220703,
@@ -2041,7 +2045,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 98.5,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T05:16:30.368542",
+      "near_high_17_22_last_price": 2046.199951171875
     },
     "AVANTIFEED": {
       "sma50": 751.8320007324219,
@@ -5603,7 +5611,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 31.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T05:17:13.038942",
+      "rectangle_bounce_last_price": 1997.800048828125
     },
     "DYNAMATECH": {
       "sma50": 12504.12,
@@ -7448,7 +7460,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 2.8,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-04T05:17:34.695624",
+      "vol_breakout_last_price": 458.0
     },
     "GMRP&UI": {
       "sma50": 96.28460021972656,
@@ -8088,7 +8104,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 76.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-04T05:17:43.447185",
+      "ema50_pullback_last_price": 201.10000610351562
     },
     "GRINDWELL": {
       "sma50": 1944.8680004882813,
@@ -8578,7 +8598,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 60.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T05:17:50.220032",
+      "mtf_last_price": 622.9000244140625
     },
     "HEGAM": {
       "sma50": 341.4354010009766,
