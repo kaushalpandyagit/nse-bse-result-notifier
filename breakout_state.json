@@ -5512,5 +5512,29 @@
     "baseline_rsi": 56.083843616110485,
     "mcap_cr": 2672.9831107922364,
     "exchange": "NSE"
+  },
+  "RUSTOMJEE": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 382.0,
+    "day_low": 354.75,
+    "baseline_rsi": 63.656052886671226,
+    "mcap_cr": 4696.091614475,
+    "exchange": "NSE"
+  },
+  "HMVL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 77.30000305175781,
+    "day_low": 72.62999725341797,
+    "baseline_rsi": 50.81164906905535,
+    "mcap_cr": 568.2695887649429,
+    "exchange": "NSE"
+  },
+  "INDIQUBE": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 188.0,
+    "day_low": 182.1199951171875,
+    "baseline_rsi": 53.71181735064744,
+    "mcap_cr": 3900.756484,
+    "exchange": "NSE"
   }
 }

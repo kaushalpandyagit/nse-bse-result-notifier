@@ -4403,10 +4403,13 @@
       "rs_rank": 41.3,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-04T04:02:54.176656",
-      "mtf_last_price": 390.79998779296875
+      "mtf_last_price": 390.79998779296875,
+      "rectangle_bounce_last_alert": "2026-11-04T07:47:21.570153",
+      "rectangle_bounce_last_price": 394.6000061035156
     },
     "CHENNPETRO": {
       "sma50": 1454.7960009765625,
@@ -8181,10 +8184,13 @@
       "rs_rank": 76.6,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "ema50_pullback_last_alert": "2026-11-04T05:17:43.447185",
-      "ema50_pullback_last_price": 201.10000610351562
+      "ema50_pullback_last_price": 201.10000610351562,
+      "mtf_last_alert": "2026-11-04T07:48:20.686809",
+      "mtf_last_price": 202.80999755859375
     },
     "GRINDWELL": {
       "sma50": 1944.8680004882813,
