@@ -433,8 +433,12 @@
     "spread_last_price": 3.183023872679045
   },
   "arb_APOLLO": {
-    "spread_last_alert": "2026-10-27T04:02:53.730133",
-    "spread_last_price": 3.763626998133809
+    "spread_last_alert": "2026-11-04T04:21:59.045774",
+    "spread_last_price": 2.6963236252699203,
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_AURIONPRO": {
     "spread_last_alert": "2026-10-29T05:40:13.144169",

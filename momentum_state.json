@@ -527,7 +527,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 79.4,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:16:21.139056",
+      "near_high_17_22_last_price": 1089.800048828125
     },
     "ACI": {
       "sma50": 475.4810009765625,
@@ -1837,7 +1841,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 92.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:16:38.391714",
+      "near_high_17_22_last_price": 1546.5
     },
     "ATLANTAELE": {
       "sma50": 1717.3160009765625,
@@ -8161,7 +8169,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 10.2,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:18:09.538697",
+      "mtf_last_price": 2126.39990234375
     },
     "GRWRHITECH": {
       "sma50": 6934.74,
@@ -11511,7 +11523,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 63.4,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:18:58.301660",
+      "mtf_last_price": 1744.0
     },
     "KIRLOSENG": {
       "sma50": 2084.734001464844,
@@ -13643,7 +13659,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 24.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:19:29.312780",
+      "mtf_last_price": 76.58000183105469
     },
     "NCC": {
       "sma50": 132.24879974365234,
@@ -14435,7 +14455,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 46.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-04T04:19:42.812454",
+      "resistance_last_price": 1578.0999755859375
     },
     "OSWALPUMPS": {
       "sma50": 260.84600036621094,
@@ -15551,7 +15575,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 50.2,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:19:59.276784",
+      "near_high_17_22_last_price": 410.29998779296875
     },
     "PRICOLLTD": {
       "sma50": 717.7769995117187,
@@ -15839,7 +15867,9 @@
       "dtl_touches": null,
       "dtl_floor": 1060.5999755859375,
       "dtl_floor_touches": 2,
-      "rs_rank": 79.8
+      "rs_rank": 79.8,
+      "session_date": "2026-11-04",
+      "alert_slots": []
     },
     "QUESS": {
       "sma50": 341.32100280761716,
@@ -18387,7 +18417,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 12.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:20:39.841926",
+      "mtf_last_price": 56.099998474121094
     },
     "SKIPPER": {
       "sma50": 537.578002319336,
@@ -19359,7 +19393,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 81.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:20:52.970982",
+      "near_high_17_22_last_price": 846.5
     },
     "SURYAROSNI": {
       "sma50": 213.45640045166016,
@@ -21109,7 +21147,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 52.8,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:21:17.609844",
+      "near_high_17_22_last_price": 115.2699966430664
     },
     "UCOBANK": {
       "sma50": 23.65039993286133,
