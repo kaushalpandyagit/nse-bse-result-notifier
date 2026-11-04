@@ -611,7 +611,13 @@
     "trigger_date": "2026-11-03",
     "ref_high": 19.55,
     "ref_low": 18.9,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-04T04:01:33.921189",
+    "fno_low_breach_last_price": 18.989999771118164
   },
   "LOYALTEX": {
     "trigger_date": "2026-11-03",
@@ -641,13 +647,25 @@
     "trigger_date": "2026-11-03",
     "ref_high": 653.9,
     "ref_low": 644.55,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-04T04:01:39.290623",
+    "fno_high_breach_last_price": 660.5499877929688
   },
   "SHK": {
     "trigger_date": "2026-11-03",
     "ref_high": 137.61,
     "ref_low": 126.1,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-04T04:01:40.969996",
+    "fno_low_breach_last_price": 127.62999725341797
   },
   "VMSTMT": {
     "trigger_date": "2026-11-03",

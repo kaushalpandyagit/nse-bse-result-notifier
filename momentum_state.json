@@ -715,7 +715,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 21.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:01:52.218789",
+      "mtf_last_price": 280.0
     },
     "AEGISVOPAK": {
       "sma50": 277.7413983154297,
@@ -2465,7 +2469,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 39.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:02:22.780692",
+      "mtf_last_price": 493.45001220703125
     },
     "BANCOINDIA": {
       "sma50": 602.4840026855469,
@@ -3243,7 +3251,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 38.7,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:02:37.868900",
+      "mtf_last_price": 322.8500061035156
     },
     "CAMPUS": {
       "sma50": 208.01379943847655,
@@ -4317,7 +4329,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 41.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:02:54.176656",
+      "mtf_last_price": 390.79998779296875
     },
     "CHENNPETRO": {
       "sma50": 1454.7960009765625,
@@ -5177,7 +5193,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 50.4,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:03:08.894944",
+      "near_high_17_22_last_price": 3923.199951171875
     },
     "DBL": {
       "sma50": 398.62299865722656,
@@ -6767,7 +6787,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 31.5,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:03:36.233314",
+      "mtf_last_price": 1850.0999755859375
     },
     "FINCABLES": {
       "sma50": 1324.0160034179687,
@@ -7105,7 +7129,9 @@
       "dtl_touches": null,
       "dtl_floor": 1210.0,
       "dtl_floor_touches": 3,
-      "rs_rank": 87.7
+      "rs_rank": 87.7,
+      "session_date": "2026-11-04",
+      "alert_slots": []
     },
     "GAEL": {
       "sma50": 162.60240020751954,
@@ -9049,7 +9075,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 34.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:04:17.725291",
+      "mtf_last_price": 109.62999725341797
     },
     "IFBIND": {
       "sma50": 1213.6800024414063,
@@ -9719,7 +9749,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 81.5,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:04:28.196013",
+      "near_high_17_22_last_price": 1851.4000244140625
     },
     "INOXWIND": {
       "sma50": 69.43339981079102,
@@ -11621,7 +11655,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 20.6,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:05:02.186965",
+      "mtf_last_price": 130.10000610351562
     },
     "KMEW": {
       "sma50": 3042.026005859375,
@@ -13119,7 +13157,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 50.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:05:27.020694",
+      "near_high_17_22_last_price": 377.04998779296875
     },
     "MINDACORP": {
       "sma50": 668.8239978027344,
@@ -14245,7 +14287,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 77.0,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-04T04:05:48.389595",
+      "resistance_last_price": 339.54998779296875
     },
     "OLAELEC": {
       "sma50": 36.50472915649414,
@@ -15071,7 +15117,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 55.5,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:06:02.346555",
+      "mtf_last_price": 594.8499755859375
     },
     "PINELABS": {
       "sma50": 169.35600036621094,
@@ -16803,7 +16853,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 28.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:06:31.593342",
+      "mtf_last_price": 454.79998779296875
     },
     "RPOWER": {
       "sma50": 20.186399993896483,
@@ -20617,7 +20671,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 42.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:07:33.240580",
+      "mtf_last_price": 3025.5
     },
     "TIPSMUSIC": {
       "sma50": 680.5790002441406,
@@ -21147,7 +21205,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 47.4,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:07:41.905124",
+      "near_high_17_22_last_price": 57.68000030517578
     },
     "UNIMECH": {
       "sma50": 1630.3580004882813,
@@ -22017,7 +22079,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 80.9,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T04:07:58.461945",
+      "near_high_17_22_last_price": 1825.5
     },
     "WAKEFIT": {
       "sma50": 141.78819976806642,
@@ -22301,7 +22367,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 82.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T04:08:02.594814",
+      "mtf_last_price": 662.7000122070312
     },
     "WHIRLPOOL": {
       "sma50": 814.7570031738281,
