@@ -1663,7 +1663,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 27.2,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-04T06:47:12.526617",
+      "liquidity_sweep_last_price": 352.5
     },
     "ASAHIINDIA": {
       "sma50": 946.5860009765624,
@@ -1709,7 +1713,9 @@
       "dtl_touches": null,
       "dtl_floor": 830.2000122070312,
       "dtl_floor_touches": 1,
-      "rs_rank": 80.6
+      "rs_rank": 80.6,
+      "session_date": "2026-11-04",
+      "alert_slots": []
     },
     "ASHAPURMIN": {
       "sma50": 503.6639990234375,

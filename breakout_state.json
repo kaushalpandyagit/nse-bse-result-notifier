@@ -5421,5 +5421,29 @@
     "baseline_rsi": 55.70445452878836,
     "mcap_cr": 166.7928793556673,
     "exchange": "NSE"
+  },
+  "RUSHIL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 18.5,
+    "day_low": 16.010000228881836,
+    "baseline_rsi": 62.395430488079235,
+    "mcap_cr": 510.5452556070366,
+    "exchange": "NSE"
+  },
+  "BASF": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 3212.0,
+    "day_low": 2939.60009765625,
+    "baseline_rsi": 30.3916695537319,
+    "mcap_cr": 12842.416108888672,
+    "exchange": "NSE"
+  },
+  "GSLSU": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 23.739999771118164,
+    "day_low": 22.399999618530273,
+    "baseline_rsi": 31.87050132377921,
+    "mcap_cr": 97.43579861195717,
+    "exchange": "NSE"
   }
 }
