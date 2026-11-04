@@ -5405,5 +5405,21 @@
     "baseline_rsi": 48.141553884148976,
     "mcap_cr": 2358.609792840514,
     "exchange": "NSE"
+  },
+  "GABRIEL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 1404.0999755859375,
+    "day_low": 1362.800048828125,
+    "baseline_rsi": 47.13217659384972,
+    "mcap_cr": 26445.523326,
+    "exchange": "NSE"
+  },
+  "BAIDFIN": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 10.59000015258789,
+    "day_low": 9.520000457763672,
+    "baseline_rsi": 55.70445452878836,
+    "mcap_cr": 166.7928793556673,
+    "exchange": "NSE"
   }
 }

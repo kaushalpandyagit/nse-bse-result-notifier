@@ -22384,7 +22384,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 81.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T06:36:44.484430",
+      "near_high_17_22_last_price": 658.2999877929688
     },
     "WELSPUNLIV": {
       "sma50": 216.2306002807617,
