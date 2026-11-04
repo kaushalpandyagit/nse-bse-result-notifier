@@ -6567,7 +6567,10 @@
       "dtl_floor_touches": 1,
       "rs_rank": 16.0,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "hva_sent": true
     },
     "ERIS": {
       "sma50": 1235.3619970703126,
@@ -10265,7 +10268,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 34.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T05:03:38.694889",
+      "mtf_last_price": 70.69999694824219
     },
     "JAINREC": {
       "sma50": 284.7240002441406,
@@ -13839,7 +13846,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 77.4,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-04T05:04:24.713401",
+      "near_high_17_22_last_price": 618.3499755859375
     },
     "NETWEB": {
       "sma50": 4762.4080078125,
@@ -19879,7 +19890,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 55.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-04T05:05:39.599692",
+      "mtf_last_price": 312.5
     },
     "TATACHEM": {
       "sma50": 631.675,
