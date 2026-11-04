@@ -5632,5 +5632,61 @@
     "baseline_rsi": 52.838681911093076,
     "mcap_cr": 2117.041215975,
     "exchange": "NSE"
+  },
+  "JYOTHYLAB": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 194.8800048828125,
+    "day_low": 177.10000610351562,
+    "baseline_rsi": 53.268739344012076,
+    "mcap_cr": 6861.428321194336,
+    "exchange": "NSE"
+  },
+  "ICIL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 490.0,
+    "day_low": 462.8999938964844,
+    "baseline_rsi": 61.90275692572076,
+    "mcap_cr": 9528.394418282776,
+    "exchange": "NSE"
+  },
+  "IVC": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 8.119999885559082,
+    "day_low": 7.820000171661377,
+    "baseline_rsi": 57.19540609133132,
+    "mcap_cr": 250.2840871913309,
+    "exchange": "NSE"
+  },
+  "SHANKARA": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 121.98999786376953,
+    "day_low": 111.0,
+    "baseline_rsi": 43.1603401854802,
+    "mcap_cr": 284.5415824036316,
+    "exchange": "NSE"
+  },
+  "ATL": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 26.299999237060547,
+    "day_low": 24.209999084472656,
+    "baseline_rsi": 55.54299189898481,
+    "mcap_cr": 764.6714485270992,
+    "exchange": "NSE"
+  },
+  "UNICHEMLAB": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 540.2999877929688,
+    "day_low": 495.95001220703125,
+    "baseline_rsi": 56.9144684317487,
+    "mcap_cr": 3773.7482,
+    "exchange": "NSE"
+  },
+  "SAKSOFT": {
+    "result_date": "2026-11-04T00:00:00",
+    "day_high": 138.8000030517578,
+    "day_low": 128.60000610351562,
+    "baseline_rsi": 47.10120601501403,
+    "mcap_cr": 1750.8074695334885,
+    "exchange": "NSE"
   }
 }

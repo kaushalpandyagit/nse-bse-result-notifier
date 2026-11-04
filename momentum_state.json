@@ -1232,7 +1232,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 21.1,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-04T08:30:35.034793",
+      "rectangle_bounce_last_price": 6444.5
     },
     "ANANTRAJ": {
       "sma50": 564.6990002441406,
@@ -8954,7 +8958,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 44.5,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "ema50_pullback_last_alert": "2026-11-04T08:32:52.736359",
+      "ema50_pullback_last_price": 1083.4000244140625
     },
     "HONASA": {
       "sma50": 463.3229968261719,
@@ -10668,10 +10676,11 @@
       "rs_rank": 69.1,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-04T06:19:19.625340",
-      "near_high_17_22_last_price": 249.7899932861328
+      "near_high_17_22_last_alert": "2026-11-04T08:33:22.031907",
+      "near_high_17_22_last_price": 253.5
     },
     "JKPAPER": {
       "sma50": 393.7279986572266,
@@ -11308,10 +11317,13 @@
       "rs_rank": 15.5,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-04T03:50:31.416564",
-      "resistance_last_price": 190.0
+      "resistance_last_price": 190.0,
+      "vol_breakout_last_alert": "2026-11-04T08:33:34.142953",
+      "vol_breakout_last_price": 188.10000610351562
     },
     "JYOTICNC": {
       "sma50": 1002.4770031738282,
@@ -18327,10 +18339,13 @@
       "rs_rank": 86.8,
       "session_date": "2026-11-04",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-04T03:51:49.672082",
-      "near_high_17_22_last_price": 184.11000061035156
+      "near_high_17_22_last_price": 184.11000061035156,
+      "rectangle_bounce_last_alert": "2026-11-04T08:35:32.829302",
+      "rectangle_bounce_last_price": 186.32000732421875
     },
     "SHILCTECH": {
       "sma50": 3947.3679931640627,
@@ -21223,7 +21238,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 18.3,
       "session_date": "2026-11-04",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-04T08:36:20.945988",
+      "mtf_last_price": 461.04998779296875
     },
     "TRIDENT": {
       "sma50": 22.82319995880127,
