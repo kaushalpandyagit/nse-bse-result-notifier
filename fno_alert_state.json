@@ -137,7 +137,7 @@
     "trigger_date": "2026-10-23",
     "ref_high": 3.01,
     "ref_low": 2.75,
-    "status": "Active"
+    "status": "Expired"
   },
   "SILGO": {
     "trigger_date": "2026-10-23",
@@ -523,7 +523,13 @@
     "trigger_date": "2026-11-02",
     "ref_high": 109.99,
     "ref_low": 95.31,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-04T03:46:09.551474",
+    "fno_low_breach_last_price": 96.58000183105469
   },
   "KRSNAA": {
     "trigger_date": "2026-11-02",
@@ -581,7 +587,13 @@
     "trigger_date": "2026-11-03",
     "ref_high": 279.99,
     "ref_low": 252.03,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-04T03:46:11.955128",
+    "fno_low_breach_last_price": 252.5
   },
   "GAYAHWS": {
     "trigger_date": "2026-11-03",
@@ -641,6 +653,12 @@
     "trigger_date": "2026-11-03",
     "ref_high": 43.99,
     "ref_low": 42.46,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-04",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-04T03:46:18.656098",
+    "fno_high_breach_last_price": 42.86000061035156
   }
 }
