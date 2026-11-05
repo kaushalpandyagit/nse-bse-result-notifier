@@ -3960,7 +3960,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 33.6,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T06:46:42.977299",
+      "mtf_last_price": 365.3999938964844
     },
     "CEMPRO": {
       "sma50": 1229.322001953125,
@@ -4296,7 +4300,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 66.4,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T06:46:47.373424",
+      "rectangle_bounce_last_price": 830.7999877929688
     },
     "CHAMBLFERT": {
       "sma50": 399.9689990234375,
@@ -9416,7 +9424,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 22.2,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T06:47:43.978557",
+      "rectangle_bounce_last_price": 1156.0999755859375
     },
     "INDGN": {
       "sma50": 593.25,

@@ -5934,5 +5934,37 @@
     "baseline_rsi": 35.22740055042388,
     "mcap_cr": 400.6249459322714,
     "exchange": "NSE"
+  },
+  "SETL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 422.0,
+    "day_low": 398.1000061035156,
+    "baseline_rsi": 59.5069704292769,
+    "mcap_cr": 8140.2570243899045,
+    "exchange": "NSE"
+  },
+  "RELCHEMQ": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 131.64999389648438,
+    "day_low": 111.94999694824219,
+    "baseline_rsi": 72.68453863907251,
+    "mcap_cr": 98.066319,
+    "exchange": "NSE"
+  },
+  "REPL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 62.70000076293945,
+    "day_low": 60.099998474121094,
+    "baseline_rsi": 48.83472902791435,
+    "mcap_cr": 110.54725,
+    "exchange": "NSE"
+  },
+  "EMUDHRA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 390.0,
+    "day_low": 363.1000061035156,
+    "baseline_rsi": 37.62548961047404,
+    "mcap_cr": 3148.8422101981932,
+    "exchange": "NSE"
   }
 }
