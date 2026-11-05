@@ -2137,7 +2137,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 48.9,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T09:47:03.025353",
+      "rectangle_bounce_last_price": 523.0999755859375
     },
     "AWL": {
       "sma50": 182.4911996459961,
@@ -2844,7 +2848,13 @@
       "dtl_touches": null,
       "dtl_floor": 1668.0999755859375,
       "dtl_floor_touches": 3,
-      "rs_rank": 70.9
+      "rs_rank": 70.9,
+      "session_date": "2026-11-05",
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-05T09:47:18.109985",
+      "near_high_17_22_last_price": 1979.9000244140625
     },
     "BIRET": {
       "sma50": 330.5456018066406,
@@ -4214,10 +4224,13 @@
       "rs_rank": 44.2,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-05T04:02:39.256515",
-      "mtf_last_price": 4946.60009765625
+      "mtf_last_price": 4946.60009765625,
+      "vol_breakout_last_alert": "2026-11-05T09:47:42.655873",
+      "vol_breakout_last_price": 4802.7001953125
     },
     "CESC": {
       "sma50": 138.35079986572265,
@@ -5114,7 +5127,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 69.0,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T09:47:58.800653",
+      "rectangle_bounce_last_price": 218.60000610351562
     },
     "CYIENT": {
       "sma50": 1117.856004638672,

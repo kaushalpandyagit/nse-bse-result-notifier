@@ -495,7 +495,13 @@
     "trigger_date": "2026-10-30",
     "ref_high": 796.15,
     "ref_low": 731.7,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-05",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-05T09:46:14.087621",
+    "fno_low_breach_last_price": 730.7000122070312
   },
   "DYNPRO": {
     "trigger_date": "2026-10-30",

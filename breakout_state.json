@@ -6443,5 +6443,21 @@
     "baseline_rsi": 56.972360384822835,
     "mcap_cr": 224.27139330254516,
     "exchange": "NSE"
+  },
+  "THEINVEST": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 91.80000305175781,
+    "day_low": 87.0199966430664,
+    "baseline_rsi": 49.724105472057,
+    "mcap_cr": 466.41850699877625,
+    "exchange": "NSE"
+  },
+  "NBCC": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 81.1500015258789,
+    "day_low": 77.5,
+    "baseline_rsi": 60.36274873621461,
+    "mcap_cr": 21756.600494384766,
+    "exchange": "NSE"
   }
 }
