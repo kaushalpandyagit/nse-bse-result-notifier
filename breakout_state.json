@@ -260,11 +260,12 @@
     "spread_last_price": 6.54073487769333
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-11-05T04:36:35.337521",
-    "spread_last_price": 3.2902987109368813,
+    "spread_last_alert": "2026-11-05T09:11:08.350494",
+    "spread_last_price": 2.921407692194835,
     "session_date": "2026-11-05",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALAMINES": {
@@ -6329,6 +6330,22 @@
     "day_low": 868.4500122070312,
     "baseline_rsi": 54.057346380676414,
     "mcap_cr": 1774.7330006634522,
+    "exchange": "NSE"
+  },
+  "KIRIINDUS": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 539.0,
+    "day_low": 485.1499938964844,
+    "baseline_rsi": 41.34385411154087,
+    "mcap_cr": 3161.6254802246094,
+    "exchange": "NSE"
+  },
+  "JINDWORLD": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 41.45000076293945,
+    "day_low": 39.119998931884766,
+    "baseline_rsi": 51.25927459416524,
+    "mcap_cr": 4072.5692169105528,
     "exchange": "NSE"
   }
 }

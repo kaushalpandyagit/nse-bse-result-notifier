@@ -342,10 +342,11 @@
       "rs_rank": 9.3,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-05T05:30:10.559470",
-      "mtf_last_price": 76.08000183105469
+      "mtf_last_alert": "2026-11-05T09:01:54.524390",
+      "mtf_last_price": 77.05000305175781
     },
     "ABREL": {
       "sma50": 1183.9580029296876,
@@ -1181,7 +1182,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 16.6,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-05T09:02:14.345936",
+      "mtf_last_price": 6596.0
     },
     "ANANTRAJ": {
       "sma50": 562.3680004882813,
@@ -2532,10 +2537,11 @@
       "rs_rank": 54.3,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-05T03:50:11.993848",
-      "mtf_last_price": 626.0
+      "mtf_last_alert": "2026-11-05T09:02:42.811396",
+      "mtf_last_price": 619.7000122070312
     },
     "BANDHANBNK": {
       "sma50": 167.57559967041016,
@@ -8056,7 +8062,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 72.2,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-05T09:04:45.186522",
+      "liquidity_sweep_last_price": 795.4000244140625
     },
     "GRAPHITE": {
       "sma50": 768.8649975585937,
@@ -12079,7 +12089,13 @@
       "dtl_touches": null,
       "dtl_floor": 338.75,
       "dtl_floor_touches": 4,
-      "rs_rank": 72.6
+      "rs_rank": 72.6,
+      "session_date": "2026-11-05",
+      "alert_slots": [
+        "H2"
+      ],
+      "resistance_last_alert": "2026-11-05T09:06:15.420844",
+      "resistance_last_price": 407.3500061035156
     },
     "KRN": {
       "sma50": 1364.9559985351561,
@@ -12421,10 +12437,13 @@
       "rs_rank": 43.5,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-05T03:52:25.063382",
-      "near_high_17_22_last_price": 530.0
+      "near_high_17_22_last_price": 530.0,
+      "mtf_last_alert": "2026-11-05T09:06:23.837872",
+      "mtf_last_price": 533.9500122070312
     },
     "LLOYDSENGG": {
       "sma50": 88.44099975585938,
@@ -14046,10 +14065,13 @@
       "rs_rank": 19.6,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-05T03:52:47.102874",
-      "resistance_last_price": 27.030000686645508
+      "resistance_last_price": 27.030000686645508,
+      "mtf_last_alert": "2026-11-05T09:06:58.875602",
+      "mtf_last_price": 27.25
     },
     "NEULANDLAB": {
       "sma50": 21510.44,
