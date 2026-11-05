@@ -5854,5 +5854,21 @@
     "baseline_rsi": 63.69786060575191,
     "mcap_cr": 12925.170473365624,
     "exchange": "NSE"
+  },
+  "NHPC": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 83.52999877929688,
+    "day_low": 78.81999969482422,
+    "baseline_rsi": 67.7462425402517,
+    "mcap_cr": 80731.9474867362,
+    "exchange": "NSE"
+  },
+  "LGEINDIA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1743.0999755859375,
+    "day_low": 1700.0,
+    "baseline_rsi": 54.67985389839235,
+    "mcap_cr": 116463.77033367832,
+    "exchange": "NSE"
   }
 }

@@ -339,7 +339,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 9.3,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T05:30:10.559470",
+      "mtf_last_price": 76.08000183105469
     },
     "ABREL": {
       "sma50": 1183.9580029296876,
@@ -8753,7 +8757,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 44.4,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T05:31:58.817007",
+      "mtf_last_price": 1116.699951171875
     },
     "HONASA": {
       "sma50": 463.0139971923828,
@@ -20058,7 +20066,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 78.4,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-05T05:34:22.780267",
+      "near_high_17_22_last_price": 709.75
     },
     "TECHNOE": {
       "sma50": 953.282998046875,
