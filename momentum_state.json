@@ -3082,10 +3082,13 @@
       "rs_rank": 73.1,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-05T04:02:21.860563",
-      "mtf_last_price": 539.4500122070312
+      "mtf_last_price": 539.4500122070312,
+      "vol_breakout_last_alert": "2026-11-05T07:30:54.393299",
+      "vol_breakout_last_price": 577.0
     },
     "BLUESTONE": {
       "sma50": 797.0190014648438,
@@ -7407,10 +7410,11 @@
       "rs_rank": 54.7,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T05:18:16.590876",
-      "near_high_17_22_last_price": 1492.0
+      "near_high_17_22_last_alert": "2026-11-05T07:31:58.077180",
+      "near_high_17_22_last_price": 1476.5999755859375
     },
     "GILLETTE": {
       "sma50": 7214.01,
@@ -20276,10 +20280,11 @@
       "rs_rank": 78.4,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T05:34:22.780267",
-      "near_high_17_22_last_price": 709.75
+      "near_high_17_22_last_alert": "2026-11-05T07:35:08.138140",
+      "near_high_17_22_last_price": 700.25
     },
     "TECHNOE": {
       "sma50": 953.282998046875,
@@ -21934,7 +21939,9 @@
       "dtl_touches": null,
       "dtl_floor": 1285.199951171875,
       "dtl_floor_touches": 4,
-      "rs_rank": 80.2
+      "rs_rank": 80.2,
+      "session_date": "2026-11-05",
+      "alert_slots": []
     },
     "VIKRAMSOLR": {
       "sma50": 153.50100006103514,

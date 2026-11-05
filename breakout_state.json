@@ -6028,5 +6028,69 @@
     "baseline_rsi": 63.35173638496109,
     "mcap_cr": 4648.190447404688,
     "exchange": "NSE"
+  },
+  "CAMPUS": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 208.97999572753906,
+    "day_low": 202.8000030517578,
+    "baseline_rsi": 59.975869851745955,
+    "mcap_cr": 6332.1552339429045,
+    "exchange": "NSE"
+  },
+  "PVP": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 45.689998626708984,
+    "day_low": 44.18000030517578,
+    "baseline_rsi": 45.429191893095975,
+    "mcap_cr": 1178.8474758073346,
+    "exchange": "NSE"
+  },
+  "BHARATFORG": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1884.4000244140625,
+    "day_low": 1825.199951171875,
+    "baseline_rsi": 57.14797792562636,
+    "mcap_cr": 91816.32811842355,
+    "exchange": "NSE"
+  },
+  "BLUEJET": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 590.0,
+    "day_low": 533.2999877929688,
+    "baseline_rsi": 67.17910405163724,
+    "mcap_cr": 10182.4204475,
+    "exchange": "NSE"
+  },
+  "FERMENTA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 470.5,
+    "day_low": 406.0,
+    "baseline_rsi": 29.244678995723845,
+    "mcap_cr": 1195.0578016,
+    "exchange": "NSE"
+  },
+  "HTMEDIA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 26.920000076293945,
+    "day_low": 24.15999984741211,
+    "baseline_rsi": 59.30287253197153,
+    "mcap_cr": 587.5528978558407,
+    "exchange": "NSE"
+  },
+  "BLBLIMITED": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 16.219999313354492,
+    "day_low": 14.619999885559082,
+    "baseline_rsi": 36.80962138281129,
+    "mcap_cr": 78.29344931631451,
+    "exchange": "NSE"
+  },
+  "M&M": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 3111.699951171875,
+    "day_low": 2984.199951171875,
+    "baseline_rsi": 67.40742572655938,
+    "mcap_cr": 373533.130948217,
+    "exchange": "NSE"
   }
 }
