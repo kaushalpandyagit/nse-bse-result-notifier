@@ -5870,5 +5870,13 @@
     "baseline_rsi": 54.67985389839235,
     "mcap_cr": 116463.77033367832,
     "exchange": "NSE"
+  },
+  "GRINFRA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 809.7999877929688,
+    "day_low": 789.0,
+    "baseline_rsi": 51.439817396229486,
+    "mcap_cr": 7682.7860026,
+    "exchange": "NSE"
   }
 }

@@ -767,7 +767,13 @@
     "trigger_date": "2026-11-04",
     "ref_high": 805.4,
     "ref_low": 746.25,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-05",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-05T05:46:07.775172",
+    "fno_high_breach_last_price": 804.6500244140625
   },
   "BECTORFOOD": {
     "trigger_date": "2026-11-04",

@@ -2993,7 +2993,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 17.0,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T05:46:46.302764",
+      "mtf_last_price": 226.63999938964844
     },
     "BLUEJET": {
       "sma50": 545.6709973144531,
@@ -13007,7 +13011,9 @@
       "dtl_touches": null,
       "dtl_floor": 511.6000061035156,
       "dtl_floor_touches": 4,
-      "rs_rank": 77.4
+      "rs_rank": 77.4,
+      "session_date": "2026-11-05",
+      "alert_slots": []
     },
     "MGL": {
       "sma50": 1063.2740051269532,
@@ -17076,7 +17082,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 31.5,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T05:49:42.495339",
+      "rectangle_bounce_last_price": 1268.9000244140625
     },
     "SAGILITY": {
       "sma50": 44.64000022888184,
