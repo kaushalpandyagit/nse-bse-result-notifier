@@ -6403,5 +6403,45 @@
     "baseline_rsi": 38.9890941604962,
     "mcap_cr": 11889.8301015,
     "exchange": "NSE"
+  },
+  "MOTHERSON": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 169.49000549316406,
+    "day_low": 160.5,
+    "baseline_rsi": 62.437032726435696,
+    "mcap_cr": 177935.67744570077,
+    "exchange": "NSE"
+  },
+  "KOLTEPATIL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 484.3500061035156,
+    "day_low": 465.6000061035156,
+    "baseline_rsi": 59.2593687204443,
+    "mcap_cr": 4157.322698467932,
+    "exchange": "NSE"
+  },
+  "APOLLOPIPE": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 522.5,
+    "day_low": 494.5,
+    "baseline_rsi": 48.519527538379215,
+    "mcap_cr": 2358.2134751817384,
+    "exchange": "NSE"
+  },
+  "VSTTILLERS": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 4128.89990234375,
+    "day_low": 3882.199951171875,
+    "baseline_rsi": 43.8616529223945,
+    "mcap_cr": 3433.8454249,
+    "exchange": "NSE"
+  },
+  "KHADIM": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 128.5,
+    "day_low": 117.3499984741211,
+    "baseline_rsi": 56.972360384822835,
+    "mcap_cr": 224.27139330254516,
+    "exchange": "NSE"
   }
 }

@@ -989,10 +989,11 @@
       "rs_rank": 74.1,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-05T04:01:46.677278",
-      "resistance_last_price": 1634.0
+      "resistance_last_alert": "2026-11-05T09:31:02.487252",
+      "resistance_last_price": 1616.0999755859375
     },
     "AIAENG": {
       "sma50": 3867.7479931640623,
@@ -7503,10 +7504,13 @@
       "rs_rank": 50.9,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-05T03:51:18.399187",
-      "mtf_last_price": 7573.0
+      "mtf_last_price": 7573.0,
+      "resistance_last_alert": "2026-11-05T09:33:47.923490",
+      "resistance_last_price": 7418.5
     },
     "GMDCLTD": {
       "sma50": 507.9020013427734,
@@ -9401,7 +9405,10 @@
       "dtl_floor_touches": 1,
       "rs_rank": 88.1,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "dtl_bo_sent": true
     },
     "IIFLCAPS": {
       "sma50": 342.96000122070313,
@@ -15981,7 +15988,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 46.3,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "ema50_pullback_last_alert": "2026-11-05T09:37:34.523422",
+      "ema50_pullback_last_price": 206.10000610351562
     },
     "PVRINOX": {
       "sma50": 1315.63,
@@ -17915,7 +17926,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 35.8,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-05T09:38:22.331906",
+      "vol_breakout_last_price": 263.67999267578125
     },
     "SENCO": {
       "sma50": 334.2969989013672,
@@ -19892,10 +19907,11 @@
       "rs_rank": 41.2,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-05T03:54:09.664270",
-      "resistance_last_price": 419.79998779296875
+      "resistance_last_alert": "2026-11-05T09:39:14.261549",
+      "resistance_last_price": 414.1000061035156
     },
     "SYRMA": {
       "sma50": 1599.0260009765625,
@@ -22476,10 +22492,11 @@
       "rs_rank": 84.5,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T03:54:44.327988",
-      "near_high_17_22_last_price": 1889.5
+      "near_high_17_22_last_alert": "2026-11-05T09:40:22.017744",
+      "near_high_17_22_last_price": 1863.800048828125
     },
     "WAKEFIT": {
       "sma50": 141.7501998901367,
