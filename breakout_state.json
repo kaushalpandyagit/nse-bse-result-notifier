@@ -6515,5 +6515,29 @@
     "baseline_rsi": 52.85302854070034,
     "mcap_cr": 12346.260182962647,
     "exchange": "NSE"
+  },
+  "SHANKESH": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 96.25,
+    "day_low": 89.06999969482422,
+    "baseline_rsi": 46.02163784330139,
+    "mcap_cr": 1335.6333654354858,
+    "exchange": "NSE"
+  },
+  "JYOTIRES": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 914.0,
+    "day_low": 870.0,
+    "baseline_rsi": 61.532569126227465,
+    "mcap_cr": 1061.4315296,
+    "exchange": "NSE"
+  },
+  "KMSUGAR": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 34.349998474121094,
+    "day_low": 32.04999923706055,
+    "baseline_rsi": 60.43987824823692,
+    "mcap_cr": 304.9805775881119,
+    "exchange": "NSE"
   }
 }
