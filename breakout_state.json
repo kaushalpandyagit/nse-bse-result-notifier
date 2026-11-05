@@ -6188,5 +6188,61 @@
     "baseline_rsi": 49.0794745396967,
     "mcap_cr": 248.93643398902293,
     "exchange": "NSE"
+  },
+  "IPCALAB": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 2012.0,
+    "day_low": 1891.199951171875,
+    "baseline_rsi": 51.292463606822935,
+    "mcap_cr": 49223.69113756988,
+    "exchange": "NSE"
+  },
+  "KOTARISUG": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 24.0,
+    "day_low": 23.549999237060547,
+    "baseline_rsi": 43.14110034414339,
+    "mcap_cr": 198.9325944,
+    "exchange": "NSE"
+  },
+  "BUILDPRO": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 195.0,
+    "day_low": 183.3000030517578,
+    "baseline_rsi": 37.15998556243521,
+    "mcap_cr": 2348.304641036316,
+    "exchange": "NSE"
+  },
+  "KSHINTL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1097.0,
+    "day_low": 1027.300048828125,
+    "baseline_rsi": 65.13762512613664,
+    "mcap_cr": 7290.51332,
+    "exchange": "NSE"
+  },
+  "BCONCEPTS": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 141.88999938964844,
+    "day_low": 135.50999450683594,
+    "baseline_rsi": 44.3677755700736,
+    "mcap_cr": 172.2499026,
+    "exchange": "NSE"
+  },
+  "GHCLTEXTIL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 130.99000549316406,
+    "day_low": 121.55000305175781,
+    "baseline_rsi": 56.19613618976475,
+    "mcap_cr": 1236.593266809253,
+    "exchange": "NSE"
+  },
+  "IRB": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 17.440000534057617,
+    "day_low": 17.0,
+    "baseline_rsi": 52.08127817449969,
+    "mcap_cr": 20822.47172355652,
+    "exchange": "NSE"
   }
 }
