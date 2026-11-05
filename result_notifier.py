@@ -172,6 +172,12 @@ SEEN_FILE = Path(__file__).parent / "seen_announcements.json"
 CATALYST_FILE = Path(__file__).parent / "company_catalyst_history.json"
 LOG_FILE = Path(__file__).parent / "notifier.log"
 
+# Stored inside seen_announcements.json: newest filing time read from each exchange.
+# None yet for an exchange = first read of its full list, which is recorded without alerts.
+WATERMARK_PREFIX = "__watermark__|"
+WATERMARK_OVERLAP = datetime.timedelta(minutes=60)  # re-read a little, in case filings appear late
+BSE_PDF_BASE = "https://www.bseindia.com/xml-data/corpfiling/AttachLive/"
+
 # ----------------------------------------------------------------------
 # LOGGING
 # ----------------------------------------------------------------------
@@ -249,8 +255,24 @@ def load_seen() -> set:
     return set()
 
 def save_seen(seen: set):
-    trimmed = list(seen)[-6000:]
-    SEEN_FILE.write_text(json.dumps(trimmed))
+    # A set has no order: keep watermarks and the last two days when trimming.
+    today = get_ist_now().date()
+    days = (today, today - datetime.timedelta(days=1))
+    recent = tuple(f"{d:%d-%b-%Y}"[:10] for d in days) + tuple(d.isoformat() for d in days)
+    ordered = sorted(seen, key=lambda x: (x.startswith(WATERMARK_PREFIX), x.endswith(recent)))
+    SEEN_FILE.write_text(json.dumps(ordered[-6000:]))
+
+def get_watermark(seen: set, source: str):
+    prefix = f"{WATERMARK_PREFIX}{source}|"
+    for entry in seen:
+        if entry.startswith(prefix):
+            return datetime.datetime.fromisoformat(entry[len(prefix):])
+    return None
+
+def set_watermark(seen: set, source: str, when: datetime.datetime):
+    prefix = f"{WATERMARK_PREFIX}{source}|"
+    seen.difference_update({x for x in seen if x.startswith(prefix)})
+    seen.add(f"{prefix}{when.isoformat()}")
 
 def load_catalyst_history() -> dict:
     if CATALYST_FILE.exists():
@@ -442,7 +464,8 @@ def get_market_cap_cr(symbol: str, exchange: str) -> float:
 # EXCHANGE CRAWLERS
 # ----------------------------------------------------------------------
 
-def fetch_nse_announcements() -> list:
+def fetch_nse_announcements() -> tuple:
+    """Returns (filings, ok). ok is False if any part of the read failed."""
     session = requests.Session()
     headers = get_browser_headers()
     try:
@@ -450,28 +473,38 @@ def fetch_nse_announcements() -> list:
         time.sleep(random.uniform(1.2, 2.0))
     except Exception as e:
         log.warning("NSE initialization failed: %s", e)
-        return []
+        return [], False
 
+    now_ist = get_ist_now()
+    params_dates = {
+        "from_date": (now_ist - datetime.timedelta(days=1)).strftime("%d-%m-%Y"),
+        "to_date": now_ist.strftime("%d-%m-%Y"),
+    }
     results = []
+    ok = True
     for idx in ["equities", "sme"]:
         try:
             resp = session.get(
-                f"https://www.nseindia.com/api/corporate-announcements?index={idx}",
+                "https://www.nseindia.com/api/corporate-announcements",
+                params={"index": idx, **params_dates},
                 headers={**headers, "Accept": "application/json"},
-                timeout=15,
+                timeout=40,
             )
             resp.raise_for_status()
             data = resp.json()
             if isinstance(data, str):
-                try:
-                    data = json.loads(data)
-                except Exception:
-                    continue
+                data = json.loads(data)
+            if not isinstance(data, list):
+                raise ValueError(f"unexpected reply: {str(data)[:80]}")
             if isinstance(data, list):
                 for item in data:
                     company = item.get("sm_name") or item.get("symbol", "")
                     subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}".strip()
                     date_str = item.get("an_dt") or item.get("attchmntFile", "") or ""
+                    try:
+                        ts = datetime.datetime.strptime(item.get("an_dt") or "", "%d-%b-%Y %H:%M:%S")
+                    except ValueError:
+                        ts = None
                     results.append({
                         "company": company,
                         "symbol": item.get("symbol", ""),
@@ -479,56 +512,82 @@ def fetch_nse_announcements() -> list:
                         "date": date_str,
                         "source": "NSE",
                         "link": item.get("attchmntFile", ""),
+                        "ts": ts,
                     })
         except Exception as e:
+            ok = False
             log.warning("NSE announcements unavailable for %s: %s", idx, e)
         time.sleep(random.uniform(1.0, 1.5))
-    return results
+    return results, ok
 
-def fetch_bse_announcements() -> list:
+def fetch_bse_announcements(since=None) -> tuple:
+    """Returns (filings, ok). Newest first, 50 per page; stops at filings older than `since`."""
     headers = {
         **get_browser_headers(),
-        "Accept": "application/json",
-        "Referer": "https://www.bseindia.com/corporates/ann.html",
+        "Accept": "application/json, text/plain, */*",
+        "Origin": "https://www.bseindia.com",
+        "Referer": "https://www.bseindia.com/",
     }
     now_ist = get_ist_now()
-    today = now_ist.strftime("%Y%m%d")
-    from_date = (now_ist - datetime.timedelta(days=2)).strftime("%Y%m%d")
-    url = (
-        "https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w"
-        f"?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P"
-        f"&strToDate={today}&strType=C&subcategory=-1"
-    )
-    try:
-        resp = requests.get(url, headers=headers, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception as e:
-        log.warning("BSE announcements unavailable: %s", e)
-        return []
-
-    if isinstance(data, str):
-        try:
-            data = json.loads(data)
-        except Exception:
-            return []
-    if not isinstance(data, dict) or "Table" not in data:
-        return []
-
     results = []
-    for item in data.get("Table", []):
-        company = item.get("SLONGNAME") or item.get("SCRIP_CD", "")
-        subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}".strip()
-        date_str = item.get("NEWS_DT") or item.get("DissemDT", "") or ""
-        results.append({
-            "company": company,
-            "symbol": str(item.get("SCRIP_CD", "")),
-            "subject": subject,
-            "date": date_str,
-            "source": "BSE",
-            "link": item.get("ATTACHMENTNAME", ""),
-        })
-    return results
+    # BSE answers {} to a date range across days when asked for all categories, so read one day at a time.
+    for day in (now_ist, now_ist - datetime.timedelta(days=1)):
+        ymd = day.strftime("%Y%m%d")
+        for page in range(1, 151):
+            try:
+                resp = requests.get(
+                    "https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w",
+                    params={"pageno": page, "strCat": -1, "strPrevDate": ymd, "strScrip": "",
+                            "strSearch": "P", "strToDate": ymd, "strType": "C", "subcategory": -1},
+                    headers=headers,
+                    timeout=25,
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                if isinstance(data, str) and not data.startswith("No Record"):
+                    data = json.loads(data)
+            except Exception as e:
+                log.warning("BSE announcements unavailable (%s page %d): %s", ymd, page, e)
+                return results, False
+            if isinstance(data, str):  # "No Record Found!" = nothing filed that day
+                break
+            if not isinstance(data, dict) or "Table" not in data:
+                log.warning("BSE announcements: unexpected reply for %s: %s", ymd, str(data)[:80])
+                return results, False
+
+            table = data.get("Table", [])
+            oldest = None
+            for item in table:
+                company = item.get("SLONGNAME") or item.get("SCRIP_CD", "")
+                subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}".strip()
+                date_str = item.get("NEWS_DT") or item.get("DissemDT", "") or ""
+                try:
+                    ts = datetime.datetime.fromisoformat(date_str[:19])
+                except ValueError:
+                    ts = None
+                if ts and (oldest is None or ts < oldest):
+                    oldest = ts
+                attachment = item.get("ATTACHMENTNAME") or ""
+                results.append({
+                    "company": company,
+                    "symbol": str(item.get("SCRIP_CD", "")),
+                    "subject": subject,
+                    "date": date_str,
+                    "source": "BSE",
+                    "link": BSE_PDF_BASE + attachment if attachment else "",
+                    "ts": ts,
+                })
+            if since and oldest and oldest < since - WATERMARK_OVERLAP:
+                return results, True
+            if len(table) < 50:
+                break
+            time.sleep(0.3)
+        else:
+            log.warning("BSE announcements: stopped at the page limit for %s.", ymd)
+        # Yesterday is needed only if the last read was before today started.
+        if since and (since - WATERMARK_OVERLAP).date() >= now_ist.date():
+            break
+    return results, True
 
 def fetch_nse_circulars() -> list:
     session = requests.Session()
@@ -572,9 +631,10 @@ def fetch_nse_circulars() -> list:
 # ----------------------------------------------------------------------
 
 def poll_once(seen: set) -> set:
-    nse_items = fetch_nse_announcements()
+    watermarks = {src: get_watermark(seen, src) for src in ("NSE", "BSE")}
+    nse_items, nse_ok = fetch_nse_announcements()
     time.sleep(random.uniform(1.0, 2.0))
-    bse_items = fetch_bse_announcements()
+    bse_items, bse_ok = fetch_bse_announcements(since=watermarks["BSE"])
     time.sleep(random.uniform(1.0, 2.0))
     nse_circulars = fetch_nse_circulars()
 
@@ -582,7 +642,11 @@ def poll_once(seen: set) -> set:
     log.info("Fetched %d raw filings (NSE: %d, BSE: %d, Circulars: %d).", 
              len(all_items), len(nse_items), len(bse_items), len(nse_circulars))
 
+    if not (nse_ok and bse_ok):
+        log.error("Feed problem this poll -- NSE ok: %s, BSE ok: %s.", nse_ok, bse_ok)
+
     new_alerts = []
+    first_read = {"NSE": 0, "BSE": 0}
     for item in all_items:
         if item.get("category") == "circular":
             fp = fingerprint(item["company"], item["subject"], item["date"])
@@ -596,9 +660,33 @@ def poll_once(seen: set) -> set:
         if not matches_watchlist(item["company"], item["symbol"]):
             continue
 
+        # Each poll now reads the full list, so skip what earlier polls already handled.
+        mark = watermarks[item["source"]]
+        if mark and item["ts"] and item["ts"] < mark - WATERMARK_OVERLAP:
+            continue
+        raw_fp = fingerprint(item["company"], item["subject"], item["date"])
+        if raw_fp in seen:
+            continue
+
         category = classify_announcement(item["subject"])
         if not category:
             continue
+
+        if mark is None:  # first read of this exchange: record, do not alert
+            seen.add(raw_fp)
+            first_read[item["source"]] += 1
+            if category == "result" and item["ts"]:
+                seen.add(f"{normalise_company(item['company'])}|RESULT|{item['ts'].date().isoformat()}")
+            continue
+
+        # A result filed on both exchanges alerts once.
+        if category == "result" and item["ts"]:
+            result_key = f"{normalise_company(item['company'])}|RESULT|{item['ts'].date().isoformat()}"
+            if result_key in seen:
+                seen.add(raw_fp)
+                continue
+            seen.add(result_key)
+        seen.add(raw_fp)
 
         if category == "meeting":
             subj_lower = item["subject"].lower()
@@ -616,13 +704,17 @@ def poll_once(seen: set) -> set:
             elif is_catalyst:
                 item["subject"] = "🔥 CATALYST: " + item["subject"]
 
-        fp = fingerprint(item["company"], item["subject"], item["date"])
-        if fp in seen:
-            continue
-
-        seen.add(fp)
+        seen.add(fingerprint(item["company"], item["subject"], item["date"]))  # subject may have a tag now
         item["category"] = category
         new_alerts.append(item)
+
+    for src, items, feed_ok in (("NSE", nse_items, nse_ok), ("BSE", bse_items, bse_ok)):
+        if first_read[src]:
+            log.info("%s first read: %d filings recorded without alerts.", src, first_read[src])
+        times = [i["ts"] for i in items if i.get("ts")]
+        if feed_ok:  # after a failed read the next poll looks back from the older time
+            newest = max(times, default=None) or watermarks[src] or get_ist_now().replace(tzinfo=None)
+            set_watermark(seen, src, newest)
 
     catalyst_history = load_catalyst_history()
     dirty_history = False
