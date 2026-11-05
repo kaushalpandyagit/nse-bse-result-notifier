@@ -3289,10 +3289,11 @@
       "rs_rank": 41.4,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-05T03:50:23.461349",
-      "mtf_last_price": 324.3999938964844
+      "mtf_last_alert": "2026-11-05T08:32:08.588928",
+      "mtf_last_price": 330.8500061035156
     },
     "CAMPUS": {
       "sma50": 207.53519958496094,
@@ -6333,7 +6334,10 @@
       "dtl_floor_touches": 5,
       "rs_rank": 34.3,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "dtl_bo_sent": true
     },
     "EMBDL": {
       "sma50": 56.1947998046875,
@@ -10022,7 +10026,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 21.6,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T08:35:17.808507",
+      "rectangle_bounce_last_price": 17.31999969482422
     },
     "IRCON": {
       "sma50": 108.89219985961914,
@@ -15431,7 +15439,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 62.1,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T08:37:49.948319",
+      "rectangle_bounce_last_price": 1106.0
     },
     "PNCINFRA": {
       "sma50": 152.2343992614746,
@@ -20889,10 +20901,12 @@
       "rs_rank": 50.2,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-05T04:07:08.565446",
-      "mtf_last_price": 179.22000122070312
+      "mtf_last_price": 179.22000122070312,
+      "dtl_bo_sent": true
     },
     "TIMKEN": {
       "sma50": 3056.7020068359375,
@@ -22143,10 +22157,13 @@
       "rs_rank": 68.1,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-05T04:35:57.487825",
-      "mtf_last_price": 232.35000610351562
+      "mtf_last_price": 232.35000610351562,
+      "near_high_17_22_last_alert": "2026-11-05T08:40:53.427975",
+      "near_high_17_22_last_price": 232.8000030517578
     },
     "VMART": {
       "sma50": 796.5120031738281,

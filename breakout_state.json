@@ -860,8 +860,12 @@
   },
   "etf_inav_alerts": {},
   "arb_PILANIINVS": {
-    "spread_last_alert": "2026-10-26T03:58:32.772576",
-    "spread_last_price": 2.8920766958302155
+    "spread_last_alert": "2026-11-05T08:41:47.223058",
+    "spread_last_price": 3.0093909580373,
+    "session_date": "2026-11-05",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "SSWL": {
     "result_date": "2026-10-23T00:00:00",
@@ -4357,9 +4361,9 @@
     "price_high_last_price": 2175.0
   },
   "arb_MAHSCOOTER": {
-    "spread_last_alert": "2026-11-03T07:51:16.075203",
-    "spread_last_price": 2.791095890410959,
-    "session_date": "2026-11-03",
+    "spread_last_alert": "2026-11-05T08:41:44.152830",
+    "spread_last_price": 3.462757322052267,
+    "session_date": "2026-11-05",
     "alert_slots": [
       "H2"
     ]
@@ -6243,6 +6247,30 @@
     "day_low": 17.0,
     "baseline_rsi": 52.08127817449969,
     "mcap_cr": 20822.47172355652,
+    "exchange": "NSE"
+  },
+  "SAREGAMA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 671.0,
+    "day_low": 613.4500122070312,
+    "baseline_rsi": 77.40880806778421,
+    "mcap_cr": 12080.010471374451,
+    "exchange": "NSE"
+  },
+  "BIRLACABLE": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 346.6000061035156,
+    "day_low": 320.25,
+    "baseline_rsi": 53.06303512512215,
+    "mcap_cr": 1039.8000183105469,
+    "exchange": "NSE"
+  },
+  "EMAMILTD": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 393.1499938964844,
+    "day_low": 375.29998779296875,
+    "baseline_rsi": 59.95528803414944,
+    "mcap_cr": 16781.72,
     "exchange": "NSE"
   }
 }
