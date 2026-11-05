@@ -9873,7 +9873,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 86.4,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T10:05:30.232777",
+      "rectangle_bounce_last_price": 1996.4000244140625
     },
     "INOXWIND": {
       "sma50": 69.0707997894287,

@@ -6459,5 +6459,21 @@
     "baseline_rsi": 60.36274873621461,
     "mcap_cr": 21756.600494384766,
     "exchange": "NSE"
+  },
+  "HEXATRADEX": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 155.5,
+    "day_low": 151.0,
+    "baseline_rsi": 53.36541314729306,
+    "mcap_cr": 857.9502699793456,
+    "exchange": "NSE"
+  },
+  "RITES": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 201.0,
+    "day_low": 195.47999572753906,
+    "baseline_rsi": 48.251199094210314,
+    "mcap_cr": 9467.8943478,
+    "exchange": "NSE"
   }
 }
