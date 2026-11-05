@@ -239,8 +239,20 @@ def send_telegram_message(text: str) -> bool:
         "disable_web_page_preview": True,
     }
     try:
-        requests.post(url, data=payload, timeout=15)
-        return True
+        resp = requests.post(url, data=payload, timeout=15)
+        if resp.status_code == 200:
+            return True
+        log.error("Telegram send failed [%s]: %s", resp.status_code, resp.text[:300])
+        # Bad HTML (e.g. a stray '&' or '<') makes Telegram reject the whole
+        # message with 400 "can't parse entities" -- retry as plain text.
+        if resp.status_code == 400 and "parse" in resp.text.lower():
+            payload.pop("parse_mode", None)
+            payload["text"] = re.sub(r"</?(b|i|u|s|code|pre)>", "", payload["text"])
+            resp = requests.post(url, data=payload, timeout=15)
+            if resp.status_code == 200:
+                return True
+            log.error("Telegram plain-text retry failed [%s]: %s", resp.status_code, resp.text[:300])
+        return False
     except Exception as e:
         log.error("Telegram send exception: %s", e)
         return False
@@ -311,6 +323,7 @@ def get_rs_and_sector_tag(symbol: str, c_rsi: float, momentum_state: dict) -> st
         sec_name = sector.replace(" ", "") if sector != "Unknown" else "BroadMarket"
         
     rsi_display = f"<b>{c_rsi:.1f}</b>" if c_rsi > sec_rsi else f"{c_rsi:.1f}"
+    sec_name = str(sec_name).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     return f"\n🎯 RS {rs_rank} | Stock RSI: {rsi_display} | {sec_name} RSI: {sec_rsi:.1f}"
 
 def get_earnings_tag(symbol: str) -> str:
@@ -1063,30 +1076,37 @@ def check_fno_three_day_breakouts(momentum_state: dict, fyers):
         rs_tag = get_rs_and_sector_tag(symbol, metrics.get("rsi"), momentum_state)
         ern_tag = get_earnings_tag(symbol)
         
+        safe_sym = symbol.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         if day_high > ref_high and alert_allowed(entry, "fno_high_breach", price):
-            record_alert(entry, "fno_high_breach", price)
-            entry["status"] = "Breached High"
-            updated = True
-            send_telegram_message(
-                f"🚀 <b>{symbol} — Unusual Volume High Breach!</b>\n"
+            sent = send_telegram_message(
+                f"🚀 <b>{safe_sym} — Unusual Volume High Breach!</b>\n"
                 f"• <b>Current Price:</b> ₹{price:.2f} (Today High: ₹{day_high:.2f})\n"
                 f"• <b>Signal Candle High:</b> ₹{ref_high:.2f} (from {trigger_date})\n"
                 f"• <b>Window:</b> Trading Day {trading_days_elapsed} of {MAX_TRADING_DAYS_WINDOW}\n"
                 f"📌 <i>Stock has broken above its unusual volume day high.</i>"
                 f"{rs_tag}{ern_tag}"
             )
+            if sent:
+                record_alert(entry, "fno_high_breach", price)
+                entry["status"] = "Breached High"
+                updated = True
+            else:
+                log.error("F&O high-breach alert for %s NOT delivered; will retry next run.", symbol)
         elif day_low < ref_low and alert_allowed(entry, "fno_low_breach", price):
-            record_alert(entry, "fno_low_breach", price)
-            entry["status"] = "Breached Low"
-            updated = True
-            send_telegram_message(
-                f"🔻 <b>{symbol} — Unusual Volume Low Breach!</b>\n"
+            sent = send_telegram_message(
+                f"🔻 <b>{safe_sym} — Unusual Volume Low Breach!</b>\n"
                 f"• <b>Current Price:</b> ₹{price:.2f} (Today Low: ₹{day_low:.2f})\n"
                 f"• <b>Signal Candle Low:</b> ₹{ref_low:.2f} (from {trigger_date})\n"
                 f"• <b>Window:</b> Trading Day {trading_days_elapsed} of {MAX_TRADING_DAYS_WINDOW}\n"
                 f"📌 <i>Stock has broken below its unusual volume day low.</i>"
                 f"{rs_tag}{ern_tag}"
             )
+            if sent:
+                record_alert(entry, "fno_low_breach", price)
+                entry["status"] = "Breached Low"
+                updated = True
+            else:
+                log.error("F&O low-breach alert for %s NOT delivered; will retry next run.", symbol)
             
     if updated:
         try:
