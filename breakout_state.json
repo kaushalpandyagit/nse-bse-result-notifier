@@ -6092,5 +6092,37 @@
     "baseline_rsi": 67.40742572655938,
     "mcap_cr": 373533.130948217,
     "exchange": "NSE"
+  },
+  "CLEANMAX": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1282.199951171875,
+    "day_low": 1247.0,
+    "baseline_rsi": 51.21113055433493,
+    "mcap_cr": 15018.2269472,
+    "exchange": "NSE"
+  },
+  "SHILPAMED": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 960.0,
+    "day_low": 874.2999877929688,
+    "baseline_rsi": 47.33662418850762,
+    "mcap_cr": 18097.185195732665,
+    "exchange": "NSE"
+  },
+  "HALDER": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 298.45001220703125,
+    "day_low": 278.04998779296875,
+    "baseline_rsi": 68.62643713214575,
+    "mcap_cr": 370.4076451167297,
+    "exchange": "NSE"
+  },
+  "MBEL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 292.70001220703125,
+    "day_low": 262.0,
+    "baseline_rsi": 57.90263075424548,
+    "mcap_cr": 1599.9284619318664,
+    "exchange": "NSE"
   }
 }

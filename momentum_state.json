@@ -441,7 +441,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 25.0,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T07:46:55.472880",
+      "rectangle_bounce_last_price": 894.6500244140625
     },
     "ACC": {
       "sma50": 1213.1959985351561,
@@ -3643,10 +3647,11 @@
       "rs_rank": 73.5,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T03:50:29.783019",
-      "near_high_17_22_last_price": 1106.800048828125
+      "near_high_17_22_last_alert": "2026-11-05T07:48:18.873984",
+      "near_high_17_22_last_price": 1090.4000244140625
     },
     "CARTRADE": {
       "sma50": 2900.2860009765627,
@@ -3899,10 +3904,13 @@
       "rs_rank": 68.3,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-05T03:50:32.643364",
-      "near_high_17_22_last_price": 3526.89990234375
+      "near_high_17_22_last_price": 3526.89990234375,
+      "zanger_last_alert": "2026-11-05T07:48:23.998961",
+      "zanger_last_price": 3495.10009765625
     },
     "CEIGALL": {
       "sma50": 373.45,
@@ -6414,7 +6422,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 89.9,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-05T07:49:29.985861",
+      "near_high_17_22_last_price": 167.11000061035156
     },
     "EMMVEE": {
       "sma50": 298.98399993896487,
@@ -6909,10 +6921,11 @@
       "rs_rank": 74.4,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T03:51:12.417454",
-      "near_high_17_22_last_price": 1198.699951171875
+      "near_high_17_22_last_alert": "2026-11-05T07:49:43.541512",
+      "near_high_17_22_last_price": 1184.800048828125
     },
     "FINPIPE": {
       "sma50": 151.67380004882813,
@@ -13270,10 +13283,11 @@
       "rs_rank": 57.3,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T03:52:35.827875",
-      "near_high_17_22_last_price": 392.5
+      "near_high_17_22_last_alert": "2026-11-05T07:52:29.551072",
+      "near_high_17_22_last_price": 387.70001220703125
     },
     "MINDACORP": {
       "sma50": 669.7269982910157,
@@ -16276,10 +16290,13 @@
       "rs_rank": 33.0,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-05T03:53:17.953067",
-      "mtf_last_price": 802.0999755859375
+      "mtf_last_price": 802.0999755859375,
+      "ema50_pullback_last_alert": "2026-11-05T07:53:51.057664",
+      "ema50_pullback_last_price": 800.8499755859375
     },
     "RATEGAIN": {
       "sma50": 850.2540051269531,
@@ -16717,7 +16734,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 61.2,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-05T07:54:04.280119",
+      "mtf_last_price": 228.0800018310547
     },
     "RENUKA": {
       "sma50": 22.20979995727539,
@@ -16813,7 +16834,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 38.4,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T07:54:07.276910",
+      "rectangle_bounce_last_price": 144.72000122070312
     },
     "RHIM": {
       "sma50": 369.41300109863283,
@@ -19582,10 +19607,13 @@
       "rs_rank": 20.9,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-05T04:35:16.782090",
-      "mtf_last_price": 216.5500030517578
+      "mtf_last_price": 216.5500030517578,
+      "rectangle_bounce_last_alert": "2026-11-05T07:55:18.831335",
+      "rectangle_bounce_last_price": 216.0
     },
     "SUVEN": {
       "sma50": 321.2140002441406,
