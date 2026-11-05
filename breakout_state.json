@@ -6347,5 +6347,61 @@
     "baseline_rsi": 51.25927459416524,
     "mcap_cr": 4072.5692169105528,
     "exchange": "NSE"
+  },
+  "UNOMINDA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1331.0,
+    "day_low": 1213.300048828125,
+    "baseline_rsi": 76.3044220046811,
+    "mcap_cr": 76473.9849102441,
+    "exchange": "NSE"
+  },
+  "BERGEPAINT": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 507.5,
+    "day_low": 494.45001220703125,
+    "baseline_rsi": 69.11496225238018,
+    "mcap_cr": 58305.96919071672,
+    "exchange": "NSE"
+  },
+  "GKWLIMITED": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1683.9000244140625,
+    "day_low": 1611.4000244140625,
+    "baseline_rsi": 66.32066677092712,
+    "mcap_cr": 984.4725,
+    "exchange": "NSE"
+  },
+  "PWL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 140.25,
+    "day_low": 131.89999389648438,
+    "baseline_rsi": 54.59981319311303,
+    "mcap_cr": 38973.308498577695,
+    "exchange": "NSE"
+  },
+  "SAATVIKGL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 378.6499938964844,
+    "day_low": 342.5,
+    "baseline_rsi": 37.52628056858158,
+    "mcap_cr": 4495.704146637476,
+    "exchange": "NSE"
+  },
+  "CEMPRO": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1414.300048828125,
+    "day_low": 1297.199951171875,
+    "baseline_rsi": 65.82641240080335,
+    "mcap_cr": 24897.100005,
+    "exchange": "NSE"
+  },
+  "SKFINDUS": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 2519.800048828125,
+    "day_low": 2376.0,
+    "baseline_rsi": 38.9890941604962,
+    "mcap_cr": 11889.8301015,
+    "exchange": "NSE"
   }
 }
