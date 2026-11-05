@@ -6595,5 +6595,29 @@
     "baseline_rsi": 65.59837800669999,
     "mcap_cr": 84929.99877929688,
     "exchange": "NSE"
+  },
+  "WINDLAS": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 930.0,
+    "day_low": 876.0,
+    "baseline_rsi": 47.16626032674014,
+    "mcap_cr": 1901.112596625,
+    "exchange": "NSE"
+  },
+  "STCINDIA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 107.9000015258789,
+    "day_low": 104.0,
+    "baseline_rsi": 51.79194105467427,
+    "mcap_cr": 628.8000183105469,
+    "exchange": "NSE"
+  },
+  "LUPIN": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1994.699951171875,
+    "day_low": 1944.0999755859375,
+    "baseline_rsi": 47.03431675931949,
+    "mcap_cr": 90909.2464336,
+    "exchange": "NSE"
   }
 }
