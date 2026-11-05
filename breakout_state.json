@@ -253,9 +253,9 @@
     "spread_last_price": 6.54073487769333
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-11-04T03:52:43.979265",
-    "spread_last_price": 2.8793676682767764,
-    "session_date": "2026-11-04",
+    "spread_last_alert": "2026-11-05T04:36:35.337521",
+    "spread_last_price": 3.2902987109368813,
+    "session_date": "2026-11-05",
     "alert_slots": [
       "H1"
     ]
@@ -345,8 +345,12 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-10-29T08:37:27.310846",
-    "spread_last_price": 2.6580810546875
+    "spread_last_alert": "2026-11-05T04:36:21.348147",
+    "spread_last_price": 10.261835719881615,
+    "session_date": "2026-11-05",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_AVL": {
     "spread_last_alert": "2026-10-23T09:10:19.136291",
