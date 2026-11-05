@@ -1457,7 +1457,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 14.2,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-05T05:16:39.112043",
+      "vol_breakout_last_price": 184.61000061035156
     },
     "ARE&M": {
       "sma50": 779.4840014648438,
@@ -7317,7 +7321,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 54.7,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-05T05:18:16.590876",
+      "near_high_17_22_last_price": 1492.0
     },
     "GILLETTE": {
       "sma50": 7214.01,
@@ -9615,7 +9623,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 50.6,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T05:18:55.287345",
+      "rectangle_bounce_last_price": 913.8499755859375
     },
     "INOXINDIA": {
       "sma50": 2051.343991699219,
@@ -16665,7 +16677,10 @@
       "dtl_floor_touches": 2,
       "rs_rank": 42.9,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "dtl_bo_sent": true
     },
     "RITES": {
       "sma50": 204.2868002319336,
@@ -17351,7 +17366,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 69.8,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T05:21:05.796604",
+      "mtf_last_price": 210.4600067138672
     },
     "SARDAEN": {
       "sma50": 489.86000061035156,
