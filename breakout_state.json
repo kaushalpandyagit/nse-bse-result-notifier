@@ -5878,5 +5878,29 @@
     "baseline_rsi": 51.439817396229486,
     "mcap_cr": 7682.7860026,
     "exchange": "NSE"
+  },
+  "UNIVCABLES": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1252.9000244140625,
+    "day_low": 1177.5,
+    "baseline_rsi": 33.72527078863054,
+    "mcap_cr": 4087.1158818,
+    "exchange": "NSE"
+  },
+  "CESC": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 135.1999969482422,
+    "day_low": 130.8300018310547,
+    "baseline_rsi": 47.817137621764054,
+    "mcap_cr": 17355.69266911322,
+    "exchange": "NSE"
+  },
+  "HESTERBIO": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 2548.0,
+    "day_low": 2275.0,
+    "baseline_rsi": 68.16713118891629,
+    "mcap_cr": 2112.2545795,
+    "exchange": "NSE"
   }
 }
