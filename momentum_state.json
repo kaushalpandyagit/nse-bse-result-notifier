@@ -10794,7 +10794,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 58.0,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-05T06:22:02.014766",
+      "resistance_last_price": 123.30000305175781
     },
     "JUBLFOOD": {
       "sma50": 455.81400024414063,
