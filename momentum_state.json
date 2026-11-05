@@ -9953,7 +9953,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 24.4,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T04:48:22.023819",
+      "mtf_last_price": 109.1500015258789
     },
     "ITI": {
       "sma50": 250.50280059814452,
@@ -10789,7 +10793,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 47.6,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T04:48:34.035866",
+      "mtf_last_price": 448.5
     },
     "JUBLINGREA": {
       "sma50": 636.7249987792969,
@@ -14839,7 +14847,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 59.5,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-05T04:49:26.231404",
+      "near_high_17_22_last_price": 299.79998779296875
     },
     "PGEL": {
       "sma50": 530.0550006103516,
@@ -15337,7 +15349,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 53.9,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T04:49:33.588012",
+      "mtf_last_price": 1623.300048828125
     },
     "POWERMECH": {
       "sma50": 2377.6319970703125,
@@ -20407,7 +20423,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 51.3,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T04:50:38.413615",
+      "rectangle_bounce_last_price": 96.19000244140625
     },
     "THYROCARE": {
       "sma50": 534.6029998779297,
