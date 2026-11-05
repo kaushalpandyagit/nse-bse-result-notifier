@@ -6619,5 +6619,13 @@
     "baseline_rsi": 47.03431675931949,
     "mcap_cr": 90909.2464336,
     "exchange": "NSE"
+  },
+  "TEAMLEASE": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1130.4000244140625,
+    "day_low": 1080.0,
+    "baseline_rsi": 45.98708973300205,
+    "mcap_cr": 1664.8404552326172,
+    "exchange": "NSE"
   }
 }
