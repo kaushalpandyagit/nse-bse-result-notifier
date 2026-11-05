@@ -3236,7 +3236,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 44.8,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T08:01:47.105135",
+      "rectangle_bounce_last_price": 568.4000244140625
     },
     "BSOFT": {
       "sma50": 293.3440002441406,
@@ -6817,10 +6821,11 @@
       "rs_rank": 67.9,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-05T03:51:09.856550",
-      "resistance_last_price": 160.6199951171875
+      "resistance_last_alert": "2026-11-05T08:02:25.344658",
+      "resistance_last_price": 162.30999755859375
     },
     "FIEMIND": {
       "sma50": 1900.0779956054687,
@@ -10465,10 +10470,11 @@
       "rs_rank": 28.7,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T03:51:58.900676",
-      "near_high_17_22_last_price": 92.7300033569336
+      "near_high_17_22_last_alert": "2026-11-05T08:03:05.465275",
+      "near_high_17_22_last_price": 91.80000305175781
     },
     "JBMA": {
       "sma50": 563.8719958496093,
@@ -12445,10 +12451,11 @@
       "rs_rank": 91.4,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T03:52:26.031793",
-      "near_high_17_22_last_price": 84.69999694824219
+      "near_high_17_22_last_alert": "2026-11-05T08:03:28.199632",
+      "near_high_17_22_last_price": 83.69999694824219
     },
     "LLOYDSENT": {
       "sma50": 70.40500007629394,
@@ -15109,10 +15116,13 @@
       "rs_rank": 62.5,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-05T03:53:02.748185",
-      "resistance_last_price": 544.5499877929688
+      "resistance_last_price": 544.5499877929688,
+      "mtf_last_alert": "2026-11-05T08:03:57.993507",
+      "mtf_last_price": 550.5
     },
     "PGHL": {
       "sma50": 5466.14,
@@ -17278,10 +17288,11 @@
       "rs_rank": 31.5,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "rectangle_bounce_last_alert": "2026-11-05T05:49:42.495339",
-      "rectangle_bounce_last_price": 1268.9000244140625
+      "rectangle_bounce_last_alert": "2026-11-05T08:04:21.341040",
+      "rectangle_bounce_last_price": 1255.0
     },
     "SAGILITY": {
       "sma50": 44.64000022888184,

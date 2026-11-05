@@ -6124,5 +6124,69 @@
     "baseline_rsi": 57.90263075424548,
     "mcap_cr": 1599.9284619318664,
     "exchange": "NSE"
+  },
+  "EMIL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 168.02999877929688,
+    "day_low": 158.9499969482422,
+    "baseline_rsi": 43.07236401451077,
+    "mcap_cr": 6249.858983860803,
+    "exchange": "NSE"
+  },
+  "IGARASHI": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 410.0,
+    "day_low": 386.20001220703125,
+    "baseline_rsi": 53.72756840122214,
+    "mcap_cr": 1241.5333067816894,
+    "exchange": "NSE"
+  },
+  "SUVEN": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 285.0,
+    "day_low": 267.45001220703125,
+    "baseline_rsi": 40.55098422305668,
+    "mcap_cr": 7616.476856204847,
+    "exchange": "NSE"
+  },
+  "SAMHI": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 167.6999969482422,
+    "day_low": 159.67999267578125,
+    "baseline_rsi": 64.49224128554759,
+    "mcap_cr": 3657.8166044,
+    "exchange": "NSE"
+  },
+  "LLOYDSME": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1823.9000244140625,
+    "day_low": 1788.4000244140625,
+    "baseline_rsi": 46.783255106298114,
+    "mcap_cr": 100960.725411,
+    "exchange": "NSE"
+  },
+  "TIINDIA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 2307.60009765625,
+    "day_low": 2227.10009765625,
+    "baseline_rsi": 51.484280463367796,
+    "mcap_cr": 44037.7028,
+    "exchange": "NSE"
+  },
+  "SANDHAR": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 498.25,
+    "day_low": 464.8500061035156,
+    "baseline_rsi": 36.86828666115146,
+    "mcap_cr": 2865.3248323642365,
+    "exchange": "NSE"
+  },
+  "PRITIKAUTO": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 15.489999771118164,
+    "day_low": 14.75,
+    "baseline_rsi": 49.0794745396967,
+    "mcap_cr": 248.93643398902293,
+    "exchange": "NSE"
   }
 }
