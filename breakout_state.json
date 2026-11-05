@@ -6539,5 +6539,61 @@
     "baseline_rsi": 60.43987824823692,
     "mcap_cr": 304.9805775881119,
     "exchange": "NSE"
+  },
+  "DPWIRES": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 188.0,
+    "day_low": 180.0500030517578,
+    "baseline_rsi": 50.49848793210164,
+    "mcap_cr": 287.02171870978395,
+    "exchange": "NSE"
+  },
+  "CEWATER": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 230.39999389648438,
+    "day_low": 224.50999450683594,
+    "baseline_rsi": 35.86495226121943,
+    "mcap_cr": 466.70005415,
+    "exchange": "NSE"
+  },
+  "SIGNATURE": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 758.7999877929688,
+    "day_low": 715.0,
+    "baseline_rsi": 54.256410220642266,
+    "mcap_cr": 10307.362038361744,
+    "exchange": "NSE"
+  },
+  "MAITHANALL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 850.0,
+    "day_low": 831.9500122070312,
+    "baseline_rsi": 47.17859694966438,
+    "mcap_cr": 2585.946647220154,
+    "exchange": "NSE"
+  },
+  "AADHARHFC": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 448.79998779296875,
+    "day_low": 434.25,
+    "baseline_rsi": 47.784705172058516,
+    "mcap_cr": 19212.580105525,
+    "exchange": "NSE"
+  },
+  "BHARTIARTL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 2084.0,
+    "day_low": 2048.0,
+    "baseline_rsi": 71.52632285747394,
+    "mcap_cr": 1283229.5224304644,
+    "exchange": "NSE"
+  },
+  "BHARTIHEXA": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1749.0,
+    "day_low": 1690.0,
+    "baseline_rsi": 65.59837800669999,
+    "mcap_cr": 84929.99877929688,
+    "exchange": "NSE"
   }
 }
