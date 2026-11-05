@@ -7073,7 +7073,9 @@
       "dtl_touches": null,
       "dtl_floor": 227.1999969482422,
       "dtl_floor_touches": 1,
-      "rs_rank": 81.7
+      "rs_rank": 81.7,
+      "session_date": "2026-11-05",
+      "alert_slots": []
     },
     "GABRIEL": {
       "sma50": 1377.732001953125,
@@ -9709,7 +9711,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 2.2,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T05:03:38.134865",
+      "mtf_last_price": 65.98999786376953
     },
     "INTELLECT": {
       "sma50": 629.1209997558594,
@@ -20329,7 +20335,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 70.3,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-05T05:05:59.483015",
+      "rectangle_bounce_last_price": 4436.10009765625
     },
     "THELEELA": {
       "sma50": 574.5940026855469,
@@ -21709,7 +21719,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 2.8,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-05T05:06:17.195737",
+      "mtf_last_price": 142.74000549316406
     },
     "VIPIND": {
       "sma50": 284.9230010986328,
