@@ -337,10 +337,12 @@
     "spread_last_price": 3.540900734982766
   },
   "arb_AEROFLEX": {
-    "spread_last_alert": "2026-10-29T03:59:33.505515",
-    "spread_last_price": 2.6345350808058403,
+    "spread_last_alert": "2026-11-05T04:21:50.600772",
+    "spread_last_price": 2.5294673086185404,
     "session_date": "2026-11-05",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_SILINV": {
     "spread_last_alert": "2026-10-29T08:37:27.310846",
