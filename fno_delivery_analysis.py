@@ -134,72 +134,100 @@ def get_session():
     return session
 
 def get_fno_strike_levels(symbol="NIFTY"):
-    api_url = f"https://www.nseindia.com/api/option-chain-indices?symbol={symbol}"
-    
+    """Nearest-expiry option chain via NSE's v3 API.
+
+    NSE retired /api/option-chain-indices (now a permanent 404). The current
+    flow is: /api/option-chain-contract-info -> expiry list, then
+    /api/option-chain-v3?type=Indices&symbol=..&expiry=DD-Mon-YYYY.
+    """
+    base = "https://www.nseindia.com"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "application/json, text/javascript, */*; q=0.01",
         "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "X-Requested-With": "XMLHttpRequest",
-        "Referer": "https://www.nseindia.com/option-chain",
-        "Connection": "keep-alive",
-        "Sec-Fetch-Dest": "empty",
-        "Sec-Fetch-Mode": "cors",
-        "Sec-Fetch-Site": "same-origin"
+        "Referer": f"{base}/option-chain",
     }
-    
+
+    def get_json(session, url):
+        last = None
+        for attempt in range(3):
+            try:
+                r = session.get(url, headers=headers, timeout=15)
+                last = r.status_code
+                if r.status_code == 200 and r.text.strip().startswith("{"):
+                    return r.json(), None
+            except Exception as e:
+                last = str(e)[:40]
+            time.sleep(2 + attempt * 2)
+        return None, last
+
     session = requests.Session()
     try:
-        session.get("https://www.nseindia.com", headers=headers, timeout=10)
-        time.sleep(1)
-        session.get("https://www.nseindia.com/option-chain", headers=headers, timeout=10)
-        time.sleep(1.5)
-        
-        response = session.get(api_url, headers=headers, timeout=15)
-        
-        if response.status_code == 404:
-            return {"error": "NSE Option Chain Offline (Late-Night Maintenance Routine)"}
-        elif response.status_code != 200:
-            return {"error": f"Blocked by NSE Firewall (Status: {response.status_code})"}
-            
-        data = response.json().get("records")
-        if not data:
-            return {"error": "NSE returned empty data."}
-            
-        underlying_price = data["underlyingValue"]
-        active_expiry = data["expiryDates"][0]
+        for warm in (base, f"{base}/option-chain"):
+            try:
+                session.get(warm, headers=headers, timeout=10)
+            except Exception:
+                pass
+            time.sleep(1)
 
+        info, err = get_json(session, f"{base}/api/option-chain-contract-info?symbol={symbol}")
+        if not info or not info.get("expiryDates"):
+            return {"error": f"NSE expiry list unavailable (status: {err})"}
+        expiries = info["expiryDates"]
+        active_expiry = expiries[0]
+
+        chain, err = get_json(session, f"{base}/api/option-chain-v3?type=Indices&symbol={symbol}&expiry={active_expiry}")
+        data = (chain or {}).get("records") or {}
+        if not data.get("data"):
+            return {"error": f"NSE option chain empty / blocked (status: {err})"}
+
+        underlying_price = float(data.get("underlyingValue") or 0)
         rows = []
         for item in data["data"]:
-            if item.get("expiryDate") != active_expiry:
-                continue
-            strike = item["strikePrice"]
-            ce_oi = item.get("CE", {}).get("openInterest", 0)
-            ce_chg = item.get("CE", {}).get("changeinOpenInterest", 0)
-            pe_oi = item.get("PE", {}).get("openInterest", 0)
-            pe_chg = item.get("PE", {}).get("changeinOpenInterest", 0)
-            
+            ce, pe = item.get("CE") or {}, item.get("PE") or {}
             rows.append({
-                "strike": strike, "ce_oi": ce_oi, "ce_chg": ce_chg,
-                "pe_oi": pe_oi, "pe_chg": pe_chg,
+                "strike": float(item["strikePrice"]),
+                "ce_oi": ce.get("openInterest", 0) or 0, "ce_chg": ce.get("changeinOpenInterest", 0) or 0,
+                "pe_oi": pe.get("openInterest", 0) or 0, "pe_chg": pe.get("changeinOpenInterest", 0) or 0,
             })
-
         df = pd.DataFrame(rows)
         if df.empty:
             return {"error": "Failed to parse strike rows."}
 
+        # Deep ITM strikes carry stale OI and distort walls; look at +/-8% of spot.
+        near = df[(df["strike"] >= underlying_price * 0.92) & (df["strike"] <= underlying_price * 1.08)] if underlying_price else df
+        if near.empty:
+            near = df
+        # "Fresh" walls are about the next session -- only consider strikes within +/-3% of spot.
+        close = near[(near["strike"] >= underlying_price * 0.97) & (near["strike"] <= underlying_price * 1.03)] if underlying_price else near
+        if close.empty:
+            close = near
+
+        total_ce, total_pe = df["ce_oi"].sum(), df["pe_oi"].sum()
+        pcr = round(total_pe / total_ce, 2) if total_ce else None
+
+        # Max pain: strike where total option-writer payout is lowest.
+        strikes = df["strike"].values
+        pain = [((k - df["strike"]).clip(lower=0) * df["ce_oi"]).sum() + ((df["strike"] - k).clip(lower=0) * df["pe_oi"]).sum() for k in strikes]
+        max_pain = float(strikes[int(pd.Series(pain).idxmin())])
+
+        def fmt(x):
+            return int(x) if float(x).is_integer() else x
+
         return {
             "Underlying": underlying_price,
             "Expiry": active_expiry,
-            "Max_Call_Wall": df.loc[df["ce_oi"].idxmax()]["strike"],
-            "Day_Fresh_Call_Resistance": df.loc[df["ce_chg"].idxmax()]["strike"],
-            "Key_Put_Support": df.loc[df["pe_oi"].idxmax()]["strike"],
-            "Day_Fresh_Put_Add": df.loc[df["pe_chg"].idxmax()]["strike"],
-            "error": None
+            "Expiries": expiries,
+            "Max_Call_Wall": fmt(near.loc[near["ce_oi"].idxmax()]["strike"]),
+            "Day_Fresh_Call_Resistance": fmt(close.loc[close["ce_chg"].idxmax()]["strike"]),
+            "Key_Put_Support": fmt(near.loc[near["pe_oi"].idxmax()]["strike"]),
+            "Day_Fresh_Put_Add": fmt(close.loc[close["pe_chg"].idxmax()]["strike"]),
+            "PCR": pcr,
+            "Max_Pain": fmt(max_pain),
+            "error": None,
         }
     except Exception as e:
-        return {"error": f"Exception: {str(e)[:40]}"}
+        return {"error": f"Exception: {str(e)[:60]}"}
 
 def fetch_bulk_block_deals(session) -> tuple:
     symbols = set()
@@ -635,27 +663,33 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
     smart_net = calc_net(smart_money)
     retail_net = calc_net(retail)
 
-    prev_state = {}
+    # State keeps one snapshot per trading date. The 1-day change is always
+    # measured against the latest snapshot from an EARLIER date, so re-running
+    # the report several times on the same evening no longer yields +0.
+    history = {}
     if PARTICIPANT_STATE_FILE.exists():
         try:
-            prev_state = json.loads(PARTICIPANT_STATE_FILE.read_text())
+            raw = json.loads(PARTICIPANT_STATE_FILE.read_text())
+            if "history" in raw:
+                history = raw["history"]
+            elif "date" in raw and "smart_net" in raw:  # legacy single-snapshot format
+                history = {raw["date"]: {"smart_net": raw["smart_net"], "retail_net": raw["retail_net"]}}
         except Exception:
             pass
 
-    smart_delta = None
-    retail_delta = None
+    today_key = date.isoformat()
+    earlier = sorted(d for d in history if d < today_key)
+    prev_date = earlier[-1] if earlier else None
+    smart_delta = retail_delta = None
+    if prev_date:
+        prev = history[prev_date]
+        smart_delta = {k: smart_net[k] - prev["smart_net"].get(k, 0) for k in smart_net}
+        retail_delta = {k: retail_net[k] - prev["retail_net"].get(k, 0) for k in retail_net}
 
-    if "smart_net" in prev_state and "retail_net" in prev_state:
-        smart_delta = {k: smart_net[k] - prev_state["smart_net"].get(k, 0) for k in smart_net}
-        retail_delta = {k: retail_net[k] - prev_state["retail_net"].get(k, 0) for k in retail_net}
-
-    current_state_payload = {
-        "date": date.isoformat(),
-        "smart_net": smart_net,
-        "retail_net": retail_net
-    }
+    history[today_key] = {"smart_net": smart_net, "retail_net": retail_net}
+    history = {d: history[d] for d in sorted(history)[-10:]}
     try:
-        PARTICIPANT_STATE_FILE.write_text(json.dumps(current_state_payload))
+        PARTICIPANT_STATE_FILE.write_text(json.dumps({"history": history}, indent=1))
     except Exception as e:
         log.warning("Could not persist participant state: %s", e)
 
@@ -691,17 +725,27 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
         elif smart_delta["net_put"] < -10000:
             delta_commentary.append("• <b>Smart Money BOOKED Put Profits</b>: Downside hedges trimmed.")
 
+    oc_levels = get_fno_strike_levels("NIFTY")
+
     next_day = date + datetime.timedelta(days=1)
-    while next_day.weekday() >= 5: 
+    while next_day.weekday() >= 5:
         next_day += datetime.timedelta(days=1)
-        
-    is_tuesday = (next_day.weekday() == 1)
-    is_last_tuesday = False
-    
-    if is_tuesday:
-        next_week = next_day + datetime.timedelta(days=7)
-        if next_week.month != next_day.month:
-            is_last_tuesday = True
+
+    # Prefer NSE's actual expiry calendar (handles holiday-shifted expiries);
+    # fall back to the Tuesday rule if the option chain could not be fetched.
+    nse_expiries = []
+    for e in (oc_levels or {}).get("Expiries") or []:
+        try:
+            nse_expiries.append(datetime.datetime.strptime(e, "%d-%b-%Y").date())
+        except Exception:
+            pass
+    if nse_expiries:
+        is_tuesday = next_day in nse_expiries
+        later_same_month = [e for e in nse_expiries if e > next_day and e.month == next_day.month]
+        is_last_tuesday = is_tuesday and not later_same_month
+    else:
+        is_tuesday = (next_day.weekday() == 1)
+        is_last_tuesday = is_tuesday and (next_day + datetime.timedelta(days=7)).month != next_day.month
 
     expiry_pred = ""
     idx_name = ""
@@ -733,14 +777,17 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
             expiry_pred = "⚖ No extreme option writing detected by Smart Money."
 
     def format_oi_line(label, net, delta_dict, key):
-        delta = delta_dict[key] if delta_dict else 0
-        
         if net <= -200000: net_desc = "Heavily Short"
         elif net <= -50000: net_desc = "Net Short"
         elif net >= 200000: net_desc = "Heavily Long"
         elif net >= 50000: net_desc = "Net Long"
         else: net_desc = "Neutral / Flat"
-        
+        if not delta_dict:
+            return f" • <b>{label}:</b> {net:,} (<i>{net_desc}</i>) | <i>1-day change n/a (no prior day saved)</i>"
+        delta = delta_dict[key]
+        if delta == 0:
+            return f" • <b>{label}:</b> {net:,} (<i>{net_desc}</i>) | +0 (<i>No change</i>)"
+
         abs_change = abs(delta)
         if abs_change >= 100000: intensity = "Aggressive"
         elif abs_change >= 40000: intensity = "Heavy"
@@ -754,11 +801,10 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
             
         return f" • <b>{label}:</b> {net:,} (<i>{net_desc}</i>) | {delta:+,} (<i>{flow_desc}</i>)"
 
-    oc_levels = get_fno_strike_levels("NIFTY")
-
     lines = [
         "🧠 <b>SMART vs DUMB MONEY (Derivatives)</b>",
-        "<i>Net Contract Positions (FII + PRO vs Retail) with 1-Day Change</i>\n",
+        f"<i>Net Contract Positions (FII + PRO vs Retail) | {date.strftime('%d %b')}"
+        + (f" vs {datetime.date.fromisoformat(prev_date).strftime('%d %b')}" if prev_date else "") + "</i>\n",
         "🏛️ <b>Smart Money (FII + PRO):</b>",
         format_oi_line("Index Futures", smart_net['net_fut'], smart_delta, "net_fut"),
         format_oi_line("Index Calls", smart_net['net_call'], smart_delta, "net_call"),
@@ -775,7 +821,15 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
         lines.extend(delta_commentary)
         lines.append("")
 
-    lines.append(f"🔮 <b>NEXT TRADING DAY DIRECTION:</b>\n{prediction}\n")
+    # Positioning is a slow stock; today's flow is the fresh signal. Flag when they disagree.
+    flow_note = ""
+    if smart_delta:
+        flow_score = smart_delta["net_fut"] + smart_delta["net_call"] - smart_delta["net_put"]
+        if smart_score < -20000 and flow_score > 30000:
+            flow_note = f"\n⚠️ <i>But today's Smart Money flow is BULLISH ({flow_score:+,}: short covering / put unwinding) — bearish stance is easing, lower conviction.</i>"
+        elif smart_score > 20000 and flow_score < -30000:
+            flow_note = f"\n⚠️ <i>But today's Smart Money flow is BEARISH ({flow_score:+,}: fresh shorts / put buying) — bullish stance is weakening, lower conviction.</i>"
+    lines.append(f"🔮 <b>NEXT TRADING DAY DIRECTION:</b>\n{prediction}{flow_note}\n")
     
     if expiry_pred:
         lines.append(f"📅 <b>TOMORROW'S EXPIRY ({idx_name}):</b>\n{expiry_pred}\n")
@@ -788,6 +842,13 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
         lines.append(f"• <b>Macro Resistance (Max CE OI):</b> {oc_levels['Max_Call_Wall']:,}")
         lines.append(f"• <b>Immediate Floor (Fresh PE Wall):</b> {oc_levels['Day_Fresh_Put_Add']:,}")
         lines.append(f"• <b>Macro Support (Max PE OI):</b> {oc_levels['Key_Put_Support']:,}")
+        pcr = oc_levels.get("PCR")
+        if pcr is not None:
+            pcr_view = "oversold / put-heavy, contrarian bounce risk" if pcr >= 1.3 else "bullish put writing" if pcr >= 1.0 else "bearish call writing" if pcr >= 0.7 else "overbought / call-heavy, contrarian dip risk"
+            lines.append(f"• <b>PCR (OI):</b> {pcr} (<i>{pcr_view}</i>)")
+        if oc_levels.get("Max_Pain"):
+            gap = (oc_levels['Underlying'] - oc_levels['Max_Pain']) / oc_levels['Max_Pain'] * 100 if oc_levels['Max_Pain'] else 0
+            lines.append(f"• <b>Max Pain ({oc_levels['Expiry']}):</b> {oc_levels['Max_Pain']:,} (<i>spot {gap:+.1f}% away — expiry-day magnet</i>)")
         
         strat = ""
         if smart_net['net_call'] < -50000 and smart_net['net_put'] > 50000:
