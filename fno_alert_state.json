@@ -864,5 +864,17 @@
     "ref_high": 936.95,
     "ref_low": 885.6,
     "status": "Active"
+  },
+  "SAREGAMA": {
+    "trigger_date": "2026-11-05",
+    "ref_high": 671.0,
+    "ref_low": 613.45,
+    "status": "Active"
+  },
+  "ANIKINDS": {
+    "trigger_date": "2026-11-05",
+    "ref_high": 41.88,
+    "ref_low": 39.26,
+    "status": "Active"
   }
 }
