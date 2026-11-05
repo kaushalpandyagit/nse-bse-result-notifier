@@ -413,12 +413,11 @@
     ]
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-11-04T09:22:19.808387",
-    "spread_last_price": 3.668261878359677,
-    "session_date": "2026-11-04",
+    "spread_last_alert": "2026-11-05T04:08:13.507496",
+    "spread_last_price": 4.3845540057389245,
+    "session_date": "2026-11-05",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "arb_JINDALPHOT": {
