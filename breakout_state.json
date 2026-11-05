@@ -274,11 +274,11 @@
     "spread_last_price": 3.734554697572893
   },
   "arb_RPSGVENT": {
-    "spread_last_alert": "2026-11-04T03:52:51.856305",
-    "spread_last_price": 6.4792486725332,
-    "session_date": "2026-11-04",
+    "spread_last_alert": "2026-11-05T07:27:15.515467",
+    "spread_last_price": 3.7162162162162162,
+    "session_date": "2026-11-05",
     "alert_slots": [
-      "H1"
+      "H2"
     ]
   },
   "arb_ALKYLAMINE": {
@@ -6003,6 +6003,30 @@
     "day_low": 49.04999923706055,
     "baseline_rsi": 42.05149570598938,
     "mcap_cr": 272.5437184326172,
+    "exchange": "NSE"
+  },
+  "IBULLSLTD": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 32.790000915527344,
+    "day_low": 31.09000015258789,
+    "baseline_rsi": 48.392230227445204,
+    "mcap_cr": 7131.811475360811,
+    "exchange": "NSE"
+  },
+  "RPSGVENT": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 924.0,
+    "day_low": 853.4000244140625,
+    "baseline_rsi": 59.730655375269585,
+    "mcap_cr": 2948.4954188123656,
+    "exchange": "NSE"
+  },
+  "GUJALKALI": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 636.7999877929688,
+    "day_low": 570.0,
+    "baseline_rsi": 63.35173638496109,
+    "mcap_cr": 4648.190447404688,
     "exchange": "NSE"
   }
 }

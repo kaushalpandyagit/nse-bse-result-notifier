@@ -1473,10 +1473,11 @@
       "rs_rank": 14.2,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "vol_breakout_last_alert": "2026-11-05T05:16:39.112043",
-      "vol_breakout_last_price": 184.61000061035156
+      "vol_breakout_last_alert": "2026-11-05T07:17:18.724145",
+      "vol_breakout_last_price": 182.60000610351562
     },
     "ARE&M": {
       "sma50": 779.4840014648438,
@@ -10045,10 +10046,11 @@
       "rs_rank": 6.5,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-05T04:18:38.635936",
-      "mtf_last_price": 109.31999969482422
+      "mtf_last_alert": "2026-11-05T07:21:05.572662",
+      "mtf_last_price": 107.80000305175781
     },
     "IREDA": {
       "sma50": 109.16299987792969,
@@ -10546,10 +10548,11 @@
       "rs_rank": 70.0,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T03:52:00.353260",
-      "near_high_17_22_last_price": 257.2099914550781
+      "near_high_17_22_last_alert": "2026-11-05T07:21:20.738585",
+      "near_high_17_22_last_price": 260.6000061035156
     },
     "JKPAPER": {
       "sma50": 393.37299865722656,
@@ -11494,10 +11497,13 @@
       "rs_rank": 56.2,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-05T03:52:12.985412",
-      "resistance_last_price": 913.5499877929688
+      "resistance_last_price": 913.5499877929688,
+      "mtf_last_alert": "2026-11-05T07:21:46.649198",
+      "mtf_last_price": 919.1500244140625
     },
     "KIMS": {
       "sma50": 737.9180004882812,
@@ -14242,10 +14248,11 @@
       "rs_rank": 56.9,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T03:52:51.706723",
-      "near_high_17_22_last_price": 78.0999984741211
+      "near_high_17_22_last_alert": "2026-11-05T07:22:59.852322",
+      "near_high_17_22_last_price": 77.29000091552734
     },
     "NORTHARC": {
       "sma50": 288.1629998779297,
@@ -14390,10 +14397,11 @@
       "rs_rank": 74.8,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-05T03:52:53.717309",
-      "resistance_last_price": 344.70001220703125
+      "resistance_last_alert": "2026-11-05T07:23:04.868130",
+      "resistance_last_price": 341.20001220703125
     },
     "OLAELEC": {
       "sma50": 36.49092918395996,
@@ -14542,10 +14550,11 @@
       "rs_rank": 46.8,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-05T03:52:56.243844",
-      "resistance_last_price": 1607.5999755859375
+      "resistance_last_alert": "2026-11-05T07:23:10.190000",
+      "resistance_last_price": 1591.300048828125
     },
     "OSWALPUMPS": {
       "sma50": 259.51640045166016,
@@ -17695,10 +17704,13 @@
       "rs_rank": 49.8,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-05T03:53:42.066665",
-      "resistance_last_price": 89.55999755859375
+      "resistance_last_price": 89.55999755859375,
+      "mtf_last_alert": "2026-11-05T07:24:32.177544",
+      "mtf_last_price": 90.08000183105469
     },
     "SCHNEIDER": {
       "sma50": 1187.8019946289062,
@@ -19813,7 +19825,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 92.7,
       "session_date": "2026-11-05",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-05T07:25:30.153584",
+      "near_high_17_22_last_price": 1511.699951171875
     },
     "TANLA": {
       "sma50": 535.9899993896485,
@@ -20762,10 +20778,11 @@
       "rs_rank": 63.1,
       "session_date": "2026-11-05",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-05T03:54:23.119640",
-      "near_high_17_22_last_price": 487.1499938964844
+      "near_high_17_22_last_alert": "2026-11-05T07:25:56.134079",
+      "near_high_17_22_last_price": 494.29998779296875
     },
     "TIMETECHNO": {
       "sma50": 177.67019989013673,
