@@ -5902,5 +5902,37 @@
     "baseline_rsi": 68.16713118891629,
     "mcap_cr": 2112.2545795,
     "exchange": "NSE"
+  },
+  "DIGISPICE": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 16.6200008392334,
+    "day_low": 16.049999237060547,
+    "baseline_rsi": 57.62755263020488,
+    "mcap_cr": 384.156620216383,
+    "exchange": "NSE"
+  },
+  "AIIL": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 552.0,
+    "day_low": 520.9500122070312,
+    "baseline_rsi": 56.74290278112259,
+    "mcap_cr": 46567.278219195556,
+    "exchange": "NSE"
+  },
+  "SHIPROCKET": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 142.3800048828125,
+    "day_low": 132.25,
+    "baseline_rsi": 64.62111788670533,
+    "mcap_cr": 10120.604679248117,
+    "exchange": "NSE"
+  },
+  "RAMANEWS": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 27.5,
+    "day_low": 26.219999313354492,
+    "baseline_rsi": 35.22740055042388,
+    "mcap_cr": 400.6249459322714,
+    "exchange": "NSE"
   }
 }
