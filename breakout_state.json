@@ -2,11 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-05T03:46:09.278087",
-    "custom_last_price": 124.05000305175781,
+    "custom_last_alert": "2026-11-05T07:01:03.492858",
+    "custom_last_price": 111.25,
     "session_date": "2026-11-05",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_AERON_price": {
@@ -84,11 +85,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-05T03:46:14.559599",
-    "custom_last_price": 169.69000244140625,
+    "custom_last_alert": "2026-11-05T07:01:11.865262",
+    "custom_last_price": 172.16000366210938,
     "session_date": "2026-11-05",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KAYNES_rsi": {
@@ -114,11 +116,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-05T03:46:17.530593",
-    "custom_last_price": 57.25,
+    "custom_last_alert": "2026-11-05T07:01:15.426556",
+    "custom_last_price": 55.0,
     "session_date": "2026-11-05",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
@@ -221,11 +224,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-05T03:55:07.393386",
-    "spread_last_price": 7.566999474513926,
+    "spread_last_alert": "2026-11-05T07:08:06.864459",
+    "spread_last_price": 6.9364161849710975,
     "session_date": "2026-11-05",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_PRADPME": {
@@ -237,11 +241,12 @@
     "spread_last_price": 3.524734982332155
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-11-05T05:06:53.655149",
-    "spread_last_price": 3.1569734013753057,
+    "spread_last_alert": "2026-11-05T07:07:59.741144",
+    "spread_last_price": 2.9733275032794104,
     "session_date": "2026-11-05",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALRAMCHIN": {
@@ -345,11 +350,12 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-05T04:36:21.348147",
-    "spread_last_price": 10.261835719881615,
+    "spread_last_alert": "2026-11-05T07:07:58.918611",
+    "spread_last_price": 6.941502818158078,
     "session_date": "2026-11-05",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_AVL": {
@@ -5965,6 +5971,38 @@
     "day_low": 363.1000061035156,
     "baseline_rsi": 37.62548961047404,
     "mcap_cr": 3148.8422101981932,
+    "exchange": "NSE"
+  },
+  "ALLCARGO": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 10.430000305175781,
+    "day_low": 9.800000190734863,
+    "baseline_rsi": 51.120261696243844,
+    "mcap_cr": 1515.7517934872856,
+    "exchange": "NSE"
+  },
+  "NBIFIN": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1861.0,
+    "day_low": 1815.0,
+    "baseline_rsi": 49.535475677457754,
+    "mcap_cr": 536.305275,
+    "exchange": "NSE"
+  },
+  "HITECH": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 81.25,
+    "day_low": 75.44999694824219,
+    "baseline_rsi": 66.05845487733532,
+    "mcap_cr": 1592.2889499322541,
+    "exchange": "NSE"
+  },
+  "KRITI": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 52.900001525878906,
+    "day_low": 49.04999923706055,
+    "baseline_rsi": 42.05149570598938,
+    "mcap_cr": 272.5437184326172,
     "exchange": "NSE"
   }
 }
