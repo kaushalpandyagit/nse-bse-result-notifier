@@ -6475,5 +6475,21 @@
     "baseline_rsi": 48.251199094210314,
     "mcap_cr": 9467.8943478,
     "exchange": "NSE"
+  },
+  "SCHNEIDER": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 1160.0,
+    "day_low": 1119.300048828125,
+    "baseline_rsi": 44.59062044177333,
+    "mcap_cr": 27157.43746280017,
+    "exchange": "NSE"
+  },
+  "AFCONS": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 224.97000122070312,
+    "day_low": 211.10000610351562,
+    "baseline_rsi": 39.634438762006766,
+    "mcap_cr": 8070.666032455169,
+    "exchange": "NSE"
   }
 }
