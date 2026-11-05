@@ -6491,5 +6491,29 @@
     "baseline_rsi": 39.634438762006766,
     "mcap_cr": 8070.666032455169,
     "exchange": "NSE"
+  },
+  "ELIN": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 80.0,
+    "day_low": 74.97000122070312,
+    "baseline_rsi": 52.18017387346953,
+    "mcap_cr": 389.77001222406005,
+    "exchange": "NSE"
+  },
+  "GREENLAM": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 216.97000122070312,
+    "day_low": 210.0,
+    "baseline_rsi": 44.34101656389749,
+    "mcap_cr": 5386.42315249498,
+    "exchange": "NSE"
+  },
+  "BIKAJI": {
+    "result_date": "2026-11-05T00:00:00",
+    "day_high": 509.8999938964844,
+    "day_low": 473.0,
+    "baseline_rsi": 52.85302854070034,
+    "mcap_cr": 12346.260182962647,
+    "exchange": "NSE"
   }
 }
