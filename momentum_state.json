@@ -96,10 +96,11 @@
       "rs_rank": 45.9,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:50:39.645092",
-      "near_high_17_22_last_price": 437.29998779296875
+      "near_high_17_22_last_alert": "2026-11-06T07:46:09.139829",
+      "near_high_17_22_last_price": 442.04998779296875
     },
     "AARTIPHARM": {
       "sma50": 875.9990014648438,
@@ -484,10 +485,13 @@
       "rs_rank": 38.7,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-06T03:50:45.218501",
-      "resistance_last_price": 1215.0
+      "resistance_last_price": 1215.0,
+      "mtf_last_alert": "2026-11-06T07:46:14.483575",
+      "mtf_last_price": 1215.800048828125
     },
     "ACE": {
       "sma50": 1142.0940002441407,
@@ -878,10 +882,11 @@
       "rs_rank": 79.1,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:50:52.222259",
-      "near_high_17_22_last_price": 485.1499938964844
+      "near_high_17_22_last_alert": "2026-11-06T07:46:20.451410",
+      "near_high_17_22_last_price": 479.25
     },
     "AETHER": {
       "sma50": 1631.6939990234375,
@@ -3696,10 +3701,11 @@
       "rs_rank": 91.9,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:51:42.098608",
-      "near_high_17_22_last_price": 2614.89990234375
+      "near_high_17_22_last_alert": "2026-11-06T07:47:02.266127",
+      "near_high_17_22_last_price": 2651.800048828125
     },
     "CASTROLIND": {
       "sma50": 192.96440002441406,
@@ -3848,10 +3854,13 @@
       "rs_rank": 70.5,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-06T03:51:43.641130",
-      "resistance_last_price": 1323.800048828125
+      "resistance_last_price": 1323.800048828125,
+      "mtf_last_alert": "2026-11-06T07:47:04.083915",
+      "mtf_last_price": 1321.699951171875
     },
     "CEATLTD": {
       "sma50": 3311.54798828125,
@@ -16113,10 +16122,11 @@
       "rs_rank": 93.2,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:55:03.883143",
-      "near_high_17_22_last_price": 314.8500061035156
+      "near_high_17_22_last_alert": "2026-11-06T07:50:00.383442",
+      "near_high_17_22_last_price": 318.0
     },
     "RAILTEL": {
       "sma50": 254.93099700927735,

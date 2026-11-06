@@ -6544,5 +6544,29 @@
     "baseline_rsi": 60.37073796061553,
     "mcap_cr": 5337.593220403672,
     "exchange": "NSE"
+  },
+  "TTKPRESTIG": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 629.6500244140625,
+    "day_low": 549.0,
+    "baseline_rsi": 72.50310761474438,
+    "mcap_cr": 8374.125052150586,
+    "exchange": "NSE"
+  },
+  "RATNAMANI": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 2471.5,
+    "day_low": 2283.0,
+    "baseline_rsi": 40.28869921171868,
+    "mcap_cr": 16355.9682,
+    "exchange": "NSE"
+  },
+  "KIRLOSIND": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 3370.0,
+    "day_low": 3257.800048828125,
+    "baseline_rsi": 47.99094880027184,
+    "mcap_cr": 3493.2935166612306,
+    "exchange": "NSE"
   }
 }
