@@ -4057,9 +4057,9 @@
     "price_high_last_price": 2175.0
   },
   "arb_MAHSCOOTER": {
-    "spread_last_alert": "2026-11-05T08:41:44.152830",
-    "spread_last_price": 3.462757322052267,
-    "session_date": "2026-11-05",
+    "spread_last_alert": "2026-11-06T07:36:43.798505",
+    "spread_last_price": 4.175780351878115,
+    "session_date": "2026-11-06",
     "alert_slots": [
       "H2"
     ]
@@ -6519,6 +6519,30 @@
     "day_low": 1723.0,
     "baseline_rsi": 46.867366710801384,
     "mcap_cr": 27669.767199,
+    "exchange": "NSE"
+  },
+  "ORIENTLTD": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 69.0,
+    "day_low": 61.11000061035156,
+    "baseline_rsi": 20.21730774682706,
+    "mcap_cr": 63.400001525878906,
+    "exchange": "NSE"
+  },
+  "SUPRIYA": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 869.5,
+    "day_low": 695.7000122070312,
+    "baseline_rsi": 28.55109482981169,
+    "mcap_cr": 5738.42364,
+    "exchange": "NSE"
+  },
+  "PRSMJOHNSN": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 108.4000015258789,
+    "day_low": 99.51000213623047,
+    "baseline_rsi": 60.37073796061553,
+    "mcap_cr": 5337.593220403672,
     "exchange": "NSE"
   }
 }

@@ -5657,7 +5657,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 40.0,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-06T07:31:36.307116",
+      "mtf_last_price": 2057.0
     },
     "DYNAMATECH": {
       "sma50": 12575.78,
@@ -13141,7 +13145,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 9.2,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T07:33:37.128993",
+      "rectangle_bounce_last_price": 608.2000122070312
     },
     "METROPOLIS": {
       "sma50": 562.6030017089844,
@@ -13891,10 +13899,11 @@
       "rs_rank": 13.0,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "rectangle_bounce_last_alert": "2026-11-06T05:33:34.395914",
-      "rectangle_bounce_last_price": 124.4800033569336
+      "rectangle_bounce_last_alert": "2026-11-06T07:33:49.857614",
+      "rectangle_bounce_last_price": 122.86000061035156
     },
     "NEOGEN": {
       "sma50": 2318.485986328125,
@@ -14085,10 +14094,11 @@
       "rs_rank": 22.2,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-06T03:54:28.064202",
-      "resistance_last_price": 26.950000762939453
+      "resistance_last_alert": "2026-11-06T07:33:53.238666",
+      "resistance_last_price": 26.670000076293945
     },
     "NEULANDLAB": {
       "sma50": 21445.16,
@@ -14485,10 +14495,13 @@
       "rs_rank": 66.0,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-06T03:54:35.951716",
-      "resistance_last_price": 342.95001220703125
+      "resistance_last_price": 342.95001220703125,
+      "mtf_last_alert": "2026-11-06T07:34:00.842701",
+      "mtf_last_price": 342.5
     },
     "OLAELEC": {
       "sma50": 36.44192916870117,
@@ -15564,10 +15577,11 @@
       "rs_rank": 30.1,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:54:54.581013",
-      "near_high_17_22_last_price": 595.5999755859375
+      "near_high_17_22_last_alert": "2026-11-06T07:34:18.667831",
+      "near_high_17_22_last_price": 588.8499755859375
     },
     "POLYMED": {
       "sma50": 1634.7819921875,
@@ -18650,10 +18664,11 @@
       "rs_rank": 13.7,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-06T03:55:41.574602",
-      "mtf_last_price": 58.15999984741211
+      "mtf_last_alert": "2026-11-06T07:35:08.934856",
+      "mtf_last_price": 56.939998626708984
     },
     "SKIPPER": {
       "sma50": 536.9300030517578,
@@ -19376,10 +19391,11 @@
       "rs_rank": 84.6,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:55:52.991471",
-      "near_high_17_22_last_price": 1057.699951171875
+      "near_high_17_22_last_alert": "2026-11-06T07:35:20.738423",
+      "near_high_17_22_last_price": 1068.699951171875
     },
     "SUNFLAG": {
       "sma50": 388.40599853515624,
@@ -19582,10 +19598,13 @@
       "rs_rank": 83.3,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-06T03:55:57.198614",
-      "near_high_17_22_last_price": 854.5999755859375
+      "near_high_17_22_last_price": 854.5999755859375,
+      "vol_breakout_last_alert": "2026-11-06T07:35:24.258032",
+      "vol_breakout_last_price": 708.7000122070312
     },
     "SURYAROSNI": {
       "sma50": 213.39920043945312,
@@ -22165,10 +22184,11 @@
       "rs_rank": 78.2,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:56:37.819102",
-      "near_high_17_22_last_price": 748.7000122070312
+      "near_high_17_22_last_alert": "2026-11-06T07:36:04.000525",
+      "near_high_17_22_last_price": 740.9000244140625
     },
     "VOLTAMP": {
       "sma50": 10581.18,
