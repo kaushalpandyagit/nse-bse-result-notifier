@@ -84,10 +84,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-05T07:01:11.865262",
-    "custom_last_price": 172.16000366210938,
+    "custom_last_alert": "2026-11-06T04:01:07.470798",
+    "custom_last_price": 168.5,
     "session_date": "2026-11-06",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
@@ -259,12 +261,11 @@
     ]
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-11-05T09:11:08.350494",
-    "spread_last_price": 2.921407692194835,
-    "session_date": "2026-11-05",
+    "spread_last_alert": "2026-11-06T04:10:30.251184",
+    "spread_last_price": 3.8095238095238098,
+    "session_date": "2026-11-06",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "arb_BALAMINES": {
@@ -5521,12 +5522,12 @@
     "exchange": "NSE"
   },
   "arb_ABREL": {
-    "session_date": "2026-11-05",
+    "session_date": "2026-11-06",
     "alert_slots": [
       "H1"
     ],
-    "spread_last_alert": "2026-11-05T03:55:10.331807",
-    "spread_last_price": 2.908302688262438
+    "spread_last_alert": "2026-11-06T04:10:19.574630",
+    "spread_last_price": 2.5104192298228347
   },
   "arb_TATACAP": {
     "session_date": "2026-11-05",
