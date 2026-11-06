@@ -6833,5 +6833,21 @@
     "baseline_rsi": 45.558144465472864,
     "mcap_cr": 20344.467972075,
     "exchange": "NSE"
+  },
+  "LICI": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 404.0,
+    "day_low": 390.5,
+    "baseline_rsi": 49.32611590208049,
+    "mcap_cr": 249204.9094194,
+    "exchange": "NSE"
+  },
+  "OCCLLTD": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 168.0,
+    "day_low": 158.0,
+    "baseline_rsi": 43.25577488391875,
+    "mcap_cr": 824.3324352825317,
+    "exchange": "NSE"
   }
 }
