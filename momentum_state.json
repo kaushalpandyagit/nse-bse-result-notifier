@@ -1367,10 +1367,13 @@
       "rs_rank": 34.8,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-06T03:50:59.981839",
-      "near_high_17_22_last_price": 1152.0
+      "near_high_17_22_last_price": 1152.0,
+      "resistance_last_alert": "2026-11-06T08:01:32.536452",
+      "resistance_last_price": 1166.5
     },
     "APOLLO": {
       "sma50": 401.9790008544922,
@@ -1862,10 +1865,11 @@
       "rs_rank": 90.8,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:51:08.189855",
-      "near_high_17_22_last_price": 1529.5999755859375
+      "near_high_17_22_last_alert": "2026-11-06T08:01:38.627025",
+      "near_high_17_22_last_price": 1546.5999755859375
     },
     "ATLANTAELE": {
       "sma50": 1711.7080004882812,
@@ -11542,10 +11546,13 @@
       "rs_rank": 62.0,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-06T03:53:47.537884",
-      "resistance_last_price": 912.4000244140625
+      "resistance_last_price": 912.4000244140625,
+      "mtf_last_alert": "2026-11-06T08:03:19.115230",
+      "mtf_last_price": 912.2999877929688
     },
     "KIMS": {
       "sma50": 737.2940002441406,

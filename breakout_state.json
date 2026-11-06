@@ -6568,5 +6568,37 @@
     "baseline_rsi": 47.99094880027184,
     "mcap_cr": 3493.2935166612306,
     "exchange": "NSE"
+  },
+  "WANBURY": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 189.8000030517578,
+    "day_low": 184.3000030517578,
+    "baseline_rsi": 43.19562302979444,
+    "mcap_cr": 652.517845542212,
+    "exchange": "NSE"
+  },
+  "ROSSTECH": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1465.699951171875,
+    "day_low": 1377.9000244140625,
+    "baseline_rsi": 46.331261238484224,
+    "mcap_cr": 5268.121369313086,
+    "exchange": "NSE"
+  },
+  "AJAXENGG": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 580.0,
+    "day_low": 550.0,
+    "baseline_rsi": 52.95272654989797,
+    "mcap_cr": 6491.125733935498,
+    "exchange": "NSE"
+  },
+  "HINDCON": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 25.75,
+    "day_low": 24.030000686645508,
+    "baseline_rsi": 49.52470881745052,
+    "mcap_cr": 131.15038554608822,
+    "exchange": "NSE"
   }
 }
