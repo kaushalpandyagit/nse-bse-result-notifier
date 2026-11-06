@@ -6402,5 +6402,21 @@
     "baseline_rsi": 33.55914940624618,
     "mcap_cr": 4744.6905517,
     "exchange": "NSE"
+  },
+  "MONEYVIEW": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 57.97999954223633,
+    "day_low": 55.20000076293945,
+    "baseline_rsi": 52.87327454653012,
+    "mcap_cr": 9823.850948438978,
+    "exchange": "NSE"
+  },
+  "ASTRAL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1369.5999755859375,
+    "day_low": 1215.5,
+    "baseline_rsi": 30.374425568906986,
+    "mcap_cr": 33210.53183829162,
+    "exchange": "NSE"
   }
 }

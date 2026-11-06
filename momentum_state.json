@@ -9439,7 +9439,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 65.2,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T06:18:21.407695",
+      "near_high_17_22_last_price": 1630.699951171875
     },
     "IMFA": {
       "sma50": 1211.8079931640625,
