@@ -6969,5 +6969,69 @@
     "baseline_rsi": 63.13916596684678,
     "mcap_cr": 52296.89076393706,
     "exchange": "NSE"
+  },
+  "DPABHUSHAN": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 2019.9000244140625,
+    "day_low": 1901.9000244140625,
+    "baseline_rsi": 47.31100441382253,
+    "mcap_cr": 4416.517570935547,
+    "exchange": "NSE"
+  },
+  "ASTERDM": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 722.1500244140625,
+    "day_low": 702.5,
+    "baseline_rsi": 56.61155424691298,
+    "mcap_cr": 62092.085987342834,
+    "exchange": "NSE"
+  },
+  "INDOAMIN": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 129.0,
+    "day_low": 120.80000305175781,
+    "baseline_rsi": 40.22114181867114,
+    "mcap_cr": 888.4717454759826,
+    "exchange": "NSE"
+  },
+  "GTL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 7.079999923706055,
+    "day_low": 6.619999885559082,
+    "baseline_rsi": 62.154410607903095,
+    "mcap_cr": 107.5910006041584,
+    "exchange": "NSE"
+  },
+  "SALSTEEL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 92.5,
+    "day_low": 86.69999694824219,
+    "baseline_rsi": 62.39597057039611,
+    "mcap_cr": 1309.125272517929,
+    "exchange": "NSE"
+  },
+  "TITAN": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 5013.89990234375,
+    "day_low": 4694.39990234375,
+    "baseline_rsi": 73.8537517604477,
+    "mcap_cr": 443656.1675,
+    "exchange": "NSE"
+  },
+  "MARICO": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 898.5499877929688,
+    "day_low": 886.0499877929688,
+    "baseline_rsi": 76.95536951664573,
+    "mcap_cr": 116527.2906924,
+    "exchange": "NSE"
+  },
+  "CIFL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 18.200000762939453,
+    "day_low": 17.809999465942383,
+    "baseline_rsi": 43.32366976003859,
+    "mcap_cr": 700.3818273329545,
+    "exchange": "NSE"
   }
 }
