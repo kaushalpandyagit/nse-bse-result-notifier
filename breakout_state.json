@@ -6889,5 +6889,53 @@
     "baseline_rsi": 40.233716960540995,
     "mcap_cr": 7338.826379529266,
     "exchange": "NSE"
+  },
+  "KINGFA": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 6173.5,
+    "day_low": 5660.0,
+    "baseline_rsi": 34.48614554009559,
+    "mcap_cr": 8038.6792092,
+    "exchange": "NSE"
+  },
+  "VETO": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 129.49000549316406,
+    "day_low": 125.0999984741211,
+    "baseline_rsi": 48.272317841751494,
+    "mcap_cr": 242.12914415194703,
+    "exchange": "NSE"
+  },
+  "SCODATUBES": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 115.4000015258789,
+    "day_low": 107.95999908447266,
+    "baseline_rsi": 46.44490415757246,
+    "mcap_cr": 676.5512095282745,
+    "exchange": "NSE"
+  },
+  "KRITINUT": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 70.0,
+    "day_low": 65.19999694824219,
+    "baseline_rsi": 42.797233414957155,
+    "mcap_cr": 332.03601022058103,
+    "exchange": "NSE"
+  },
+  "RAMCOCEM": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 827.5499877929688,
+    "day_low": 796.0,
+    "baseline_rsi": 58.28183733952219,
+    "mcap_cr": 19313.357102414306,
+    "exchange": "NSE"
+  },
+  "LAMBODHARA": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 138.0,
+    "day_low": 128.8000030517578,
+    "baseline_rsi": 55.059054777726466,
+    "mcap_cr": 135.26163459960938,
+    "exchange": "NSE"
   }
 }
