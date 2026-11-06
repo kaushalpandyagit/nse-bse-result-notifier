@@ -875,13 +875,25 @@
     "trigger_date": "2026-11-05",
     "ref_high": 81.25,
     "ref_low": 75.45,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T04:30:08.225442",
+    "fno_low_breach_last_price": 75.75
   },
   "VIPULLTD": {
     "trigger_date": "2026-11-05",
     "ref_high": 9.19,
     "ref_low": 8.7,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T04:30:09.533358",
+    "fno_low_breach_last_price": 8.829999923706055
   },
   "PANCHMAHQ": {
     "trigger_date": "2026-11-05",

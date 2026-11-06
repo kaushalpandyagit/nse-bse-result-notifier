@@ -201,8 +201,12 @@
     "spread_last_price": 2.7312775330396475
   },
   "arb_AVALON": {
-    "spread_last_alert": "2026-11-02T04:05:08.762231",
-    "spread_last_price": 3.354982557549349
+    "spread_last_alert": "2026-11-06T04:35:47.603497",
+    "spread_last_price": 2.5440401857998705,
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_ATLANTAELE": {
     "spread_last_alert": "2026-11-05T03:55:20.771037",
