@@ -443,11 +443,12 @@
     ]
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-11-06T03:57:16.826998",
-    "spread_last_price": 6.120827352653145,
+    "spread_last_alert": "2026-11-06T08:21:12.476672",
+    "spread_last_price": 4.334680629074362,
     "session_date": "2026-11-06",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_JINDALPHOT": {
@@ -6599,6 +6600,30 @@
     "day_low": 24.030000686645508,
     "baseline_rsi": 49.52470881745052,
     "mcap_cr": 131.15038554608822,
+    "exchange": "NSE"
+  },
+  "SIRCA": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 413.0,
+    "day_low": 404.0,
+    "baseline_rsi": 41.64961178303037,
+    "mcap_cr": 2300.0868168,
+    "exchange": "NSE"
+  },
+  "HPIL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 117.9000015258789,
+    "day_low": 112.0999984741211,
+    "baseline_rsi": 47.362023696062295,
+    "mcap_cr": 131.3201409636383,
+    "exchange": "NSE"
+  },
+  "PASHUPATI": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 108.43000030517578,
+    "day_low": 108.43000030517578,
+    "baseline_rsi": 51.62626822990367,
+    "mcap_cr": 1711.4591248168945,
     "exchange": "NSE"
   }
 }

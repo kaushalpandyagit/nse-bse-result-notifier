@@ -3013,7 +3013,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 52.4,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T08:16:50.895572",
+      "rectangle_bounce_last_price": 549.0999755859375
     },
     "BLS": {
       "sma50": 225.46239959716797,
@@ -10756,7 +10760,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 16.2,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T08:18:32.491783",
+      "rectangle_bounce_last_price": 108.9000015258789
     },
     "JPPOWER": {
       "sma50": 15.088400039672852,
