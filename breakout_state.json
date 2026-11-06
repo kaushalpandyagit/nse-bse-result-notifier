@@ -6801,5 +6801,21 @@
     "baseline_rsi": 46.066272203683106,
     "mcap_cr": 3541.9933977505034,
     "exchange": "NSE"
+  },
+  "CARRARO": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 509.8999938964844,
+    "day_low": 480.0,
+    "baseline_rsi": 43.9775666585874,
+    "mcap_cr": 2763.837485170575,
+    "exchange": "NSE"
+  },
+  "JUBLFOOD": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 457.20001220703125,
+    "day_low": 447.45001220703125,
+    "baseline_rsi": 60.98640920294396,
+    "mcap_cr": 30068.881548865385,
+    "exchange": "NSE"
   }
 }

@@ -11061,10 +11061,11 @@
       "rs_rank": 53.6,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-06T04:05:36.442168",
-      "mtf_last_price": 451.75
+      "mtf_last_alert": "2026-11-06T10:04:33.619018",
+      "mtf_last_price": 457.20001220703125
     },
     "JUBLINGREA": {
       "sma50": 636.6169982910156,
@@ -16318,7 +16319,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 88.5,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-06T10:06:03.425772",
+      "liquidity_sweep_last_price": 181.39999389648438
     },
     "RAINBOW": {
       "sma50": 1330.7439916992187,
@@ -16567,7 +16572,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 38.5,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T10:06:08.581942",
+      "rectangle_bounce_last_price": 2455.89990234375
     },
     "RAYMONDLSL": {
       "sma50": 611.2650012207031,
@@ -17952,7 +17961,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 28.4,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-06T10:06:33.416326",
+      "vol_breakout_last_price": 1063.4000244140625
     },
     "SCI": {
       "sma50": 274.8323992919922,
@@ -22182,7 +22195,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 4.9,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-06T10:07:42.214096",
+      "mtf_last_price": 142.38999938964844
     },
     "VIPIND": {
       "sma50": 284.7110012817383,

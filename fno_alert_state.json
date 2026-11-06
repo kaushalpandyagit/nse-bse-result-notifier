@@ -947,12 +947,24 @@
     "trigger_date": "2026-11-05",
     "ref_high": 671.0,
     "ref_low": 613.45,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T10:01:25.335957",
+    "fno_low_breach_last_price": 617.5999755859375
   },
   "ANIKINDS": {
     "trigger_date": "2026-11-05",
     "ref_high": 41.88,
     "ref_low": 39.26,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T10:01:26.769339",
+    "fno_low_breach_last_price": 39.04999923706055
   }
 }
