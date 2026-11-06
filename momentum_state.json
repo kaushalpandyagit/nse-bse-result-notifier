@@ -1513,7 +1513,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 3.6,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-06T05:01:46.269373",
+      "vol_breakout_last_price": 177.05999755859375
     },
     "ARE&M": {
       "sma50": 775.4310021972656,
@@ -9079,7 +9083,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 29.7,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-06T05:03:21.371876",
+      "resistance_last_price": 109.41000366210938
     },
     "IFBIND": {
       "sma50": 1196.2540063476563,
@@ -20759,7 +20767,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 42.1,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T05:05:50.367584",
+      "mtf_last_price": 3053.300048828125
     },
     "TIPSMUSIC": {
       "sma50": 685.7159997558593,

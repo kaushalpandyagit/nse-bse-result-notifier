@@ -869,7 +869,13 @@
     "trigger_date": "2026-11-05",
     "ref_high": 9.29,
     "ref_low": 9.02,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-06T05:01:25.993093",
+    "fno_high_breach_last_price": 9.5
   },
   "HITECH": {
     "trigger_date": "2026-11-05",
