@@ -6817,5 +6817,21 @@
     "baseline_rsi": 60.98640920294396,
     "mcap_cr": 30068.881548865385,
     "exchange": "NSE"
+  },
+  "ANURAS": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1169.9000244140625,
+    "day_low": 1149.0,
+    "baseline_rsi": 52.67978333476274,
+    "mcap_cr": 13265.604525300048,
+    "exchange": "NSE"
+  },
+  "KIOCL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 342.6499938964844,
+    "day_low": 331.29998779296875,
+    "baseline_rsi": 45.558144465472864,
+    "mcap_cr": 20344.467972075,
+    "exchange": "NSE"
   }
 }
