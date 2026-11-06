@@ -1,1 +1,28 @@
-{"date": "2026-11-05", "smart_net": {"net_fut": -149767, "net_call": -98834, "net_put": 323236}, "retail_net": {"net_fut": 104641, "net_call": 90905, "net_put": -427048}}
+{
+ "history": {
+  "2026-11-05": {
+   "smart_net": {
+    "net_fut": -149767,
+    "net_call": -98834,
+    "net_put": 323236
+   },
+   "retail_net": {
+    "net_fut": 104641,
+    "net_call": 90905,
+    "net_put": -427048
+   }
+  },
+  "2026-11-06": {
+   "smart_net": {
+    "net_fut": -119317,
+    "net_call": -21658,
+    "net_put": 300223
+   },
+   "retail_net": {
+    "net_fut": 83781,
+    "net_call": 11394,
+    "net_put": -404171
+   }
+  }
+ }
+}

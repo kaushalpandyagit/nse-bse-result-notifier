@@ -456,12 +456,10 @@
     "fno_high_breach_last_price": 516.2000122070312
   },
   "SECMARK": {
-    "trigger_date": "2026-10-30",
-    "ref_high": 152.99,
-    "ref_low": 150.0,
-    "status": "Breached High",
-    "fno_high_breach_last_alert": "2026-11-02T04:14:49.591588",
-    "fno_high_breach_last_price": 154.39999389648438
+    "trigger_date": "2026-11-06",
+    "ref_high": 156.45,
+    "ref_low": 149.0,
+    "status": "Active"
   },
   "AJANTPHARM": {
     "trigger_date": "2026-10-30",
@@ -1005,6 +1003,12 @@
     "trigger_date": "2026-11-06",
     "ref_high": 597.95,
     "ref_low": 563.0,
+    "status": "Active"
+  },
+  "GPTHEALTH": {
+    "trigger_date": "2026-11-06",
+    "ref_high": 151.49,
+    "ref_low": 142.53,
     "status": "Active"
   }
 }
