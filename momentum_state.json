@@ -4312,7 +4312,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 82.1,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T08:31:10.364238",
+      "near_high_17_22_last_price": 238.39999389648438
     },
     "CHALET": {
       "sma50": 852.1700036621094,
@@ -7496,10 +7500,13 @@
       "rs_rank": 51.9,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-06T03:52:43.335513",
-      "resistance_last_price": 7380.0
+      "resistance_last_price": 7380.0,
+      "mtf_last_alert": "2026-11-06T08:32:02.308242",
+      "mtf_last_price": 7444.0
     },
     "GMDCLTD": {
       "sma50": 505.6580017089844,
@@ -7691,7 +7698,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 19.0,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T08:32:06.594249",
+      "rectangle_bounce_last_price": 1786.699951171875
     },
     "GODREJAGRO": {
       "sma50": 632.0959997558593,
@@ -7787,7 +7798,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 55.8,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-06T08:32:09.057112",
+      "vol_breakout_last_price": 674.5499877929688
     },
     "GOKULAGRO": {
       "sma50": 219.71079986572266,
@@ -9359,10 +9374,11 @@
       "rs_rank": 32.9,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "ema50_pullback_last_alert": "2026-11-06T04:48:47.090064",
-      "ema50_pullback_last_price": 140.82000732421875
+      "ema50_pullback_last_alert": "2026-11-06T08:32:33.615798",
+      "ema50_pullback_last_price": 142.39999389648438
     },
     "IIFL": {
       "sma50": 599.0750048828126,
@@ -11898,7 +11914,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 32.7,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-06T08:33:13.039959",
+      "vol_breakout_last_price": 107.5999984741211
     },
     "KPIGREEN": {
       "sma50": 309.9910003662109,
@@ -17363,7 +17383,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 25.4,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T08:34:44.237508",
+      "rectangle_bounce_last_price": 1240.4000244140625
     },
     "SAGILITY": {
       "sma50": 44.64180015563965,
@@ -21474,10 +21498,13 @@
       "rs_rank": 39.5,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-06T04:09:14.632642",
-      "mtf_last_price": 23.719999313354492
+      "mtf_last_price": 23.719999313354492,
+      "resistance_last_alert": "2026-11-06T08:35:45.571809",
+      "resistance_last_price": 23.84000015258789
     },
     "UJJIVANSFB": {
       "sma50": 62.8773999786377,
@@ -21526,10 +21553,11 @@
       "rs_rank": 50.4,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T04:19:49.237127",
-      "near_high_17_22_last_price": 58.08000183105469
+      "near_high_17_22_last_alert": "2026-11-06T08:35:46.666906",
+      "near_high_17_22_last_price": 59.25
     },
     "UNIMECH": {
       "sma50": 1641.617998046875,

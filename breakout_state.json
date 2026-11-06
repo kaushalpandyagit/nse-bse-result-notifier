@@ -6625,5 +6625,29 @@
     "baseline_rsi": 51.62626822990367,
     "mcap_cr": 1711.4591248168945,
     "exchange": "NSE"
+  },
+  "KCP": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 161.00999450683594,
+    "day_low": 152.1999969482422,
+    "baseline_rsi": 61.20425237804019,
+    "mcap_cr": 2033.0866538563844,
+    "exchange": "NSE"
+  },
+  "HINDALCO": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 937.0499877929688,
+    "day_low": 891.4500122070312,
+    "baseline_rsi": 54.241837431994945,
+    "mcap_cr": 208068.8756743691,
+    "exchange": "NSE"
+  },
+  "MAGADSUGAR": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 583.0,
+    "day_low": 538.0999755859375,
+    "baseline_rsi": 51.317211956573416,
+    "mcap_cr": 768.34612575,
+    "exchange": "NSE"
   }
 }
