@@ -20205,7 +20205,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 60.7,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-06T06:06:47.277557",
+      "vol_breakout_last_price": 567.5999755859375
     },
     "TECHNOE": {
       "sma50": 950.8269995117188,

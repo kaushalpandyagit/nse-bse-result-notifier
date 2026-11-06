@@ -6362,5 +6362,45 @@
     "baseline_rsi": 54.05655827291185,
     "mcap_cr": 1162.35999058927,
     "exchange": "NSE"
+  },
+  "AMNPLST": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 150.0,
+    "day_low": 144.0,
+    "baseline_rsi": 40.28244652995682,
+    "mcap_cr": 800.541,
+    "exchange": "NSE"
+  },
+  "ELDEHSG": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 816.3499755859375,
+    "day_low": 801.0,
+    "baseline_rsi": 59.791232192646945,
+    "mcap_cr": 801.2911940063476,
+    "exchange": "NSE"
+  },
+  "AUROPHARMA": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1805.0,
+    "day_low": 1776.0,
+    "baseline_rsi": 68.38483254761223,
+    "mcap_cr": 102900.58414653118,
+    "exchange": "NSE"
+  },
+  "GODREJAGRO": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 594.5499877929688,
+    "day_low": 561.25,
+    "baseline_rsi": 40.61820668131581,
+    "mcap_cr": 11060.76828439563,
+    "exchange": "NSE"
+  },
+  "RPTECH": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 825.0,
+    "day_low": 707.5499877929688,
+    "baseline_rsi": 33.55914940624618,
+    "mcap_cr": 4744.6905517,
+    "exchange": "NSE"
   }
 }
