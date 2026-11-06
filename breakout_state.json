@@ -17,10 +17,12 @@
   "custom_alert_ALLETEC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-30T09:10:12.916826",
-    "custom_last_price": 113.55000305175781,
+    "custom_last_alert": "2026-11-06T08:45:51.760012",
+    "custom_last_price": 117.4000015258789,
     "session_date": "2026-11-06",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BASILIC_price": {
     "alerted": false,
@@ -69,10 +71,12 @@
   "custom_alert_ESFL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-03T08:46:06.988257",
-    "custom_last_price": 100.0,
+    "custom_last_alert": "2026-11-06T08:45:55.881995",
+    "custom_last_price": 102.25,
     "session_date": "2026-11-06",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_GPIL_news": {
     "alerted": false,
@@ -150,10 +154,12 @@
   "custom_alert_SPCL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-05T08:46:04.487121",
-    "custom_last_price": 47.400001525878906,
+    "custom_last_alert": "2026-11-06T08:46:01.493923",
+    "custom_last_price": 52.04999923706055,
     "session_date": "2026-11-06",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_SSEGL_price": {
     "alerted": false,
@@ -2691,11 +2697,11 @@
     "price_high_last_price": 109.33999633789062
   },
   "arb_TVSHLTD": {
-    "spread_last_alert": "2026-11-04T04:35:22.672136",
-    "spread_last_price": 2.528205550522935,
-    "session_date": "2026-11-04",
+    "spread_last_alert": "2026-11-06T08:51:07.907622",
+    "spread_last_price": 4.150007996161842,
+    "session_date": "2026-11-06",
     "alert_slots": [
-      "H1"
+      "H2"
     ]
   },
   "AEROFLEX": {
@@ -6648,6 +6654,54 @@
     "day_low": 538.0999755859375,
     "baseline_rsi": 51.317211956573416,
     "mcap_cr": 768.34612575,
+    "exchange": "NSE"
+  },
+  "CCAVENUE": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 134.0,
+    "day_low": 126.01000213623047,
+    "baseline_rsi": 41.704333947993064,
+    "mcap_cr": 4479.684073003717,
+    "exchange": "NSE"
+  },
+  "MANALIPETC": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 76.5,
+    "day_low": 70.19999694824219,
+    "baseline_rsi": 44.52503679089396,
+    "mcap_cr": 1267.4623604929993,
+    "exchange": "NSE"
+  },
+  "CORDSCABLE": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 302.0,
+    "day_low": 284.8999938964844,
+    "baseline_rsi": 49.41632475450328,
+    "mcap_cr": 381.36951,
+    "exchange": "NSE"
+  },
+  "SUDARSCHEM": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1085.0,
+    "day_low": 1021.5,
+    "baseline_rsi": 42.888606077709724,
+    "mcap_cr": 8462.541731279334,
+    "exchange": "NSE"
+  },
+  "SOFTTECH": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 449.8999938964844,
+    "day_low": 425.79998779296875,
+    "baseline_rsi": 51.05751688253005,
+    "mcap_cr": 615.975141,
+    "exchange": "NSE"
+  },
+  "STARCEMENT": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 180.3000030517578,
+    "day_low": 166.3000030517578,
+    "baseline_rsi": 45.68554562457771,
+    "mcap_cr": 6822.565562306075,
     "exchange": "NSE"
   }
 }

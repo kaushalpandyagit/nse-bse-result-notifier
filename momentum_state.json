@@ -639,7 +639,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 94.2,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T08:46:20.595170",
+      "near_high_17_22_last_price": 392.3500061035156
     },
     "ACUTAAS": {
       "sma50": 3343.03,
@@ -7750,7 +7754,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 64.7,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T08:47:50.585029",
+      "rectangle_bounce_last_price": 604.6500244140625
     },
     "GOKEX": {
       "sma50": 712.8339990234375,
@@ -19297,7 +19305,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 78.6,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T08:50:12.670663",
+      "rectangle_bounce_last_price": 1086.8499755859375
     },
     "SUDEEPPHRM": {
       "sma50": 1135.8680029296875,
@@ -21239,10 +21251,11 @@
       "rs_rank": 42.9,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-06T04:09:09.009240",
-      "mtf_last_price": 23.56999969482422
+      "mtf_last_alert": "2026-11-06T08:50:35.426627",
+      "mtf_last_price": 23.8799991607666
     },
     "TRITURBINE": {
       "sma50": 529.6080010986328,
