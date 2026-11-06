@@ -857,7 +857,13 @@
     "trigger_date": "2026-11-05",
     "ref_high": 1140.9,
     "ref_low": 1071.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T04:16:01.945344",
+    "fno_low_breach_last_price": 1080.0
   },
   "AKG": {
     "trigger_date": "2026-11-05",
@@ -899,7 +905,13 @@
     "trigger_date": "2026-11-05",
     "ref_high": 936.95,
     "ref_low": 885.6,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-06T04:16:05.646184",
+    "fno_high_breach_last_price": 945.5499877929688
   },
   "SAREGAMA": {
     "trigger_date": "2026-11-05",

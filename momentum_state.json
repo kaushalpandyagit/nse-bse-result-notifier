@@ -629,7 +629,9 @@
       "dtl_touches": 3,
       "dtl_floor": 344.70001220703125,
       "dtl_floor_touches": 1,
-      "rs_rank": 94.2
+      "rs_rank": 94.2,
+      "session_date": "2026-11-06",
+      "alert_slots": []
     },
     "ACUTAAS": {
       "sma50": 3343.03,
@@ -5511,7 +5513,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 74.1,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T04:17:03.087995",
+      "mtf_last_price": 129.8800048828125
     },
     "DIACABS": {
       "sma50": 354.2719976806641,
@@ -6241,7 +6247,11 @@
       "dtl_floor_touches": 5,
       "rs_rank": 33.8,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T04:17:11.800248",
+      "mtf_last_price": 389.6499938964844
     },
     "EMBDL": {
       "sma50": 55.72599975585938,
@@ -6625,7 +6635,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 42.5,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T04:17:15.940940",
+      "mtf_last_price": 1225.199951171875
     },
     "ESCORTS": {
       "sma50": 2770.523984375,
@@ -8037,7 +8051,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 30.6,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T04:17:32.595529",
+      "mtf_last_price": 1491.4000244140625
     },
     "GREAVESCOT": {
       "sma50": 202.0976007080078,
@@ -9963,7 +9981,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 7.1,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T04:17:52.512966",
+      "mtf_last_price": 106.68000030517578
     },
     "IREDA": {
       "sma50": 108.93899993896484,
@@ -11241,7 +11263,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 55.6,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T04:18:06.814552",
+      "mtf_last_price": 202.22999572753906
     },
     "KAYNES": {
       "sma50": 3433.836005859375,
@@ -13521,7 +13547,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 10.9,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-06T04:18:30.441724",
+      "resistance_last_price": 818.8499755859375
     },
     "NAVA": {
       "sma50": 542.7440008544922,
@@ -18379,7 +18409,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 65.8,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T04:19:20.847407",
+      "near_high_17_22_last_price": 2028.0
     },
     "SJVN": {
       "sma50": 59.053199996948244,
@@ -21229,7 +21263,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 50.4,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T04:19:49.237127",
+      "near_high_17_22_last_price": 58.08000183105469
     },
     "UNIMECH": {
       "sma50": 1641.617998046875,
@@ -22253,7 +22291,9 @@
       "dtl_touches": null,
       "dtl_floor": 557.0999755859375,
       "dtl_floor_touches": 3,
-      "rs_rank": 92.9
+      "rs_rank": 92.9,
+      "session_date": "2026-11-06",
+      "alert_slots": []
     },
     "WELSPUNLIV": {
       "sma50": 218.84740051269532,
