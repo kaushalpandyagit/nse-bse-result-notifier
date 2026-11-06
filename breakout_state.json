@@ -268,11 +268,12 @@
     ]
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-11-06T04:10:30.251184",
-    "spread_last_price": 3.8095238095238098,
+    "spread_last_alert": "2026-11-06T07:22:28.499371",
+    "spread_last_price": 3.0817662351669637,
     "session_date": "2026-11-06",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALAMINES": {
@@ -6494,6 +6495,30 @@
     "day_low": 145.9199981689453,
     "baseline_rsi": 49.595350234547496,
     "mcap_cr": 553.161880342743,
+    "exchange": "NSE"
+  },
+  "3MINDIA": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 29500.0,
+    "day_low": 27505.0,
+    "baseline_rsi": 25.111814214837977,
+    "mcap_cr": 31316.8946,
+    "exchange": "NSE"
+  },
+  "CPPLUS": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 4418.60009765625,
+    "day_low": 4161.60009765625,
+    "baseline_rsi": 62.45130533668043,
+    "mcap_cr": 52125.853294218454,
+    "exchange": "NSE"
+  },
+  "GODFRYPHLP": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1806.0,
+    "day_low": 1723.0,
+    "baseline_rsi": 46.867366710801384,
+    "mcap_cr": 27669.767199,
     "exchange": "NSE"
   }
 }

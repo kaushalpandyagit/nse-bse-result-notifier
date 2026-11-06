@@ -2493,10 +2493,13 @@
       "rs_rank": 49.4,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-06T03:51:19.093753",
-      "resistance_last_price": 508.70001220703125
+      "resistance_last_price": 508.70001220703125,
+      "mtf_last_alert": "2026-11-06T07:16:56.103924",
+      "mtf_last_price": 505.0
     },
     "BANCOINDIA": {
       "sma50": 602.1110009765625,
@@ -2545,10 +2548,11 @@
       "rs_rank": 57.9,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-06T03:51:20.479827",
-      "resistance_last_price": 622.0
+      "resistance_last_alert": "2026-11-06T07:16:57.622815",
+      "resistance_last_price": 604.7999877929688
     },
     "BANDHANBNK": {
       "sma50": 167.29679962158204,
@@ -3591,10 +3595,11 @@
       "rs_rank": 87.8,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:51:40.145986",
-      "near_high_17_22_last_price": 2396.300048828125
+      "near_high_17_22_last_alert": "2026-11-06T07:17:15.559357",
+      "near_high_17_22_last_price": 2370.0
     },
     "CARBORUNIV": {
       "sma50": 1135.6399926757813,
@@ -19423,10 +19428,11 @@
       "rs_rank": 51.5,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:55:54.362080",
-      "near_high_17_22_last_price": 382.0
+      "near_high_17_22_last_alert": "2026-11-06T07:21:28.294847",
+      "near_high_17_22_last_price": 378.04998779296875
     },
     "SUNTECK": {
       "sma50": 284.695,
@@ -22512,10 +22518,11 @@
       "rs_rank": 92.9,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T06:34:40.228106",
-      "near_high_17_22_last_price": 693.7999877929688
+      "near_high_17_22_last_alert": "2026-11-06T07:22:16.729072",
+      "near_high_17_22_last_price": 685.9500122070312
     },
     "WELSPUNLIV": {
       "sma50": 218.84740051269532,
