@@ -16,6 +16,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 5: Descending Trendline Contraction (Tight Wedge Breakout).
 - SETUP 6: High-Volume Anchor Day (breakout above anchor high / pullback hold in anchor zone).
 - SETUP 7: Descending Trendline 3+ touches + Floor (floor bounce RR / trendline breakout).
+- SETUP 8: RSI Bounce (Chartink port: 4H RSI crossing above EMA of daily RSI, buyers > sellers).
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
 - Custom Synthetic Index Engine (Equal-Weighted Basket RSI via custom_indices.json).
 - NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
@@ -101,6 +102,18 @@ DTL_LOOKBACK_DAYS = 90
 DTL_MIN_TOUCHES = 3               # swing-high touches on the falling line
 DTL_TOUCH_TOL_PCT = 1.5
 DTL_MIN_RR = 2.5                  # floor-bounce reward:risk (line vs floor-3%)
+
+# --- SETUP 8: RSI Bounce (ported from the Chartink screener) ---
+RSIB_MIN_MCAP_CR = 300.0
+RSIB_MAX_MCAP_CR = 40000.0
+RSIB_MIN_TRADED_VALUE = 150.0     # close x volume, in RUPEES as written in the screener
+RSIB_MIN_VOLUME = 30              # shares, as written in the screener
+RSIB_MAX_DAY_CHANGE_PCT = 4.1
+RSIB_RSI_MIN = 30.0               # daily RSI must be > this
+RSIB_RSI_MAX = 56.0               # daily RSI must be <= this
+RSIB_RSI_FLOOR_63D = 30.0         # lowest daily RSI of the last 63 sessions must be > this
+RSIB_BUY_SELL_RATIO = 1.2         # total buy qty > total sell qty x this
+RSIB_EMA_PERIODS = (5, 20, 50, 63, 200)  # EMAs of daily RSI that 4H RSI may cross
 
 RSI_PERIOD = 14
 TRACK_WINDOW_DAYS = 15
@@ -768,6 +781,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
 
     per_symbol_data = {}
     returns_6m = {}
+    rsi_bounce_universe = {}
 
     for symbol in symbols:
         df = hist_map.get(f"{symbol}.NS")
@@ -776,6 +790,11 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         if len(closes) < 210 or len(volumes) < 50: continue
 
         mcap_cr = get_market_cap_cr(symbol, "NSE")
+
+        # SETUP 8 has its own market-cap band, so build it before the momentum filter below.
+        bounce_fields = build_rsi_bounce_fields(closes, mcap_cr)
+        if bounce_fields: rsi_bounce_universe[symbol] = bounce_fields
+
         if mcap_cr is not None and (mcap_cr < MIN_MARKET_CAP_CR or mcap_cr > MAX_MARKET_CAP_CR): continue
 
         trend = get_trend_template_status(closes)
@@ -909,7 +928,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         lines.append(f"  {s} (RS rank {r}){e_tag}")
     send_telegram_message("\n".join(lines))
     
-    return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis}
+    return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis, "rsi_bounce_universe": rsi_bounce_universe}
 
 def send_morning_sector_rs_report(momentum_state: dict) -> dict:
     now_ist = get_ist_now()
@@ -1406,6 +1425,7 @@ def scan_hva_and_dtl_setups(symbol: str, entry: dict, metrics: dict) -> list:
     return msgs
 
 def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
+    LIVE_METRICS_CACHE.clear()
     watchlist = momentum_state.get("watchlist", {})
     if not watchlist: return momentum_state
 
@@ -1418,6 +1438,7 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
 
     for symbol, entry in watchlist.items():
         metrics = get_live_metrics(fyers, symbol, "NSE")
+        LIVE_METRICS_CACHE[symbol] = metrics
         if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI:
             continue
 
@@ -1628,6 +1649,158 @@ def check_intraday_momentum_triggers(momentum_state: dict, fyers) -> dict:
                         f"Price ₹{price:.2f} is within {pct_from_high:.1f}% of its 52W/ATH High (₹{ref_high:.2f}).{open_low_tag}{rs_tag}{ern_tag}"
                     )
 
+    return momentum_state
+
+# ----------------------------------------------------------------------
+# SETUP 8: RSI BOUNCE (Chartink port)
+# ----------------------------------------------------------------------
+LIVE_METRICS_CACHE = {}  # filled by the watchlist loop so this scanner needs no second fetch
+
+def build_rsi_bounce_fields(closes: pd.Series, mcap_cr: float) -> dict:
+    """Daily RSI values from COMPLETED sessions only; today's bar is added live at scan time."""
+    if mcap_cr is not None and not (RSIB_MIN_MCAP_CR < mcap_cr <= RSIB_MAX_MCAP_CR):
+        return None
+    today = get_ist_now().date()
+    done = closes[[d.date() < today for d in closes.index]]
+    if len(done) < 210:
+        return None
+    rsi = get_rsi_series(done, RSI_PERIOD).iloc[RSI_PERIOD:].dropna()
+    fields = {
+        "mcap_cr": mcap_cr,
+        "rsi_prev": round(float(rsi.iloc[-1]), 4),
+        "rsi_min_62": round(float(rsi.iloc[-62:].min()), 4),  # today is the 63rd session
+    }
+    for n in RSIB_EMA_PERIODS:
+        fields[f"rsi_ema_{n}"] = round(float(rsi.ewm(span=n, adjust=False).mean().iloc[-1]), 4)
+    return fields
+
+def rsi_bounce_daily_ok(entry: dict, metrics: dict) -> bool:
+    """Every screener condition that needs only daily data."""
+    price, volume, prev_close, c_rsi = metrics["price"], metrics["volume"], metrics["prev_close"], metrics.get("rsi")
+    if c_rsi is None or not prev_close:
+        return False
+    return (
+        price * volume >= RSIB_MIN_TRADED_VALUE
+        and volume >= RSIB_MIN_VOLUME
+        and (price - prev_close) / prev_close * 100 <= RSIB_MAX_DAY_CHANGE_PCT
+        and RSIB_RSI_MIN < c_rsi <= RSIB_RSI_MAX
+        and c_rsi >= entry["rsi_prev"]
+        and min(entry["rsi_min_62"], c_rsi) > RSIB_RSI_FLOOR_63D
+    )
+
+def find_rsi_ema_crossovers(rsi_4h: float, rsi_4h_prev: float, entry: dict, c_rsi: float) -> list:
+    """4H RSI above today's EMA of daily RSI, and previous 4H RSI at or below yesterday's EMA."""
+    crossed = []
+    for n in RSIB_EMA_PERIODS:
+        ema_prev = entry[f"rsi_ema_{n}"]
+        alpha = 2.0 / (n + 1)
+        ema_today = ema_prev + alpha * (c_rsi - ema_prev)
+        if rsi_4h > ema_today and rsi_4h_prev <= ema_prev:
+            crossed.append(n)
+    return crossed
+
+def fetch_4h_rsi(fyers, symbol: str) -> tuple:
+    """Returns (latest 4H RSI, previous 4H RSI, Fyers symbol or None). Bars start 09:15 and 13:15 IST."""
+    if fyers:
+        today = get_ist_now().date()
+        for suffix in ("EQ", "SM", "BE"):
+            fyers_sym = f"NSE:{symbol}-{suffix}"
+            try:
+                time.sleep(0.35)
+                resp = fyers.history(data={
+                    "symbol": fyers_sym, "resolution": "240", "date_format": "1",
+                    "range_from": (today - datetime.timedelta(days=99)).strftime("%Y-%m-%d"),
+                    "range_to": today.strftime("%Y-%m-%d"), "cont_flag": "1",
+                })
+                candles = resp.get("candles") if isinstance(resp, dict) and resp.get("s") == "ok" else None
+                if candles and len(candles) > RSI_PERIOD + 1:
+                    rsi = get_rsi_series(pd.Series([float(c[4]) for c in candles]), RSI_PERIOD)
+                    return float(rsi.iloc[-1]), float(rsi.iloc[-2]), fyers_sym
+            except Exception as e:
+                log.warning("Fyers 4H history failed for %s: %s", fyers_sym, e)
+    try:
+        hist = yf.Ticker(f"{symbol}.NS").history(period="6mo", interval="1h")
+        if hist.empty:
+            return None, None, None
+        idx = hist.index.tz_convert("Asia/Kolkata") if hist.index.tz is not None else hist.index
+        minutes = idx.hour * 60 + idx.minute
+        session = pd.Series(idx.date, index=hist.index).astype(str) + np.where(minutes < 13 * 60 + 15, "A", "B")
+        closes = hist["Close"].groupby(session).last()
+        if len(closes) <= RSI_PERIOD + 1:
+            return None, None, None
+        rsi = get_rsi_series(closes, RSI_PERIOD)
+        return float(rsi.iloc[-1]), float(rsi.iloc[-2]), None
+    except Exception as e:
+        log.warning("Yahoo 4H history failed for %s: %s", symbol, e)
+        return None, None, None
+
+def fetch_order_book_qty(fyers, fyers_sym: str) -> tuple:
+    """Returns (total buy qty, total sell qty), or (None, None) if Fyers has no answer."""
+    if not fyers:
+        return None, None
+    try:
+        time.sleep(0.35)
+        resp = fyers.depth(data={"symbol": fyers_sym, "ohlcv_flag": "1"})
+        book = (resp.get("d") or {}).get(fyers_sym) if isinstance(resp, dict) and resp.get("s") == "ok" else None
+        if book and book.get("totalbuyqty") is not None and book.get("totalsellqty") is not None:
+            return float(book["totalbuyqty"]), float(book["totalsellqty"])
+    except Exception as e:
+        log.warning("Fyers depth failed for %s: %s", fyers_sym, e)
+    return None, None
+
+def check_rsi_bounce_scanner(momentum_state: dict, fyers) -> dict:
+    universe = momentum_state.get("rsi_bounce_universe") or {}
+    now_ist = get_ist_now()
+    if not universe or not is_market_hours_now() or now_ist.time() < datetime.time(9, 15):
+        return momentum_state
+
+    counts = {"daily_ok": 0, "crossed": 0, "no_book": 0, "alerted": 0}
+    for symbol, entry in universe.items():
+        # A crossover is a one-time event: one alert per stock per day (universe is rebuilt daily).
+        if entry["rsi_min_62"] <= RSIB_RSI_FLOOR_63D or "rsi_bounce_last_alert" in entry:
+            continue
+        metrics = LIVE_METRICS_CACHE.get(symbol) if symbol in LIVE_METRICS_CACHE else get_live_metrics(fyers, symbol, "NSE")
+        if not metrics or not rsi_bounce_daily_ok(entry, metrics):
+            continue
+        counts["daily_ok"] += 1
+
+        rsi_4h, rsi_4h_prev, fyers_sym = fetch_4h_rsi(fyers, symbol)
+        if rsi_4h is None:
+            continue
+        c_rsi = metrics["rsi"]
+        crossed = find_rsi_ema_crossovers(rsi_4h, rsi_4h_prev, entry, c_rsi)
+        if not crossed:
+            continue
+        counts["crossed"] += 1
+
+        buy_qty, sell_qty = fetch_order_book_qty(fyers, fyers_sym or f"NSE:{symbol}-EQ")
+        if buy_qty is None:
+            counts["no_book"] += 1
+            continue
+        if buy_qty <= sell_qty * RSIB_BUY_SELL_RATIO:
+            continue
+
+        price, prev_close = metrics["price"], metrics["prev_close"]
+        safe_sym = symbol.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        ratio_str = f"{buy_qty / sell_qty:.1f}x" if sell_qty else "no sellers"
+        mcap = entry.get("mcap_cr")
+        sent = send_telegram_message(
+            f"🪃 <b>{safe_sym}</b> RSI Bounce!\n"
+            f"• <b>Current Price:</b> ₹{price:.2f} ({(price - prev_close) / prev_close * 100:+.1f}%)\n"
+            f"• <b>Daily RSI:</b> {c_rsi:.1f} (prev {entry['rsi_prev']:.1f}) | 63-day low: {min(entry['rsi_min_62'], c_rsi):.1f}\n"
+            f"• <b>4H RSI:</b> {rsi_4h:.1f} (prev bar {rsi_4h_prev:.1f}) crossed above daily RSI EMA {', '.join(map(str, crossed))}\n"
+            f"• <b>Buy vs Sell Qty:</b> {ratio_str}\n"
+            f"• <b>Mcap:</b> {f'₹{mcap:,.0f} Cr' if mcap is not None else 'n/a'}"
+            f"{get_rs_and_sector_tag(symbol, c_rsi, momentum_state)}{get_earnings_tag(symbol)}"
+        )
+        if sent:
+            record_alert(entry, "rsi_bounce", price)
+            counts["alerted"] += 1
+        else:
+            log.error("RSI bounce alert for %s NOT delivered; will retry next run.", symbol)
+
+    log.info("RSI bounce scan: %d stocks, %d passed daily checks, %d crossed, %d without order book data, %d alerted.",
+             len(universe), counts["daily_ok"], counts["crossed"], counts["no_book"], counts["alerted"])
     return momentum_state
 
 # ----------------------------------------------------------------------
@@ -2013,6 +2186,10 @@ def main():
                 momentum_state = run_daily_momentum_scan(momentum_state)
                 momentum_state = send_morning_sector_rs_report(momentum_state)
                 momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+                try:
+                    momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("RSI bounce scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
@@ -2031,6 +2208,10 @@ def main():
                 momentum_state = run_daily_momentum_scan(momentum_state)
                 momentum_state = send_morning_sector_rs_report(momentum_state)
                 momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+                try:
+                    momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("RSI bounce scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
