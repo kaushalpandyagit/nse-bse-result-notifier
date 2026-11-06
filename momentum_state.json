@@ -16449,7 +16449,13 @@
       "dtl_touches": 3,
       "dtl_floor": 63.56999969482422,
       "dtl_floor_touches": 1,
-      "rs_rank": 92.7
+      "rs_rank": 92.7,
+      "session_date": "2026-11-06",
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T06:33:26.540317",
+      "near_high_17_22_last_price": 89.25
     },
     "RCF": {
       "sma50": 106.78199951171875,
@@ -22383,7 +22389,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 92.9,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T06:34:40.228106",
+      "near_high_17_22_last_price": 693.7999877929688
     },
     "WELSPUNLIV": {
       "sma50": 218.84740051269532,

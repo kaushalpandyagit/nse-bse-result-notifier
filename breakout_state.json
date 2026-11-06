@@ -6418,5 +6418,29 @@
     "baseline_rsi": 30.374425568906986,
     "mcap_cr": 33210.53183829162,
     "exchange": "NSE"
+  },
+  "VOEPL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 530.0,
+    "day_low": 480.0,
+    "baseline_rsi": 58.376137056447824,
+    "mcap_cr": 1876.8354084732055,
+    "exchange": "NSE"
+  },
+  "KOKUYOCMLN": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 73.0,
+    "day_low": 71.9000015258789,
+    "baseline_rsi": 43.299211113503674,
+    "mcap_cr": 723.2907511880585,
+    "exchange": "NSE"
+  },
+  "NIVABUPA": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 76.41000366210938,
+    "day_low": 75.44999694824219,
+    "baseline_rsi": 50.923293545323844,
+    "mcap_cr": 14020.404738466108,
+    "exchange": "NSE"
   }
 }
