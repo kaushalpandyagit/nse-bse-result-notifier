@@ -17673,7 +17673,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 47.2,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-06T06:49:56.684420",
+      "resistance_last_price": 89.05000305175781
     },
     "SCHNEIDER": {
       "sma50": 1186.1379956054689,

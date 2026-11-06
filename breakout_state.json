@@ -6442,5 +6442,29 @@
     "baseline_rsi": 50.923293545323844,
     "mcap_cr": 14020.404738466108,
     "exchange": "NSE"
+  },
+  "SMT": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 529.7999877929688,
+    "day_low": 485.20001220703125,
+    "baseline_rsi": null,
+    "mcap_cr": 5262.76193095,
+    "exchange": "NSE"
+  },
+  "ELGIEQUIP": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 546.9000244140625,
+    "day_low": 525.7000122070312,
+    "baseline_rsi": 43.315859094212115,
+    "mcap_cr": 16810.4617174,
+    "exchange": "NSE"
+  },
+  "VTL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 541.9000244140625,
+    "day_low": 519.0,
+    "baseline_rsi": 50.13090524909068,
+    "mcap_cr": 15142.478391271972,
+    "exchange": "NSE"
   }
 }
