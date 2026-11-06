@@ -4027,7 +4027,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 35.5,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-06T09:47:20.624197",
+      "mtf_last_price": 365.04998779296875
     },
     "CEMPRO": {
       "sma50": 1228.422001953125,
@@ -8473,10 +8477,11 @@
       "rs_rank": 24.8,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "vol_breakout_last_alert": "2026-11-06T04:32:08.611648",
-      "vol_breakout_last_price": 602.9500122070312
+      "vol_breakout_last_alert": "2026-11-06T09:48:31.725237",
+      "vol_breakout_last_price": 612.3499755859375
     },
     "HAPPSTMNDS": {
       "sma50": 327.45400146484377,
@@ -8768,7 +8773,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 0.9,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-06T09:48:37.651400",
+      "mtf_last_price": 293.1499938964844
     },
     "HERITGFOOD": {
       "sma50": 386.6889990234375,
@@ -9840,7 +9849,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 47.9,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T09:48:52.027704",
+      "rectangle_bounce_last_price": 915.8499755859375
     },
     "INOXINDIA": {
       "sma50": 2050.437990722656,
@@ -10442,7 +10455,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 0.6,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "ema50_pullback_last_alert": "2026-11-06T09:49:03.556331",
+      "ema50_pullback_last_price": 289.0
     },
     "JAMNAAUTO": {
       "sma50": 131.51160064697265,
@@ -12877,10 +12894,11 @@
       "rs_rank": 65.6,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-06T04:49:45.127232",
-      "resistance_last_price": 321.20001220703125
+      "resistance_last_alert": "2026-11-06T09:49:40.267917",
+      "resistance_last_price": 326.0
     },
     "MANORAMA": {
       "sma50": 1912.1859985351562,
@@ -14817,7 +14835,13 @@
       "dtl_touches": 3,
       "dtl_floor": 58.11000061035156,
       "dtl_floor_touches": 1,
-      "rs_rank": 95.9
+      "rs_rank": 95.9,
+      "session_date": "2026-11-06",
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T09:50:10.315477",
+      "near_high_17_22_last_price": 75.12999725341797
     },
     "PARADEEP": {
       "sma50": 149.3717999267578,
@@ -16491,10 +16515,11 @@
       "rs_rank": 84.2,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "vol_breakout_last_alert": "2026-11-06T05:34:13.880899",
-      "vol_breakout_last_price": 732.5999755859375
+      "vol_breakout_last_alert": "2026-11-06T09:50:37.468465",
+      "vol_breakout_last_price": 721.8499755859375
     },
     "RATNAMANI": {
       "sma50": 2601.35,
@@ -17576,10 +17601,11 @@
       "rs_rank": 41.0,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-06T03:55:24.413136",
-      "mtf_last_price": 130.8300018310547
+      "mtf_last_alert": "2026-11-06T09:50:56.344706",
+      "mtf_last_price": 132.2100067138672
     },
     "SANDUMA": {
       "sma50": 182.10179992675782,

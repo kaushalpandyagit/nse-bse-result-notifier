@@ -237,11 +237,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-06T03:57:22.350967",
-    "spread_last_price": 5.091960063058334,
+    "spread_last_alert": "2026-11-06T09:52:31.642238",
+    "spread_last_price": 6.756476987480936,
     "session_date": "2026-11-06",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_PRADPME": {
@@ -6767,6 +6768,38 @@
     "day_low": 1761.300048828125,
     "baseline_rsi": 72.62758188765581,
     "mcap_cr": 8242.294592492859,
+    "exchange": "NSE"
+  },
+  "SOUTHWEST": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 202.8000030517578,
+    "day_low": 170.35000610351562,
+    "baseline_rsi": 40.86358657622798,
+    "mcap_cr": 565.1634514406921,
+    "exchange": "NSE"
+  },
+  "PIIND": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1758.0,
+    "day_low": 1716.4000244140625,
+    "baseline_rsi": 25.049443687325223,
+    "mcap_cr": 26292.190406403686,
+    "exchange": "NSE"
+  },
+  "COROMANDEL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1910.300048828125,
+    "day_low": 1796.0,
+    "baseline_rsi": 53.91476431480834,
+    "mcap_cr": 53921.31289195,
+    "exchange": "NSE"
+  },
+  "ASHIANA": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 354.6499938964844,
+    "day_low": 341.54998779296875,
+    "baseline_rsi": 46.066272203683106,
+    "mcap_cr": 3541.9933977505034,
     "exchange": "NSE"
   }
 }

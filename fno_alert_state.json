@@ -447,7 +447,13 @@
     "trigger_date": "2026-10-30",
     "ref_high": 517.0,
     "ref_low": 466.0,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_high_breach_last_alert": "2026-11-06T09:46:12.508663",
+    "fno_high_breach_last_price": 516.2000122070312
   },
   "SECMARK": {
     "trigger_date": "2026-10-30",
