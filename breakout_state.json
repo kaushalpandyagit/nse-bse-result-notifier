@@ -1220,11 +1220,12 @@
     "price_low_last_price": 473.8500061035156
   },
   "arb_AEGISVOPAK": {
-    "spread_last_alert": "2026-11-06T03:57:10.261547",
-    "spread_last_price": 6.552346762464458,
+    "spread_last_alert": "2026-11-06T09:36:07.698327",
+    "spread_last_price": 3.892211602200894,
     "session_date": "2026-11-06",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "AVANTEL": {
@@ -6750,6 +6751,22 @@
     "day_low": 1.059999942779541,
     "baseline_rsi": 60.35223174507388,
     "mcap_cr": 1409.0023389893026,
+    "exchange": "NSE"
+  },
+  "TREL": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 24.540000915527344,
+    "day_low": 23.75,
+    "baseline_rsi": 42.57254414309561,
+    "mcap_cr": 586.2295352600647,
+    "exchange": "NSE"
+  },
+  "ENTERO": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1936.5999755859375,
+    "day_low": 1761.300048828125,
+    "baseline_rsi": 72.62758188765581,
+    "mcap_cr": 8242.294592492859,
     "exchange": "NSE"
   }
 }

@@ -8326,7 +8326,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 10.3,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-06T09:32:06.073891",
+      "mtf_last_price": 2142.800048828125
     },
     "GRWRHITECH": {
       "sma50": 6957.41,
@@ -10130,10 +10134,11 @@
       "rs_rank": 7.1,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-06T04:17:52.512966",
-      "mtf_last_price": 106.68000030517578
+      "mtf_last_alert": "2026-11-06T09:32:32.328048",
+      "mtf_last_price": 107.77999877929688
     },
     "IREDA": {
       "sma50": 108.93899993896484,
@@ -14211,10 +14216,11 @@
       "rs_rank": 77.1,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:54:29.470491",
-      "near_high_17_22_last_price": 19408.0
+      "near_high_17_22_last_alert": "2026-11-06T09:33:31.462434",
+      "near_high_17_22_last_price": 19700.0
     },
     "NEWGEN": {
       "sma50": 485.0389978027344,
@@ -16882,10 +16888,11 @@
       "rs_rank": 64.1,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-06T04:34:05.073855",
-      "mtf_last_price": 227.83999633789062
+      "mtf_last_alert": "2026-11-06T09:34:13.270377",
+      "mtf_last_price": 231.1199951171875
     },
     "RENUKA": {
       "sma50": 21.939599990844727,
@@ -18265,7 +18272,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 4.7,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-06T09:34:33.356908",
+      "liquidity_sweep_last_price": 348.79998779296875
     },
     "SHARDACROP": {
       "sma50": 728.0029956054688,
@@ -18949,10 +18960,13 @@
       "rs_rank": 44.2,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-06T03:55:44.193936",
-      "mtf_last_price": 1271.5
+      "mtf_last_price": 1271.5,
+      "resistance_last_alert": "2026-11-06T09:34:42.595135",
+      "resistance_last_price": 1277.4000244140625
     },
     "SONATSOFTW": {
       "sma50": 259.414599609375,
@@ -21043,10 +21057,13 @@
       "rs_rank": 42.1,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-06T05:05:50.367584",
-      "mtf_last_price": 3053.300048828125
+      "mtf_last_price": 3053.300048828125,
+      "near_high_17_22_last_alert": "2026-11-06T09:35:14.487427",
+      "near_high_17_22_last_price": 3062.0
     },
     "TIPSMUSIC": {
       "sma50": 685.7159997558593,
