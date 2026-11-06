@@ -737,7 +737,13 @@
     "trigger_date": "2026-11-04",
     "ref_high": 542.1,
     "ref_low": 490.45,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T03:46:17.374009",
+    "fno_low_breach_last_price": 490.3999938964844
   },
   "GLOBALE": {
     "trigger_date": "2026-11-04",
@@ -755,7 +761,13 @@
     "trigger_date": "2026-11-04",
     "ref_high": 382.0,
     "ref_low": 354.75,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T03:46:18.933834",
+    "fno_low_breach_last_price": 352.5
   },
   "AAVAS": {
     "trigger_date": "2026-11-04",
@@ -791,7 +803,13 @@
     "trigger_date": "2026-11-04",
     "ref_high": 2.24,
     "ref_low": 1.98,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-06T03:46:21.269213",
+    "fno_high_breach_last_price": 2.0399999618530273
   },
   "REDTAPE": {
     "trigger_date": "2026-11-04",
@@ -821,7 +839,13 @@
     "trigger_date": "2026-11-05",
     "ref_high": 374.0,
     "ref_low": 358.45,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T03:46:24.544759",
+    "fno_low_breach_last_price": 359.29998779296875
   },
   "BIL": {
     "trigger_date": "2026-11-05",
@@ -851,7 +875,13 @@
     "trigger_date": "2026-11-05",
     "ref_high": 324.8,
     "ref_low": 295.2,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T03:46:29.503353",
+    "fno_low_breach_last_price": 297.95001220703125
   },
   "NYKAA": {
     "trigger_date": "2026-11-05",
