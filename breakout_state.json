@@ -6703,5 +6703,21 @@
     "baseline_rsi": 45.68554562457771,
     "mcap_cr": 6822.565562306075,
     "exchange": "NSE"
+  },
+  "KAKATCEM": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 99.0,
+    "day_low": 95.25,
+    "baseline_rsi": 45.437532526892866,
+    "mcap_cr": 74.6290368,
+    "exchange": "NSE"
+  },
+  "BOMDYEING": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 106.80999755859375,
+    "day_low": 93.75,
+    "baseline_rsi": 65.62339580494921,
+    "mcap_cr": 2191.335257485275,
+    "exchange": "NSE"
   }
 }

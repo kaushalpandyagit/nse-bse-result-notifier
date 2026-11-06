@@ -7303,10 +7303,11 @@
       "rs_rank": 50.6,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:52:39.097763",
-      "near_high_17_22_last_price": 150.11000061035156
+      "near_high_17_22_last_alert": "2026-11-06T09:03:14.745794",
+      "near_high_17_22_last_price": 151.94000244140625
     },
     "GALLANTT": {
       "sma50": 552.5920001220703,
@@ -12464,10 +12465,13 @@
       "rs_rank": 48.3,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-06T03:54:01.530532",
-      "near_high_17_22_last_price": 531.7000122070312
+      "near_high_17_22_last_price": 531.7000122070312,
+      "mtf_last_alert": "2026-11-06T09:04:37.076668",
+      "mtf_last_price": 534.3499755859375
     },
     "LLOYDSENGG": {
       "sma50": 88.41939971923829,
@@ -13352,7 +13356,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 47.6,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T09:04:49.174386",
+      "near_high_17_22_last_price": 376.54998779296875
     },
     "MINDACORP": {
       "sma50": 668.6799975585938,
@@ -14447,10 +14455,13 @@
       "rs_rank": 59.6,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-06T04:06:46.982196",
-      "near_high_17_22_last_price": 277.20001220703125
+      "near_high_17_22_last_price": 277.20001220703125,
+      "mtf_last_alert": "2026-11-06T09:05:06.284079",
+      "mtf_last_price": 282.0
     },
     "NSLNISP": {
       "sma50": 41.60440002441406,
@@ -14892,7 +14903,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 94.0,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T09:05:13.591383",
+      "near_high_17_22_last_price": 1240.5999755859375
     },
     "PARKHOSPS": {
       "sma50": 261.05459869384765,
@@ -15681,7 +15696,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 53.0,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-06T09:05:25.711342",
+      "mtf_last_price": 1602.199951171875
     },
     "POWERMECH": {
       "sma50": 2366.58,
@@ -18619,7 +18638,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 27.8,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T09:06:09.850083",
+      "rectangle_bounce_last_price": 741.3499755859375
     },
     "SJS": {
       "sma50": 2199.6620166015623,
@@ -23039,7 +23062,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 70.1,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-06T09:07:12.948682",
+      "mtf_last_price": 1696.0
     },
     "ZFCVINDIA": {
       "sma50": 2307.8879931640627,
