@@ -409,10 +409,12 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-27T06:17:49.058923",
-    "custom_last_price": 167.75,
+    "custom_last_alert": "2026-11-06T05:46:06.552172",
+    "custom_last_price": 162.60000610351562,
     "session_date": "2026-11-06",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_AETHER": {
     "spread_last_alert": "2026-11-02T04:05:26.197403",
@@ -6336,5 +6338,29 @@
     ],
     "spread_last_alert": "2026-11-06T03:57:32.969072",
     "spread_last_price": 3.0968600736042595
+  },
+  "NACLIND": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 133.50999450683594,
+    "day_low": 119.36000061035156,
+    "baseline_rsi": 43.5470902970418,
+    "mcap_cr": 2814.9020537187653,
+    "exchange": "NSE"
+  },
+  "PRAXIS": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 5.329999923706055,
+    "day_low": 4.900000095367432,
+    "baseline_rsi": 66.7446877657352,
+    "mcap_cr": 91.04798467204333,
+    "exchange": "NSE"
+  },
+  "GODAVARIB": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 231.0,
+    "day_low": 222.0500030517578,
+    "baseline_rsi": 54.05655827291185,
+    "mcap_cr": 1162.35999058927,
+    "exchange": "NSE"
   }
 }

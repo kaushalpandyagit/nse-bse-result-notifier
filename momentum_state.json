@@ -13257,7 +13257,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 87.0,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-06T05:49:50.991287",
+      "resistance_last_price": 685.75
     },
     "MMTC": {
       "sma50": 57.51099975585937,
@@ -17899,7 +17903,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 47.0,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T05:51:07.858257",
+      "rectangle_bounce_last_price": 521.7000122070312
     },
     "SGMART": {
       "sma50": 784.2000012207031,
