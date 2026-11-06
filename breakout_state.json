@@ -6937,5 +6937,37 @@
     "baseline_rsi": 55.059054777726466,
     "mcap_cr": 135.26163459960938,
     "exchange": "NSE"
+  },
+  "GESHIP": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1459.0,
+    "day_low": 1408.9000244140625,
+    "baseline_rsi": 39.365923526523716,
+    "mcap_cr": 19581.693810384033,
+    "exchange": "NSE"
+  },
+  "DOMS": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 2070.0,
+    "day_low": 2024.300048828125,
+    "baseline_rsi": 57.489143001360304,
+    "mcap_cr": 12464.77673838047,
+    "exchange": "NSE"
+  },
+  "ALEMBICLTD": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 104.4000015258789,
+    "day_low": 95.0999984741211,
+    "baseline_rsi": 60.941758653691245,
+    "mcap_cr": 2599.145694361438,
+    "exchange": "NSE"
+  },
+  "GLAND": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 3183.39990234375,
+    "day_low": 3133.199951171875,
+    "baseline_rsi": 63.13916596684678,
+    "mcap_cr": 52296.89076393706,
+    "exchange": "NSE"
   }
 }
