@@ -387,9 +387,9 @@
     "spread_last_price": 2.8975621665396343
   },
   "arb_APTUS": {
-    "spread_last_alert": "2026-11-05T03:55:01.192125",
-    "spread_last_price": 6.992677555805514,
-    "session_date": "2026-11-05",
+    "spread_last_alert": "2026-11-06T04:52:54.531024",
+    "spread_last_price": 2.524439070573876,
+    "session_date": "2026-11-06",
     "alert_slots": [
       "H1"
     ]
@@ -443,8 +443,12 @@
     ]
   },
   "arb_JINDALPHOT": {
-    "spread_last_alert": "2026-11-02T04:26:18.305927",
-    "spread_last_price": 3.0634819529093837
+    "spread_last_alert": "2026-11-06T04:52:30.529643",
+    "spread_last_price": 3.6093830428050135,
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_AZAD": {
     "spread_last_alert": "2026-11-06T03:57:31.909395",

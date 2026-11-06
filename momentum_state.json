@@ -1411,7 +1411,9 @@
       "dtl_touches": null,
       "dtl_floor": 361.3999938964844,
       "dtl_floor_touches": 2,
-      "rs_rank": 89.3
+      "rs_rank": 89.3,
+      "session_date": "2026-11-06",
+      "alert_slots": []
     },
     "APOLLOTYRE": {
       "sma50": 409.51399963378907,
@@ -7907,7 +7909,13 @@
       "dtl_touches": null,
       "dtl_floor": 146.60000610351562,
       "dtl_floor_touches": 4,
-      "rs_rank": 67.9
+      "rs_rank": 67.9,
+      "session_date": "2026-11-06",
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-06T04:48:24.780148",
+      "near_high_17_22_last_price": 164.35000610351562
     },
     "GRANULES": {
       "sma50": 838.9049975585938,
@@ -9261,7 +9269,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 32.9,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-06T04:48:47.090064",
+      "ema50_pullback_last_price": 140.82000732421875
     },
     "IIFL": {
       "sma50": 599.0750048828126,
@@ -10093,7 +10105,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 31.8,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T04:49:02.466358",
+      "mtf_last_price": 249.60000610351562
     },
     "IXIGO": {
       "sma50": 155.53460021972657,
@@ -12691,7 +12707,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 65.6,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-06T04:49:45.127232",
+      "resistance_last_price": 321.20001220703125
     },
     "MANORAMA": {
       "sma50": 1912.1859985351562,
@@ -19459,7 +19479,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 26.1,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T04:51:33.996486",
+      "mtf_last_price": 215.6300048828125
     },
     "SUVEN": {
       "sma50": 317.5090008544922,
