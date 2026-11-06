@@ -629,7 +629,13 @@
     "trigger_date": "2026-11-03",
     "ref_high": 215.92,
     "ref_low": 198.01,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-06",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-06T09:16:11.834714",
+    "fno_low_breach_last_price": 198.22000122070312
   },
   "BALAJEE": {
     "trigger_date": "2026-11-03",

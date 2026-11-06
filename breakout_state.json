@@ -6719,5 +6719,37 @@
     "baseline_rsi": 65.62339580494921,
     "mcap_cr": 2191.335257485275,
     "exchange": "NSE"
+  },
+  "PROTEAN": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 681.0999755859375,
+    "day_low": 624.4500122070312,
+    "baseline_rsi": 59.63933031777415,
+    "mcap_cr": 2714.4652177835083,
+    "exchange": "NSE"
+  },
+  "WSTCSTPAPR": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 825.0,
+    "day_low": 719.4500122070312,
+    "baseline_rsi": 48.53894735410946,
+    "mcap_cr": 5152.4751518277835,
+    "exchange": "NSE"
+  },
+  "CHOLAHLDNG": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1512.9000244140625,
+    "day_low": 1402.300048828125,
+    "baseline_rsi": 60.16756988846773,
+    "mcap_cr": 27265.2874824,
+    "exchange": "NSE"
+  },
+  "GTLINFRA": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 1.1399999856948853,
+    "day_low": 1.059999942779541,
+    "baseline_rsi": 60.35223174507388,
+    "mcap_cr": 1409.0023389893026,
+    "exchange": "NSE"
   }
 }

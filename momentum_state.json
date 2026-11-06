@@ -1276,7 +1276,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 23.9,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-06T09:16:38.116571",
+      "liquidity_sweep_last_price": 445.0
     },
     "ANGELONE": {
       "sma50": 294.9779992675781,
@@ -16629,10 +16633,11 @@
       "rs_rank": 92.7,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T06:33:26.540317",
-      "near_high_17_22_last_price": 89.25
+      "near_high_17_22_last_alert": "2026-11-06T09:20:50.703487",
+      "near_high_17_22_last_price": 88.22000122070312
     },
     "RCF": {
       "sma50": 106.78199951171875,
@@ -17615,7 +17620,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 14.7,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-06T09:21:09.141681",
+      "mtf_last_price": 178.1199951171875
     },
     "SANSERA": {
       "sma50": 4155.7220068359375,
@@ -18204,10 +18213,11 @@
       "rs_rank": 76.3,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-06T03:55:33.715019",
-      "near_high_17_22_last_price": 2949.300048828125
+      "near_high_17_22_last_alert": "2026-11-06T09:21:18.310795",
+      "near_high_17_22_last_price": 3000.0
     },
     "SHAKTIPUMP": {
       "sma50": 436.57400085449217,
@@ -20433,10 +20443,11 @@
       "rs_rank": 60.7,
       "session_date": "2026-11-06",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "vol_breakout_last_alert": "2026-11-06T06:06:47.277557",
-      "vol_breakout_last_price": 567.5999755859375
+      "vol_breakout_last_alert": "2026-11-06T09:21:53.168676",
+      "vol_breakout_last_price": 580.7000122070312
     },
     "TECHNOE": {
       "sma50": 950.8269995117188,
