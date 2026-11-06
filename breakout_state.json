@@ -6849,5 +6849,45 @@
     "baseline_rsi": 43.25577488391875,
     "mcap_cr": 824.3324352825317,
     "exchange": "NSE"
+  },
+  "TPLPLASTEH": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 70.87999725341797,
+    "day_low": 66.0,
+    "baseline_rsi": 54.43328098603433,
+    "mcap_cr": 528.8603638046264,
+    "exchange": "NSE"
+  },
+  "NITYAS": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 67.9000015258789,
+    "day_low": 64.79000091552734,
+    "baseline_rsi": 29.070759263296537,
+    "mcap_cr": 381.555268,
+    "exchange": "NSE"
+  },
+  "BFUTILITIE": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 457.0,
+    "day_low": 436.0,
+    "baseline_rsi": 43.395519765095926,
+    "mcap_cr": 1660.2007041,
+    "exchange": "NSE"
+  },
+  "DYNAMATECH": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 12912.0,
+    "day_low": 12125.0,
+    "baseline_rsi": 51.872033420505865,
+    "mcap_cr": 8707.9882146,
+    "exchange": "NSE"
+  },
+  "PRECWIRE": {
+    "result_date": "2026-11-06T00:00:00",
+    "day_high": 419.0,
+    "day_low": 384.3999938964844,
+    "baseline_rsi": 40.233716960540995,
+    "mcap_cr": 7338.826379529266,
+    "exchange": "NSE"
   }
 }
