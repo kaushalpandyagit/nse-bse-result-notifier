@@ -4949,7 +4949,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 10.7,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-06T05:31:14.733309",
+      "mtf_last_price": 211.3300018310547
     },
     "CSBBANK": {
       "sma50": 317.1579998779297,
@@ -8513,7 +8517,13 @@
       "dtl_touches": null,
       "dtl_floor": 648.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 63.2
+      "rs_rank": 63.2,
+      "session_date": "2026-11-06",
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-06T05:32:13.104060",
+      "resistance_last_price": 836.8499755859375
     },
     "HCC": {
       "sma50": 20.57959991455078,
@@ -13789,7 +13799,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 13.0,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-06T05:33:34.395914",
+      "rectangle_bounce_last_price": 124.4800033569336
     },
     "NEOGEN": {
       "sma50": 2318.485986328125,
@@ -16281,7 +16295,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 84.2,
       "session_date": "2026-11-06",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-06T05:34:13.880899",
+      "vol_breakout_last_price": 732.5999755859375
     },
     "RATNAMANI": {
       "sma50": 2601.35,
