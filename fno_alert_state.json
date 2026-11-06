@@ -472,12 +472,10 @@
     "fno_low_breach_last_price": 3428.800048828125
   },
   "ALIVUS": {
-    "trigger_date": "2026-10-30",
-    "ref_high": 1499.0,
-    "ref_low": 1380.0,
-    "status": "Breached High",
-    "fno_high_breach_last_alert": "2026-11-02T04:14:52.003911",
-    "fno_high_breach_last_price": 1453.0999755859375
+    "trigger_date": "2026-11-06",
+    "ref_high": 1523.2,
+    "ref_low": 1403.4,
+    "status": "Active"
   },
   "SANOFI": {
     "trigger_date": "2026-10-30",
@@ -674,16 +672,10 @@
     "fno_low_breach_last_price": 247.7100067138672
   },
   "AKCAPIT": {
-    "trigger_date": "2026-11-03",
-    "ref_high": 1784.9,
-    "ref_low": 1738.8,
-    "status": "Breached High",
-    "session_date": "2026-11-05",
-    "alert_slots": [
-      "H1"
-    ],
-    "fno_high_breach_last_alert": "2026-11-05T03:46:31.847997",
-    "fno_high_breach_last_price": 1766.0
+    "trigger_date": "2026-11-06",
+    "ref_high": 1794.0,
+    "ref_low": 1750.0,
+    "status": "Active"
   },
   "RAMCOCEM": {
     "trigger_date": "2026-11-03",
@@ -966,5 +958,53 @@
     ],
     "fno_low_breach_last_alert": "2026-11-06T10:01:26.769339",
     "fno_low_breach_last_price": 39.04999923706055
+  },
+  "JSWCEMENT": {
+    "trigger_date": "2026-11-06",
+    "ref_high": 127.15,
+    "ref_low": 119.46,
+    "status": "Active"
+  },
+  "KIRLOSIND": {
+    "trigger_date": "2026-11-06",
+    "ref_high": 3678.0,
+    "ref_low": 3257.8,
+    "status": "Active"
+  },
+  "SOMANYCERA": {
+    "trigger_date": "2026-11-06",
+    "ref_high": 570.45,
+    "ref_low": 520.45,
+    "status": "Active"
+  },
+  "ELDEHSG": {
+    "trigger_date": "2026-11-06",
+    "ref_high": 829.3,
+    "ref_low": 800.0,
+    "status": "Active"
+  },
+  "SFL": {
+    "trigger_date": "2026-11-06",
+    "ref_high": 533.05,
+    "ref_low": 516.5,
+    "status": "Active"
+  },
+  "ASTRAZEN": {
+    "trigger_date": "2026-11-06",
+    "ref_high": 6801.0,
+    "ref_low": 6294.0,
+    "status": "Active"
+  },
+  "MPHASIS": {
+    "trigger_date": "2026-11-06",
+    "ref_high": 2711.0,
+    "ref_low": 2520.0,
+    "status": "Active"
+  },
+  "IGPL": {
+    "trigger_date": "2026-11-06",
+    "ref_high": 597.95,
+    "ref_low": 563.0,
+    "status": "Active"
   }
 }
