@@ -18331,7 +18331,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 13.8,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T06:47:08.378251",
+      "mtf_last_price": 57.68000030517578
     },
     "SKIPPER": {
       "sma50": 535.9800018310547,
