@@ -15300,7 +15300,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 50.9,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:30:43.088437",
+      "mtf_last_price": 2392.5
     },
     "PRAJIND": {
       "sma50": 297.8731985473633,
@@ -18490,7 +18494,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 22.8,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:30:53.767925",
+      "mtf_last_price": 249.22000122070312
     },
     "SOUTHBANK": {
       "sma50": 49.703200073242186,
@@ -19272,7 +19280,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 84.3,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:30:57.246362",
+      "mtf_last_price": 287.1499938964844
     },
     "SWANCORP": {
       "sma50": 270.94720062255857,
@@ -19954,7 +19966,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 16.6,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:31:00.359714",
+      "mtf_last_price": 955.1500244140625
     },
     "TEGA": {
       "sma50": 1827.8059985351563,

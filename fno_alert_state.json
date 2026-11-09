@@ -835,7 +835,13 @@
     "trigger_date": "2026-11-05",
     "ref_high": 611.75,
     "ref_low": 555.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-09",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-09T04:29:53.172509",
+    "fno_low_breach_last_price": 554.7000122070312
   },
   "GOACARBON": {
     "trigger_date": "2026-11-05",
