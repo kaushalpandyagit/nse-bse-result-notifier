@@ -978,10 +978,11 @@
       "rs_rank": 56.2,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-09T04:01:39.408942",
-      "resistance_last_price": 1594.699951171875
+      "resistance_last_alert": "2026-11-09T09:16:16.809403",
+      "resistance_last_price": 1629.5999755859375
     },
     "AIAENG": {
       "sma50": 3821.59599609375,
@@ -2555,7 +2556,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 25.6,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-09T09:16:22.681093",
+      "mtf_last_price": 166.4499969482422
     },
     "BATAINDIA": {
       "sma50": 639.7309985351562,
@@ -5987,10 +5992,11 @@
       "rs_rank": 52.8,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-09T03:49:32.911045",
-      "resistance_last_price": 311.70001220703125
+      "resistance_last_alert": "2026-11-09T09:16:33.909520",
+      "resistance_last_price": 308.54998779296875
     },
     "ELECON": {
       "sma50": 435.07100158691406,
@@ -9398,7 +9404,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 58.0,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-09T09:16:45.374429",
+      "near_high_17_22_last_price": 1623.300048828125
     },
     "IMFA": {
       "sma50": 1201.353994140625,
@@ -9994,10 +10004,11 @@
       "rs_rank": 9.7,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-09T06:17:05.666989",
-      "mtf_last_price": 109.41999816894531
+      "mtf_last_alert": "2026-11-09T09:16:48.130030",
+      "mtf_last_price": 110.62999725341797
     },
     "ITI": {
       "sma50": 249.24160095214845,
@@ -10544,10 +10555,13 @@
       "rs_rank": 41.8,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-09T03:50:26.661835",
-      "resistance_last_price": 355.6000061035156
+      "resistance_last_price": 355.6000061035156,
+      "mtf_last_alert": "2026-11-09T09:16:50.855298",
+      "mtf_last_price": 357.79998779296875
     },
     "JMFINANCIL": {
       "sma50": 121.12459976196288,
@@ -11378,10 +11392,13 @@
       "rs_rank": 64.0,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-09T03:50:34.830337",
-      "resistance_last_price": 909.5999755859375
+      "resistance_last_price": 909.5999755859375,
+      "mtf_last_alert": "2026-11-09T09:16:53.772488",
+      "mtf_last_price": 916.75
     },
     "KIMS": {
       "sma50": 735.7360009765625,
@@ -12266,10 +12283,13 @@
       "rs_rank": 46.1,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-09T03:50:46.068374",
-      "mtf_last_price": 546.5499877929688
+      "mtf_last_price": 546.5499877929688,
+      "resistance_last_alert": "2026-11-09T09:16:57.586647",
+      "resistance_last_price": 554.5499877929688
     },
     "LLOYDSENGG": {
       "sma50": 88.31919967651368,
@@ -17068,7 +17088,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 7.1,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-09T09:17:13.143582",
+      "mtf_last_price": 6.789999961853027
     },
     "RUBICON": {
       "sma50": 1657.2960034179687,
