@@ -493,7 +493,9 @@
   },
   "arb_AEQUS": {
     "spread_last_alert": "2026-10-27T09:36:49.060145",
-    "spread_last_price": 3.076925922384907
+    "spread_last_price": 3.076925922384907,
+    "session_date": "2026-11-09",
+    "alert_slots": []
   },
   "arb_AWL": {
     "spread_last_alert": "2026-10-15T03:56:34.238709",

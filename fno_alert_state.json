@@ -459,7 +459,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 156.45,
     "ref_low": 149.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-09",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-09T05:16:05.685454",
+    "fno_low_breach_last_price": 141.39999389648438
   },
   "AJANTPHARM": {
     "trigger_date": "2026-10-30",
@@ -991,7 +997,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 829.3,
     "ref_low": 800.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-09",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-09T05:16:14.685805",
+    "fno_low_breach_last_price": 799.9500122070312
   },
   "SFL": {
     "trigger_date": "2026-11-06",

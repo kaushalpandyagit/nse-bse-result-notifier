@@ -773,7 +773,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 79.7,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-09T05:16:20.723812",
+      "near_high_17_22_last_price": 236.1999969482422
     },
     "AEROFLEX": {
       "sma50": 525.615,
@@ -17119,7 +17123,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 45.5,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T05:17:21.554053",
+      "mtf_last_price": 135.1300048828125
     },
     "SANDUMA": {
       "sma50": 181.51279998779296,
@@ -18323,7 +18331,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 78.0,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-09T05:17:27.452869",
+      "near_high_17_22_last_price": 511.54998779296875
     },
     "SKYGOLD": {
       "sma50": 870.4280017089844,
@@ -21851,7 +21863,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 31.5,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-09T05:17:41.658145",
+      "ema50_pullback_last_price": 527.0499877929688
     },
     "WAAREERTL": {
       "sma50": 794.4359997558594,
