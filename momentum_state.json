@@ -9279,7 +9279,13 @@
       "dtl_touches": null,
       "dtl_floor": 494.6499938964844,
       "dtl_floor_touches": 1,
-      "rs_rank": 89.9
+      "rs_rank": 89.9,
+      "session_date": "2026-11-09",
+      "alert_slots": [
+        "H2"
+      ],
+      "resistance_last_alert": "2026-11-09T07:46:46.721910",
+      "resistance_last_price": 620.4000244140625
     },
     "IIFLCAPS": {
       "sma50": 343.5160009765625,
@@ -9765,10 +9771,11 @@
       "rs_rank": 4.1,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-09T06:01:58.054955",
-      "mtf_last_price": 66.9800033569336
+      "mtf_last_alert": "2026-11-09T07:46:49.510848",
+      "mtf_last_price": 66.26000213623047
     },
     "INTELLECT": {
       "sma50": 622.3090002441406,
@@ -12629,10 +12636,11 @@
       "rs_rank": 71.3,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-09T03:50:52.035166",
-      "resistance_last_price": 325.54998779296875
+      "resistance_last_alert": "2026-11-09T07:47:01.389801",
+      "resistance_last_price": 321.20001220703125
     },
     "MANORAMA": {
       "sma50": 1913.5039990234375,
@@ -14362,7 +14370,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 19.0,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-09T07:47:09.081628",
+      "mtf_last_price": 1079.0999755859375
     },
     "ONESOURCE": {
       "sma50": 1528.5639990234374,
@@ -16876,7 +16888,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 29.3,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "resistance_last_alert": "2026-11-09T07:47:19.811993",
+      "resistance_last_price": 453.0
     },
     "RPOWER": {
       "sma50": 19.938999977111816,
@@ -17263,10 +17279,11 @@
       "rs_rank": 45.5,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-09T05:17:21.554053",
-      "mtf_last_price": 135.1300048828125
+      "mtf_last_alert": "2026-11-09T07:47:22.233488",
+      "mtf_last_price": 133.3699951171875
     },
     "SANDUMA": {
       "sma50": 181.51279998779296,
@@ -18041,10 +18058,11 @@
       "rs_rank": 86.9,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-09T03:51:55.479720",
-      "near_high_17_22_last_price": 186.3000030517578
+      "near_high_17_22_last_alert": "2026-11-09T07:47:26.218700",
+      "near_high_17_22_last_price": 184.3699951171875
     },
     "SHILCTECH": {
       "sma50": 3920.1479931640624,
