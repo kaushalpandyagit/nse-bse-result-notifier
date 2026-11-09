@@ -7305,10 +7305,11 @@
       "rs_rank": 42.2,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-09T03:49:48.687186",
-      "near_high_17_22_last_price": 1421.699951171875
+      "near_high_17_22_last_alert": "2026-11-09T07:16:24.901023",
+      "near_high_17_22_last_price": 1453.699951171875
     },
     "GILLETTE": {
       "sma50": 7213.28,
@@ -8397,9 +8398,12 @@
       "rs_rank": 84.5,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "dtl_bo_sent": true
+      "dtl_bo_sent": true,
+      "vol_breakout_last_alert": "2026-11-09T07:16:28.603413",
+      "vol_breakout_last_price": 1781.0
     },
     "HBLENGINE": {
       "sma50": 755.9480004882812,
@@ -19215,10 +19219,11 @@
       "rs_rank": 64.9,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-09T03:52:07.602885",
-      "near_high_17_22_last_price": 392.8500061035156
+      "near_high_17_22_last_alert": "2026-11-09T07:16:55.204258",
+      "near_high_17_22_last_price": 386.29998779296875
     },
     "SUNTECK": {
       "sma50": 284.5220001220703,
@@ -20509,10 +20514,11 @@
       "rs_rank": 74.8,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-09T03:52:21.725027",
-      "resistance_last_price": 102.58000183105469
+      "resistance_last_alert": "2026-11-09T07:16:59.356621",
+      "resistance_last_price": 101.55000305175781
     },
     "THYROCARE": {
       "sma50": 528.5909997558593,
