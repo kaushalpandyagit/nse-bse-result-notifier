@@ -3749,10 +3749,11 @@
       "rs_rank": 38.1,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-09T06:16:39.529602",
-      "near_high_17_22_last_price": 969.4000244140625
+      "near_high_17_22_last_alert": "2026-11-09T09:30:19.844996",
+      "near_high_17_22_last_price": 980.2000122070312
     },
     "CDSL": {
       "sma50": 1310.5040014648437,
@@ -10853,7 +10854,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 57.5,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-09T09:30:46.284626",
+      "vol_breakout_last_price": 428.1000061035156
     },
     "JUBLINGREA": {
       "sma50": 631.7399987792969,

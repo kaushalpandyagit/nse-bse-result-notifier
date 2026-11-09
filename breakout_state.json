@@ -280,11 +280,12 @@
     ]
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-11-09T04:18:26.605885",
-    "spread_last_price": 3.702458119232382,
+    "spread_last_alert": "2026-11-09T09:31:56.657631",
+    "spread_last_price": 2.7027027027027026,
     "session_date": "2026-11-09",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALAMINES": {
@@ -8473,6 +8474,15 @@
     "day_low": 1320.0,
     "baseline_rsi": 74.72921880806699,
     "mcap_cr": 10070.217558889453,
+    "exchange": "NSE"
+  },
+  "RMDRIP": {
+    "result_date": "2026-11-09T00:00:00",
+    "filed_at": "2026-11-09T14:46:21",
+    "day_high": 21.049999237060547,
+    "day_low": 19.309999465942383,
+    "baseline_rsi": 52.35873051666609,
+    "mcap_cr": 827.7262656310314,
     "exchange": "NSE"
   }
 }
