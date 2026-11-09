@@ -3507,7 +3507,10 @@
       "dtl_floor_touches": 1,
       "rs_rank": 89.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "dtl_bo_sent": true
     },
     "CARBORUNIV": {
       "sma50": 1134.4199951171875,
@@ -11644,7 +11647,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 5.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T05:02:19.305265",
+      "mtf_last_price": 310.1499938964844
     },
     "KPIL": {
       "sma50": 1382.5319970703124,

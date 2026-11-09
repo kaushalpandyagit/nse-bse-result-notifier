@@ -389,8 +389,12 @@
     "spread_last_price": 2.751182722768104
   },
   "arb_KICL": {
-    "spread_last_alert": "2026-10-23T04:22:56.443587",
-    "spread_last_price": 2.6550647032574743
+    "spread_last_alert": "2026-11-09T05:03:13.270870",
+    "spread_last_price": 2.7674418604651163,
+    "session_date": "2026-11-09",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_AKUMS": {
     "spread_last_alert": "2026-11-09T03:53:13.348224",
