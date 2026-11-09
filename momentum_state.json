@@ -3718,7 +3718,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 38.1,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-09T06:16:39.529602",
+      "near_high_17_22_last_price": 969.4000244140625
     },
     "CDSL": {
       "sma50": 1310.5040014648437,
@@ -9907,7 +9911,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 9.7,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T06:17:05.666989",
+      "mtf_last_price": 109.41999816894531
     },
     "ITI": {
       "sma50": 249.24160095214845,
@@ -14809,7 +14817,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 56.5,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-09T06:17:26.148477",
+      "near_high_17_22_last_price": 286.5
     },
     "PGEL": {
       "sma50": 528.2900018310547,
@@ -22501,7 +22513,10 @@
       "dtl_floor_touches": 1,
       "rs_rank": 17.0,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "hva_sent": true
     },
     "ZENSARTECH": {
       "sma50": 473.2930010986328,
@@ -22695,7 +22710,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 46.6,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-09T06:18:00.710620",
+      "near_high_17_22_last_price": 477.54998779296875
     }
   },
   "sector_rsis": {
