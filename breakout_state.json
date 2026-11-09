@@ -90,10 +90,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-06T04:01:07.470798",
-    "custom_last_price": 168.5,
+    "custom_last_alert": "2026-11-09T04:01:04.435539",
+    "custom_last_price": 173.5800018310547,
     "session_date": "2026-11-09",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,

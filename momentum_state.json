@@ -623,7 +623,9 @@
       "dtl_touches": 3,
       "dtl_floor": 344.70001220703125,
       "dtl_floor_touches": 1,
-      "rs_rank": 92.0
+      "rs_rank": 92.0,
+      "session_date": "2026-11-09",
+      "alert_slots": []
     },
     "ADVENZYMES": {
       "sma50": 279.9339996337891,
@@ -967,7 +969,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 56.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-09T04:01:39.408942",
+      "resistance_last_price": 1594.699951171875
     },
     "AIAENG": {
       "sma50": 3821.59599609375,
@@ -1349,7 +1355,9 @@
       "dtl_touches": null,
       "dtl_floor": 361.3999938964844,
       "dtl_floor_touches": 2,
-      "rs_rank": 87.9
+      "rs_rank": 87.9,
+      "session_date": "2026-11-09",
+      "alert_slots": []
     },
     "APOLLOTYRE": {
       "sma50": 408.54500061035156,
@@ -4703,7 +4711,9 @@
       "dtl_touches": 4,
       "dtl_floor": 8955.5,
       "dtl_floor_touches": 4,
-      "rs_rank": 81.2
+      "rs_rank": 81.2,
+      "session_date": "2026-11-09",
+      "alert_slots": []
     },
     "CRAMC": {
       "sma50": 228.6529998779297,
@@ -6685,7 +6695,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 31.7,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-09T04:02:55.715674",
+      "resistance_last_price": 1936.4000244140625
     },
     "FINCABLES": {
       "sma50": 1317.5860034179686,
@@ -7657,7 +7671,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 61.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-09T04:03:09.582881",
+      "near_high_17_22_last_price": 310.6499938964844
     },
     "GPIL": {
       "sma50": 220.12620025634766,
@@ -8047,7 +8065,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 12.3,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:03:15.820445",
+      "mtf_last_price": 2153.0
     },
     "GRWRHITECH": {
       "sma50": 6972.67,
@@ -9781,7 +9803,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 25.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-09T04:03:37.967269",
+      "resistance_last_price": 17.559999465942383
     },
     "IRCON": {
       "sma50": 108.27619979858399,
@@ -11001,7 +11027,9 @@
       "dtl_touches": 3,
       "dtl_floor": 1087.9000244140625,
       "dtl_floor_touches": 1,
-      "rs_rank": 75.0
+      "rs_rank": 75.0,
+      "session_date": "2026-11-09",
+      "alert_slots": []
     },
     "KANSAINER": {
       "sma50": 185.70920013427735,
@@ -11049,7 +11077,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 44.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-09T04:03:54.424098",
+      "resistance_last_price": 198.16000366210938
     },
     "KAYNES": {
       "sma50": 3418.4180029296876,
@@ -13287,7 +13319,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 5.8,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-09T04:04:23.272806",
+      "resistance_last_price": 817.2000122070312
     },
     "NAVA": {
       "sma50": 541.4850018310547,
@@ -13429,7 +13465,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 25.4,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:04:25.441014",
+      "mtf_last_price": 78.52999877929688
     },
     "NCC": {
       "sma50": 130.8681997680664,
@@ -16101,7 +16141,13 @@
       "dtl_touches": 3,
       "dtl_floor": 63.56999969482422,
       "dtl_floor_touches": 1,
-      "rs_rank": 89.4
+      "rs_rank": 89.4,
+      "session_date": "2026-11-09",
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-09T04:05:01.976038",
+      "near_high_17_22_last_price": 88.63999938964844
     },
     "RCF": {
       "sma50": 106.38899948120117,
@@ -18371,7 +18417,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 39.9,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:05:31.423533",
+      "mtf_last_price": 1268.699951171875
     },
     "SONATSOFTW": {
       "sma50": 258.21419921875,
@@ -18513,7 +18563,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 79.5,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-09T04:05:33.966221",
+      "resistance_last_price": 210.52000427246094
     },
     "SPLPETRO": {
       "sma50": 771.5419995117187,
@@ -22453,7 +22507,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 49.8,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-09T04:06:23.474806",
+      "resistance_last_price": 2289.39990234375
     },
     "ZYDUSWELL": {
       "sma50": 510.65800109863284,
