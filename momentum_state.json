@@ -2497,10 +2497,13 @@
       "rs_rank": 66.4,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "zanger_last_alert": "2026-11-09T03:48:54.396802",
-      "zanger_last_price": 648.5
+      "zanger_last_price": 648.5,
+      "vol_breakout_last_alert": "2026-11-09T08:46:23.021674",
+      "vol_breakout_last_price": 657.2000122070312
     },
     "BANDHANBNK": {
       "sma50": 167.24539978027343,
@@ -11069,10 +11072,13 @@
       "rs_rank": 30.6,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-09T03:50:32.723629",
-      "resistance_last_price": 199.8699951171875
+      "resistance_last_price": 199.8699951171875,
+      "mtf_last_alert": "2026-11-09T08:46:50.156973",
+      "mtf_last_price": 201.11000061035156
     },
     "JYOTICNC": {
       "sma50": 1004.5400036621094,
@@ -21252,10 +21258,11 @@
       "rs_rank": 43.8,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-09T03:52:30.858917",
-      "resistance_last_price": 23.940000534057617
+      "resistance_last_alert": "2026-11-09T08:47:22.321036",
+      "resistance_last_price": 24.18000030517578
     },
     "UJJIVANSFB": {
       "sma50": 62.73520004272461,
@@ -22355,10 +22362,11 @@
       "rs_rank": 89.0,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-09T03:52:43.841294",
-      "near_high_17_22_last_price": 687.8499755859375
+      "near_high_17_22_last_alert": "2026-11-09T08:47:26.944103",
+      "near_high_17_22_last_price": 679.25
     },
     "WELSPUNLIV": {
       "sma50": 219.8140005493164,
@@ -22499,10 +22507,13 @@
       "rs_rank": 87.5,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-09T03:52:44.701578",
-      "resistance_last_price": 684.25
+      "resistance_last_price": 684.25,
+      "mtf_last_alert": "2026-11-09T08:47:28.203345",
+      "mtf_last_price": 686.6500244140625
     },
     "WHIRLPOOL": {
       "sma50": 818.3720031738281,
@@ -22550,7 +22561,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 43.5,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-09T08:47:29.665135",
+      "mtf_last_price": 844.9500122070312
     },
     "YATHARTH": {
       "sma50": 1008.9290002441406,
