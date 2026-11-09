@@ -2251,7 +2251,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 74.6,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-09T09:01:26.433003",
+      "rectangle_bounce_last_price": 2432.699951171875
     },
     "BAJAJCON": {
       "sma50": 468.17099914550784,
@@ -6130,7 +6134,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 63.6,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "ema50_pullback_last_alert": "2026-11-09T09:01:36.220247",
+      "ema50_pullback_last_price": 556.9000244140625
     },
     "ELLEN": {
       "sma50": 338.63199829101563,
@@ -16463,10 +16471,11 @@
       "rs_rank": 95.5,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-09T03:51:36.839990",
-      "near_high_17_22_last_price": 332.6499938964844
+      "near_high_17_22_last_alert": "2026-11-09T09:01:59.031364",
+      "near_high_17_22_last_price": 328.8500061035156
     },
     "REFEX": {
       "sma50": 259.1293984985352,
