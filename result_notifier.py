@@ -339,6 +339,56 @@ def extract_evoting_purpose(text: str) -> str | None:
         return ", ".join(matched[:3])
     return None
 
+# The SAST Reg 31 form prints every option in its headings ("creation / release / invocation",
+# "created/released/invoked", "Date of creation of Encumbrance"), so the bare words say nothing.
+# These phrases are removed before looking for the event actually filled in.
+_PLEDGE_TEMPLATE = [
+    re.compile(r"(creat\w*|releas\w*|invo\w*|revoc\w*)[^a-z]{0,40}/[^a-z]{0,40}(creat\w*|releas\w*|invo\w*|revoc\w*)"
+               r"(?:[^a-z]{0,40}/[^a-z]{0,40}(creat\w*|releas\w*|invo\w*|revoc\w*))?(?:\s+of\s+encumbrance)?"),
+    re.compile(r"date of (creation|release|invocation) of encumbrance"),
+    re.compile(r"details of (the )?(creation|release|invocation) of encumbrance"),
+    re.compile(r"encumbrance of shares\s*/\s*invocation of encumbrance\s*/\s*release of encumbrance"),
+    re.compile(r"\{\s*(creation|release|invocation)\b[^a-z]{0,25}"),     # post-event column header, often cut off
+]
+
+
+def pledge_summary(text_lower: str) -> list:
+    """Labels for a SAST Reg 31 pledge filing: which event was filled in, a margin top-up, and how much is pledged."""
+    t = re.sub(r"\s+", " ", text_lower)
+    for rx in _PLEDGE_TEMPLATE:
+        t = rx.sub(" ", t)
+    out = []
+    created = len(re.findall(r"\bcreation\b|\bcreated\b", t))
+    released = len(re.findall(r"\brelease\b|\breleased\b|\brevocation\b|\brevoked\b", t))
+    invoked = len(re.findall(r"\binvocation\b|\binvoked\b", t))
+    if invoked:
+        out.append("Invocation of Pledge (lender sold / took shares) ⚠️🔴")
+    if created:
+        out.append("Creation of Pledge 🔒")
+    if released:
+        out.append("Release of Pledge 🔓")
+    if created and re.search(r"shortfall|top[\s-]?up|additional margin|margin (call|pledge|requirement)|fall in (the )?(share )?price", t):
+        out.append("Margin top-up: share price fell below the lender's cover ⚠️")
+    m = re.search(r"encumbered shares as a % of promoter shareholding((?:\s*[\d.]+\s*%)+)", t)
+    if m:
+        pcts = re.findall(r"([\d.]+)\s*%", m.group(1))
+        if pcts:
+            out.append(f"{float(pcts[-1]):.0f}% of promoter holding now pledged")
+    return out
+
+
+def pledge_tone(summary: str):
+    """(emoji, marker) for a pledge filing, or None if the summary has no pledge event."""
+    inv, cre, rel = "Invocation of Pledge" in summary, "Creation of Pledge" in summary, "Release of Pledge" in summary
+    if not (inv or cre or rel):
+        return None
+    if inv or (cre and not rel):
+        return "🔴", " 🔴"
+    if cre and rel:
+        return "🟡", " 🟡"     # pledge moved between lenders or refinanced
+    return "🟢", " 🟢"
+
+
 def extract_insider_summary(text: str) -> str:
     if not text:
         return ""
@@ -350,12 +400,7 @@ def extract_insider_summary(text: str) -> str:
     
     summaries = []
     if "pledge" in text_stripped or "encumbrance" in text_stripped or "31(1)" in text_stripped or "31(2)" in text_stripped:
-        if "creation of" in text_stripped or "created" in text_stripped:
-            summaries.append("Creation of Pledge 🔒")
-        if "release of" in text_stripped or "released" in text_stripped or "revocation" in text_stripped:
-            summaries.append("Release of Pledge 🔓")
-        if "invocation" in text_stripped or "invoked" in text_stripped:
-            summaries.append("Invocation of Pledge ⚠️")
+        summaries += pledge_summary(text_lower)
             
     if "form c" in text_stripped or "29(2)" in text_stripped or "29(1)" in text_stripped or "7(2)" in text_stripped:
         if "market purchase" in text_stripped or "open market purchase" in text_stripped:
@@ -781,12 +826,19 @@ def poll_once(seen: set) -> set:
                                 pdf_text = reader.pages[0].extract_text() or ""
                                 if len(reader.pages) > 1 and len(pdf_text) < 1500:
                                     pdf_text += " " + (reader.pages[1].extract_text() or "")
+                                if re.search(r"encumbrance|pledge", pdf_text, re.I):
+                                    # Reg 31 forms put the % pledged and the reason on pages 3-4
+                                    for pg in reader.pages[2:5]:
+                                        pdf_text += " " + (pg.extract_text() or "")
                                 summary = extract_insider_summary(pdf_text)
                 except Exception as e:
                     log.warning("PDF extraction failed for %s: %s", item['company'], e)
             
             dynamic_emoji = "🔍"
-            if summary:
+            tone = pledge_tone(summary) if summary else None
+            if tone:
+                dynamic_emoji, sentiment_marker = tone
+            elif summary:
                 if any(x in summary for x in ["🟢", "Buy", "Acquisition", "ESOP", "Release"]):
                     dynamic_emoji = "🟢"
                     sentiment_marker = " 🟢"
