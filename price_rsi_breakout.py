@@ -1878,7 +1878,9 @@ def fetch_recent_news_for_alerts() -> list:
         session.get("https://www.nseindia.com", headers=HEADERS, timeout=10)
         time.sleep(1)
         for idx in ["equities", "sme"]:
-            resp = session.get(f"https://www.nseindia.com/api/corporate-announcements?index={idx}", headers=HEADERS, timeout=15)
+            # date-ranged: the plain endpoint returns only the latest 20 items
+            d_str = ist_today().strftime("%d-%m-%Y")
+            resp = session.get(f"https://www.nseindia.com/api/corporate-announcements?index={idx}&from_date={d_str}&to_date={d_str}", headers=HEADERS, timeout=45)
             if resp.status_code == 200:
                 for item in resp.json():
                     results.append({
@@ -2029,91 +2031,162 @@ def load_momentum_state() -> dict:
             pass
     return {"last_scan_date": None, "watchlist": {}}
 
+# Filings that MENTION results but are not the result itself (e.g. on 6 Nov 2026 NSE
+# had 243 "Copy of Newspaper Publication ... Financial Results" items), or that only
+# announce a FUTURE board meeting.
+RESULT_EXCLUDE_KEYWORDS = [
+    "newspaper", "publication", "intimation", "analyst", "investor meet", "con. call",
+    "conference call", "earnings call", "investor presentation", "transcript", "audio",
+    "recording", "trading window", "press release",
+]
+RESULT_LOOKBACK_DAYS = 4   # covers a Fri filing seen on Mon morning
+
 def is_result_announcement(subject: str) -> bool:
     subj_lower = subject.lower()
+    if any(kw in subj_lower for kw in RESULT_EXCLUDE_KEYWORDS): return False
     if any(kw in subj_lower for kw in RESULT_KEYWORDS): return True
     return "board meeting" in subj_lower and ("result" in subj_lower or "financial" in subj_lower)
 
-def fetch_nse_result_symbols() -> set:
+def _parse_filing_dt(raw) -> datetime.datetime:
+    raw = str(raw or "").strip()
+    for fmt in ("%d-%b-%Y %H:%M:%S", "%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S.%f", "%Y-%m-%dT%H:%M:%S", "%d %b %Y %H:%M:%S"):
+        try:
+            return datetime.datetime.strptime(raw, fmt)
+        except ValueError:
+            continue
+    return None
+
+def _keep_earliest(hits: dict, key: str, when: datetime.datetime):
+    if key not in hits or (when and (hits[key] is None or when < hits[key])):
+        hits[key] = when
+
+def fetch_nse_result_symbols() -> dict:
+    """{symbol: filing datetime (IST, naive)}. Uses the date-ranged endpoint: the plain
+    one returns only the latest 20 announcements, so in results season most filings
+    scrolled off between 15-minute polls."""
     session = requests.Session()
+    today = ist_today()
+    frm = (today - datetime.timedelta(days=RESULT_LOOKBACK_DAYS)).strftime("%d-%m-%Y")
     try:
         session.get("https://www.nseindia.com", headers=HEADERS, timeout=15)
         time.sleep(1)
-        resp = session.get("https://www.nseindia.com/api/corporate-announcements?index=equities", headers=HEADERS, timeout=15)
+        resp = session.get(
+            f"https://www.nseindia.com/api/corporate-announcements?index=equities&from_date={frm}&to_date={today.strftime('%d-%m-%Y')}",
+            headers=HEADERS, timeout=45)
         resp.raise_for_status()
         data = resp.json()
-    except Exception:
-        return set()
+    except Exception as e:
+        log.warning("NSE announcements fetch failed: %s", e)
+        return {}
 
     if isinstance(data, str):
         try: data = json.loads(data)
-        except Exception: return set()
-    if not isinstance(data, list): return set()
+        except Exception: return {}
+    if not isinstance(data, list): return {}
 
-    hits = set()
+    hits = {}
     for item in data:
         subject = f"{item.get('desc') or ''} {item.get('attchmntText') or ''}"
         symbol = (item.get("symbol") or "").strip().upper()
         if symbol and is_result_announcement(subject):
-            hits.add(symbol)
+            _keep_earliest(hits, symbol, _parse_filing_dt(item.get("an_dt") or item.get("sort_date")))
     return hits
 
-def fetch_bse_result_symbols() -> set:
-    today = datetime.datetime.now().strftime("%Y%m%d")
-    from_date = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime("%Y%m%d")
+def fetch_bse_result_symbols() -> dict:
+    """{scrip code: filing datetime (IST, naive)} for the last few days."""
+    today = get_ist_now().strftime("%Y%m%d")
+    from_date = (get_ist_now() - datetime.timedelta(days=RESULT_LOOKBACK_DAYS)).strftime("%Y%m%d")
     url = f"https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w?pageno=1&strCat=-1&strPrevDate={from_date}&strScrip=&strSearch=P&strToDate={today}&strType=C&subcategory=-1"
     try:
         resp = requests.get(url, headers={**HEADERS, "Referer": "https://www.bseindia.com/corporates/ann.html"}, timeout=15)
         resp.raise_for_status()
         data = resp.json()
     except Exception:
-        return set()
+        return {}
 
     if isinstance(data, str):
         try: data = json.loads(data)
-        except Exception: return set()
-    if not isinstance(data, dict): return set()
+        except Exception: return {}
+    if not isinstance(data, dict): return {}
 
-    hits = set()
+    hits = {}
     for item in data.get("Table", []):
-        subject = f"{item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}"
+        subject = f"{item.get('CATEGORYNAME') or ''} {item.get('NEWSSUB') or ''} {item.get('HEADLINE') or ''}"
         scrip_cd = str(item.get("SCRIP_CD", ""))
         if scrip_cd and is_result_announcement(subject):
-            hits.add(scrip_cd)
+            _keep_earliest(hits, scrip_cd, _parse_filing_dt(item.get("NEWS_DT") or item.get("DissemDT") or item.get("DT_TM")))
     return hits
+
+def _last_session_close(now: datetime.datetime) -> datetime.datetime:
+    """Most recent 15:30 close strictly before today's session (naive IST)."""
+    d = now.date() - datetime.timedelta(days=1)
+    while is_market_holiday(d):
+        d -= datetime.timedelta(days=1)
+    return datetime.datetime.combine(d, datetime.time(15, 30))
 
 # ----------------------------------------------------------------------
 # THE MAIN TICK LOOP
 # ----------------------------------------------------------------------
 
 def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
-    nse_hits = fetch_nse_result_symbols()
-    bse_hits = fetch_bse_result_symbols()
-    new_result_symbols = (nse_hits | bse_hits) - set(state.keys())
+    hits = {**fetch_bse_result_symbols(), **fetch_nse_result_symbols()}
+    new_result_symbols = set(hits) - set(state.keys())
 
-    today = ist_today()
-    for symbol in new_result_symbols:
+    now_ist = get_ist_now().replace(tzinfo=None)
+    today = now_ist.date()
+    fresh_after = _last_session_close(now_ist)
+    filed_msgs = []
+    for symbol in sorted(new_result_symbols):
         exchange = "BSE" if symbol.isdigit() else "NSE"
+        filed_at = hits[symbol] or now_ist
+        # After-close filings get their reaction on the next session -> that is the result-day
+        # candle. Until that session opens there is nothing to record; retry next run.
+        base_date = filed_at.date() + datetime.timedelta(days=1) if filed_at.time() >= datetime.time(15, 30) else filed_at.date()
+        if base_date > today or (base_date == today and now_ist.time() < datetime.time(9, 15)):
+            continue
         mcap_cr = get_market_cap_cr(symbol, exchange)
         if mcap_cr is None or mcap_cr < MIN_RSI_RECORDING_MCAP_CR:
             continue
-            
-        metrics = get_baseline_metrics(fyers, symbol, today, exchange)
+
+        # Result day = the day it was FILED (first session on/after it), not the day we noticed.
+        metrics = get_baseline_metrics(fyers, symbol, base_date, exchange)
         if metrics is None: continue
-            
+
         state[symbol] = {
             "result_date": datetime.datetime.combine(metrics["actual_date"], datetime.time()).isoformat(),
-            "day_high": metrics["day_high"], 
-            "day_low": metrics["day_low"], 
+            "filed_at": filed_at.isoformat(),
+            "day_high": metrics["day_high"],
+            "day_low": metrics["day_low"],
             "baseline_rsi": metrics["baseline_rsi"],
             "mcap_cr": mcap_cr,
             "exchange": exchange
         }
-        
-        # Suppress result filed notification after market hours (3:30 PM)
-        if is_market_hours_now():
+
+        # Notify only for fresh filings (since the last session close) and only in market
+        # hours; older filings found by the lookback are recorded silently.
+        if is_market_hours_now() and filed_at >= fresh_after:
+            when = "today" if filed_at.date() == today else f"on {filed_at.strftime('%d %b')}"
             rsi_line = f"Result-day RSI({RSI_PERIOD}): {metrics['baseline_rsi']:.1f}\n" if metrics["baseline_rsi"] else ""
-            send_telegram_message(f"📌 <b>{symbol}</b> result filed today.\nMarket Cap: ₹{mcap_cr:.0f} Cr\nResult-day High: ₹{metrics['day_high']:.2f} | Low: ₹{metrics['day_low']:.2f}\n{rsi_line}{'Will alert if price breaks this High/Low or RSI crosses.' if ENABLE_RESULT_DAY_BREAK_ALERTS else ''}")
+            filed_msgs.append((
+                f"📌 <b>{symbol}</b> result filed {when} ({filed_at.strftime('%H:%M')}).\nMarket Cap: ₹{mcap_cr:.0f} Cr\nResult-day High: ₹{metrics['day_high']:.2f} | Low: ₹{metrics['day_low']:.2f}\n{rsi_line}{'Will alert if price breaks this High/Low or RSI crosses.' if ENABLE_RESULT_DAY_BREAK_ALERTS else ''}",
+                f"<b>{symbol}</b> {filed_at.strftime('%d %b %H:%M')} | ₹{mcap_cr:,.0f} Cr | H ₹{metrics['day_high']:.2f} L ₹{metrics['day_low']:.2f}"
+                + (f" | RSI {metrics['baseline_rsi']:.1f}" if metrics["baseline_rsi"] else ""),
+            ))
+
+    # Weekend / after-close filings all surface on the first market-hours run; a burst of
+    # dozens of messages trips Telegram's rate limit, so batch them into a digest.
+    if len(filed_msgs) <= 5:
+        for full, _ in filed_msgs:
+            send_telegram_message(full)
+    else:
+        header = f"📌 <b>{len(filed_msgs)} results filed since last close</b>"
+        chunk = [header]
+        for _, line in filed_msgs:
+            if sum(len(c) + 1 for c in chunk) + len(line) > 3800:
+                send_telegram_message("\n".join(chunk))
+                chunk = [header + " (contd.)"]
+            chunk.append(line)
+        send_telegram_message("\n".join(chunk))
 
     state = prune_expired(state)
 
