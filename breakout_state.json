@@ -2,11 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-09T03:45:43.462176",
-    "custom_last_price": 109.0999984741211,
+    "custom_last_alert": "2026-11-09T07:01:08.505671",
+    "custom_last_price": 111.0,
     "session_date": "2026-11-09",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_AERON_price": {
@@ -120,11 +121,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-09T03:45:53.239216",
-    "custom_last_price": 54.540000915527344,
+    "custom_last_alert": "2026-11-09T07:01:14.368124",
+    "custom_last_price": 56.0,
     "session_date": "2026-11-09",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
@@ -255,11 +257,12 @@
     "spread_last_price": 3.524734982332155
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-11-09T04:31:23.607802",
-    "spread_last_price": 6.362769946881157,
+    "spread_last_alert": "2026-11-09T07:03:56.320915",
+    "spread_last_price": 4.46343476925828,
     "session_date": "2026-11-09",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALRAMCHIN": {
@@ -327,11 +330,12 @@
     "spread_last_price": 2.820854182104335
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-11-09T03:53:08.214561",
-    "spread_last_price": 2.65748031496063,
+    "spread_last_alert": "2026-11-09T07:03:59.565837",
+    "spread_last_price": 2.7559055118110236,
     "session_date": "2026-11-09",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BASILIC_open_change_rs": {
@@ -431,11 +435,12 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-09T03:46:00.112140",
-    "custom_last_price": 165.85000610351562,
+    "custom_last_alert": "2026-11-09T07:01:18.635447",
+    "custom_last_price": 163.3000030517578,
     "session_date": "2026-11-09",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_AETHER": {
