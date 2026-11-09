@@ -3920,7 +3920,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 36.0,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T06:30:15.770984",
+      "mtf_last_price": 364.3999938964844
     },
     "CEMPRO": {
       "sma50": 1230.0260034179687,
