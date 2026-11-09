@@ -481,10 +481,11 @@
       "rs_rank": 44.4,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-09T03:48:32.072074",
-      "resistance_last_price": 1243.0
+      "resistance_last_alert": "2026-11-09T08:01:37.814407",
+      "resistance_last_price": 1230.199951171875
     },
     "ACE": {
       "sma50": 1143.4359997558595,
@@ -10223,7 +10224,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 0.9,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "ema50_pullback_last_alert": "2026-11-09T08:02:17.888489",
+      "ema50_pullback_last_price": 287.6000061035156
     },
     "JAMNAAUTO": {
       "sma50": 131.88640060424805,
@@ -10468,10 +10473,11 @@
       "rs_rank": 48.7,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-09T03:50:24.961205",
-      "near_high_17_22_last_price": 365.79998779296875
+      "near_high_17_22_last_alert": "2026-11-09T08:02:20.221375",
+      "near_high_17_22_last_price": 361.95001220703125
     },
     "JKTYRE": {
       "sma50": 342.7410003662109,
@@ -15471,10 +15477,11 @@
       "rs_rank": 50.9,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-09T04:30:43.088437",
-      "mtf_last_price": 2392.5
+      "mtf_last_alert": "2026-11-09T08:02:41.218152",
+      "mtf_last_price": 2416.800048828125
     },
     "PRAJIND": {
       "sma50": 297.8731985473633,
