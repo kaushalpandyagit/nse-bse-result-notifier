@@ -667,7 +667,13 @@
     "trigger_date": "2026-11-03",
     "ref_high": 233.9,
     "ref_low": 206.1,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-09",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-09T05:29:55.032967",
+    "fno_low_breach_last_price": 206.0
   },
   "GOPAL": {
     "trigger_date": "2026-11-03",

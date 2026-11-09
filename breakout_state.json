@@ -8458,5 +8458,14 @@
     "baseline_rsi": 57.851116868689374,
     "mcap_cr": 188.63735159044342,
     "exchange": "NSE"
+  },
+  "SYMBIOTEC": {
+    "result_date": "2026-11-06T00:00:00",
+    "filed_at": "2026-11-05T20:07:53",
+    "day_high": 1525.800048828125,
+    "day_low": 1320.0,
+    "baseline_rsi": 74.72921880806699,
+    "mcap_cr": 10070.217558889453,
+    "exchange": "NSE"
   }
 }

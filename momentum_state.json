@@ -13907,7 +13907,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 27.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T05:30:31.795114",
+      "mtf_last_price": 63.349998474121094
     },
     "NIACL": {
       "sma50": 178.16600006103516,
@@ -15275,7 +15279,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 54.5,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T05:30:35.832030",
+      "mtf_last_price": 1601.300048828125
     },
     "POWERMECH": {
       "sma50": 2364.64,
@@ -17175,7 +17183,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 16.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-09T05:30:41.202403",
+      "resistance_last_price": 178.9499969482422
     },
     "SANSERA": {
       "sma50": 4178.268002929687,
