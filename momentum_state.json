@@ -6757,7 +6757,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 76.9,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-09T04:48:31.321095",
+      "near_high_17_22_last_price": 1234.0
     },
     "FINPIPE": {
       "sma50": 150.90380004882812,
@@ -7979,7 +7983,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 78.7,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:48:38.617845",
+      "mtf_last_price": 209.2899932861328
     },
     "GRINDWELL": {
       "sma50": 1935.67599609375,
@@ -13538,7 +13546,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 13.1,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:49:05.865169",
+      "mtf_last_price": 126.4000015258789
     },
     "NEOGEN": {
       "sma50": 2336.7339892578125,
@@ -17242,7 +17254,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 77.6,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:49:24.851303",
+      "mtf_last_price": 209.52999877929688
     },
     "SARDAEN": {
       "sma50": 485.6760003662109,
