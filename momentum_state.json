@@ -7164,10 +7164,11 @@
       "rs_rank": 41.4,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-09T03:49:46.499109",
-      "near_high_17_22_last_price": 149.85000610351562
+      "near_high_17_22_last_alert": "2026-11-09T08:30:27.505708",
+      "near_high_17_22_last_price": 151.4199981689453
     },
     "GALLANTT": {
       "sma50": 551.6670013427735,
@@ -7417,10 +7418,13 @@
       "rs_rank": 10.8,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-09T04:16:50.661686",
-      "mtf_last_price": 480.29998779296875
+      "mtf_last_price": 480.29998779296875,
+      "ema50_pullback_last_alert": "2026-11-09T08:30:29.408091",
+      "ema50_pullback_last_price": 478.6000061035156
     },
     "GMRP&UI": {
       "sma50": 96.0602001953125,
@@ -11698,10 +11702,13 @@
       "rs_rank": 33.0,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-09T03:50:38.911008",
-      "mtf_last_price": 111.48999786376953
+      "mtf_last_price": 111.48999786376953,
+      "ema50_pullback_last_alert": "2026-11-09T08:30:43.201527",
+      "ema50_pullback_last_price": 111.61000061035156
     },
     "KPIGREEN": {
       "sma50": 309.7240002441406,
@@ -19205,10 +19212,11 @@
       "rs_rank": 87.3,
       "session_date": "2026-11-09",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-09T03:52:06.432024",
-      "near_high_17_22_last_price": 1078.5
+      "near_high_17_22_last_alert": "2026-11-09T08:31:06.427370",
+      "near_high_17_22_last_price": 1092.0999755859375
     },
     "SUNFLAG": {
       "sma50": 390.122998046875,
@@ -21842,7 +21850,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 6.5,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-09T08:31:15.448532",
+      "mtf_last_price": 143.3699951171875
     },
     "VIPIND": {
       "sma50": 282.2510012817383,
