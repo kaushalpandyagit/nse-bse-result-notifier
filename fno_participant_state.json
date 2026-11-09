@@ -23,6 +23,18 @@
     "net_call": 11394,
     "net_put": -404171
    }
+  },
+  "2026-11-09": {
+   "smart_net": {
+    "net_fut": -111216,
+    "net_call": -44389,
+    "net_put": 279107
+   },
+   "retail_net": {
+    "net_fut": 80759,
+    "net_call": 30795,
+    "net_put": -383339
+   }
   }
  }
 }

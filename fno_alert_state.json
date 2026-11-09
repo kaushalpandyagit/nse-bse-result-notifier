@@ -1100,5 +1100,11 @@
     "ref_high": 4.52,
     "ref_low": 3.91,
     "status": "Active"
+  },
+  "MEDICO": {
+    "trigger_date": "2026-11-09",
+    "ref_high": 20.0,
+    "ref_low": 18.4,
+    "status": "Active"
   }
 }
