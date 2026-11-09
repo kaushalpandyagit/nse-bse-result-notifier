@@ -473,7 +473,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 1523.2,
     "ref_low": 1403.4,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-09",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-09T03:46:04.323158",
+    "fno_high_breach_last_price": 1538.5999755859375
   },
   "SANOFI": {
     "trigger_date": "2026-10-30",
@@ -985,7 +991,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 533.05,
     "ref_low": 516.5,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-09",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-09T03:46:12.601870",
+    "fno_high_breach_last_price": 538.7000122070312
   },
   "ASTRAZEN": {
     "trigger_date": "2026-11-06",
@@ -997,7 +1009,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 2711.0,
     "ref_low": 2520.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-09",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-09T03:46:14.123468",
+    "fno_low_breach_last_price": 2477.199951171875
   },
   "IGPL": {
     "trigger_date": "2026-11-06",
