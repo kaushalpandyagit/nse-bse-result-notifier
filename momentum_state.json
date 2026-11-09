@@ -1409,7 +1409,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 63.4,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T05:46:20.231504",
+      "mtf_last_price": 414.79998779296875
     },
     "APTUS": {
       "sma50": 226.58300018310547,
@@ -8539,7 +8543,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 0.6,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T05:46:46.949962",
+      "mtf_last_price": 293.5
     },
     "HERITGFOOD": {
       "sma50": 386.35199951171876,
@@ -19231,7 +19239,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 33.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-09T05:47:25.562008",
+      "vol_breakout_last_price": 614.9500122070312
     },
     "SURYAROSNI": {
       "sma50": 213.12380035400392,
@@ -19625,7 +19637,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 49.1,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-09T05:47:28.241226",
+      "resistance_last_price": 125.81999969482422
     },
     "TARIL": {
       "sma50": 298.5819995117188,
@@ -20935,7 +20951,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 47.2,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T05:47:34.105123",
+      "mtf_last_price": 40.08000183105469
     },
     "TVSSCS": {
       "sma50": 123.87759979248047,
@@ -22071,7 +22091,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 4.3,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T05:47:39.255866",
+      "mtf_last_price": 72.18000030517578
     },
     "WELENT": {
       "sma50": 722.2379968261719,
