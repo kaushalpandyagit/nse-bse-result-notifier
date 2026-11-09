@@ -3205,7 +3205,13 @@
       "dtl_touches": null,
       "dtl_floor": 267.04998779296875,
       "dtl_floor_touches": 3,
-      "rs_rank": 49.4
+      "rs_rank": 49.4,
+      "session_date": "2026-11-09",
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:16:32.804113",
+      "mtf_last_price": 334.04998779296875
     },
     "CAMPUS": {
       "sma50": 205.749599609375,
@@ -5151,7 +5157,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 37.9,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-09T04:16:41.185659",
+      "rectangle_bounce_last_price": 3900.0
     },
     "DBL": {
       "sma50": 398.0959979248047,
@@ -7335,7 +7345,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 10.8,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:16:50.661686",
+      "mtf_last_price": 480.29998779296875
     },
     "GMRP&UI": {
       "sma50": 96.0602001953125,
@@ -8211,7 +8225,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 30.0,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:16:55.112088",
+      "mtf_last_price": 610.9000244140625
     },
     "HAPPSTMNDS": {
       "sma50": 324.73400146484374,
@@ -8307,7 +8325,10 @@
       "dtl_floor_touches": 2,
       "rs_rank": 84.5,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "dtl_bo_sent": true
     },
     "HBLENGINE": {
       "sma50": 755.9480004882812,
@@ -21445,7 +21466,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 37.3,
       "session_date": "2026-11-09",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-09T04:17:46.282509",
+      "mtf_last_price": 297.79998779296875
     },
     "VIJAYA": {
       "sma50": 1460.6279931640624,
