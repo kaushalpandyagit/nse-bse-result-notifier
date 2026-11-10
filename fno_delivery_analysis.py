@@ -307,10 +307,12 @@ def analyze_delivery(df: pd.DataFrame) -> dict:
                 prev_close = float(row["PREV_CLOSE"])
                 deliv_pct = float(row["DELIV_PER"])
                 volume = float(row["TTL_TRD_QNTY"])
+                high = float(row["HIGH_PRICE"]) if "HIGH_PRICE" in df.columns else close
+                low = float(row["LOW_PRICE"]) if "LOW_PRICE" in df.columns else close
                 if prev_close == 0: continue
                 price_change_pct = ((close - prev_close) / prev_close) * 100
                 if deliv_pct >= DELIVERY_PCT_THRESHOLD and abs(price_change_pct) >= EARLY_MOVE_MIN:
-                    all_signals.append((symbol, price_change_pct, deliv_pct, volume))
+                    all_signals.append((symbol, price_change_pct, deliv_pct, volume, high, low, close))
             except (ValueError, KeyError):
                 continue
     except Exception as e:
@@ -442,6 +444,44 @@ def save_fno_alert_state(unusual_list, date_obj):
             log.info("F&O Unusual Volume alert state saved/updated successfully.")
         except Exception as e:
             log.error("Failed to save F&O alert state: %s", e)
+
+
+EARLY_MOVERS_STATE_FILE = Path(__file__).parent / "early_movers_state.json"
+EARLY_MOVERS_SAVE_AFTER_HOUR_IST = 20   # this job runs 3x each evening; only the >= 8 PM run has final data
+EARLY_MOVERS_KEEP_DAYS = 20
+
+def save_early_movers_state(early_movers, date_obj):
+    """Hand the day's High-Delivery Early Movers to price_rsi_breakout.py, which alerts
+    when price breaks the signal day's high or low during the next sessions."""
+    now_ist = datetime.datetime.now(IST) if IST else datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
+    if "--date" not in sys.argv and now_ist.hour < EARLY_MOVERS_SAVE_AFTER_HOUR_IST:
+        log.info("Early movers not saved: run at %s IST, waiting for the >= %d:00 run.",
+                 now_ist.strftime("%H:%M"), EARLY_MOVERS_SAVE_AFTER_HOUR_IST)
+        return
+    state = {}
+    if EARLY_MOVERS_STATE_FILE.exists():
+        try:
+            state = json.loads(EARLY_MOVERS_STATE_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    today_str = date_obj.isoformat()
+    for symbol, chg, deliv, _vol, high, low, close in early_movers:
+        if state.get(symbol, {}).get("trigger_date") == today_str:
+            continue
+        state[symbol] = {
+            "trigger_date": today_str,
+            "ref_high": high, "ref_low": low, "ref_close": close,
+            "price_change_pct": round(chg, 2), "deliv_pct": round(deliv, 1),
+            "direction": "up" if chg > 0 else "down",
+            "status": "Active",
+        }
+    cutoff = (date_obj - datetime.timedelta(days=EARLY_MOVERS_KEEP_DAYS)).isoformat()
+    state = {k: v for k, v in state.items() if v.get("trigger_date", "") >= cutoff}
+    try:
+        EARLY_MOVERS_STATE_FILE.write_text(json.dumps(state, indent=2), encoding="utf-8")
+        log.info("Early movers state saved (%d tracked).", len(state))
+    except Exception as e:
+        log.error("Failed to save early movers state: %s", e)
 
 
 def fetch_fo_bhavcopy(session, date: datetime.date) -> pd.DataFrame | None:
@@ -612,6 +652,30 @@ def fetch_participant_oi(session, date: datetime.date) -> pd.DataFrame | None:
             
     return None
 
+def get_nifty_trend_pct(session, date: datetime.date, sessions: int = 5):
+    """% change of Nifty 50 over the last `sessions` trading days, from NSE's daily index file."""
+    closes = {}
+    d = date
+    for _ in range(sessions * 2 + 6):
+        if len(closes) > sessions:
+            break
+        if d.weekday() < 5:
+            try:
+                r = session.get(f"https://archives.nseindia.com/content/indices/ind_close_all_{d.strftime('%d%m%Y')}.csv",
+                                headers=HEADERS, timeout=15)
+                if r.status_code == 200 and "<html" not in r.text[:500].lower():
+                    idf = pd.read_csv(io.StringIO(r.text))
+                    row = idf[idf["Index Name"].astype(str).str.strip().str.upper() == "NIFTY 50"]
+                    if not row.empty:
+                        closes[str(row["Index Date"].iloc[0]).strip()] = float(row["Closing Index Value"].iloc[0])
+            except Exception as e:
+                log.warning("Nifty close fetch failed for %s: %s", d, e)
+        d -= datetime.timedelta(days=1)
+    if len(closes) <= sessions:
+        return None
+    ordered = [closes[k] for k in sorted(closes, key=lambda x: datetime.datetime.strptime(x, "%d-%m-%Y"))]
+    return (ordered[-1] / ordered[-1 - sessions] - 1) * 100
+
 def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> str:
     if df is None or df.empty:
         return ""
@@ -686,25 +750,63 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
         smart_delta = {k: smart_net[k] - prev["smart_net"].get(k, 0) for k in smart_net}
         retail_delta = {k: retail_net[k] - prev["retail_net"].get(k, 0) for k in retail_net}
 
-    history[today_key] = {"smart_net": smart_net, "retail_net": retail_net}
+    fii = data.get("FII", {})
+    fii_fl, fii_fs = fii.get("idx_fut_long", 0), fii.get("idx_fut_short", 0)
+    fii_long_pct = 100.0 * fii_fl / (fii_fl + fii_fs) if (fii_fl + fii_fs) else None
+    fii_net_fut = fii_fl - fii_fs
+    prev_snap = history.get(prev_date, {}) if prev_date else {}
+    prev_fii_long_pct = prev_snap.get("fii_long_pct")
+    prev_fii_net_fut = prev_snap.get("fii_net_fut")
+
+    history[today_key] = {"smart_net": smart_net, "retail_net": retail_net,
+                          "fii_long_pct": fii_long_pct, "fii_net_fut": fii_net_fut}
     history = {d: history[d] for d in sorted(history)[-10:]}
     try:
         PARTICIPANT_STATE_FILE.write_text(json.dumps({"history": history}, indent=1))
     except Exception as e:
         log.warning("Could not persist participant state: %s", e)
 
-    smart_score = smart_net["net_fut"] + smart_net["net_call"] - smart_net["net_put"]
-    retail_score = retail_net["net_fut"] + retail_net["net_call"] - retail_net["net_put"]
+    # NOTE: the old verdict scored LEVELS (net fut + net call - net put). FII/Pro carry
+    # ~300k long index puts as hedges on their cash books and retail is a structural put
+    # seller, so that score sat near -450k every day and printed "Highly Bearish" on 100%
+    # of 111 sessions (Jun-Nov 2026) while Nifty rose 6.6% (next-day hit rate 50.9%).
+    # Participant OI has no reliable next-day edge on its own; the best simple read found
+    # was agreement of >=2 of: Nifty 5-day trend, FII futures long% change, FII futures
+    # flow (54.5% next-day hit, 33/110 signal days). Report it as a low-conviction bias.
+    nifty_trend = get_nifty_trend_pct(session, date)
+    d_long = (fii_long_pct - prev_fii_long_pct) if (fii_long_pct is not None and prev_fii_long_pct is not None) else None
+    fii_flow = (fii_net_fut - prev_fii_net_fut) if prev_fii_net_fut is not None else None
+    votes = []
+    if nifty_trend is not None and nifty_trend != 0:
+        votes.append(1 if nifty_trend > 0 else -1)
+    if d_long is not None and abs(d_long) > 1.0:
+        votes.append(1 if d_long > 0 else -1)
+    if fii_flow is not None and abs(fii_flow) > 10000:
+        votes.append(1 if fii_flow > 0 else -1)
+    vote = sum(votes)
+    if vote >= 2:
+        prediction = "Bullish lean 🟢 (trend + FII futures flow agree)"
+    elif vote <= -2:
+        prediction = "Bearish lean 🔻 (trend + FII futures flow agree)"
+    else:
+        prediction = "No clear bias ⚖️ (signals disagree)"
+    prediction += "\n<i>Low conviction: this read was right ~55% of days in a 111-session backtest.</i>"
 
-    prediction = "Mixed / Unclear ⚖️"
-    if smart_score > 50000 and retail_score < -50000:
-        prediction = "Highly Bullish 🚀 (Smart money is heavily long, Retail is trapped short)"
-    elif smart_score < -50000 and retail_score > 50000:
-        prediction = "Highly Bearish 🔴 (Retail is heavily long, Smart money is dumping/fading)"
-    elif smart_score > 20000 and retail_score < 0:
-        prediction = "Bullish Tilt 🟢"
-    elif smart_score < -20000 and retail_score > 0:
-        prediction = "Bearish Tilt 🔻"
+    ctx = []
+    if fii_long_pct is not None:
+        if fii_long_pct < 12: lvl = "extreme short (historically fuel for short-covering rallies)"
+        elif fii_long_pct < 25: lvl = "net short"
+        elif fii_long_pct < 45: lvl = "mildly short"
+        elif fii_long_pct < 60: lvl = "balanced / long"
+        else: lvl = "heavily long (crowded)"
+        chg = f", {d_long:+.1f} pp vs prev day" if d_long is not None else ""
+        ctx.append(f" • FII index futures: <b>{fii_long_pct:.1f}% long</b>{chg} — {lvl}")
+    if fii_flow is not None:
+        fdesc = ("fresh longs / short covering" if fii_flow > 0 else "fresh shorts / long unwinding") if abs(fii_flow) > 10000 else "little change"
+        ctx.append(f" • FII futures flow today: {fii_flow:+,} contracts ({fdesc})")
+    if nifty_trend is not None:
+        ctx.append(f" • Nifty 5-session trend: {nifty_trend:+.2f}%")
+    ctx.append(" • <i>FII/Pro long puts are mostly hedges on cash holdings — not read as bearish bets.</i>")
 
     delta_commentary = []
     if smart_delta:
@@ -821,15 +923,7 @@ def analyze_participant_oi(df: pd.DataFrame, date: datetime.date, session) -> st
         lines.extend(delta_commentary)
         lines.append("")
 
-    # Positioning is a slow stock; today's flow is the fresh signal. Flag when they disagree.
-    flow_note = ""
-    if smart_delta:
-        flow_score = smart_delta["net_fut"] + smart_delta["net_call"] - smart_delta["net_put"]
-        if smart_score < -20000 and flow_score > 30000:
-            flow_note = f"\n⚠️ <i>But today's Smart Money flow is BULLISH ({flow_score:+,}: short covering / put unwinding) — bearish stance is easing, lower conviction.</i>"
-        elif smart_score > 20000 and flow_score < -30000:
-            flow_note = f"\n⚠️ <i>But today's Smart Money flow is BEARISH ({flow_score:+,}: fresh shorts / put buying) — bullish stance is weakening, lower conviction.</i>"
-    lines.append(f"🔮 <b>NEXT TRADING DAY DIRECTION:</b>\n{prediction}{flow_note}\n")
+    lines.append(f"🔮 <b>NEXT TRADING DAY BIAS:</b>\n{prediction}\n" + "\n".join(ctx) + "\n")
     
     if expiry_pred:
         lines.append(f"📅 <b>TOMORROW'S EXPIRY ({idx_name}):</b>\n{expiry_pred}\n")
@@ -923,8 +1017,10 @@ def main():
             f"(>{DELIVERY_PCT_THRESHOLD:.0f}% delivery, {EARLY_MOVE_MIN:.1f}-{EARLY_MOVE_MAX:.1f}% move)\n"
             f"<i>Kept tight to moves still early \u2014 beyond {EARLY_MOVE_MAX:.1f}% the move is "
             f"largely played out and risk/reward for a fresh entry is no longer favorable</i>\n" +
-            format_stock_list([(s, p, d) for s, p, d, v in tiers["early_movers"]], comment=True, third_label="Delivery")
+            format_stock_list([(s, p, d) for s, p, d, *_ in tiers["early_movers"]], comment=True, third_label="Delivery")
         )
+
+        save_early_movers_state(tiers["early_movers"], date)
 
         unusual = analyze_unusual_volume(deliv_df, session, date, bulk_block_symbols)
         save_fno_alert_state(unusual, date)

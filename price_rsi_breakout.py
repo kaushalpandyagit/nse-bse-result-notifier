@@ -167,6 +167,8 @@ RESULT_KEYWORDS = [
 
 STATE_FILE = Path(__file__).parent / "breakout_state.json"
 FNO_STATE_FILE = Path(__file__).parent / "fno_alert_state.json"
+EARLY_MOVERS_STATE_FILE = Path(__file__).parent / "early_movers_state.json"  # written by fno_delivery_analysis.py (>= 8 PM run)
+EARLY_MOVERS_WINDOW_TRADING_DAYS = 5   # early moves decay fast; stop watching after 5 sessions
 NIFTY500_CACHE_FILE = Path(__file__).parent / "nifty500_symbols.json"
 LOG_FILE = Path(__file__).parent / "breakout_notifier.log"
 MOMENTUM_STATE_FILE = Path(__file__).parent / "momentum_state.json"
@@ -1170,6 +1172,85 @@ def check_fno_three_day_breakouts(momentum_state: dict, fyers):
             FNO_STATE_FILE.write_text(json.dumps(state, indent=2), encoding="utf-8")
         except Exception:
             pass
+
+def check_early_mover_breakouts(momentum_state: dict, fyers):
+    """High-Delivery Early Movers (>60% delivery, 2-2.5% move) from the evening F&O +
+    Delivery report: alert when price breaks the signal day's high or low."""
+    if not EARLY_MOVERS_STATE_FILE.exists():
+        return
+    try:
+        state = json.loads(EARLY_MOVERS_STATE_FILE.read_text(encoding="utf-8"))
+    except Exception as e:
+        log.error("Failed to read early_movers_state.json: %s", e)
+        return
+
+    today = ist_today()
+    updated = False
+    for symbol, entry in state.items():
+        if entry.get("status") != "Active":
+            continue
+        try:
+            trigger_date = datetime.datetime.strptime(entry["trigger_date"], "%Y-%m-%d").date()
+        except Exception:
+            continue
+        if today <= trigger_date:
+            continue
+        elapsed = get_trading_days_elapsed(trigger_date, today)
+        if elapsed > EARLY_MOVERS_WINDOW_TRADING_DAYS:
+            entry["status"] = "Expired"
+            updated = True
+            continue
+
+        try:
+            metrics = get_live_metrics(fyers, symbol, "NSE")
+        except Exception as e:
+            log.warning("Early mover metrics failed for %s: %s", symbol, e)
+            continue
+        if not metrics:
+            continue
+
+        price = metrics["price"]
+        day_high, day_low = metrics.get("high_price", price), metrics.get("low_price", price)
+        ref_high, ref_low = float(entry["ref_high"]), float(entry["ref_low"])
+        went_up = entry.get("direction") == "up"
+        sig = f"{entry.get('price_change_pct', 0):+.1f}% on {entry.get('deliv_pct', 0):.0f}% delivery"
+        safe_sym = symbol.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+        # Price (not just the intraday wick) must be beyond the level: with 2-3% signal-day
+        # ranges, wick-only touches fired on nearly every name the very next session.
+        if price > ref_high and alert_allowed(entry, "em_high_breach", price):
+            head, title, note = (("🚀", "CONTINUATION — broke above signal-day high", "Delivery buyers are following through.")
+                                 if went_up else
+                                 ("🔄", "REVERSAL — broke above signal-day high", "Delivery selling got absorbed; sellers trapped."))
+            ref_line, ref_val, status = "Signal-Day High", ref_high, "Breached High"
+        elif price < ref_low and alert_allowed(entry, "em_low_breach", price):
+            head, title, note = (("🔻", "CONTINUATION — broke below signal-day low", "Delivery sellers are following through.")
+                                 if not went_up else
+                                 ("⚠️", "FAILED — broke below signal-day low", "Delivery buying did not hold; move failed."))
+            ref_line, ref_val, status = "Signal-Day Low", ref_low, "Breached Low"
+        else:
+            continue
+
+        sent = send_telegram_message(
+            f"{head} <b>{safe_sym} — High-Delivery Early Mover {title}</b>\n"
+            f"• <b>Current Price:</b> ₹{price:.2f} (Today H ₹{day_high:.2f} / L ₹{day_low:.2f})\n"
+            f"• <b>{ref_line}:</b> ₹{ref_val:.2f} (signal {trigger_date}: {sig})\n"
+            f"• <b>Window:</b> Trading Day {elapsed} of {EARLY_MOVERS_WINDOW_TRADING_DAYS}\n"
+            f"📌 <i>{note}</i>"
+            f"{get_rs_and_sector_tag(symbol, metrics.get('rsi'), momentum_state)}{get_earnings_tag(symbol)}"
+        )
+        if sent:
+            record_alert(entry, "em_high_breach" if status == "Breached High" else "em_low_breach", price)
+            entry["status"] = status
+            updated = True
+        else:
+            log.error("Early mover alert for %s NOT delivered; will retry next run.", symbol)
+
+    if updated:
+        try:
+            EARLY_MOVERS_STATE_FILE.write_text(json.dumps(state, indent=2), encoding="utf-8")
+        except Exception as e:
+            log.error("Failed to write early_movers_state.json: %s", e)
 
 def check_etf_inav_discount(session, state: dict):
     state_key = "etf_inav_alerts"
@@ -2300,6 +2381,10 @@ def poll_once(state: dict, momentum_state: dict, fyers) -> dict:
         pass
 
     check_fno_three_day_breakouts(momentum_state, fyers)
+    try:
+        check_early_mover_breakouts(momentum_state, fyers)
+    except Exception as e:
+        log.exception("Early mover breakout check failed: %s", e)
 
     return state
 
