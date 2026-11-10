@@ -456,7 +456,7 @@
     "fno_high_breach_last_price": 516.2000122070312
   },
   "SECMARK": {
-    "trigger_date": "2026-11-09",
+    "trigger_date": "2026-11-10",
     "ref_high": 156.45,
     "ref_low": 141.4,
     "status": "Active"
@@ -1048,43 +1048,43 @@
     "status": "Active"
   },
   "NTCIND": {
-    "trigger_date": "2026-11-09",
+    "trigger_date": "2026-11-10",
     "ref_high": 149.0,
     "ref_low": 135.99,
     "status": "Active"
   },
   "ARIHANT": {
-    "trigger_date": "2026-11-09",
+    "trigger_date": "2026-11-10",
     "ref_high": 998.0,
     "ref_low": 840.0,
     "status": "Active"
   },
   "SHRJAGP": {
-    "trigger_date": "2026-11-09",
+    "trigger_date": "2026-11-10",
     "ref_high": 810.0,
     "ref_low": 761.3,
     "status": "Active"
   },
   "HEALTHX": {
-    "trigger_date": "2026-11-09",
+    "trigger_date": "2026-11-10",
     "ref_high": 290.7,
     "ref_low": 272.35,
     "status": "Active"
   },
   "IPRINGLTD": {
-    "trigger_date": "2026-11-09",
+    "trigger_date": "2026-11-10",
     "ref_high": 138.99,
     "ref_low": 133.8,
     "status": "Active"
   },
   "ASHIANA": {
-    "trigger_date": "2026-11-09",
+    "trigger_date": "2026-11-10",
     "ref_high": 383.0,
     "ref_low": 351.0,
     "status": "Active"
   },
   "KMEW": {
-    "trigger_date": "2026-11-09",
+    "trigger_date": "2026-11-10",
     "ref_high": 671.4,
     "ref_low": 649.0,
     "status": "Active"
@@ -1096,7 +1096,7 @@
     "status": "Active"
   },
   "AURUS": {
-    "trigger_date": "2026-11-09",
+    "trigger_date": "2026-11-10",
     "ref_high": 4.52,
     "ref_low": 3.91,
     "status": "Active"
@@ -1105,6 +1105,12 @@
     "trigger_date": "2026-11-09",
     "ref_high": 20.0,
     "ref_low": 18.4,
+    "status": "Active"
+  },
+  "SCANSTL": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 53.62,
+    "ref_low": 50.0,
     "status": "Active"
   }
 }
