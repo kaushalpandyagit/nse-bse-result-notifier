@@ -198,7 +198,22 @@ HISTORY_PERIOD = "18mo"
 NEAR_52W_HIGH_PCT = 25.0
 ABOVE_52W_LOW_PCT = 30.0
 SMA200_TREND_LOOKBACK_DAYS = 22
-VCP_LOOKBACK_DAYS = 60
+# --- VCP / right-side tight consolidation (tuned by walk-forward backtest, Nov 2026:
+# 700 Nifty Total Market stocks, 2 years. Tight variant: confirmed breakouts +3.1% avg
+# 20-day return, 55% win vs -0.03% / 46% for plain 20-day-high breakouts; n=20, so
+# indicative only. Looser textbook thresholds were NEGATIVE (-1.7%, n=131).) ---
+VCP_PARAMS = dict(
+    base_max_len=65, base_min_len=15,
+    depth_min=8.0, depth_max=25.0,      # % from base left high to base low
+    swing_k=2, min_pullback=2.0,        # a contraction must pull back >= 2%
+    min_contractions=2, last_max=4.0,   # final contraction <= 4%
+    shrink=0.85,                        # each contraction <= 85% of the previous one
+    tight_days=7, tight_max=6.0,        # right side: last 7 sessions' range <= 6%
+    dryup_max=0.55,                     # last 5 sessions' avg volume <= 55% of 50-day avg
+    pivot_dist_max=8.0,                 # close within 8% below the pivot
+)
+VCP_MAX_CHASE_PCT = 4.0                 # breakout alert only up to 4% above pivot
+VCP_MIN_VOLUME_PACE = 1.5               # projected full-day volume >= 1.5x 50-day avg
 RS_LOOKBACK_DAYS = 126
 
 MOMENTUM_LEADER_RS_RANK_MIN = 90.0
@@ -750,16 +765,81 @@ def get_trend_template_status(closes: pd.Series) -> dict:
         "stage2": stage2, "fifty2w_high": fifty2w_high, "fifty2w_low": fifty2w_low, "near_high": near_high,
     }
 
-def detect_vcp(highs: pd.Series, lows: pd.Series, lookback: int = VCP_LOOKBACK_DAYS) -> bool:
-    if len(highs) < lookback or len(lows) < lookback: return False
-    h, l = highs[-lookback:], lows[-lookback:]
-    third = lookback // 3
-    ranges = []
-    for i in range(3):
-        seg_h, seg_l = h[i * third:(i + 1) * third], l[i * third:(i + 1) * third]
-        if seg_l.empty or float(seg_l.min()) <= 0: return False
-        ranges.append((float(seg_h.max()) - float(seg_l.min())) / float(seg_l.min()) * 100)
-    return ranges[0] > ranges[1] > ranges[2]
+def detect_vcp_setup(df: pd.DataFrame, p: dict = VCP_PARAMS) -> dict:
+    """Minervini VCP with right-side tightness, on COMPLETED daily bars.
+    Stage-2 trend -> base (highest high of last ~65 sessions to today) -> successively
+    smaller pullbacks (contractions) -> tight last week on dried-up volume, just under
+    the pivot. Returns JSON-safe fields, or None."""
+    try:
+        d = df[["High", "Low", "Close", "Volume"]].dropna()
+        if len(d) < 210:
+            return None
+        c, h, l, v = (d[k].values.astype(float) for k in ("Close", "High", "Low", "Volume"))
+        close, n = c[-1], len(c)
+
+        cs = pd.Series(c)
+        sma50, sma150, sma200 = (cs.rolling(w).mean().values for w in (50, 150, 200))
+        if not (close > sma50[-1] > sma150[-1] > sma200[-1] and sma200[-1] > sma200[-22]):
+            return None
+        hi52, lo52 = h[-252:].max(), l[-252:].min()
+        if close < 0.75 * hi52 or close < 1.30 * lo52:
+            return None
+
+        win_start = n - p["base_max_len"]
+        left = win_start + int(np.argmax(h[win_start:n - 5]))
+        if n - left < p["base_min_len"]:
+            return None
+        base_hi, base_lo = h[left], l[left:].min()
+        depth = (base_hi - base_lo) / base_hi * 100
+        if not (p["depth_min"] <= depth <= p["depth_max"]):
+            return None
+
+        k = p["swing_k"]
+        swings = [left] + [i for i in range(left + 1, n - k) if h[i] >= h[max(left, i - k):i + k + 1].max()]
+        contractions = []
+        for j, si in enumerate(swings):
+            nxt = swings[j + 1] if j + 1 < len(swings) else n
+            pb = (h[si] - l[si:nxt].min()) / h[si] * 100
+            if pb >= p["min_pullback"]:
+                contractions.append((si, pb))
+        run = []   # trailing run of shrinking contractions
+        for si, pb in reversed(contractions):
+            if not run or pb >= run[-1][1] / p["shrink"]:
+                run.append((si, pb))
+            else:
+                break
+        run.reverse()
+        if len(run) < p["min_contractions"] or run[-1][1] > p["last_max"]:
+            return None
+
+        td = p["tight_days"]
+        tight = (h[-td:].max() - l[-td:].min()) / h[-td:].max() * 100
+        avg50 = v[-50:].mean()
+        dry = v[-5:].mean() / avg50 if avg50 > 0 else 9.0
+        if tight > p["tight_max"] or dry > p["dryup_max"]:
+            return None
+
+        pivot = float(h[run[-1][0]:].max())
+        dist = (pivot - close) / pivot * 100
+        if not (0 <= dist <= p["pivot_dist_max"]):
+            return None
+        return {
+            "pivot": round(float(pivot), 2), "stop": round(float(l[run[-1][0]:].min()), 2),
+            "contractions": [round(float(x[1]), 1) for x in run],
+            "base_depth": round(float(depth), 1), "base_len": int(n - left),
+            "tight_pct": round(float(tight), 1), "dryup": round(float(dry), 2), "pivot_dist": round(float(dist), 1),
+        }
+    except Exception:
+        return None
+
+def volume_pace_mult(volume: float, avg_volume: float, now_ist) -> float:
+    """Today's volume projected to a full session, as a multiple of avg_volume.
+    The opening ~15 minutes carry outsized volume, so ~12% of the day is assumed done at 9:15."""
+    if not avg_volume:
+        return 0.0
+    elapsed = (now_ist.hour * 60 + now_ist.minute) - (9 * 60 + 15)
+    frac = min(1.0, max(0.12, 0.12 + 0.88 * elapsed / 375.0))
+    return (volume / frac) / avg_volume
 
 def get_market_cap_cr(symbol: str, exchange: str = "NSE") -> float:
     try:
@@ -915,11 +995,12 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         per_symbol_data[symbol] = {
             **trend,
             "ath_high": float(highs.max()) if len(highs) > 0 else float(closes.max()),
-            "vcp_contracting": detect_vcp(highs, lows),
+            "vcp": detect_vcp_setup(df),
             "rs_return_6m": rs_return,
             "avg_volume_50d": float(volumes[-50:].mean()),
-            "base_high": float(highs.iloc[-ZANGER_BASE_LOOKBACK_DAYS - 1:-1].max()) if len(highs) > ZANGER_BASE_LOOKBACK_DAYS else float(highs.max()),
-            "base_low": float(lows.iloc[-ZANGER_BASE_LOOKBACK_DAYS - 1:-1].min()) if len(lows) > ZANGER_BASE_LOOKBACK_DAYS else float(lows.min()),
+            # df holds completed sessions only, so the base is simply the last N of them
+            "base_high": float(highs.iloc[-ZANGER_BASE_LOOKBACK_DAYS:].max()),
+            "base_low": float(lows.iloc[-ZANGER_BASE_LOOKBACK_DAYS:].min()),
             "prev_close": float(closes.iloc[-1]),
             "monthly_rsi": rsi_fyers_tradingview(closes.resample('ME').last().dropna().tolist(), RSI_PERIOD) if len(closes.resample('ME').last().dropna()) > 14 else 50.0,
             "yesterday_rsi": rsi_fyers_tradingview(closes.tolist(), RSI_PERIOD),
@@ -947,7 +1028,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     for symbol, d in per_symbol_data.items():
         rs_rank = rs_rank_pct.get(symbol)
         watchlist[symbol] = {**d, "rs_rank": rs_rank}
-        if d["stage2"] and d["vcp_contracting"]: stage2_vcp_list.append((symbol, rs_rank))
+        if d.get("vcp"): stage2_vcp_list.append((symbol, rs_rank))
         if rs_rank is not None and rs_rank >= MOMENTUM_LEADER_RS_RANK_MIN and d["near_high"]: momentum_leader_list.append((symbol, rs_rank))
 
     stage2_vcp_list.sort(key=lambda x: (x[1] or 0), reverse=True)
@@ -956,11 +1037,15 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     lines = [
         f"📊 <b>Daily Momentum Scan — {today_str}</b>",
         f"<i>Universe: {len(per_symbol_data)} stocks within ₹{MIN_MARKET_CAP_CR:,.0f} Cr – ₹{MAX_MARKET_CAP_CR:,.0f} Cr.</i>", "",
-        f"🟢 <b>Minervini Stage 2 + VCP</b> ({len(stage2_vcp_list)} stocks)",
+        f"🎯 <b>VCP — Right-Side Tight</b> ({len(stage2_vcp_list)} stocks)",
+        "<i>Stage 2, shrinking pullbacks, tight last week on dried-up volume. Alert fires on a pivot break with volume.</i>",
     ]
     for s, r in stage2_vcp_list[:TOP_N_MOMENTUM]:
+        v = per_symbol_data[s]["vcp"]
         e_tag = get_earnings_tag(s)
-        lines.append(f"  {s} (RS rank {r}){e_tag}")
+        lines.append(f"  <b>{s}</b> pivot ₹{v['pivot']:,.2f} ({v['pivot_dist']:.1f}% away) | "
+                     f"T {'→'.join(f'{x:g}' for x in v['contractions'])}% | 7d range {v['tight_pct']}% | "
+                     f"vol {v['dryup']}x | RS {r}{e_tag}")
     lines += ["", f"🌟 <b>Momentum Leaders</b> ({len(momentum_leader_list)} stocks)"]
     for s, r in momentum_leader_list[:TOP_N_MOMENTUM]:
         e_tag = get_earnings_tag(s)
@@ -1575,9 +1660,40 @@ class _LazyTag:
     def __str__(self):
         return self.__format__("")
 
+def check_vcp_breakout(symbol: str, entry: dict, metrics: dict, momentum_state: dict, now_ist):
+    vcp = entry.get("vcp")
+    if not vcp or entry.get("vcp_sent"):
+        return
+    price, prev_close = metrics["price"], metrics["prev_close"]
+    pivot, stop = vcp["pivot"], vcp["stop"]
+    pace = volume_pace_mult(metrics["volume"], entry.get("avg_volume_50d") or metrics.get("sma_vol_20"), now_ist)
+    if not (pivot < price <= pivot * (1 + VCP_MAX_CHASE_PCT / 100) and price >= prev_close and pace >= VCP_MIN_VOLUME_PACE):
+        return
+    if not alert_allowed(entry, "vcp_breakout", price):
+        return
+    risk_pct = (price - stop) / price * 100
+    safe_sym = symbol.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    if send_telegram_message(
+        f"🎯 <b>{safe_sym}</b> VCP Pivot BREAKOUT!\n"
+        f"• <b>Price:</b> ₹{price:.2f} above pivot ₹{pivot:.2f} (+{(price / pivot - 1) * 100:.1f}%)\n"
+        f"• <b>Volume pace:</b> {pace:.1f}x 50-day avg (projected full day)\n"
+        f"• <b>Base:</b> {vcp['base_len']} sessions, {vcp['base_depth']}% deep | contractions "
+        f"{'→'.join(f'{x:g}' for x in vcp['contractions'])}%\n"
+        f"• <b>Right side:</b> 7-day range {vcp['tight_pct']}%, volume dried to {vcp['dryup']}x\n"
+        f"• <b>Stop idea:</b> ₹{stop:.2f} ({risk_pct:.1f}% risk)\n"
+        f"📌 <i>Confirm with a close above the pivot on volume.</i>"
+        f"{get_rs_and_sector_tag(symbol, metrics.get('rsi'), momentum_state)}{get_earnings_tag(symbol)}"
+    ):
+        record_alert(entry, "vcp_breakout", price)
+        entry["vcp_sent"] = True
+
 def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers, now_ist):
     metrics = get_live_metrics(fyers, symbol, "NSE")
     LIVE_METRICS_CACHE[symbol] = metrics
+    if metrics:
+        # Before the weekly-RSI cap on purpose: VCP candidates are Stage-2 leaders,
+        # which almost always sit above that cap.
+        check_vcp_breakout(symbol, entry, metrics, momentum_state, now_ist)
     if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI:
         return
 
@@ -1598,7 +1714,8 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
 
     avg_vol_for_bo = entry.get("avg_volume_50d") or metrics.get("sma_vol_20")
     if alert_allowed(entry, "vol_breakout", price) and avg_vol_for_bo and avg_vol_for_bo > 0:
-        if volume >= 4.0 * avg_vol_for_bo:
+        # 4x volume on a red / fading candle is distribution, not a breakout
+        if volume >= 4.0 * avg_vol_for_bo and pct_change is not None and pct_change >= 1.0 and price >= metrics.get("open_price", 0):
             vol_mult = volume / avg_vol_for_bo
             pct_str = f"({pct_change:+.1f}%)" if pct_change is not None else ""
             if send_telegram_message(
@@ -1670,7 +1787,7 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
                 f"🔄 <b>{symbol}</b> SOS Range Shift / Pullback Curl Alert!\n"
                 f"• <b>Current Price:</b> ₹{price:.2f} (Cooled {pullback_pct:.1f}% from Peak: ₹{sos_peak_p:.2f})\n"
                 f"• <b>Prior Impulse:</b> Bullish Thrust RSI peaked at <b>{sos_rsi:.1f}</b>\n"
-                f"• <b>Support Reset:</b> RSI defended 40-zone (Now curling to <b>{c_rsi:.1f}</b> vs Yesterday: {y_rsi:.1f})\n"
+                f"• <b>Support Reset:</b> RSI reset into 36-55 zone (Now curling to <b>{c_rsi:.1f}</b> vs Yesterday: {y_rsi:.1f})\n"
                 f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Buyers reclaiming control)"
                 f"{open_low_tag}{rs_tag}{ern_tag}"
             ):
@@ -1695,7 +1812,7 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
                 f"🚀 <b>{symbol}</b> Momentum Ignition / Early Breakout Alert!\n"
                 f"• <b>Current Price:</b> ₹{price:.2f} ({dist_pct:.1f}% below 60-Day Pivot: ₹{macro_high:.2f})\n"
                 f"• <b>Setup:</b> Resistance Anticipation + Range Shift\n"
-                f"• <b>RSI Test:</b> Current RSI: <b>{c_rsi:.1f}</b> (Crossed Macro High RSI: {macro_high_rsi:.1f})\n"
+                f"• <b>RSI Test:</b> Current RSI: <b>{c_rsi:.1f}</b> (within 1.5 of Macro High RSI: {macro_high_rsi:.1f})\n"
                 f"• <b>Volume:</b> {volume/sma_vol_20:.1f}x 20-day avg (Expansion detected)\n"
                 f"• <b>Upper Shadow:</b> {int(upper_wick_ratio*100)}% (Buyers holding the high)"
                 f"{open_low_tag}{rs_tag}{ern_tag}"
@@ -1728,8 +1845,9 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
                 record_alert(entry, "liquidity_sweep", price)
 
     if alert_allowed(entry, "zanger", price) and base_high and avg_vol50 and pct_change is not None:
-        if pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50 and price >= (base_high * 0.95):
-            if send_telegram_message(f"💥 <b>{symbol}</b> Zanger Early Entry Setup!\nPrice ₹{price:.2f} (up {pct_change:+.1f}%) near {ZANGER_BASE_LOOKBACK_DAYS}-day base high ₹{base_high:.2f} on {volume / avg_vol50:.1f}x avg volume.{open_low_tag}{rs_tag}{ern_tag}"):
+        if (pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50
+                and base_high < price <= base_high * 1.04):
+            if send_telegram_message(f"💥 <b>{symbol}</b> Zanger Early Entry Setup!\nPrice ₹{price:.2f} (up {pct_change:+.1f}%) broke above {ZANGER_BASE_LOOKBACK_DAYS}-day base high ₹{base_high:.2f} on {volume / avg_vol50:.1f}x avg volume.{open_low_tag}{rs_tag}{ern_tag}"):
                 record_alert(entry, "zanger", price)
 
     if alert_allowed(entry, "bonde", price) and pct_change is not None and prev_volume is not None and metrics.get("close_3d_ago"):
@@ -1739,8 +1857,10 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
                 record_alert(entry, "bonde", price)
 
     if alert_allowed(entry, "resistance", price) and base_high:
-        if 0 < ((base_high - price) / base_high * 100) <= 4.0:
-            if send_telegram_message(f"🎯 <b>{symbol}</b> Horizontal Resistance Scanner!\nPrice ₹{price:.2f} is within 4% below the recent base high (₹{base_high:.2f}).{open_low_tag}{rs_tag}{ern_tag}"):
+        # Only stocks actively pressing into resistance: within 2.5%, up on the day, RSI rising
+        if (0 < ((base_high - price) / base_high * 100) <= 2.5 and price >= prev_close
+                and c_rsi and y_rsi and c_rsi > y_rsi):
+            if send_telegram_message(f"🎯 <b>{symbol}</b> Horizontal Resistance Scanner!\nPrice ₹{price:.2f} is pressing within 2.5% of the {ZANGER_BASE_LOOKBACK_DAYS}-day base high (₹{base_high:.2f}), RSI rising {y_rsi:.1f} → {c_rsi:.1f}.{open_low_tag}{rs_tag}{ern_tag}"):
                 record_alert(entry, "resistance", price)
 
     if alert_allowed(entry, "mtf", price) and c_rsi is not None:
@@ -1749,12 +1869,12 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
         if y_rsi:
             rsi_condition = c_rsi > y_rsi and c_rsi > 30 and m_rsi <= 56 and metrics["weekly_rsi"] <= c_rsi
             if rsi_condition and ema_condition:
-                if send_telegram_message(f"🔮 <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice ₹{price:.2f} (Spiked ≥3% above key EMA).\nLive Daily RSI: {c_rsi:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}{open_low_tag}{rs_tag}{ern_tag}"):
+                if send_telegram_message(f"🔮 <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice ₹{price:.2f} (≥3% above 21/50/200 EMA).\nLive Daily RSI: {c_rsi:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}{open_low_tag}{rs_tag}{ern_tag}"):
                     record_alert(entry, "mtf", price)
     
     if alert_allowed(entry, "ema50_pullback", price) and c_rsi:
         ema_50 = metrics.get("ema_50")
-        w_rsi, mcap = metrics.get("weekly_rsi"), entry.get("mcap_cr", 0)
+        w_rsi, mcap = metrics.get("weekly_rsi"), entry.get("mcap_cr") or 0
         sma_vol_5, sma_vol_20 = metrics.get("sma_vol_5"), metrics.get("sma_vol_20")
 
         if ema_50 and y_rsi and w_rsi:
