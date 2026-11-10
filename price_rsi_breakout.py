@@ -1136,7 +1136,8 @@ def check_fno_three_day_breakouts(momentum_state: dict, fyers):
         ern_tag = get_earnings_tag(symbol)
         
         safe_sym = symbol.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-        if day_high > ref_high and alert_allowed(entry, "fno_high_breach", price):
+        # Price (not just an intraday wick) must be beyond the signal candle's level.
+        if price > ref_high and alert_allowed(entry, "fno_high_breach", price):
             sent = send_telegram_message(
                 f"🚀 <b>{safe_sym} — Unusual Volume High Breach!</b>\n"
                 f"• <b>Current Price:</b> ₹{price:.2f} (Today High: ₹{day_high:.2f})\n"
@@ -1151,7 +1152,7 @@ def check_fno_three_day_breakouts(momentum_state: dict, fyers):
                 updated = True
             else:
                 log.error("F&O high-breach alert for %s NOT delivered; will retry next run.", symbol)
-        elif day_low < ref_low and alert_allowed(entry, "fno_low_breach", price):
+        elif price < ref_low and alert_allowed(entry, "fno_low_breach", price):
             sent = send_telegram_message(
                 f"🔻 <b>{safe_sym} — Unusual Volume Low Breach!</b>\n"
                 f"• <b>Current Price:</b> ₹{price:.2f} (Today Low: ₹{day_low:.2f})\n"
