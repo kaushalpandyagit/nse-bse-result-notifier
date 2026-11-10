@@ -1,0 +1,102 @@
+{
+  "LAMBODHARA": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 134.0,
+    "ref_low": 127.0,
+    "ref_close": 128.79,
+    "price_change_pct": -2.5,
+    "deliv_pct": 62.7,
+    "direction": "down",
+    "status": "Active"
+  },
+  "PRUDMOULI": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 13.85,
+    "ref_low": 12.53,
+    "ref_close": 13.67,
+    "price_change_pct": 2.47,
+    "deliv_pct": 95.5,
+    "direction": "up",
+    "status": "Active"
+  },
+  "SHYAMTEL": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 12.3,
+    "ref_low": 10.7,
+    "ref_close": 11.45,
+    "price_change_pct": -2.47,
+    "deliv_pct": 62.4,
+    "direction": "down",
+    "status": "Active"
+  },
+  "TEXMOPIPES": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 50.53,
+    "ref_low": 48.21,
+    "ref_close": 48.68,
+    "price_change_pct": -2.46,
+    "deliv_pct": 68.7,
+    "direction": "down",
+    "status": "Active"
+  },
+  "SIS": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 399.35,
+    "ref_low": 390.0,
+    "ref_close": 390.85,
+    "price_change_pct": -2.46,
+    "deliv_pct": 71.1,
+    "direction": "down",
+    "status": "Active"
+  },
+  "BIMETAL": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 643.65,
+    "ref_low": 619.75,
+    "ref_close": 624.6,
+    "price_change_pct": -2.45,
+    "deliv_pct": 91.0,
+    "direction": "down",
+    "status": "Active"
+  },
+  "SHANKARA": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 120.02,
+    "ref_low": 114.98,
+    "ref_close": 117.88,
+    "price_change_pct": -2.44,
+    "deliv_pct": 70.9,
+    "direction": "down",
+    "status": "Active"
+  },
+  "ORIENTCER": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 39.4,
+    "ref_low": 38.05,
+    "ref_close": 39.04,
+    "price_change_pct": 2.44,
+    "deliv_pct": 84.1,
+    "direction": "up",
+    "status": "Active"
+  },
+  "SUMEDHA": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 42.0,
+    "ref_low": 41.0,
+    "ref_close": 42.0,
+    "price_change_pct": 2.44,
+    "deliv_pct": 100.0,
+    "direction": "up",
+    "status": "Active"
+  },
+  "SPLIL": {
+    "trigger_date": "2026-11-10",
+    "ref_high": 29.55,
+    "ref_low": 28.4,
+    "ref_close": 28.83,
+    "price_change_pct": -2.44,
+    "deliv_pct": 67.8,
+    "direction": "down",
+    "status": "Active"
+  }
+}
