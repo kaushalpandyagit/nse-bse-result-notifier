@@ -2835,7 +2835,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 16.7,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T05:30:15.969117",
+      "mtf_last_price": 834.0
     },
     "BLACKBUCK": {
       "sma50": 585.9060034179688,
@@ -6679,7 +6683,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 66.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-11T05:30:32.032521",
+      "resistance_last_price": 161.32000732421875
     },
     "FIEMIND": {
       "sma50": 1883.3779907226562,
@@ -16173,7 +16181,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 8.9,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T05:31:10.757478",
+      "mtf_last_price": 560.1500244140625
     },
     "RBA": {
       "sma50": 93.53580062866212,
