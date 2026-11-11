@@ -1983,7 +1983,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 91.6,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-11T09:46:25.997221",
+      "near_high_17_22_last_price": 2044.9000244140625
     },
     "AVANTIFEED": {
       "sma50": 741.3250012207031,
@@ -2685,10 +2689,13 @@
       "rs_rank": 71.2,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-11T03:51:58.151756",
-      "mtf_last_price": 211.19000244140625
+      "mtf_last_price": 211.19000244140625,
+      "ema50_pullback_last_alert": "2026-11-11T09:46:29.843277",
+      "ema50_pullback_last_price": 210.86000061035156
     },
     "BELRISE": {
       "sma50": 228.8309994506836,
@@ -3754,10 +3761,11 @@
       "rs_rank": 38.5,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-11T03:52:09.393139",
-      "near_high_17_22_last_price": 972.4000244140625
+      "near_high_17_22_last_alert": "2026-11-11T09:46:34.403351",
+      "near_high_17_22_last_price": 986.8499755859375
     },
     "CDSL": {
       "sma50": 1310.7480004882811,
@@ -4503,10 +4511,13 @@
       "rs_rank": 23.6,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-11T03:52:15.760291",
-      "mtf_last_price": 1448.300048828125
+      "mtf_last_price": 1448.300048828125,
+      "ema50_pullback_last_alert": "2026-11-11T09:46:38.047101",
+      "ema50_pullback_last_price": 1444.0
     },
     "CIEINDIA": {
       "sma50": 375.60400024414065,
@@ -7917,10 +7928,11 @@
       "rs_rank": 9.1,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-11T03:52:42.988893",
-      "mtf_last_price": 212.97999572753906
+      "mtf_last_alert": "2026-11-11T09:46:55.418974",
+      "mtf_last_price": 215.6199951171875
     },
     "GPPL": {
       "sma50": 164.470400390625,
@@ -14616,10 +14628,11 @@
       "rs_rank": 1.3,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-11T04:02:12.396950",
-      "mtf_last_price": 242.39999389648438
+      "mtf_last_alert": "2026-11-11T09:47:24.196000",
+      "mtf_last_price": 239.8699951171875
     },
     "PAISALO": {
       "sma50": 79.80400009155274,
@@ -21362,10 +21375,11 @@
       "rs_rank": 43.7,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-11T03:54:57.921258",
-      "mtf_last_price": 39.939998626708984
+      "mtf_last_alert": "2026-11-11T09:47:51.076307",
+      "mtf_last_price": 39.439998626708984
     },
     "TVSSCS": {
       "sma50": 123.8831997680664,
