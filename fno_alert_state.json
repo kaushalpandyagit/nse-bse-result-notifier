@@ -1087,7 +1087,13 @@
     "trigger_date": "2026-11-10",
     "ref_high": 671.4,
     "ref_low": 649.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-11T03:46:41.638313",
+    "fno_low_breach_last_price": 634.0999755859375
   },
   "PREMCO": {
     "trigger_date": "2026-11-09",

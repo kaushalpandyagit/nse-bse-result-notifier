@@ -77,7 +77,13 @@
     "price_change_pct": 2.44,
     "deliv_pct": 84.1,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-11T03:46:49.411831",
+    "em_high_breach_last_price": 39.5
   },
   "SUMEDHA": {
     "trigger_date": "2026-11-10",
