@@ -6736,7 +6736,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 26.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-11T08:01:47.886879",
+      "rectangle_bounce_last_price": 2440.800048828125
     },
     "FEDFINA": {
       "sma50": 153.91800079345703,
@@ -9873,10 +9877,11 @@
       "rs_rank": 5.6,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-11T03:53:01.812948",
-      "mtf_last_price": 67.80000305175781
+      "mtf_last_alert": "2026-11-11T08:01:57.713022",
+      "mtf_last_price": 67.05999755859375
     },
     "INTELLECT": {
       "sma50": 622.075,
@@ -17410,10 +17415,11 @@
       "rs_rank": 48.1,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-11T03:54:22.075374",
-      "mtf_last_price": 137.33999633789062
+      "mtf_last_alert": "2026-11-11T08:02:20.409478",
+      "mtf_last_price": 135.52999877929688
     },
     "SANDUMA": {
       "sma50": 181.46859985351563,
