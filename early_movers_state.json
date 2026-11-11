@@ -128,5 +128,105 @@
     ],
     "em_low_breach_last_alert": "2026-11-11T04:01:26.225692",
     "em_low_breach_last_price": 28.100000381469727
+  },
+  "AGROPHOS": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 23.7,
+    "ref_low": 22.45,
+    "ref_close": 23.48,
+    "price_change_pct": 2.49,
+    "deliv_pct": 71.5,
+    "direction": "up",
+    "status": "Active"
+  },
+  "ANDREWYU": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 25.44,
+    "ref_low": 23.65,
+    "ref_close": 24.33,
+    "price_change_pct": 2.49,
+    "deliv_pct": 80.9,
+    "direction": "up",
+    "status": "Active"
+  },
+  "EIDPARRY": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 671.0,
+    "ref_low": 646.25,
+    "ref_close": 660.55,
+    "price_change_pct": 2.48,
+    "deliv_pct": 60.1,
+    "direction": "up",
+    "status": "Active"
+  },
+  "HAWKINCOOK": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 8280.0,
+    "ref_low": 7899.5,
+    "ref_close": 8145.5,
+    "price_change_pct": 2.48,
+    "deliv_pct": 66.4,
+    "direction": "up",
+    "status": "Active"
+  },
+  "IFBIND": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 1147.0,
+    "ref_low": 1108.0,
+    "ref_close": 1130.6,
+    "price_change_pct": 2.47,
+    "deliv_pct": 61.2,
+    "direction": "up",
+    "status": "Active"
+  },
+  "UNITEDPOLY": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 53.0,
+    "ref_low": 50.0,
+    "ref_close": 50.51,
+    "price_change_pct": -2.47,
+    "deliv_pct": 75.5,
+    "direction": "down",
+    "status": "Active"
+  },
+  "MITCON": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 81.0,
+    "ref_low": 76.62,
+    "ref_close": 80.95,
+    "price_change_pct": 2.47,
+    "deliv_pct": 82.0,
+    "direction": "up",
+    "status": "Active"
+  },
+  "BUILDPRO": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 190.5,
+    "ref_low": 180.59,
+    "ref_close": 187.38,
+    "price_change_pct": 2.47,
+    "deliv_pct": 64.6,
+    "direction": "up",
+    "status": "Active"
+  },
+  "ELMDIV": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 37.85,
+    "ref_low": 37.5,
+    "ref_close": 37.5,
+    "price_change_pct": 2.46,
+    "deliv_pct": 100.0,
+    "direction": "up",
+    "status": "Active"
+  },
+  "ANNAPURNA": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 123.97,
+    "ref_low": 119.62,
+    "ref_close": 122.99,
+    "price_change_pct": 2.45,
+    "deliv_pct": 79.2,
+    "direction": "up",
+    "status": "Active"
   }
 }
