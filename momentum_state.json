@@ -47,7 +47,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 34.6,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-11T05:46:28.235101",
+      "ema50_pullback_last_price": 441.6499938964844
     },
     "AARTIIND": {
       "sma50": 477.612998046875,
@@ -7523,7 +7527,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 13.0,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T05:46:59.913682",
+      "mtf_last_price": 1850.0
     },
     "GODREJAGRO": {
       "sma50": 631.2789990234374,
@@ -18757,7 +18765,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 47.4,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "sos_pullback_curl_last_alert": "2026-11-11T05:47:46.628782",
+      "sos_pullback_curl_last_price": 704.4500122070312
     },
     "STAR": {
       "sma50": 1098.0860070800782,
@@ -22364,7 +22376,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 87.7,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-11T05:48:01.771863",
+      "resistance_last_price": 684.2999877929688
     },
     "WHIRLPOOL": {
       "sma50": 818.5060034179687,
