@@ -1190,5 +1190,11 @@
     "ref_high": 806.4,
     "ref_low": 768.2,
     "status": "Active"
+  },
+  "LAXMICOT": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 12.5,
+    "ref_low": 12.02,
+    "status": "Active"
   }
 }
