@@ -7814,5 +7814,23 @@
     "baseline_rsi": 35.64490300861891,
     "mcap_cr": 419.5717846221436,
     "exchange": "NSE"
+  },
+  "AVTNPL": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-11T14:29:29",
+    "day_high": 103.81999969482422,
+    "day_low": 93.91000366210938,
+    "baseline_rsi": 59.30048392055307,
+    "mcap_cr": 1508.3730664733887,
+    "exchange": "NSE"
+  },
+  "POWERMECH": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-11T14:16:43",
+    "day_high": 2489.199951171875,
+    "day_low": 2329.0,
+    "baseline_rsi": 62.92122352559574,
+    "mcap_cr": 7736.5066524,
+    "exchange": "NSE"
   }
 }
