@@ -4551,7 +4551,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 12.3,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:16:40.899645",
+      "mtf_last_price": 221.69000244140625
     },
     "COHANCE": {
       "sma50": 451.60900024414065,
@@ -6011,7 +6015,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 19.0,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:16:46.834000",
+      "mtf_last_price": 72.58000183105469
     },
     "ELGIEQUIP": {
       "sma50": 583.2369958496093,
@@ -7279,7 +7287,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 46.8,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-11T04:16:51.519811",
+      "resistance_last_price": 7450.0
     },
     "GMDCLTD": {
       "sma50": 503.72500183105467,
@@ -7619,7 +7631,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 50.9,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-11T04:16:53.712291",
+      "resistance_last_price": 228.49000549316406
     },
     "GOLDIAM": {
       "sma50": 318.28699951171876,
@@ -10479,7 +10495,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 21.9,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-11T04:17:03.179016",
+      "ema50_pullback_last_price": 114.25
     },
     "JPPOWER": {
       "sma50": 15.03100004196167,
@@ -11173,7 +11193,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 15.4,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:17:06.099063",
+      "mtf_last_price": 3395.60009765625
     },
     "KEC": {
       "sma50": 373.2289990234375,
@@ -11767,7 +11791,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 12.8,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:17:09.085555",
+      "mtf_last_price": 551.25
     },
     "KRBL": {
       "sma50": 394.7759997558594,
@@ -18607,7 +18635,9 @@
       "dtl_touches": null,
       "dtl_floor": 167.22000122070312,
       "dtl_floor_touches": 1,
-      "rs_rank": 84.0
+      "rs_rank": 84.0,
+      "session_date": "2026-11-11",
+      "alert_slots": []
     },
     "SPLPETRO": {
       "sma50": 771.1929992675781,
@@ -19387,7 +19417,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 10.4,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:17:32.640085",
+      "mtf_last_price": 161.33999633789062
     },
     "SYNGENE": {
       "sma50": 385.40600036621095,

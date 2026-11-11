@@ -685,7 +685,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 1794.0,
     "ref_low": 1750.0,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-11T04:16:14.178951",
+    "fno_high_breach_last_price": 1799.9000244140625
   },
   "RAMCOCEM": {
     "trigger_date": "2026-11-03",
