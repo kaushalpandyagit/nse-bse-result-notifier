@@ -3583,7 +3583,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 92.6,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-11T04:46:30.591847",
+      "near_high_17_22_last_price": 2729.0
     },
     "CASTROLIND": {
       "sma50": 192.9820001220703,
@@ -4959,7 +4963,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 79.4,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-11T04:46:36.283271",
+      "resistance_last_price": 229.77999877929688
     },
     "CYIENT": {
       "sma50": 1120.921005859375,
@@ -5639,7 +5647,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 90.5,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "sos_pullback_curl_last_alert": "2026-11-11T04:46:39.690101",
+      "sos_pullback_curl_last_price": 510.54998779296875
     },
     "EBGNG": {
       "sma50": 674.1940014648437,
@@ -16653,7 +16665,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 37.0,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:47:20.374020",
+      "mtf_last_price": 202.5
     },
     "RKFORGE": {
       "sma50": 695.9709985351562,
@@ -16747,7 +16763,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 30.5,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-11T04:47:21.733624",
+      "resistance_last_price": 460.1499938964844
     },
     "RPOWER": {
       "sma50": 19.943999977111815,
@@ -17823,7 +17843,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 3.9,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:47:26.688793",
+      "mtf_last_price": 398.5
     },
     "SHARDACROP": {
       "sma50": 726.1419958496094,
@@ -21963,7 +21987,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 10.8,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:47:42.799210",
+      "mtf_last_price": 767.7999877929688
     },
     "WABAG": {
       "sma50": 1973.4000024414063,
