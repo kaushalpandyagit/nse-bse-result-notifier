@@ -387,8 +387,12 @@
     ]
   },
   "arb_AVL": {
-    "spread_last_alert": "2026-10-23T09:10:19.136291",
-    "spread_last_price": 2.751182722768104
+    "spread_last_alert": "2026-11-11T06:31:38.372845",
+    "spread_last_price": 3.7749977814729148,
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_KICL": {
     "spread_last_alert": "2026-11-09T05:03:13.270870",

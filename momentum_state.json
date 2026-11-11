@@ -21798,7 +21798,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 23.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-11T06:31:03.658937",
+      "rectangle_bounce_last_price": 246.9499969482422
     },
     "VIYASH": {
       "sma50": 239.0774005126953,
