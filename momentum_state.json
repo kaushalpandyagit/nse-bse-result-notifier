@@ -7822,10 +7822,13 @@
       "rs_rank": 64.3,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-11T03:52:41.335102",
-      "near_high_17_22_last_price": 317.25
+      "near_high_17_22_last_price": 317.25,
+      "mtf_last_alert": "2026-11-11T07:30:29.427585",
+      "mtf_last_price": 319.0
     },
     "GPIL": {
       "sma50": 220.08140014648438,
@@ -12376,10 +12379,11 @@
       "rs_rank": 85.1,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-11T03:53:31.868233",
-      "near_high_17_22_last_price": 85.25
+      "near_high_17_22_last_alert": "2026-11-11T07:30:42.813196",
+      "near_high_17_22_last_price": 86.13999938964844
     },
     "LLOYDSENT": {
       "sma50": 69.90820007324218,
@@ -20778,10 +20782,11 @@
       "rs_rank": 68.8,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-11T03:54:55.445943",
-      "near_high_17_22_last_price": 492.29998779296875
+      "near_high_17_22_last_alert": "2026-11-11T07:31:06.826073",
+      "near_high_17_22_last_price": 503.70001220703125
     },
     "TIMETECHNO": {
       "sma50": 177.36199981689452,
@@ -22690,10 +22695,11 @@
       "rs_rank": 45.2,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-11T04:02:40.753406",
-      "mtf_last_price": 858.2999877929688
+      "mtf_last_alert": "2026-11-11T07:31:12.987277",
+      "mtf_last_price": 847.0999755859375
     },
     "YATHARTH": {
       "sma50": 1008.8040002441406,

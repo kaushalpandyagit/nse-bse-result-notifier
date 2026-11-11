@@ -2,10 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-09T07:01:08.505671",
-    "custom_last_price": 111.0,
+    "custom_last_alert": "2026-11-11T07:29:39.569109",
+    "custom_last_price": 109.25,
     "session_date": "2026-11-11",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_AERON_price": {
     "alerted": false,
@@ -477,11 +479,12 @@
     ]
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-11-11T03:55:50.515497",
-    "spread_last_price": 3.7649219467401234,
+    "spread_last_alert": "2026-11-11T07:31:37.947744",
+    "spread_last_price": 3.1307565134902937,
     "session_date": "2026-11-11",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_JINDALPHOT": {
