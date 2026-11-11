@@ -305,9 +305,9 @@
     ]
   },
   "arb_VHL": {
-    "spread_last_alert": "2026-11-09T03:53:05.771966",
-    "spread_last_price": 3.526521337475415,
-    "session_date": "2026-11-09",
+    "spread_last_alert": "2026-11-11T04:02:59.590712",
+    "spread_last_price": 2.515054521705621,
+    "session_date": "2026-11-11",
     "alert_slots": [
       "H1"
     ]
@@ -7521,5 +7521,194 @@
     ],
     "spread_last_alert": "2026-11-11T03:55:47.427530",
     "spread_last_price": 3.192225962801132
+  },
+  "AVANTIFEED": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T17:16:07",
+    "day_high": 705.2000122070312,
+    "day_low": 680.0,
+    "baseline_rsi": 47.875944341505225,
+    "mcap_cr": 9584.8800705,
+    "exchange": "NSE"
+  },
+  "COCHINSHIP": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T14:27:05",
+    "day_high": 1222.0,
+    "day_low": 1186.5,
+    "baseline_rsi": 45.273883959935354,
+    "mcap_cr": 31348.70510251294,
+    "exchange": "NSE"
+  },
+  "DREDGECORP": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T19:57:37",
+    "day_high": 947.0,
+    "day_low": 896.9500122070312,
+    "baseline_rsi": 53.34355879418092,
+    "mcap_cr": 2517.2,
+    "exchange": "NSE"
+  },
+  "HIRECT": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T13:24:27",
+    "day_high": 889.9500122070312,
+    "day_low": 841.0499877929688,
+    "baseline_rsi": 27.2265010282034,
+    "mcap_cr": 3107.76947850943,
+    "exchange": "NSE"
+  },
+  "KALYANKJIL": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T17:08:21",
+    "day_high": 672.0999755859375,
+    "day_low": 620.0,
+    "baseline_rsi": 75.53638761414945,
+    "mcap_cr": 68899.98361834468,
+    "exchange": "NSE"
+  },
+  "MARUTI": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T11:56:00",
+    "day_high": 13153.0,
+    "day_low": 12995.0,
+    "baseline_rsi": 74.4755414378782,
+    "mcap_cr": 409509.352635,
+    "exchange": "NSE"
+  },
+  "MATRIMONY": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T15:48:23",
+    "day_high": 655.9500122070312,
+    "day_low": 622.0,
+    "baseline_rsi": 73.4618987583874,
+    "mcap_cr": 1302.423759,
+    "exchange": "NSE"
+  },
+  "MEDICO": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-09T17:30:50",
+    "day_high": 19.489999771118164,
+    "day_low": 18.889999389648438,
+    "baseline_rsi": 29.422334673906107,
+    "mcap_cr": 156.7567709350586,
+    "exchange": "NSE"
+  },
+  "MIDWESTLTD": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T19:35:07",
+    "day_high": 990.0,
+    "day_low": 957.0,
+    "baseline_rsi": 42.885145924288516,
+    "mcap_cr": 3514.108054738379,
+    "exchange": "NSE"
+  },
+  "MMTC": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T19:19:17",
+    "day_high": 54.54999923706055,
+    "day_low": 53.4900016784668,
+    "baseline_rsi": 50.156286960529116,
+    "mcap_cr": 8165.999794006348,
+    "exchange": "NSE"
+  },
+  "MRF": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T12:24:20",
+    "day_high": 126475.0,
+    "day_low": 123760.0,
+    "baseline_rsi": 57.53565426782142,
+    "mcap_cr": 52583.8114855,
+    "exchange": "NSE"
+  },
+  "MUFTI": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T11:57:48",
+    "day_high": 82.08999633789062,
+    "day_low": 79.5,
+    "baseline_rsi": 68.03171381571342,
+    "mcap_cr": 534.7275582786339,
+    "exchange": "NSE"
+  },
+  "OLECTRA": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-09T16:53:50",
+    "day_high": 1094.449951171875,
+    "day_low": 1060.4000244140625,
+    "baseline_rsi": 51.87915505391126,
+    "mcap_cr": 8738.725865097424,
+    "exchange": "NSE"
+  },
+  "PILANIINVS": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T17:20:56",
+    "day_high": 4189.0,
+    "day_low": 4105.0,
+    "baseline_rsi": 62.9070988789075,
+    "mcap_cr": 4583.9115,
+    "exchange": "NSE"
+  },
+  "QUADFUTURE": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T17:35:01",
+    "day_high": 427.70001220703125,
+    "day_low": 414.1000061035156,
+    "baseline_rsi": 45.224981382799015,
+    "mcap_cr": 1691.0,
+    "exchange": "NSE"
+  },
+  "ROSSELLIND": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T13:46:01",
+    "day_high": 55.75,
+    "day_low": 52.849998474121094,
+    "baseline_rsi": 62.113657985805226,
+    "mcap_cr": 204.23950270040513,
+    "exchange": "NSE"
+  },
+  "SIMPLEXINF": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T18:52:33",
+    "day_high": 294.0,
+    "day_low": 275.8500061035156,
+    "baseline_rsi": 57.3896299744193,
+    "mcap_cr": 2181.845167685968,
+    "exchange": "NSE"
+  },
+  "TITAGARH": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T20:47:39",
+    "day_high": 730.75,
+    "day_low": 712.9500122070312,
+    "baseline_rsi": 51.47448237716793,
+    "mcap_cr": 9806.94395015669,
+    "exchange": "NSE"
+  },
+  "VHL": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T13:02:37",
+    "day_high": 3590.0,
+    "day_low": 3519.10009765625,
+    "baseline_rsi": 56.31677229442796,
+    "mcap_cr": 1140.0166592,
+    "exchange": "NSE"
+  },
+  "VIRINCHI": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-10T20:44:13",
+    "day_high": 14.600000381469727,
+    "day_low": 13.670000076293945,
+    "baseline_rsi": 59.947470247535044,
+    "mcap_cr": 161.73508311944505,
+    "exchange": "NSE"
+  },
+  "WHIRLPOOL": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-09T16:50:44",
+    "day_high": 863.5,
+    "day_low": 812.0999755859375,
+    "baseline_rsi": 58.31373478022345,
+    "mcap_cr": 10873.265768402056,
+    "exchange": "NSE"
   }
 }

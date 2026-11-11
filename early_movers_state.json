@@ -47,7 +47,13 @@
     "price_change_pct": -2.46,
     "deliv_pct": 71.1,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-11T04:01:24.783684",
+    "em_low_breach_last_price": 389.25
   },
   "BIMETAL": {
     "trigger_date": "2026-11-10",
@@ -103,6 +109,12 @@
     "price_change_pct": -2.44,
     "deliv_pct": 67.8,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-11T04:01:26.225692",
+    "em_low_breach_last_price": 28.100000381469727
   }
 }
