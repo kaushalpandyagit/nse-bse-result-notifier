@@ -262,6 +262,11 @@ def send_telegram_message(text: str) -> bool:
         log.error("Telegram bot token / chat id not configured.")
         return False
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    try:      # result arrows / next result date and the chart links beside the stock (result_tag.py)
+        import result_tag
+        text = result_tag.decorate(text)
+    except Exception:
+        pass
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
         "text": f"{SCRIPT_TAG}\n{text}",
@@ -277,7 +282,7 @@ def send_telegram_message(text: str) -> bool:
         # message with 400 "can't parse entities" -- retry as plain text.
         if resp.status_code == 400 and "parse" in resp.text.lower():
             payload.pop("parse_mode", None)
-            payload["text"] = re.sub(r"</?(b|i|u|s|code|pre)>", "", payload["text"])
+            payload["text"] = re.sub(r"</?(b|i|u|s|code|pre)>|<a [^>]*>|</a>", "", payload["text"])
             resp = requests.post(url, data=payload, timeout=15)
             if resp.status_code == 200:
                 return True

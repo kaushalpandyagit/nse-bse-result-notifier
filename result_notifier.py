@@ -206,6 +206,11 @@ def send_telegram_message(text: str) -> bool:
     }
     try:
         resp = requests.post(url, data=payload, timeout=15)
+        if resp.status_code == 400 and "parse" in resp.text.lower():
+            # bad HTML or a link Telegram does not accept: send the same alert as plain text rather than lose it
+            payload.pop("parse_mode", None)
+            payload["text"] = re.sub(r"</?(b|i|u|s|code|pre)>|<a [^>]*>|</a>", "", payload["text"])
+            resp = requests.post(url, data=payload, timeout=15)
         return resp.status_code == 200
     except requests.RequestException as e:
         log.error("Telegram send error: %s", e)
@@ -899,6 +904,13 @@ def poll_once(seen: set) -> set:
             header = f"📢 <b>{safe_comp}</b> ({item['source']}) — Financial Result"
             body = f"{safe_subj}\n🕐 {item['date']}"
 
+        try:      # result arrows / next result date and the chart links for this stock (result_tag.py)
+            import result_tag
+            _rt = result_tag.tag(item.get("symbol", ""))
+            if _rt:
+                header += "\n" + _rt
+        except Exception:
+            pass
         msg = f"{header}\n{body}"
         if item.get("link"):
             msg += f"\n🔗 {item['link']}"
