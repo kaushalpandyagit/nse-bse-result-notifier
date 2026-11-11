@@ -6579,7 +6579,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 44.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-11T05:01:50.480402",
+      "resistance_last_price": 1262.5
     },
     "ESCORTS": {
       "sma50": 2758.201982421875,
@@ -15091,7 +15095,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 27.9,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T05:02:17.875603",
+      "mtf_last_price": 167.60000610351562
     },
     "PNBHOUSING": {
       "sma50": 1131.5059985351563,
@@ -17895,7 +17903,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 2.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T05:02:27.902776",
+      "mtf_last_price": 713.7000122070312
     },
     "SHAREINDIA": {
       "sma50": 190.4849996948242,

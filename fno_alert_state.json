@@ -1081,7 +1081,13 @@
     "trigger_date": "2026-11-10",
     "ref_high": 138.99,
     "ref_low": 133.8,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-11T05:01:25.402268",
+    "fno_high_breach_last_price": 139.99000549316406
   },
   "ASHIANA": {
     "trigger_date": "2026-11-10",
