@@ -2585,7 +2585,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 66.5,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-11T04:30:09.061099",
+      "near_high_17_22_last_price": 861.7000122070312
     },
     "BECTORFOOD": {
       "sma50": 213.39380004882813,
@@ -2979,7 +2983,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 77.5,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:30:11.108264",
+      "mtf_last_price": 546.7000122070312
     },
     "BLUESTONE": {
       "sma50": 791.3980004882812,
@@ -3027,7 +3035,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 95.9,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-11T04:30:12.228682",
+      "near_high_17_22_last_price": 761.0
     },
     "BORORENEW": {
       "sma50": 445.8839996337891,
@@ -10691,7 +10703,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 55.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:30:30.548397",
+      "mtf_last_price": 122.37999725341797
     },
     "JUBLFOOD": {
       "sma50": 453.4460003662109,
@@ -14429,7 +14445,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 76.4,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:30:39.990193",
+      "mtf_last_price": 146.27000427246094
     },
     "PARAS": {
       "sma50": 1326.2219970703125,
@@ -19321,7 +19341,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 86.8,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T04:30:52.947088",
+      "mtf_last_price": 284.5
     },
     "SWANCORP": {
       "sma50": 270.88940063476565,

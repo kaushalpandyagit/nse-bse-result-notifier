@@ -17,7 +17,13 @@
     "price_change_pct": 2.47,
     "deliv_pct": 95.5,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-11T04:30:00.926028",
+    "em_high_breach_last_price": 14.149999618530273
   },
   "SHYAMTEL": {
     "trigger_date": "2026-11-10",
