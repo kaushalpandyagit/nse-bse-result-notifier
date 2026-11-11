@@ -1130,5 +1130,65 @@
     "ref_high": 53.62,
     "ref_low": 50.0,
     "status": "Active"
+  },
+  "AMBIKCO": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 1649.9,
+    "ref_low": 1530.1,
+    "status": "Active"
+  },
+  "DREDGECORP": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 947.0,
+    "ref_low": 857.05,
+    "status": "Active"
+  },
+  "POWERMECH": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 2489.2,
+    "ref_low": 2329.0,
+    "status": "Active"
+  },
+  "NIMBSPROJ": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 189.9,
+    "ref_low": 177.0,
+    "status": "Active"
+  },
+  "SUPRAJIT": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 475.0,
+    "ref_low": 460.25,
+    "status": "Active"
+  },
+  "SVPGLOB": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 4.02,
+    "ref_low": 3.6,
+    "status": "Active"
+  },
+  "NICCOPAR": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 69.5,
+    "ref_low": 66.0,
+    "status": "Active"
+  },
+  "ROSSELLIND": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 55.75,
+    "ref_low": 52.5,
+    "status": "Active"
+  },
+  "GREENPOWER": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 9.9,
+    "ref_low": 9.21,
+    "status": "Active"
+  },
+  "GRANULES": {
+    "trigger_date": "2026-11-11",
+    "ref_high": 806.4,
+    "ref_low": 768.2,
+    "status": "Active"
   }
 }
