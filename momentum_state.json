@@ -1571,7 +1571,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 18.8,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-11T06:01:36.165126",
+      "rectangle_bounce_last_price": 352.54998779296875
     },
     "ASAHIINDIA": {
       "sma50": 951.545,
@@ -9063,7 +9067,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 45.0,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T06:02:02.749051",
+      "mtf_last_price": 1144.9000244140625
     },
     "IFCI": {
       "sma50": 72.60279960632325,
@@ -13239,7 +13247,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 91.1,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T06:02:13.410407",
+      "mtf_last_price": 636.0
     },
     "MSUMI": {
       "sma50": 35.685999908447265,

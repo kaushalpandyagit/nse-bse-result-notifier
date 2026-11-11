@@ -105,7 +105,13 @@
     "price_change_pct": 2.44,
     "deliv_pct": 100.0,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-11T06:01:30.728813",
+    "em_low_breach_last_price": 39.5099983215332
   },
   "SPLIL": {
     "trigger_date": "2026-11-10",
