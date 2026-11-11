@@ -8407,7 +8407,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 54.1,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-11T05:16:42.090208",
+      "mtf_last_price": 814.2000122070312
     },
     "HCC": {
       "sma50": 20.466599960327148,
@@ -19529,7 +19533,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 42.0,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-11T05:17:14.062191",
+      "resistance_last_price": 443.3500061035156
     },
     "SYRMA": {
       "sma50": 1598.2860034179687,
@@ -20705,7 +20713,10 @@
       "dtl_floor_touches": 2,
       "rs_rank": 33.5,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "hva_sent": true
     },
     "TMB": {
       "sma50": 868.9719970703125,
