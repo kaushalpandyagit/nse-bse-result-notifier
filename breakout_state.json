@@ -7724,5 +7724,14 @@
     "baseline_rsi": 62.2015057223569,
     "mcap_cr": 214.80236929033813,
     "exchange": "NSE"
+  },
+  "BANARISUG": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-11T11:40:36",
+    "day_high": 3150.0,
+    "day_low": 3100.0,
+    "baseline_rsi": 40.50868946218486,
+    "mcap_cr": 3919.784700541992,
+    "exchange": "NSE"
   }
 }
