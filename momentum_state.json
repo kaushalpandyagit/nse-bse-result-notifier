@@ -10891,10 +10891,11 @@
       "rs_rank": 55.2,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-11T04:30:30.548397",
-      "mtf_last_price": 122.37999725341797
+      "mtf_last_alert": "2026-11-11T08:30:27.626368",
+      "mtf_last_price": 123.66000366210938
     },
     "JUBLFOOD": {
       "sma50": 453.4460003662109,
@@ -20913,7 +20914,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 29.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-11T08:30:52.615768",
+      "near_high_17_22_last_price": 3062.89990234375
     },
     "TIPSMUSIC": {
       "sma50": 690.7569995117187,

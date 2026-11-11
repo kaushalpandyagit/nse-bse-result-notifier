@@ -120,11 +120,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-11T03:46:12.463483",
-    "custom_last_price": 55.20000076293945,
+    "custom_last_alert": "2026-11-11T08:29:47.094402",
+    "custom_last_price": 56.0,
     "session_date": "2026-11-11",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
@@ -7794,6 +7795,15 @@
     "day_low": 1695.0,
     "baseline_rsi": null,
     "mcap_cr": 11407.771762089722,
+    "exchange": "NSE"
+  },
+  "TALBROAUTO": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-11T13:52:15",
+    "day_high": 417.75,
+    "day_low": 389.5,
+    "baseline_rsi": 62.44760585949752,
+    "mcap_cr": 2548.137956648254,
     "exchange": "NSE"
   }
 }
