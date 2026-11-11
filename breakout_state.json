@@ -253,15 +253,20 @@
     ]
   },
   "arb_BENGALASM": {
-    "spread_last_alert": "2026-10-23T05:09:52.173506",
-    "spread_last_price": 3.524734982332155
-  },
-  "arb_GANGESSECU": {
-    "spread_last_alert": "2026-11-11T03:56:21.384289",
-    "spread_last_price": 4.522565320665088,
+    "spread_last_alert": "2026-11-11T07:06:20.025645",
+    "spread_last_price": 2.521746770934013,
     "session_date": "2026-11-11",
     "alert_slots": [
-      "H1"
+      "H2"
+    ]
+  },
+  "arb_GANGESSECU": {
+    "spread_last_alert": "2026-11-11T07:06:25.763397",
+    "spread_last_price": 9.155599038117222,
+    "session_date": "2026-11-11",
+    "alert_slots": [
+      "H1",
+      "H2"
     ]
   },
   "arb_BALRAMCHIN": {
@@ -329,11 +334,12 @@
     "spread_last_price": 2.820854182104335
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-11-11T04:17:56.449941",
-    "spread_last_price": 4.428593451817964,
+    "spread_last_alert": "2026-11-11T07:06:03.234773",
+    "spread_last_price": 6.445374048056722,
     "session_date": "2026-11-11",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BASILIC_open_change_rs": {
@@ -379,11 +385,12 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-11T04:48:05.412119",
-    "spread_last_price": 4.312212390577648,
+    "spread_last_alert": "2026-11-11T07:06:04.355967",
+    "spread_last_price": 5.275835599728481,
     "session_date": "2026-11-11",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_AVL": {
@@ -7736,6 +7743,15 @@
     "day_low": 3100.0,
     "baseline_rsi": 40.50868946218486,
     "mcap_cr": 3919.784700541992,
+    "exchange": "NSE"
+  },
+  "GREENPOWER": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-11T12:29:13",
+    "day_high": 9.899999618530273,
+    "day_low": 9.40999984741211,
+    "baseline_rsi": 64.86616314894496,
+    "mcap_cr": 1113.2070270324357,
     "exchange": "NSE"
   }
 }
