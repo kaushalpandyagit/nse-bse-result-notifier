@@ -4693,7 +4693,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 47.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-11T08:46:26.256901",
+      "mtf_last_price": 470.1499938964844
     },
     "CONCORDBIO": {
       "sma50": 691.4630004882813,
@@ -12747,7 +12751,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 71.0,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-11T08:46:49.921299",
+      "near_high_17_22_last_price": 316.29998779296875
     },
     "MANORAMA": {
       "sma50": 1914.247998046875,
@@ -15573,10 +15581,13 @@
       "rs_rank": 52.4,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-11T03:54:02.884230",
-      "mtf_last_price": 2440.800048828125
+      "mtf_last_price": 2440.800048828125,
+      "resistance_last_alert": "2026-11-11T08:46:58.467124",
+      "resistance_last_price": 2475.0
     },
     "PRAJIND": {
       "sma50": 297.84959869384767,
@@ -17971,7 +17982,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 53.9,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-11T08:47:06.106760",
+      "mtf_last_price": 585.2000122070312
     },
     "SGMART": {
       "sma50": 784.837001953125,
