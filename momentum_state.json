@@ -2737,10 +2737,11 @@
       "rs_rank": 60.0,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-11T03:51:59.408984",
-      "near_high_17_22_last_price": 217.27000427246094
+      "near_high_17_22_last_alert": "2026-11-11T09:30:19.466040",
+      "near_high_17_22_last_price": 213.7899932861328
     },
     "BEML": {
       "sma50": 1997.003994140625,
@@ -6960,7 +6961,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 28.4,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-11T09:30:33.152829",
+      "mtf_last_price": 149.9499969482422
     },
     "FIRSTCRY": {
       "sma50": 172.77779998779297,
