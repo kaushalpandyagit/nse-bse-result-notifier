@@ -5,6 +5,7 @@ For a stock:
     1 S 📅13 Nov ⭐E▲▲        result still to come (⭐ = "High" in the screener's Likely good list)
     1 S Q2 S▲▲ NP▼▼ E▼▼       latest quarter declared: first arrow vs the previous quarter, second vs a year ago
     1 S                        nothing known
+After the links comes the forensic verdict letter when the screener has one: 🟢C clean, 🟠W warn, 🔴R red, ⛔V veto.
 "1" opens the chart in the local screener (works on the computer where it runs), "S" opens Screener.in.
 A missing or old file never breaks an alert: the text is then sent as it is.
 """
@@ -43,6 +44,9 @@ def tag(symbol: str) -> str:
     if e is None:
         return ""
     out = [f'<a href="{LOCAL}{quote(sym)}">1</a> <a href="{SCREENER}{quote(sym)}/">S</a>']
+    fz = {"C": "🟢C", "W": "🟠W", "R": "🔴R", "V": "⛔V"}.get(e.get("f"))      # forensic verdict: Clean, Warn, Red, Veto
+    if fz:
+        out.append(fz)
     d = e.get("d")
     shown = False
     if d:
