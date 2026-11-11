@@ -2055,7 +2055,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 53.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-11T06:46:17.173488",
+      "ema50_pullback_last_price": 566.25
     },
     "AWL": {
       "sma50": 181.09940002441405,
