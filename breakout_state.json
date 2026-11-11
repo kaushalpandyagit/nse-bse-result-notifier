@@ -239,11 +239,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-11T03:55:40.921677",
-    "spread_last_price": 2.92287792215617,
+    "spread_last_alert": "2026-11-11T07:48:30.219695",
+    "spread_last_price": 6.701302597603352,
     "session_date": "2026-11-11",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_PRADPME": {
@@ -7755,6 +7756,33 @@
     "day_low": 9.40999984741211,
     "baseline_rsi": 64.86616314894496,
     "mcap_cr": 1113.2070270324357,
+    "exchange": "NSE"
+  },
+  "AMBIKCO": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-11T13:09:31",
+    "day_high": 1649.9000244140625,
+    "day_low": 1530.0999755859375,
+    "baseline_rsi": 67.66062927596123,
+    "mcap_cr": 910.275,
+    "exchange": "NSE"
+  },
+  "BAJAJHIND": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-11T13:14:29",
+    "day_high": 19.200000762939453,
+    "day_low": 17.950000762939453,
+    "baseline_rsi": 41.82995620918246,
+    "mcap_cr": 4297.605933081738,
+    "exchange": "NSE"
+  },
+  "SAKHTISUG": {
+    "result_date": "2026-11-11T00:00:00",
+    "filed_at": "2026-11-11T13:03:26",
+    "day_high": 20.450000762939453,
+    "day_low": 17.559999465942383,
+    "baseline_rsi": 65.40459787750306,
+    "mcap_cr": 233.39292864223938,
     "exchange": "NSE"
   }
 }

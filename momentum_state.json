@@ -2376,7 +2376,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 84.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-11T07:46:31.557134",
+      "near_high_17_22_last_price": 647.1500244140625
     },
     "BALUFORGE": {
       "sma50": 507.85500366210937,
@@ -5437,7 +5441,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 45.7,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-11T07:46:45.210445",
+      "mtf_last_price": 1248.0
     },
     "DEEPAKNTR": {
       "sma50": 1587.0420141601562,
@@ -5485,7 +5493,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 27.1,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-11T07:46:46.765688",
+      "mtf_last_price": 1587.0
     },
     "DEVYANI": {
       "sma50": 129.96919982910157,
@@ -18477,10 +18489,13 @@
       "rs_rank": 25.8,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "ema50_pullback_last_alert": "2026-11-11T03:54:31.221020",
-      "ema50_pullback_last_price": 727.0499877929688
+      "ema50_pullback_last_price": 727.0499877929688,
+      "rectangle_bounce_last_alert": "2026-11-11T07:47:38.026367",
+      "rectangle_bounce_last_price": 730.5
     },
     "SJS": {
       "sma50": 2181.0940209960936,
@@ -18833,10 +18848,11 @@
       "rs_rank": 32.3,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-11T03:54:36.881993",
-      "mtf_last_price": 258.55999755859375
+      "mtf_last_alert": "2026-11-11T07:47:40.690238",
+      "mtf_last_price": 255.52000427246094
     },
     "SOUTHBANK": {
       "sma50": 49.69720008850098,
@@ -21937,7 +21953,9 @@
       "dtl_touches": null,
       "dtl_floor": 1291.0,
       "dtl_floor_touches": 3,
-      "rs_rank": 74.5
+      "rs_rank": 74.5,
+      "session_date": "2026-11-11",
+      "alert_slots": []
     },
     "VIKRAMSOLR": {
       "sma50": 151.57540008544922,
