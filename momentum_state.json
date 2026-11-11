@@ -1184,7 +1184,10 @@
       "dtl_floor_touches": 2,
       "rs_rank": 11.7,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "dtl_bo_sent": true
     },
     "ANANTRAJ": {
       "sma50": 555.636000366211,
@@ -13865,10 +13868,11 @@
       "rs_rank": 73.8,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-11T03:53:46.403548",
-      "near_high_17_22_last_price": 620.2000122070312
+      "near_high_17_22_last_alert": "2026-11-11T08:16:55.341961",
+      "near_high_17_22_last_price": 629.5
     },
     "NETWEB": {
       "sma50": 4674.368012695312,
@@ -16150,7 +16154,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 58.2,
       "session_date": "2026-11-11",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-11T08:17:03.092862",
+      "rectangle_bounce_last_price": 1281.0
     },
     "RALLIS": {
       "sma50": 199.7481997680664,
@@ -16908,10 +16916,13 @@
       "rs_rank": 37.0,
       "session_date": "2026-11-11",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-11T04:47:20.374020",
-      "mtf_last_price": 202.5
+      "mtf_last_price": 202.5,
+      "rectangle_bounce_last_alert": "2026-11-11T08:17:05.731599",
+      "rectangle_bounce_last_price": 201.14999389648438
     },
     "RKFORGE": {
       "sma50": 695.9709985351562,
