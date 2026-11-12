@@ -19598,7 +19598,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 90.3,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T06:17:22.019934",
+      "near_high_17_22_last_price": 1508.699951171875
     },
     "TANLA": {
       "sma50": 543.2699993896484,
