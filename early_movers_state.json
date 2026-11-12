@@ -69,7 +69,13 @@
     "price_change_pct": -2.45,
     "deliv_pct": 91.0,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-12T05:46:15.824530",
+    "em_high_breach_last_price": 649.0
   },
   "SHANKARA": {
     "trigger_date": "2026-11-10",

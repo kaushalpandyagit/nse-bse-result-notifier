@@ -7865,7 +7865,10 @@
       "dtl_floor_touches": 1,
       "rs_rank": 70.8,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "dtl_bo_sent": true
     },
     "GRAPHITE": {
       "sma50": 772.2699975585938,
