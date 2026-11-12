@@ -459,7 +459,13 @@
     "trigger_date": "2026-11-10",
     "ref_high": 156.45,
     "ref_low": 141.4,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-12T03:46:17.094966",
+    "fno_high_breach_last_price": 156.66000366210938
   },
   "AJANTPHARM": {
     "trigger_date": "2026-10-30",
@@ -497,7 +503,7 @@
     "trigger_date": "2026-10-30",
     "ref_high": 2.34,
     "ref_low": 1.7,
-    "status": "Active"
+    "status": "Expired"
   },
   "GARFIBRES": {
     "trigger_date": "2026-10-30",
@@ -1171,7 +1177,13 @@
     "trigger_date": "2026-11-11",
     "ref_high": 69.5,
     "ref_low": 66.0,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-12T03:46:34.408487",
+    "fno_high_breach_last_price": 70.29000091552734
   },
   "ROSSELLIND": {
     "trigger_date": "2026-11-11",

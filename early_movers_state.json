@@ -137,7 +137,13 @@
     "price_change_pct": 2.49,
     "deliv_pct": 71.5,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-12T03:46:39.468565",
+    "em_high_breach_last_price": 24.0
   },
   "ANDREWYU": {
     "trigger_date": "2026-11-11",
@@ -177,7 +183,13 @@
     "price_change_pct": 2.47,
     "deliv_pct": 61.2,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-12T03:46:41.147616",
+    "em_high_breach_last_price": 1148.9000244140625
   },
   "UNITEDPOLY": {
     "trigger_date": "2026-11-11",
@@ -217,7 +229,13 @@
     "price_change_pct": 2.46,
     "deliv_pct": 100.0,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-12T03:46:43.280276",
+    "em_low_breach_last_price": 36.599998474121094
   },
   "ANNAPURNA": {
     "trigger_date": "2026-11-11",
