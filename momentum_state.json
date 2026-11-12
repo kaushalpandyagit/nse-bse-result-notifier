@@ -5347,7 +5347,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 58.2,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T05:30:16.805370",
+      "mtf_last_price": 1252.0999755859375
     },
     "DEEPAKNTR": {
       "sma50": 1583.764013671875,
@@ -12877,7 +12881,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 5.8,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T05:30:40.552058",
+      "mtf_last_price": 630.4500122070312
     },
     "METROPOLIS": {
       "sma50": 562.9670007324219,
