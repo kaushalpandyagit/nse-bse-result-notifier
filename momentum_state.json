@@ -11010,10 +11010,13 @@
       "rs_rank": 50.6,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-12T03:51:15.529913",
-      "mtf_last_price": 986.0
+      "mtf_last_price": 986.0,
+      "near_high_17_22_last_alert": "2026-11-12T07:16:47.886742",
+      "near_high_17_22_last_price": 974.9500122070312
     },
     "JUSTDIAL": {
       "sma50": 681.3829992675782,
@@ -11952,7 +11955,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 12.1,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-12T07:16:51.593235",
+      "mtf_last_price": 552.7000122070312
     },
     "KRBL": {
       "sma50": 394.7759997558594,
@@ -14719,7 +14726,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 58.4,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T07:17:00.570982",
+      "near_high_17_22_last_price": 252.47999572753906
     },
     "PCBL": {
       "sma50": 312.5340008544922,
@@ -15160,10 +15171,13 @@
       "rs_rank": 48.3,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-12T05:02:07.162638",
-      "mtf_last_price": 601.0
+      "mtf_last_price": 601.0,
+      "resistance_last_alert": "2026-11-12T07:17:02.966464",
+      "resistance_last_price": 604.5
     },
     "PIIND": {
       "sma50": 2212.818005371094,
@@ -19393,10 +19407,11 @@
       "rs_rank": 42.6,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:52:26.687989",
-      "mtf_last_price": 308.8500061035156
+      "mtf_last_alert": "2026-11-12T07:17:16.204329",
+      "mtf_last_price": 312.0
     },
     "SUNTV": {
       "sma50": 555.1130017089844,
@@ -20037,10 +20052,13 @@
       "rs_rank": 46.5,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-12T03:52:31.505057",
-      "resistance_last_price": 3870.0
+      "resistance_last_price": 3870.0,
+      "mtf_last_alert": "2026-11-12T07:17:18.709892",
+      "mtf_last_price": 3865.699951171875
     },
     "TATAINVEST": {
       "sma50": 618.3679968261719,
@@ -21171,10 +21189,13 @@
       "rs_rank": 30.7,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-12T04:31:26.849087",
-      "mtf_last_price": 510.45001220703125
+      "mtf_last_price": 510.45001220703125,
+      "vol_breakout_last_alert": "2026-11-12T07:17:23.206499",
+      "vol_breakout_last_price": 508.1000061035156
     },
     "TTKPRESTIG": {
       "sma50": 537.1699969482422,
