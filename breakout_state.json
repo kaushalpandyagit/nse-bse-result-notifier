@@ -112,20 +112,23 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-12T03:46:09.277588",
-    "custom_last_price": 55.20000076293945,
+    "custom_last_alert": "2026-11-12T07:01:17.201201",
+    "custom_last_price": 58.79999923706055,
     "session_date": "2026-11-12",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-10-30T04:10:31.365665",
-    "custom_last_price": 180.10000610351562,
+    "custom_last_alert": "2026-11-12T07:01:18.529908",
+    "custom_last_price": 178.0,
     "session_date": "2026-11-12",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_PRADPME_weekly_rsi": {
     "alerted": false,
@@ -230,11 +233,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-12T03:53:35.377997",
-    "spread_last_price": 5.771144278606965,
+    "spread_last_alert": "2026-11-12T07:04:18.981922",
+    "spread_last_price": 5.00497998289801,
     "session_date": "2026-11-12",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_PRADPME": {
@@ -254,11 +258,12 @@
     ]
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-11-12T03:53:14.847804",
-    "spread_last_price": 7.6850094876660275,
+    "spread_last_alert": "2026-11-12T07:04:32.554630",
+    "spread_last_price": 8.633774518387238,
     "session_date": "2026-11-12",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALRAMCHIN": {
@@ -274,11 +279,12 @@
     ]
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-11-12T03:53:32.796324",
-    "spread_last_price": 3.9278131634819533,
+    "spread_last_alert": "2026-11-12T07:04:12.843286",
+    "spread_last_price": 2.9723991507431,
     "session_date": "2026-11-12",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALAMINES": {
@@ -351,8 +357,12 @@
     "alert_slots": []
   },
   "arb_RANEHOLDIN": {
-    "spread_last_alert": "2026-11-02T04:05:07.059954",
-    "spread_last_price": 2.661892749329159
+    "spread_last_alert": "2026-11-12T07:04:14.054129",
+    "spread_last_price": 4.698243745671658,
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "arb_AXISCADES": {
     "spread_last_alert": "2026-11-12T03:53:10.455968",
@@ -441,11 +451,12 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-12T03:46:13.924226",
-    "custom_last_price": 163.8000030517578,
+    "custom_last_alert": "2026-11-12T07:01:22.224690",
+    "custom_last_price": 169.0,
     "session_date": "2026-11-12",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_AETHER": {
@@ -7519,6 +7530,33 @@
     "day_low": 548.5,
     "baseline_rsi": 67.23030426092954,
     "mcap_cr": 16570.954490211145,
+    "exchange": "NSE"
+  },
+  "ASTRAMICRO": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T12:27:28",
+    "day_high": 1835.0,
+    "day_low": 1725.0,
+    "baseline_rsi": 67.96105798619499,
+    "mcap_cr": 16974.268993838672,
+    "exchange": "NSE"
+  },
+  "INDTERRAIN": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T12:30:00",
+    "day_high": 32.939998626708984,
+    "day_low": 30.059999465942383,
+    "baseline_rsi": 70.81104644362298,
+    "mcap_cr": 162.1355744,
+    "exchange": "NSE"
+  },
+  "RANEHOLDIN": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T12:29:10",
+    "day_high": 1640.0,
+    "day_low": 1545.9000244140625,
+    "baseline_rsi": 62.81333040763315,
+    "mcap_cr": 2284.44944,
     "exchange": "NSE"
   }
 }
