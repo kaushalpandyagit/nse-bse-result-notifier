@@ -5068,7 +5068,13 @@
       "dtl_touches": null,
       "dtl_floor": 814.4500122070312,
       "dtl_floor_touches": 2,
-      "rs_rank": 78.8
+      "rs_rank": 78.8,
+      "session_date": "2026-11-12",
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T07:46:37.604600",
+      "near_high_17_22_last_price": 1090.0
     },
     "DALBHARAT": {
       "sma50": 1644.92599609375,
@@ -16126,10 +16132,13 @@
       "rs_rank": 53.7,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-12T04:17:18.007232",
-      "near_high_17_22_last_price": 1285.5
+      "near_high_17_22_last_price": 1285.5,
+      "mtf_last_alert": "2026-11-12T07:47:10.767824",
+      "mtf_last_price": 1293.800048828125
     },
     "RALLIS": {
       "sma50": 199.7481997680664,
@@ -20310,10 +20319,11 @@
       "rs_rank": 11.0,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:52:33.125828",
-      "mtf_last_price": 976.0
+      "mtf_last_alert": "2026-11-12T07:47:23.996516",
+      "mtf_last_price": 989.6500244140625
     },
     "TEGA": {
       "sma50": 1828.337998046875,
@@ -20852,7 +20862,9 @@
       "dtl_touches": 3,
       "dtl_floor": 153.60000610351562,
       "dtl_floor_touches": 1,
-      "rs_rank": 72.1
+      "rs_rank": 72.1,
+      "session_date": "2026-11-12",
+      "alert_slots": []
     },
     "TIMKEN": {
       "sma50": 3054.130009765625,

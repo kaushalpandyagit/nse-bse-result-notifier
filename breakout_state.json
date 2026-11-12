@@ -7588,5 +7588,41 @@
     "baseline_rsi": 54.090515307874426,
     "mcap_cr": 1103.3566842880066,
     "exchange": "NSE"
+  },
+  "ALBERTDAVD": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:13:30",
+    "day_high": 838.0,
+    "day_low": 805.9500122070312,
+    "baseline_rsi": 56.263910230210456,
+    "mcap_cr": 463.9922706,
+    "exchange": "NSE"
+  },
+  "CAPLIPOINT": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:07:53",
+    "day_high": 2564.0,
+    "day_low": 2445.39990234375,
+    "baseline_rsi": 56.32023836639534,
+    "mcap_cr": 19002.924,
+    "exchange": "NSE"
+  },
+  "DHUNINV": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:09:34",
+    "day_high": 1119.8499755859375,
+    "day_low": 945.0999755859375,
+    "baseline_rsi": 76.27671638790348,
+    "mcap_cr": 673.738169,
+    "exchange": "NSE"
+  },
+  "RUBFILA": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:14:10",
+    "day_high": 60.439998626708984,
+    "day_low": 58.5,
+    "baseline_rsi": 53.78067616241064,
+    "mcap_cr": 323.7600771859432,
+    "exchange": "NSE"
   }
 }
