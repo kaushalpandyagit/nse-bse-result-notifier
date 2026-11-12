@@ -443,7 +443,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 28.8,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T06:46:29.279905",
+      "mtf_last_price": 930.0
     },
     "ACC": {
       "sma50": 1207.527998046875,
@@ -1175,7 +1179,10 @@
       "dtl_floor_touches": 2,
       "rs_rank": 10.6,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "dtl_bo_sent": true
     },
     "ANANTRAJ": {
       "sma50": 555.636000366211,
@@ -3045,7 +3052,13 @@
       "dtl_touches": null,
       "dtl_floor": 552.2999877929688,
       "dtl_floor_touches": 1,
-      "rs_rank": 94.6
+      "rs_rank": 94.6,
+      "session_date": "2026-11-12",
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T06:46:38.147341",
+      "near_high_17_22_last_price": 777.0
     },
     "BORORENEW": {
       "sma50": 445.8839996337891,
@@ -5643,7 +5656,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 88.5,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "sos_pullback_curl_last_alert": "2026-11-12T06:46:45.944429",
+      "sos_pullback_curl_last_price": 528.3499755859375
     },
     "EBGNG": {
       "sma50": 673.8510009765625,
