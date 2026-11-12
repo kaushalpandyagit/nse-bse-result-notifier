@@ -393,10 +393,11 @@
       "rs_rank": 15.2,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T06:30:01.266281",
-      "mtf_last_price": 1115.0
+      "mtf_last_alert": "2026-11-12T07:30:07.626578",
+      "mtf_last_price": 1132.699951171875
     },
     "ABSLAMC": {
       "sma50": 977.7460083007812,
@@ -4674,7 +4675,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 49.4,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-12T07:30:21.254354",
+      "mtf_last_price": 469.1000061035156
     },
     "CONCORDBIO": {
       "sma50": 691.4630004882813,
@@ -7864,10 +7869,13 @@
       "rs_rank": 11.7,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-12T03:50:46.511927",
-      "mtf_last_price": 221.61000061035156
+      "mtf_last_price": 221.61000061035156,
+      "resistance_last_alert": "2026-11-12T07:30:31.314159",
+      "resistance_last_price": 224.72000122070312
     },
     "GPPL": {
       "sma50": 164.4850003051758,
@@ -12828,10 +12836,13 @@
       "rs_rank": 16.0,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "ema50_pullback_last_alert": "2026-11-12T04:17:05.145557",
-      "ema50_pullback_last_price": 872.0
+      "ema50_pullback_last_price": 872.0,
+      "mtf_last_alert": "2026-11-12T07:30:46.778382",
+      "mtf_last_price": 900.7999877929688
     },
     "MARKSANS": {
       "sma50": 318.87,

@@ -566,8 +566,12 @@
     ]
   },
   "arb_ANANTRAJ": {
-    "spread_last_alert": "2026-10-19T04:23:10.809125",
-    "spread_last_price": 3.0230943861571857
+    "spread_last_alert": "2026-11-12T07:31:37.045638",
+    "spread_last_price": 2.8898049582099454,
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "arb_ABSLAMC": {
     "spread_last_alert": "2026-11-12T03:53:31.487131",
@@ -7556,6 +7560,33 @@
     "day_low": 1545.9000244140625,
     "baseline_rsi": 62.81333040763315,
     "mcap_cr": 2284.44944,
+    "exchange": "NSE"
+  },
+  "CURAA": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T12:58:53",
+    "day_high": 67.19999694824219,
+    "day_low": 66.0,
+    "baseline_rsi": 42.478840682932905,
+    "mcap_cr": 65.34,
+    "exchange": "NSE"
+  },
+  "TAJGVK": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T12:55:10",
+    "day_high": 348.0,
+    "day_low": 324.79998779296875,
+    "baseline_rsi": 61.213939160248074,
+    "mcap_cr": 2099.245976060089,
+    "exchange": "NSE"
+  },
+  "VHLTD": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T12:47:36",
+    "day_high": 147.99000549316406,
+    "day_low": 141.35000610351562,
+    "baseline_rsi": 54.090515307874426,
+    "mcap_cr": 1103.3566842880066,
     "exchange": "NSE"
   }
 }
