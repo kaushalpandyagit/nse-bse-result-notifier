@@ -7865,5 +7865,14 @@
     "baseline_rsi": 60.80698665344163,
     "mcap_cr": 772.4585675843201,
     "exchange": "NSE"
+  },
+  "PREMEXPLN": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T15:18:10",
+    "day_high": 624.0,
+    "day_low": 535.0,
+    "baseline_rsi": 54.87007442399574,
+    "mcap_cr": 3355.8616681394715,
+    "exchange": "NSE"
   }
 }
