@@ -1897,7 +1897,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 5.2,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T05:16:33.803631",
+      "mtf_last_price": 604.5499877929688
     },
     "AVALON": {
       "sma50": 2208.150009765625,
@@ -5971,7 +5975,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 21.0,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T05:16:54.190865",
+      "mtf_last_price": 453.1499938964844
     },
     "ELECTCAST": {
       "sma50": 74.47380012512207,
@@ -8601,7 +8609,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 54.5,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T05:17:07.978570",
+      "mtf_last_price": 386.5
     },
     "HEXT": {
       "sma50": 528.03599609375,
@@ -9569,7 +9581,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 10.2,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-12T05:17:14.235070",
+      "resistance_last_price": 1615.0999755859375
     },
     "INDIGOPNTS": {
       "sma50": 1058.9360046386719,
@@ -12907,7 +12923,9 @@
       "dtl_touches": null,
       "dtl_floor": 511.6000061035156,
       "dtl_floor_touches": 3,
-      "rs_rank": 62.3
+      "rs_rank": 62.3,
+      "session_date": "2026-11-12",
+      "alert_slots": []
     },
     "MGL": {
       "sma50": 1065.614002685547,
@@ -15617,7 +15635,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 50.4,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T05:17:44.228912",
+      "mtf_last_price": 207.86000061035156
     },
     "PVRINOX": {
       "sma50": 1342.3159985351563,
