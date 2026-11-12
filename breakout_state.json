@@ -379,12 +379,11 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-11T07:06:04.355967",
-    "spread_last_price": 5.275835599728481,
-    "session_date": "2026-11-11",
+    "spread_last_alert": "2026-11-12T04:47:41.932041",
+    "spread_last_price": 3.364314485643994,
+    "session_date": "2026-11-12",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "arb_AVL": {
@@ -7489,6 +7488,15 @@
     "day_low": 3.7100000381469727,
     "baseline_rsi": 60.67179327283351,
     "mcap_cr": 50.220500361919406,
+    "exchange": "NSE"
+  },
+  "BAFNAPH": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-11T16:53:03",
+    "day_high": 491.8500061035156,
+    "day_low": 491.8500061035156,
+    "baseline_rsi": 74.81183988311196,
+    "mcap_cr": 1163.536851413681,
     "exchange": "NSE"
   }
 }
