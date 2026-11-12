@@ -540,8 +540,12 @@
     "spread_last_price": 4.439377453994985
   },
   "arb_AVANTIFEED": {
-    "spread_last_alert": "2026-10-19T03:56:07.659770",
-    "spread_last_price": 4.2259425716037065
+    "spread_last_alert": "2026-11-12T05:02:59.690973",
+    "spread_last_price": 3.1206332316393226,
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_HINDWAREAP": {
     "spread_last_alert": "2026-11-06T03:57:13.072084",
