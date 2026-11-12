@@ -1975,10 +1975,11 @@
       "rs_rank": 89.4,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-12T03:49:53.027955",
-      "near_high_17_22_last_price": 2070.0
+      "near_high_17_22_last_alert": "2026-11-12T09:46:15.686099",
+      "near_high_17_22_last_price": 2109.5
     },
     "AVANTIFEED": {
       "sma50": 738.5180004882812,
@@ -14545,10 +14546,13 @@
       "rs_rank": 31.0,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-12T03:51:44.253979",
-      "mtf_last_price": 1591.5999755859375
+      "mtf_last_price": 1591.5999755859375,
+      "resistance_last_alert": "2026-11-12T09:46:47.109553",
+      "resistance_last_price": 1610.0
     },
     "OSWALPUMPS": {
       "sma50": 256.905,
@@ -16242,7 +16246,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 7.4,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-12T09:46:51.844101",
+      "rectangle_bounce_last_price": 190.89999389648438
     },
     "RAMCOCEM": {
       "sma50": 826.9090002441407,
