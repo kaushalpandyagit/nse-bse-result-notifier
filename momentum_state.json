@@ -10240,7 +10240,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 67.3,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "bonde_last_alert": "2026-11-12T06:02:12.343396",
+      "bonde_last_price": 143.39999389648438
     },
     "JAYNECOIND": {
       "sma50": 92.2400001525879,
