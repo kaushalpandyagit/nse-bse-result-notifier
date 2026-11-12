@@ -396,9 +396,9 @@
     ]
   },
   "arb_KICL": {
-    "spread_last_alert": "2026-11-09T05:03:13.270870",
-    "spread_last_price": 2.7674418604651163,
-    "session_date": "2026-11-09",
+    "spread_last_alert": "2026-11-12T04:18:08.763125",
+    "spread_last_price": 3.1242937853107344,
+    "session_date": "2026-11-12",
     "alert_slots": [
       "H1"
     ]
@@ -7471,6 +7471,15 @@
     "day_low": 163.38999938964844,
     "baseline_rsi": 53.329767310734816,
     "mcap_cr": 138.67464774197387,
+    "exchange": "NSE"
+  },
+  "SRGHFL": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-11T23:50:13",
+    "day_high": 108.94999694824219,
+    "day_low": 106.0,
+    "baseline_rsi": 40.91512332357489,
+    "mcap_cr": 171.13416646642457,
     "exchange": "NSE"
   }
 }

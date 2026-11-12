@@ -12641,7 +12641,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 16.0,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-12T04:17:05.145557",
+      "ema50_pullback_last_price": 872.0
     },
     "MARKSANS": {
       "sma50": 318.87,
@@ -14055,7 +14059,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 51.1,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:17:10.717206",
+      "mtf_last_price": 41.130001068115234
     },
     "NUVOCO": {
       "sma50": 331.495,
@@ -14151,7 +14159,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 52.4,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:17:12.053865",
+      "mtf_last_price": 36.310001373291016
     },
     "OLECTRA": {
       "sma50": 1115.7759973144532,
@@ -15859,7 +15871,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 53.7,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T04:17:18.007232",
+      "near_high_17_22_last_price": 1285.5
     },
     "RALLIS": {
       "sma50": 199.7481997680664,
@@ -17627,7 +17643,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 67.1,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:17:24.366494",
+      "mtf_last_price": 597.9500122070312
     },
     "SGMART": {
       "sma50": 786.6850024414063,
