@@ -620,6 +620,8 @@ def fetch_bse_announcements(since=None) -> tuple:
                 attachment = item.get("ATTACHMENTNAME") or ""
                 results.append({
                     "company": company,
+                    # BSE's short name, from its page address .../madala-holdings-ltd/madala/532344/ (for the result tag)
+                    "bse_id": (re.findall(r"/([^/]+)/\d+/?$", item.get("NSURL") or "") or [""])[0].upper(),
                     "symbol": str(item.get("SCRIP_CD", "")),
                     "subject": subject,
                     "date": date_str,
@@ -906,7 +908,7 @@ def poll_once(seen: set) -> set:
 
         try:      # result arrows / next result date and the chart links for this stock (result_tag.py)
             import result_tag
-            _rt = result_tag.tag(item.get("symbol", ""))
+            _rt = result_tag.tag(item.get("symbol", "")) or result_tag.tag(item.get("bse_id", ""))
             if _rt:
                 header += "\n" + _rt
         except Exception:

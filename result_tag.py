@@ -20,16 +20,19 @@ FILE = Path(__file__).parent / "result_tags.json"
 LOCAL = "http://127.0.0.1:8000/?chart="
 SCREENER = "https://www.screener.in/company/"
 _data = None
-_BOLD_SYMBOL = re.compile(r"<b>([A-Z0-9][A-Z0-9&\-]{1,19})</b>")
+_codes = {}
+# "<b>TCS</b> ..." and "<b>TCS — Unusual Volume Low Breach!</b>" (the name inside a longer bold title)
+_BOLD_SYMBOL = re.compile(r"<b>([A-Z0-9][A-Z0-9&\-]{1,19})(?:</b>| — [^<\n]*</b>)")
 
 
 def _tags():
-    global _data
+    global _data, _codes
     if _data is None:
         try:
-            _data = json.loads(FILE.read_text(encoding="utf-8")).get("tags") or {}
+            j = json.loads(FILE.read_text(encoding="utf-8"))
+            _data, _codes = j.get("tags") or {}, j.get("codes") or {}
         except Exception:
-            _data = {}
+            _data, _codes = {}, {}
     return _data
 
 
@@ -41,6 +44,9 @@ def tag(symbol: str) -> str:
     """HTML for one stock, or '' when the stock is not in the file."""
     sym = re.sub(r"-(EQ|BE|BZ|SM|ST)$", "", str(symbol or "").strip().upper().split(":")[-1])
     e = _tags().get(sym)
+    if e is None and sym in _codes:          # a BSE filing gives only the scrip code
+        sym = _codes[sym]
+        e = _tags().get(sym)
     if e is None:
         return ""
     out = [f'<a href="{LOCAL}{quote(sym)}">1</a> <a href="{SCREENER}{quote(sym)}/">S</a>']
