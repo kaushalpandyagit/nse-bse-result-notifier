@@ -2683,10 +2683,11 @@
       "rs_rank": 66.2,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:50:01.459513",
-      "mtf_last_price": 212.13999938964844
+      "mtf_last_alert": "2026-11-12T08:16:39.374469",
+      "mtf_last_price": 209.86000061035156
     },
     "BELRISE": {
       "sma50": 228.52879943847657,
@@ -10239,10 +10240,11 @@
       "rs_rank": 47.8,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:51:07.872955",
-      "mtf_last_price": 136.44000244140625
+      "mtf_last_alert": "2026-11-12T08:17:11.199132",
+      "mtf_last_price": 137.97000122070312
     },
     "JAIBALAJI": {
       "sma50": 66.60960052490235,
@@ -22624,10 +22626,13 @@
       "rs_rank": 85.1,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-12T03:52:52.203382",
-      "resistance_last_price": 691.75
+      "resistance_last_price": 691.75,
+      "mtf_last_alert": "2026-11-12T08:18:00.608383",
+      "mtf_last_price": 691.4500122070312
     },
     "WHIRLPOOL": {
       "sma50": 818.5060034179687,

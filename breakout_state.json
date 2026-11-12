@@ -271,11 +271,11 @@
     "spread_last_price": 2.5998229871379683
   },
   "arb_JPOLYINVST": {
-    "spread_last_alert": "2026-11-11T03:56:23.526692",
-    "spread_last_price": 4.87764275012486,
-    "session_date": "2026-11-11",
+    "spread_last_alert": "2026-11-12T08:18:26.986581",
+    "spread_last_price": 2.9878808443897484,
+    "session_date": "2026-11-12",
     "alert_slots": [
-      "H1"
+      "H2"
     ]
   },
   "arb_DHUNINV": {
@@ -7660,6 +7660,60 @@
     "day_low": 2673.10009765625,
     "baseline_rsi": 42.080038843662685,
     "mcap_cr": 2897.985651855469,
+    "exchange": "NSE"
+  },
+  "ASAHISONG": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:38:15",
+    "day_high": 387.1499938964844,
+    "day_low": 368.75,
+    "baseline_rsi": 56.74144061471993,
+    "mcap_cr": 456.34384113562623,
+    "exchange": "NSE"
+  },
+  "ENNATURE": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:43:35",
+    "day_high": 202.3000030517578,
+    "day_low": 190.0,
+    "baseline_rsi": null,
+    "mcap_cr": 448.63248721831513,
+    "exchange": "NSE"
+  },
+  "HAL": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:30:14",
+    "day_high": 5017.89990234375,
+    "day_low": 4736.60009765625,
+    "baseline_rsi": 47.87230483802261,
+    "mcap_cr": 324375.92518798826,
+    "exchange": "NSE"
+  },
+  "LOKESHMACH": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:31:41",
+    "day_high": 424.8999938964844,
+    "day_low": 375.54998779296875,
+    "baseline_rsi": 51.01022292743305,
+    "mcap_cr": 846.25959525,
+    "exchange": "NSE"
+  },
+  "PGHH": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:39:01",
+    "day_high": 7274.0,
+    "day_low": 6939.5,
+    "baseline_rsi": 51.02531155494256,
+    "mcap_cr": 22907.5413952,
+    "exchange": "NSE"
+  },
+  "SHIVATEX": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:37:54",
+    "day_high": 171.88999938964844,
+    "day_low": 164.00999450683594,
+    "baseline_rsi": 52.559759581646645,
+    "mcap_cr": 228.0699232,
     "exchange": "NSE"
   }
 }
