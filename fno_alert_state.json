@@ -1129,7 +1129,13 @@
     "trigger_date": "2026-11-09",
     "ref_high": 20.0,
     "ref_low": 18.4,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-12T06:29:55.346204",
+    "fno_low_breach_last_price": 18.389999389648438
   },
   "SCANSTL": {
     "trigger_date": "2026-11-10",

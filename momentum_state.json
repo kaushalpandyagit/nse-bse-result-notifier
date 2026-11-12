@@ -391,7 +391,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 15.2,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T06:30:01.266281",
+      "mtf_last_price": 1115.0
     },
     "ABSLAMC": {
       "sma50": 977.7460083007812,
