@@ -1067,8 +1067,12 @@
     "rsi_down_last_alert": "2026-11-03T04:51:11.809496"
   },
   "arb_BALUFORGE": {
-    "spread_last_alert": "2026-10-29T09:24:19.207433",
-    "spread_last_price": 2.528089887640449
+    "spread_last_alert": "2026-11-12T09:17:39.103170",
+    "spread_last_price": 2.5878884190586398,
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H2"
+    ]
   },
   "LAURUSLABS": {
     "result_date": "2026-10-29T00:00:00",
@@ -7803,6 +7807,15 @@
     "day_low": 35525.0,
     "baseline_rsi": 49.26328658196735,
     "mcap_cr": 39724.522251,
+    "exchange": "NSE"
+  },
+  "ALPHAGEO": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T14:40:24",
+    "day_high": 263.5,
+    "day_low": 251.14999389648438,
+    "baseline_rsi": 58.87948706021327,
+    "mcap_cr": 167.71161045,
     "exchange": "NSE"
   }
 }

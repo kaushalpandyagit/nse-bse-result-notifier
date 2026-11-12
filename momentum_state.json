@@ -10450,7 +10450,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 21.2,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T09:16:40.735440",
+      "near_high_17_22_last_price": 91.66000366210938
     },
     "JBMA": {
       "sma50": 557.5509954833984,
@@ -12589,10 +12593,11 @@
       "rs_rank": 51.5,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-12T03:51:29.384985",
-      "near_high_17_22_last_price": 5612.89990234375
+      "near_high_17_22_last_alert": "2026-11-12T09:16:47.328944",
+      "near_high_17_22_last_price": 5675.0
     },
     "LUMAXTECH": {
       "sma50": 1991.5879931640625,
@@ -17378,10 +17383,11 @@
       "rs_rank": 64.3,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:52:08.058060",
-      "mtf_last_price": 161.77999877929688
+      "mtf_last_alert": "2026-11-12T09:17:01.025155",
+      "mtf_last_price": 165.3000030517578
     },
     "SAMMAANCAP": {
       "sma50": 135.50980056762694,
@@ -20419,7 +20425,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 67.5,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T09:17:10.281011",
+      "near_high_17_22_last_price": 1716.0999755859375
     },
     "TEJASNET": {
       "sma50": 483.15,
