@@ -70,12 +70,10 @@
     "fno_high_breach_last_price": 155.25999450683594
   },
   "TRITURBINE": {
-    "trigger_date": "2026-10-22",
-    "ref_high": 459.85,
-    "ref_low": 445.1,
-    "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-23T03:48:53.448296",
-    "fno_low_breach_last_price": 444.1499938964844
+    "trigger_date": "2026-11-12",
+    "ref_high": 519.7,
+    "ref_low": 482.5,
+    "status": "Active"
   },
   "ARYAMAN": {
     "trigger_date": "2026-10-26",
@@ -1084,16 +1082,10 @@
     "status": "Active"
   },
   "IPRINGLTD": {
-    "trigger_date": "2026-11-10",
-    "ref_high": 138.99,
-    "ref_low": 133.8,
-    "status": "Breached High",
-    "session_date": "2026-11-11",
-    "alert_slots": [
-      "H1"
-    ],
-    "fno_high_breach_last_alert": "2026-11-11T05:01:25.402268",
-    "fno_high_breach_last_price": 139.99000549316406
+    "trigger_date": "2026-11-12",
+    "ref_high": 142.75,
+    "ref_low": 132.0,
+    "status": "Active"
   },
   "ASHIANA": {
     "trigger_date": "2026-11-10",
@@ -1114,9 +1106,9 @@
     "fno_low_breach_last_price": 634.0999755859375
   },
   "PREMCO": {
-    "trigger_date": "2026-11-09",
-    "ref_high": 439.0,
-    "ref_low": 415.0,
+    "trigger_date": "2026-11-12",
+    "ref_high": 430.0,
+    "ref_low": 418.5,
     "status": "Active"
   },
   "AURUS": {
@@ -1238,5 +1230,47 @@
     ],
     "fno_high_breach_last_alert": "2026-11-12T04:16:25.129298",
     "fno_high_breach_last_price": 12.6899995803833
+  },
+  "ELPROINTL": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 178.3,
+    "ref_low": 175.38,
+    "status": "Active"
+  },
+  "INDTERRAIN": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 32.94,
+    "ref_low": 30.06,
+    "status": "Active"
+  },
+  "MITCON": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 84.6,
+    "ref_low": 78.0,
+    "status": "Active"
+  },
+  "KPL": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 4211.0,
+    "ref_low": 3708.4,
+    "status": "Active"
+  },
+  "WATERBASE": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 46.9,
+    "ref_low": 43.3,
+    "status": "Active"
+  },
+  "VIPIND": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 255.95,
+    "ref_low": 244.3,
+    "status": "Active"
+  },
+  "KANCOTEA": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 62.38,
+    "ref_low": 59.38,
+    "status": "Active"
   }
 }
