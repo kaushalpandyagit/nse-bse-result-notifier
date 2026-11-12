@@ -288,5 +288,105 @@
     ],
     "em_high_breach_last_alert": "2026-11-12T04:30:14.891931",
     "em_high_breach_last_price": 124.0199966430664
+  },
+  "LATTEYS": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 19.49,
+    "ref_low": 18.36,
+    "ref_close": 18.76,
+    "price_change_pct": -2.49,
+    "deliv_pct": 82.3,
+    "direction": "down",
+    "status": "Active"
+  },
+  "GOLD360": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 135.55,
+    "ref_low": 132.8,
+    "ref_close": 133.1,
+    "price_change_pct": -2.49,
+    "deliv_pct": 89.0,
+    "direction": "down",
+    "status": "Active"
+  },
+  "ADVANIHOTR": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 48.5,
+    "ref_low": 46.01,
+    "ref_close": 47.79,
+    "price_change_pct": 2.49,
+    "deliv_pct": 79.3,
+    "direction": "up",
+    "status": "Active"
+  },
+  "MARICO": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 915.0,
+    "ref_low": 897.5,
+    "ref_close": 902.0,
+    "price_change_pct": -2.49,
+    "deliv_pct": 64.3,
+    "direction": "down",
+    "status": "Active"
+  },
+  "KANSAINER": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 206.3,
+    "ref_low": 200.11,
+    "ref_close": 201.12,
+    "price_change_pct": -2.48,
+    "deliv_pct": 60.8,
+    "direction": "down",
+    "status": "Active"
+  },
+  "OBCL": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 59.9,
+    "ref_low": 58.0,
+    "ref_close": 59.7,
+    "price_change_pct": 2.47,
+    "deliv_pct": 98.6,
+    "direction": "up",
+    "status": "Active"
+  },
+  "HSBCGOLD": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 121.7,
+    "ref_low": 118.6,
+    "ref_close": 118.85,
+    "price_change_pct": -2.47,
+    "deliv_pct": 86.2,
+    "direction": "down",
+    "status": "Active"
+  },
+  "JISLDVREQS": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 19.32,
+    "ref_low": 18.54,
+    "ref_close": 19.11,
+    "price_change_pct": 2.47,
+    "deliv_pct": 82.5,
+    "direction": "up",
+    "status": "Active"
+  },
+  "PSUBANKADD": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 95.7,
+    "ref_low": 92.75,
+    "ref_close": 94.73,
+    "price_change_pct": 2.47,
+    "deliv_pct": 94.8,
+    "direction": "up",
+    "status": "Active"
+  },
+  "AIROLAM": {
+    "trigger_date": "2026-11-12",
+    "ref_high": 114.6,
+    "ref_low": 108.55,
+    "ref_close": 112.35,
+    "price_change_pct": 2.46,
+    "deliv_pct": 63.2,
+    "direction": "up",
+    "status": "Active"
   }
 }
