@@ -7715,5 +7715,50 @@
     "baseline_rsi": 52.559759581646645,
     "mcap_cr": 228.0699232,
     "exchange": "NSE"
+  },
+  "ALKEM": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:54:26",
+    "day_high": 5422.0,
+    "day_low": 5173.0,
+    "baseline_rsi": 52.18730067575074,
+    "mcap_cr": 62729.77725,
+    "exchange": "NSE"
+  },
+  "BALAXI": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:58:54",
+    "day_high": 23.549999237060547,
+    "day_low": 22.700000762939453,
+    "baseline_rsi": 62.744372912517385,
+    "mcap_cr": 127.0324587635994,
+    "exchange": "NSE"
+  },
+  "BDL": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:54:31",
+    "day_high": 1129.0,
+    "day_low": 1026.5,
+    "baseline_rsi": 46.538909755186154,
+    "mcap_cr": 38635.6875,
+    "exchange": "NSE"
+  },
+  "MUKANDLTD": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:45:02",
+    "day_high": 150.0,
+    "day_low": 139.6999969482422,
+    "baseline_rsi": 36.21803236168814,
+    "mcap_cr": 2018.6029710134537,
+    "exchange": "NSE"
+  },
+  "TARSONS": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:51:04",
+    "day_high": 330.0,
+    "day_low": 305.0,
+    "baseline_rsi": 49.606895282052484,
+    "mcap_cr": 1665.3565953,
+    "exchange": "NSE"
   }
 }

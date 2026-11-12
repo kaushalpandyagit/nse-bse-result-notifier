@@ -4488,10 +4488,13 @@
       "rs_rank": 18.8,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-12T03:50:17.175874",
-      "mtf_last_price": 1462.199951171875
+      "mtf_last_price": 1462.199951171875,
+      "resistance_last_alert": "2026-11-12T08:30:27.847838",
+      "resistance_last_price": 1485.0
     },
     "CIEINDIA": {
       "sma50": 375.2120001220703,
@@ -14566,10 +14569,11 @@
       "rs_rank": 1.3,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:51:45.335148",
-      "mtf_last_price": 242.1300048828125
+      "mtf_last_alert": "2026-11-12T08:30:58.486266",
+      "mtf_last_price": 238.44000244140625
     },
     "PAISALO": {
       "sma50": 80.00580001831055,
@@ -19055,10 +19059,11 @@
       "rs_rank": 31.4,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-12T03:52:23.598035",
-      "near_high_17_22_last_price": 999.2000122070312
+      "near_high_17_22_last_alert": "2026-11-12T08:31:12.592229",
+      "near_high_17_22_last_price": 988.2999877929688
     },
     "STYLAMIND": {
       "sma50": 3233.98,
@@ -21448,10 +21453,13 @@
       "rs_rank": 66.9,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-12T03:52:42.748996",
-      "near_high_17_22_last_price": 61.310001373291016
+      "near_high_17_22_last_price": 61.310001373291016,
+      "mtf_last_alert": "2026-11-12T08:31:20.243453",
+      "mtf_last_price": 61.5
     },
     "UNIMECH": {
       "sma50": 1662.5160009765625,
@@ -21736,10 +21744,11 @@
       "rs_rank": 24.2,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:52:44.527614",
-      "mtf_last_price": 188.14999389648438
+      "mtf_last_alert": "2026-11-12T08:31:22.113244",
+      "mtf_last_price": 185.83999633789062
     },
     "VAIBHAVGBL": {
       "sma50": 197.8914001464844,
@@ -22831,10 +22840,11 @@
       "rs_rank": 22.9,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:52:55.801417",
-      "mtf_last_price": 74.20999908447266
+      "mtf_last_alert": "2026-11-12T08:31:26.401027",
+      "mtf_last_price": 71.27999877929688
     },
     "ZENSARTECH": {
       "sma50": 475.1540008544922,
