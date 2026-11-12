@@ -5728,10 +5728,11 @@
       "rs_rank": 88.5,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "sos_pullback_curl_last_alert": "2026-11-12T06:46:45.944429",
-      "sos_pullback_curl_last_price": 528.3499755859375
+      "sos_pullback_curl_last_alert": "2026-11-12T08:51:54.923952",
+      "sos_pullback_curl_last_price": 540.75
     },
     "EBGNG": {
       "sma50": 673.8510009765625,
@@ -10698,7 +10699,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 17.5,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "ema50_pullback_last_alert": "2026-11-12T08:52:16.836437",
+      "ema50_pullback_last_price": 115.16000366210938
     },
     "JPPOWER": {
       "sma50": 14.97680004119873,
@@ -11699,10 +11704,11 @@
       "rs_rank": 29.0,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:51:23.018816",
-      "mtf_last_price": 642.1500244140625
+      "mtf_last_alert": "2026-11-12T08:52:21.861536",
+      "mtf_last_price": 649.0
     },
     "KITEX": {
       "sma50": 120.89360015869141,
@@ -12719,10 +12725,12 @@
       "rs_rank": 70.1,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-12T04:46:57.930093",
-      "resistance_last_price": 322.6000061035156
+      "resistance_last_price": 322.6000061035156,
+      "dtl_bo_sent": true
     },
     "MANORAMA": {
       "sma50": 1917.2039990234375,
@@ -19112,10 +19120,11 @@
       "rs_rank": 81.4,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-12T04:02:28.284635",
-      "near_high_17_22_last_price": 3239.5
+      "near_high_17_22_last_alert": "2026-11-12T08:52:55.274269",
+      "near_high_17_22_last_price": 3291.800048828125
     },
     "SUBROS": {
       "sma50": 670.1849963378907,
