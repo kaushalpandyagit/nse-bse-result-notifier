@@ -3749,10 +3749,11 @@
       "rs_rank": 35.9,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-12T03:50:10.805008",
-      "near_high_17_22_last_price": 986.3499755859375
+      "near_high_17_22_last_alert": "2026-11-12T09:01:43.135128",
+      "near_high_17_22_last_price": 998.2999877929688
     },
     "CDSL": {
       "sma50": 1310.6719995117187,
@@ -5283,10 +5284,13 @@
       "rs_rank": 23.2,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-12T03:50:23.240473",
-      "resistance_last_price": 405.8500061035156
+      "resistance_last_price": 405.8500061035156,
+      "mtf_last_alert": "2026-11-12T09:01:48.760079",
+      "mtf_last_price": 407.3999938964844
     },
     "DBREALTY": {
       "sma50": 91.44440017700195,
@@ -7226,10 +7230,11 @@
       "rs_rank": 39.6,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-12T03:50:37.773648",
-      "near_high_17_22_last_price": 151.80999755859375
+      "near_high_17_22_last_alert": "2026-11-12T09:01:55.476993",
+      "near_high_17_22_last_price": 150.05999755859375
     },
     "GALLANTT": {
       "sma50": 550.6930010986329,
@@ -10085,10 +10090,11 @@
       "rs_rank": 15.8,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:51:04.274168",
-      "mtf_last_price": 114.58000183105469
+      "mtf_last_alert": "2026-11-12T09:02:05.011458",
+      "mtf_last_price": 113.33999633789062
     },
     "ITI": {
       "sma50": 249.20520080566405,
@@ -12192,7 +12198,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 6.7,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-12T09:02:12.472332",
+      "mtf_last_price": 717.2000122070312
     },
     "KTKBANK": {
       "sma50": 324.25999938964844,

@@ -7795,5 +7795,14 @@
     "baseline_rsi": 58.05003647771941,
     "mcap_cr": 1037.0879038208009,
     "exchange": "NSE"
+  },
+  "PAGEIND": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T14:29:53",
+    "day_high": 37185.0,
+    "day_low": 35525.0,
+    "baseline_rsi": 49.26328658196735,
+    "mcap_cr": 39724.522251,
+    "exchange": "NSE"
   }
 }
