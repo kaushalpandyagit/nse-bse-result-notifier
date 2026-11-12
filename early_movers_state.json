@@ -173,7 +173,13 @@
     "price_change_pct": 2.48,
     "deliv_pct": 66.4,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-12T04:01:30.585592",
+    "em_high_breach_last_price": 8290.0
   },
   "IFBIND": {
     "trigger_date": "2026-11-11",
@@ -209,7 +215,13 @@
     "price_change_pct": 2.47,
     "deliv_pct": 82.0,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-12T04:01:31.978652",
+    "em_high_breach_last_price": 83.0
   },
   "BUILDPRO": {
     "trigger_date": "2026-11-11",

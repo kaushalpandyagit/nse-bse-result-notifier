@@ -783,7 +783,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 87.7,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T04:01:34.918426",
+      "near_high_17_22_last_price": 243.6999969482422
     },
     "AEROFLEX": {
       "sma50": 524.8820007324218,
@@ -2927,7 +2931,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 27.3,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:01:41.232670",
+      "mtf_last_price": 230.1699981689453
     },
     "BLUEJET": {
       "sma50": 543.6529956054687,
@@ -6435,7 +6443,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 63.6,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-12T04:01:50.895493",
+      "resistance_last_price": 239.33999633789062
     },
     "EQUITASBNK": {
       "sma50": 67.20039970397949,
@@ -7623,7 +7635,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 46.3,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-12T04:01:55.024084",
+      "resistance_last_price": 228.16000366210938
     },
     "GOLDIAM": {
       "sma50": 317.57499938964844,
@@ -8169,7 +8185,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 33.1,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:01:57.412195",
+      "mtf_last_price": 147.5
     },
     "GUJALKALI": {
       "sma50": 626.7299987792969,
@@ -16821,7 +16841,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 11.5,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:02:19.345257",
+      "mtf_last_price": 7.119999885559082
     },
     "RUBICON": {
       "sma50": 1656.4900024414062,
@@ -17797,7 +17821,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 1.9,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:02:22.928316",
+      "mtf_last_price": 712.1500244140625
     },
     "SHAREINDIA": {
       "sma50": 190.85899963378907,
@@ -18235,7 +18263,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 18.0,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:02:24.894250",
+      "mtf_last_price": 59.63999938964844
     },
     "SKIPPER": {
       "sma50": 535.8350018310547,
@@ -18429,7 +18461,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 35.5,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:02:26.427177",
+      "mtf_last_price": 1261.800048828125
     },
     "SONATSOFTW": {
       "sma50": 258.53199951171877,
@@ -18723,7 +18759,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 81.4,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T04:02:28.284635",
+      "near_high_17_22_last_price": 3239.5
     },
     "SUBROS": {
       "sma50": 670.1849963378907,
@@ -18817,7 +18857,13 @@
       "dtl_touches": 3,
       "dtl_floor": 881.9500122070312,
       "dtl_floor_touches": 1,
-      "rs_rank": 77.7
+      "rs_rank": 77.7,
+      "session_date": "2026-11-12",
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:02:29.652189",
+      "mtf_last_price": 1171.6500244140625
     },
     "SUDEEPPHRM": {
       "sma50": 1138.6600073242187,
@@ -20137,7 +20183,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 68.8,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:02:33.918377",
+      "mtf_last_price": 114.9000015258789
     },
     "THANGAMAYL": {
       "sma50": 4924.663994140625,
@@ -20623,7 +20673,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 45.7,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:02:36.201273",
+      "mtf_last_price": 740.5499877929688
     },
     "TMB": {
       "sma50": 868.9719970703125,

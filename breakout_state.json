@@ -202,9 +202,9 @@
     "spread_last_price": 2.7312775330396475
   },
   "arb_AVALON": {
-    "spread_last_alert": "2026-11-11T03:55:45.207194",
-    "spread_last_price": 3.398966736942416,
-    "session_date": "2026-11-11",
+    "spread_last_alert": "2026-11-12T04:03:11.779251",
+    "spread_last_price": 2.5019443415222566,
+    "session_date": "2026-11-12",
     "alert_slots": [
       "H1"
     ]
@@ -475,12 +475,11 @@
     ]
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-11-11T07:31:37.947744",
-    "spread_last_price": 3.1307565134902937,
-    "session_date": "2026-11-11",
+    "spread_last_alert": "2026-11-12T04:03:08.358537",
+    "spread_last_price": 2.727272727272727,
+    "session_date": "2026-11-12",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "arb_JINDALPHOT": {
@@ -578,9 +577,9 @@
     "spread_last_price": 2.8102404086887347
   },
   "arb_NSIL": {
-    "spread_last_alert": "2026-11-11T04:17:58.538753",
-    "spread_last_price": 3.036817795840635,
-    "session_date": "2026-11-11",
+    "spread_last_alert": "2026-11-12T04:02:52.546719",
+    "spread_last_price": 3.3846624515602657,
+    "session_date": "2026-11-12",
     "alert_slots": [
       "H1"
     ]
@@ -7454,6 +7453,24 @@
     "day_low": 437.6499938964844,
     "baseline_rsi": 65.00059563830797,
     "mcap_cr": 9666.3025482,
+    "exchange": "NSE"
+  },
+  "PIONEEREMB": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-11T18:05:03",
+    "day_high": 19.700000762939453,
+    "day_low": 19.100000381469727,
+    "baseline_rsi": 52.569648307208595,
+    "mcap_cr": 60.706423091031645,
+    "exchange": "NSE"
+  },
+  "WIPL": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-11T16:56:19",
+    "day_high": 163.38999938964844,
+    "day_low": 163.38999938964844,
+    "baseline_rsi": 53.329767310734816,
+    "mcap_cr": 138.67464774197387,
     "exchange": "NSE"
   }
 }

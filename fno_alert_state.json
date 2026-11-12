@@ -1201,7 +1201,13 @@
     "trigger_date": "2026-11-11",
     "ref_high": 806.4,
     "ref_low": 768.2,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-12",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-12T04:01:28.116395",
+    "fno_high_breach_last_price": 807.5
   },
   "LAXMICOT": {
     "trigger_date": "2026-11-11",
