@@ -86,11 +86,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-12T03:46:06.493660",
-    "custom_last_price": 173.5500030517578,
+    "custom_last_alert": "2026-11-12T09:30:00.291595",
+    "custom_last_price": 170.8000030517578,
     "session_date": "2026-11-12",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KAYNES_rsi": {
@@ -7816,6 +7817,51 @@
     "day_low": 251.14999389648438,
     "baseline_rsi": 58.87948706021327,
     "mcap_cr": 167.71161045,
+    "exchange": "NSE"
+  },
+  "BANKA": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T14:47:56",
+    "day_high": 84.76000213623047,
+    "day_low": 78.94999694824219,
+    "baseline_rsi": 59.46721448840457,
+    "mcap_cr": 86.23259730673828,
+    "exchange": "NSE"
+  },
+  "KESORAMIND": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T14:45:08",
+    "day_high": 13.899999618530273,
+    "day_low": 12.960000038146973,
+    "baseline_rsi": 61.46086476147748,
+    "mcap_cr": 408.21206384779043,
+    "exchange": "NSE"
+  },
+  "NIPPOBATRY": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T14:57:28",
+    "day_high": 327.79998779296875,
+    "day_low": 315.0,
+    "baseline_rsi": 62.52400565300147,
+    "mcap_cr": 243.5625,
+    "exchange": "NSE"
+  },
+  "UNITECH": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T14:50:24",
+    "day_high": 4.090000152587891,
+    "day_low": 3.9600000381469727,
+    "baseline_rsi": 53.59856526975112,
+    "mcap_cr": 1041.2878216961983,
+    "exchange": "NSE"
+  },
+  "VISAKAIND": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T14:51:02",
+    "day_high": 91.44999694824219,
+    "day_low": 83.69999694824219,
+    "baseline_rsi": 60.80698665344163,
+    "mcap_cr": 772.4585675843201,
     "exchange": "NSE"
   }
 }

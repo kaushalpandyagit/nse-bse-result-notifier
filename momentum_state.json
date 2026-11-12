@@ -4543,7 +4543,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 20.3,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-12T09:30:44.187424",
+      "mtf_last_price": 377.5
     },
     "CLEAN": {
       "sma50": 786.7220007324219,
@@ -7487,10 +7491,11 @@
       "rs_rank": 13.2,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-12T03:50:42.432697",
-      "mtf_last_price": 502.1499938964844
+      "mtf_last_alert": "2026-11-12T09:30:57.666445",
+      "mtf_last_price": 497.04998779296875
     },
     "GMRP&UI": {
       "sma50": 96.07300018310546,
@@ -14842,7 +14847,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 45.9,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-12T09:31:29.484130",
+      "rectangle_bounce_last_price": 285.70001220703125
     },
     "PCJEWELLER": {
       "sma50": 14.185400047302245,
@@ -22175,10 +22184,11 @@
       "rs_rank": 76.0,
       "session_date": "2026-11-12",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-12T03:52:48.519513",
-      "near_high_17_22_last_price": 777.2000122070312
+      "near_high_17_22_last_alert": "2026-11-12T09:32:01.578345",
+      "near_high_17_22_last_price": 767.8499755859375
     },
     "VOLTAMP": {
       "sma50": 10537.85,
