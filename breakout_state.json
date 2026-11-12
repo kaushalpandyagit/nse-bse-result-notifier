@@ -484,11 +484,12 @@
     ]
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-11-12T04:03:08.358537",
-    "spread_last_price": 2.727272727272727,
+    "spread_last_alert": "2026-11-12T08:02:35.859874",
+    "spread_last_price": 2.500005831821519,
     "session_date": "2026-11-12",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_JINDALPHOT": {
@@ -7623,6 +7624,42 @@
     "day_low": 58.5,
     "baseline_rsi": 53.78067616241064,
     "mcap_cr": 323.7600771859432,
+    "exchange": "NSE"
+  },
+  "BLKASHYAP": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:26:56",
+    "day_high": 60.20000076293945,
+    "day_low": 55.54999923706055,
+    "baseline_rsi": 60.0444371871882,
+    "mcap_cr": 1300.1315610874115,
+    "exchange": "NSE"
+  },
+  "DECCANCE": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:26:22",
+    "day_high": 504.20001220703125,
+    "day_low": 483.1000061035156,
+    "baseline_rsi": 46.485349913408406,
+    "mcap_cr": 696.592957901001,
+    "exchange": "NSE"
+  },
+  "HDFIRE": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:20:01",
+    "day_high": 288.3999938964844,
+    "day_low": 274.29998779296875,
+    "baseline_rsi": 48.271220898042614,
+    "mcap_cr": 4909.068343048096,
+    "exchange": "NSE"
+  },
+  "INDOTECH": {
+    "result_date": "2026-11-12T00:00:00",
+    "filed_at": "2026-11-12T13:29:50",
+    "day_high": 2874.300048828125,
+    "day_low": 2673.10009765625,
+    "baseline_rsi": 42.080038843662685,
+    "mcap_cr": 2897.985651855469,
     "exchange": "NSE"
   }
 }
