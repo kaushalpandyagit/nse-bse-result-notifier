@@ -835,7 +835,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 89.0,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-12T04:30:19.049468",
+      "near_high_17_22_last_price": 508.75
     },
     "AETHER": {
       "sma50": 1629.3539990234376,
@@ -9021,7 +9025,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 41.3,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:30:46.209428",
+      "mtf_last_price": 1147.199951171875
     },
     "IFCI": {
       "sma50": 72.18259963989257,
@@ -9841,7 +9849,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 38.1,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-12T04:30:49.831137",
+      "resistance_last_price": 18.790000915527344
     },
     "IRCON": {
       "sma50": 108.12279968261718,
@@ -15971,7 +15983,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 34.4,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:31:09.864667",
+      "mtf_last_price": 845.9000244140625
     },
     "RATEGAIN": {
       "sma50": 833.381005859375,
@@ -20891,7 +20907,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 30.7,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-12T04:31:26.849087",
+      "mtf_last_price": 510.45001220703125
     },
     "TTKPRESTIG": {
       "sma50": 537.1699969482422,
@@ -21679,7 +21699,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 25.1,
       "session_date": "2026-11-12",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-12T04:31:29.946479",
+      "rectangle_bounce_last_price": 249.39999389648438
     },
     "VIYASH": {
       "sma50": 238.98020050048828,
