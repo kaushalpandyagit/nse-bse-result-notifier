@@ -8,6 +8,8 @@ Features:
   2. 7-Day Economic Event Calendar Tracker (RBI, Fed, CPI).
   3. Live Geopolitical & Global Bellwether News Polling.
   4. USFDA, PLI Scheme, Tariff/Duty News Tracking, & Indian PM/FM Economic Statements.
+  5. Commodity Supply-Disruption Watch: weather / strike / outage / export-curb events
+     in the top producing nations of key energy, metal and agri commodities.
 """
 
 import os
@@ -94,6 +96,85 @@ GEOPOLITICAL_KEYWORDS = ["war", "strike", "missile", "sanctions", "geopolitical"
 REGULATORY_KEYWORDS = ["usfda", "fda", "pli scheme", "tariff", "duty", "import tax", "export ban", "anti-dumping"]
 LEADER_STATEMENT_KEYWORDS = ["semiconductor", "economy", "finance", "fiscal", "gdp", "inflation", "investment", "rupee", "budget", "fabs", "chip"]
 
+# ----------------------------------------------------------------------
+# COMMODITY SUPPLY-DISRUPTION WATCH
+# ----------------------------------------------------------------------
+# Country aliases are regexes matched case-insensitively, except "US" which must be
+# upper-case so the pronoun "us" never matches.
+COUNTRY_ALIASES = {
+    "United States": [r"u\.s\.", r"united states", r"america", r"texas", r"gulf of mexico", r"permian", r"midwest", r"corn belt", r"iowa", r"illinois"],
+    "Russia": [r"russia", r"russian"],
+    "Saudi Arabia": [r"saudi", r"aramco"],
+    "Iran": [r"iran", r"iranian"],
+    "China": [r"china", r"chinese"],
+    "India": [r"india", r"indian", r"monsoon"],
+    "Indonesia": [r"indonesia", r"indonesian", r"kalimantan", r"sulawesi"],
+    "Australia": [r"australia", r"australian", r"pilbara"],
+    "Brazil": [r"brazil", r"brazilian", r"minas gerais", r"vale"],
+    "Chile": [r"chile", r"chilean", r"codelco", r"escondida"],
+    "DR Congo": [r"congo", r"drc", r"katanga"],
+    "Peru": [r"peru", r"peruvian", r"las bambas"],
+    "Philippines": [r"philippines", r"philippine"],
+    "Bangladesh": [r"bangladesh"],
+    "Argentina": [r"argentina", r"argentine"],
+    "Vietnam": [r"vietnam", r"vietnamese"],
+    "Colombia": [r"colombia", r"colombian"],
+    "Kenya": [r"kenya", r"kenyan"],
+}
+
+# commodity -> (headline keywords, top producers, Indian market read-through)
+COMMODITY_WATCH = {
+    "Crude Oil":   ([r"crude", r"oil output", r"oil production", r"oilfield", r"oil field", r"refinery", r"refineries", r"opec", r"oil exports?", r"oil supply", r"pipeline"],
+                    ["United States", "Russia", "Saudi Arabia"],
+                    "OMCs (BPCL, HPCL, IOC), ONGC/Oil India, paints, aviation, tyres"),
+    "Natural Gas": ([r"natural gas", r"\blng\b", r"gas field", r"gas supply", r"gas exports?", r"gas pipeline"],
+                    ["United States", "Russia", "Iran", "China"],
+                    "Petronet LNG, GAIL, IGL, MGL, Gujarat Gas, fertilisers"),
+    "Coal":        ([r"coal"], ["China", "India", "Indonesia"],
+                    "Coal India, power utilities (NTPC, Tata Power), cement, steel"),
+    "Iron Ore":    ([r"iron ore"], ["Australia", "Brazil", "China"],
+                    "NMDC, steel makers (Tata Steel, JSW, SAIL), Lloyds Metals"),
+    "Gold":        ([r"gold mine", r"gold mining", r"gold output", r"gold production", r"gold miner"], ["China", "Russia", "Australia"],
+                    "Titan, Kalyan, Senco, Muthoot / Manappuram (gold loans)"),
+    "Copper":      ([r"copper"], ["Chile", "DR Congo", "Peru"],
+                    "Hindustan Copper, Hindalco, Vedanta, cable makers (Polycab, KEI)"),
+    "Nickel":      ([r"nickel"], ["Indonesia", "Philippines", "Russia"],
+                    "Stainless steel (Jindal Stainless), battery / EV supply chain"),
+    "Wheat":       ([r"wheat"], ["China", "India", "Russia"],
+                    "Flour / FMCG (Britannia, Nestle), food inflation, export policy"),
+    "Rice":        ([r"rice"], ["China", "India", "Bangladesh"],
+                    "KRBL, LT Foods, Chaman Lal Setia, export policy"),
+    "Corn":        ([r"corn", r"maize"], ["United States", "China", "Brazil"],
+                    "Poultry feed (Venky's, Godrej Agrovet), ethanol, starch makers"),
+    "Soybeans":    ([r"soybeans?", r"soy crop", r"soymeal", r"soya"], ["Brazil", "United States", "Argentina"],
+                    "Edible oils (AWL Agri, Patanjali Foods), poultry feed"),
+    "Sugar":       ([r"sugar", r"sugarcane", r"cane crush", r"cane crop"], ["Brazil", "India", "China"],
+                    "Balrampur, Triveni, EID Parry, Dalmia Bharat Sugar, ethanol"),
+    "Coffee":      ([r"coffee", r"arabica", r"robusta"], ["Brazil", "Vietnam", "Colombia"],
+                    "CCL Products, Tata Consumer"),
+    "Tea":         ([r"\btea\b", r"tea crop", r"tea output", r"tea production", r"tea estate"], ["China", "India", "Kenya"],
+                    "Tata Consumer, McLeod Russel, Jay Shree Tea, HUL"),
+}
+
+# event type -> trigger words (whole-word, case-insensitive)
+DISRUPTION_EVENTS = {
+    "Weather": [r"drought", r"floods?", r"flooding", r"heat ?wave", r"cyclone", r"hurricane", r"typhoon", r"frost",
+                r"freeze", r"cold snap", r"el nino", r"la nina", r"wildfires?", r"storms?", r"heavy rains?", r"dry spell",
+                r"poor monsoon", r"weak monsoon", r"monsoon (?:deficit|delay|failure)", r"crop damage", r"harvest delay"],
+    "Strike / Labour": [r"strikes?", r"walkout", r"protests?", r"blockades?", r"unrest", r"lockout"],
+    "Outage / Accident": [r"outage", r"force majeure", r"shut ?down", r"collapse", r"explosion", r"blaze",
+                          r"fire (?:at|hits|breaks out)", r"landslide", r"earthquake", r"leak", r"attack(?:s|ed)?", r"drones?",
+                          # bare "halt"/"suspend" matched e.g. "halt copper decline"; require an operations object
+                          r"(?:halts?|halted|halting|suspends?|suspended|stops?|stopped) (?:\w+ ){0,2}(?:production|output|operations|mining|exports?|shipments?|loading|supply|supplies)",
+                          r"(?:production|output|operations|mining|exports?|shipments?|loading) (?:halted|suspended|stopped)"],
+    "Supply / Policy": [r"export ban", r"bans? exports?", r"export curbs?", r"export duty", r"export restrictions?", r"sanctions?",
+                        r"embargo", r"output cuts?", r"production cuts?", r"supply cuts?", r"supply disruption", r"shortage",
+                        r"quota"],
+}
+
+COMMODITY_ALERT_COOLDOWN_HOURS = 12
+COMMODITY_NEWS_MAX_AGE_HOURS = 48
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
@@ -143,7 +224,7 @@ def load_state() -> dict:
     return {"seen_news": [], "last_pulse_date": None}
 
 def save_state(state: dict):
-    state["seen_news"] = state.get("seen_news", [])[-500:]
+    state["seen_news"] = state.get("seen_news", [])[-2000:]   # commodity watch adds its own fingerprints
     STATE_FILE.write_text(json.dumps(state, indent=2))
 
 def fetch_upcoming_events() -> str:
@@ -331,6 +412,121 @@ def poll_news(state: dict) -> dict:
     return state
 
 # ----------------------------------------------------------------------
+# COMMODITY SUPPLY-DISRUPTION WATCH
+# ----------------------------------------------------------------------
+def _rx(words: list) -> re.Pattern:
+    return re.compile(r"\b(?:" + "|".join(words) + r")\b", re.IGNORECASE)
+
+_US_UPPER = re.compile(r"\bUS\b")
+_COUNTRY_RX = {c: _rx(a) for c, a in COUNTRY_ALIASES.items()}
+_EVENT_RX = {e: _rx(w) for e, w in DISRUPTION_EVENTS.items()}
+_COMMODITY_RX = {c: _rx(kw) for c, (kw, _, _) in COMMODITY_WATCH.items()}
+
+def _country_hit(country: str, text: str) -> bool:
+    if country == "United States" and _US_UPPER.search(text):
+        return True
+    return bool(_COUNTRY_RX[country].search(text))
+
+def classify_commodity_disruption(title: str):
+    """(commodity, country, event_type, event_word) when a headline names a watched
+    commodity, one of ITS top producers, and a disruption event; else None."""
+    for commodity, (_, producers, _) in COMMODITY_WATCH.items():
+        if not _COMMODITY_RX[commodity].search(title):
+            continue
+        country = next((c for c in producers if _country_hit(c, title)), None)
+        if not country:
+            continue
+        for event, rx in _EVENT_RX.items():
+            m = rx.search(title)
+            if m:
+                return commodity, country, event, m.group(0).lower()
+    return None
+
+COMMODITY_SEARCH_TERMS = {
+    "Crude Oil": 'crude OR "oil production" OR refinery OR oilfield OR OPEC',
+    "Natural Gas": '"natural gas" OR LNG OR "gas field"',
+    "Coal": "coal", "Iron Ore": '"iron ore"', "Gold": '"gold mine" OR "gold mining"',
+    "Copper": "copper", "Nickel": "nickel", "Wheat": "wheat", "Rice": "rice",
+    "Corn": "corn OR maize", "Soybeans": "soybean OR soybeans OR soy", "Sugar": "sugar OR sugarcane",
+    "Coffee": "coffee OR arabica OR robusta", "Tea": '"tea crop" OR "tea production" OR "tea output" OR "tea estate" OR "tea prices"',
+}
+
+def _google_news_url(commodity: str) -> str:
+    producers = COMMODITY_WATCH[commodity][1]
+    country_terms = " OR ".join(f'"{c}"' if " " in c else c for c in producers)
+    event_terms = ('drought OR flood OR frost OR hurricane OR cyclone OR heatwave OR monsoon OR strike OR outage '
+                   'OR halt OR shutdown OR "export ban" OR shortage OR "force majeure" OR sanctions')
+    q = f"({COMMODITY_SEARCH_TERMS[commodity]}) ({country_terms}) ({event_terms}) when:2d"
+    return "https://news.google.com/rss/search?q=" + urllib.parse.quote(q) + "&hl=en-US&gl=US&ceid=US:en"
+
+def poll_commodity_disruptions(state: dict) -> dict:
+    if not feedparser:
+        return state
+    seen = state.setdefault("seen_news", [])
+    cooldown = state.setdefault("commodity_alert_cooldown", {})
+    now_utc = datetime.datetime.now(datetime.timezone.utc)
+    alerts = []
+
+    for commodity in COMMODITY_WATCH:
+        try:
+            feed = feedparser.parse(_google_news_url(commodity))
+        except Exception as e:
+            log.warning("Commodity feed failed for %s: %s", commodity, e)
+            continue
+        for entry in feed.entries[:40]:
+            raw_title = entry.get("title", "")
+            title = re.sub(r"\s+-\s+[^-]+$", "", raw_title).strip()   # drop " - Publisher"
+            fp = "C:" + re.sub(r"[^A-Za-z0-9]", "", title.upper())[:40]
+            if not title or fp in seen:
+                continue
+            pub = entry.get("published_parsed")
+            if pub:
+                pub_dt = datetime.datetime(*pub[:6], tzinfo=datetime.timezone.utc)
+                if (now_utc - pub_dt).total_seconds() > COMMODITY_NEWS_MAX_AGE_HOURS * 3600:
+                    continue
+            hit = classify_commodity_disruption(title)
+            if not hit:
+                continue
+            seen.append(fp)
+            c_name, country, event, word = hit
+            key = f"{c_name}|{country}"   # one alert per commodity+country per cooldown, whatever the wording
+            last = cooldown.get(key)
+            if last and (now_utc - datetime.datetime.fromisoformat(last)).total_seconds() < COMMODITY_ALERT_COOLDOWN_HOURS * 3600:
+                continue   # same story from another outlet
+            cooldown[key] = now_utc.isoformat()
+            source = entry.get("source", {}).get("title", "") if isinstance(entry.get("source"), dict) else ""
+            alerts.append((c_name, country, event, word, title, entry.get("link", ""), source))
+
+    # keep the cooldown map small
+    cutoff = now_utc - datetime.timedelta(hours=COMMODITY_ALERT_COOLDOWN_HOURS * 2)
+    state["commodity_alert_cooldown"] = {k: v for k, v in cooldown.items() if datetime.datetime.fromisoformat(v) >= cutoff}
+
+    icons = {"Weather": "🌦️", "Strike / Labour": "✊", "Outage / Accident": "🛑", "Supply / Policy": "🚫"}
+    blocks = []
+    for c_name, country, event, word, title, link, source in alerts:
+        blocks.append(
+            f"{icons.get(event, '⚠️')} <b>{html.escape(c_name)} | {html.escape(country)} | {event}</b> ({html.escape(word)})\n"
+            f"{html.escape(title)}{f' — <i>{html.escape(source)}</i>' if source else ''}\n"
+            f"🇮🇳 <i>Watch: {html.escape(COMMODITY_WATCH[c_name][2])}</i>\n"
+            f"🔗 <a href='{html.escape(link, quote=True)}'>Read</a>"
+        )
+    if len(blocks) <= 3:
+        for b in blocks:
+            send_telegram_message(f"🌐 <b>COMMODITY SUPPLY ALERT</b>\n\n{b}")
+            time.sleep(1)
+    else:
+        header = f"🌐 <b>COMMODITY SUPPLY WATCH — {len(blocks)} new events</b>"
+        chunk = [header]
+        for b in blocks:
+            if sum(len(x) + 2 for x in chunk) + len(b) > 3800:
+                send_telegram_message("\n\n".join(chunk)); time.sleep(1)
+                chunk = [header + " (contd.)"]
+            chunk.append(b)
+        send_telegram_message("\n\n".join(chunk))
+    log.info("Commodity watch: %d new disruption alerts.", len(alerts))
+    return state
+
+# ----------------------------------------------------------------------
 # MAIN EXECUTION LOOP
 # ----------------------------------------------------------------------
 def main():
@@ -342,6 +538,10 @@ def main():
     if one_shot:
         try:
             state = poll_news(state)
+            try:
+                state = poll_commodity_disruptions(state)
+            except Exception as e:
+                log.exception("Commodity watch failed: %s", e)
             state = check_and_send_morning_pulse(state)
             save_state(state)
         except Exception as e:
@@ -352,6 +552,10 @@ def main():
     while True:
         try:
             state = poll_news(state)
+            try:
+                state = poll_commodity_disruptions(state)
+            except Exception as e:
+                log.exception("Commodity watch failed: %s", e)
             state = check_and_send_morning_pulse(state)
             save_state(state)
         except Exception as e:
