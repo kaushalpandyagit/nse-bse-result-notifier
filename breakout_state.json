@@ -8236,5 +8236,14 @@
     "baseline_rsi": 47.24148328252953,
     "mcap_cr": 10374.979245485161,
     "exchange": "NSE"
+  },
+  "XELPMOC": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T11:41:31",
+    "day_high": 86.4000015258789,
+    "day_low": 82.5,
+    "baseline_rsi": 53.4751671092777,
+    "mcap_cr": 124.87466629402313,
+    "exchange": "NSE"
   }
 }

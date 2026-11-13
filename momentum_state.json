@@ -17636,7 +17636,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 63.3,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T06:17:04.479085",
+      "mtf_last_price": 593.75
     },
     "SGMART": {
       "sma50": 786.6850024414063,
@@ -22084,7 +22088,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 88.6,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-13T06:17:19.613972",
+      "near_high_17_22_last_price": 698.0499877929688
     },
     "WELSPUNLIV": {
       "sma50": 222.33360046386719,

@@ -1055,7 +1055,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 597.95,
     "ref_low": 563.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-13T06:16:12.109161",
+    "fno_low_breach_last_price": 562.6500244140625
   },
   "GPTHEALTH": {
     "trigger_date": "2026-11-06",
