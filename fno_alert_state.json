@@ -947,7 +947,13 @@
     "trigger_date": "2026-11-05",
     "ref_high": 363.4,
     "ref_low": 343.0,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-13T05:16:07.704215",
+    "fno_high_breach_last_price": 365.04998779296875
   },
   "APLLTD": {
     "trigger_date": "2026-11-05",

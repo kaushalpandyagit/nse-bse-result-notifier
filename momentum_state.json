@@ -2976,7 +2976,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 24.6,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T05:16:27.879208",
+      "mtf_last_price": 228.91000366210938
     },
     "BLUEJET": {
       "sma50": 542.65599609375,
@@ -4510,7 +4514,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 19.9,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T05:16:33.575039",
+      "mtf_last_price": 379.04998779296875
     },
     "CLEAN": {
       "sma50": 784.2350012207031,
@@ -22550,7 +22558,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 43.4,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-13T05:17:21.593034",
+      "resistance_last_price": 2338.0
     },
     "ZYDUSWELL": {
       "sma50": 509.19900085449217,
