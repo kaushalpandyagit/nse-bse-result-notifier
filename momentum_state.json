@@ -13697,10 +13697,11 @@
       "rs_rank": 69.8,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-13T03:51:31.074494",
-      "near_high_17_22_last_price": 620.0999755859375
+      "near_high_17_22_last_alert": "2026-11-13T08:17:27.657394",
+      "near_high_17_22_last_price": 626.9000244140625
     },
     "NETWEB": {
       "sma50": 4628.594008789062,

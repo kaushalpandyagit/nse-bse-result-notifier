@@ -458,11 +458,12 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-13T03:46:42.704609",
-    "custom_last_price": 166.6999969482422,
+    "custom_last_alert": "2026-11-13T08:16:16.560452",
+    "custom_last_price": 163.6999969482422,
     "session_date": "2026-11-13",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_AETHER": {
@@ -8410,6 +8411,60 @@
     "day_low": 605.7000122070312,
     "baseline_rsi": 74.24577011964423,
     "mcap_cr": 905.580029296875,
+    "exchange": "NSE"
+  },
+  "AEPL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:38:36",
+    "day_high": 15.5,
+    "day_low": 14.989999771118164,
+    "baseline_rsi": 57.42423831022524,
+    "mcap_cr": 387.09890171525956,
+    "exchange": "NSE"
+  },
+  "KPIGREEN": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:39:45",
+    "day_high": 331.0,
+    "day_low": 315.45001220703125,
+    "baseline_rsi": 54.63973104243566,
+    "mcap_cr": 6338.351533270606,
+    "exchange": "NSE"
+  },
+  "RUCHIRA": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:39:17",
+    "day_high": 103.41000366210938,
+    "day_low": 98.0,
+    "baseline_rsi": 44.71890329167416,
+    "mcap_cr": 298.44985,
+    "exchange": "NSE"
+  },
+  "SOLEX": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:36:27",
+    "day_high": 695.9000244140625,
+    "day_low": 610.7000122070312,
+    "baseline_rsi": 50.548827104791194,
+    "mcap_cr": 674.9394995333679,
+    "exchange": "NSE"
+  },
+  "STALLION": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:39:45",
+    "day_high": 198.00999450683594,
+    "day_low": 187.2100067138672,
+    "baseline_rsi": 40.40365186215911,
+    "mcap_cr": 2176.6075875,
+    "exchange": "NSE"
+  },
+  "VERANDA": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:39:09",
+    "day_high": 32.93000030517578,
+    "day_low": 31.5,
+    "baseline_rsi": 18.209417075881575,
+    "mcap_cr": 304.960891281435,
     "exchange": "NSE"
   }
 }
