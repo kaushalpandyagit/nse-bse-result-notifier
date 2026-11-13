@@ -340,9 +340,9 @@
     "spread_last_price": 2.820854182104335
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-11-12T07:17:59.511213",
-    "spread_last_price": 3.1327287716405605,
-    "session_date": "2026-11-12",
+    "spread_last_alert": "2026-11-13T07:32:09.277120",
+    "spread_last_price": 5.786179543724317,
+    "session_date": "2026-11-13",
     "alert_slots": [
       "H2"
     ]
@@ -655,9 +655,9 @@
     "spread_last_price": 2.843176307448639
   },
   "arb_TVSHLTD": {
-    "spread_last_alert": "2026-11-06T08:51:07.907622",
-    "spread_last_price": 4.150007996161842,
-    "session_date": "2026-11-06",
+    "spread_last_alert": "2026-11-13T07:32:19.275196",
+    "spread_last_price": 3.0927835051546393,
+    "session_date": "2026-11-13",
     "alert_slots": [
       "H2"
     ]
@@ -8312,6 +8312,15 @@
     "day_low": 71.36000061035156,
     "baseline_rsi": 53.13242527992862,
     "mcap_cr": 99.44234316444397,
+    "exchange": "NSE"
+  },
+  "AJOONI": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T12:46:01",
+    "day_high": 3.440000057220459,
+    "day_low": 2.859999895095825,
+    "baseline_rsi": 63.25096252366911,
+    "mcap_cr": 56.49589965120711,
     "exchange": "NSE"
   }
 }

@@ -5719,7 +5719,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 95.5,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "sos_pullback_curl_last_alert": "2026-11-13T07:30:40.762606",
+      "sos_pullback_curl_last_price": 566.9500122070312
     },
     "EBGNG": {
       "sma50": 672.5860009765624,

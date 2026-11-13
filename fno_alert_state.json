@@ -1259,7 +1259,13 @@
     "trigger_date": "2026-11-12",
     "ref_high": 178.3,
     "ref_low": 175.38,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_high_breach_last_alert": "2026-11-13T07:30:15.177629",
+    "fno_high_breach_last_price": 178.5
   },
   "INDTERRAIN": {
     "trigger_date": "2026-11-12",
