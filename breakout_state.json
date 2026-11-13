@@ -8218,5 +8218,14 @@
     "baseline_rsi": 47.52036212142995,
     "mcap_cr": 50.417671378527835,
     "exchange": "NSE"
+  },
+  "LOYALTEX": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-12T18:17:47",
+    "day_high": 226.0,
+    "day_low": 221.75,
+    "baseline_rsi": 61.21029945047614,
+    "mcap_cr": 108.8516796,
+    "exchange": "NSE"
   }
 }
