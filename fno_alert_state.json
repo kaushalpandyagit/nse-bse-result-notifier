@@ -1380,5 +1380,11 @@
     "ref_high": 462.95,
     "ref_low": 420.0,
     "status": "Active"
+  },
+  "ORCHASP": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 1.52,
+    "ref_low": 1.36,
+    "status": "Active"
   }
 }
