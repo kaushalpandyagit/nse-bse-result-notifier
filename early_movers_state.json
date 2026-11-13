@@ -307,7 +307,13 @@
     "price_change_pct": -2.49,
     "deliv_pct": 89.0,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-13T04:16:34.078838",
+    "em_low_breach_last_price": 132.60000610351562
   },
   "ADVANIHOTR": {
     "trigger_date": "2026-11-12",

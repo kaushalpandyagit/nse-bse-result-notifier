@@ -232,10 +232,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-12T07:04:18.981922",
-    "spread_last_price": 5.00497998289801,
+    "spread_last_alert": "2026-11-13T04:18:26.542235",
+    "spread_last_price": 3.5522339474502487,
     "session_date": "2026-11-13",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-11-11T05:31:49.643327",
@@ -8177,6 +8179,24 @@
     "day_low": 55.02000045776367,
     "baseline_rsi": 60.581163299707626,
     "mcap_cr": 107.190153,
+    "exchange": "NSE"
+  },
+  "CONSOFINVT": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-12T20:50:42",
+    "day_high": 320.1499938964844,
+    "day_low": 320.1499938964844,
+    "baseline_rsi": 65.39858536499018,
+    "mcap_cr": 1034.928587759552,
+    "exchange": "NSE"
+  },
+  "PRAENG": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-12T17:41:12",
+    "day_high": 18.799999237060547,
+    "day_low": 18.530000686645508,
+    "baseline_rsi": 49.91626988508659,
+    "mcap_cr": 129.59102552510967,
     "exchange": "NSE"
   }
 }

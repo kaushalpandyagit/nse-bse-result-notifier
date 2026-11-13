@@ -95,7 +95,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 57.9,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T04:16:35.962347",
+      "mtf_last_price": 488.0
     },
     "AARTIPHARM": {
       "sma50": 885.235,
@@ -663,7 +667,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 11.7,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-13T04:16:38.821211",
+      "resistance_last_price": 284.0
     },
     "AEGISVOPAK": {
       "sma50": 275.82679870605466,
@@ -3204,7 +3212,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 49.5,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T04:16:47.593265",
+      "mtf_last_price": 327.6499938964844
     },
     "CAMPUS": {
       "sma50": 205.2579995727539,
@@ -4096,7 +4108,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 19.4,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T04:16:51.296244",
+      "mtf_last_price": 5020.2998046875
     },
     "CESC": {
       "sma50": 135.9647998046875,
@@ -4430,7 +4446,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 22.7,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T04:16:52.969021",
+      "mtf_last_price": 1448.800048828125
     },
     "CIEINDIA": {
       "sma50": 374.9779998779297,
@@ -4868,7 +4888,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 10.4,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T04:16:54.895415",
+      "mtf_last_price": 216.61000061035156
     },
     "CSBBANK": {
       "sma50": 314.1730004882813,
@@ -8692,7 +8716,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 46.9,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-13T04:17:08.309568",
+      "resistance_last_price": 1112.0
     },
     "HONASA": {
       "sma50": 462.9479968261719,
@@ -14002,7 +14030,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 66.1,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T04:17:25.275915",
+      "mtf_last_price": 343.3999938964844
     },
     "OLAELEC": {
       "sma50": 36.221529159545895,
@@ -16130,7 +16162,9 @@
       "dtl_touches": 3,
       "dtl_floor": 255.6999969482422,
       "dtl_floor_touches": 1,
-      "rs_rank": 96.3
+      "rs_rank": 96.3,
+      "session_date": "2026-11-13",
+      "alert_slots": []
     },
     "REFEX": {
       "sma50": 258.06779846191404,
@@ -16274,7 +16308,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 58.7,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-13T04:17:33.650484",
+      "near_high_17_22_last_price": 230.1699981689453
     },
     "RENUKA": {
       "sma50": 21.621199989318846,
@@ -16564,7 +16602,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 32.6,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-13T04:17:35.559670",
+      "resistance_last_price": 459.0
     },
     "RPOWER": {
       "sma50": 19.812799987792967,
@@ -19580,7 +19622,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 43.6,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-13T04:17:46.372056",
+      "resistance_last_price": 3871.0
     },
     "TATAINVEST": {
       "sma50": 617.3669970703126,
@@ -22336,7 +22382,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 70.4,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T04:17:55.979063",
+      "mtf_last_price": 1757.0
     },
     "ZFCVINDIA": {
       "sma50": 2298.1019921875,
