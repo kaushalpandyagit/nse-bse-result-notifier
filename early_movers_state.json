@@ -337,7 +337,13 @@
     "price_change_pct": -2.48,
     "deliv_pct": 60.8,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-13T04:01:37.281463",
+    "em_low_breach_last_price": 198.57000732421875
   },
   "OBCL": {
     "trigger_date": "2026-11-12",
@@ -347,7 +353,13 @@
     "price_change_pct": 2.47,
     "deliv_pct": 98.6,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-13T04:01:38.547482",
+    "em_high_breach_last_price": 60.0
   },
   "HSBCGOLD": {
     "trigger_date": "2026-11-12",
@@ -399,6 +411,12 @@
     "price_change_pct": 2.46,
     "deliv_pct": 63.2,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-13T04:01:39.976578",
+    "em_low_breach_last_price": 108.0
   }
 }
