@@ -8601,5 +8601,32 @@
     "baseline_rsi": 50.38863949070485,
     "mcap_cr": 83.54142154656296,
     "exchange": "NSE"
+  },
+  "EIDPARRY": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T14:59:05",
+    "day_high": 674.9000244140625,
+    "day_low": 646.0999755859375,
+    "baseline_rsi": 46.4759516478015,
+    "mcap_cr": 11547.545288342139,
+    "exchange": "NSE"
+  },
+  "JAYSREETEA": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T14:45:53",
+    "day_high": 85.0,
+    "day_low": 82.69999694824219,
+    "baseline_rsi": 54.9050065686743,
+    "mcap_cr": 244.0147736,
+    "exchange": "NSE"
+  },
+  "SHREYANIND": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T14:50:19",
+    "day_high": 130.89999389648438,
+    "day_low": 125.3499984741211,
+    "baseline_rsi": 44.21577137239492,
+    "mcap_cr": 175.54414054080962,
+    "exchange": "NSE"
   }
 }
