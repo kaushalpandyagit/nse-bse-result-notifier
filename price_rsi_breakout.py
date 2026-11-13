@@ -114,6 +114,9 @@ RSIB_RSI_MAX = 56.0               # daily RSI must be <= this
 RSIB_RSI_FLOOR_63D = 30.0         # lowest daily RSI of the last 63 sessions must be > this
 RSIB_BUY_SELL_RATIO = 1.2         # total buy qty > total sell qty x this
 RSIB_EMA_PERIODS = (5, 20, 50, 63, 200)  # EMAs of daily RSI that 4H RSI may cross
+RSIB_EXTRA_FILE = "rsi_bounce_extra.json"   # stocks outside the Nifty Total Market list, with market cap, exported from the laptop
+RSIB_ALERT_WITHOUT_BOOK = True              # no buy/sell quantities from Fyers: still alert (marked), instead of dropping the stock silently
+RSIB_QUOTE_BATCH = 50                       # Fyers quotes per call
 
 RSI_PERIOD = 14
 TRACK_WINDOW_DAYS = 15
@@ -1057,6 +1060,10 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         lines.append(f"  {s} (RS rank {r}){e_tag}")
     send_telegram_message("\n".join(lines))
     
+    try:      # SETUP 8 also scans stocks outside the index list (see RSIB_EXTRA_FILE)
+        rsi_bounce_universe.update(build_rsi_bounce_extras(set(symbols)))
+    except Exception as e:
+        log.warning("RSI bounce extras failed: %s", e)
     return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis, "rsi_bounce_universe": rsi_bounce_universe,
             "last_sector_report_date": momentum_state.get("last_sector_report_date")}
 
@@ -1938,7 +1945,97 @@ def build_rsi_bounce_fields(closes: pd.Series, mcap_cr: float) -> dict:
     }
     for n in RSIB_EMA_PERIODS:
         fields[f"rsi_ema_{n}"] = round(float(rsi.ewm(span=n, adjust=False).mean().iloc[-1]), 4)
+    # Wilder averages of the last completed session: with these, today's RSI needs only a live price (no history call).
+    delta = done.diff()
+    fields["ag"] = round(float(delta.where(delta > 0, 0.0).ewm(com=RSI_PERIOD - 1, min_periods=1, adjust=False).mean().iloc[-1]), 6)
+    fields["al"] = round(float((-delta.where(delta < 0, 0.0)).ewm(com=RSI_PERIOD - 1, min_periods=1, adjust=False).mean().iloc[-1]), 6)
+    fields["last_close"] = round(float(done.iloc[-1]), 4)
     return fields
+
+def rsi_bounce_live_rsi(entry: dict, price: float) -> float:
+    """Today's daily RSI from yesterday's Wilder averages and the live price (same result as recomputing the series)."""
+    d = price - entry["last_close"]
+    ag = (entry["ag"] * (RSI_PERIOD - 1) + max(d, 0.0)) / RSI_PERIOD
+    al = (entry["al"] * (RSI_PERIOD - 1) + max(-d, 0.0)) / RSI_PERIOD
+    if al <= 0:
+        return 100.0 if ag > 0 else 0.0
+    return 100.0 - 100.0 / (1.0 + ag / al)
+
+def rsi_bounce_extra_symbols(skip) -> dict:
+    """{symbol: market cap in Rs Cr} from RSIB_EXTRA_FILE, for stocks the index list does not hold."""
+    try:
+        data = json.loads((Path(__file__).parent / RSIB_EXTRA_FILE).read_text())
+        return {str(k).upper(): float(v) for k, v in (data.get("symbols") or {}).items()
+                if str(k).upper() not in skip and RSIB_MIN_MCAP_CR < float(v) <= RSIB_MAX_MCAP_CR}
+    except Exception as e:
+        log.info("RSI bounce: no extra stock list (%s).", e)
+        return {}
+
+def build_rsi_bounce_extras(skip) -> dict:
+    """Daily fields for the extra stocks. Only stocks that can still qualify (63-day RSI low above the floor) are kept."""
+    extra, out = rsi_bounce_extra_symbols(skip), {}
+    names = sorted(extra)
+    for i in range(0, len(names), 250):
+        chunk = names[i:i + 250]
+        hist = fetch_batch_history([f"{s}.NS" for s in chunk])
+        for sym in chunk:
+            df = hist.get(f"{sym}.NS")
+            if df is None or df.empty or "Close" not in df.columns:
+                continue
+            if df.index[-1].date() == ist_today():
+                df = df.iloc[:-1]
+            closes = df["Close"].dropna()
+            if len(closes) < 210:
+                continue
+            try:
+                f = build_rsi_bounce_fields(closes, extra[sym])
+            except Exception:
+                f = None
+            if f and f["rsi_min_62"] > RSIB_RSI_FLOOR_63D:
+                f["x"] = 1                      # from the extra list
+                out[sym] = f
+    log.info("RSI bounce: %d extra stocks listed, %d kept for today's scan.", len(extra), len(out))
+    return out
+
+def rsi_bounce_batch_metrics(fyers, universe: dict, symbols: list) -> dict:
+    """Live price and volume for many stocks in a few calls; daily RSI from the saved Wilder averages."""
+    out, left = {}, [s for s in symbols if "ag" in universe[s]]
+    def add(sym, price, volume):
+        e = universe[sym]
+        if price and price > 0:
+            out[sym] = {"price": float(price), "volume": float(volume or 0), "prev_close": e["last_close"], "rsi": rsi_bounce_live_rsi(e, float(price))}
+    if fyers:
+        for suffix in ("EQ", "BE"):
+            todo = [s for s in left if s not in out]
+            for i in range(0, len(todo), RSIB_QUOTE_BATCH):
+                chunk = todo[i:i + RSIB_QUOTE_BATCH]
+                try:
+                    time.sleep(0.35)
+                    resp = fyers.quotes(data={"symbols": ",".join(f"NSE:{s}-{suffix}" for s in chunk)})
+                    for row in (resp.get("d") or []) if isinstance(resp, dict) else []:
+                        v = row.get("v") or {}
+                        name = str(row.get("n") or v.get("symbol") or "")
+                        sym = name.split(":")[-1].rsplit("-", 1)[0]
+                        if row.get("s") == "ok" and sym in universe and v.get("lp"):
+                            add(sym, v.get("lp"), v.get("volume"))
+                except Exception as e:
+                    log.warning("RSI bounce: Fyers batch quotes failed (%s).", e)
+    todo = [s for s in left if s not in out]
+    if todo and len(todo) > 0.5 * len(left):      # Fyers gave nothing useful: one Yahoo batch instead
+        for i in range(0, len(todo), 250):
+            chunk = todo[i:i + 250]
+            try:
+                data = yf.download(tickers=" ".join(f"{s}.NS" for s in chunk), period="5d", interval="1d", group_by="ticker", threads=True, progress=False, auto_adjust=False)
+                for sym in chunk:
+                    try:
+                        df = (data[f"{sym}.NS"] if len(chunk) > 1 else data).dropna(how="all")
+                        if not df.empty and df.index[-1].date() == ist_today():
+                            add(sym, float(df["Close"].iloc[-1]), float(df["Volume"].iloc[-1]))
+                    except Exception:
+                        continue
+            except Exception as e:
+                log.warning("RSI bounce: Yahoo batch failed (%s).", e)
+    return out
 
 def rsi_bounce_daily_ok(entry: dict, metrics: dict) -> bool:
     """Every screener condition that needs only daily data."""
@@ -2020,13 +2117,28 @@ def check_rsi_bounce_scanner(momentum_state: dict, fyers) -> dict:
     if not universe or not is_market_hours_now() or now_ist.time() < datetime.time(9, 15):
         return momentum_state
 
-    counts = {"daily_ok": 0, "crossed": 0, "no_book": 0, "alerted": 0}
+    counts = {"daily_ok": 0, "crossed": 0, "no_book": 0, "alerted": 0, "priced": 0}
+    open_syms = [s for s, e in universe.items() if e["rsi_min_62"] > RSIB_RSI_FLOOR_63D and "rsi_bounce_last_alert" not in e]
+    try:      # one batch of live prices for every stock not already priced by the watchlist loop
+        batch = rsi_bounce_batch_metrics(fyers, universe, [s for s in open_syms if s not in LIVE_METRICS_CACHE])
+    except Exception as e:
+        log.warning("RSI bounce batch prices failed: %s", e)
+        batch = {}
     for symbol, entry in universe.items():
         # A crossover is a one-time event: one alert per stock per day (universe is rebuilt daily).
         if entry["rsi_min_62"] <= RSIB_RSI_FLOOR_63D or "rsi_bounce_last_alert" in entry:
             continue
         try:
-            metrics = LIVE_METRICS_CACHE.get(symbol) if symbol in LIVE_METRICS_CACHE else get_live_metrics(fyers, symbol, "NSE")
+            if symbol in LIVE_METRICS_CACHE:
+                metrics = LIVE_METRICS_CACHE.get(symbol)
+            elif symbol in batch:
+                metrics = batch[symbol]
+            elif "ag" in entry:
+                metrics = None                   # batch had no price for it this run
+            else:
+                metrics = get_live_metrics(fyers, symbol, "NSE")      # entry built before the batch fields existed
+            if metrics:
+                counts["priced"] += 1
             if not metrics or not rsi_bounce_daily_ok(entry, metrics):
                 continue
         except Exception as e:
@@ -2046,13 +2158,14 @@ def check_rsi_bounce_scanner(momentum_state: dict, fyers) -> dict:
         buy_qty, sell_qty = fetch_order_book_qty(fyers, fyers_sym or f"NSE:{symbol}-EQ")
         if buy_qty is None:
             counts["no_book"] += 1
-            continue
-        if buy_qty <= sell_qty * RSIB_BUY_SELL_RATIO:
+            if not RSIB_ALERT_WITHOUT_BOOK:
+                continue
+        elif buy_qty <= sell_qty * RSIB_BUY_SELL_RATIO:
             continue
 
         price, prev_close = metrics["price"], metrics["prev_close"]
         safe_sym = symbol.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-        ratio_str = f"{buy_qty / sell_qty:.1f}x" if sell_qty else "no sellers"
+        ratio_str = "not available (Fyers gave no order book)" if buy_qty is None else f"{buy_qty / sell_qty:.1f}x" if sell_qty else "no sellers"
         mcap = entry.get("mcap_cr")
         sent = send_telegram_message(
             f"🪃 <b>{safe_sym}</b> RSI Bounce!\n"
@@ -2069,8 +2182,8 @@ def check_rsi_bounce_scanner(momentum_state: dict, fyers) -> dict:
         else:
             log.error("RSI bounce alert for %s NOT delivered; will retry next run.", symbol)
 
-    log.info("RSI bounce scan: %d stocks, %d passed daily checks, %d crossed, %d without order book data, %d alerted.",
-             len(universe), counts["daily_ok"], counts["crossed"], counts["no_book"], counts["alerted"])
+    log.info("RSI bounce scan: %d stocks (%d open, %d with a live price), %d passed daily checks, %d crossed, %d without order book data, %d alerted.",
+             len(universe), len(open_syms), counts["priced"], counts["daily_ok"], counts["crossed"], counts["no_book"], counts["alerted"])
     return momentum_state
 
 # ----------------------------------------------------------------------
