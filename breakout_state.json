@@ -8198,5 +8198,14 @@
     "baseline_rsi": 49.91626988508659,
     "mcap_cr": 129.59102552510967,
     "exchange": "NSE"
+  },
+  "EMAMIREAL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-12T17:54:30",
+    "day_high": 71.0,
+    "day_low": 69.1500015258789,
+    "baseline_rsi": 51.506011299131046,
+    "mcap_cr": 359.81435037474137,
+    "exchange": "NSE"
   }
 }
