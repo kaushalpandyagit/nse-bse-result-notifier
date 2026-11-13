@@ -17,18 +17,22 @@
   "custom_alert_ALLETEC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-12T08:50:55.530663",
-    "custom_last_price": 121.0,
+    "custom_last_alert": "2026-11-13T08:46:04.643043",
+    "custom_last_price": 122.80000305175781,
     "session_date": "2026-11-13",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BASILIC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-12T08:50:57.446683",
-    "custom_last_price": 154.75,
+    "custom_last_alert": "2026-11-13T08:46:06.501357",
+    "custom_last_price": 144.9499969482422,
     "session_date": "2026-11-13",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BEACON_price": {
     "alerted": false,
@@ -153,10 +157,12 @@
   "custom_alert_SPCL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-12T08:51:07.830718",
-    "custom_last_price": 52.349998474121094,
+    "custom_last_alert": "2026-11-13T08:46:16.596662",
+    "custom_last_price": 50.25,
     "session_date": "2026-11-13",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_SSEGL_price": {
     "alerted": false,
@@ -350,10 +356,12 @@
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-12T08:50:56.811577",
-    "custom_last_price": 154.75,
+    "custom_last_alert": "2026-11-13T08:46:05.854263",
+    "custom_last_price": 144.9499969482422,
     "session_date": "2026-11-13",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
@@ -8510,6 +8518,24 @@
     "day_low": 2302.0,
     "baseline_rsi": 63.10160560764846,
     "mcap_cr": 26542.85825361094,
+    "exchange": "NSE"
+  },
+  "EDELWEISS": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T14:01:40",
+    "day_high": 135.0,
+    "day_low": 128.30999755859375,
+    "baseline_rsi": 56.619975275127096,
+    "mcap_cr": 12526.524610468296,
+    "exchange": "NSE"
+  },
+  "ORIENTBELL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T14:06:42",
+    "day_high": 439.20001220703125,
+    "day_low": 382.3500061035156,
+    "baseline_rsi": 63.80465375998964,
+    "mcap_cr": 624.6826586,
     "exchange": "NSE"
   }
 }
