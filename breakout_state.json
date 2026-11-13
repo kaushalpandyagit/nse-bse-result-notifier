@@ -8227,5 +8227,14 @@
     "baseline_rsi": 61.21029945047614,
     "mcap_cr": 108.8516796,
     "exchange": "NSE"
+  },
+  "PARKHOSPS": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T11:17:54",
+    "day_high": 260.8999938964844,
+    "day_low": 239.11000061035156,
+    "baseline_rsi": 47.24148328252953,
+    "mcap_cr": 10374.979245485161,
+    "exchange": "NSE"
   }
 }

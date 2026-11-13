@@ -12882,7 +12882,9 @@
       "dtl_touches": null,
       "dtl_floor": 511.6000061035156,
       "dtl_floor_touches": 3,
-      "rs_rank": 60.5
+      "rs_rank": 60.5,
+      "session_date": "2026-11-13",
+      "alert_slots": []
     },
     "MGL": {
       "sma50": 1065.614002685547,
@@ -16942,7 +16944,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 30.9,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T06:02:45.849206",
+      "mtf_last_price": 1335.0
     },
     "SAGILITY": {
       "sma50": 44.64980018615723,
