@@ -8245,5 +8245,32 @@
     "baseline_rsi": 53.4751671092777,
     "mcap_cr": 124.87466629402313,
     "exchange": "NSE"
+  },
+  "BFINVEST": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T11:51:58",
+    "day_high": 443.95001220703125,
+    "day_low": 425.04998779296875,
+    "baseline_rsi": 64.67605639238077,
+    "mcap_cr": 1652.1021870704956,
+    "exchange": "NSE"
+  },
+  "MVGJL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T11:51:25",
+    "day_high": 193.75,
+    "day_low": 179.0,
+    "baseline_rsi": 50.084701198482044,
+    "mcap_cr": 930.8368237703552,
+    "exchange": "NSE"
+  },
+  "XTGLOBAL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T11:49:21",
+    "day_high": 29.600000381469727,
+    "day_low": 28.850000381469727,
+    "baseline_rsi": 62.274857825677906,
+    "mcap_cr": 387.8857558832827,
+    "exchange": "NSE"
   }
 }
