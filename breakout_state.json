@@ -8537,5 +8537,41 @@
     "baseline_rsi": 63.80465375998964,
     "mcap_cr": 624.6826586,
     "exchange": "NSE"
+  },
+  "GRASIM": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T14:20:50",
+    "day_high": 3125.0,
+    "day_low": 3053.10009765625,
+    "baseline_rsi": 51.32813724575384,
+    "mcap_cr": 208234.834134,
+    "exchange": "NSE"
+  },
+  "KPEL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T14:23:30",
+    "day_high": 207.92999267578125,
+    "day_low": 188.0,
+    "baseline_rsi": 49.59829118867856,
+    "mcap_cr": 1278.9433353979325,
+    "exchange": "NSE"
+  },
+  "KSR": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T14:28:19",
+    "day_high": 34.45000076293945,
+    "day_low": 32.209999084472656,
+    "baseline_rsi": 44.005309033392116,
+    "mcap_cr": 61.071362544704435,
+    "exchange": "NSE"
+  },
+  "NATCOPHARM": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T14:15:07",
+    "day_high": 816.9500122070312,
+    "day_low": 780.0,
+    "baseline_rsi": 49.87069482198922,
+    "mcap_cr": 15716.976553702832,
+    "exchange": "NSE"
   }
 }
