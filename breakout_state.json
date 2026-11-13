@@ -8682,5 +8682,32 @@
     "baseline_rsi": 59.4570729752802,
     "mcap_cr": 123.31408570623398,
     "exchange": "NSE"
+  },
+  "CMLL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T15:29:59",
+    "day_high": 534.5,
+    "day_low": 517.0,
+    "baseline_rsi": 47.61422666610683,
+    "mcap_cr": 3412.615977,
+    "exchange": "NSE"
+  },
+  "MANOMAY": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T15:24:41",
+    "day_high": 261.8999938964844,
+    "day_low": 257.2699890136719,
+    "baseline_rsi": 70.43102602770416,
+    "mcap_cr": 471.0719835,
+    "exchange": "NSE"
+  },
+  "WEIZMANIND": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-12T17:10:11",
+    "day_high": 68.66999816894531,
+    "day_low": 68.6500015258789,
+    "baseline_rsi": 47.294947805309114,
+    "mcap_cr": 106.39627884699097,
+    "exchange": "NSE"
   }
 }
