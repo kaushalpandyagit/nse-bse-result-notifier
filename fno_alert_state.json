@@ -1070,9 +1070,9 @@
     "fno_low_breach_last_price": 562.6500244140625
   },
   "GPTHEALTH": {
-    "trigger_date": "2026-11-06",
-    "ref_high": 151.49,
-    "ref_low": 142.53,
+    "trigger_date": "2026-11-13",
+    "ref_high": 150.88,
+    "ref_low": 143.05,
     "status": "Active"
   },
   "NTCIND": {
@@ -1268,16 +1268,10 @@
     "fno_high_breach_last_price": 12.6899995803833
   },
   "ELPROINTL": {
-    "trigger_date": "2026-11-12",
-    "ref_high": 178.3,
-    "ref_low": 175.38,
-    "status": "Breached High",
-    "session_date": "2026-11-13",
-    "alert_slots": [
-      "H2"
-    ],
-    "fno_high_breach_last_alert": "2026-11-13T07:30:15.177629",
-    "fno_high_breach_last_price": 178.5
+    "trigger_date": "2026-11-13",
+    "ref_high": 178.95,
+    "ref_low": 176.0,
+    "status": "Active"
   },
   "INDTERRAIN": {
     "trigger_date": "2026-11-12",
@@ -1338,5 +1332,53 @@
     ],
     "fno_high_breach_last_alert": "2026-11-13T04:46:31.157431",
     "fno_high_breach_last_price": 62.95000076293945
+  },
+  "SUTLEJTEX": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 41.87,
+    "ref_low": 35.55,
+    "status": "Active"
+  },
+  "PIONEEREMB": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 21.39,
+    "ref_low": 19.4,
+    "status": "Active"
+  },
+  "CLSEL": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 322.4,
+    "ref_low": 297.55,
+    "status": "Active"
+  },
+  "ARTNIRMAN": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 38.98,
+    "ref_low": 36.51,
+    "status": "Active"
+  },
+  "IIFLCAPS": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 360.95,
+    "ref_low": 351.5,
+    "status": "Active"
+  },
+  "PARKHOSPS": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 260.9,
+    "ref_low": 232.0,
+    "status": "Active"
+  },
+  "NSLNISP": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 42.48,
+    "ref_low": 40.2,
+    "status": "Active"
+  },
+  "JKIL": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 462.95,
+    "ref_low": 420.0,
+    "status": "Active"
   }
 }
