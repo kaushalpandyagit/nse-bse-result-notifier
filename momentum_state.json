@@ -21990,7 +21990,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 23.8,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "ema50_pullback_last_alert": "2026-11-13T08:31:18.237032",
+      "ema50_pullback_last_price": 527.9500122070312
     },
     "WAAREERTL": {
       "sma50": 789.5759997558594,

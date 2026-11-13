@@ -1037,7 +1037,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 6801.0,
     "ref_low": 6294.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-13T08:30:01.535338",
+    "fno_low_breach_last_price": 6187.5
   },
   "MPHASIS": {
     "trigger_date": "2026-11-06",

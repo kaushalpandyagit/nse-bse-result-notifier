@@ -8466,5 +8466,50 @@
     "baseline_rsi": 18.209417075881575,
     "mcap_cr": 304.960891281435,
     "exchange": "NSE"
+  },
+  "BBTC": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:49:32",
+    "day_high": 1321.699951171875,
+    "day_low": 1264.199951171875,
+    "baseline_rsi": 54.478630066168044,
+    "mcap_cr": 9020.809121341552,
+    "exchange": "NSE"
+  },
+  "JKIL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:51:55",
+    "day_high": 444.95001220703125,
+    "day_low": 423.25,
+    "baseline_rsi": 54.32315207804769,
+    "mcap_cr": 3336.8488146,
+    "exchange": "NSE"
+  },
+  "MUNJALSHOW": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:53:56",
+    "day_high": 138.10000610351562,
+    "day_low": 126.30000305175781,
+    "baseline_rsi": 71.90916595569753,
+    "mcap_cr": 546.3716974411011,
+    "exchange": "NSE"
+  },
+  "USHAMART": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:46:47",
+    "day_high": 491.8500061035156,
+    "day_low": 481.45001220703125,
+    "baseline_rsi": 51.496953567456785,
+    "mcap_cr": 14792.343155032653,
+    "exchange": "NSE"
+  },
+  "ZFCVINDIA": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:45:45",
+    "day_high": 2422.0,
+    "day_low": 2302.0,
+    "baseline_rsi": 63.10160560764846,
+    "mcap_cr": 26542.85825361094,
+    "exchange": "NSE"
   }
 }
