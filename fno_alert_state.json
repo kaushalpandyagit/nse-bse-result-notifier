@@ -1283,7 +1283,13 @@
     "trigger_date": "2026-11-12",
     "ref_high": 46.9,
     "ref_low": 43.3,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-13T05:46:31.371105",
+    "fno_low_breach_last_price": 43.20000076293945
   },
   "VIPIND": {
     "trigger_date": "2026-11-12",
