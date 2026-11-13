@@ -6163,10 +6163,11 @@
       "rs_rank": 65.2,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-13T03:50:56.561926",
-      "mtf_last_price": 576.75
+      "mtf_last_alert": "2026-11-13T07:16:45.607054",
+      "mtf_last_price": 582.75
     },
     "ELLEN": {
       "sma50": 337.79099853515623,
@@ -9384,7 +9385,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 51.0,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-13T07:16:57.468873",
+      "near_high_17_22_last_price": 1633.300048828125
     },
     "IMFA": {
       "sma50": 1191.0899951171875,
@@ -22040,7 +22045,9 @@
       "dtl_touches": null,
       "dtl_floor": 1665.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 92.2
+      "rs_rank": 92.2,
+      "session_date": "2026-11-13",
+      "alert_slots": []
     },
     "WAKEFIT": {
       "sma50": 141.28699981689454,
