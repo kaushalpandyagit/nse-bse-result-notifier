@@ -430,5 +430,105 @@
     ],
     "em_low_breach_last_alert": "2026-11-13T04:01:39.976578",
     "em_low_breach_last_price": 108.0
+  },
+  "ASSAMENT": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 845.05,
+    "ref_low": 824.05,
+    "ref_close": 845.05,
+    "price_change_pct": -2.5,
+    "deliv_pct": 100.0,
+    "direction": "down",
+    "status": "Active"
+  },
+  "SAHLIBHFI": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 75.99,
+    "ref_low": 72.0,
+    "ref_close": 73.12,
+    "price_change_pct": -2.48,
+    "deliv_pct": 81.6,
+    "direction": "down",
+    "status": "Active"
+  },
+  "FOODSIN": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 46.77,
+    "ref_low": 45.25,
+    "ref_close": 45.61,
+    "price_change_pct": -2.48,
+    "deliv_pct": 63.3,
+    "direction": "down",
+    "status": "Active"
+  },
+  "BNALTD": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 416.0,
+    "ref_low": 405.0,
+    "ref_close": 415.0,
+    "price_change_pct": 2.47,
+    "deliv_pct": 99.6,
+    "direction": "up",
+    "status": "Active"
+  },
+  "SUNDROP": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 667.95,
+    "ref_low": 636.1,
+    "ref_close": 652.75,
+    "price_change_pct": 2.46,
+    "deliv_pct": 68.3,
+    "direction": "up",
+    "status": "Active"
+  },
+  "HDFCAMC": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 2753.9,
+    "ref_low": 2657.5,
+    "ref_close": 2663.0,
+    "price_change_pct": -2.45,
+    "deliv_pct": 63.0,
+    "direction": "down",
+    "status": "Active"
+  },
+  "HBPOR": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 59.74,
+    "ref_low": 56.51,
+    "ref_close": 58.51,
+    "price_change_pct": -2.45,
+    "deliv_pct": 80.8,
+    "direction": "down",
+    "status": "Active"
+  },
+  "SUVIDHAA": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 2.05,
+    "ref_low": 2.0,
+    "ref_close": 2.0,
+    "price_change_pct": -2.44,
+    "deliv_pct": 79.9,
+    "direction": "down",
+    "status": "Active"
+  },
+  "VIRINCHI": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 14.25,
+    "ref_low": 13.27,
+    "ref_close": 13.64,
+    "price_change_pct": -2.43,
+    "deliv_pct": 75.8,
+    "direction": "down",
+    "status": "Active"
+  },
+  "KLBRENG-B": {
+    "trigger_date": "2026-11-13",
+    "ref_high": 407.7,
+    "ref_low": 380.0,
+    "ref_close": 403.4,
+    "price_change_pct": 2.42,
+    "deliv_pct": 69.2,
+    "direction": "up",
+    "status": "Active"
   }
 }
