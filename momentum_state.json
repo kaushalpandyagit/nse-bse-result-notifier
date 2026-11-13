@@ -3861,10 +3861,13 @@
       "rs_rank": 71.9,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-13T03:50:45.303976",
-      "near_high_17_22_last_price": 3514.39990234375
+      "near_high_17_22_last_price": 3514.39990234375,
+      "resistance_last_alert": "2026-11-13T08:01:45.375308",
+      "resistance_last_price": 3575.0
     },
     "CEIGALL": {
       "sma50": 377.8110003662109,
@@ -4008,7 +4011,13 @@
       "dtl_touches": 4,
       "dtl_floor": 1066.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 91.8
+      "rs_rank": 91.8,
+      "session_date": "2026-11-13",
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-13T08:01:46.879239",
+      "near_high_17_22_last_price": 1291.699951171875
     },
     "CENTRALBK": {
       "sma50": 30.45579990386963,
@@ -7212,10 +7221,11 @@
       "rs_rank": 35.9,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-13T03:51:01.747700",
-      "near_high_17_22_last_price": 149.52000427246094
+      "near_high_17_22_last_alert": "2026-11-13T08:01:57.278055",
+      "near_high_17_22_last_price": 147.94000244140625
     },
     "GALLANTT": {
       "sma50": 550.6930010986329,
@@ -16000,7 +16010,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 6.5,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-13T08:02:25.253328",
+      "rectangle_bounce_last_price": 191.9199981689453
     },
     "RAMCOCEM": {
       "sma50": 824.605,
@@ -16491,10 +16505,13 @@
       "rs_rank": 58.7,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-13T04:17:33.650484",
-      "near_high_17_22_last_price": 230.1699981689453
+      "near_high_17_22_last_price": 230.1699981689453,
+      "mtf_last_alert": "2026-11-13T08:02:27.672819",
+      "mtf_last_price": 233.02999877929688
     },
     "RENUKA": {
       "sma50": 21.621199989318846,
@@ -17034,10 +17051,11 @@
       "rs_rank": 30.9,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-13T06:02:45.849206",
-      "mtf_last_price": 1335.0
+      "mtf_last_alert": "2026-11-13T08:02:30.265451",
+      "mtf_last_price": 1348.4000244140625
     },
     "SAGILITY": {
       "sma50": 44.64980018615723,
@@ -17729,10 +17747,13 @@
       "rs_rank": 63.3,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-13T06:17:04.479085",
-      "mtf_last_price": 593.75
+      "mtf_last_price": 593.75,
+      "ema50_pullback_last_alert": "2026-11-13T08:02:33.374805",
+      "ema50_pullback_last_price": 592.3499755859375
     },
     "SGMART": {
       "sma50": 786.6850024414063,
@@ -18413,10 +18434,13 @@
       "rs_rank": 75.6,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-13T04:31:36.181008",
-      "mtf_last_price": 529.25
+      "mtf_last_price": 529.25,
+      "near_high_17_22_last_alert": "2026-11-13T08:02:36.268232",
+      "near_high_17_22_last_price": 510.3500061035156
     },
     "SKYGOLD": {
       "sma50": 877.3290026855469,
@@ -21128,10 +21152,13 @@
       "rs_rank": 62.9,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-13T03:52:11.180463",
-      "mtf_last_price": 121.4800033569336
+      "mtf_last_price": 121.4800033569336,
+      "near_high_17_22_last_alert": "2026-11-13T08:02:45.560687",
+      "near_high_17_22_last_price": 122.0
     },
     "UJJIVANSFB": {
       "sma50": 62.45160011291504,
@@ -22694,10 +22721,13 @@
       "rs_rank": 43.4,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-13T05:17:21.593034",
-      "resistance_last_price": 2338.0
+      "resistance_last_price": 2338.0,
+      "mtf_last_alert": "2026-11-13T08:02:51.195170",
+      "mtf_last_price": 2352.60009765625
     },
     "ZYDUSWELL": {
       "sma50": 509.19900085449217,
