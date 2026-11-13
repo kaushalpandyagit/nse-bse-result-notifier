@@ -1175,7 +1175,13 @@
     "trigger_date": "2026-11-11",
     "ref_high": 947.0,
     "ref_low": 857.05,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-13T09:46:16.182100",
+    "fno_low_breach_last_price": 849.5999755859375
   },
   "POWERMECH": {
     "trigger_date": "2026-11-11",

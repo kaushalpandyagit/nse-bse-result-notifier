@@ -8628,5 +8628,59 @@
     "baseline_rsi": 44.21577137239492,
     "mcap_cr": 175.54414054080962,
     "exchange": "NSE"
+  },
+  "ELECTCAST": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T15:09:18",
+    "day_high": 71.5,
+    "day_low": 69.0199966430664,
+    "baseline_rsi": 48.94423476346459,
+    "mcap_cr": 4345.2195467354895,
+    "exchange": "NSE"
+  },
+  "GVKPIL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T15:05:57",
+    "day_high": 2.180000066757202,
+    "day_low": 2.140000104904175,
+    "baseline_rsi": 48.289176316283424,
+    "mcap_cr": 337.95104216657637,
+    "exchange": "NSE"
+  },
+  "KANORICHEM": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T15:03:47",
+    "day_high": 187.8000030517578,
+    "day_low": 177.5,
+    "baseline_rsi": 58.71379243139793,
+    "mcap_cr": 803.9573272,
+    "exchange": "NSE"
+  },
+  "MAHSEAMLES": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T15:00:28",
+    "day_high": 580.7999877929688,
+    "day_low": 526.2999877929688,
+    "baseline_rsi": 36.516131597432036,
+    "mcap_cr": 7248.0198678266115,
+    "exchange": "NSE"
+  },
+  "MSPL": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T15:02:51",
+    "day_high": 34.880001068115234,
+    "day_low": 32.52000045776367,
+    "baseline_rsi": 63.733479429592485,
+    "mcap_cr": 1182.7190246800494,
+    "exchange": "NSE"
+  },
+  "ROLLT": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T15:10:46",
+    "day_high": 4.929999828338623,
+    "day_low": 4.929999828338623,
+    "baseline_rsi": 59.4570729752802,
+    "mcap_cr": 123.31408570623398,
+    "exchange": "NSE"
   }
 }
