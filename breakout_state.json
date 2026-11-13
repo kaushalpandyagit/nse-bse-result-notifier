@@ -8322,5 +8322,41 @@
     "baseline_rsi": 63.25096252366911,
     "mcap_cr": 56.49589965120711,
     "exchange": "NSE"
+  },
+  "GILLETTE": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:02:45",
+    "day_high": 7540.0,
+    "day_low": 7361.0,
+    "baseline_rsi": 56.32523151758382,
+    "mcap_cr": 24083.7338847,
+    "exchange": "NSE"
+  },
+  "KHAICHEM": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:13:44",
+    "day_high": 54.0,
+    "day_low": 50.5,
+    "baseline_rsi": 69.86777686539526,
+    "mcap_cr": 513.0728827993775,
+    "exchange": "NSE"
+  },
+  "RAMAPHO": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:08:55",
+    "day_high": 128.0,
+    "day_low": 120.25,
+    "baseline_rsi": 68.17451396563493,
+    "mcap_cr": 444.8073640209198,
+    "exchange": "NSE"
+  },
+  "SUTLEJTEX": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T13:09:34",
+    "day_high": 41.869998931884766,
+    "day_low": 35.54999923706055,
+    "baseline_rsi": 68.94548380197796,
+    "mcap_cr": 664.071016,
+    "exchange": "NSE"
   }
 }

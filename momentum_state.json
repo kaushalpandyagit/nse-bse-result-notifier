@@ -784,10 +784,11 @@
       "rs_rank": 78.8,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-13T03:50:22.380762",
-      "near_high_17_22_last_price": 239.86000061035156
+      "near_high_17_22_last_alert": "2026-11-13T07:46:13.677080",
+      "near_high_17_22_last_price": 244.25999450683594
     },
     "AEROFLEX": {
       "sma50": 524.1000012207031,
@@ -836,10 +837,11 @@
       "rs_rank": 87.3,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-13T03:50:23.074354",
-      "near_high_17_22_last_price": 501.54998779296875
+      "near_high_17_22_last_alert": "2026-11-13T07:46:14.808551",
+      "near_high_17_22_last_price": 507.8500061035156
     },
     "AETHER": {
       "sma50": 1628.5259985351563,
@@ -1722,7 +1724,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 3.0,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-13T07:46:17.902935",
+      "liquidity_sweep_last_price": 405.04998779296875
     },
     "ASHOKA": {
       "sma50": 107.73919998168945,
@@ -12025,10 +12031,11 @@
       "rs_rank": 8.0,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-13T04:02:20.437672",
-      "mtf_last_price": 719.0499877929688
+      "mtf_last_alert": "2026-11-13T07:46:40.466074",
+      "mtf_last_price": 735.0
     },
     "KTKBANK": {
       "sma50": 324.97299926757813,
