@@ -14942,10 +14942,13 @@
       "rs_rank": 72.4,
       "session_date": "2026-11-13",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-13T03:51:39.035918",
-      "near_high_17_22_last_price": 5757.0
+      "near_high_17_22_last_price": 5757.0,
+      "mtf_last_alert": "2026-11-13T09:17:41.557135",
+      "mtf_last_price": 5800.0
     },
     "PGIL": {
       "sma50": 1241.6739990234375,
@@ -26496,7 +26499,12 @@
       "rsi_ema_20": 47.102,
       "rsi_ema_50": 49.6577,
       "rsi_ema_63": 50.6611,
-      "rsi_ema_200": 52.5503
+      "rsi_ema_200": 52.5503,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-13T09:18:22.409836",
+      "rsi_bounce_last_price": 90.08000183105469
     },
     "RCF": {
       "mcap_cr": 6003.469887363815,
@@ -26886,7 +26894,12 @@
       "rsi_ema_20": 46.8027,
       "rsi_ema_50": 49.7313,
       "rsi_ema_63": 50.745,
-      "rsi_ema_200": 54.2992
+      "rsi_ema_200": 54.2992,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-13T09:18:24.226858",
+      "rsi_bounce_last_price": 4297.5
     },
     "SHYAMMETL": {
       "mcap_cr": 36273.2230716,
