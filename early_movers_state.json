@@ -357,7 +357,13 @@
     "price_change_pct": -2.47,
     "deliv_pct": 86.2,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-13T03:47:08.044975",
+    "em_high_breach_last_price": 121.86000061035156
   },
   "JISLDVREQS": {
     "trigger_date": "2026-11-12",
@@ -367,7 +373,13 @@
     "price_change_pct": 2.47,
     "deliv_pct": 82.5,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-13T03:47:09.471511",
+    "em_low_breach_last_price": 18.350000381469727
   },
   "PSUBANKADD": {
     "trigger_date": "2026-11-12",

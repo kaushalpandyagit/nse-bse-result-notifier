@@ -535,13 +535,13 @@
     "trigger_date": "2026-11-02",
     "ref_high": 71.55,
     "ref_low": 57.28,
-    "status": "Active"
+    "status": "Expired"
   },
   "CAPILLARY": {
     "trigger_date": "2026-11-02",
     "ref_high": 555.6,
     "ref_low": 484.5,
-    "status": "Active"
+    "status": "Expired"
   },
   "BHARATGEAR": {
     "trigger_date": "2026-11-02",
@@ -595,7 +595,7 @@
     "trigger_date": "2026-11-02",
     "ref_high": 209.4,
     "ref_low": 185.0,
-    "status": "Active"
+    "status": "Expired"
   },
   "MASKINVEST": {
     "trigger_date": "2026-11-02",
@@ -1109,7 +1109,13 @@
     "trigger_date": "2026-11-12",
     "ref_high": 430.0,
     "ref_low": 418.5,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-13T03:46:54.345852",
+    "fno_low_breach_last_price": 409.95001220703125
   },
   "AURUS": {
     "trigger_date": "2026-11-10",
@@ -1241,7 +1247,13 @@
     "trigger_date": "2026-11-12",
     "ref_high": 32.94,
     "ref_low": 30.06,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-13T03:47:00.734346",
+    "fno_low_breach_last_price": 29.989999771118164
   },
   "MITCON": {
     "trigger_date": "2026-11-12",
@@ -1265,7 +1277,13 @@
     "trigger_date": "2026-11-12",
     "ref_high": 255.95,
     "ref_low": 244.3,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-13",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-13T03:47:04.350792",
+    "fno_low_breach_last_price": 243.4499969482422
   },
   "KANCOTEA": {
     "trigger_date": "2026-11-12",
