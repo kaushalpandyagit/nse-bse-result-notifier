@@ -2,11 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-13T03:46:29.858123",
-    "custom_last_price": 109.80000305175781,
+    "custom_last_alert": "2026-11-13T07:01:09.168430",
+    "custom_last_price": 107.8499984741211,
     "session_date": "2026-11-13",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_AERON_price": {
@@ -84,11 +85,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-13T03:46:34.851786",
-    "custom_last_price": 173.0,
+    "custom_last_alert": "2026-11-13T07:01:14.211428",
+    "custom_last_price": 170.0,
     "session_date": "2026-11-13",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KAYNES_rsi": {
@@ -114,11 +116,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-13T03:46:37.520830",
-    "custom_last_price": 56.0,
+    "custom_last_alert": "2026-11-13T07:01:16.815565",
+    "custom_last_price": 56.75,
     "session_date": "2026-11-13",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
@@ -234,11 +237,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-13T04:18:26.542235",
-    "spread_last_price": 3.5522339474502487,
+    "spread_last_alert": "2026-11-13T07:03:44.576020",
+    "spread_last_price": 3.731343283582089,
     "session_date": "2026-11-13",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_PRADPME": {
@@ -258,11 +262,12 @@
     ]
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-11-13T03:52:30.406521",
-    "spread_last_price": 5.263157894736842,
+    "spread_last_alert": "2026-11-13T07:03:29.640082",
+    "spread_last_price": 3.3922883118090987,
     "session_date": "2026-11-13",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALRAMCHIN": {
@@ -8289,6 +8294,15 @@
     "day_low": 641.4000244140625,
     "baseline_rsi": 65.04803246957945,
     "mcap_cr": 275.42025,
+    "exchange": "NSE"
+  },
+  "VENKEYS": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T12:28:33",
+    "day_high": 1614.0,
+    "day_low": 1530.9000244140625,
+    "baseline_rsi": 51.39562103871955,
+    "mcap_cr": 2271.1602411341796,
     "exchange": "NSE"
   }
 }
