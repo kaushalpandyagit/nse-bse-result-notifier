@@ -8272,5 +8272,23 @@
     "baseline_rsi": 62.274857825677906,
     "mcap_cr": 387.8857558832827,
     "exchange": "NSE"
+  },
+  "BBOX": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T12:09:10",
+    "day_high": 917.5,
+    "day_low": 872.0499877929688,
+    "baseline_rsi": 60.25868069282858,
+    "mcap_cr": 15950.18416745819,
+    "exchange": "NSE"
+  },
+  "SUNDRMBRAK": {
+    "result_date": "2026-11-13T00:00:00",
+    "filed_at": "2026-11-13T12:13:31",
+    "day_high": 700.0,
+    "day_low": 641.4000244140625,
+    "baseline_rsi": 65.04803246957945,
+    "mcap_cr": 275.42025,
+    "exchange": "NSE"
   }
 }

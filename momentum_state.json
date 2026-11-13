@@ -19450,7 +19450,13 @@
       "dtl_touches": null,
       "dtl_floor": 344.45001220703125,
       "dtl_floor_touches": 1,
-      "rs_rank": 38.0
+      "rs_rank": 38.0,
+      "session_date": "2026-11-13",
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-13T06:47:29.071857",
+      "resistance_last_price": 443.5
     },
     "SYRMA": {
       "sma50": 1599.3500024414063,
