@@ -573,7 +573,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 11.0,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "descending_wedge_last_alert": "2026-11-13T04:46:36.528797",
+      "descending_wedge_last_price": 444.1499938964844
     },
     "ACMESOLAR": {
       "sma50": 416.97499877929687,
@@ -4018,7 +4022,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 40.6,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-13T04:46:51.637281",
+      "near_high_17_22_last_price": 32.189998626708984
     },
     "CENTUM": {
       "sma50": 4188.582006835937,
@@ -5384,7 +5392,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 54.6,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-13T04:46:58.540408",
+      "mtf_last_price": 1253.0
     },
     "DEEPAKNTR": {
       "sma50": 1581.0100122070312,
@@ -6500,7 +6512,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 59.6,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-13T04:47:04.097831",
+      "resistance_last_price": 239.5
     },
     "EQUITASBNK": {
       "sma50": 66.87959968566895,
@@ -6694,7 +6710,9 @@
       "dtl_touches": 4,
       "dtl_floor": 141.60000610351562,
       "dtl_floor_touches": 2,
-      "rs_rank": 67.4
+      "rs_rank": 67.4,
+      "session_date": "2026-11-13",
+      "alert_slots": []
     },
     "FIEMIND": {
       "sma50": 1880.6919921875,
@@ -12946,7 +12964,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 46.2,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-13T04:47:32.097104",
+      "ema50_pullback_last_price": 406.25
     },
     "MINDACORP": {
       "sma50": 669.5449963378907,
@@ -17100,7 +17122,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 16.0,
       "session_date": "2026-11-13",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-13T04:47:49.519693",
+      "resistance_last_price": 183.44000244140625
     },
     "SANSERA": {
       "sma50": 4198.956005859375,
