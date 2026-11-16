@@ -1307,7 +1307,13 @@
     "trigger_date": "2026-11-13",
     "ref_high": 178.95,
     "ref_low": 176.0,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-16T06:01:46.355639",
+    "fno_high_breach_last_price": 179.22999572753906
   },
   "INDTERRAIN": {
     "trigger_date": "2026-11-12",
@@ -1379,7 +1385,13 @@
     "trigger_date": "2026-11-13",
     "ref_high": 21.39,
     "ref_low": 19.4,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T06:01:49.287289",
+    "fno_low_breach_last_price": 19.399999618530273
   },
   "CLSEL": {
     "trigger_date": "2026-11-13",
