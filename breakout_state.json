@@ -285,12 +285,11 @@
     ]
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-11-12T07:04:12.843286",
-    "spread_last_price": 2.9723991507431,
-    "session_date": "2026-11-12",
+    "spread_last_alert": "2026-11-16T05:47:57.587790",
+    "spread_last_price": 2.6321077725195825,
+    "session_date": "2026-11-16",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "arb_BALAMINES": {

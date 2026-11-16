@@ -867,7 +867,9 @@
       "dtl_touches": null,
       "dtl_floor": 1305.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 92.7
+      "rs_rank": 92.7,
+      "session_date": "2026-11-16",
+      "alert_slots": []
     },
     "AFCONS": {
       "sma50": 244.0447998046875,
@@ -7717,7 +7719,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 11.0,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T05:46:57.483374",
+      "mtf_last_price": 220.33999633789062
     },
     "GPPL": {
       "sma50": 164.58180023193358,
@@ -26316,7 +26322,12 @@
       "rsi_ema_200": 51.4615,
       "ag": 4.289803,
       "al": 3.833772,
-      "last_close": 564.2
+      "last_close": 564.2,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:47:47.745211",
+      "rsi_bounce_last_price": 569.3499755859375
     },
     "MGL": {
       "mcap_cr": 11334.75014025,
@@ -32966,7 +32977,12 @@
       "ag": 1.370227,
       "al": 1.297927,
       "last_close": 131.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:47:49.826199",
+      "rsi_bounce_last_price": 133.69000244140625
     },
     "PROZONER": {
       "mcap_cr": 838.5,
