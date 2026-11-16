@@ -9153,7 +9153,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 37.1,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-16T05:30:39.439334",
+      "resistance_last_price": 144.35000610351562
     },
     "IIFL": {
       "sma50": 599.6700048828125,
@@ -15213,7 +15217,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 49.8,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T05:30:53.891696",
+      "mtf_last_price": 2413.199951171875
     },
     "PRAJIND": {
       "sma50": 292.3735995483398,
@@ -24639,7 +24647,12 @@
       "rsi_ema_200": 54.3687,
       "ag": 15.724023,
       "al": 14.513021,
-      "last_close": 1518.0
+      "last_close": 1518.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:31:19.454687",
+      "rsi_bounce_last_price": 1520.0999755859375
     },
     "GILLETTE": {
       "mcap_cr": 23624.282325,
@@ -31033,7 +31046,12 @@
       "ag": 4.011438,
       "al": 5.748071,
       "last_close": 541.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:31:21.554842",
+      "rsi_bounce_last_price": 542.6500244140625
     },
     "HTMEDIA": {
       "mcap_cr": 524.0,
@@ -31482,7 +31500,12 @@
       "ag": 2.9321,
       "al": 2.499578,
       "last_close": 251.88,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:31:22.802984",
+      "rsi_bounce_last_price": 254.80999755859375
     },
     "KAPSTON": {
       "mcap_cr": 1592.5,
@@ -32727,7 +32750,12 @@
       "ag": 4.721971,
       "al": 5.97702,
       "last_close": 663.35,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:31:24.387409",
+      "rsi_bounce_last_price": 667.3499755859375
     },
     "PASUPTAC": {
       "mcap_cr": 650.6,
