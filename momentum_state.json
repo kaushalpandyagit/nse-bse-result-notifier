@@ -2132,7 +2132,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 40.5,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T09:19:32.790926",
+      "near_high_17_22_last_price": 1847.800048828125
     },
     "AZAD": {
       "sma50": 2713.4759912109375,
@@ -11586,10 +11590,11 @@
       "rs_rank": 18.3,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-16T04:03:23.746207",
-      "mtf_last_price": 129.69000244140625
+      "mtf_last_alert": "2026-11-16T09:21:29.502146",
+      "mtf_last_price": 131.0
     },
     "KMEW": {
       "sma50": 621.0836022949219,
@@ -21758,10 +21763,13 @@
       "rs_rank": 76.1,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-16T04:04:27.319227",
-      "near_high_17_22_last_price": 772.4000244140625
+      "near_high_17_22_last_price": 772.4000244140625,
+      "mtf_last_alert": "2026-11-16T09:23:38.959515",
+      "mtf_last_price": 779.25
     },
     "VOLTAMP": {
       "sma50": 10461.6,
@@ -23759,7 +23767,12 @@
       "rsi_ema_200": 51.9727,
       "ag": 0.717387,
       "al": 0.920046,
-      "last_close": 190.13
+      "last_close": 190.13,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T09:24:35.498012",
+      "rsi_bounce_last_price": 190.4600067138672
     },
     "CCL": {
       "mcap_cr": 12960.392014453711,
@@ -23824,7 +23837,12 @@
       "rsi_ema_200": 44.7609,
       "ag": 4.152382,
       "al": 3.437302,
-      "last_close": 364.85
+      "last_close": 364.85,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T09:24:37.707881",
+      "rsi_bounce_last_price": 365.0
     },
     "CEMPRO": {
       "mcap_cr": 24013.713561978624,
@@ -32717,7 +32735,12 @@
       "ag": 2.064155,
       "al": 3.447331,
       "last_close": 153.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T09:24:45.386196",
+      "rsi_bounce_last_price": 157.0
     },
     "OMAXAUTO": {
       "mcap_cr": 434.0,
