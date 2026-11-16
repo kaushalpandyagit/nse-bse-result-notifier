@@ -7770,10 +7770,13 @@
       "rs_rank": 11.0,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-16T05:46:57.483374",
-      "mtf_last_price": 220.33999633789062
+      "mtf_last_price": 220.33999633789062,
+      "resistance_last_alert": "2026-11-16T07:17:12.658237",
+      "resistance_last_price": 220.52000427246094
     },
     "GPPL": {
       "sma50": 164.58180023193358,
@@ -14123,7 +14126,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 60.1,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "resistance_last_alert": "2026-11-16T07:17:37.594717",
+      "resistance_last_price": 346.79998779296875
     },
     "OLAELEC": {
       "sma50": 36.09212921142578,
@@ -15251,7 +15258,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 69.2,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "resistance_last_alert": "2026-11-16T07:17:42.853073",
+      "resistance_last_price": 1689.0
     },
     "POWERMECH": {
       "sma50": 2356.08,
@@ -17139,10 +17150,13 @@
       "rs_rank": 14.7,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-16T04:31:31.627617",
-      "resistance_last_price": 184.5500030517578
+      "resistance_last_price": 184.5500030517578,
+      "mtf_last_alert": "2026-11-16T07:17:51.041422",
+      "mtf_last_price": 184.27999877929688
     },
     "SANSERA": {
       "sma50": 4229.62,
@@ -30968,7 +30982,12 @@
       "ag": 2.25772,
       "al": 2.767232,
       "last_close": 276.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T07:18:28.886309",
+      "rsi_bounce_last_price": 280.04998779296875
     },
     "GRMOVER": {
       "mcap_cr": 1875.0,
@@ -32400,7 +32419,12 @@
       "ag": 3.208271,
       "al": 4.00191,
       "last_close": 497.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T07:18:30.540972",
+      "rsi_bounce_last_price": 498.8999938964844
     },
     "MOREPENLAB": {
       "mcap_cr": 5263.1,
