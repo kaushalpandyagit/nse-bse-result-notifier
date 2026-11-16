@@ -619,7 +619,9 @@
       "dtl_touches": 3,
       "dtl_floor": 344.70001220703125,
       "dtl_floor_touches": 1,
-      "rs_rank": 90.7
+      "rs_rank": 90.7,
+      "session_date": "2026-11-16",
+      "alert_slots": []
     },
     "ADVENZYMES": {
       "sma50": 279.0940002441406,
@@ -14265,7 +14267,13 @@
       "dtl_touches": 3,
       "dtl_floor": 65.0,
       "dtl_floor_touches": 2,
-      "rs_rank": 95.9
+      "rs_rank": 95.9,
+      "session_date": "2026-11-16",
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T04:47:01.788253",
+      "near_high_17_22_last_price": 75.43000030517578
     },
     "PARADEEP": {
       "sma50": 147.82340026855468,
@@ -20499,7 +20507,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 44.0,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:47:19.152496",
+      "mtf_last_price": 740.0499877929688
     },
     "TMB": {
       "sma50": 867.7999975585938,
@@ -26638,7 +26650,12 @@
       "rsi_ema_200": 49.6221,
       "ag": 2.655329,
       "al": 2.265367,
-      "last_close": 341.4
+      "last_close": 341.4,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:47:34.624624",
+      "rsi_bounce_last_price": 343.1000061035156
     },
     "OLAELEC": {
       "mcap_cr": 16464.422190699406,
@@ -33174,7 +33191,12 @@
       "ag": 28.973579,
       "al": 40.211672,
       "last_close": 2551.3,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:47:37.357171",
+      "rsi_bounce_last_price": 2577.60009765625
     },
     "RPTECH": {
       "mcap_cr": 5217.0,

@@ -10724,5 +10724,32 @@
     "baseline_rsi": 44.349413858058384,
     "mcap_cr": 80.024816,
     "exchange": "NSE"
+  },
+  "AGASTYAEN": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-14T18:41:58",
+    "day_high": 49.88999938964844,
+    "day_low": 49.88999938964844,
+    "baseline_rsi": null,
+    "mcap_cr": 129.22283136909485,
+    "exchange": "NSE"
+  },
+  "AHLWEST": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-13T19:42:20",
+    "day_high": 540.0,
+    "day_low": 540.0,
+    "baseline_rsi": 52.45839522015038,
+    "mcap_cr": 629.16534,
+    "exchange": "NSE"
+  },
+  "UNIVPHOTO": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-13T19:13:19",
+    "day_high": 448.04998779296875,
+    "day_low": 448.04998779296875,
+    "baseline_rsi": 44.61766275872194,
+    "mcap_cr": 490.4625788574463,
+    "exchange": "NSE"
   }
 }

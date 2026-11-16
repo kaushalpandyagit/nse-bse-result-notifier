@@ -483,7 +483,13 @@
     "price_change_pct": -2.48,
     "deliv_pct": 63.3,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-16T04:46:26.662356",
+    "em_low_breach_last_price": 45.04999923706055
   },
   "BNALTD": {
     "trigger_date": "2026-11-13",
