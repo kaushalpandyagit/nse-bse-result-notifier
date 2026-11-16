@@ -507,7 +507,13 @@
     "price_change_pct": -2.45,
     "deliv_pct": 63.0,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-16T04:02:04.534142",
+    "em_low_breach_last_price": 2649.89990234375
   },
   "HBPOR": {
     "trigger_date": "2026-11-13",
@@ -527,7 +533,13 @@
     "price_change_pct": -2.44,
     "deliv_pct": 79.9,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-16T04:02:06.212508",
+    "em_low_breach_last_price": 1.9900000095367432
   },
   "VIRINCHI": {
     "trigger_date": "2026-11-13",

@@ -1169,7 +1169,13 @@
     "trigger_date": "2026-11-10",
     "ref_high": 53.62,
     "ref_low": 50.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T04:01:52.499896",
+    "fno_low_breach_last_price": 49.959999084472656
   },
   "AMBIKCO": {
     "trigger_date": "2026-11-11",
