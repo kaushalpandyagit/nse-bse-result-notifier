@@ -181,7 +181,13 @@
     "price_change_pct": 2.48,
     "deliv_pct": 60.1,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-16T03:47:47.292628",
+    "em_low_breach_last_price": 645.8499755859375
   },
   "HAWKINCOOK": {
     "trigger_date": "2026-11-11",
@@ -303,7 +309,13 @@
     "price_change_pct": -2.49,
     "deliv_pct": 82.3,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-16T03:47:48.496799",
+    "em_low_breach_last_price": 18.31999969482422
   },
   "GOLD360": {
     "trigger_date": "2026-11-12",
@@ -449,7 +461,13 @@
     "price_change_pct": -2.48,
     "deliv_pct": 81.6,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-16T03:47:50.144113",
+    "em_high_breach_last_price": 76.0
   },
   "FOODSIN": {
     "trigger_date": "2026-11-13",

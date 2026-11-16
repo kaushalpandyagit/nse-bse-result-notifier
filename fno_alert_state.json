@@ -1073,7 +1073,13 @@
     "trigger_date": "2026-11-13",
     "ref_high": 150.88,
     "ref_low": 143.05,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T03:47:33.414117",
+    "fno_low_breach_last_price": 142.0
   },
   "NTCIND": {
     "trigger_date": "2026-11-10",
@@ -1205,7 +1211,13 @@
     "trigger_date": "2026-11-11",
     "ref_high": 475.0,
     "ref_low": 460.25,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T03:47:37.734558",
+    "fno_low_breach_last_price": 456.8500061035156
   },
   "SVPGLOB": {
     "trigger_date": "2026-11-11",
@@ -1349,7 +1361,13 @@
     "trigger_date": "2026-11-13",
     "ref_high": 322.4,
     "ref_low": 297.55,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T03:47:41.941366",
+    "fno_low_breach_last_price": 296.20001220703125
   },
   "ARTNIRMAN": {
     "trigger_date": "2026-11-13",
@@ -1373,7 +1391,13 @@
     "trigger_date": "2026-11-13",
     "ref_high": 42.48,
     "ref_low": 40.2,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T03:47:44.561932",
+    "fno_low_breach_last_price": 39.84000015258789
   },
   "JKIL": {
     "trigger_date": "2026-11-13",
