@@ -13995,10 +13995,11 @@
       "rs_rank": 49.1,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:03:38.887616",
-      "near_high_17_22_last_price": 78.44999694824219
+      "near_high_17_22_last_alert": "2026-11-16T08:47:38.571132",
+      "near_high_17_22_last_price": 77.66000366210938
     },
     "NORTHARC": {
       "sma50": 287.0020001220703,
@@ -21059,10 +21060,11 @@
       "rs_rank": 64.9,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:04:22.842345",
-      "near_high_17_22_last_price": 61.25
+      "near_high_17_22_last_alert": "2026-11-16T08:48:06.896856",
+      "near_high_17_22_last_price": 60.5099983215332
     },
     "UNIMECH": {
       "sma50": 1681.022001953125,

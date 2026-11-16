@@ -171,7 +171,13 @@
     "price_change_pct": 2.49,
     "deliv_pct": 80.9,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H2"
+    ],
+    "em_low_breach_last_alert": "2026-11-16T08:46:41.924267",
+    "em_low_breach_last_price": 23.5
   },
   "EIDPARRY": {
     "trigger_date": "2026-11-11",
