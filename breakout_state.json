@@ -306,11 +306,11 @@
     "spread_last_price": 3.734554697572893
   },
   "arb_RPSGVENT": {
-    "spread_last_alert": "2026-11-05T07:27:15.515467",
-    "spread_last_price": 3.7162162162162162,
-    "session_date": "2026-11-05",
+    "spread_last_alert": "2026-11-16T05:03:23.405684",
+    "spread_last_price": 4.18549491165651,
+    "session_date": "2026-11-16",
     "alert_slots": [
-      "H2"
+      "H1"
     ]
   },
   "arb_ALKYLAMINE": {
@@ -414,9 +414,9 @@
     ]
   },
   "arb_KICL": {
-    "spread_last_alert": "2026-11-13T03:52:50.275329",
-    "spread_last_price": 4.267413535814607,
-    "session_date": "2026-11-13",
+    "spread_last_alert": "2026-11-16T05:03:07.043525",
+    "spread_last_price": 4.377104377104377,
+    "session_date": "2026-11-16",
     "alert_slots": [
       "H1"
     ]

@@ -2597,7 +2597,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 74.8,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T05:01:49.577915",
+      "mtf_last_price": 213.41000366210938
     },
     "BELRISE": {
       "sma50": 227.92719940185546,
@@ -5563,7 +5567,9 @@
       "dtl_touches": null,
       "dtl_floor": 10057.0,
       "dtl_floor_touches": 3,
-      "rs_rank": 76.9
+      "rs_rank": 76.9,
+      "session_date": "2026-11-16",
+      "alert_slots": []
     },
     "E2E": {
       "sma50": 610.7070013427734,
@@ -15343,7 +15349,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 82.5,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T05:02:26.672312",
+      "near_high_17_22_last_price": 673.0499877929688
     },
     "PRIVISCL": {
       "sma50": 3422.906005859375,
@@ -23127,7 +23137,12 @@
       "rsi_ema_200": 44.1722,
       "ag": 0.818868,
       "al": 1.47811,
-      "last_close": 163.99
+      "last_close": 163.99,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:02:58.090750",
+      "rsi_bounce_last_price": 164.60000610351562
     },
     "AXISCADES": {
       "mcap_cr": 7823.5912131,
@@ -24570,7 +24585,12 @@
       "rsi_ema_200": 50.4973,
       "ag": 1.354319,
       "al": 1.913928,
-      "last_close": 146.57
+      "last_close": 146.57,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:02:59.365626",
+      "rsi_bounce_last_price": 147.77999877929688
     },
     "GALLANTT": {
       "mcap_cr": 12825.288336942596,
@@ -29825,7 +29845,12 @@
       "ag": 0.592794,
       "al": 0.68228,
       "last_close": 52.91,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:03:01.125808",
+      "rsi_bounce_last_price": 54.099998474121094
     },
     "BLSE": {
       "mcap_cr": 2672.0,
@@ -32022,7 +32047,12 @@
       "ag": 2.215396,
       "al": 2.319799,
       "last_close": 150.36,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:03:02.923811",
+      "rsi_bounce_last_price": 153.0
     },
     "MAXIND": {
       "mcap_cr": 850.4,
@@ -32574,7 +32604,12 @@
       "ag": 4.670446,
       "al": 4.100721,
       "last_close": 555.55,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:03:04.270453",
+      "rsi_bounce_last_price": 556.4000244140625
     },
     "OSWALGREEN": {
       "mcap_cr": 487.9,
