@@ -10237,7 +10237,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 25.0,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T06:30:35.897634",
+      "near_high_17_22_last_price": 91.5
     },
     "JBMA": {
       "sma50": 549.3539959716796,
@@ -21515,7 +21519,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 19.6,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-16T06:31:02.822907",
+      "liquidity_sweep_last_price": 237.0500030517578
     },
     "VIYASH": {
       "sma50": 238.51120056152342,
