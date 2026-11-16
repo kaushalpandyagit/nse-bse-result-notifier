@@ -3770,10 +3770,11 @@
       "rs_rank": 66.2,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:02:35.331552",
-      "near_high_17_22_last_price": 3521.800048828125
+      "near_high_17_22_last_alert": "2026-11-16T07:46:41.723139",
+      "near_high_17_22_last_price": 3484.699951171875
     },
     "CEIGALL": {
       "sma50": 379.98900024414064,
@@ -16960,10 +16961,11 @@
       "rs_rank": 40.1,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-16T04:03:57.563642",
-      "mtf_last_price": 1357.5999755859375
+      "mtf_last_alert": "2026-11-16T07:47:21.010263",
+      "mtf_last_price": 1377.699951171875
     },
     "SAGILITY": {
       "sma50": 44.53360015869141,
@@ -18216,10 +18218,11 @@
       "rs_rank": 63.4,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:04:02.874799",
-      "near_high_17_22_last_price": 2082.60009765625
+      "near_high_17_22_last_alert": "2026-11-16T07:47:25.424942",
+      "near_high_17_22_last_price": 2109.89990234375
     },
     "SJVN": {
       "sma50": 58.50840011596679,
