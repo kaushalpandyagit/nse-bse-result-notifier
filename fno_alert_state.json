@@ -1322,16 +1322,10 @@
     "fno_high_breach_last_price": 12.6899995803833
   },
   "ELPROINTL": {
-    "trigger_date": "2026-11-13",
-    "ref_high": 178.95,
-    "ref_low": 176.0,
-    "status": "Breached High",
-    "session_date": "2026-11-16",
-    "alert_slots": [
-      "H1"
-    ],
-    "fno_high_breach_last_alert": "2026-11-16T06:01:46.355639",
-    "fno_high_breach_last_price": 179.22999572753906
+    "trigger_date": "2026-11-16",
+    "ref_high": 180.0,
+    "ref_low": 175.0,
+    "status": "Active"
   },
   "INDTERRAIN": {
     "trigger_date": "2026-11-12",
@@ -1488,5 +1482,59 @@
     ],
     "fno_low_breach_last_alert": "2026-11-16T04:16:54.290670",
     "fno_low_breach_last_price": 1.350000023841858
+  },
+  "RPSGVENT": {
+    "trigger_date": "2026-11-16",
+    "ref_high": 949.0,
+    "ref_low": 832.0,
+    "status": "Active"
+  },
+  "SHIVAMILLS": {
+    "trigger_date": "2026-11-16",
+    "ref_high": 70.5,
+    "ref_low": 64.0,
+    "status": "Active"
+  },
+  "THAKDEV": {
+    "trigger_date": "2026-11-16",
+    "ref_high": 143.3,
+    "ref_low": 137.0,
+    "status": "Active"
+  },
+  "BNALTD": {
+    "trigger_date": "2026-11-16",
+    "ref_high": 429.8,
+    "ref_low": 420.0,
+    "status": "Active"
+  },
+  "PANACEABIO": {
+    "trigger_date": "2026-11-16",
+    "ref_high": 383.0,
+    "ref_low": 349.15,
+    "status": "Active"
+  },
+  "REGAAL": {
+    "trigger_date": "2026-11-16",
+    "ref_high": 102.0,
+    "ref_low": 93.15,
+    "status": "Active"
+  },
+  "PRIMESECU": {
+    "trigger_date": "2026-11-16",
+    "ref_high": 318.95,
+    "ref_low": 295.5,
+    "status": "Active"
+  },
+  "SHRADDHA": {
+    "trigger_date": "2026-11-16",
+    "ref_high": 173.67,
+    "ref_low": 164.53,
+    "status": "Active"
+  },
+  "BLSE": {
+    "trigger_date": "2026-11-16",
+    "ref_high": 144.7,
+    "ref_low": 140.0,
+    "status": "Active"
   }
 }
