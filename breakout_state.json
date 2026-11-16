@@ -89,11 +89,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-16T04:16:28.425359",
-    "custom_last_price": 168.2100067138672,
+    "custom_last_alert": "2026-11-16T07:30:13.283281",
+    "custom_last_price": 166.0500030517578,
     "session_date": "2026-11-16",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KAYNES_rsi": {
@@ -398,11 +399,12 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-16T03:51:15.055297",
-    "spread_last_price": 2.858822093290441,
+    "spread_last_alert": "2026-11-16T07:32:37.106681",
+    "spread_last_price": 3.5294117647058822,
     "session_date": "2026-11-16",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_AVL": {

@@ -769,10 +769,11 @@
       "rs_rank": 76.3,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:02:10.484696",
-      "near_high_17_22_last_price": 240.2100067138672
+      "near_high_17_22_last_alert": "2026-11-16T07:30:38.983206",
+      "near_high_17_22_last_price": 237.66000366210938
     },
     "AEROFLEX": {
       "sma50": 523.7400006103516,
@@ -3912,7 +3913,13 @@
       "dtl_touches": 4,
       "dtl_floor": 1066.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 89.4
+      "rs_rank": 89.4,
+      "session_date": "2026-11-16",
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T07:30:52.196719",
+      "near_high_17_22_last_price": 1292.0
     },
     "CENTRALBK": {
       "sma50": 30.495799942016603,
@@ -9697,10 +9704,11 @@
       "rs_rank": 86.4,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:03:11.016591",
-      "near_high_17_22_last_price": 1925.0
+      "near_high_17_22_last_alert": "2026-11-16T07:31:15.912803",
+      "near_high_17_22_last_price": 1904.300048828125
     },
     "INOXWIND": {
       "sma50": 68.39959968566895,
@@ -12180,7 +12188,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 79.1,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T07:31:26.516909",
+      "near_high_17_22_last_price": 86.41999816894531
     },
     "LLOYDSENT": {
       "sma50": 69.55260009765625,
@@ -14475,10 +14487,11 @@
       "rs_rank": 95.3,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:03:43.986281",
-      "near_high_17_22_last_price": 1289.4000244140625
+      "near_high_17_22_last_alert": "2026-11-16T07:31:36.342236",
+      "near_high_17_22_last_price": 1276.199951171875
     },
     "PARKHOSPS": {
       "sma50": 258.7827990722656,
@@ -18687,10 +18700,11 @@
       "rs_rank": 30.0,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:04:06.824276",
-      "near_high_17_22_last_price": 1007.5
+      "near_high_17_22_last_alert": "2026-11-16T07:31:53.660368",
+      "near_high_17_22_last_price": 995.2999877929688
     },
     "STYLAMIND": {
       "sma50": 3219.792001953125,
@@ -33375,7 +33389,12 @@
       "ag": 12.678528,
       "al": 13.492111,
       "last_close": 1246.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T07:32:25.914409",
+      "rsi_bounce_last_price": 1250.5
     },
     "ROLEXRINGS": {
       "mcap_cr": 4264.0,
