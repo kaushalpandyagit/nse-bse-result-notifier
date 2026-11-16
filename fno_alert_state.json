@@ -1205,7 +1205,13 @@
     "trigger_date": "2026-11-11",
     "ref_high": 1649.9,
     "ref_low": 1530.1,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T10:01:39.583063",
+    "fno_low_breach_last_price": 1529.300048828125
   },
   "DREDGECORP": {
     "trigger_date": "2026-11-11",
@@ -1391,7 +1397,13 @@
     "trigger_date": "2026-11-13",
     "ref_high": 41.87,
     "ref_low": 35.55,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T10:01:42.761250",
+    "fno_low_breach_last_price": 35.5099983215332
   },
   "PIONEEREMB": {
     "trigger_date": "2026-11-13",
@@ -1421,7 +1433,13 @@
     "trigger_date": "2026-11-13",
     "ref_high": 38.98,
     "ref_low": 36.51,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T10:01:44.950337",
+    "fno_low_breach_last_price": 35.209999084472656
   },
   "IIFLCAPS": {
     "trigger_date": "2026-11-13",

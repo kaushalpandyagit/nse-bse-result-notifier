@@ -467,11 +467,12 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-16T04:30:12.766891",
-    "custom_last_price": 166.9499969482422,
+    "custom_last_alert": "2026-11-16T10:01:32.323386",
+    "custom_last_price": 159.10000610351562,
     "session_date": "2026-11-16",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_AETHER": {
@@ -10792,6 +10793,15 @@
     "day_low": 253.0,
     "baseline_rsi": 32.60022083780646,
     "mcap_cr": 1956.8565105,
+    "exchange": "NSE"
+  },
+  "PARACABLES": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-16T15:24:43",
+    "day_high": 67.12000274658203,
+    "day_low": 63.220001220703125,
+    "baseline_rsi": 56.066287950534324,
+    "mcap_cr": 2176.4698048288933,
     "exchange": "NSE"
   }
 }
