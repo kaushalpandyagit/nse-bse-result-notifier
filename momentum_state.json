@@ -3366,10 +3366,11 @@
       "rs_rank": 50.0,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:02:29.031558",
-      "near_high_17_22_last_price": 131.80999755859375
+      "near_high_17_22_last_alert": "2026-11-16T08:17:06.204492",
+      "near_high_17_22_last_price": 133.1300048828125
     },
     "CAPILLARY": {
       "sma50": 523.8009973144531,
@@ -7134,10 +7135,11 @@
       "rs_rank": 35.3,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:02:56.591830",
-      "near_high_17_22_last_price": 145.5
+      "near_high_17_22_last_alert": "2026-11-16T08:17:22.364151",
+      "near_high_17_22_last_price": 147.5
     },
     "GALLANTT": {
       "sma50": 548.8270013427734,
@@ -12874,7 +12876,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 5.2,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "ema50_pullback_last_alert": "2026-11-16T08:17:45.523120",
+      "ema50_pullback_last_price": 622.4000244140625
     },
     "METROPOLIS": {
       "sma50": 562.1240014648438,
@@ -29635,7 +29641,12 @@
       "ag": 11.90497,
       "al": 20.420948,
       "last_close": 871.55,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T08:18:40.200625",
+      "rsi_bounce_last_price": 900.5499877929688
     },
     "ANUHPHR": {
       "mcap_cr": 823.0,
