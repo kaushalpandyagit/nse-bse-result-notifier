@@ -1068,7 +1068,9 @@
       "dtl_touches": 3,
       "dtl_floor": 623.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 88.1
+      "rs_rank": 88.1,
+      "session_date": "2026-11-16",
+      "alert_slots": []
     },
     "ALKYLAMINE": {
       "sma50": 1788.4200048828125,
@@ -32061,7 +32063,12 @@
       "ag": 80.710397,
       "al": 95.992139,
       "last_close": 11956.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T08:02:49.619639",
+      "rsi_bounce_last_price": 11964.0
     },
     "MALLCOM": {
       "mcap_cr": 570.0,
@@ -33589,7 +33596,12 @@
       "ag": 1.13763,
       "al": 1.115983,
       "last_close": 84.41,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T08:02:50.691837",
+      "rsi_bounce_last_price": 86.91000366210938
     },
     "SAMBHV": {
       "mcap_cr": 5028.6,
