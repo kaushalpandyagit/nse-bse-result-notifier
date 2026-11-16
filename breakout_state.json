@@ -88,10 +88,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-13T07:01:14.211428",
-    "custom_last_price": 170.0,
+    "custom_last_alert": "2026-11-16T04:16:28.425359",
+    "custom_last_price": 168.2100067138672,
     "session_date": "2026-11-16",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
@@ -10665,6 +10667,33 @@
     "day_low": 175.25,
     "baseline_rsi": 42.66832920902521,
     "mcap_cr": 94.56928125,
+    "exchange": "NSE"
+  },
+  "ATAM": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-14T14:07:00",
+    "day_high": 54.29999923706055,
+    "day_low": 54.0,
+    "baseline_rsi": 49.66292336273145,
+    "mcap_cr": 61.9002,
+    "exchange": "NSE"
+  },
+  "MODTHREAD": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-14T16:05:11",
+    "day_high": 49.900001525878906,
+    "day_low": 48.470001220703125,
+    "baseline_rsi": 55.49881411096474,
+    "mcap_cr": 169.32024926435852,
+    "exchange": "NSE"
+  },
+  "STARTECK": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-13T18:59:37",
+    "day_high": 246.5,
+    "day_low": 246.5,
+    "baseline_rsi": 45.66688065661521,
+    "mcap_cr": 244.2896345,
     "exchange": "NSE"
   }
 }

@@ -1007,7 +1007,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 570.45,
     "ref_low": 520.45,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T04:16:40.949395",
+    "fno_low_breach_last_price": 515.0
   },
   "ELDEHSG": {
     "trigger_date": "2026-11-06",
@@ -1415,6 +1421,12 @@
     "trigger_date": "2026-11-13",
     "ref_high": 1.52,
     "ref_low": 1.36,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T04:16:54.290670",
+    "fno_low_breach_last_price": 1.350000023841858
   }
 }

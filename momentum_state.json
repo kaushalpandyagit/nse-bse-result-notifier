@@ -379,7 +379,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 38.1,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-16T04:17:00.932379",
+      "resistance_last_price": 1208.199951171875
     },
     "ABSLAMC": {
       "sma50": 972.2620068359375,
@@ -957,7 +961,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 65.5,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:17:04.741139",
+      "mtf_last_price": 1613.800048828125
     },
     "AIAENG": {
       "sma50": 3759.1619921875,
@@ -6277,7 +6285,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 64.2,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:17:30.056795",
+      "mtf_last_price": 277.5
     },
     "ENGINERSIN": {
       "sma50": 284.4020016479492,
@@ -7915,7 +7927,13 @@
       "dtl_touches": null,
       "dtl_floor": 171.52000427246094,
       "dtl_floor_touches": 1,
-      "rs_rank": 86.2
+      "rs_rank": 86.2,
+      "session_date": "2026-11-16",
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T04:17:38.722769",
+      "near_high_17_22_last_price": 223.27999877929688
     },
     "GRINDWELL": {
       "sma50": 1930.0959985351562,
@@ -11243,7 +11261,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 42.0,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:17:54.666575",
+      "mtf_last_price": 742.6500244140625
     },
     "KIRLOSBROS": {
       "sma50": 1728.7780126953126,
@@ -14615,7 +14637,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 57.8,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T04:18:11.190095",
+      "near_high_17_22_last_price": 287.3999938964844
     },
     "PGEL": {
       "sma50": 527.446001586914,
@@ -15815,7 +15841,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 30.2,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:18:17.502106",
+      "mtf_last_price": 827.75
     },
     "RATEGAIN": {
       "sma50": 823.0180053710938,
@@ -16921,7 +16951,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 45.3,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-16T04:18:23.497454",
+      "resistance_last_price": 138.52000427246094
     },
     "SANDUMA": {
       "sma50": 180.1204000854492,
@@ -19761,7 +19795,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 14.4,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:18:37.384731",
+      "mtf_last_price": 966.1500244140625
     },
     "TEGA": {
       "sma50": 1831.4959985351563,
@@ -27681,7 +27719,12 @@
       "rsi_ema_200": 54.2489,
       "ag": 27.476241,
       "al": 33.390251,
-      "last_close": 4291.3999
+      "last_close": 4291.3999,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:19:09.052556",
+      "rsi_bounce_last_price": 4295.0
     },
     "SHYAMMETL": {
       "mcap_cr": 36376.22318995107,
@@ -29314,7 +29357,12 @@
       "ag": 2.527146,
       "al": 2.351772,
       "last_close": 508.45,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:19:11.269647",
+      "rsi_bounce_last_price": 510.0
     },
     "ANDHRAPAP": {
       "mcap_cr": 1328.0,
@@ -29651,7 +29699,12 @@
       "ag": 0.888952,
       "al": 0.884124,
       "last_close": 107.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:19:12.860510",
+      "rsi_bounce_last_price": 107.69000244140625
     },
     "BHAGERIA": {
       "mcap_cr": 1582.0,
@@ -30151,7 +30204,12 @@
       "ag": 4.463118,
       "al": 7.271175,
       "last_close": 957.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:19:14.328627",
+      "rsi_bounce_last_price": 965.6500244140625
     },
     "DOLPHIN": {
       "mcap_cr": 2674.3,
@@ -31739,7 +31797,12 @@
       "ag": 5.664359,
       "al": 7.234967,
       "last_close": 892.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:19:17.094121",
+      "rsi_bounce_last_price": 900.0
     },
     "MANAKCOAT": {
       "mcap_cr": 1651.8,
@@ -33160,7 +33223,12 @@
       "ag": 3.185707,
       "al": 3.728558,
       "last_close": 323.95,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:19:18.802011",
+      "rsi_bounce_last_price": 329.8999938964844
     },
     "SAKAR": {
       "mcap_cr": 2102.0,
@@ -33230,7 +33298,12 @@
       "ag": 6.954786,
       "al": 7.880158,
       "last_close": 979.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:19:20.375767",
+      "rsi_bounce_last_price": 982.0
     },
     "SANGAMIND": {
       "mcap_cr": 3068.3,
@@ -33426,7 +33499,12 @@
       "ag": 1.186027,
       "al": 1.478014,
       "last_close": 113.99,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:19:22.036220",
+      "rsi_bounce_last_price": 115.5
     },
     "UNITEDPOLY": {
       "mcap_cr": 1206.0,
