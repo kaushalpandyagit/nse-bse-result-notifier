@@ -3689,7 +3689,9 @@
       "dtl_touches": null,
       "dtl_floor": 1159.0999755859375,
       "dtl_floor_touches": 1,
-      "rs_rank": 76.7
+      "rs_rank": 76.7,
+      "session_date": "2026-11-16",
+      "alert_slots": []
     },
     "CEATLTD": {
       "sma50": 3314.8619921875,
@@ -6927,7 +6929,9 @@
       "dtl_touches": null,
       "dtl_floor": 16184.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 47.2
+      "rs_rank": 47.2,
+      "session_date": "2026-11-16",
+      "alert_slots": []
     },
     "FSL": {
       "sma50": 275.6810006713867,
@@ -12295,7 +12299,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 66.6,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T05:17:27.612827",
+      "near_high_17_22_last_price": 5751.0
     },
     "LUMAXTECH": {
       "sma50": 2002.729990234375,
@@ -22305,7 +22313,9 @@
       "dtl_touches": null,
       "dtl_floor": 416.1499938964844,
       "dtl_floor_touches": 3,
-      "rs_rank": 73.1
+      "rs_rank": 73.1,
+      "session_date": "2026-11-16",
+      "alert_slots": []
     },
     "ZENTEC": {
       "sma50": 1668.2460009765625,
@@ -31944,7 +31954,12 @@
       "ag": 0.840709,
       "al": 0.685799,
       "last_close": 144.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:18:23.290513",
+      "rsi_bounce_last_price": 144.6300048828125
     },
     "MANCREDIT": {
       "mcap_cr": 516.0,
@@ -32164,7 +32179,12 @@
       "ag": 6.144109,
       "al": 6.879504,
       "last_close": 439.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:18:24.983832",
+      "rsi_bounce_last_price": 441.6000061035156
     },
     "MOBIKWIK": {
       "mcap_cr": 1693.0,
@@ -33016,7 +33036,12 @@
       "ag": 0.223842,
       "al": 0.313616,
       "last_close": 26.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T05:18:26.672570",
+      "rsi_bounce_last_price": 26.989999771118164
     },
     "RAMCOSYS": {
       "mcap_cr": 1905.0,
