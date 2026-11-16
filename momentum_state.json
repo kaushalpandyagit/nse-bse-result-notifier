@@ -1355,10 +1355,13 @@
       "rs_rank": 60.6,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-16T04:02:14.810596",
-      "mtf_last_price": 421.8500061035156
+      "mtf_last_price": 421.8500061035156,
+      "near_high_17_22_last_alert": "2026-11-16T09:01:44.703539",
+      "near_high_17_22_last_price": 422.5
     },
     "APTUS": {
       "sma50": 221.79359954833984,
@@ -7978,7 +7981,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 32.8,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-16T09:02:04.419054",
+      "mtf_last_price": 1511.0
     },
     "GREAVESCOT": {
       "sma50": 203.96500061035155,
@@ -9227,10 +9234,11 @@
       "rs_rank": 37.1,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-16T05:30:39.439334",
-      "resistance_last_price": 144.35000610351562
+      "resistance_last_alert": "2026-11-16T09:02:09.080584",
+      "resistance_last_price": 146.14999389648438
     },
     "IIFL": {
       "sma50": 599.6700048828125,
@@ -10397,10 +10405,11 @@
       "rs_rank": 71.6,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-16T04:03:15.477586",
-      "near_high_17_22_last_price": 259.8900146484375
+      "near_high_17_22_last_alert": "2026-11-16T09:02:13.274631",
+      "near_high_17_22_last_price": 262.57000732421875
     },
     "JKPAPER": {
       "sma50": 391.0759991455078,
@@ -10745,10 +10754,13 @@
       "rs_rank": 55.2,
       "session_date": "2026-11-16",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-16T04:03:18.696706",
-      "resistance_last_price": 125.36000061035156
+      "resistance_last_price": 125.36000061035156,
+      "mtf_last_alert": "2026-11-16T09:02:15.010375",
+      "mtf_last_price": 125.11000061035156
     },
     "JUBLFOOD": {
       "sma50": 449.89,
@@ -18178,7 +18190,11 @@
       "dtl_floor_touches": 5,
       "rs_rank": 31.9,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "resistance_last_alert": "2026-11-16T09:02:36.579357",
+      "resistance_last_price": 770.5499877929688
     },
     "SJS": {
       "sma50": 2154.8100170898438,
@@ -23569,7 +23585,12 @@
       "rsi_ema_200": 48.6898,
       "ag": 12.664605,
       "al": 11.192497,
-      "last_close": 1587.2
+      "last_close": 1587.2,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T09:02:59.469461",
+      "rsi_bounce_last_price": 1604.0
     },
     "BLUESTONE": {
       "mcap_cr": 11058.87681424657,
@@ -29390,7 +29411,12 @@
       "ag": 1.047494,
       "al": 1.330863,
       "last_close": 117.41,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T09:03:01.054978",
+      "rsi_bounce_last_price": 118.13999938964844
     },
     "AEROENTER": {
       "mcap_cr": 1410.0,
@@ -32733,7 +32759,12 @@
       "ag": 0.855083,
       "al": 0.944736,
       "last_close": 72.35,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T09:03:02.812548",
+      "rsi_bounce_last_price": 74.4800033569336
     },
     "ONWARDTEC": {
       "mcap_cr": 854.0,
@@ -32775,7 +32806,12 @@
       "ag": 1.895167,
       "al": 2.506349,
       "last_close": 239.05,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T09:03:04.079654",
+      "rsi_bounce_last_price": 241.64999389648438
     },
     "ORICONENT": {
       "mcap_cr": 885.0,
