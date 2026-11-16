@@ -73,7 +73,13 @@
     "trigger_date": "2026-11-12",
     "ref_high": 519.7,
     "ref_low": 482.5,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T09:46:24.707469",
+    "fno_low_breach_last_price": 482.0
   },
   "ARYAMAN": {
     "trigger_date": "2026-10-26",
@@ -1109,7 +1115,13 @@
     "trigger_date": "2026-11-10",
     "ref_high": 290.7,
     "ref_low": 272.35,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T09:46:28.982128",
+    "fno_low_breach_last_price": 272.0
   },
   "IPRINGLTD": {
     "trigger_date": "2026-11-12",

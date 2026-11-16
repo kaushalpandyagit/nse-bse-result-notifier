@@ -100,11 +100,12 @@
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-16T04:01:36.098801",
-    "custom_last_price": 2915.5,
+    "custom_last_alert": "2026-11-16T09:46:16.569850",
+    "custom_last_price": 2971.0,
     "session_date": "2026-11-16",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KOTHARIPET_rsi": {
@@ -10773,6 +10774,24 @@
     "day_low": 31.549999237060547,
     "baseline_rsi": 57.9772002697102,
     "mcap_cr": 58.26599807739258,
+    "exchange": "NSE"
+  },
+  "HFCL": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-16T15:06:14",
+    "day_high": 204.89999389648438,
+    "day_low": 195.1999969482422,
+    "baseline_rsi": 33.31560887200584,
+    "mcap_cr": 29870.74623476059,
+    "exchange": "NSE"
+  },
+  "SHANTIGOLD": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-16T15:11:05",
+    "day_high": 262.95001220703125,
+    "day_low": 253.0,
+    "baseline_rsi": 32.60022083780646,
+    "mcap_cr": 1956.8565105,
     "exchange": "NSE"
   }
 }
