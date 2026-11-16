@@ -19003,7 +19003,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 51.9,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-16T06:47:24.659133",
+      "resistance_last_price": 311.29998779296875
     },
     "SUNTV": {
       "sma50": 562.6030023193359,
@@ -19293,7 +19297,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 11.6,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T06:47:26.459614",
+      "mtf_last_price": 159.55999755859375
     },
     "SYNGENE": {
       "sma50": 387.7460003662109,
@@ -22159,7 +22167,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 47.8,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-16T06:47:35.381154",
+      "ema50_pullback_last_price": 832.5999755859375
     },
     "YATHARTH": {
       "sma50": 1013.2349975585937,
