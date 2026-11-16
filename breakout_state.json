@@ -623,11 +623,11 @@
   },
   "etf_inav_alerts": {},
   "arb_PILANIINVS": {
-    "spread_last_alert": "2026-11-05T08:41:47.223058",
-    "spread_last_price": 3.0093909580373,
-    "session_date": "2026-11-05",
+    "spread_last_alert": "2026-11-16T06:18:46.475447",
+    "spread_last_price": 4.420176807072282,
+    "session_date": "2026-11-16",
     "alert_slots": [
-      "H2"
+      "H1"
     ]
   },
   "arb_ATUL": {

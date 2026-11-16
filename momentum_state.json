@@ -2311,7 +2311,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 77.6,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-16T06:16:47.095904",
+      "near_high_17_22_last_price": 647.5
     },
     "BALUFORGE": {
       "sma50": 502.5040026855469,
@@ -7869,7 +7873,9 @@
       "dtl_touches": null,
       "dtl_floor": 570.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 61.4
+      "rs_rank": 61.4,
+      "session_date": "2026-11-16",
+      "alert_slots": []
     },
     "GRAVITA": {
       "sma50": 1515.1920043945313,
@@ -25535,7 +25541,12 @@
       "rsi_ema_200": 50.6032,
       "ag": 0.828848,
       "al": 0.883824,
-      "last_close": 90.56
+      "last_close": 90.56,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T06:18:17.345680",
+      "rsi_bounce_last_price": 91.23999786376953
     },
     "JBMA": {
       "mcap_cr": 11608.321092784643,
