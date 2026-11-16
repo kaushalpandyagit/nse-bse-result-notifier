@@ -287,11 +287,12 @@
     ]
   },
   "arb_DHUNINV": {
-    "spread_last_alert": "2026-11-16T05:47:57.587790",
-    "spread_last_price": 2.6321077725195825,
+    "spread_last_alert": "2026-11-16T08:32:17.582732",
+    "spread_last_price": 3.6633313405183427,
     "session_date": "2026-11-16",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALAMINES": {
@@ -343,11 +344,12 @@
     "spread_last_price": 2.820854182104335
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-11-16T03:51:27.016280",
-    "spread_last_price": 4.198590254367144,
+    "spread_last_alert": "2026-11-16T08:32:24.875146",
+    "spread_last_price": 3.10077519379845,
     "session_date": "2026-11-16",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BASILIC_open_change_rs": {
@@ -10755,6 +10757,15 @@
     "day_low": 448.04998779296875,
     "baseline_rsi": 44.61766275872194,
     "mcap_cr": 490.4625788574463,
+    "exchange": "NSE"
+  },
+  "BAJAJ-AUTO": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-16T13:57:58",
+    "day_high": 10866.0,
+    "day_low": 10683.0,
+    "baseline_rsi": 51.73738103908416,
+    "mcap_cr": 294040.10666,
     "exchange": "NSE"
   }
 }
