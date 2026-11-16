@@ -4741,7 +4741,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 41.6,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:30:48.542179",
+      "mtf_last_price": 230.88999938964844
     },
     "CREDITACC": {
       "sma50": 1239.5039990234375,
@@ -7109,7 +7113,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 4.7,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:30:57.394199",
+      "mtf_last_price": 561.0999755859375
     },
     "GENUSPOWER": {
       "sma50": 297.2009991455078,
@@ -7541,7 +7549,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 51.1,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:30:59.925671",
+      "mtf_last_price": 711.6500244140625
     },
     "GOKULAGRO": {
       "sma50": 217.80539978027343,
@@ -10391,7 +10403,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 42.7,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-16T04:31:09.874380",
+      "resistance_last_price": 364.75
     },
     "JMFINANCIL": {
       "sma50": 120.28300003051758,
@@ -17003,7 +17019,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 14.7,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-16T04:31:31.627617",
+      "resistance_last_price": 184.5500030517578
     },
     "SANSERA": {
       "sma50": 4229.62,
@@ -20181,7 +20201,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 76.5,
       "session_date": "2026-11-16",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-16T04:31:42.487881",
+      "mtf_last_price": 110.86000061035156
     },
     "THYROCARE": {
       "sma50": 522.3520001220703,
@@ -22787,7 +22811,12 @@
       "rsi_ema_200": 48.2269,
       "ag": 11.906888,
       "al": 16.91579,
-      "last_close": 1623.3
+      "last_close": 1623.3,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:32:02.072731",
+      "rsi_bounce_last_price": 1626.5999755859375
     },
     "AMBER": {
       "mcap_cr": 22929.33871505,
@@ -30765,7 +30794,12 @@
       "ag": 0.759583,
       "al": 0.739579,
       "last_close": 90.07,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:32:05.517804",
+      "rsi_bounce_last_price": 90.9000015258789
     },
     "GUFICBIO": {
       "mcap_cr": 4147.0,
@@ -31087,7 +31121,12 @@
       "ag": 0.942468,
       "al": 1.276189,
       "last_close": 76.13,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:32:07.033468",
+      "rsi_bounce_last_price": 76.29000091552734
     },
     "INDSWFTLAB": {
       "mcap_cr": 3145.0,
@@ -31344,7 +31383,12 @@
       "ag": 11.050811,
       "al": 12.793673,
       "last_close": 704.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:32:08.318857",
+      "rsi_bounce_last_price": 728.75
     },
     "KAMATHOTEL": {
       "mcap_cr": 676.6,
@@ -31928,7 +31972,12 @@
       "ag": 1.003978,
       "al": 1.615498,
       "last_close": 162.51,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-16T04:32:09.768443",
+      "rsi_bounce_last_price": 163.89999389648438
     },
     "MATRIMONY": {
       "mcap_cr": 1116.0,

@@ -341,7 +341,13 @@
     "price_change_pct": 2.49,
     "deliv_pct": 79.3,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-16T04:30:30.568632",
+    "em_low_breach_last_price": 45.939998626708984
   },
   "MARICO": {
     "trigger_date": "2026-11-12",
@@ -503,7 +509,13 @@
     "price_change_pct": 2.46,
     "deliv_pct": 68.3,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-16T04:30:32.391073",
+    "em_low_breach_last_price": 636.0
   },
   "HDFCAMC": {
     "trigger_date": "2026-11-13",

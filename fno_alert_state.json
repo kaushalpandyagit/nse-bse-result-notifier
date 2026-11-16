@@ -1157,7 +1157,13 @@
     "trigger_date": "2026-11-10",
     "ref_high": 4.52,
     "ref_low": 3.91,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-16T04:30:20.814734",
+    "fno_high_breach_last_price": 4.539999961853027
   },
   "MEDICO": {
     "trigger_date": "2026-11-09",
@@ -1391,7 +1397,13 @@
     "trigger_date": "2026-11-13",
     "ref_high": 360.95,
     "ref_low": 351.5,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-16",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-16T04:30:27.488636",
+    "fno_low_breach_last_price": 351.20001220703125
   },
   "PARKHOSPS": {
     "trigger_date": "2026-11-13",
