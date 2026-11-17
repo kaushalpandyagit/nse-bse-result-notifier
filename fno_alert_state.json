@@ -827,7 +827,7 @@
     "trigger_date": "2026-11-04",
     "ref_high": 220.5,
     "ref_low": 205.55,
-    "status": "Active"
+    "status": "Expired"
   },
   "SUVIDHAA": {
     "trigger_date": "2026-11-04",
@@ -1325,7 +1325,13 @@
     "trigger_date": "2026-11-16",
     "ref_high": 180.0,
     "ref_low": 175.0,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-17",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-17T03:46:29.269921",
+    "fno_high_breach_last_price": 180.4499969482422
   },
   "INDTERRAIN": {
     "trigger_date": "2026-11-12",
@@ -1499,13 +1505,25 @@
     "trigger_date": "2026-11-16",
     "ref_high": 143.3,
     "ref_low": 137.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-17",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-17T03:46:33.595732",
+    "fno_low_breach_last_price": 136.5
   },
   "BNALTD": {
     "trigger_date": "2026-11-16",
     "ref_high": 429.8,
     "ref_low": 420.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-17",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-17T03:46:34.705552",
+    "fno_low_breach_last_price": 415.0
   },
   "PANACEABIO": {
     "trigger_date": "2026-11-16",
