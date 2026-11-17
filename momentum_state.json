@@ -1902,10 +1902,11 @@
       "rs_rank": 90.1,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "liquidity_sweep_last_alert": "2026-11-17T06:01:45.691766",
-      "liquidity_sweep_last_price": 1801.5
+      "liquidity_sweep_last_alert": "2026-11-17T08:30:23.537921",
+      "liquidity_sweep_last_price": 1827.800048828125
     },
     "AVANTIFEED": {
       "sma50": 735.6790002441406,
