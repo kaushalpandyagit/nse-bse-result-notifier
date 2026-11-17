@@ -14085,10 +14085,13 @@
       "rs_rank": 48.8,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "near_high_17_22_last_alert": "2026-11-17T03:50:29.294359",
-      "near_high_17_22_last_price": 275.0
+      "near_high_17_22_last_price": 275.0,
+      "mtf_last_alert": "2026-11-17T09:16:55.811794",
+      "mtf_last_price": 284.8500061035156
     },
     "NSLNISP": {
       "sma50": 41.11139991760254,
@@ -26589,7 +26592,12 @@
       "rsi_ema_200": 47.6105,
       "ag": 12.980152,
       "al": 18.268399,
-      "last_close": 1489.6
+      "last_close": 1489.6,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T09:17:32.480251",
+      "rsi_bounce_last_price": 1489.5
     },
     "MBAPL": {
       "mcap_cr": 8567.7241922081,
@@ -33037,7 +33045,12 @@
       "ag": 0.95472,
       "al": 0.877255,
       "last_close": 74.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T09:17:34.933175",
+      "rsi_bounce_last_price": 75.58999633789062
     },
     "ONWARDTEC": {
       "mcap_cr": 854.0,
