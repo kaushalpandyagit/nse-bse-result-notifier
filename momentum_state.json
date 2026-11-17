@@ -47,7 +47,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 38.4,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-17T09:30:15.887695",
+      "rectangle_bounce_last_price": 431.95001220703125
     },
     "AARTIIND": {
       "sma50": 474.5219976806641,
@@ -9278,10 +9282,13 @@
       "rs_rank": 47.9,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-17T04:17:05.531730",
-      "resistance_last_price": 147.6999969482422
+      "resistance_last_price": 147.6999969482422,
+      "mtf_last_alert": "2026-11-17T09:30:36.792458",
+      "mtf_last_price": 148.1999969482422
     },
     "IIFL": {
       "sma50": 599.93400390625,
@@ -9819,7 +9826,10 @@
       "dtl_floor_touches": 1,
       "rs_rank": 2.8,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "hva_sent": true
     },
     "INTELLECT": {
       "sma50": 609.5379992675781,
@@ -11745,10 +11755,11 @@
       "rs_rank": 6.9,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "mtf_last_alert": "2026-11-17T06:17:27.239775",
-      "mtf_last_price": 320.0
+      "mtf_last_alert": "2026-11-17T09:30:43.918273",
+      "mtf_last_price": 324.1499938964844
     },
     "KPIL": {
       "sma50": 1380.1399951171875,
@@ -12422,7 +12433,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 66.5,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-17T09:30:46.410847",
+      "near_high_17_22_last_price": 5750.2001953125
     },
     "LUMAXTECH": {
       "sma50": 2007.7159912109375,
@@ -29859,7 +29874,12 @@
       "ag": 0.598304,
       "al": 0.805127,
       "last_close": 62.71,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T09:31:18.997820",
+      "rsi_bounce_last_price": 62.97999954223633
     },
     "ANTELOPUS": {
       "mcap_cr": 3525.0,
@@ -30936,7 +30956,12 @@
       "ag": 0.744895,
       "al": 0.987776,
       "last_close": 74.82,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T09:31:20.424667",
+      "rsi_bounce_last_price": 75.2300033569336
     },
     "EXPLEOSOL": {
       "mcap_cr": 1244.0,

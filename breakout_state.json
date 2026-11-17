@@ -10827,5 +10827,14 @@
     "baseline_rsi": 0.0,
     "mcap_cr": 74.908926939,
     "exchange": "NSE"
+  },
+  "SCHAEFFLER": {
+    "result_date": "2026-11-17T00:00:00",
+    "filed_at": "2026-11-17T14:53:01",
+    "day_high": 3690.39990234375,
+    "day_low": 3598.60009765625,
+    "baseline_rsi": 51.04115363667311,
+    "mcap_cr": 56863.275146,
+    "exchange": "NSE"
   }
 }
