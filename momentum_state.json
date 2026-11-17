@@ -9701,7 +9701,11 @@
       "dtl_floor_touches": 5,
       "rs_rank": 86.8,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-17T06:46:53.872370",
+      "rectangle_bounce_last_price": 1984.0
     },
     "INOXWIND": {
       "sma50": 68.19959968566894,
@@ -31365,7 +31369,12 @@
       "ag": 6.064964,
       "al": 6.017824,
       "last_close": 1023.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T06:47:48.098473",
+      "rsi_bounce_last_price": 1028.0
     },
     "INDNIPPON": {
       "mcap_cr": 2701.6,
@@ -32823,7 +32832,12 @@
       "ag": 2.23806,
       "al": 2.303728,
       "last_close": 199.28,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T06:47:49.797899",
+      "rsi_bounce_last_price": 201.07000732421875
     },
     "OMAXE": {
       "mcap_cr": 1792.4,
@@ -33399,7 +33413,12 @@
       "ag": 0.223842,
       "al": 0.313616,
       "last_close": 26.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T06:47:51.087622",
+      "rsi_bounce_last_price": 26.889999389648438
     },
     "RAMCOSYS": {
       "mcap_cr": 1905.0,

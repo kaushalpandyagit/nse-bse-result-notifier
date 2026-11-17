@@ -571,7 +571,13 @@
     "price_change_pct": -2.45,
     "deliv_pct": 80.8,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-17",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-17T06:46:23.586971",
+    "em_low_breach_last_price": 56.0
   },
   "SUVIDHAA": {
     "trigger_date": "2026-11-13",
