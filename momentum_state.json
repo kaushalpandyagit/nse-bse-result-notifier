@@ -19033,7 +19033,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 52.3,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-17T05:17:05.281911",
+      "resistance_last_price": 311.6000061035156
     },
     "SUNTV": {
       "sma50": 562.6030023193359,
@@ -21910,7 +21914,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 72.6,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-17T05:17:12.855677",
+      "rectangle_bounce_last_price": 135.5500030517578
     },
     "WEBELSOLAR": {
       "sma50": 70.18480003356933,
@@ -22918,7 +22926,12 @@
       "rsi_ema_200": 48.3038,
       "ag": 11.906888,
       "al": 16.91579,
-      "last_close": 1623.3
+      "last_close": 1623.3,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:17:24.572038",
+      "rsi_bounce_last_price": 1626.199951171875
     },
     "AMBER": {
       "mcap_cr": 22245.14403525,
@@ -23666,7 +23679,12 @@
       "rsi_ema_200": 51.7552,
       "ag": 0.717387,
       "al": 0.920046,
-      "last_close": 190.13
+      "last_close": 190.13,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:17:25.481825",
+      "rsi_bounce_last_price": 190.41000366210938
     },
     "CCL": {
       "mcap_cr": 13147.7404864,
@@ -30454,7 +30472,12 @@
       "ag": 8.025752,
       "al": 6.472889,
       "last_close": 651.65,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:17:28.164163",
+      "rsi_bounce_last_price": 652.9000244140625
     },
     "DPABHUSHAN": {
       "mcap_cr": 4618.1,
