@@ -434,7 +434,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 24.4,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-17T09:01:41.386783",
+      "mtf_last_price": 934.2999877929688
     },
     "ACC": {
       "sma50": 1203.63599609375,
@@ -783,10 +787,11 @@
       "rs_rank": 84.0,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:49:28.131712",
-      "near_high_17_22_last_price": 491.79998779296875
+      "near_high_17_22_last_alert": "2026-11-17T09:01:43.353966",
+      "near_high_17_22_last_price": 486.70001220703125
     },
     "AETHER": {
       "sma50": 1627.06599609375,
@@ -933,7 +938,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 64.1,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "mtf_last_alert": "2026-11-17T09:01:44.812548",
+      "mtf_last_price": 1580.4000244140625
     },
     "AIAENG": {
       "sma50": 3759.1619921875,
@@ -18133,7 +18142,11 @@
       "dtl_floor_touches": 5,
       "rs_rank": 81.9,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-17T09:02:37.085283",
+      "rectangle_bounce_last_price": 4323.5
     },
     "SIGMAADV": {
       "sma50": 903.0749987792968,
@@ -20553,7 +20566,10 @@
       "dtl_floor_touches": 1,
       "rs_rank": 78.0,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "dtl_bo_sent": true
     },
     "TIMETECHNO": {
       "sma50": 177.77820007324217,
@@ -30729,7 +30745,12 @@
       "ag": 0.580082,
       "al": 0.560542,
       "last_close": 43.91,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T09:03:08.317229",
+      "rsi_bounce_last_price": 44.08000183105469
     },
     "EFCIL": {
       "mcap_cr": 2514.6,

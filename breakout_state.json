@@ -17,18 +17,22 @@
   "custom_alert_ALLETEC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-16T03:47:18.598049",
-    "custom_last_price": 119.5,
+    "custom_last_alert": "2026-11-17T09:01:17.702196",
+    "custom_last_price": 114.69999694824219,
     "session_date": "2026-11-17",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BASILIC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-16T03:47:19.761202",
-    "custom_last_price": 158.64999389648438,
+    "custom_last_alert": "2026-11-17T09:01:19.364051",
+    "custom_last_price": 146.5,
     "session_date": "2026-11-17",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BEACON_price": {
     "alerted": false,
@@ -61,10 +65,12 @@
   "custom_alert_EMMIL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-04T08:46:01.332390",
-    "custom_last_price": 108.0,
+    "custom_last_alert": "2026-11-17T09:01:22.814267",
+    "custom_last_price": 105.0,
     "session_date": "2026-11-17",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_ESFL_price": {
     "alerted": false,
@@ -351,10 +357,12 @@
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-13T08:46:05.854263",
-    "custom_last_price": 144.9499969482422,
+    "custom_last_alert": "2026-11-17T09:01:18.750050",
+    "custom_last_price": 146.5,
     "session_date": "2026-11-17",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
@@ -10810,5 +10818,14 @@
     ],
     "spread_last_alert": "2026-11-17T03:52:05.255815",
     "spread_last_price": 4.917930834221117
+  },
+  "EROSMEDIA": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-13T19:14:23",
+    "day_high": 7.809999942779541,
+    "day_low": 7.809999942779541,
+    "baseline_rsi": 0.0,
+    "mcap_cr": 74.908926939,
+    "exchange": "NSE"
   }
 }
