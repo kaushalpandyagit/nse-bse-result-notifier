@@ -1109,7 +1109,13 @@
     "trigger_date": "2026-11-10",
     "ref_high": 810.0,
     "ref_low": 761.3,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-17",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-17T05:46:18.690234",
+    "fno_low_breach_last_price": 761.0
   },
   "HEALTHX": {
     "trigger_date": "2026-11-10",

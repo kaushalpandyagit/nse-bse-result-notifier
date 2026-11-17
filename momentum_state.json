@@ -29662,7 +29662,12 @@
       "ag": 11.90497,
       "al": 20.420948,
       "last_close": 871.55,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:47:50.872560",
+      "rsi_bounce_last_price": 896.0
     },
     "ANUHPHR": {
       "mcap_cr": 823.0,
@@ -31637,7 +31642,12 @@
       "ag": 0.797268,
       "al": 0.996132,
       "last_close": 76.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:47:53.198347",
+      "rsi_bounce_last_price": 76.22000122070312
     },
     "KABRAEXTRU": {
       "mcap_cr": 2575.7,
@@ -34424,7 +34434,12 @@
       "ag": 9.356343,
       "al": 9.382198,
       "last_close": 792.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:47:55.622198",
+      "rsi_bounce_last_price": 798.0
     },
     "SWANDEF": {
       "mcap_cr": 14745.0,
