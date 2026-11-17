@@ -1369,10 +1369,11 @@
       "rs_rank": 3.9,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "vol_breakout_last_alert": "2026-11-17T05:30:18.782824",
-      "vol_breakout_last_price": 191.17999267578125
+      "vol_breakout_last_alert": "2026-11-17T07:16:24.480880",
+      "vol_breakout_last_price": 187.82000732421875
     },
     "ARE&M": {
       "sma50": 760.2430004882813,
@@ -4959,10 +4960,13 @@
       "rs_rank": 27.9,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-17T03:49:50.553201",
-      "mtf_last_price": 320.5
+      "mtf_last_price": 320.5,
+      "resistance_last_alert": "2026-11-17T07:16:34.502214",
+      "resistance_last_price": 326.79998779296875
     },
     "CUB": {
       "sma50": 225.66960021972656,
@@ -11372,10 +11376,11 @@
       "rs_rank": 74.7,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "resistance_last_alert": "2026-11-17T03:50:17.322317",
-      "resistance_last_price": 951.3499755859375
+      "resistance_last_alert": "2026-11-17T07:16:52.080243",
+      "resistance_last_price": 968.0
     },
     "KIRLOSBROS": {
       "sma50": 1723.41201171875,
@@ -14891,10 +14896,11 @@
       "rs_rank": 62.0,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:50:34.267969",
-      "near_high_17_22_last_price": 5568.5
+      "near_high_17_22_last_alert": "2026-11-17T07:17:01.859544",
+      "near_high_17_22_last_price": 5512.5
     },
     "PGIL": {
       "sma50": 1243.697998046875,
@@ -15134,7 +15140,9 @@
       "dtl_touches": 4,
       "dtl_floor": 1024.199951171875,
       "dtl_floor_touches": 2,
-      "rs_rank": 59.6
+      "rs_rank": 59.6,
+      "session_date": "2026-11-17",
+      "alert_slots": []
     },
     "PNCINFRA": {
       "sma50": 142.82059967041016,
@@ -17910,10 +17918,11 @@
       "rs_rank": 83.8,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T04:02:38.658433",
-      "near_high_17_22_last_price": 184.77000427246094
+      "near_high_17_22_last_alert": "2026-11-17T07:17:10.594170",
+      "near_high_17_22_last_price": 182.83999633789062
     },
     "SHILCTECH": {
       "sma50": 3880.083994140625,
@@ -19092,10 +19101,11 @@
       "rs_rank": 62.9,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T04:17:38.855330",
-      "near_high_17_22_last_price": 396.54998779296875
+      "near_high_17_22_last_alert": "2026-11-17T07:17:14.573789",
+      "near_high_17_22_last_price": 392.3500061035156
     },
     "SUNTECK": {
       "sma50": 284.7520001220703,
