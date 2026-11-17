@@ -1722,7 +1722,9 @@
       "dtl_touches": 3,
       "dtl_floor": 1470.800048828125,
       "dtl_floor_touches": 2,
-      "rs_rank": 93.3
+      "rs_rank": 93.3,
+      "session_date": "2026-11-17",
+      "alert_slots": []
     },
     "ATLANTAELE": {
       "sma50": 1681.4919995117189,
@@ -3097,7 +3099,10 @@
       "dtl_floor_touches": 1,
       "rs_rank": 59.8,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "dtl_bo_sent": true
     },
     "BSOFT": {
       "sma50": 297.4780004882812,
@@ -21275,7 +21280,13 @@
       "dtl_touches": null,
       "dtl_floor": 126.51000213623047,
       "dtl_floor_touches": 3,
-      "rs_rank": 89.8
+      "rs_rank": 89.8,
+      "session_date": "2026-11-17",
+      "alert_slots": [
+        "H2"
+      ],
+      "near_high_17_22_last_alert": "2026-11-17T09:47:29.599881",
+      "near_high_17_22_last_price": 162.64999389648438
     },
     "USHAMART": {
       "sma50": 492.7029998779297,
@@ -22117,10 +22128,13 @@
       "rs_rank": 72.6,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "rectangle_bounce_last_alert": "2026-11-17T05:17:12.855677",
-      "rectangle_bounce_last_price": 135.5500030517578
+      "rectangle_bounce_last_price": 135.5500030517578,
+      "ema50_pullback_last_alert": "2026-11-17T09:47:33.116824",
+      "ema50_pullback_last_price": 136.02000427246094
     },
     "WEBELSOLAR": {
       "sma50": 70.18480003356933,
@@ -31087,7 +31101,12 @@
       "ag": 18.446813,
       "al": 21.652041,
       "last_close": 2214.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T09:47:50.515863",
+      "rsi_bounce_last_price": 2223.0
     },
     "GANDHAR": {
       "mcap_cr": 2444.0,
@@ -34729,7 +34748,12 @@
       "ag": 19.500683,
       "al": 18.222787,
       "last_close": 2785.6001,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T09:47:52.676542",
+      "rsi_bounce_last_price": 2825.10009765625
     },
     "SWARAJENG": {
       "mcap_cr": 4161.0,
@@ -35422,7 +35446,12 @@
       "ag": 2.127984,
       "al": 1.834395,
       "last_close": 295.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T09:47:53.933693",
+      "rsi_bounce_last_price": 295.6000061035156
     },
     "WONDERLA": {
       "mcap_cr": 3118.0,
