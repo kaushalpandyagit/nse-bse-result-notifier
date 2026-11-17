@@ -6530,10 +6530,13 @@
       "rs_rank": 58.5,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-17T03:49:58.722959",
-      "resistance_last_price": 238.33999633789062
+      "resistance_last_price": 238.33999633789062,
+      "mtf_last_alert": "2026-11-17T08:46:43.270187",
+      "mtf_last_price": 238.1999969482422
     },
     "EQUITASBNK": {
       "sma50": 66.22159965515137,
@@ -7175,10 +7178,11 @@
       "rs_rank": 36.3,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:50:01.738807",
-      "near_high_17_22_last_price": 146.4600067138672
+      "near_high_17_22_last_alert": "2026-11-17T08:46:46.000475",
+      "near_high_17_22_last_price": 144.8300018310547
     },
     "GALLANTT": {
       "sma50": 548.6330010986328,
@@ -13824,7 +13828,9 @@
       "dtl_touches": null,
       "dtl_floor": 18055.0,
       "dtl_floor_touches": 3,
-      "rs_rank": 80.6
+      "rs_rank": 80.6,
+      "session_date": "2026-11-17",
+      "alert_slots": []
     },
     "NEWGEN": {
       "sma50": 475.61299987792967,
@@ -16340,10 +16346,11 @@
       "rs_rank": 93.5,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:50:42.374721",
-      "near_high_17_22_last_price": 343.3500061035156
+      "near_high_17_22_last_alert": "2026-11-17T08:47:11.712346",
+      "near_high_17_22_last_price": 347.1499938964844
     },
     "REFEX": {
       "sma50": 256.0333987426758,
