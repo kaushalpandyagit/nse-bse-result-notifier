@@ -6870,7 +6870,10 @@
       "dtl_floor_touches": 3,
       "rs_rank": 6.0,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "dtl_bo_sent": true
     },
     "FIVESTAR": {
       "sma50": 489.7859979248047,
@@ -12094,7 +12097,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 78.6,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-17T04:31:06.445684",
+      "near_high_17_22_last_price": 86.41000366210938
     },
     "LLOYDSENT": {
       "sma50": 69.55260009765625,
@@ -27769,7 +27776,12 @@
       "rsi_ema_200": 48.3772,
       "ag": 3.270308,
       "al": 4.078095,
-      "last_close": 311.7
+      "last_close": 311.7,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:31:57.262102",
+      "rsi_bounce_last_price": 323.8500061035156
     },
     "SENORES": {
       "mcap_cr": 5292.017684644483,
@@ -30354,7 +30366,12 @@
       "ag": 4.247725,
       "al": 8.633101,
       "last_close": 475.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:31:59.368859",
+      "rsi_bounce_last_price": 491.5
     },
     "DIFFNKG": {
       "mcap_cr": 1483.0,
@@ -32732,7 +32749,12 @@
       "ag": 1.895167,
       "al": 2.506349,
       "last_close": 239.05,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:32:01.790392",
+      "rsi_bounce_last_price": 243.85000610351562
     },
     "ORICONENT": {
       "mcap_cr": 885.0,
