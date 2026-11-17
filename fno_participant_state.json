@@ -91,6 +91,20 @@
    },
    "fii_long_pct": 34.144827007523844,
    "fii_net_fut": -56687
+  },
+  "2026-11-17": {
+   "smart_net": {
+    "net_fut": -78033,
+    "net_call": -28548,
+    "net_put": 231961
+   },
+   "retail_net": {
+    "net_fut": 55294,
+    "net_call": 23684,
+    "net_put": -345115
+   },
+   "fii_long_pct": 33.4089137313448,
+   "fii_net_fut": -65123
   }
  }
 }

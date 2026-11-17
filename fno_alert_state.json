@@ -1556,9 +1556,9 @@
     "status": "Active"
   },
   "SHRADDHA": {
-    "trigger_date": "2026-11-16",
-    "ref_high": 173.67,
-    "ref_low": 164.53,
+    "trigger_date": "2026-11-17",
+    "ref_high": 171.5,
+    "ref_low": 165.0,
     "status": "Active"
   },
   "BLSE": {
@@ -1572,5 +1572,59 @@
     ],
     "fno_high_breach_last_alert": "2026-11-17T04:01:40.773517",
     "fno_high_breach_last_price": 146.11000061035156
+  },
+  "GLOSTERLTD": {
+    "trigger_date": "2026-11-17",
+    "ref_high": 574.0,
+    "ref_low": 545.0,
+    "status": "Active"
+  },
+  "GEECEE": {
+    "trigger_date": "2026-11-17",
+    "ref_high": 377.45,
+    "ref_low": 351.8,
+    "status": "Active"
+  },
+  "TVSSCS": {
+    "trigger_date": "2026-11-17",
+    "ref_high": 149.9,
+    "ref_low": 133.18,
+    "status": "Active"
+  },
+  "JMA": {
+    "trigger_date": "2026-11-17",
+    "ref_high": 107.5,
+    "ref_low": 104.81,
+    "status": "Active"
+  },
+  "INSECTICID": {
+    "trigger_date": "2026-11-17",
+    "ref_high": 551.0,
+    "ref_low": 534.7,
+    "status": "Active"
+  },
+  "ABDL": {
+    "trigger_date": "2026-11-17",
+    "ref_high": 854.7,
+    "ref_low": 780.0,
+    "status": "Active"
+  },
+  "PARKHOTELS": {
+    "trigger_date": "2026-11-17",
+    "ref_high": 108.5,
+    "ref_low": 102.3,
+    "status": "Active"
+  },
+  "WAKEFIT": {
+    "trigger_date": "2026-11-17",
+    "ref_high": 136.48,
+    "ref_low": 134.57,
+    "status": "Active"
+  },
+  "UNITEDTEA": {
+    "trigger_date": "2026-11-17",
+    "ref_high": 412.85,
+    "ref_low": 403.45,
+    "status": "Active"
   }
 }
