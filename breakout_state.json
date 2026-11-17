@@ -2,11 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-17T03:46:10.490238",
-    "custom_last_price": 105.6500015258789,
+    "custom_last_alert": "2026-11-17T07:01:23.241388",
+    "custom_last_price": 102.9000015258789,
     "session_date": "2026-11-17",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_AERON_price": {
@@ -84,11 +85,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-17T03:46:15.060471",
-    "custom_last_price": 171.8699951171875,
+    "custom_last_alert": "2026-11-17T07:01:28.755205",
+    "custom_last_price": 168.88999938964844,
     "session_date": "2026-11-17",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KAYNES_rsi": {
@@ -116,11 +118,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-17T03:46:18.028949",
-    "custom_last_price": 56.0,
+    "custom_last_alert": "2026-11-17T07:01:31.058612",
+    "custom_last_price": 53.599998474121094,
     "session_date": "2026-11-17",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
@@ -258,11 +261,12 @@
     ]
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-11-17T04:18:41.644369",
-    "spread_last_price": 3.689861593308312,
+    "spread_last_alert": "2026-11-17T07:04:22.938846",
+    "spread_last_price": 2.867818409439838,
     "session_date": "2026-11-17",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_BALRAMCHIN": {
@@ -392,11 +396,12 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-17T03:52:01.328744",
-    "spread_last_price": 3.3376424961805125,
+    "spread_last_alert": "2026-11-17T07:04:34.358963",
+    "spread_last_price": 4.524623858745155,
     "session_date": "2026-11-17",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_AVL": {
