@@ -2105,10 +2105,11 @@
       "rs_rank": 41.0,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:49:32.956897",
-      "near_high_17_22_last_price": 1879.9000244140625
+      "near_high_17_22_last_alert": "2026-11-17T08:01:45.478862",
+      "near_high_17_22_last_price": 1841.4000244140625
     },
     "AZAD": {
       "sma50": 2704.5559912109375,
@@ -19861,9 +19862,12 @@
       "rs_rank": 26.3,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "dtl_bo_sent": true
+      "dtl_bo_sent": true,
+      "ema50_pullback_last_alert": "2026-11-17T08:02:38.292704",
+      "ema50_pullback_last_price": 590.0
     },
     "TATATECH": {
       "sma50": 711.2379968261719,
@@ -22014,10 +22018,11 @@
       "rs_rank": 86.2,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:51:10.071421",
-      "near_high_17_22_last_price": 1884.0999755859375
+      "near_high_17_22_last_alert": "2026-11-17T08:02:45.702960",
+      "near_high_17_22_last_price": 1864.9000244140625
     },
     "WAKEFIT": {
       "sma50": 140.9261996459961,
@@ -27167,7 +27172,12 @@
       "rsi_ema_200": 52.5977,
       "ag": 3.380849,
       "al": 4.687369,
-      "last_close": 267.6
+      "last_close": 267.6,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T08:03:01.328079",
+      "rsi_bounce_last_price": 277.1499938964844
     },
     "PGEL": {
       "mcap_cr": 15467.673280090332,
