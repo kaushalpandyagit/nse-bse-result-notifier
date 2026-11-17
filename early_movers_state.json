@@ -437,7 +437,13 @@
     "price_change_pct": 2.47,
     "deliv_pct": 94.8,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-17",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-17T04:16:33.984467",
+    "em_high_breach_last_price": 95.70999908447266
   },
   "AIROLAM": {
     "trigger_date": "2026-11-12",

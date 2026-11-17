@@ -234,10 +234,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-16T07:18:39.757581",
-    "spread_last_price": 5.970149253731343,
+    "spread_last_alert": "2026-11-17T04:18:39.112818",
+    "spread_last_price": 3.3333333333333335,
     "session_date": "2026-11-17",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-11-17T03:52:09.128364",
@@ -256,9 +258,9 @@
     ]
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-11-16T03:51:36.662976",
-    "spread_last_price": 4.601366742596809,
-    "session_date": "2026-11-16",
+    "spread_last_alert": "2026-11-17T04:18:41.644369",
+    "spread_last_price": 3.689861593308312,
+    "session_date": "2026-11-17",
     "alert_slots": [
       "H1"
     ]
@@ -430,9 +432,9 @@
     ]
   },
   "arb_APTUS": {
-    "spread_last_alert": "2026-11-06T04:52:54.531024",
-    "spread_last_price": 2.524439070573876,
-    "session_date": "2026-11-06",
+    "spread_last_alert": "2026-11-17T04:18:34.771152",
+    "spread_last_price": 3.8097888439685312,
+    "session_date": "2026-11-17",
     "alert_slots": [
       "H1"
     ]

@@ -1529,7 +1529,13 @@
     "trigger_date": "2026-11-16",
     "ref_high": 383.0,
     "ref_low": 349.15,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-17",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-17T04:16:30.882355",
+    "fno_low_breach_last_price": 348.54998779296875
   },
   "REGAAL": {
     "trigger_date": "2026-11-16",
