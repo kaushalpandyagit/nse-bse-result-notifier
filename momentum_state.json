@@ -7323,7 +7323,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 37.1,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-17T06:30:31.295606",
+      "ema50_pullback_last_price": 7104.5
     },
     "GMDCLTD": {
       "sma50": 497.7030010986328,
@@ -24450,7 +24454,12 @@
       "rsi_ema_200": 49.8376,
       "ag": 3.855863,
       "al": 5.85752,
-      "last_close": 292.25
+      "last_close": 292.25,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T06:31:21.609063",
+      "rsi_bounce_last_price": 293.8999938964844
     },
     "EMAMILTD": {
       "mcap_cr": 17655.14226196289,
@@ -29657,7 +29666,12 @@
       "ag": 2.527146,
       "al": 2.351772,
       "last_close": 508.45,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T06:31:23.379524",
+      "rsi_bounce_last_price": 512.0
     },
     "ANDHRAPAP": {
       "mcap_cr": 1328.0,
@@ -29760,7 +29774,12 @@
       "ag": 1.097861,
       "al": 0.955581,
       "last_close": 93.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T06:31:24.583349",
+      "rsi_bounce_last_price": 94.05000305175781
     },
     "ARIS": {
       "mcap_cr": 1216.0,

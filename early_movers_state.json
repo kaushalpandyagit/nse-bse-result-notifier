@@ -363,7 +363,13 @@
     "price_change_pct": -2.49,
     "deliv_pct": 64.3,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-17",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-17T06:30:13.075848",
+    "em_high_breach_last_price": 916.75
   },
   "KANSAINER": {
     "trigger_date": "2026-11-12",
