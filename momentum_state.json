@@ -11657,7 +11657,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 6.9,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T06:17:27.239775",
+      "mtf_last_price": 320.0
     },
     "KPIL": {
       "sma50": 1380.1399951171875,
@@ -22172,7 +22176,9 @@
       "dtl_touches": null,
       "dtl_floor": 607.1500244140625,
       "dtl_floor_touches": 2,
-      "rs_rank": 88.6
+      "rs_rank": 88.6,
+      "session_date": "2026-11-17",
+      "alert_slots": []
     },
     "WHIRLPOOL": {
       "sma50": 819.887001953125,
@@ -33046,7 +33052,12 @@
       "ag": 4.721971,
       "al": 5.97702,
       "last_close": 663.35,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T06:18:34.954049",
+      "rsi_bounce_last_price": 665.9000244140625
     },
     "PASUPTAC": {
       "mcap_cr": 650.6,
