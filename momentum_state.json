@@ -7659,10 +7659,12 @@
       "rs_rank": 59.0,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "mtf_last_alert": "2026-11-17T04:02:08.870384",
-      "mtf_last_price": 720.4000244140625
+      "mtf_last_price": 720.4000244140625,
+      "hva_sent": true
     },
     "GOKULAGRO": {
       "sma50": 217.80539978027343,
@@ -14570,10 +14572,11 @@
       "rs_rank": 53.1,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:50:33.130287",
-      "near_high_17_22_last_price": 241.8000030517578
+      "near_high_17_22_last_alert": "2026-11-17T07:47:00.959733",
+      "near_high_17_22_last_price": 238.52999877929688
     },
     "PCBL": {
       "sma50": 309.45800048828124,
@@ -15249,10 +15252,11 @@
       "rs_rank": 58.3,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:50:36.681962",
-      "near_high_17_22_last_price": 596.7000122070312
+      "near_high_17_22_last_alert": "2026-11-17T07:47:03.821004",
+      "near_high_17_22_last_price": 589.9500122070312
     },
     "POLYMED": {
       "sma50": 1627.9199951171875,
@@ -29145,7 +29149,12 @@
       "rsi_ema_200": 54.1169,
       "ag": 8.485433,
       "al": 10.49101,
-      "last_close": 1410.1
+      "last_close": 1410.1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T07:47:37.940231",
+      "rsi_bounce_last_price": 1460.0999755859375
     },
     "VIKRAMSOLR": {
       "mcap_cr": 5051.944713552931,
