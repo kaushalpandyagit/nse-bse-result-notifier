@@ -1360,7 +1360,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 3.9,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-17T05:30:18.782824",
+      "vol_breakout_last_price": 191.17999267578125
     },
     "ARE&M": {
       "sma50": 760.2430004882813,
@@ -3106,7 +3110,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 52.9,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T05:30:23.856140",
+      "mtf_last_price": 315.6000061035156
     },
     "CAMPUS": {
       "sma50": 204.08239959716798,
@@ -25362,7 +25370,12 @@
       "rsi_ema_200": 50.3563,
       "ag": 8.967851,
       "al": 15.016636,
-      "last_close": 1618.9
+      "last_close": 1618.9,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:31:17.970859",
+      "rsi_bounce_last_price": 1642.0999755859375
     },
     "IMFA": {
       "mcap_cr": 5726.688942563892,
@@ -33488,7 +33501,12 @@
       "ag": 5.514374,
       "al": 9.146124,
       "last_close": 605.5,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:31:21.657997",
+      "rsi_bounce_last_price": 613.75
     },
     "RML": {
       "mcap_cr": 3601.1,
@@ -33713,7 +33731,12 @@
       "ag": 1.926494,
       "al": 1.88284,
       "last_close": 161.69,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:31:22.906666",
+      "rsi_bounce_last_price": 167.14999389648438
     },
     "SANATHAN": {
       "mcap_cr": 4847.3,
