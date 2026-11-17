@@ -8363,7 +8363,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 55.1,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T05:02:01.773906",
+      "mtf_last_price": 813.5999755859375
     },
     "HCC": {
       "sma50": 20.009399909973144,
@@ -15813,7 +15817,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 47.3,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-17T05:02:24.971449",
+      "near_high_17_22_last_price": 1283.699951171875
     },
     "RALLIS": {
       "sma50": 198.17839965820312,
@@ -29520,7 +29528,12 @@
       "ag": 5.688765,
       "al": 6.335161,
       "last_close": 785.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:03:00.726010",
+      "rsi_bounce_last_price": 788.9000244140625
     },
     "ALICON": {
       "mcap_cr": 1378.0,
@@ -32107,7 +32120,12 @@
       "ag": 1.192399,
       "al": 1.148527,
       "last_close": 77.58,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:03:03.375369",
+      "rsi_bounce_last_price": 78.0
     },
     "MANBA": {
       "mcap_cr": 723.4,
@@ -32478,7 +32496,12 @@
       "ag": 0.941893,
       "al": 0.811954,
       "last_close": 138.48,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:03:04.614149",
+      "rsi_bounce_last_price": 139.16000366210938
     },
     "MUKANDLTD": {
       "mcap_cr": 2168.2,
@@ -33615,7 +33638,12 @@
       "ag": 3.185707,
       "al": 3.728558,
       "last_close": 323.95,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:03:06.062882",
+      "rsi_bounce_last_price": 326.5
     },
     "SAKAR": {
       "mcap_cr": 2102.0,
@@ -33629,7 +33657,12 @@
       "ag": 18.42653,
       "al": 15.281237,
       "last_close": 1042.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:03:07.344943",
+      "rsi_bounce_last_price": 1045.0
     },
     "SALSTEEL": {
       "mcap_cr": 1285.2,
@@ -34082,7 +34115,12 @@
       "ag": 4.261499,
       "al": 5.174179,
       "last_close": 425.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:03:09.049533",
+      "rsi_bounce_last_price": 427.95001220703125
     },
     "SOLARA": {
       "mcap_cr": 3137.8,
@@ -34129,7 +34167,12 @@
       "ag": 2.140233,
       "al": 3.421909,
       "last_close": 163.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T05:03:10.244840",
+      "rsi_bounce_last_price": 165.8800048828125
     },
     "SPECTRUM": {
       "mcap_cr": 7259.4,
