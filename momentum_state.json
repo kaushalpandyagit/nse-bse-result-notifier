@@ -1892,7 +1892,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 90.1,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-17T06:01:45.691766",
+      "liquidity_sweep_last_price": 1801.5
     },
     "AVANTIFEED": {
       "sma50": 735.6790002441406,
@@ -3864,7 +3868,13 @@
       "dtl_touches": 4,
       "dtl_floor": 1066.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 91.4
+      "rs_rank": 91.4,
+      "session_date": "2026-11-17",
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-17T06:01:52.387662",
+      "near_high_17_22_last_price": 1288.5
     },
     "CENTRALBK": {
       "sma50": 30.495799942016603,
@@ -5602,7 +5612,9 @@
       "dtl_touches": null,
       "dtl_floor": 10057.0,
       "dtl_floor_touches": 3,
-      "rs_rank": 77.3
+      "rs_rank": 77.3,
+      "session_date": "2026-11-17",
+      "alert_slots": []
     },
     "E2E": {
       "sma50": 608.9300006103516,
@@ -26362,7 +26374,12 @@
       "rsi_ema_200": 50.2046,
       "ag": 4.08114,
       "al": 5.842681,
-      "last_close": 473.85
+      "last_close": 473.85,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T06:03:03.793646",
+      "rsi_bounce_last_price": 474.1000061035156
     },
     "MAPMYINDIA": {
       "mcap_cr": 4735.9476576,
