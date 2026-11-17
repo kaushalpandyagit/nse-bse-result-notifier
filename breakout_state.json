@@ -236,10 +236,8 @@
   "arb_WELINV": {
     "spread_last_alert": "2026-11-16T07:18:39.757581",
     "spread_last_price": 5.970149253731343,
-    "session_date": "2026-11-16",
-    "alert_slots": [
-      "H2"
-    ]
+    "session_date": "2026-11-17",
+    "alert_slots": []
   },
   "arb_PRADPME": {
     "spread_last_alert": "2026-11-17T03:52:09.128364",
@@ -250,11 +248,11 @@
     ]
   },
   "arb_BENGALASM": {
-    "spread_last_alert": "2026-11-11T07:06:20.025645",
-    "spread_last_price": 2.521746770934013,
-    "session_date": "2026-11-11",
+    "spread_last_alert": "2026-11-17T04:04:02.402142",
+    "spread_last_price": 2.641843971631206,
+    "session_date": "2026-11-17",
     "alert_slots": [
-      "H2"
+      "H1"
     ]
   },
   "arb_GANGESSECU": {
@@ -10476,12 +10474,12 @@
     "exchange": "NSE"
   },
   "arb_KAYNES": {
-    "session_date": "2026-11-16",
+    "session_date": "2026-11-17",
     "alert_slots": [
       "H1"
     ],
-    "spread_last_alert": "2026-11-16T03:51:16.721583",
-    "spread_last_price": 10.819565921606738
+    "spread_last_alert": "2026-11-17T04:04:12.615762",
+    "spread_last_price": 2.7331097510047284
   },
   "ABCIND": {
     "result_date": "2026-11-16T00:00:00",

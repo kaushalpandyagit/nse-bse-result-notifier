@@ -673,7 +673,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 13.4,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-17T04:01:43.969627",
+      "resistance_last_price": 281.54998779296875
     },
     "AEQUS": {
       "sma50": 243.27700012207032,
@@ -873,7 +877,10 @@
       "dtl_floor_touches": 1,
       "rs_rank": 3.2,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "dtl_bo_sent": true
     },
     "AFFLE": {
       "sma50": 1507.382001953125,
@@ -1639,7 +1646,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 25.3,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-17T04:01:48.346719",
+      "ema50_pullback_last_price": 108.16999816894531
     },
     "ASTRAMICRO": {
       "sma50": 1630.1899975585939,
@@ -3795,7 +3806,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 37.8,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:01:55.897671",
+      "mtf_last_price": 368.3500061035156
     },
     "CEMPRO": {
       "sma50": 1235.3040063476562,
@@ -3987,7 +4002,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 31.3,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:01:57.485061",
+      "mtf_last_price": 5033.2001953125
     },
     "CESC": {
       "sma50": 135.6111996459961,
@@ -6303,7 +6322,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 63.9,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:02:03.651168",
+      "mtf_last_price": 275.0199890136719
     },
     "ENGINERSIN": {
       "sma50": 285.04200164794923,
@@ -6543,7 +6566,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 44.5,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:02:05.282011",
+      "mtf_last_price": 1309.0
     },
     "ESCORTS": {
       "sma50": 2723.56998046875,
@@ -7553,7 +7580,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 59.0,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:02:08.870384",
+      "mtf_last_price": 720.4000244140625
     },
     "GOKULAGRO": {
       "sma50": 217.80539978027343,
@@ -8265,7 +8296,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 86.4,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-17T04:02:11.570080",
+      "vol_breakout_last_price": 1918.0
     },
     "HBLENGINE": {
       "sma50": 764.0580004882812,
@@ -8937,7 +8972,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 40.0,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-17T04:02:14.258487",
+      "resistance_last_price": 116.20999908447266
     },
     "IFBIND": {
       "sma50": 1178.5860034179686,
@@ -13189,7 +13228,11 @@
       "dtl_floor_touches": 5,
       "rs_rank": 5.2,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:02:24.791166",
+      "mtf_last_price": 835.9500122070312
     },
     "NAVA": {
       "sma50": 541.5460028076172,
@@ -15087,7 +15130,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 69.8,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-17T04:02:29.862146",
+      "resistance_last_price": 1684.5
     },
     "POWERMECH": {
       "sma50": 2356.08,
@@ -15283,7 +15330,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 52.7,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-17T04:02:31.327493",
+      "rectangle_bounce_last_price": 629.9000244140625
     },
     "PRIVISCL": {
       "sma50": 3422.906005859375,
@@ -15953,7 +16004,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 5.6,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:02:33.903555",
+      "mtf_last_price": 574.0
     },
     "RBA": {
       "sma50": 92.72480056762696,
@@ -17685,7 +17740,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 83.8,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-17T04:02:38.658433",
+      "near_high_17_22_last_price": 184.77000427246094
     },
     "SHILCTECH": {
       "sma50": 3880.083994140625,
@@ -18265,7 +18324,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 35.2,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:02:40.977969",
+      "mtf_last_price": 1286.4000244140625
     },
     "SONATSOFTW": {
       "sma50": 255.0499996948242,
@@ -19531,7 +19594,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 37.4,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:02:44.976550",
+      "mtf_last_price": 3765.0
     },
     "TATAINVEST": {
       "sma50": 615.10599609375,
@@ -19579,7 +19646,10 @@
       "dtl_floor_touches": 2,
       "rs_rank": 26.3,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "dtl_bo_sent": true
     },
     "TATATECH": {
       "sma50": 711.2379968261719,
@@ -19963,7 +20033,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 44.9,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:02:48.085090",
+      "mtf_last_price": 112.48999786376953
     },
     "THANGAMAYL": {
       "sma50": 4853.03599609375,
@@ -20451,7 +20525,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 46.0,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:02:50.284140",
+      "mtf_last_price": 743.5999755859375
     },
     "TMB": {
       "sma50": 867.7999975585938,
@@ -23091,7 +23169,12 @@
       "rsi_ema_200": 52.2915,
       "ag": 18.553039,
       "al": 32.506467,
-      "last_close": 2398.3
+      "last_close": 2398.3,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:06.858079",
+      "rsi_bounce_last_price": 2406.800048828125
     },
     "BAJAJCON": {
       "mcap_cr": 5474.866844991903,
@@ -23130,7 +23213,12 @@
       "rsi_ema_200": 53.9886,
       "ag": 6.768236,
       "al": 7.155131,
-      "last_close": 654.8
+      "last_close": 654.8,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:08.113485",
+      "rsi_bounce_last_price": 654.25
     },
     "BALUFORGE": {
       "mcap_cr": 6391.890346316528,
@@ -23364,7 +23452,12 @@
       "rsi_ema_200": 48.3703,
       "ag": 3.994118,
       "al": 4.730326,
-      "last_close": 549.15
+      "last_close": 549.15,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:09.554188",
+      "rsi_bounce_last_price": 551.3499755859375
     },
     "BSOFT": {
       "mcap_cr": 8707.433959255224,
@@ -24066,7 +24159,12 @@
       "rsi_ema_200": 54.8758,
       "ag": 131.76155,
       "al": 123.063994,
-      "last_close": 12895.0
+      "last_close": 12895.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:11.122584",
+      "rsi_bounce_last_price": 13014.0
     },
     "E2E": {
       "mcap_cr": 10716.683040793823,
@@ -24513,7 +24611,12 @@
       "rsi_ema_200": 50.6752,
       "ag": 1.354319,
       "al": 1.913928,
-      "last_close": 146.57
+      "last_close": 146.57,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:12.483174",
+      "rsi_bounce_last_price": 147.41000366210938
     },
     "GALLANTT": {
       "mcap_cr": 12927.832738567597,
@@ -24864,7 +24967,12 @@
       "rsi_ema_200": 51.1181,
       "ag": 8.775125,
       "al": 8.22194,
-      "last_close": 799.55
+      "last_close": 799.55,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:13.717376",
+      "rsi_bounce_last_price": 805.8499755859375
     },
     "HCC": {
       "mcap_cr": 4628.600085538956,
@@ -25428,7 +25536,12 @@
       "rsi_ema_200": 50.6515,
       "ag": 0.828848,
       "al": 0.883824,
-      "last_close": 90.56
+      "last_close": 90.56,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:14.997528",
+      "rsi_bounce_last_price": 90.8499984741211
     },
     "JBMA": {
       "mcap_cr": 11519.635743784644,
@@ -25992,7 +26105,12 @@
       "rsi_ema_200": 52.4481,
       "ag": 1.108007,
       "al": 1.194678,
-      "last_close": 86.16
+      "last_close": 86.16,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:16.177387",
+      "rsi_bounce_last_price": 87.33000183105469
     },
     "LLOYDSENT": {
       "mcap_cr": 9836.47172523992,
@@ -26881,7 +26999,12 @@
       "rsi_ema_200": 49.9851,
       "ag": 6.006153,
       "al": 6.148332,
-      "last_close": 593.45
+      "last_close": 593.45,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:17.650341",
+      "rsi_bounce_last_price": 601.4000244140625
     },
     "POLYMED": {
       "mcap_cr": 16980.072121870973,
@@ -27198,7 +27321,12 @@
       "rsi_ema_200": 52.1717,
       "ag": 0.953009,
       "al": 0.94919,
-      "last_close": 90.88
+      "last_close": 90.88,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:18.833991",
+      "rsi_bounce_last_price": 91.87000274658203
     },
     "RCF": {
       "mcap_cr": 5867.7546652723695,
@@ -27419,7 +27547,12 @@
       "rsi_ema_200": 49.5165,
       "ag": 0.330278,
       "al": 0.375737,
-      "last_close": 43.4
+      "last_close": 43.4,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:20.150227",
+      "rsi_bounce_last_price": 43.66999816894531
     },
     "SAILIFE": {
       "mcap_cr": 37441.940976055565,
@@ -27671,7 +27804,12 @@
       "rsi_ema_200": 52.0744,
       "ag": 1.815954,
       "al": 2.026832,
-      "last_close": 182.63
+      "last_close": 182.63,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:21.313795",
+      "rsi_bounce_last_price": 184.77000427246094
     },
     "SHILCTECH": {
       "mcap_cr": 3938.0601018603516,
@@ -27723,7 +27861,12 @@
       "rsi_ema_200": 54.0792,
       "ag": 27.476241,
       "al": 33.390251,
-      "last_close": 4291.3999
+      "last_close": 4291.3999,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:22.574303",
+      "rsi_bounce_last_price": 4345.0
     },
     "SHYAMMETL": {
       "mcap_cr": 36924.63850172446,
@@ -27879,7 +28022,12 @@
       "rsi_ema_200": 48.9464,
       "ag": 2.653703,
       "al": 2.426545,
-      "last_close": 195.84
+      "last_close": 195.84,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:23.707849",
+      "rsi_bounce_last_price": 199.22999572753906
     },
     "SPLPETRO": {
       "mcap_cr": 13128.106750815308,
@@ -29028,7 +29176,12 @@
       "rsi_ema_200": 49.4447,
       "ag": 3.354987,
       "al": 4.735409,
-      "last_close": 466.15
+      "last_close": 466.15,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:25.286237",
+      "rsi_bounce_last_price": 466.8500061035156
     },
     "63MOONS": {
       "mcap_cr": 4372.0,
@@ -29154,7 +29307,12 @@
       "ag": 0.339641,
       "al": 0.388378,
       "last_close": 201.01,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:26.705853",
+      "rsi_bounce_last_price": 201.8000030517578
     },
     "AGARWALEYE": {
       "mcap_cr": 16203.0,
@@ -29560,7 +29718,12 @@
       "ag": 13.433618,
       "al": 12.337334,
       "last_close": 866.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:28.151089",
+      "rsi_bounce_last_price": 870.5499877929688
     },
     "AVTNPL": {
       "mcap_cr": 1338.0,
@@ -29630,7 +29793,12 @@
       "ag": 0.177941,
       "al": 0.247502,
       "last_close": 18.02,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:29.480232",
+      "rsi_bounce_last_price": 18.18000030517578
     },
     "BALAJITELE": {
       "mcap_cr": 1059.0,
@@ -30027,7 +30195,12 @@
       "ag": 1.464333,
       "al": 1.389555,
       "last_close": 140.99,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:30.770336",
+      "rsi_bounce_last_price": 141.97999572753906
     },
     "DBOL": {
       "mcap_cr": 908.9,
@@ -30237,7 +30410,12 @@
       "ag": 2.055173,
       "al": 2.141336,
       "last_close": 287.05,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:32.224148",
+      "rsi_bounce_last_price": 287.3500061035156
     },
     "EIMCOELECO": {
       "mcap_cr": 1231.0,
@@ -30363,7 +30541,12 @@
       "ag": 3.921513,
       "al": 5.496808,
       "last_close": 434.65,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:33.493671",
+      "rsi_bounce_last_price": 438.79998779296875
     },
     "EXCELSOFT": {
       "mcap_cr": 894.2,
@@ -30531,7 +30714,12 @@
       "ag": 5.67941,
       "al": 12.059103,
       "last_close": 867.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:34.803790",
+      "rsi_bounce_last_price": 871.5
     },
     "GEECEE": {
       "mcap_cr": 748.6,
@@ -30998,7 +31186,12 @@
       "ag": 1.121177,
       "al": 2.194456,
       "last_close": 112.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:36.352117",
+      "rsi_bounce_last_price": 115.0999984741211
     },
     "INDOCO": {
       "mcap_cr": 1923.0,
@@ -31568,7 +31761,12 @@
       "ag": 7.252799,
       "al": 8.003296,
       "last_close": 877.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:37.891182",
+      "rsi_bounce_last_price": 890.0
     },
     "LANDMARK": {
       "mcap_cr": 1817.0,
@@ -31610,7 +31808,12 @@
       "ag": 1.538354,
       "al": 2.293623,
       "last_close": 203.73,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:39.176801",
+      "rsi_bounce_last_price": 204.0
     },
     "LMW": {
       "mcap_cr": 18500.8,
@@ -32012,7 +32215,12 @@
       "ag": 6.144109,
       "al": 6.879504,
       "last_close": 439.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:40.552924",
+      "rsi_bounce_last_price": 444.0
     },
     "MOBIKWIK": {
       "mcap_cr": 1693.0,
@@ -32054,7 +32262,12 @@
       "ag": 0.481005,
       "al": 0.605259,
       "last_close": 54.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:41.888001",
+      "rsi_bounce_last_price": 54.290000915527344
     },
     "MOLDTECH": {
       "mcap_cr": 604.9,
@@ -32068,7 +32281,12 @@
       "ag": 1.405645,
       "al": 1.469687,
       "last_close": 96.24,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:43.219555",
+      "rsi_bounce_last_price": 97.0
     },
     "MONTECARLO": {
       "mcap_cr": 1055.0,
@@ -32138,7 +32356,12 @@
       "ag": 1.390121,
       "al": 2.298883,
       "last_close": 138.88,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:44.293287",
+      "rsi_bounce_last_price": 139.80999755859375
     },
     "MUKKA": {
       "mcap_cr": 731.0,
@@ -32222,7 +32445,12 @@
       "ag": 2.121903,
       "al": 2.373555,
       "last_close": 252.55,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:45.496724",
+      "rsi_bounce_last_price": 253.64999389648438
     },
     "NGLFINE": {
       "mcap_cr": 1561.0,
@@ -32502,7 +32730,12 @@
       "ag": 0.188326,
       "al": 0.169777,
       "last_close": 19.26,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:46.795199",
+      "rsi_bounce_last_price": 19.3799991607666
     },
     "PAKKA": {
       "mcap_cr": 368.0,
@@ -32600,7 +32833,12 @@
       "ag": 0.856154,
       "al": 0.804919,
       "last_close": 72.33,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:47.947969",
+      "rsi_bounce_last_price": 73.08999633789062
     },
     "PATELRMART": {
       "mcap_cr": 791.9,
@@ -33067,7 +33305,12 @@
       "ag": 11.772919,
       "al": 14.971242,
       "last_close": 1212.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:48.996106",
+      "rsi_bounce_last_price": 1240.300048828125
     },
     "ROLEXRINGS": {
       "mcap_cr": 4264.0,
@@ -33702,7 +33945,12 @@
       "ag": 7.600821,
       "al": 9.132355,
       "last_close": 635.65,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:50.778199",
+      "rsi_bounce_last_price": 657.5499877929688
     },
     "SOTL": {
       "mcap_cr": 4452.0,
@@ -33828,7 +34076,12 @@
       "ag": 2.125975,
       "al": 2.557049,
       "last_close": 207.19,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:52.339244",
+      "rsi_bounce_last_price": 210.27999877929688
     },
     "STLNETWORK": {
       "mcap_cr": 1891.6,
@@ -34127,7 +34380,12 @@
       "ag": 21.300144,
       "al": 23.161585,
       "last_close": 1982.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:03:53.707281",
+      "rsi_bounce_last_price": 2003.800048828125
     },
     "TIRUPATIFL": {
       "mcap_cr": 896.0,
