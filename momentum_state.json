@@ -9281,7 +9281,13 @@
       "dtl_touches": null,
       "dtl_floor": 332.04998779296875,
       "dtl_floor_touches": 12,
-      "rs_rank": 57.0
+      "rs_rank": 57.0,
+      "session_date": "2026-11-17",
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-17T04:46:49.582261",
+      "near_high_17_22_last_price": 339.6000061035156
     },
     "IKS": {
       "sma50": 1735.9520043945313,
@@ -10063,7 +10069,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 60.9,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-17T04:46:52.686315",
+      "resistance_last_price": 140.27999877929688
     },
     "JAIBALAJI": {
       "sma50": 66.44780029296875,
@@ -20724,7 +20734,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 42.8,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:47:23.581859",
+      "mtf_last_price": 23.739999771118164
     },
     "TRITURBINE": {
       "sma50": 520.7599981689453,
@@ -21736,7 +21750,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 29.8,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-17T04:47:27.565169",
+      "mtf_last_price": 537.7000122070312
     },
     "WAAREERTL": {
       "sma50": 786.9990002441406,
@@ -23788,7 +23806,12 @@
       "rsi_ema_200": 51.9958,
       "ag": 1.571827,
       "al": 1.288161,
-      "last_close": 246.27
+      "last_close": 246.27,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:47:43.912440",
+      "rsi_bounce_last_price": 247.00999450683594
     },
     "CHALET": {
       "mcap_cr": 18033.071655141815,
@@ -24887,7 +24910,12 @@
       "rsi_ema_200": 54.1097,
       "ag": 6.202865,
       "al": 6.684581,
-      "last_close": 813.2
+      "last_close": 813.2,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:47:45.495696",
+      "rsi_bounce_last_price": 814.75
     },
     "GRAPHITE": {
       "mcap_cr": 15372.151497424402,
@@ -31138,7 +31166,12 @@
       "ag": 0.312409,
       "al": 0.262499,
       "last_close": 26.09,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:47:48.389715",
+      "rsi_bounce_last_price": 26.360000610351562
     },
     "HNDFDS": {
       "mcap_cr": 6522.0,
@@ -34536,7 +34569,12 @@
       "ag": 1.101311,
       "al": 1.467441,
       "last_close": 112.66,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:47:51.272907",
+      "rsi_bounce_last_price": 113.38999938964844
     },
     "TSFINV": {
       "mcap_cr": 8829.0,
@@ -34550,7 +34588,12 @@
       "ag": 3.654461,
       "al": 3.307366,
       "last_close": 414.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:47:52.363477",
+      "rsi_bounce_last_price": 415.8500061035156
     },
     "TTKHLTCARE": {
       "mcap_cr": 1279.0,
@@ -34844,7 +34887,12 @@
       "ag": 2.028547,
       "al": 3.03788,
       "last_close": 306.95,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T04:47:53.685054",
+      "rsi_bounce_last_price": 309.0
     },
     "VINDHYATEL": {
       "mcap_cr": 3130.0,
