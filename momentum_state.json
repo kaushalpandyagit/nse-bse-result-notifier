@@ -21663,7 +21663,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 5.0,
       "session_date": "2026-11-17",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-17T08:17:18.091675",
+      "rectangle_bounce_last_price": 140.69000244140625
     },
     "VIPIND": {
       "sma50": 278.53600158691404,
@@ -35075,7 +35079,12 @@
       "ag": 42.568165,
       "al": 67.780973,
       "last_close": 6853.5,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T08:17:34.768126",
+      "rsi_bounce_last_price": 6939.5
     },
     "VALIANTLAB": {
       "mcap_cr": 642.0,
