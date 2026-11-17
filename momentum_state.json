@@ -3541,10 +3541,11 @@
       "rs_rank": 91.8,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:49:43.839714",
-      "near_high_17_22_last_price": 2650.300048828125
+      "near_high_17_22_last_alert": "2026-11-17T07:30:27.310603",
+      "near_high_17_22_last_price": 2616.39990234375
     },
     "CASTROLIND": {
       "sma50": 193.33139984130858,
@@ -6132,10 +6133,13 @@
       "rs_rank": 73.0,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-17T03:49:55.991166",
-      "resistance_last_price": 597.0499877929688
+      "resistance_last_price": 597.0499877929688,
+      "mtf_last_alert": "2026-11-17T07:30:36.638970",
+      "mtf_last_price": 594.2999877929688
     },
     "ELLEN": {
       "sma50": 336.7179986572266,
@@ -9060,10 +9064,13 @@
       "rs_rank": 40.0,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "resistance_last_alert": "2026-11-17T04:02:14.258487",
-      "resistance_last_price": 116.20999908447266
+      "resistance_last_price": 116.20999908447266,
+      "mtf_last_alert": "2026-11-17T07:30:46.294142",
+      "mtf_last_price": 115.55000305175781
     },
     "IFBIND": {
       "sma50": 1178.5860034179686,
@@ -10492,10 +10499,11 @@
       "rs_rank": 52.5,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:50:12.619586",
-      "near_high_17_22_last_price": 367.8500061035156
+      "near_high_17_22_last_alert": "2026-11-17T07:30:51.435487",
+      "near_high_17_22_last_price": 364.1000061035156
     },
     "JKTYRE": {
       "sma50": 341.76099975585936,
@@ -13214,7 +13222,9 @@
       "dtl_touches": null,
       "dtl_floor": 531.2999877929688,
       "dtl_floor_touches": 1,
-      "rs_rank": 97.4
+      "rs_rank": 97.4,
+      "session_date": "2026-11-17",
+      "alert_slots": []
     },
     "MSUMI": {
       "sma50": 35.81619987487793,
@@ -18360,10 +18370,11 @@
       "rs_rank": 70.8,
       "session_date": "2026-11-17",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-17T03:50:50.303102",
-      "near_high_17_22_last_price": 499.1499938964844
+      "near_high_17_22_last_alert": "2026-11-17T07:31:15.823554",
+      "near_high_17_22_last_price": 494.1000061035156
     },
     "SKYGOLD": {
       "sma50": 881.6290026855469,
@@ -34642,7 +34653,12 @@
       "ag": 15.418975,
       "al": 17.82401,
       "last_close": 3476.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-17T07:31:46.854795",
+      "rsi_bounce_last_price": 3503.199951171875
     },
     "SYNCOMF": {
       "mcap_cr": 1809.0,
