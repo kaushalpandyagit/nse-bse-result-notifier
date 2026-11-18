@@ -119,6 +119,22 @@ RSIB_ALERT_WITHOUT_BOOK = True              # no buy/sell quantities from Fyers:
 RSIB_QUOTE_BATCH = 50                       # Fyers quotes per call
 
 RSI_PERIOD = 14
+
+# --- Intraday scanner selection (walk-forward replay of the production trigger code,
+# 704 stocks x 2 years, Nov 2026; baseline +0.33% avg 20-day return):
+# Only two scanners kept a positive edge in BOTH years, and only for relative-strength
+# leaders while Nifty is above its 50-day average (RS top 10%):
+#   Zanger              +4.0% / +1.8% vs baseline (yr1 / yr2)
+#   Massive Volume BO   +3.6% / +2.7%
+# Unfiltered both were flat or negative. The weekly-RSI cap HURT them, so they ignore it.
+# Retired (no consistent edge; e.g. Desc. Wedge -1.4% t=-2.9, Momentum Ignition -1.6%
+# t=-2.4, SOS Curl -1.2% t=-2.3, Rectangle -1.2%, 50 EMA pullback -1.2%, Bonde -1.2%,
+# HVA/DTL breakouts -0.7..-1.1%, 17-22% from high -0.55%, Horizontal Resistance and MTF
+# flip sign between years). Set RETIRED_SETUPS_ENABLED = True to bring them back. ---
+LEADER_SETUPS = {"zanger", "vol_breakout"}
+LEADER_MIN_RS_RANK = 90.0
+LEADER_REQUIRE_MARKET_UPTREND = True       # Nifty 50 close above its 50-day SMA
+RETIRED_SETUPS_ENABLED = False
 TRACK_WINDOW_DAYS = 15
 
 # Momentum Universe Filters
@@ -658,6 +674,13 @@ def _yahoo_live_metrics(symbol: str, exchange: str = "NSE") -> dict:
     yahoo_ticker = f"{symbol}.NS" if exchange.upper() == "NSE" else f"{symbol}.BO"
     try:
         hist = yf.Ticker(yahoo_ticker).history(period="1y", interval="1d")
+        return metrics_from_daily(hist)
+    except Exception:
+        return None
+
+def metrics_from_daily(hist: pd.DataFrame) -> dict:
+    """Live-style metrics where the LAST row of `hist` is 'today' (shared with the backtest)."""
+    try:
         if hist.empty or len(hist) < 5: return None
         closes = hist["Close"]
         today, yesterday = hist.iloc[-1], hist.iloc[-2]
@@ -988,6 +1011,140 @@ def get_market_cap_cr(symbol: str, exchange: str = "NSE") -> float:
         pass
     return None
 
+def compute_symbol_fields(df: pd.DataFrame, mcap_cr) -> dict:
+    """Watchlist fields for one stock from COMPLETED daily bars (shared by the daily
+    scan and the backtest harness, so both run identical logic)."""
+    closes, highs, lows, volumes = df["Close"].dropna(), df["High"].dropna(), df["Low"].dropna(), df["Volume"].dropna()
+    if len(closes) < 210 or len(volumes) < 50: return None
+    trend = get_trend_template_status(closes)
+    if trend is None: return None
+    
+    rsi_series = get_rsi_series(closes, RSI_PERIOD)
+    
+    macro_low, macro_low_rsi = None, None
+    if len(lows) >= MACRO_PIVOT_LOOKBACK_DAYS:
+        window_lows = lows.iloc[-MACRO_PIVOT_LOOKBACK_DAYS:]
+        m_low, m_idx = float(window_lows.min()), window_lows.idxmin()
+        if m_idx in highs.index:
+            subsequent_highs = highs.iloc[highs.index.get_loc(m_idx):]
+            if float(subsequent_highs.max()) >= m_low * 1.05:
+                macro_low = m_low
+                macro_low_rsi = float(rsi_series.loc[m_idx]) if pd.notna(rsi_series.loc[m_idx]) else 50.0
+
+    macro_high, macro_high_rsi = None, None
+    if len(highs) >= MACRO_PIVOT_LOOKBACK_DAYS:
+        window_highs = highs.iloc[-MACRO_PIVOT_LOOKBACK_DAYS:]
+        m_high, m_idx = float(window_highs.max()), window_highs.idxmax()
+        if m_idx in lows.index:
+            subsequent_lows = lows.iloc[lows.index.get_loc(m_idx):]
+            if float(subsequent_lows.min()) <= m_high * 0.95:
+                macro_high = m_high
+                macro_high_rsi = float(rsi_series.loc[m_idx]) if pd.notna(rsi_series.loc[m_idx]) else 50.0
+
+    sos_peak_p, sos_peak_rsi = None, None
+    if len(rsi_series) >= 30:
+        window_rsi_thrust = rsi_series.iloc[-30:-3]
+        max_thrust_rsi = float(window_rsi_thrust.max())
+        if max_thrust_rsi >= 72.0:
+            sos_peak_rsi = max_thrust_rsi
+            sos_peak_p = float(highs.loc[window_rsi_thrust.idxmax()])
+            
+    box_high, box_low = None, None
+    if len(highs) >= 60 and len(lows) >= 60:
+        w_highs = highs.iloc[-60:]
+        w_lows = lows.iloc[-60:]
+        b_high = float(w_highs.max())
+        b_low = float(w_lows.min())
+        
+        box_height_pct = ((b_high - b_low) / b_low) * 100
+        # A 60-day high/low alone also "boxes" any trending stock. Require a real
+        # rectangle: both edges tested at least twice (touches >= 5 sessions apart).
+        def _touches(mask) -> int:
+            n_t, last_i = 0, -99
+            for i in np.where(mask)[0]:
+                if i - last_i >= 5:
+                    n_t, last_i = n_t + 1, i
+            return n_t
+        top_t = _touches(w_highs.values >= b_high * 0.97)
+        bot_t = _touches(w_lows.values <= b_low * 1.03)
+        if 10.0 <= box_height_pct <= 45.0 and top_t >= 2 and bot_t >= 2:
+            box_high = b_high
+            box_low = b_low
+
+    descending_res, wedge_contraction = None, None
+    if len(highs) >= 40 and len(lows) >= 40:
+        w_h = highs.iloc[-40:]
+        w_l = lows.iloc[-40:]
+        p1_h = w_h.iloc[:-10]
+        if not p1_h.empty:
+            p1_idx = p1_h.argmax()
+            p1_val = float(p1_h.iloc[p1_idx])
+            if p1_idx + 4 < 38:
+                p2_h = w_h.iloc[p1_idx + 4 : -2]
+                if not p2_h.empty:
+                    p2_local_idx = p2_h.argmax()
+                    p2_val = float(p2_h.iloc[p2_local_idx])
+                    p2_idx = p1_idx + 4 + p2_local_idx
+                    if p2_val < p1_val:
+                        dx = p2_idx - p1_idx
+                        if dx > 0:
+                            slope = (p2_val - p1_val) / dx
+                            # index 39 = last completed session; project to today (40)
+                            projected_res = p1_val + slope * (40 - p1_idx)
+                            r5 = float((w_h.iloc[-5:] - w_l.iloc[-5:]).mean())
+                            r20 = float((w_h.iloc[-20:] - w_l.iloc[-20:]).mean())
+                            contraction = r5 / r20 if r20 > 0 else 1.0
+                            if projected_res > float(w_l.iloc[-5:].min()):
+                                descending_res = projected_res
+                                wedge_contraction = contraction
+    
+    hva_fields = detect_volume_anchor(df)
+    dtl_fields = detect_descending_channel(df)
+
+    rs_return = (float(closes.iloc[-1]) / float(closes.iloc[-RS_LOOKBACK_DAYS]) - 1) * 100 if len(closes) > RS_LOOKBACK_DAYS and float(closes.iloc[-RS_LOOKBACK_DAYS]) > 0 else None
+    
+    fields = {
+        **trend,
+        "ath_high": float(highs.max()) if len(highs) > 0 else float(closes.max()),
+        "vcp": detect_vcp_setup(df),
+        **ema21_pullback_fields(df),
+        "rs_return_6m": rs_return,
+        "avg_volume_50d": float(volumes[-50:].mean()),
+        # df holds completed sessions only, so the base is simply the last N of them
+        "base_high": float(highs.iloc[-ZANGER_BASE_LOOKBACK_DAYS:].max()),
+        "base_low": float(lows.iloc[-ZANGER_BASE_LOOKBACK_DAYS:].min()),
+        "prev_close": float(closes.iloc[-1]),
+        "monthly_rsi": rsi_fyers_tradingview(closes.resample('ME').last().dropna().tolist(), RSI_PERIOD) if len(closes.resample('ME').last().dropna()) > 14 else 50.0,
+        "yesterday_rsi": rsi_fyers_tradingview(closes.tolist(), RSI_PERIOD),
+        "ema_10_prev": float(closes.ewm(span=10, adjust=False).mean().iloc[-1]),
+        "ema_21_prev": float(closes.ewm(span=21, adjust=False).mean().iloc[-1]),
+        "ema_50_prev": float(closes.ewm(span=50, adjust=False).mean().iloc[-1]),
+        "ema_100_prev": float(closes.ewm(span=100, adjust=False).mean().iloc[-1]),
+        "ema_200_prev": float(closes.ewm(span=200, adjust=False).mean().iloc[-1]),
+        "mcap_cr": mcap_cr,
+        "macro_low": macro_low, "macro_low_rsi": macro_low_rsi,
+        "macro_high": macro_high, "macro_high_rsi": macro_high_rsi,
+        "sos_thrust_peak_price": sos_peak_p, "sos_thrust_peak_rsi": sos_peak_rsi,
+        "box_high": box_high, "box_low": box_low, 
+        "descending_res": descending_res, "wedge_contraction": wedge_contraction,
+        **hva_fields, **dtl_fields,
+    }
+    return fields, rs_return
+
+
+def get_market_uptrend() -> bool:
+    """Nifty 50 last COMPLETED close above its 50-day SMA (None if unknown)."""
+    try:
+        n = yf.Ticker("^NSEI").history(period="6mo", interval="1d")["Close"].dropna()
+        if len(n) and n.index[-1].date() == ist_today():
+            n = n.iloc[:-1]
+        if len(n) < 50:
+            return None
+        return bool(n.iloc[-1] > n.iloc[-50:].mean())
+    except Exception as e:
+        log.warning("Market regime check failed: %s", e)
+        return None
+
 def run_daily_momentum_scan(momentum_state: dict) -> dict:
     today_str = ist_today().isoformat()
     if momentum_state.get("last_scan_date") == today_str:
@@ -1043,119 +1200,9 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
 
         if mcap_cr is not None and (mcap_cr < MIN_MARKET_CAP_CR or mcap_cr > MAX_MARKET_CAP_CR): continue
 
-        trend = get_trend_template_status(closes)
-        if trend is None: continue
-        
-        rsi_series = get_rsi_series(closes, RSI_PERIOD)
-        
-        macro_low, macro_low_rsi = None, None
-        if len(lows) >= MACRO_PIVOT_LOOKBACK_DAYS:
-            window_lows = lows.iloc[-MACRO_PIVOT_LOOKBACK_DAYS:]
-            m_low, m_idx = float(window_lows.min()), window_lows.idxmin()
-            if m_idx in highs.index:
-                subsequent_highs = highs.iloc[highs.index.get_loc(m_idx):]
-                if float(subsequent_highs.max()) >= m_low * 1.05:
-                    macro_low = m_low
-                    macro_low_rsi = float(rsi_series.loc[m_idx]) if pd.notna(rsi_series.loc[m_idx]) else 50.0
-
-        macro_high, macro_high_rsi = None, None
-        if len(highs) >= MACRO_PIVOT_LOOKBACK_DAYS:
-            window_highs = highs.iloc[-MACRO_PIVOT_LOOKBACK_DAYS:]
-            m_high, m_idx = float(window_highs.max()), window_highs.idxmax()
-            if m_idx in lows.index:
-                subsequent_lows = lows.iloc[lows.index.get_loc(m_idx):]
-                if float(subsequent_lows.min()) <= m_high * 0.95:
-                    macro_high = m_high
-                    macro_high_rsi = float(rsi_series.loc[m_idx]) if pd.notna(rsi_series.loc[m_idx]) else 50.0
-
-        sos_peak_p, sos_peak_rsi = None, None
-        if len(rsi_series) >= 30:
-            window_rsi_thrust = rsi_series.iloc[-30:-3]
-            max_thrust_rsi = float(window_rsi_thrust.max())
-            if max_thrust_rsi >= 72.0:
-                sos_peak_rsi = max_thrust_rsi
-                sos_peak_p = float(highs.loc[window_rsi_thrust.idxmax()])
-                
-        box_high, box_low = None, None
-        if len(highs) >= 60 and len(lows) >= 60:
-            w_highs = highs.iloc[-60:]
-            w_lows = lows.iloc[-60:]
-            b_high = float(w_highs.max())
-            b_low = float(w_lows.min())
-            
-            box_height_pct = ((b_high - b_low) / b_low) * 100
-            # A 60-day high/low alone also "boxes" any trending stock. Require a real
-            # rectangle: both edges tested at least twice (touches >= 5 sessions apart).
-            def _touches(mask) -> int:
-                n_t, last_i = 0, -99
-                for i in np.where(mask)[0]:
-                    if i - last_i >= 5:
-                        n_t, last_i = n_t + 1, i
-                return n_t
-            top_t = _touches(w_highs.values >= b_high * 0.97)
-            bot_t = _touches(w_lows.values <= b_low * 1.03)
-            if 10.0 <= box_height_pct <= 45.0 and top_t >= 2 and bot_t >= 2:
-                box_high = b_high
-                box_low = b_low
-
-        descending_res, wedge_contraction = None, None
-        if len(highs) >= 40 and len(lows) >= 40:
-            w_h = highs.iloc[-40:]
-            w_l = lows.iloc[-40:]
-            p1_h = w_h.iloc[:-10]
-            if not p1_h.empty:
-                p1_idx = p1_h.argmax()
-                p1_val = float(p1_h.iloc[p1_idx])
-                if p1_idx + 4 < 38:
-                    p2_h = w_h.iloc[p1_idx + 4 : -2]
-                    if not p2_h.empty:
-                        p2_local_idx = p2_h.argmax()
-                        p2_val = float(p2_h.iloc[p2_local_idx])
-                        p2_idx = p1_idx + 4 + p2_local_idx
-                        if p2_val < p1_val:
-                            dx = p2_idx - p1_idx
-                            if dx > 0:
-                                slope = (p2_val - p1_val) / dx
-                                # index 39 = last completed session; project to today (40)
-                                projected_res = p1_val + slope * (40 - p1_idx)
-                                r5 = float((w_h.iloc[-5:] - w_l.iloc[-5:]).mean())
-                                r20 = float((w_h.iloc[-20:] - w_l.iloc[-20:]).mean())
-                                contraction = r5 / r20 if r20 > 0 else 1.0
-                                if projected_res > float(w_l.iloc[-5:].min()):
-                                    descending_res = projected_res
-                                    wedge_contraction = contraction
-        
-        hva_fields = detect_volume_anchor(df)
-        dtl_fields = detect_descending_channel(df)
-
-        rs_return = (float(closes.iloc[-1]) / float(closes.iloc[-RS_LOOKBACK_DAYS]) - 1) * 100 if len(closes) > RS_LOOKBACK_DAYS and float(closes.iloc[-RS_LOOKBACK_DAYS]) > 0 else None
-        
-        per_symbol_data[symbol] = {
-            **trend,
-            "ath_high": float(highs.max()) if len(highs) > 0 else float(closes.max()),
-            "vcp": detect_vcp_setup(df),
-            **ema21_pullback_fields(df),
-            "rs_return_6m": rs_return,
-            "avg_volume_50d": float(volumes[-50:].mean()),
-            # df holds completed sessions only, so the base is simply the last N of them
-            "base_high": float(highs.iloc[-ZANGER_BASE_LOOKBACK_DAYS:].max()),
-            "base_low": float(lows.iloc[-ZANGER_BASE_LOOKBACK_DAYS:].min()),
-            "prev_close": float(closes.iloc[-1]),
-            "monthly_rsi": rsi_fyers_tradingview(closes.resample('ME').last().dropna().tolist(), RSI_PERIOD) if len(closes.resample('ME').last().dropna()) > 14 else 50.0,
-            "yesterday_rsi": rsi_fyers_tradingview(closes.tolist(), RSI_PERIOD),
-            "ema_10_prev": float(closes.ewm(span=10, adjust=False).mean().iloc[-1]),
-            "ema_21_prev": float(closes.ewm(span=21, adjust=False).mean().iloc[-1]),
-            "ema_50_prev": float(closes.ewm(span=50, adjust=False).mean().iloc[-1]),
-            "ema_100_prev": float(closes.ewm(span=100, adjust=False).mean().iloc[-1]),
-            "ema_200_prev": float(closes.ewm(span=200, adjust=False).mean().iloc[-1]),
-            "mcap_cr": mcap_cr,
-            "macro_low": macro_low, "macro_low_rsi": macro_low_rsi,
-            "macro_high": macro_high, "macro_high_rsi": macro_high_rsi,
-            "sos_thrust_peak_price": sos_peak_p, "sos_thrust_peak_rsi": sos_peak_rsi,
-            "box_high": box_high, "box_low": box_low, 
-            "descending_res": descending_res, "wedge_contraction": wedge_contraction,
-            **hva_fields, **dtl_fields,
-        }
+        res = compute_symbol_fields(df, mcap_cr)
+        if res is None: continue
+        per_symbol_data[symbol], rs_return = res
         if rs_return is not None: returns_6m[symbol] = rs_return
 
     sorted_syms = sorted(returns_6m.keys(), key=lambda s: returns_6m[s], reverse=True)
@@ -1207,7 +1254,8 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     except Exception as e:
         log.warning("RSI bounce extras failed: %s", e)
     return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis, "rsi_bounce_universe": rsi_bounce_universe,
-            "last_sector_report_date": momentum_state.get("last_sector_report_date"), "ipo_watch": ipo_watch}
+            "last_sector_report_date": momentum_state.get("last_sector_report_date"), "ipo_watch": ipo_watch,
+            "market_up": get_market_uptrend()}
 
 def send_morning_sector_rs_report(momentum_state: dict) -> dict:
     now_ist = get_ist_now()
@@ -1917,8 +1965,17 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
         # which almost always sit above that cap.
         check_vcp_breakout(symbol, entry, metrics, momentum_state, now_ist)
         check_ema21_pullback(symbol, entry, metrics, momentum_state)
-    if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI:
+    if not metrics:
         return
+    below_cap = (metrics.get("weekly_rsi") or 100) < MAX_WEEKLY_RSI
+    rs_now = entry.get("rs_rank")
+    leader_ok = (rs_now is not None and rs_now >= LEADER_MIN_RS_RANK
+                 and (momentum_state.get("market_up") is not False or not LEADER_REQUIRE_MARKET_UPTREND))
+
+    def _on(key: str) -> bool:
+        if key in LEADER_SETUPS:
+            return leader_ok
+        return RETIRED_SETUPS_ENABLED and below_cap
 
     price, volume, prev_close = metrics["price"], metrics["volume"], metrics["prev_close"]
     prev_volume, c_rsi = metrics["prev_volume"], metrics["rsi"]
@@ -1936,13 +1993,13 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
     y_rsi = entry.get("yesterday_rsi")
 
     avg_vol_for_bo = entry.get("avg_volume_50d") or metrics.get("sma_vol_20")
-    if alert_allowed(entry, "vol_breakout", price) and avg_vol_for_bo and avg_vol_for_bo > 0:
+    if _on("vol_breakout") and alert_allowed(entry, "vol_breakout", price) and avg_vol_for_bo and avg_vol_for_bo > 0:
         # 4x volume on a red / fading candle is distribution, not a breakout
         if volume >= 4.0 * avg_vol_for_bo and pct_change is not None and pct_change >= 1.0 and price >= metrics.get("open_price", 0):
             vol_mult = volume / avg_vol_for_bo
             pct_str = f"({pct_change:+.1f}%)" if pct_change is not None else ""
             if send_telegram_message(
-                f"🔊 <b>{symbol}</b> Massive Volume Breakout!\n"
+                f"🔊 <b>{symbol}</b> Massive Volume Breakout! (RS {rs_now})\n"
                 f"• <b>Current Price:</b> ₹{price:.2f} {pct_str}\n"
                 f"• <b>Volume:</b> {vol_mult:.1f}x Average Volume\n"
                 f"• <b>Traded Vol:</b> {volume:,.0f} shares"
@@ -1953,7 +2010,7 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
     desc_res = entry.get("descending_res")
     wedge_contract = entry.get("wedge_contraction")
 
-    if alert_allowed(entry, "descending_wedge", price) and desc_res and wedge_contract:
+    if _on("descending_wedge") and alert_allowed(entry, "descending_wedge", price) and desc_res and wedge_contract:
         sma_vol_20 = metrics.get("sma_vol_20")
         is_tight = wedge_contract <= 0.70
         is_breakout = price >= desc_res and prev_close <= (desc_res * 1.015)
@@ -1972,7 +2029,7 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
 
     box_high, box_low = entry.get("box_high"), entry.get("box_low")
 
-    if alert_allowed(entry, "rectangle_bounce", price) and box_high and box_low and c_rsi and y_rsi:
+    if _on("rectangle_bounce") and alert_allowed(entry, "rectangle_bounce", price) and box_high and box_low and c_rsi and y_rsi:
         sma_vol_20 = metrics.get("sma_vol_20")
         box_range = box_high - box_low
         in_buy_zone = box_low <= price <= (box_low + 0.40 * box_range)
@@ -1996,7 +2053,7 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
     sos_rsi, sos_peak_p = entry.get("sos_thrust_peak_rsi"), entry.get("sos_thrust_peak_price")
     macro_low = entry.get("macro_low")
 
-    if alert_allowed(entry, "sos_pullback_curl", price) and sos_rsi and sos_peak_p and y_rsi and c_rsi:
+    if _on("sos_pullback_curl") and alert_allowed(entry, "sos_pullback_curl", price) and sos_rsi and sos_peak_p and y_rsi and c_rsi:
         sma_vol_20 = metrics["sma_vol_20"]
         cond_pulled_back = price <= (sos_peak_p * 0.94)
         cond_holds_floor = (macro_low is None) or (price >= macro_low * 1.04)
@@ -2018,7 +2075,7 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
 
     macro_high, macro_high_rsi = entry.get("macro_high"), entry.get("macro_high_rsi")
 
-    if alert_allowed(entry, "momentum_ignition", price) and macro_high and macro_high_rsi and c_rsi:
+    if _on("momentum_ignition") and alert_allowed(entry, "momentum_ignition", price) and macro_high and macro_high_rsi and c_rsi:
         c_low, c_high, c_open, sma_vol_20 = metrics["low_price"], metrics["high_price"], metrics["open_price"], metrics["sma_vol_20"]
 
         cond_proximity = (macro_high * 0.975) <= price <= (macro_high * 0.990)
@@ -2043,7 +2100,7 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
                 record_alert(entry, "momentum_ignition", price)
 
     macro_low_rsi = entry.get("macro_low_rsi")
-    if alert_allowed(entry, "liquidity_sweep", price) and macro_low and macro_low_rsi and c_rsi:
+    if _on("liquidity_sweep") and alert_allowed(entry, "liquidity_sweep", price) and macro_low and macro_low_rsi and c_rsi:
         c_low, c_high, c_open, sma_vol_20 = metrics["low_price"], metrics["high_price"], metrics["open_price"], metrics["sma_vol_20"]
         
         cond_proximity = (macro_low * 0.985) <= price <= (macro_low * 1.025)
@@ -2067,26 +2124,26 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
             ):
                 record_alert(entry, "liquidity_sweep", price)
 
-    if alert_allowed(entry, "zanger", price) and base_high and avg_vol50 and pct_change is not None:
+    if _on("zanger") and alert_allowed(entry, "zanger", price) and base_high and avg_vol50 and pct_change is not None:
         if (pct_change >= ZANGER_EARLY_MOVE_PCT and volume >= ZANGER_VOLUME_MULT * avg_vol50
                 and base_high < price <= base_high * 1.04):
-            if send_telegram_message(f"💥 <b>{symbol}</b> Zanger Early Entry Setup!\nPrice ₹{price:.2f} (up {pct_change:+.1f}%) broke above {ZANGER_BASE_LOOKBACK_DAYS}-day base high ₹{base_high:.2f} on {volume / avg_vol50:.1f}x avg volume.{open_low_tag}{rs_tag}{ern_tag}"):
+            if send_telegram_message(f"💥 <b>{symbol}</b> Zanger Early Entry Setup! (RS {rs_now})\nPrice ₹{price:.2f} (up {pct_change:+.1f}%) broke above {ZANGER_BASE_LOOKBACK_DAYS}-day base high ₹{base_high:.2f} on {volume / avg_vol50:.1f}x avg volume.{open_low_tag}{rs_tag}{ern_tag}"):
                 record_alert(entry, "zanger", price)
 
-    if alert_allowed(entry, "bonde", price) and pct_change is not None and prev_volume is not None and metrics.get("close_3d_ago"):
+    if _on("bonde") and alert_allowed(entry, "bonde", price) and pct_change is not None and prev_volume is not None and metrics.get("close_3d_ago"):
         return_3d = (prev_close - metrics["close_3d_ago"]) / metrics["close_3d_ago"] * 100
         if entry.get("stage2") and return_3d < 1.0 and volume > prev_volume and volume >= BONDE_MIN_VOLUME and pct_change >= BONDE_MIN_MOVE_PCT:
             if send_telegram_message(f"⚡ <b>{symbol}</b> Bonde Early Entry Model Trigger!\nConsolidated ({return_3d:+.1f}%), moved {pct_change:+.1f}% today. Vol ({volume:,.0f}) > Yesterday, in Stage 2. Price ₹{price:.2f}{open_low_tag}{rs_tag}{ern_tag}"):
                 record_alert(entry, "bonde", price)
 
-    if alert_allowed(entry, "resistance", price) and base_high:
+    if _on("resistance") and alert_allowed(entry, "resistance", price) and base_high:
         # Only stocks actively pressing into resistance: within 2.5%, up on the day, RSI rising
         if (0 < ((base_high - price) / base_high * 100) <= 2.5 and price >= prev_close
                 and c_rsi and y_rsi and c_rsi > y_rsi):
             if send_telegram_message(f"🎯 <b>{symbol}</b> Horizontal Resistance Scanner!\nPrice ₹{price:.2f} is pressing within 2.5% of the {ZANGER_BASE_LOOKBACK_DAYS}-day base high (₹{base_high:.2f}), RSI rising {y_rsi:.1f} → {c_rsi:.1f}.{open_low_tag}{rs_tag}{ern_tag}"):
                 record_alert(entry, "resistance", price)
 
-    if alert_allowed(entry, "mtf", price) and c_rsi is not None:
+    if _on("mtf") and alert_allowed(entry, "mtf", price) and c_rsi is not None:
         m_rsi = entry.get("monthly_rsi") or 50.0
         ema_condition = price >= metrics["ema_200"] * 1.03 or price >= metrics["ema_50"] * 1.03 or price >= metrics["ema_21"] * 1.03
         if y_rsi:
@@ -2095,7 +2152,7 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
                 if send_telegram_message(f"🔮 <b>{symbol}</b> MTF RSI + EMA Trigger!\nPrice ₹{price:.2f} (≥3% above 21/50/200 EMA).\nLive Daily RSI: {c_rsi:.1f} | Weekly: {metrics['weekly_rsi']:.1f} | Monthly: {m_rsi:.1f}{open_low_tag}{rs_tag}{ern_tag}"):
                     record_alert(entry, "mtf", price)
     
-    if alert_allowed(entry, "ema50_pullback", price) and c_rsi:
+    if _on("ema50_pullback") and alert_allowed(entry, "ema50_pullback", price) and c_rsi:
         ema_50 = metrics.get("ema_50")
         w_rsi, mcap = metrics.get("weekly_rsi"), entry.get("mcap_cr") or 0
         sma_vol_5, sma_vol_20 = metrics.get("sma_vol_5"), metrics.get("sma_vol_20")
@@ -2117,12 +2174,12 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
                 ):
                     record_alert(entry, "ema50_pullback", price)
 
-    for _flag, _m in scan_hva_and_dtl_setups(symbol, entry, metrics):
+    for _flag, _m in (scan_hva_and_dtl_setups(symbol, entry, metrics) if _on("hva_dtl") else []):
         if send_telegram_message(_m + f"{open_low_tag}{rs_tag}{ern_tag}"):
             entry[_flag] = True
             record_half_day_slot(entry)
 
-    if alert_allowed(entry, "near_high_17_22", price):
+    if _on("near_high_17_22") and alert_allowed(entry, "near_high_17_22", price):
         ref_high = max(entry.get("fifty2w_high") or 0.0, entry.get("ath_high") or 0.0)
         if ref_high > 0:
             pct_from_high = ((ref_high - price) / ref_high) * 100
