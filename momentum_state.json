@@ -30384,7 +30384,12 @@
       "ag": 6.26288,
       "al": 10.492472,
       "last_close": 621.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:17:45.186217",
+      "rsi_bounce_last_price": 630.2999877929688
     },
     "DENTALKART": {
       "mcap_cr": 787.2,
