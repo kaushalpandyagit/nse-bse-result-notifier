@@ -31549,7 +31549,12 @@
       "ag": 0.68744,
       "al": 0.93595,
       "last_close": 74.94,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T07:48:19.460803",
+      "rsi_bounce_last_price": 75.29000091552734
     },
     "KABRAEXTRU": {
       "mcap_cr": 2575.7,
@@ -32490,7 +32495,12 @@
       "ag": 1.186806,
       "al": 1.32325,
       "last_close": 122.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T07:48:21.800170",
+      "rsi_bounce_last_price": 126.5
     },
     "NAHARPOLY": {
       "mcap_cr": 576.0,
