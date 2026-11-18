@@ -27993,7 +27993,12 @@
       "rsi_ema_200": 53.992,
       "ag": 25.692224,
       "al": 31.005233,
-      "last_close": 4293.8999
+      "last_close": 4293.8999,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:32:35.883241",
+      "rsi_bounce_last_price": 4296.0
     },
     "SHYAMMETL": {
       "mcap_cr": 37008.15321332446,
@@ -29968,7 +29973,12 @@
       "ag": 0.825456,
       "al": 1.055972,
       "last_close": 104.31,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:32:37.914392",
+      "rsi_bounce_last_price": 105.9000015258789
     },
     "BHAGERIA": {
       "mcap_cr": 1582.0,
@@ -30113,7 +30123,12 @@
       "ag": 16.02407,
       "al": 18.426193,
       "last_close": 1716.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:32:40.439737",
+      "rsi_bounce_last_price": 1731.300048828125
     },
     "CANTABIL": {
       "mcap_cr": 2153.2,
@@ -30497,7 +30512,12 @@
       "ag": 7.452484,
       "al": 6.399826,
       "last_close": 646.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:32:41.847510",
+      "rsi_bounce_last_price": 648.7999877929688
     },
     "DPABHUSHAN": {
       "mcap_cr": 4618.1,
@@ -30843,7 +30863,12 @@
       "ag": 17.129183,
       "al": 21.45546,
       "last_close": 2195.1001,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:32:43.439464",
+      "rsi_bounce_last_price": 2248.89990234375
     },
     "GANDHAR": {
       "mcap_cr": 2444.0,
@@ -30871,7 +30896,12 @@
       "ag": 5.273738,
       "al": 11.233453,
       "last_close": 867.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:32:44.752525",
+      "rsi_bounce_last_price": 875.7000122070312
     },
     "GEECEE": {
       "mcap_cr": 748.6,
@@ -31184,7 +31214,12 @@
       "ag": 2.145535,
       "al": 2.148227,
       "last_close": 216.58,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:32:46.754517",
+      "rsi_bounce_last_price": 222.02999877929688
     },
     "HILINFRA": {
       "mcap_cr": 506.7,
@@ -32814,7 +32849,12 @@
       "ag": 14.534838,
       "al": 12.137263,
       "last_close": 800.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:32:50.792117",
+      "rsi_bounce_last_price": 810.0
     },
     "ORBTEXP": {
       "mcap_cr": 658.0,
