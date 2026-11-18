@@ -17,6 +17,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 6: High-Volume Anchor Day (breakout above anchor high / pullback hold in anchor zone).
 - SETUP 7: Descending Trendline 3+ touches + Floor (floor bounce RR / trendline breakout).
 - SETUP 8: RSI Bounce (Chartink port: 4H RSI crossing above EMA of daily RSI, buyers > sellers).
+- RSI_ scanners: the price scanners applied to the RSI line itself (RSI_Trendline, RSI_High60), leaders only.
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
 - Custom Synthetic Index Engine (Equal-Weighted Basket RSI via custom_indices.json).
 - NSE-BSE Delivery Arbitrage & Spread Scanner (Expanded Holding Co. List).
@@ -132,6 +133,25 @@ RSI_PERIOD = 14
 # HVA/DTL breakouts -0.7..-1.1%, 17-22% from high -0.55%, Horizontal Resistance and MTF
 # flip sign between years). Set RETIRED_SETUPS_ENABLED = True to bring them back. ---
 LEADER_SETUPS = {"zanger", "vol_breakout"}
+
+# --- RSI_ scanners: a price scanner applied to the daily RSI line instead of the price ---
+# Tested 18 Nov 2026 on closing data (704 stocks x 2 years; all stock-days averaged +0.5% over 20 sessions).
+# Four ideas were tried: RSI box breakout, RSI falling-trendline break, RSI at a 60-session high, bullish divergence,
+# each also in an "RSI moved, price has not yet" form. Without a filter NONE had an edge, and the "before price"
+# forms were no better than chance. With the same gate as the leader setups (RS top 10%, market up) two held in
+# both years:
+#   RSI_Trendline (3+ touches)  +3.5% avg / +1.1% median over 20 sessions, 55% up, n=115  (yr1 +3.7%, yr2 +3.3%)
+#   RSI_High60                  +2.7% avg / +0.9% median, 53% up, n=338                    (yr1 +3.6%, yr2 +1.7%)
+# RSI box (too few leader cases) and divergence (no edge) are not alerted. About one alert a day in total.
+RSI_SETUPS_ENABLED = True
+RSI_SETUP_AFTER = (14, 45)        # the test used the closing RSI, so alert only late in the session
+RSI_TL_LOOKBACK = 60              # sessions searched for RSI swing highs
+RSI_TL_MIN_TOUCHES = 3
+RSI_TL_TOL = 1.5                  # RSI points: a swing high this close to the line is a touch; above it breaks the line
+RSI_TL_BAND = (40.0, 65.0)        # RSI must be in this band on the break
+RSI_HIGH_LOOKBACK = 60
+RSI_HIGH_MIN = 60.0
+RSI_HIGH_QUIET = 5                # no other 60-session RSI high in the previous 5 sessions
 LEADER_MIN_RS_RANK = 90.0
 LEADER_REQUIRE_MARKET_UPTREND = True       # Nifty 50 close above its 50-day SMA
 RETIRED_SETUPS_ENABLED = False
@@ -1011,6 +1031,52 @@ def get_market_cap_cr(symbol: str, exchange: str = "NSE") -> float:
         pass
     return None
 
+def detect_rsi_setups(closes: pd.Series) -> dict:
+    """Levels for the RSI_ scanners from COMPLETED daily bars: today's value of the falling RSI trendline (3+ swing-high
+    touches, RSI under it up to yesterday), and the highest RSI of the last 60 sessions. The live RSI is compared with
+    them late in the session. Shared by the daily scan and any backtest, so both run the same logic."""
+    out = {"rsi_tl_line": None, "rsi_tl_touches": None, "rsi_hi60": None, "rsi_hi60_fresh": False}
+    try:
+        r = get_rsi_series(closes, RSI_PERIOD).values.astype(float)
+        n = len(r)
+        if n < RSI_HIGH_LOOKBACK + 20:
+            return out
+        k = 3
+        # a swing high needs 3 completed bars after it; "today" is bar n and is not in the series
+        swings = [i for i in range(max(k, n - RSI_TL_LOOKBACK), n - k) if r[i] >= r[i - k:i + k + 1].max()]
+        best = None
+        for ai in range(len(swings)):
+            a = swings[ai]
+            for b in swings[ai + 1:]:
+                if b - a < 8 or r[b] >= r[a] - 2:
+                    continue
+                slope = (r[b] - r[a]) / (b - a)
+                seg = np.arange(a, n)
+                if (r[a:n] > r[a] + slope * (seg - a) + RSI_TL_TOL).any():
+                    continue                               # RSI already went above the line
+                touches = sum(1 for j in swings if j >= a and abs(r[j] - (r[a] + slope * (j - a))) <= RSI_TL_TOL)
+                if best is None or touches > best[1]:
+                    best = (float(r[a] + slope * (n - a)), int(touches))
+        if best and best[1] >= RSI_TL_MIN_TOUCHES:
+            out["rsi_tl_line"], out["rsi_tl_touches"] = round(best[0], 2), best[1]
+        win = r[-RSI_HIGH_LOOKBACK:]
+        out["rsi_hi60"] = round(float(win.max()), 2)
+        # quiet = none of the last RSI_HIGH_QUIET sessions was itself a 60-session RSI high at or above RSI_HIGH_MIN
+        fresh = True
+        for t in range(n - RSI_HIGH_QUIET, n):
+            if t - RSI_HIGH_LOOKBACK >= 0 and r[t] >= RSI_HIGH_MIN and r[t] > r[t - RSI_HIGH_LOOKBACK:t].max():
+                fresh = False
+                break
+        out["rsi_hi60_fresh"] = fresh
+        # Wilder averages of the last completed bar, so today's RSI can be worked out from a live price alone
+        d = closes.diff()
+        out["rsi_ag"] = round(float(d.where(d > 0, 0.0).ewm(com=RSI_PERIOD - 1, min_periods=1, adjust=False).mean().iloc[-1]), 6)
+        out["rsi_al"] = round(float((-d.where(d < 0, 0.0)).ewm(com=RSI_PERIOD - 1, min_periods=1, adjust=False).mean().iloc[-1]), 6)
+    except Exception:
+        pass
+    return out
+
+
 def compute_symbol_fields(df: pd.DataFrame, mcap_cr) -> dict:
     """Watchlist fields for one stock from COMPLETED daily bars (shared by the daily
     scan and the backtest harness, so both run identical logic)."""
@@ -1203,6 +1269,8 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         res = compute_symbol_fields(df, mcap_cr)
         if res is None: continue
         per_symbol_data[symbol], rs_return = res
+        if RSI_SETUPS_ENABLED:
+            per_symbol_data[symbol].update(detect_rsi_setups(closes))
         if rs_return is not None: returns_6m[symbol] = rs_return
 
     sorted_syms = sorted(returns_6m.keys(), key=lambda s: returns_6m[s], reverse=True)
@@ -2006,6 +2074,31 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
                 f"{open_low_tag}{rs_tag}{ern_tag}"
             ):
                 record_alert(entry, "vol_breakout", price)
+
+    # ---- RSI_ scanners: leaders only, late in the session (the test used closing RSI), once a day each ----
+    if RSI_SETUPS_ENABLED and leader_ok and c_rsi is not None and (now_ist.hour, now_ist.minute) >= RSI_SETUP_AFTER:
+        pct_str = f"({pct_change:+.1f}%)" if pct_change is not None else ""
+        tl_line = entry.get("rsi_tl_line")
+        if (tl_line is not None and "rsi_trendline_last_alert" not in entry
+                and c_rsi > tl_line + 1 and RSI_TL_BAND[0] <= c_rsi <= RSI_TL_BAND[1]):
+            y_line = f"\n• <b>Yesterday RSI:</b> {y_rsi:.1f}" if y_rsi is not None else ""
+            if send_telegram_message(
+                f"📐 <b>{symbol}</b> RSI_Trendline Breakout! (RS {rs_now})\n"
+                f"• <b>Current Price:</b> ₹{price:.2f} {pct_str}\n"
+                f"• <b>Daily RSI:</b> {c_rsi:.1f} is above its falling trendline at {tl_line:.1f} ({entry.get('rsi_tl_touches')} swing-high touches)"
+                f"{y_line}{rs_tag}{ern_tag}"
+            ):
+                record_alert(entry, "rsi_trendline", price)
+        rsi_hi = entry.get("rsi_hi60")
+        if (rsi_hi is not None and entry.get("rsi_hi60_fresh") and "rsi_high60_last_alert" not in entry
+                and c_rsi > rsi_hi and c_rsi >= RSI_HIGH_MIN):
+            if send_telegram_message(
+                f"🏔️ <b>{symbol}</b> RSI_High60! (RS {rs_now})\n"
+                f"• <b>Current Price:</b> ₹{price:.2f} {pct_str}\n"
+                f"• <b>Daily RSI:</b> {c_rsi:.1f}, its highest in {RSI_HIGH_LOOKBACK} sessions (previous high {rsi_hi:.1f})"
+                f"{rs_tag}{ern_tag}"
+            ):
+                record_alert(entry, "rsi_high60", price)
 
     desc_res = entry.get("descending_res")
     wedge_contract = entry.get("wedge_contraction")
