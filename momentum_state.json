@@ -9945,7 +9945,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 68.1,
       "session_date": "2026-11-18",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "resistance_last_alert": "2026-11-18T04:47:00.988529",
+      "resistance_last_price": 141.1699981689453
     },
     "JAIBALAJI": {
       "sma50": 66.2068002319336,
@@ -23840,7 +23844,12 @@
       "rsi_ema_200": 48.1121,
       "ag": 4.4252,
       "al": 4.646871,
-      "last_close": 451.6
+      "last_close": 451.6,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:47:51.736916",
+      "rsi_bounce_last_price": 454.20001220703125
     },
     "CONCOR": {
       "mcap_cr": 33556.886680954696,
@@ -25015,7 +25024,12 @@
       "rsi_ema_200": 55.3441,
       "ag": 2.250082,
       "al": 5.006202,
-      "last_close": 188.19
+      "last_close": 188.19,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:47:53.244536",
+      "rsi_bounce_last_price": 195.25999450683594
     },
     "HGINFRA": {
       "mcap_cr": 2636.497215950421,
@@ -30243,7 +30257,12 @@
       "ag": 4.476459,
       "al": 8.016451,
       "last_close": 483.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:47:56.519853",
+      "rsi_bounce_last_price": 489.6000061035156
     },
     "DIFFNKG": {
       "mcap_cr": 1483.0,
