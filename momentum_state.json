@@ -30648,7 +30648,12 @@
       "ag": 2.782215,
       "al": 3.436066,
       "last_close": 254.45,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:47:40.226382",
+      "rsi_bounce_last_price": 255.6999969482422
     },
     "ESAFSFB": {
       "mcap_cr": 2222.0,
