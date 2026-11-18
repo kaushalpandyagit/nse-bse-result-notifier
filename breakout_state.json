@@ -469,10 +469,12 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-17T07:30:04.206304",
-    "custom_last_price": 162.5,
+    "custom_last_alert": "2026-11-18T08:01:15.094832",
+    "custom_last_price": 164.5,
     "session_date": "2026-11-18",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "arb_AETHER": {
     "spread_last_alert": "2026-11-02T04:05:26.197403",

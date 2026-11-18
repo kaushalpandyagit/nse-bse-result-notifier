@@ -235,7 +235,9 @@
       "dtl_touches": null,
       "dtl_floor": 580.0,
       "dtl_floor_touches": 5,
-      "rs_rank": 92.7
+      "rs_rank": 92.7,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "ABFRL": {
       "sma50": 44.71360008239746,
@@ -1259,7 +1261,9 @@
       "dtl_touches": null,
       "dtl_floor": 361.3999938964844,
       "dtl_floor_touches": 2,
-      "rs_rank": 90.7
+      "rs_rank": 90.7,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "APOLLOTYRE": {
       "sma50": 407.0510003662109,
@@ -1545,7 +1549,9 @@
       "dtl_touches": null,
       "dtl_floor": 862.5,
       "dtl_floor_touches": 6,
-      "rs_rank": 90.1
+      "rs_rank": 90.1,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "ASHAPURMIN": {
       "sma50": 477.9589990234375,
@@ -3855,7 +3861,9 @@
       "dtl_touches": 3,
       "dtl_floor": 1066.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 93.8
+      "rs_rank": 93.8,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "CENTRALBK": {
       "sma50": 30.57639991760254,
@@ -3953,7 +3961,9 @@
       "dtl_touches": null,
       "dtl_floor": 3255.10009765625,
       "dtl_floor_touches": 2,
-      "rs_rank": 92.9
+      "rs_rank": 92.9,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "CERA": {
       "sma50": 5115.0280078125,
@@ -5454,7 +5464,9 @@
       "dtl_touches": null,
       "dtl_floor": 216.8000030517578,
       "dtl_floor_touches": 1,
-      "rs_rank": 98.5
+      "rs_rank": 98.5,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "DOMS": {
       "sma50": 2052.763994140625,
@@ -6370,7 +6382,9 @@
       "dtl_touches": null,
       "dtl_floor": 1164.699951171875,
       "dtl_floor_touches": 3,
-      "rs_rank": 95.5
+      "rs_rank": 95.5,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "EPL": {
       "sma50": 233.3422003173828,
@@ -7926,7 +7940,13 @@
       "dtl_touches": null,
       "dtl_floor": 171.52000427246094,
       "dtl_floor_touches": 1,
-      "rs_rank": 93.1
+      "rs_rank": 93.1,
+      "session_date": "2026-11-18",
+      "alert_slots": [
+        "H2"
+      ],
+      "vol_breakout_last_alert": "2026-11-18T08:01:46.863552",
+      "vol_breakout_last_price": 265.6300048828125
     },
     "GRINDWELL": {
       "sma50": 1927.3239965820312,
@@ -8738,7 +8758,9 @@
       "dtl_touches": null,
       "dtl_floor": 413.8500061035156,
       "dtl_floor_touches": 2,
-      "rs_rank": 91.8
+      "rs_rank": 91.8,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "HONAUT": {
       "sma50": 32586.7,
@@ -8880,7 +8902,9 @@
       "dtl_touches": null,
       "dtl_floor": 371.29998779296875,
       "dtl_floor_touches": 1,
-      "rs_rank": 98.3
+      "rs_rank": 98.3,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "IEX": {
       "sma50": 109.85139984130859,
@@ -10969,7 +10993,9 @@
       "dtl_touches": null,
       "dtl_floor": 738.9000244140625,
       "dtl_floor_touches": 1,
-      "rs_rank": 93.5
+      "rs_rank": 93.5,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "KAJARIACER": {
       "sma50": 1198.539990234375,
@@ -11456,7 +11482,9 @@
       "dtl_touches": null,
       "dtl_floor": 443.20001220703125,
       "dtl_floor_touches": 1,
-      "rs_rank": 97.4
+      "rs_rank": 97.4,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "KNRCON": {
       "sma50": 112.98000061035157,
@@ -11894,7 +11922,9 @@
       "dtl_touches": null,
       "dtl_floor": 261.04998779296875,
       "dtl_floor_touches": 1,
-      "rs_rank": 91.2
+      "rs_rank": 91.2,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "LATENTVIEW": {
       "sma50": 234.44659881591798,
@@ -12134,7 +12164,9 @@
       "dtl_touches": null,
       "dtl_floor": 137.00999450683594,
       "dtl_floor_touches": 2,
-      "rs_rank": 95.7
+      "rs_rank": 95.7,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "LTFOODS": {
       "sma50": 415.73999877929685,
@@ -12285,7 +12317,9 @@
       "dtl_touches": null,
       "dtl_floor": 1384.4000244140625,
       "dtl_floor_touches": 1,
-      "rs_rank": 90.9
+      "rs_rank": 90.9,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "LXCHEM": {
       "sma50": 171.18900085449218,
@@ -12667,7 +12701,9 @@
       "dtl_touches": null,
       "dtl_floor": 111.4000015258789,
       "dtl_floor_touches": 1,
-      "rs_rank": 97.8
+      "rs_rank": 97.8,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "MEDPLUS": {
       "sma50": 631.9320031738281,
@@ -13494,7 +13530,9 @@
       "dtl_touches": null,
       "dtl_floor": 1920.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 94.4
+      "rs_rank": 94.4,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "NEPHROPLUS": {
       "sma50": 661.1430004882812,
@@ -14527,7 +14565,9 @@
       "dtl_touches": null,
       "dtl_floor": 8.979999542236328,
       "dtl_floor_touches": 2,
-      "rs_rank": 98.1
+      "rs_rank": 98.1,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "PDSL": {
       "sma50": 353.9159997558594,
@@ -14573,7 +14613,9 @@
       "dtl_touches": null,
       "dtl_floor": 320.1000061035156,
       "dtl_floor_touches": 3,
-      "rs_rank": 91.6
+      "rs_rank": 91.6,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "PFIZER": {
       "sma50": 3944.9279931640626,
@@ -14815,7 +14857,9 @@
       "dtl_touches": null,
       "dtl_floor": 960.5499877929688,
       "dtl_floor_touches": 2,
-      "rs_rank": 96.3
+      "rs_rank": 96.3,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "PICCADIL": {
       "sma50": 586.5109948730469,
@@ -15541,7 +15585,9 @@
       "dtl_touches": null,
       "dtl_floor": 970.0,
       "dtl_floor_touches": 2,
-      "rs_rank": 94.8
+      "rs_rank": 94.8,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "QPOWER": {
       "sma50": 1476.24,
@@ -15633,7 +15679,9 @@
       "dtl_touches": null,
       "dtl_floor": 284.3500061035156,
       "dtl_floor_touches": 2,
-      "rs_rank": 96.1
+      "rs_rank": 96.1,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "RAILTEL": {
       "sma50": 251.1211978149414,
@@ -16784,7 +16832,9 @@
       "dtl_touches": 4,
       "dtl_floor": 1320.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 97.2
+      "rs_rank": 97.2,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SAFARI": {
       "sma50": 1367.7919921875,
@@ -17081,7 +17131,9 @@
       "dtl_touches": null,
       "dtl_floor": 3071.0,
       "dtl_floor_touches": 2,
-      "rs_rank": 99.4
+      "rs_rank": 99.4,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SAPPHIRE": {
       "sma50": 212.44160003662108,
@@ -17223,7 +17275,9 @@
       "dtl_touches": null,
       "dtl_floor": 450.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 97.0
+      "rs_rank": 97.0,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SBFC": {
       "sma50": 88.86440048217773,
@@ -17557,7 +17611,9 @@
       "dtl_touches": null,
       "dtl_floor": 596.4000244140625,
       "dtl_floor_touches": 1,
-      "rs_rank": 95.3
+      "rs_rank": 95.3,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SHAILY": {
       "sma50": 3122.5380126953123,
@@ -17847,7 +17903,9 @@
       "dtl_touches": null,
       "dtl_floor": 595.4000244140625,
       "dtl_floor_touches": 3,
-      "rs_rank": 98.9
+      "rs_rank": 98.9,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SHREEJISPG": {
       "sma50": 785.0889965820312,
@@ -17893,7 +17951,9 @@
       "dtl_touches": null,
       "dtl_floor": 497.0,
       "dtl_floor_touches": 1,
-      "rs_rank": 99.6
+      "rs_rank": 99.6,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SHRIPISTON": {
       "sma50": 4428.03197265625,
@@ -17987,7 +18047,9 @@
       "dtl_touches": null,
       "dtl_floor": 474.8500061035156,
       "dtl_floor_touches": 1,
-      "rs_rank": 100.0
+      "rs_rank": 100.0,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SIGNATURE": {
       "sma50": 742.8529968261719,
@@ -18242,7 +18304,9 @@
       "dtl_touches": null,
       "dtl_floor": 563.75,
       "dtl_floor_touches": 1,
-      "rs_rank": 99.8
+      "rs_rank": 99.8,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SMLMAH": {
       "sma50": 5800.533994140625,
@@ -18441,7 +18505,9 @@
       "dtl_touches": null,
       "dtl_floor": 43.81999969482422,
       "dtl_floor_touches": 4,
-      "rs_rank": 94.2
+      "rs_rank": 94.2,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SPARC": {
       "sma50": 193.0360009765625,
@@ -18779,7 +18845,9 @@
       "dtl_touches": null,
       "dtl_floor": 793.0,
       "dtl_floor_touches": 3,
-      "rs_rank": 97.6
+      "rs_rank": 97.6,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "SUMICHEM": {
       "sma50": 404.4950018310547,
@@ -20141,7 +20209,9 @@
       "dtl_touches": null,
       "dtl_floor": 461.04998779296875,
       "dtl_floor_touches": 2,
-      "rs_rank": 95.0
+      "rs_rank": 95.0,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "THERMAX": {
       "sma50": 3276.1639990234376,
@@ -21022,7 +21092,9 @@
       "dtl_touches": null,
       "dtl_floor": 1152.0,
       "dtl_floor_touches": 2,
-      "rs_rank": 99.1
+      "rs_rank": 99.1,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "URBANCO": {
       "sma50": 160.8087991333008,
@@ -22057,7 +22129,9 @@
       "dtl_touches": null,
       "dtl_floor": 152.97999572753906,
       "dtl_floor_touches": 1,
-      "rs_rank": 98.7
+      "rs_rank": 98.7,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "WESTLIFE": {
       "sma50": 586.7869921875,
@@ -24681,7 +24755,12 @@
       "rsi_ema_200": 53.3905,
       "ag": 25.179361,
       "al": 20.630062,
-      "last_close": 1492.2
+      "last_close": 1492.2,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:02:30.011047",
+      "rsi_bounce_last_price": 1492.0
     },
     "GAEL": {
       "mcap_cr": 6636.505891520142,
@@ -30698,7 +30777,12 @@
       "ag": 0.673593,
       "al": 0.635933,
       "last_close": 67.48,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T08:02:32.521959",
+      "rsi_bounce_last_price": 68.5999984741211
     },
     "FMGOETZE": {
       "mcap_cr": 2396.0,

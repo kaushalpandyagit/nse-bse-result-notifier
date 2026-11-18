@@ -1097,7 +1097,13 @@
     "trigger_date": "2026-11-10",
     "ref_high": 149.0,
     "ref_low": 135.99,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-18",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-18T08:01:19.750476",
+    "fno_low_breach_last_price": 135.0
   },
   "ARIHANT": {
     "trigger_date": "2026-11-10",
