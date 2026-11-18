@@ -236,11 +236,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-18T06:32:56.893663",
-    "spread_last_price": 4.422880713619403,
+    "spread_last_alert": "2026-11-18T07:32:25.751325",
+    "spread_last_price": 4.228855721393035,
     "session_date": "2026-11-18",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_PRADPME": {
@@ -414,11 +415,11 @@
     ]
   },
   "arb_KICL": {
-    "spread_last_alert": "2026-11-16T05:03:07.043525",
-    "spread_last_price": 4.377104377104377,
-    "session_date": "2026-11-16",
+    "spread_last_alert": "2026-11-18T07:32:05.440563",
+    "spread_last_price": 3.241719520789288,
+    "session_date": "2026-11-18",
     "alert_slots": [
-      "H1"
+      "H2"
     ]
   },
   "arb_AKUMS": {
