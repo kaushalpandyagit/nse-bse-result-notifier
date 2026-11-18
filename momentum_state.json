@@ -3645,7 +3645,9 @@
       "dtl_touches": null,
       "dtl_floor": 1159.0999755859375,
       "dtl_floor_touches": 1,
-      "rs_rank": 77.4
+      "rs_rank": 77.4,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "CEATLTD": {
       "sma50": 3317.023994140625,
@@ -31519,7 +31521,12 @@
       "ag": 2.496487,
       "al": 2.413767,
       "last_close": 174.77,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T06:32:20.486926",
+      "rsi_bounce_last_price": 175.0
     },
     "KANPRPLA": {
       "mcap_cr": 605.1,

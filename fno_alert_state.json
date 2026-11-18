@@ -1631,7 +1631,13 @@
     "trigger_date": "2026-11-17",
     "ref_high": 108.5,
     "ref_low": 102.3,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-18",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-18T06:30:28.487108",
+    "fno_low_breach_last_price": 102.13999938964844
   },
   "WAKEFIT": {
     "trigger_date": "2026-11-17",
