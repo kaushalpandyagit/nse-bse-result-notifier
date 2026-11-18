@@ -32102,7 +32102,12 @@
       "ag": 1.096537,
       "al": 1.516584,
       "last_close": 145.23,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T05:32:04.992045",
+      "rsi_bounce_last_price": 147.5800018310547
     },
     "MAYURUNIQ": {
       "mcap_cr": 3424.5,
@@ -32284,7 +32289,12 @@
       "ag": 1.522214,
       "al": 2.880143,
       "last_close": 90.38,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T05:32:06.394009",
+      "rsi_bounce_last_price": 92.5999984741211
     },
     "MSPL": {
       "mcap_cr": 1742.9,
