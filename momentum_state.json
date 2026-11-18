@@ -23209,7 +23209,12 @@
       "rsi_ema_200": 53.0622,
       "ag": 20.095634,
       "al": 17.650421,
-      "last_close": 1660.4
+      "last_close": 1660.4,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:47:39.140168",
+      "rsi_bounce_last_price": 1660.5
     },
     "ATLANTAELE": {
       "mcap_cr": 11289.193328514099,
@@ -32486,7 +32491,12 @@
       "ag": 5.869531,
       "al": 6.38811,
       "last_close": 441.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:47:43.127929",
+      "rsi_bounce_last_price": 451.0
     },
     "MOBIKWIK": {
       "mcap_cr": 1693.0,

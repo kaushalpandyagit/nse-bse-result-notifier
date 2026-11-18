@@ -89,21 +89,23 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-18T04:01:24.254159",
-    "custom_last_price": 164.89999389648438,
+    "custom_last_alert": "2026-11-18T09:46:02.552354",
+    "custom_last_price": 163.0,
     "session_date": "2026-11-18",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-18T05:46:02.249908",
-    "custom_last_price": 2912.0,
+    "custom_last_alert": "2026-11-18T09:46:03.603025",
+    "custom_last_price": 2882.0,
     "session_date": "2026-11-18",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KOTHARIPET_rsi": {
