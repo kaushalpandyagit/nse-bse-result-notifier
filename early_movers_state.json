@@ -603,7 +603,13 @@
     "price_change_pct": -2.43,
     "deliv_pct": 75.8,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-18",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-18T04:16:37.287260",
+    "em_low_breach_last_price": 13.140000343322754
   },
   "KLBRENG-B": {
     "trigger_date": "2026-11-13",

@@ -11981,7 +11981,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 77.6,
       "session_date": "2026-11-18",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-18T04:17:27.298401",
+      "near_high_17_22_last_price": 86.16999816894531
     },
     "LLOYDSENT": {
       "sma50": 69.31880020141601,
@@ -12511,7 +12515,9 @@
       "dtl_touches": null,
       "dtl_floor": 239.64999389648438,
       "dtl_floor_touches": 1,
-      "rs_rank": 92.0
+      "rs_rank": 92.0,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "MASTEK": {
       "sma50": 1605.3499926757813,
@@ -13041,7 +13047,9 @@
       "dtl_touches": null,
       "dtl_floor": 531.2999877929688,
       "dtl_floor_touches": 1,
-      "rs_rank": 96.8
+      "rs_rank": 96.8,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "MSUMI": {
       "sma50": 35.87719993591308,
@@ -21557,7 +21565,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 78.9,
       "session_date": "2026-11-18",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "near_high_17_22_last_alert": "2026-11-18T04:18:07.211086",
+      "near_high_17_22_last_price": 783.9500122070312
     },
     "VOLTAMP": {
       "sma50": 10412.86,
@@ -23732,7 +23744,12 @@
       "rsi_ema_200": 54.1486,
       "ag": 13.533952,
       "al": 17.528458,
-      "last_close": 1410.4
+      "last_close": 1410.4,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:18:26.445607",
+      "rsi_bounce_last_price": 1431.199951171875
     },
     "CHOICEIN": {
       "mcap_cr": 16175.801121112061,
@@ -31846,7 +31863,12 @@
       "ag": 5.259762,
       "al": 8.950327,
       "last_close": 860.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:18:32.300953",
+      "rsi_bounce_last_price": 878.0
     },
     "MANAKCOAT": {
       "mcap_cr": 1651.8,
@@ -32570,7 +32592,12 @@
       "ag": 0.125613,
       "al": 0.140852,
       "last_close": 15.43,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:18:34.651779",
+      "rsi_bounce_last_price": 15.489999771118164
     },
     "ORKLAINDIA": {
       "mcap_cr": 7801.8,
