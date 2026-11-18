@@ -25938,7 +25938,12 @@
       "rsi_ema_200": 51.6674,
       "ag": 5.831975,
       "al": 7.574671,
-      "last_close": 1332.3
+      "last_close": 1332.3,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T05:17:38.678993",
+      "rsi_bounce_last_price": 1339.9000244140625
     },
     "KPITTECH": {
       "mcap_cr": 14340.929564611382,
@@ -31236,7 +31241,12 @@
       "ag": 2.165337,
       "al": 2.490656,
       "last_close": 285.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T05:17:41.710117",
+      "rsi_bounce_last_price": 285.95001220703125
     },
     "INTLCONV": {
       "mcap_cr": 475.0,

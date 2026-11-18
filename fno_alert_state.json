@@ -1637,7 +1637,13 @@
     "trigger_date": "2026-11-17",
     "ref_high": 136.48,
     "ref_low": 134.57,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-18",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-18T05:16:19.902597",
+    "fno_low_breach_last_price": 134.0
   },
   "UNITEDTEA": {
     "trigger_date": "2026-11-17",
