@@ -217,6 +217,31 @@ VCP_PARAMS = dict(
 )
 VCP_MAX_CHASE_PCT = 4.0                 # breakout alert only up to 4% above pivot
 VCP_MIN_VOLUME_PACE = 1.5               # projected full-day volume >= 1.5x 50-day avg
+
+# --- 21 EMA pullback (walk-forward, 700 stocks, 2y, Nov 2026): uptrend stocks within
+# +-2% of the 21 EMA returned -0.10% avg over 20 days (n=23,270) -- no edge. Limiting to
+# RS top-20% leaders on their FIRST touch after a run: +0.84% avg, 52% win (n=630). ---
+EMA21_PULLBACK_BAND_PCT = 2.0           # price within +-2% of the 21 EMA
+EMA21_MIN_RS_RANK = 80.0                # 6-month RS percentile
+EMA21_FIRST_TOUCH_LOOKBACK = 20         # no low at/below the 21 EMA in the prior 20 sessions
+EMA21_MIN_EXTENSION_PCT = 5.0           # was >= 5% above the 21 EMA in the last 15 sessions
+
+# --- IPO base breakout (walk-forward on the 199 TRUE IPOs among NSE mainboard listings
+# 2024-25; 79 others were BSE / SME companies newly listed on NSE and are excluded):
+# +3.6% avg 20-day return vs +0.5% for ordinary 20-day-high volume breakouts in the same
+# stocks, but median -1.0% / 46% win (n=26): fat-tailed -- 31% ran +15% within 20 days.
+# An 8% stop made it worse (+2.6%, 38% win). ---
+IPO_LISTINGS_URL = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
+IPO_LISTINGS_CACHE_FILE = Path(__file__).parent / "ipo_listings.json"
+IPO_MAX_LISTING_AGE_DAYS = 365
+IPO_MIN_SESSIONS, IPO_MAX_SESSIONS = 20, 250
+IPO_MIN_SESSIONS_SINCE_HIGH = 15        # base must be >= 3 weeks old
+IPO_BASE_DEPTH_MIN, IPO_BASE_DEPTH_MAX = 12.0, 35.0
+IPO_PIVOT_DIST_MAX = 10.0               # close within 10% below the base high
+IPO_TIGHT_MAX = 10.0                    # last 5 sessions' range <= 10%
+IPO_MIN_VOLUME_PACE = 1.5               # projected full-day volume >= 1.5x 20-day avg
+IPO_MAX_CHASE_PCT = 5.0
+IPO_MIN_MCAP_CR = 300.0
 RS_LOOKBACK_DAYS = 126
 
 MOMENTUM_LEADER_RS_RANK_MIN = 90.0
@@ -840,6 +865,111 @@ def detect_vcp_setup(df: pd.DataFrame, p: dict = VCP_PARAMS) -> dict:
     except Exception:
         return None
 
+def ema21_pullback_fields(df: pd.DataFrame) -> dict:
+    """21 EMA pullback pre-conditions from COMPLETED sessions (live distance checked intraday)."""
+    try:
+        d = df[["High", "Low", "Close"]].dropna()
+        if len(d) < 210:
+            return {"ema21_setup_ok": False}
+        c, h, l = d["Close"], d["High"].values, d["Low"].values
+        e21 = c.ewm(span=21, adjust=False).mean().values
+        s50, s200 = c.rolling(50).mean().values, c.rolling(200).mean().values
+        lb = EMA21_FIRST_TOUCH_LOOKBACK
+        uptrend = c.iloc[-1] > s50[-1] > s200[-1] and e21[-1] > e21[-6]
+        first_touch = bool((l[-lb:] > e21[-lb:]).all())
+        extended = h[-15:].max() >= e21[-1] * (1 + EMA21_MIN_EXTENSION_PCT / 100)
+        return {"ema21_setup_ok": bool(uptrend and first_touch and extended),
+                "ema21_prev": round(float(e21[-1]), 2), "ema21_ext_high": round(float(h[-15:].max()), 2)}
+    except Exception:
+        return {"ema21_setup_ok": False}
+
+def detect_ipo_base(df: pd.DataFrame) -> dict:
+    """IPO base on COMPLETED sessions since listing: the post-listing high is >= 3 weeks old,
+    the correction from it is 12-35%, price is back within 10% of it and the last week is tight."""
+    try:
+        d = df[["High", "Low", "Close", "Volume"]].dropna()
+        n = len(d)
+        if not (IPO_MIN_SESSIONS <= n <= IPO_MAX_SESSIONS):
+            return None
+        h, l, c, v = (d[k].values.astype(float) for k in ("High", "Low", "Close", "Volume"))
+        hi_idx = int(np.argmax(h))
+        pivot = h[hi_idx]
+        since = n - 1 - hi_idx
+        if since < IPO_MIN_SESSIONS_SINCE_HIGH:
+            return None
+        depth = (pivot - l[hi_idx:].min()) / pivot * 100
+        dist = (pivot - c[-1]) / pivot * 100
+        tight = (h[-5:].max() - l[-5:].min()) / h[-5:].max() * 100
+        if not (IPO_BASE_DEPTH_MIN <= depth <= IPO_BASE_DEPTH_MAX and 0 <= dist <= IPO_PIVOT_DIST_MAX and tight <= IPO_TIGHT_MAX):
+            return None
+        return {"pivot": round(float(pivot), 2), "base_low": round(float(l[hi_idx:].min()), 2),
+                "depth": round(float(depth), 1), "pivot_dist": round(float(dist), 1), "tight_pct": round(float(tight), 1),
+                "sessions_listed": int(n), "sessions_since_high": int(since),
+                "avg_vol_20": float(v[-20:].mean())}
+    except Exception:
+        return None
+
+def get_recent_listings() -> dict:
+    """{symbol: listing date ISO} for NSE mainboard EQ listings in the last year (cached weekly)."""
+    if IPO_LISTINGS_CACHE_FILE.exists():
+        try:
+            cached = json.loads(IPO_LISTINGS_CACHE_FILE.read_text())
+            if (datetime.datetime.now() - datetime.datetime.fromisoformat(cached["fetched_at"])).days < 7:
+                return cached["listings"]
+        except Exception:
+            pass
+    try:
+        resp = requests.get(IPO_LISTINGS_URL, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        df = pd.read_csv(io.StringIO(resp.text))
+        df.columns = [c.strip() for c in df.columns]
+        df = df[df["SERIES"].astype(str).str.strip() == "EQ"]
+        df["lst"] = pd.to_datetime(df["DATE OF LISTING"].astype(str).str.strip(), format="%d-%b-%Y", errors="coerce")
+        cutoff = pd.Timestamp(ist_today() - datetime.timedelta(days=IPO_MAX_LISTING_AGE_DAYS))
+        rec = df[df["lst"] >= cutoff]
+        listings = {str(r.SYMBOL).strip(): r.lst.date().isoformat() for r in rec.itertuples()}
+        IPO_LISTINGS_CACHE_FILE.write_text(json.dumps({"fetched_at": datetime.datetime.now().isoformat(), "listings": listings}))
+        return listings
+    except Exception as e:
+        log.warning("Recent listings fetch failed: %s", e)
+        return {}
+
+def build_ipo_watch() -> dict:
+    listings = get_recent_listings()
+    if not listings:
+        return {}
+    hist_map = fetch_batch_history([f"{s}.NS" for s in listings])
+    watch = {}
+    for sym, listed in listings.items():
+        df = hist_map.get(f"{sym}.NS")
+        if df is None or df.empty:
+            continue
+        listed_d = datetime.date.fromisoformat(listed)
+        # Traded on NSE (SME platform) well before the mainboard listing -> not a new issue
+        if (df.index.date < listed_d - datetime.timedelta(days=3)).sum() > 5:
+            continue
+        df = df[df.index.date >= listed_d]
+        if len(df) and df.index[-1].date() == ist_today():
+            df = df.iloc[:-1]
+        base = detect_ipo_base(df)
+        if not base:
+            continue
+        # Many "new listings" are old BSE companies newly listed on NSE (e.g. a batch on
+        # 17 Aug 2026); their base is not an IPO base.
+        try:
+            bse = yf.Ticker(f"{sym}.BO").history(start=listed_d - datetime.timedelta(days=400),
+                                                 end=listed_d - datetime.timedelta(days=3))
+            if bse is not None and len(bse) > 5:
+                continue
+        except Exception:
+            pass
+        mcap = get_market_cap_cr(sym, "NSE")
+        if mcap is not None and mcap < IPO_MIN_MCAP_CR:
+            continue
+        watch[sym] = {**base, "listed": listed, "mcap_cr": mcap}
+    log.info("IPO base watch: %d of %d recent listings in a base.", len(watch), len(listings))
+    return watch
+
 def volume_pace_mult(volume: float, avg_volume: float, now_ist) -> float:
     """Today's volume projected to a full session, as a multiple of avg_volume.
     The opening ~15 minutes carry outsized volume, so ~12% of the day is assumed done at 9:15."""
@@ -1004,6 +1134,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
             **trend,
             "ath_high": float(highs.max()) if len(highs) > 0 else float(closes.max()),
             "vcp": detect_vcp_setup(df),
+            **ema21_pullback_fields(df),
             "rs_return_6m": rs_return,
             "avg_volume_50d": float(volumes[-50:].mean()),
             # df holds completed sessions only, so the base is simply the last N of them
@@ -1054,6 +1185,17 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         lines.append(f"  <b>{s}</b> pivot ₹{v['pivot']:,.2f} ({v['pivot_dist']:.1f}% away) | "
                      f"T {'→'.join(f'{x:g}' for x in v['contractions'])}% | 7d range {v['tight_pct']}% | "
                      f"vol {v['dryup']}x | RS {r}{e_tag}")
+    try:
+        ipo_watch = build_ipo_watch()
+    except Exception as e:
+        log.warning("IPO base scan failed: %s", e)
+        ipo_watch = {}
+    ipo_sorted = sorted(ipo_watch.items(), key=lambda kv: kv[1]["pivot_dist"])
+    lines += ["", f"🆕 <b>IPO Base (listed &lt; 12 months)</b> ({len(ipo_watch)} stocks)",
+              "<i>Post-listing high is 3+ weeks old, 12-35% correction, back near the high and tight. Alert fires on a break of the high with volume.</i>"]
+    for s, b in ipo_sorted[:TOP_N_MOMENTUM]:
+        lines.append(f"  <b>{s}</b> pivot ₹{b['pivot']:,.2f} ({b['pivot_dist']:.1f}% away) | base {b['sessions_since_high']}d, "
+                     f"{b['depth']}% deep | 5d range {b['tight_pct']}% | listed {b['listed']}")
     lines += ["", f"🌟 <b>Momentum Leaders</b> ({len(momentum_leader_list)} stocks)"]
     for s, r in momentum_leader_list[:TOP_N_MOMENTUM]:
         e_tag = get_earnings_tag(s)
@@ -1065,7 +1207,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     except Exception as e:
         log.warning("RSI bounce extras failed: %s", e)
     return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis, "rsi_bounce_universe": rsi_bounce_universe,
-            "last_sector_report_date": momentum_state.get("last_sector_report_date")}
+            "last_sector_report_date": momentum_state.get("last_sector_report_date"), "ipo_watch": ipo_watch}
 
 def send_morning_sector_rs_report(momentum_state: dict) -> dict:
     now_ist = get_ist_now()
@@ -1672,6 +1814,74 @@ class _LazyTag:
     def __str__(self):
         return self.__format__("")
 
+def check_ema21_pullback(symbol: str, entry: dict, metrics: dict, momentum_state: dict):
+    """First pullback of an RS leader to its 21 EMA (+-2%). Before the weekly-RSI cap:
+    leaders in a pullback usually still sit above it."""
+    if not entry.get("ema21_setup_ok") or entry.get("ema21_sent"):
+        return
+    rs = entry.get("rs_rank")
+    ema21 = metrics.get("ema_21")
+    if rs is None or rs < EMA21_MIN_RS_RANK or not ema21:
+        return
+    price = metrics["price"]
+    dev = (price - ema21) / ema21 * 100
+    if abs(dev) > EMA21_PULLBACK_BAND_PCT or not alert_allowed(entry, "ema21_pullback", price):
+        return
+    ext_high = entry.get("ema21_ext_high") or price
+    ema50 = metrics.get("ema_50")
+    safe_sym = symbol.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    day_chg = (price - metrics["prev_close"]) / metrics["prev_close"] * 100 if metrics.get("prev_close") else 0.0
+    if send_telegram_message(
+        f"🪜 <b>{safe_sym}</b> First Pullback to 21 EMA!\n"
+        f"• <b>Price:</b> ₹{price:.2f} ({day_chg:+.1f}% today) | 21 EMA ₹{ema21:.2f} ({dev:+.1f}%)\n"
+        f"• <b>Pulled back:</b> {(1 - price / ext_high) * 100:.1f}% from recent high ₹{ext_high:.2f}\n"
+        f"• <b>Leader:</b> RS rank {rs} | first 21 EMA test in {EMA21_FIRST_TOUCH_LOOKBACK}+ sessions\n"
+        + (f"• <b>Invalidation idea:</b> close below 50 EMA ₹{ema50:.2f}\n" if ema50 else "")
+        + f"📌 <i>Best with a bounce candle / volume drying on the dip.</i>"
+        f"{get_rs_and_sector_tag(symbol, metrics.get('rsi'), momentum_state)}{get_earnings_tag(symbol)}"
+    ):
+        record_alert(entry, "ema21_pullback", price)
+        entry["ema21_sent"] = True
+
+def check_ipo_base_breakouts(momentum_state: dict, fyers) -> dict:
+    watch = momentum_state.get("ipo_watch") or {}
+    now_ist = get_ist_now()
+    if not watch or not is_market_hours_now():
+        return momentum_state
+    for symbol, b in watch.items():
+        if b.get("sent"):
+            continue
+        try:
+            metrics = get_live_metrics(fyers, symbol, "NSE")
+        except Exception as e:
+            log.warning("IPO metrics failed for %s: %s", symbol, e)
+            continue
+        if not metrics:
+            continue
+        price, prev_close, pivot = metrics["price"], metrics["prev_close"], b["pivot"]
+        pace = volume_pace_mult(metrics["volume"], b.get("avg_vol_20"), now_ist)
+        if not (pivot < price <= pivot * (1 + IPO_MAX_CHASE_PCT / 100) and price >= prev_close and pace >= IPO_MIN_VOLUME_PACE):
+            continue
+        if not alert_allowed(b, "ipo_breakout", price):
+            continue
+        safe_sym = symbol.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        risk = (price - b["base_low"]) / price * 100
+        mcap = b.get("mcap_cr")
+        if send_telegram_message(
+            f"🆕 <b>{safe_sym}</b> IPO Base BREAKOUT!\n"
+            f"• <b>Price:</b> ₹{price:.2f} above post-listing high ₹{pivot:.2f} (+{(price / pivot - 1) * 100:.1f}%)\n"
+            f"• <b>Volume pace:</b> {pace:.1f}x 20-day avg (projected full day)\n"
+            f"• <b>Base:</b> {b['sessions_since_high']} sessions, {b['depth']}% deep | listed {b['listed']} ({b['sessions_listed']} sessions ago)\n"
+            f"• <b>Base low:</b> ₹{b['base_low']:.2f} ({risk:.1f}% below)"
+            + (f" | <b>Mcap:</b> ₹{mcap:,.0f} Cr" if mcap else "") + "\n"
+            f"📌 <i>Confirm with a close above the high. Backtest: fat-tailed -- ~1 in 3 ran +15% in 20 sessions, "
+            f"but the typical trade was flat; tight stops hurt. Size small.</i>"
+            f"{get_earnings_tag(symbol)}"
+        ):
+            record_alert(b, "ipo_breakout", price)
+            b["sent"] = True
+    return momentum_state
+
 def check_vcp_breakout(symbol: str, entry: dict, metrics: dict, momentum_state: dict, now_ist):
     vcp = entry.get("vcp")
     if not vcp or entry.get("vcp_sent"):
@@ -1706,6 +1916,7 @@ def _check_symbol_triggers(symbol: str, entry: dict, momentum_state: dict, fyers
         # Before the weekly-RSI cap on purpose: VCP candidates are Stage-2 leaders,
         # which almost always sit above that cap.
         check_vcp_breakout(symbol, entry, metrics, momentum_state, now_ist)
+        check_ema21_pullback(symbol, entry, metrics, momentum_state)
     if not metrics or metrics.get("weekly_rsi", 100) >= MAX_WEEKLY_RSI:
         return
 
@@ -2652,6 +2863,10 @@ def main():
                 momentum_state = send_morning_sector_rs_report(momentum_state)
                 momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
                 try:
+                    momentum_state = check_ipo_base_breakouts(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("IPO base breakout check failed: %s", e)
+                try:
                     momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("RSI bounce scanner failed: %s", e)
@@ -2673,6 +2888,10 @@ def main():
                 momentum_state = run_daily_momentum_scan(momentum_state)
                 momentum_state = send_morning_sector_rs_report(momentum_state)
                 momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
+                try:
+                    momentum_state = check_ipo_base_breakouts(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("IPO base breakout check failed: %s", e)
                 try:
                     momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
                 except Exception as e:
