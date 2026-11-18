@@ -26351,7 +26351,12 @@
       "rsi_ema_200": 51.0848,
       "ag": 2.071142,
       "al": 2.168332,
-      "last_close": 174.24
+      "last_close": 174.24,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:32:32.175106",
+      "rsi_bounce_last_price": 178.1199951171875
     },
     "MSTCLTD": {
       "mcap_cr": 5160.6719140625,
@@ -29747,7 +29752,12 @@
       "ag": 1.205555,
       "al": 1.166055,
       "last_close": 91.95,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:32:35.461818",
+      "rsi_bounce_last_price": 94.19000244140625
     },
     "BEDMUTHA": {
       "mcap_cr": 342.0,
@@ -29817,7 +29827,12 @@
       "ag": 9.448006,
       "al": 8.501542,
       "last_close": 659.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:32:37.075719",
+      "rsi_bounce_last_price": 660.0
     },
     "BLKASHYAP": {
       "mcap_cr": 1262.0,
@@ -31592,7 +31607,12 @@
       "ag": 4.594561,
       "al": 4.877906,
       "last_close": 443.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:32:40.803128",
+      "rsi_bounce_last_price": 460.20001220703125
     },
     "KOPRAN": {
       "mcap_cr": 1155.0,
@@ -32480,7 +32500,12 @@
       "ag": 1.368716,
       "al": 1.730723,
       "last_close": 97.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:32:44.791695",
+      "rsi_bounce_last_price": 100.25
     },
     "ONEPOINT": {
       "mcap_cr": 1932.6,
@@ -32639,7 +32664,12 @@
       "ag": 0.678642,
       "al": 0.648284,
       "last_close": 72.53,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:32:45.780083",
+      "rsi_bounce_last_price": 72.80999755859375
     },
     "PANAMAPET": {
       "mcap_cr": 2722.2,
@@ -32667,7 +32697,12 @@
       "ag": 4.384687,
       "al": 6.575088,
       "last_close": 649.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T04:32:46.939532",
+      "rsi_bounce_last_price": 661.4500122070312
     },
     "PASUPTAC": {
       "mcap_cr": 650.6,
