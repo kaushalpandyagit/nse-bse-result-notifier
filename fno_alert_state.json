@@ -1674,5 +1674,65 @@
     ],
     "fno_low_breach_last_alert": "2026-11-18T04:16:35.682769",
     "fno_low_breach_last_price": 401.0
+  },
+  "MODTHREAD": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 62.0,
+    "ref_low": 54.6,
+    "status": "Active"
+  },
+  "TEAMGTY": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 238.5,
+    "ref_low": 219.1,
+    "status": "Active"
+  },
+  "SWANCORP": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 248.36,
+    "ref_low": 224.56,
+    "status": "Active"
+  },
+  "SPELS": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 71.06,
+    "ref_low": 67.52,
+    "status": "Active"
+  },
+  "ADVENTHTL": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 128.86,
+    "ref_low": 115.52,
+    "status": "Active"
+  },
+  "TURTLEMINT": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 74.27,
+    "ref_low": 68.63,
+    "status": "Active"
+  },
+  "SURYALA": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 456.75,
+    "ref_low": 426.15,
+    "status": "Active"
+  },
+  "DHRUV": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 20.77,
+    "ref_low": 17.01,
+    "status": "Active"
+  },
+  "DCMFINSERV": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 5.0,
+    "ref_low": 5.0,
+    "status": "Active"
+  },
+  "ADVAIT": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 1997.0,
+    "ref_low": 1850.0,
+    "status": "Active"
   }
 }
