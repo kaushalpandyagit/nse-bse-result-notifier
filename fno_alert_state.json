@@ -1734,5 +1734,11 @@
     "ref_high": 1997.0,
     "ref_low": 1850.0,
     "status": "Active"
+  },
+  "GKWLIMITED": {
+    "trigger_date": "2026-11-18",
+    "ref_high": 1710.0,
+    "ref_low": 1639.6,
+    "status": "Active"
   }
 }
