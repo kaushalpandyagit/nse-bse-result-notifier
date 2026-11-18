@@ -39,7 +39,7 @@
     "price_change_pct": -2.47,
     "deliv_pct": 62.4,
     "direction": "down",
-    "status": "Active"
+    "status": "Expired"
   },
   "TEXMOPIPES": {
     "trigger_date": "2026-11-10",
@@ -97,7 +97,7 @@
     "price_change_pct": -2.44,
     "deliv_pct": 70.9,
     "direction": "down",
-    "status": "Active"
+    "status": "Expired"
   },
   "ORIENTCER": {
     "trigger_date": "2026-11-10",

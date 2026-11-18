@@ -1583,7 +1583,13 @@
     "trigger_date": "2026-11-17",
     "ref_high": 377.45,
     "ref_low": 351.8,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-18",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-18T03:46:46.599041",
+    "fno_low_breach_last_price": 351.1000061035156
   },
   "TVSSCS": {
     "trigger_date": "2026-11-17",
@@ -1595,7 +1601,13 @@
     "trigger_date": "2026-11-17",
     "ref_high": 107.5,
     "ref_low": 104.81,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-18",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-18T03:46:48.824098",
+    "fno_low_breach_last_price": 100.0199966430664
   },
   "INSECTICID": {
     "trigger_date": "2026-11-17",
