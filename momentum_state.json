@@ -6105,7 +6105,11 @@
       "dtl_floor_touches": 5,
       "rs_rank": 46.6,
       "session_date": "2026-11-18",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-18T06:46:40.937417",
+      "mtf_last_price": 410.1499938964844
     },
     "EMBDL": {
       "sma50": 54.79839973449707,
