@@ -1577,7 +1577,13 @@
     "trigger_date": "2026-11-17",
     "ref_high": 574.0,
     "ref_low": 545.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-18",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-18T05:01:29.944939",
+    "fno_low_breach_last_price": 544.9500122070312
   },
   "GEECEE": {
     "trigger_date": "2026-11-17",

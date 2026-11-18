@@ -7215,7 +7215,11 @@
       "dtl_floor_touches": 4,
       "rs_rank": 34.9,
       "session_date": "2026-11-18",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "ema50_pullback_last_alert": "2026-11-18T05:01:49.889848",
+      "ema50_pullback_last_price": 7161.0
     },
     "GMDCLTD": {
       "sma50": 495.9460003662109,
@@ -18609,7 +18613,11 @@
       "dtl_floor_touches": 2,
       "rs_rank": 22.4,
       "session_date": "2026-11-18",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "rectangle_bounce_last_alert": "2026-11-18T05:02:19.821877",
+      "rectangle_bounce_last_price": 630.0
     },
     "SUDARSCHEM": {
       "sma50": 1162.0920068359376,
@@ -21279,7 +21287,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 7.8,
       "session_date": "2026-11-18",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-18T05:02:27.316018",
+      "vol_breakout_last_price": 364.79998779296875
     },
     "VGUARD": {
       "sma50": 301.8350006103516,
