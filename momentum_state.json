@@ -16829,7 +16829,11 @@
       "dtl_floor_touches": 3,
       "rs_rank": 63.4,
       "session_date": "2026-11-18",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "mtf_last_alert": "2026-11-18T05:46:56.660908",
+      "mtf_last_price": 45.290000915527344
     },
     "SAMHI": {
       "sma50": 154.45480010986327,
@@ -31798,7 +31802,12 @@
       "ag": 1.326438,
       "al": 2.30098,
       "last_close": 199.11,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T05:47:22.591578",
+      "rsi_bounce_last_price": 201.05999755859375
     },
     "LMW": {
       "mcap_cr": 18500.8,
@@ -33589,7 +33598,12 @@
       "ag": 1.105667,
       "al": 1.031572,
       "last_close": 127.73,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T05:47:25.113185",
+      "rsi_bounce_last_price": 128.6199951171875
     },
     "VSSL": {
       "mcap_cr": 3214.0,
