@@ -21195,7 +21195,11 @@
       "dtl_floor_touches": 1,
       "rs_rank": 3.7,
       "session_date": "2026-11-18",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "liquidity_sweep_last_alert": "2026-11-18T06:02:40.313043",
+      "liquidity_sweep_last_price": 133.6199951171875
     },
     "VAIBHAVGBL": {
       "sma50": 194.7282000732422,
@@ -24164,7 +24168,12 @@
       "rsi_ema_200": 54.8758,
       "ag": 131.76155,
       "al": 123.063994,
-      "last_close": 12895.0
+      "last_close": 12895.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T06:02:56.228003",
+      "rsi_bounce_last_price": 13141.0
     },
     "E2E": {
       "mcap_cr": 10345.424411767639,
@@ -30297,7 +30306,12 @@
       "ag": 4.869235,
       "al": 4.027397,
       "last_close": 434.5,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T06:02:58.568104",
+      "rsi_bounce_last_price": 434.79998779296875
     },
     "DODLA": {
       "mcap_cr": 5909.0,
