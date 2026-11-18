@@ -619,7 +619,9 @@
       "dtl_touches": 3,
       "dtl_floor": 344.70001220703125,
       "dtl_floor_touches": 1,
-      "rs_rank": 90.3
+      "rs_rank": 90.3,
+      "session_date": "2026-11-18",
+      "alert_slots": []
     },
     "ADVENZYMES": {
       "sma50": 278.80400024414064,
@@ -31142,7 +31144,12 @@
       "ag": 0.357652,
       "al": 0.397735,
       "last_close": 37.72,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T06:18:27.960418",
+      "rsi_bounce_last_price": 38.95000076293945
     },
     "IMPAL": {
       "mcap_cr": 1254.3,
@@ -32560,7 +32567,12 @@
       "ag": 2.078198,
       "al": 2.465604,
       "last_close": 194.71,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T06:18:31.614013",
+      "rsi_bounce_last_price": 198.99000549316406
     },
     "OMAXE": {
       "mcap_cr": 1792.4,
