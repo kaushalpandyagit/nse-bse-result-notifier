@@ -84,10 +84,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-17T07:01:28.755205",
-    "custom_last_price": 168.88999938964844,
+    "custom_last_alert": "2026-11-18T04:01:24.254159",
+    "custom_last_price": 164.89999389648438,
     "session_date": "2026-11-18",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
@@ -391,12 +393,11 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-17T07:04:34.358963",
-    "spread_last_price": 4.524623858745155,
-    "session_date": "2026-11-17",
+    "spread_last_alert": "2026-11-18T04:05:06.337670",
+    "spread_last_price": 3.6744186046511653,
+    "session_date": "2026-11-18",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "arb_AVL": {
@@ -440,9 +441,9 @@
     ]
   },
   "arb_ASHOKA": {
-    "spread_last_alert": "2026-11-11T03:56:00.493847",
-    "spread_last_price": 6.674648081920481,
-    "session_date": "2026-11-11",
+    "spread_last_alert": "2026-11-18T04:04:45.513347",
+    "spread_last_price": 4.330742536508381,
+    "session_date": "2026-11-18",
     "alert_slots": [
       "H1"
     ]
@@ -539,9 +540,9 @@
     "spread_last_price": 3.183023872679045
   },
   "arb_APOLLO": {
-    "spread_last_alert": "2026-11-11T03:55:46.449150",
-    "spread_last_price": 2.520905087925627,
-    "session_date": "2026-11-11",
+    "spread_last_alert": "2026-11-18T04:04:50.444121",
+    "spread_last_price": 2.570019155855299,
+    "session_date": "2026-11-18",
     "alert_slots": [
       "H1"
     ]
@@ -10098,6 +10099,15 @@
     "day_low": 3598.60009765625,
     "baseline_rsi": 51.04115363667311,
     "mcap_cr": 56863.275146,
+    "exchange": "NSE"
+  },
+  "GENCON": {
+    "result_date": "2026-11-16T00:00:00",
+    "filed_at": "2026-11-16T11:13:59",
+    "day_high": 27.299999237060547,
+    "day_low": 26.100000381469727,
+    "baseline_rsi": 36.801035143220375,
+    "mcap_cr": 153.69182873006687,
     "exchange": "NSE"
   }
 }
