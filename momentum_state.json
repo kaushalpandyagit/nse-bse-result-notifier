@@ -18285,10 +18285,11 @@
       "rs_rank": 87.9,
       "session_date": "2026-11-18",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "near_high_17_22_last_alert": "2026-11-18T03:53:20.030321",
-      "near_high_17_22_last_price": 5526.7998046875
+      "near_high_17_22_last_alert": "2026-11-18T07:17:43.804511",
+      "near_high_17_22_last_price": 5458.0
     },
     "SOBHA": {
       "sma50": 1209.8059985351563,
