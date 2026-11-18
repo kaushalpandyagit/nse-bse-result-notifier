@@ -4,7 +4,7 @@ Data: result_tags.json, written by the local screener (export_result_tags.py) an
 For a stock:
     1 S 📅13 Nov ⭐E▲▲        result still to come (⭐ = "High" in the screener's Likely good list)
     1 S Q2 S▲▲ NP▼▼ E▼▼       latest quarter declared: first arrow vs the previous quarter, second vs a year ago
-    1 S                        nothing known
+    1 S                        nothing known (also for a stock that is not in the file at all: the links alone)
 After the links comes the forensic verdict letter when the screener has one: 🟢C clean, 🟠W warn, 🔴R red, ⛔V veto.
 "1" opens the chart in the local screener (works on the computer where it runs), "S" opens Screener.in.
 A missing or old file never breaks an alert: the text is then sent as it is.
@@ -40,15 +40,24 @@ def _today_ist():
     return (datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)).date()
 
 
-def tag(symbol: str) -> str:
-    """HTML for one stock, or '' when the stock is not in the file."""
+# bold words in alert titles that look like a symbol but are not a stock
+_NOT_A_STOCK = {"VCP", "NIFTY", "SENSEX", "BANKNIFTY", "FINNIFTY", "NSE", "BSE", "ETF", "FNO", "IPO", "RSI", "IT", "FMCG", "PSU",
+                "AUTO", "PHARMA", "METAL", "REALTY", "ENERGY", "MEDIA", "INFRA", "TEST"}
+_SYMBOL_OK = re.compile(r"[A-Z0-9][A-Z0-9&\-]{1,19}")
+
+
+def tag(symbol: str, known_only: bool = False) -> str:
+    """HTML for one stock. A stock that is not in the file gets the two links alone ('' with known_only, or when the
+    text is not a symbol)."""
     sym = re.sub(r"-(EQ|BE|BZ|SM|ST)$", "", str(symbol or "").strip().upper().split(":")[-1])
     e = _tags().get(sym)
     if e is None and sym in _codes:          # a BSE filing gives only the scrip code
         sym = _codes[sym]
         e = _tags().get(sym)
     if e is None:
-        return ""
+        if known_only or not _SYMBOL_OK.fullmatch(sym) or sym in _NOT_A_STOCK:
+            return ""
+        e = {}                               # not in the screener's lists: still give the chart and Screener links
     out = [f'<a href="{LOCAL}{quote(sym)}">1</a> <a href="{SCREENER}{quote(sym)}/">S</a>']
     fz = {"C": "🟢C", "W": "🟠W", "R": "🔴R", "V": "⛔V"}.get(e.get("f"))      # forensic verdict: Clean, Warn, Red, Veto
     if fz:

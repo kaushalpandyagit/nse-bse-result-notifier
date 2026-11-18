@@ -908,7 +908,8 @@ def poll_once(seen: set) -> set:
 
         try:      # result arrows / next result date and the chart links for this stock (result_tag.py)
             import result_tag
-            _rt = result_tag.tag(item.get("symbol", "")) or result_tag.tag(item.get("bse_id", ""))
+            _rt = (result_tag.tag(item.get("symbol", ""), known_only=True) or result_tag.tag(item.get("bse_id", ""), known_only=True)
+                   or result_tag.tag(item.get("symbol", "")) or result_tag.tag(item.get("bse_id", "")))      # unknown stock: links alone
             if _rt:
                 header += "\n" + _rt
         except Exception:
