@@ -25662,7 +25662,12 @@
       "rsi_ema_200": 48.4226,
       "ag": 2.285652,
       "al": 1.896837,
-      "last_close": 289.5
+      "last_close": 289.5,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:02:53.763391",
+      "rsi_bounce_last_price": 290.95001220703125
     },
     "JAMNAAUTO": {
       "mcap_cr": 5693.844708342499,
@@ -29402,7 +29407,12 @@
       "ag": 1.594573,
       "al": 2.220327,
       "last_close": 119.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:02:57.022140",
+      "rsi_bounce_last_price": 120.9000015258789
     },
     "ADVENTHTL": {
       "mcap_cr": 638.0,

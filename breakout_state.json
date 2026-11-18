@@ -132,10 +132,12 @@
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-13T05:16:00.118620",
-    "custom_last_price": 182.10000610351562,
+    "custom_last_alert": "2026-11-18T09:01:19.774534",
+    "custom_last_price": 180.0,
     "session_date": "2026-11-18",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_PRADPME_weekly_rsi": {
     "alerted": false,
