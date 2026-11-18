@@ -27473,7 +27473,12 @@
       "rsi_ema_200": 52.1717,
       "ag": 0.953009,
       "al": 0.94919,
-      "last_close": 90.88
+      "last_close": 90.88,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:18:16.213286",
+      "rsi_bounce_last_price": 91.12000274658203
     },
     "RCF": {
       "mcap_cr": 5831.343048638153,
@@ -28577,7 +28582,12 @@
       "rsi_ema_200": 49.9794,
       "ag": 17.668257,
       "al": 29.877632,
-      "last_close": 1605.0
+      "last_close": 1605.0,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:18:17.823133",
+      "rsi_bounce_last_price": 1627.699951171875
     },
     "TEJASNET": {
       "mcap_cr": 7307.6336983,
@@ -30091,7 +30101,12 @@
       "ag": 3.034884,
       "al": 2.746165,
       "last_close": 157.43,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:18:20.490082",
+      "rsi_bounce_last_price": 162.25999450683594
     },
     "BODALCHEM": {
       "mcap_cr": 2072.0,
@@ -31660,7 +31675,12 @@
       "ag": 1.972665,
       "al": 1.788004,
       "last_close": 110.71,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:18:22.581095",
+      "rsi_bounce_last_price": 112.5199966430664
     },
     "JSWHL": {
       "mcap_cr": 12100.0,
@@ -32377,7 +32397,12 @@
       "ag": 6.115628,
       "al": 8.523923,
       "last_close": 709.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:18:24.816566",
+      "rsi_bounce_last_price": 727.3499755859375
     },
     "MAZDA": {
       "mcap_cr": 559.0,
@@ -33454,7 +33479,12 @@
       "ag": 12.117709,
       "al": 13.901868,
       "last_close": 1228.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-18T09:18:25.752321",
+      "rsi_bounce_last_price": 1232.300048828125
     },
     "ROSSTECH": {
       "mcap_cr": 5409.5,
