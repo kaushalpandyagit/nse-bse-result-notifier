@@ -35847,7 +35847,12 @@
       "ag": 0.299559,
       "al": 0.284245,
       "last_close": 31.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T07:03:22.731561",
+      "rsi_bounce_last_price": 32.040000915527344
     },
     "MUFIN": {
       "mcap_cr": 2851.2,
