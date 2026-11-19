@@ -393,9 +393,9 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-18T04:05:06.337670",
-    "spread_last_price": 3.6744186046511653,
-    "session_date": "2026-11-18",
+    "spread_last_alert": "2026-11-19T04:05:21.390818",
+    "spread_last_price": 3.1499736231708444,
+    "session_date": "2026-11-19",
     "alert_slots": [
       "H1"
     ]
@@ -409,11 +409,11 @@
     ]
   },
   "arb_KICL": {
-    "spread_last_alert": "2026-11-18T07:32:05.440563",
-    "spread_last_price": 3.241719520789288,
-    "session_date": "2026-11-18",
+    "spread_last_alert": "2026-11-19T04:04:52.463574",
+    "spread_last_price": 3.288700963119568,
+    "session_date": "2026-11-19",
     "alert_slots": [
-      "H2"
+      "H1"
     ]
   },
   "arb_AKUMS": {
@@ -493,9 +493,9 @@
     ]
   },
   "arb_GFLLIMITED": {
-    "spread_last_alert": "2026-11-18T06:32:55.463082",
-    "spread_last_price": 4.721660261647722,
-    "session_date": "2026-11-18",
+    "spread_last_alert": "2026-11-19T04:05:20.181840",
+    "spread_last_price": 3.220338983050845,
+    "session_date": "2026-11-19",
     "alert_slots": [
       "H1"
     ]
@@ -624,9 +624,9 @@
   },
   "etf_inav_alerts": {},
   "arb_PILANIINVS": {
-    "spread_last_alert": "2026-11-17T03:52:10.287219",
-    "spread_last_price": 2.6362484157160964,
-    "session_date": "2026-11-17",
+    "spread_last_alert": "2026-11-19T04:05:13.301379",
+    "spread_last_price": 3.400887103061766,
+    "session_date": "2026-11-19",
     "alert_slots": [
       "H1"
     ]
