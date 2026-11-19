@@ -25283,7 +25283,11 @@
       "rsi_al": 3.556177,
       "rs_rank": 90.1,
       "session_date": "2026-11-19",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_high60_last_alert": "2026-11-19T09:16:54.930508",
+      "rsi_high60_last_price": 693.4000244140625
     },
     "WEWORK": {
       "sma50": 666.0440002441406,
@@ -29582,7 +29586,12 @@
       "rsi_ema_200": 49.1209,
       "ag": 1.486186,
       "al": 2.402845,
-      "last_close": 150.81
+      "last_close": 150.81,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T09:17:05.502481",
+      "rsi_bounce_last_price": 154.11000061035156
     },
     "M&MFIN": {
       "mcap_cr": 39236.039993984305,
@@ -33873,7 +33882,12 @@
       "ag": 0.552933,
       "al": 0.520503,
       "last_close": 44.11,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T09:17:08.115050",
+      "rsi_bounce_last_price": 44.22999954223633
     },
     "EFCIL": {
       "mcap_cr": 2514.6,
@@ -34930,7 +34944,12 @@
       "ag": 0.28868,
       "al": 0.271119,
       "last_close": 63.96,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T09:17:09.905026",
+      "rsi_bounce_last_price": 64.20999908447266
     },
     "JAGSNPHARM": {
       "mcap_cr": 1427.0,
