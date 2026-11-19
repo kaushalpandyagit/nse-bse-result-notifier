@@ -32334,7 +32334,12 @@
       "rsi_ema_200": 51.6235,
       "ag": 60.458676,
       "al": 103.746458,
-      "last_close": 9474.0
+      "last_close": 9474.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T06:31:41.400602",
+      "rsi_bounce_last_price": 9619.0
     },
     "VOLTAS": {
       "mcap_cr": 38945.133898,
@@ -36095,7 +36100,12 @@
       "ag": 1.27095,
       "al": 1.689243,
       "last_close": 96.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T06:31:45.298896",
+      "rsi_bounce_last_price": 99.25
     },
     "ONWARDTEC": {
       "mcap_cr": 854.0,
