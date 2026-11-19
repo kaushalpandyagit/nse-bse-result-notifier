@@ -92,10 +92,12 @@
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-18T09:46:03.603025",
-    "custom_last_price": 2882.0,
+    "custom_last_alert": "2026-11-19T04:16:02.085641",
+    "custom_last_price": 2916.39990234375,
     "session_date": "2026-11-19",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
