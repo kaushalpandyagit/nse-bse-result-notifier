@@ -26245,7 +26245,12 @@
       "rsi_ema_200": 54.1272,
       "ag": 7.858351,
       "al": 6.252447,
-      "last_close": 447.5
+      "last_close": 447.5,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T06:02:56.040994",
+      "rsi_bounce_last_price": 448.3999938964844
     },
     "APOLLOTYRE": {
       "mcap_cr": 26384.967827237004,
@@ -31537,7 +31542,12 @@
       "rsi_ema_200": 53.047,
       "ag": 5.912723,
       "al": 10.100774,
-      "last_close": 1030.1
+      "last_close": 1030.1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T06:03:00.141600",
+      "rsi_bounce_last_price": 1041.0999755859375
     },
     "SUNFLAG": {
       "mcap_cr": 6873.569636722778,
