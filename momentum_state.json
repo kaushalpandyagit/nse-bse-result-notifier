@@ -33690,7 +33690,12 @@
       "ag": 2.310902,
       "al": 2.222452,
       "last_close": 133.83,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T09:02:59.327903",
+      "rsi_bounce_last_price": 138.02999877929688
     },
     "DCMSRIND": {
       "mcap_cr": 551.4,
