@@ -31815,7 +31815,12 @@
       "rsi_ema_200": 49.8409,
       "ag": 16.406238,
       "al": 29.086376,
-      "last_close": 1586.2
+      "last_close": 1586.2,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:47:10.609218",
+      "rsi_bounce_last_price": 1641.300048828125
     },
     "TEJASNET": {
       "mcap_cr": 7131.503378127356,
@@ -33684,7 +33689,12 @@
       "ag": 4.156712,
       "al": 7.593848,
       "last_close": 481.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:47:12.448493",
+      "rsi_bounce_last_price": 493.8999938964844
     },
     "DIFFNKG": {
       "mcap_cr": 1681.0,
@@ -36991,7 +37001,12 @@
       "ag": 4.103027,
       "al": 5.021868,
       "last_close": 423.45,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:47:14.987628",
+      "rsi_bounce_last_price": 434.0
     },
     "STEELCAS": {
       "mcap_cr": 3754.5,

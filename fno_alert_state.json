@@ -1745,7 +1745,13 @@
     "trigger_date": "2026-11-18",
     "ref_high": 20.77,
     "ref_low": 17.01,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-19",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-19T05:46:11.303295",
+    "fno_high_breach_last_price": 20.8799991607666
   },
   "DCMFINSERV": {
     "trigger_date": "2026-11-18",
