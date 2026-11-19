@@ -31162,7 +31162,12 @@
       "rsi_ema_200": 48.4165,
       "ag": 3.831286,
       "al": 4.052031,
-      "last_close": 319.45
+      "last_close": 319.45,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T09:31:28.874034",
+      "rsi_bounce_last_price": 321.1000061035156
     },
     "SENORES": {
       "mcap_cr": 5001.4196568,
@@ -33273,7 +33278,12 @@
       "ag": 0.153429,
       "al": 0.287234,
       "last_close": 16.97,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T09:31:30.995808",
+      "rsi_bounce_last_price": 17.510000228881836
     },
     "BALAJITELE": {
       "mcap_cr": 1059.0,
