@@ -27343,7 +27343,12 @@
       "rsi_ema_200": 51.9981,
       "ag": 7.449874,
       "al": 10.148239,
-      "last_close": 1086.1
+      "last_close": 1086.1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:17:38.077131",
+      "rsi_bounce_last_price": 1097.4000244140625
     },
     "DALBHARAT": {
       "mcap_cr": 28271.9563764,
@@ -29723,7 +29728,12 @@
       "rsi_ema_200": 48.3587,
       "ag": 8.0398,
       "al": 6.767815,
-      "last_close": 1104.1
+      "last_close": 1104.1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:17:40.400568",
+      "rsi_bounce_last_price": 1106.0
     },
     "MIDHANI": {
       "mcap_cr": 7178.869028686523,
@@ -35020,7 +35030,12 @@
       "ag": 11.180805,
       "al": 11.031279,
       "last_close": 728.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:17:44.145253",
+      "rsi_bounce_last_price": 729.0999755859375
     },
     "KAMATHOTEL": {
       "mcap_cr": 676.6,

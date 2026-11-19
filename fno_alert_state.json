@@ -1727,7 +1727,13 @@
     "trigger_date": "2026-11-18",
     "ref_high": 74.27,
     "ref_low": 68.63,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-19",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-19T08:16:07.235173",
+    "fno_low_breach_last_price": 68.36000061035156
   },
   "SURYALA": {
     "trigger_date": "2026-11-18",
