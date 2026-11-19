@@ -26894,7 +26894,12 @@
       "rsi_ema_200": 49.7827,
       "ag": 8.534104,
       "al": 15.137945,
-      "last_close": 996.1
+      "last_close": 996.1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T07:48:05.136347",
+      "rsi_bounce_last_price": 1005.0
     },
     "CARTRADE": {
       "mcap_cr": 12870.08347343225,
@@ -35647,7 +35652,12 @@
       "ag": 1.910214,
       "al": 2.323399,
       "last_close": 145.53,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T07:48:10.588009",
+      "rsi_bounce_last_price": 145.88999938964844
     },
     "MAXIND": {
       "mcap_cr": 850.4,
