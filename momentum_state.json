@@ -26863,7 +26863,12 @@
       "rsi_ema_200": 49.0504,
       "ag": 4.029711,
       "al": 5.525635,
-      "last_close": 502.65
+      "last_close": 502.65,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T07:30:58.432068",
+      "rsi_bounce_last_price": 504.3500061035156
     },
     "CAPLIPOINT": {
       "mcap_cr": 15453.1777968,
@@ -35806,7 +35811,12 @@
       "ag": 0.446647,
       "al": 0.564169,
       "last_close": 54.07,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T07:31:02.381846",
+      "rsi_bounce_last_price": 54.11000061035156
     },
     "MOLDTECH": {
       "mcap_cr": 604.9,
