@@ -1794,5 +1794,65 @@
     "ref_high": 1710.0,
     "ref_low": 1639.6,
     "status": "Active"
+  },
+  "ENIL": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 83.0,
+    "ref_low": 80.0,
+    "status": "Active"
+  },
+  "EIFFL": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 244.0,
+    "ref_low": 230.2,
+    "status": "Active"
+  },
+  "BLUECLOUDS": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 17.69,
+    "ref_low": 15.07,
+    "status": "Active"
+  },
+  "KKCL": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 434.6,
+    "ref_low": 413.5,
+    "status": "Active"
+  },
+  "MAHSEAMLES": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 509.1,
+    "ref_low": 497.0,
+    "status": "Active"
+  },
+  "LFIC": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 117.99,
+    "ref_low": 114.29,
+    "status": "Active"
+  },
+  "KRYSTAL": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 595.95,
+    "ref_low": 584.7,
+    "status": "Active"
+  },
+  "APOLLOPIPE": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 574.75,
+    "ref_low": 531.35,
+    "status": "Active"
+  },
+  "GREENLAM": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 240.0,
+    "ref_low": 224.17,
+    "status": "Active"
+  },
+  "BFINVEST": {
+    "trigger_date": "2026-11-19",
+    "ref_high": 500.5,
+    "ref_low": 482.9,
+    "status": "Active"
   }
 }
