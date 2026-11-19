@@ -28836,7 +28836,12 @@
       "rsi_ema_200": 48.4593,
       "ag": 2.122391,
       "al": 1.950634,
-      "last_close": 286.85
+      "last_close": 286.85,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:03:10.745631",
+      "rsi_bounce_last_price": 290.1499938964844
     },
     "JAMNAAUTO": {
       "mcap_cr": 5403.3910401358335,
@@ -35664,7 +35669,12 @@
       "ag": 5.450279,
       "al": 6.071103,
       "last_close": 439.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:03:16.300238",
+      "rsi_bounce_last_price": 453.0
     },
     "MOBIKWIK": {
       "mcap_cr": 1693.0,
@@ -36838,7 +36848,12 @@
       "ag": 0.42367,
       "al": 0.920457,
       "last_close": 57.61,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:03:18.443241",
+      "rsi_bounce_last_price": 59.41999816894531
     },
     "SATIN": {
       "mcap_cr": 2886.0,
