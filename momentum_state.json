@@ -31277,7 +31277,12 @@
       "rsi_ema_200": 61.0942,
       "ag": 16.74863,
       "al": 15.53604,
-      "last_close": 917.75
+      "last_close": 917.75,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T06:17:32.678328",
+      "rsi_bounce_last_price": 952.0999755859375
     },
     "SIGNATURE": {
       "mcap_cr": 11906.961467038256,
@@ -33863,7 +33868,12 @@
       "ag": 0.801096,
       "al": 0.965552,
       "last_close": 113.56,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T06:17:36.314311",
+      "rsi_bounce_last_price": 115.5
     },
     "EMKAY": {
       "mcap_cr": 741.3,
@@ -34759,7 +34769,12 @@
       "ag": 2.857554,
       "al": 2.950862,
       "last_close": 189.74,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T06:17:38.788261",
+      "rsi_bounce_last_price": 193.5
     },
     "IRISDOREME": {
       "mcap_cr": 1032.0,
