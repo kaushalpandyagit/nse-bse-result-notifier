@@ -322,6 +322,8 @@ log = logging.getLogger("breakout_notifier")
 
 
 def send_telegram_message(text: str) -> bool:
+    global _LAST_ALERT_TEXT
+    _LAST_ALERT_TEXT = text          # for the trigger list, see _log_trigger
     if "PUT_YOUR" in TELEGRAM_BOT_TOKEN or "PUT_YOUR" in TELEGRAM_CHAT_ID:
         log.error("Telegram bot token / chat id not configured.")
         return False
@@ -1398,6 +1400,33 @@ def record_half_day_slot(entry: dict):
     if current_slot not in slots:
         slots.append(current_slot)
 
+TRIGGER_LOG_FILE = Path(__file__).parent / "scanner_triggers.csv"
+_LAST_ALERT_TEXT = ""
+
+
+def _log_trigger(scanner: str, price, entry):
+    """One line per alert that was sent, for later study: when, which scanner, which stock, at what price.
+    record_alert() is called right after a successful send, so the last text sent is this alert's text."""
+    try:
+        import csv
+        text = _LAST_ALERT_TEXT or ""
+        m = re.search(r"<b>([^<]{1,40})</b>", text)
+        symbol = (m.group(1) if m else "").replace("&amp;", "&").strip()
+        plain = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", text).replace("\n", " | ")).strip()[:400]
+        plain = plain.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+        now = get_ist_now()
+        is_new = not TRIGGER_LOG_FILE.exists()
+        with open(TRIGGER_LOG_FILE, "a", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            if is_new:
+                w.writerow(["date", "time", "scanner", "symbol", "price", "rs_rank", "message"])
+            w.writerow([now.strftime("%Y-%m-%d"), now.strftime("%H:%M"), scanner, symbol,
+                        "" if price is None else round(float(price), 2),
+                        entry.get("rs_rank", "") if isinstance(entry, dict) else "", plain])
+    except Exception as e:
+        log.error("Trigger list not written: %s", e)
+
+
 def alert_allowed(entry: dict, alert_key_prefix: str, current_price: float = None) -> bool:
     if not check_half_day_slot(entry):
         return False
@@ -1427,6 +1456,7 @@ def record_alert(entry: dict, alert_key_prefix: str, current_price: float = None
     entry[f"{alert_key_prefix}_last_alert"] = datetime.datetime.now().isoformat()
     if current_price is not None:
         entry[f"{alert_key_prefix}_last_price"] = float(current_price)
+    _log_trigger(alert_key_prefix, current_price, entry)
 
 # ----------------------------------------------------------------------
 # F&O 3-DAY HIGH/LOW MONITOR & ETF iNAV DISCOUNT SCANNER
