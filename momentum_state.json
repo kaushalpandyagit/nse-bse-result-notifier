@@ -26024,7 +26024,12 @@
       "rsi_ema_200": 54.6014,
       "ag": 4.223663,
       "al": 4.787606,
-      "last_close": 403.6
+      "last_close": 403.6,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:03:17.670863",
+      "rsi_bounce_last_price": 407.25
     },
     "ACUTAAS": {
       "mcap_cr": 32583.887045257325,
@@ -28180,7 +28185,12 @@
       "rsi_ema_200": 52.2755,
       "ag": 7.894653,
       "al": 6.794019,
-      "last_close": 782.5
+      "last_close": 782.5,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:03:20.291568",
+      "rsi_bounce_last_price": 785.0
     },
     "GRAVITA": {
       "mcap_cr": 10679.179013618066,
@@ -36407,7 +36417,12 @@
       "ag": 1.845265,
       "al": 2.439034,
       "last_close": 155.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:03:26.569085",
+      "rsi_bounce_last_price": 161.89999389648438
     },
     "PGINVIT": {
       "mcap_cr": 9593.2,
@@ -37151,7 +37166,12 @@
       "ag": 1.02669,
       "al": 1.135032,
       "last_close": 125.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:03:28.063470",
+      "rsi_bounce_last_price": 128.11000061035156
     },
     "VSSL": {
       "mcap_cr": 3214.0,
@@ -37221,7 +37241,12 @@
       "ag": 5.017576,
       "al": 4.337661,
       "last_close": 502.3,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:03:29.779651",
+      "rsi_bounce_last_price": 505.29998779296875
     },
     "WSTCSTPAPR": {
       "mcap_cr": 5386.0,
