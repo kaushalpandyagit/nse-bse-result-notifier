@@ -1001,13 +1001,13 @@
     "trigger_date": "2026-11-06",
     "ref_high": 127.15,
     "ref_low": 119.46,
-    "status": "Active"
+    "status": "Expired"
   },
   "KIRLOSIND": {
     "trigger_date": "2026-11-06",
     "ref_high": 3678.0,
     "ref_low": 3257.8,
-    "status": "Active"
+    "status": "Expired"
   },
   "SOMANYCERA": {
     "trigger_date": "2026-11-06",
@@ -1367,7 +1367,13 @@
     "trigger_date": "2026-11-12",
     "ref_high": 4211.0,
     "ref_low": 3708.4,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-19",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-19T03:46:03.511390",
+    "fno_high_breach_last_price": 4251.2998046875
   },
   "WATERBASE": {
     "trigger_date": "2026-11-12",
@@ -1679,7 +1685,13 @@
     "trigger_date": "2026-11-18",
     "ref_high": 62.0,
     "ref_low": 54.6,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-19",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-19T03:46:08.865371",
+    "fno_low_breach_last_price": 54.599998474121094
   },
   "TEAMGTY": {
     "trigger_date": "2026-11-18",
@@ -1697,7 +1709,13 @@
     "trigger_date": "2026-11-18",
     "ref_high": 71.06,
     "ref_low": 67.52,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-19",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-19T03:46:11.322749",
+    "fno_high_breach_last_price": 73.76000213623047
   },
   "ADVENTHTL": {
     "trigger_date": "2026-11-18",
@@ -1727,7 +1745,13 @@
     "trigger_date": "2026-11-18",
     "ref_high": 5.0,
     "ref_low": 5.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-19",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-19T03:46:14.817613",
+    "fno_low_breach_last_price": 4.96999979019165
   },
   "ADVAIT": {
     "trigger_date": "2026-11-18",
