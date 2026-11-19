@@ -26499,7 +26499,12 @@
       "rsi_ema_200": 52.3573,
       "ag": 23.914133,
       "al": 23.568763,
-      "last_close": 1915.8
+      "last_close": 1915.8,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:31:50.274269",
+      "rsi_bounce_last_price": 1926.199951171875
     },
     "AZAD": {
       "mcap_cr": 14965.527620730541,
@@ -27078,7 +27083,12 @@
       "rsi_ema_200": 51.8655,
       "ag": 1.258493,
       "al": 1.435139,
-      "last_close": 239.88
+      "last_close": 239.88,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:31:52.153692",
+      "rsi_bounce_last_price": 240.6699981689453
     },
     "CHALET": {
       "mcap_cr": 17906.05532880863,
@@ -31447,7 +31457,12 @@
       "rsi_ema_200": 48.949,
       "ag": 2.288142,
       "al": 2.487583,
-      "last_close": 190.12
+      "last_close": 190.12,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:31:54.514749",
+      "rsi_bounce_last_price": 192.92999267578125
     },
     "SPLPETRO": {
       "mcap_cr": 13213.665331882654,
@@ -31909,7 +31924,12 @@
       "rsi_ema_200": 49.4114,
       "ag": 1.452303,
       "al": 1.327003,
-      "last_close": 110.6
+      "last_close": 110.6,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:31:55.868789",
+      "rsi_bounce_last_price": 110.86000061035156
     },
     "THANGAMAYL": {
       "mcap_cr": 12170.786811202319,
@@ -34617,7 +34637,12 @@
       "ag": 2.211162,
       "al": 2.488083,
       "last_close": 168.76,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:31:59.719015",
+      "rsi_bounce_last_price": 173.75
     },
     "IBULLSLTD": {
       "mcap_cr": 7603.0,
