@@ -27544,7 +27544,12 @@
       "rsi_ema_200": 52.1737,
       "ag": 1.320485,
       "al": 1.231459,
-      "last_close": 130.14
+      "last_close": 130.14,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:17:40.947329",
+      "rsi_bounce_last_price": 130.72000122070312
     },
     "EIDPARRY": {
       "mcap_cr": 11398.0620726,
@@ -28854,7 +28859,12 @@
       "rsi_ema_200": 51.6988,
       "ag": 1.971491,
       "al": 1.935223,
-      "last_close": 136.3
+      "last_close": 136.3,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:17:42.444085",
+      "rsi_bounce_last_price": 140.27999877929688
     },
     "JAYNECOIND": {
       "mcap_cr": 8530.219425377427,
@@ -33056,7 +33066,12 @@
       "ag": 0.344974,
       "al": 0.297906,
       "last_close": 26.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:17:45.734903",
+      "rsi_bounce_last_price": 26.6299991607666
     },
     "AURUM": {
       "mcap_cr": 1555.0,
@@ -33070,7 +33085,12 @@
       "ag": 2.031328,
       "al": 2.057153,
       "last_close": 216.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:17:46.945650",
+      "rsi_bounce_last_price": 216.6999969482422
     },
     "AVADHSUGAR": {
       "mcap_cr": 1642.0,
@@ -34592,7 +34612,12 @@
       "ag": 16.749451,
       "al": 16.50595,
       "last_close": 1178.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:17:49.439810",
+      "rsi_bounce_last_price": 1179.9000244140625
     },
     "INDOAMIN": {
       "mcap_cr": 954.9,
@@ -35173,7 +35198,12 @@
       "ag": 1.823687,
       "al": 2.729516,
       "last_close": 181.46,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:17:50.859793",
+      "rsi_bounce_last_price": 183.05999755859375
     },
     "KROSS": {
       "mcap_cr": 1945.6,
@@ -36329,7 +36359,12 @@
       "ag": 0.92533,
       "al": 1.23695,
       "last_close": 111.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:17:53.531907",
+      "rsi_bounce_last_price": 112.94999694824219
     },
     "PRECOT": {
       "mcap_cr": 770.4,
