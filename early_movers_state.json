@@ -619,6 +619,12 @@
     "price_change_pct": 2.42,
     "deliv_pct": 69.2,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-19",
+    "alert_slots": [
+      "H2"
+    ],
+    "em_high_breach_last_alert": "2026-11-19T10:01:25.329945",
+    "em_high_breach_last_price": 416.0
   }
 }
