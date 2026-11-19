@@ -35259,7 +35259,12 @@
       "ag": 4.818249,
       "al": 5.795542,
       "last_close": 452.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T05:31:47.547359",
+      "rsi_bounce_last_price": 460.8999938964844
     },
     "LGBBROSLTD": {
       "mcap_cr": 5450.7,
