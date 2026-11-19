@@ -17,10 +17,12 @@
   "custom_alert_ALLETEC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-18T08:45:57.561151",
-    "custom_last_price": 115.8499984741211,
+    "custom_last_alert": "2026-11-19T08:45:47.452116",
+    "custom_last_price": 109.3499984741211,
     "session_date": "2026-11-19",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BASILIC_price": {
     "alerted": false,
@@ -156,10 +158,12 @@
   "custom_alert_SPCL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-18T08:46:05.629674",
-    "custom_last_price": 46.0,
+    "custom_last_alert": "2026-11-19T08:45:55.616313",
+    "custom_last_price": 44.400001525878906,
     "session_date": "2026-11-19",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_SSEGL_price": {
     "alerted": false,
@@ -168,10 +172,12 @@
   "custom_alert_TECHLABS_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-18T08:46:06.849209",
-    "custom_last_price": 110.6500015258789,
+    "custom_last_alert": "2026-11-19T08:45:57.343485",
+    "custom_last_price": 105.1500015258789,
     "session_date": "2026-11-19",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_CIRCULAR_news": {
     "alerted": true,

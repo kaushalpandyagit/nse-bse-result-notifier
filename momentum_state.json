@@ -27636,7 +27636,12 @@
       "rsi_ema_200": 47.75,
       "ag": 5.652412,
       "al": 5.177616,
-      "last_close": 445.7
+      "last_close": 445.7,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:47:49.152788",
+      "rsi_bounce_last_price": 446.25
     },
     "ELECTCAST": {
       "mcap_cr": 4064.563685825,
@@ -31763,7 +31768,12 @@
       "rsi_ema_200": 47.9297,
       "ag": 1.445192,
       "al": 1.435438,
-      "last_close": 122.27
+      "last_close": 122.27,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:47:51.692312",
+      "rsi_bounce_last_price": 123.13999938964844
     },
     "TARIL": {
       "mcap_cr": 9081.516941256628,
@@ -34703,7 +34713,12 @@
       "ag": 5.615196,
       "al": 5.905164,
       "last_close": 1017.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T08:47:54.992667",
+      "rsi_bounce_last_price": 1024.5
     },
     "INDNIPPON": {
       "mcap_cr": 2701.6,
