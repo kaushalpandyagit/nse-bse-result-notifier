@@ -26910,7 +26910,12 @@
       "rsi_ema_200": 51.5558,
       "ag": 0.638005,
       "al": 0.787354,
-      "last_close": 190.38
+      "last_close": 190.38,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T04:32:19.738884",
+      "rsi_bounce_last_price": 190.66000366210938
     },
     "CCL": {
       "mcap_cr": 12687.036355253711,
@@ -29969,7 +29974,12 @@
       "rsi_ema_200": 48.628,
       "ag": 1.142694,
       "al": 2.168339,
-      "last_close": 149.64
+      "last_close": 149.64,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T04:32:23.567896",
+      "rsi_bounce_last_price": 152.6199951171875
     },
     "NIVABUPA": {
       "mcap_cr": 13629.92081922936,
@@ -33807,7 +33817,12 @@
       "ag": 2.583485,
       "al": 3.479918,
       "last_close": 250.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T04:32:28.315555",
+      "rsi_bounce_last_price": 258.25
     },
     "ESAFSFB": {
       "mcap_cr": 2222.0,
@@ -34444,7 +34459,12 @@
       "ag": 3.458842,
       "al": 5.176398,
       "last_close": 537.95,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T04:32:30.230255",
+      "rsi_bounce_last_price": 540.0999755859375
     },
     "HTMEDIA": {
       "mcap_cr": 524.0,
@@ -34889,7 +34909,12 @@
       "ag": 1.78989,
       "al": 2.123137,
       "last_close": 223.54,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T04:32:32.115100",
+      "rsi_bounce_last_price": 224.0500030517578
     },
     "KANORICHEM": {
       "mcap_cr": 730.0,
@@ -35207,7 +35232,12 @@
       "ag": 1.326438,
       "al": 2.30098,
       "last_close": 199.11,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T04:32:34.063015",
+      "rsi_bounce_last_price": 200.0
     },
     "LMW": {
       "mcap_cr": 18500.8,
@@ -35333,7 +35363,12 @@
       "ag": 5.162638,
       "al": 8.311017,
       "last_close": 864.65,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T04:32:35.742477",
+      "rsi_bounce_last_price": 870.0
     },
     "MANAKCOAT": {
       "mcap_cr": 1651.8,
@@ -36198,7 +36233,12 @@
       "ag": 0.448559,
       "al": 0.660736,
       "last_close": 86.92,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T04:32:38.645935",
+      "rsi_bounce_last_price": 89.43000030517578
     },
     "PENIND": {
       "mcap_cr": 2186.9,
@@ -37081,7 +37121,12 @@
       "ag": 1.855374,
       "al": 1.927794,
       "last_close": 135.99,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T04:32:41.306008",
+      "rsi_bounce_last_price": 141.14999389648438
     }
   },
   "last_sector_report_date": "2026-11-19",
