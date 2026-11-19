@@ -574,11 +574,11 @@
     ]
   },
   "arb_BBTC": {
-    "spread_last_alert": "2026-11-18T04:33:11.004609",
-    "spread_last_price": 4.087177715165622,
-    "session_date": "2026-11-18",
+    "spread_last_alert": "2026-11-19T07:19:12.667262",
+    "spread_last_price": 3.2155652186481753,
+    "session_date": "2026-11-19",
     "alert_slots": [
-      "H1"
+      "H2"
     ]
   },
   "arb_AVANTIFEED": {

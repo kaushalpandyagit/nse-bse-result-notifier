@@ -28934,7 +28934,12 @@
       "rsi_ema_200": 50.6122,
       "ag": 2.768888,
       "al": 4.077011,
-      "last_close": 358.05
+      "last_close": 358.05,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T07:18:19.569993",
+      "rsi_bounce_last_price": 363.25
     },
     "JKTYRE": {
       "mcap_cr": 10206.889785039093,
@@ -33859,7 +33864,12 @@
       "ag": 5.437169,
       "al": 4.831833,
       "last_close": 798.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T07:18:23.502823",
+      "rsi_bounce_last_price": 799.0
     },
     "EMAMIPAP": {
       "mcap_cr": 702.1,
@@ -33939,7 +33949,12 @@
       "ag": 0.660254,
       "al": 0.896055,
       "last_close": 86.91,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-19T07:18:25.409661",
+      "rsi_bounce_last_price": 88.0
     },
     "ETHOSLTD": {
       "mcap_cr": 7502.9,
