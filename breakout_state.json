@@ -322,9 +322,9 @@
     ]
   },
   "arb_ASHAPURMIN": {
-    "spread_last_alert": "2026-11-16T03:51:27.878276",
-    "spread_last_price": 2.6449171993318794,
-    "session_date": "2026-11-16",
+    "spread_last_alert": "2026-11-20T04:20:12.374735",
+    "spread_last_price": 3.7914691943127963,
+    "session_date": "2026-11-20",
     "alert_slots": [
       "H1"
     ]
@@ -454,9 +454,9 @@
     "spread_last_price": 4.063429137760155
   },
   "arb_TATAINVEST": {
-    "spread_last_alert": "2026-11-17T03:52:06.479234",
-    "spread_last_price": 4.0170093535346325,
-    "session_date": "2026-11-17",
+    "spread_last_alert": "2026-11-20T04:19:50.437040",
+    "spread_last_price": 2.8188264607824474,
+    "session_date": "2026-11-20",
     "alert_slots": [
       "H1"
     ]
