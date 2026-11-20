@@ -6,6 +6,7 @@ For a stock:
     1 S Q2 S▲▲ NP▼▼ E▼▼       latest quarter declared: first arrow vs the previous quarter, second vs a year ago
     1 S                        nothing known (also for a stock that is not in the file at all: the links alone)
 After the links comes the forensic verdict letter when the screener has one: 🟢C clean, 🟠W warn, 🔴R red, ⛔V veto.
+Then the alignment score when the screener has one: A+41 (from -100 to +100; outside facts in favour minus against).
 "1" opens the chart in the local screener (works on the computer where it runs), "S" opens Screener.in.
 A missing or old file never breaks an alert: the text is then sent as it is.
 """
@@ -62,6 +63,9 @@ def tag(symbol: str, known_only: bool = False) -> str:
     fz = {"C": "🟢C", "W": "🟠W", "R": "🔴R", "V": "⛔V"}.get(e.get("f"))      # forensic verdict: Clean, Warn, Red, Veto
     if fz:
         out.append(fz)
+    a = e.get("a")                           # alignment score from the screener, -100 to +100
+    if isinstance(a, (int, float)):
+        out.append(f"A{int(a):+d}")
     d = e.get("d")
     shown = False
     if d:
