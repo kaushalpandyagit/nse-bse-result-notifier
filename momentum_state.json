@@ -32915,7 +32915,12 @@
       "ag": 10.755707,
       "al": 13.738931,
       "last_close": 809.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T08:04:09.784448",
+      "rsi_bounce_last_price": 841.8499755859375
     },
     "AVTNPL": {
       "mcap_cr": 1567.0,
@@ -33163,7 +33168,12 @@
       "ag": 15.304421,
       "al": 15.887891,
       "last_close": 1738.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T08:04:11.101326",
+      "rsi_bounce_last_price": 1750.0
     },
     "CANTABIL": {
       "mcap_cr": 2153.2,
@@ -35746,7 +35756,12 @@
       "ag": 1.698914,
       "al": 2.180686,
       "last_close": 248.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T08:04:14.723892",
+      "rsi_bounce_last_price": 250.14999389648438
     },
     "NGLFINE": {
       "mcap_cr": 1753.0,
