@@ -26946,7 +26946,12 @@
       "rsi_ema_200": 53.3714,
       "ag": 1.258493,
       "al": 1.435139,
-      "last_close": 239.88
+      "last_close": 239.88,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:01.832389",
+      "rsi_bounce_last_price": 240.74000549316406
     },
     "CHALET": {
       "mcap_cr": 18044.021361491814,
@@ -28045,7 +28050,12 @@
       "rsi_ema_200": 53.9655,
       "ag": 5.895203,
       "al": 6.978592,
-      "last_close": 801.2
+      "last_close": 801.2,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:02.961598",
+      "rsi_bounce_last_price": 802.8499755859375
     },
     "GRAPHITE": {
       "mcap_cr": 15218.782133125598,
@@ -32437,7 +32447,12 @@
       "ag": 0.271935,
       "al": 0.311572,
       "last_close": 201.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:05.844742",
+      "rsi_bounce_last_price": 201.25
     },
     "AGARWALEYE": {
       "mcap_cr": 17344.0,
@@ -33520,7 +33535,12 @@
       "ag": 1.89966,
       "al": 1.864474,
       "last_close": 288.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:07.943073",
+      "rsi_bounce_last_price": 290.0
     },
     "EIMCOELECO": {
       "mcap_cr": 1457.0,
@@ -33674,7 +33694,12 @@
       "ag": 4.231984,
       "al": 9.118363,
       "last_close": 765.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:09.668678",
+      "rsi_bounce_last_price": 774.75
     },
     "FCL": {
       "mcap_cr": 6270.8,
@@ -34001,7 +34026,12 @@
       "ag": 0.240055,
       "al": 0.297148,
       "last_close": 53.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:11.020321",
+      "rsi_bounce_last_price": 53.900001525878906
     },
     "GUFICBIO": {
       "mcap_cr": 4275.0,
@@ -34958,7 +34988,12 @@
       "ag": 1.231692,
       "al": 2.316625,
       "last_close": 196.59,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:13.343399",
+      "rsi_bounce_last_price": 197.38999938964844
     },
     "LMW": {
       "mcap_cr": 18500.8,
@@ -36233,7 +36268,12 @@
       "ag": 0.179221,
       "al": 0.292542,
       "last_close": 26.11,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:15.531928",
+      "rsi_bounce_last_price": 26.68000030517578
     },
     "RAMCOSYS": {
       "mcap_cr": 2040.0,
@@ -36947,7 +36987,12 @@
       "ag": 2.930854,
       "al": 3.920874,
       "last_close": 425.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:17.072057",
+      "rsi_bounce_last_price": 439.0
     },
     "SIMPLEXINF": {
       "mcap_cr": 2122.9,
@@ -37101,7 +37146,12 @@
       "ag": 2.500906,
       "al": 2.177093,
       "last_close": 279.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:18.601823",
+      "rsi_bounce_last_price": 282.0
     },
     "SRHHYPOLTD": {
       "mcap_cr": 923.0,
@@ -37353,7 +37403,12 @@
       "ag": 2.794865,
       "al": 3.909532,
       "last_close": 298.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:20.035412",
+      "rsi_bounce_last_price": 306.1000061035156
     },
     "TATVA": {
       "mcap_cr": 3846.0,
@@ -37680,7 +37735,12 @@
       "ag": 41.261027,
       "al": 54.823541,
       "last_close": 6947.5,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:03:21.294785",
+      "rsi_bounce_last_price": 7028.5
     },
     "VALIANTORG": {
       "mcap_cr": 1172.0,

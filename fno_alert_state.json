@@ -1559,7 +1559,13 @@
     "trigger_date": "2026-11-16",
     "ref_high": 102.0,
     "ref_low": 93.15,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-20",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-20T04:01:26.332889",
+    "fno_low_breach_last_price": 92.8499984741211
   },
   "PRIMESECU": {
     "trigger_date": "2026-11-16",
@@ -1805,7 +1811,13 @@
     "trigger_date": "2026-11-19",
     "ref_high": 244.0,
     "ref_low": 230.2,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-20",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-20T04:01:31.438547",
+    "fno_low_breach_last_price": 230.0
   },
   "BLUECLOUDS": {
     "trigger_date": "2026-11-19",
