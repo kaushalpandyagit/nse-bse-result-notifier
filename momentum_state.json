@@ -22222,7 +22222,14 @@
       "rsi_hi60_fresh": false,
       "rsi_ag": 9.125257,
       "rsi_al": 6.423531,
-      "rs_rank": 83.2
+      "rs_rank": 83.2,
+      "session_date": "2026-11-20",
+      "alert_slots": [
+        "H2"
+      ],
+      "ema21_pullback_last_alert": "2026-11-20T09:17:09.454234",
+      "ema21_pullback_last_price": 662.5999755859375,
+      "ema21_sent": true
     },
     "TARC": {
       "sma50": 123.52659957885743,
@@ -31018,7 +31025,12 @@
       "rsi_ema_200": 51.9833,
       "ag": 22.756552,
       "al": 21.46905,
-      "last_close": 3100.6001
+      "last_close": 3100.6001,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T09:17:33.509888",
+      "rsi_bounce_last_price": 3111.0
     },
     "SHAKTIPUMP": {
       "mcap_cr": 4410.860409557282,
@@ -33136,7 +33148,12 @@
       "ag": 1.167861,
       "al": 1.176616,
       "last_close": 148.48,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T09:17:35.462924",
+      "rsi_bounce_last_price": 148.7899932861328
     },
     "BLUSPRING": {
       "mcap_cr": 2400.0,
