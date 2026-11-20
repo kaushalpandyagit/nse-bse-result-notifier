@@ -252,15 +252,64 @@ def fetch_upcoming_events() -> str:
 # ----------------------------------------------------------------------
 # MORNING MACRO PULSE (9:00 AM)
 # ----------------------------------------------------------------------
-def fetch_binance_btc() -> str:
+def _macro_quote(ticker: str):
+    """(price, % change against the previous close, note) for a Yahoo ticker, or None.
+    Live quote first; when it gives nothing, or no change at all (a market that has not traded yet today),
+    the last two daily closes are used and the note says so."""
+    if yf is None:
+        return None
+    t = yf.Ticker(ticker)
+    price = prev = None
     try:
-        resp = requests.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT", timeout=5)
-        if resp.status_code == 200:
-            data = resp.json()
-            price = float(data["lastPrice"])
-            change = float(data["priceChangePercent"])
-            sign = "+" if change > 0 else ""
-            return f"<b>Bitcoin (BTC)</b>: ${price:,.2f} ({sign}{change:.2f}%)"
+        fast = t.fast_info
+        price = fast.get("lastPrice") or fast.get("last_price")
+        prev = fast.get("previousClose") or fast.get("previous_close")
+    except Exception as e:
+        log.warning(f"Live quote failed for {ticker}: {e}")
+    live_ok = bool(price and prev and prev > 0)
+    if live_ok and abs(price - prev) > 1e-9:
+        return float(price), (price - prev) / prev * 100, ""
+    try:
+        closes = t.history(period="10d", interval="1d")["Close"].dropna()
+        if len(closes) >= 2 and float(closes.iloc[-2]) > 0:
+            last, before = float(closes.iloc[-1]), float(closes.iloc[-2])
+            today = datetime.datetime.utcnow().date()
+            note = "" if closes.index[-1].date() >= today else " (last close)"
+            return last, (last - before) / before * 100, note
+    except Exception as e:
+        log.warning(f"Daily closes failed for {ticker}: {e}")
+    if live_ok:
+        return float(price), 0.0, ""
+    return None
+
+
+def fetch_btc_line() -> str:
+    """Bitcoin: Yahoo like the other lines; then three exchanges in turn. (Binance alone refuses requests from the
+    United States, where GitHub's machines run, so it used to read 'Data unavailable' every day.)"""
+    q = _macro_quote("BTC-USD")
+    if q:
+        price, change, note = q
+        return f"<b>Bitcoin (BTC)</b>: ${price:,.2f} ({'+' if change > 0 else ''}{change:.2f}%){note}"
+    try:
+        r = requests.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true", timeout=8)
+        if r.status_code == 200:
+            d = r.json()["bitcoin"]
+            ch = float(d.get("usd_24h_change") or 0)
+            return f"<b>Bitcoin (BTC)</b>: ${float(d['usd']):,.2f} ({'+' if ch > 0 else ''}{ch:.2f}% in 24h)"
+    except Exception:
+        pass
+    try:
+        r = requests.get("https://api.coinbase.com/v2/prices/BTC-USD/spot", timeout=8)
+        if r.status_code == 200:
+            return f"<b>Bitcoin (BTC)</b>: ${float(r.json()['data']['amount']):,.2f}"
+    except Exception:
+        pass
+    try:
+        r = requests.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT", timeout=5)
+        if r.status_code == 200:
+            d = r.json()
+            ch = float(d["priceChangePercent"])
+            return f"<b>Bitcoin (BTC)</b>: ${float(d['lastPrice']):,.2f} ({'+' if ch > 0 else ''}{ch:.2f}% in 24h)"
     except Exception:
         pass
     return "<b>Bitcoin (BTC)</b>: Data unavailable"
@@ -274,33 +323,29 @@ def fetch_macro_pulse_data() -> str:
         return "\n".join(lines) + "yfinance module missing."
 
     for name, ticker in MACRO_SYMBOLS.items():
+        q = None
         try:
-            t = yf.Ticker(ticker)
-            fast = t.fast_info
-            current_price = fast.get("lastPrice") or fast.get("last_price")
-            prev_close = fast.get("previousClose") or fast.get("previous_close")
-            
-            if current_price and prev_close and prev_close > 0:
-                pct_change = ((current_price - prev_close) / prev_close) * 100
-                sign = "+" if pct_change > 0 else ""
-                
-                if "Yield" in name:
-                    lines.append(f"🏛️ <b>{name}</b>: {current_price:.3f}% ({sign}{pct_change:.2f}%)")
-                elif "Crude" in name:
-                    lines.append(f"🛢️ <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
-                elif "Gold" in name:
-                    lines.append(f"🥇 <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%)")
-                elif "Futures" in name or "Nikkei" in name or "Shanghai" in name:
-                    lines.append(f"📈 <b>{name}</b>: {current_price:,.2f} ({sign}{pct_change:.2f}%)")
-                elif "Dollar" in name or "INR" in name:
-                    lines.append(f"💵 <b>{name}</b>: {current_price:.2f} ({sign}{pct_change:.2f}%)")
-            else:
-                lines.append(f"• <b>{name}</b>: Market Closed / No Data")
+            q = _macro_quote(ticker)
         except Exception as e:
             log.warning(f"Failed to fetch {name} ({ticker}): {e}")
-            
+        if not q:
+            lines.append(f"• <b>{name}</b>: Data unavailable")      # said, not silently left out
+            continue
+        current_price, pct_change, note = q
+        sign = "+" if pct_change > 0 else ""
+        if "Yield" in name:
+            lines.append(f"🏛️ <b>{name}</b>: {current_price:.3f}% ({sign}{pct_change:.2f}%){note}")
+        elif "Crude" in name:
+            lines.append(f"🛢️ <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%){note}")
+        elif "Gold" in name:
+            lines.append(f"🥇 <b>{name}</b>: ${current_price:.2f} ({sign}{pct_change:.2f}%){note}")
+        elif "Dollar" in name or "INR" in name:
+            lines.append(f"💵 <b>{name}</b>: {current_price:.2f} ({sign}{pct_change:.2f}%){note}")
+        else:
+            lines.append(f"📈 <b>{name}</b>: {current_price:,.2f} ({sign}{pct_change:.2f}%){note}")
+
     # Add Crypto Pulse
-    lines.append(f"🪙 {fetch_binance_btc()}")
+    lines.append(f"🪙 {fetch_btc_line()}")
     
     # Add Upcoming Macro Events
     events_text = fetch_upcoming_events()
