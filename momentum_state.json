@@ -26565,7 +26565,12 @@
       "rsi_ema_200": 52.5703,
       "ag": 21.123575,
       "al": 19.693987,
-      "last_close": 2034.8
+      "last_close": 2034.8,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:03:13.581863",
+      "rsi_bounce_last_price": 2056.39990234375
     },
     "BIRET": {
       "mcap_cr": 21866.531017281,
@@ -35950,7 +35955,12 @@
       "ag": 0.16007,
       "al": 0.179876,
       "last_close": 18.76,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:03:21.496274",
+      "rsi_bounce_last_price": 18.799999237060547
     },
     "PAKKA": {
       "mcap_cr": 365.0,
