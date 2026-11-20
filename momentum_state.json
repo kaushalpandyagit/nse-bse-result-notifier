@@ -27016,7 +27016,12 @@
       "rsi_ema_200": 53.9538,
       "ag": 12.643556,
       "al": 15.113823,
-      "last_close": 1424.7
+      "last_close": 1424.7,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T07:31:02.491625",
+      "rsi_bounce_last_price": 1435.0
     },
     "CHOICEIN": {
       "mcap_cr": 16004.26430388794,
