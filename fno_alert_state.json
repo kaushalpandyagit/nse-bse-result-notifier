@@ -236,12 +236,10 @@
     "fno_low_breach_last_price": 89.4000015258789
   },
   "KALPATARU": {
-    "trigger_date": "2026-10-27",
-    "ref_high": 257.95,
-    "ref_low": 242.65,
-    "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-30T04:10:46.438011",
-    "fno_low_breach_last_price": 240.5500030517578
+    "trigger_date": "2026-11-20",
+    "ref_high": 270.0,
+    "ref_low": 243.09,
+    "status": "Active"
   },
   "JINDALPHOT": {
     "trigger_date": "2026-10-28",
@@ -1124,16 +1122,10 @@
     "fno_low_breach_last_price": 761.0
   },
   "HEALTHX": {
-    "trigger_date": "2026-11-10",
-    "ref_high": 290.7,
-    "ref_low": 272.35,
-    "status": "Breached Low",
-    "session_date": "2026-11-16",
-    "alert_slots": [
-      "H2"
-    ],
-    "fno_low_breach_last_alert": "2026-11-16T09:46:28.982128",
-    "fno_low_breach_last_price": 272.0
+    "trigger_date": "2026-11-20",
+    "ref_high": 280.0,
+    "ref_low": 272.65,
+    "status": "Active"
   },
   "IPRINGLTD": {
     "trigger_date": "2026-11-12",
@@ -1178,16 +1170,10 @@
     "fno_low_breach_last_price": 409.95001220703125
   },
   "AURUS": {
-    "trigger_date": "2026-11-10",
-    "ref_high": 4.52,
-    "ref_low": 3.91,
-    "status": "Breached High",
-    "session_date": "2026-11-16",
-    "alert_slots": [
-      "H1"
-    ],
-    "fno_high_breach_last_alert": "2026-11-16T04:30:20.814734",
-    "fno_high_breach_last_price": 4.539999961853027
+    "trigger_date": "2026-11-20",
+    "ref_high": 5.16,
+    "ref_low": 4.01,
+    "status": "Active"
   },
   "MEDICO": {
     "trigger_date": "2026-11-09",
@@ -1808,16 +1794,10 @@
     "status": "Active"
   },
   "ENIL": {
-    "trigger_date": "2026-11-19",
-    "ref_high": 83.0,
-    "ref_low": 80.0,
-    "status": "Breached Low",
-    "session_date": "2026-11-20",
-    "alert_slots": [
-      "H1"
-    ],
-    "fno_low_breach_last_alert": "2026-11-20T05:30:30.018231",
-    "fno_low_breach_last_price": 79.98999786376953
+    "trigger_date": "2026-11-20",
+    "ref_high": 81.99,
+    "ref_low": 79.5,
+    "status": "Active"
   },
   "EIFFL": {
     "trigger_date": "2026-11-19",
@@ -1914,5 +1894,41 @@
     ],
     "fno_low_breach_last_alert": "2026-11-20T03:46:26.958022",
     "fno_low_breach_last_price": 457.79998779296875
+  },
+  "RADAAN": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 2.91,
+    "ref_low": 2.3,
+    "status": "Active"
+  },
+  "NITINSPIN": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 724.95,
+    "ref_low": 693.45,
+    "status": "Active"
+  },
+  "AADHARHFC": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 422.2,
+    "ref_low": 411.2,
+    "status": "Active"
+  },
+  "GULFOILLUB": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 1163.6,
+    "ref_low": 1140.4,
+    "status": "Active"
+  },
+  "KAMAHOLD": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 2405.0,
+    "ref_low": 2348.1,
+    "status": "Active"
+  },
+  "ABCIND": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 165.98,
+    "ref_low": 160.06,
+    "status": "Active"
   }
 }
