@@ -32947,7 +32947,12 @@
       "ag": 1.886234,
       "al": 2.040214,
       "last_close": 214.28,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T09:47:31.586469",
+      "rsi_bounce_last_price": 215.8300018310547
     },
     "AVADHSUGAR": {
       "mcap_cr": 1642.0,
@@ -34723,7 +34728,12 @@
       "ag": 5.734978,
       "al": 5.533183,
       "last_close": 535.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T09:47:33.894688",
+      "rsi_bounce_last_price": 538.0999755859375
     },
     "JAYAGROGN": {
       "mcap_cr": 720.1,
@@ -34901,7 +34911,12 @@
       "ag": 3.929538,
       "al": 3.378761,
       "last_close": 537.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T09:47:35.023243",
+      "rsi_bounce_last_price": 542.0
     },
     "KARNIKA": {
       "mcap_cr": 824.9,
@@ -36833,7 +36848,12 @@
       "ag": 2.550656,
       "al": 3.684838,
       "last_close": 313.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T09:47:36.865616",
+      "rsi_bounce_last_price": 316.8999938964844
     },
     "SAKAR": {
       "mcap_cr": 2247.0,

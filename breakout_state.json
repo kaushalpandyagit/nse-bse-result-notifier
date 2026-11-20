@@ -236,11 +236,11 @@
     ]
   },
   "arb_ABFRL": {
-    "spread_last_alert": "2026-11-09T03:53:09.555924",
-    "spread_last_price": 2.619418102884566,
-    "session_date": "2026-11-09",
+    "spread_last_alert": "2026-11-20T09:47:52.180219",
+    "spread_last_price": 4.658902499155551,
+    "session_date": "2026-11-20",
     "alert_slots": [
-      "H1"
+      "H2"
     ]
   },
   "arb_AARTIPHARM": {
