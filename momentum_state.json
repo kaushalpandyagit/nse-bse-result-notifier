@@ -20109,7 +20109,11 @@
       "rsi_al": 4.964082,
       "rs_rank": 95.3,
       "session_date": "2026-11-20",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "zanger_last_alert": "2026-11-20T07:16:51.559908",
+      "zanger_last_price": 1075.75
     },
     "SHAILY": {
       "sma50": 3117.4860107421873,
@@ -32191,7 +32195,12 @@
       "rsi_ema_200": 45.679,
       "ag": 0.708916,
       "al": 0.923793,
-      "last_close": 133.94
+      "last_close": 133.94,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T07:17:14.384203",
+      "rsi_bounce_last_price": 135.5800018310547
     },
     "WEBELSOLAR": {
       "mcap_cr": 2811.20846825,
@@ -33317,7 +33326,12 @@
       "ag": 2.23357,
       "al": 2.258121,
       "last_close": 359.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T07:17:16.384000",
+      "rsi_bounce_last_price": 359.75
     },
     "CSLFINANCE": {
       "mcap_cr": 514.1,
