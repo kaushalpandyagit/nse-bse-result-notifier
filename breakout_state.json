@@ -16,18 +16,22 @@
   "custom_alert_ALLETEC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-19T08:45:47.452116",
-    "custom_last_price": 109.3499984741211,
+    "custom_last_alert": "2026-11-20T08:46:03.815132",
+    "custom_last_price": 105.05000305175781,
     "session_date": "2026-11-20",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BASILIC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-17T09:01:19.364051",
-    "custom_last_price": 146.5,
+    "custom_last_alert": "2026-11-20T08:46:05.829259",
+    "custom_last_price": 143.89999389648438,
     "session_date": "2026-11-20",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BEACON_price": {
     "alerted": false,
@@ -60,10 +64,12 @@
   "custom_alert_EMMIL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-18T08:46:00.898513",
-    "custom_last_price": 102.0,
+    "custom_last_alert": "2026-11-20T08:46:09.800446",
+    "custom_last_price": 99.9000015258789,
     "session_date": "2026-11-20",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_ESFL_price": {
     "alerted": false,
@@ -154,10 +160,12 @@
   "custom_alert_SPCL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-19T08:45:55.616313",
-    "custom_last_price": 44.400001525878906,
+    "custom_last_alert": "2026-11-20T08:46:15.442411",
+    "custom_last_price": 45.599998474121094,
     "session_date": "2026-11-20",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_SSEGL_price": {
     "alerted": false,
@@ -166,10 +174,12 @@
   "custom_alert_TECHLABS_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-19T08:45:57.343485",
-    "custom_last_price": 105.1500015258789,
+    "custom_last_alert": "2026-11-20T08:46:17.127361",
+    "custom_last_price": 100.25,
     "session_date": "2026-11-20",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_CIRCULAR_news": {
     "alerted": true,
@@ -354,10 +364,12 @@
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-17T09:01:18.750050",
-    "custom_last_price": 146.5,
+    "custom_last_alert": "2026-11-20T08:46:05.112382",
+    "custom_last_price": 143.89999389648438,
     "session_date": "2026-11-20",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,

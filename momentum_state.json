@@ -25145,7 +25145,11 @@
       "rsi_al": 3.08503,
       "rs_rank": 97.6,
       "session_date": "2026-11-20",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "zanger_last_alert": "2026-11-20T08:47:53.812009",
+      "zanger_last_price": 267.739990234375
     },
     "WESTLIFE": {
       "sma50": 595.0309936523438,
@@ -28798,7 +28802,12 @@
       "rsi_ema_200": 51.2087,
       "ag": 0.619792,
       "al": 0.805594,
-      "last_close": 88.26
+      "last_close": 88.26,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T08:48:15.113314",
+      "rsi_bounce_last_price": 89.36000061035156
     },
     "JBMA": {
       "mcap_cr": 11455.782003815357,
@@ -35963,7 +35972,12 @@
       "ag": 1.979293,
       "al": 2.435295,
       "last_close": 240.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T08:48:20.254220",
+      "rsi_bounce_last_price": 246.5
     },
     "ORICONENT": {
       "mcap_cr": 904.0,
@@ -37610,7 +37624,12 @@
       "ag": 2.448436,
       "al": 3.030514,
       "last_close": 310.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T08:48:23.129912",
+      "rsi_bounce_last_price": 313.3500061035156
     },
     "TARSONS": {
       "mcap_cr": 1586.0,
