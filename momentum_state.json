@@ -29173,7 +29173,12 @@
       "rsi_ema_200": 51.8734,
       "ag": 5.415405,
       "al": 8.047914,
-      "last_close": 1318.1
+      "last_close": 1318.1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:32:42.290143",
+      "rsi_bounce_last_price": 1325.4000244140625
     },
     "KPITTECH": {
       "mcap_cr": 14332.76308035,
@@ -30340,7 +30345,12 @@
       "rsi_ema_200": 55.3732,
       "ag": 176.943527,
       "al": 197.330482,
-      "last_close": 23725.0
+      "last_close": 23725.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:32:44.781190",
+      "rsi_bounce_last_price": 24125.0
     },
     "PURVA": {
       "mcap_cr": 4676.354716131873,
@@ -34335,7 +34345,12 @@
       "ag": 15.553061,
       "al": 16.355518,
       "last_close": 1163.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:32:51.282289",
+      "rsi_bounce_last_price": 1169.5
     },
     "INDOAMIN": {
       "mcap_cr": 954.9,
@@ -36442,7 +36457,12 @@
       "ag": 4.754741,
       "al": 9.002782,
       "last_close": 588.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:32:56.249177",
+      "rsi_bounce_last_price": 601.6500244140625
     },
     "RML": {
       "mcap_cr": 3601.1,
