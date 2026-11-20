@@ -33018,7 +33018,12 @@
       "ag": 9.156439,
       "al": 8.090721,
       "last_close": 665.35,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:47:48.068647",
+      "rsi_bounce_last_price": 670.0
     },
     "BLKASHYAP": {
       "mcap_cr": 1193.0,
@@ -34579,7 +34584,12 @@
       "ag": 5.265114,
       "al": 8.059987,
       "last_close": 551.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:47:51.540766",
+      "rsi_bounce_last_price": 565.0
     },
     "JINDALPHOT": {
       "mcap_cr": 1143.0,
@@ -37635,7 +37645,12 @@
       "ag": 1.446312,
       "al": 1.319775,
       "last_close": 139.51,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T04:47:54.821872",
+      "rsi_bounce_last_price": 141.05999755859375
     },
     "UDS": {
       "mcap_cr": 1475.0,
