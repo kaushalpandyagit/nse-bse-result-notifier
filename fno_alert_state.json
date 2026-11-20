@@ -1649,7 +1649,13 @@
     "trigger_date": "2026-11-17",
     "ref_high": 551.0,
     "ref_low": 534.7,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-20",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-20T05:01:18.831033",
+    "fno_low_breach_last_price": 531.0999755859375
   },
   "ABDL": {
     "trigger_date": "2026-11-17",

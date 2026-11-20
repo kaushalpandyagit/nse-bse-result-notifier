@@ -9100,7 +9100,11 @@
       "rsi_al": 1.371942,
       "rs_rank": 94.0,
       "session_date": "2026-11-20",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "zanger_last_alert": "2026-11-20T05:01:42.155129",
+      "zanger_last_price": 275.6700134277344
     },
     "GRINDWELL": {
       "sma50": 1919.2819970703124,
@@ -29490,7 +29494,12 @@
       "rsi_ema_200": 47.2742,
       "ag": 11.337993,
       "al": 19.208978,
-      "last_close": 1443.4
+      "last_close": 1443.4,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T05:02:24.517506",
+      "rsi_bounce_last_price": 1459.5
     },
     "MBAPL": {
       "mcap_cr": 8393.784662824859,
@@ -32102,7 +32111,12 @@
       "rsi_ema_200": 51.5875,
       "ag": 60.497342,
       "al": 96.335996,
-      "last_close": 9535.0
+      "last_close": 9535.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T05:02:26.164245",
+      "rsi_bounce_last_price": 9695.0
     },
     "VTL": {
       "mcap_cr": 15326.296584364014,
@@ -36701,7 +36715,12 @@
       "ag": 6.091642,
       "al": 7.332535,
       "last_close": 972.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T05:02:30.318063",
+      "rsi_bounce_last_price": 976.0
     },
     "SANGAMIND": {
       "mcap_cr": 3068.3,
