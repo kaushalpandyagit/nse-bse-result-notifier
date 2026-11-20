@@ -2,10 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-19T07:01:02.595093",
-    "custom_last_price": 101.94999694824219,
+    "custom_last_alert": "2026-11-20T07:01:02.030563",
+    "custom_last_price": 100.55000305175781,
     "session_date": "2026-11-20",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_AERON_price": {
     "alerted": false,
@@ -82,11 +84,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-20T03:45:57.244853",
-    "custom_last_price": 162.64999389648438,
+    "custom_last_alert": "2026-11-20T07:01:06.903704",
+    "custom_last_price": 157.92999267578125,
     "session_date": "2026-11-20",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KAYNES_rsi": {
@@ -112,11 +115,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-20T03:45:59.487726",
-    "custom_last_price": 50.369998931884766,
+    "custom_last_alert": "2026-11-20T07:01:08.884381",
+    "custom_last_price": 48.849998474121094,
     "session_date": "2026-11-20",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
@@ -463,11 +467,12 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-20T03:46:05.307255",
-    "custom_last_price": 170.0,
+    "custom_last_alert": "2026-11-20T07:01:13.201571",
+    "custom_last_price": 162.9499969482422,
     "session_date": "2026-11-20",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_AETHER": {

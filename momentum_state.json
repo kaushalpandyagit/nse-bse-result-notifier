@@ -9101,10 +9101,13 @@
       "rs_rank": 94.0,
       "session_date": "2026-11-20",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "zanger_last_alert": "2026-11-20T05:01:42.155129",
-      "zanger_last_price": 275.6700134277344
+      "zanger_last_price": 275.6700134277344,
+      "vol_breakout_last_alert": "2026-11-20T07:01:48.544804",
+      "vol_breakout_last_price": 273.510009765625
     },
     "GRINDWELL": {
       "sma50": 1919.2819970703124,
