@@ -32954,7 +32954,12 @@
       "ag": 2.171918,
       "al": 2.170084,
       "last_close": 320.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:47:33.116032",
+      "rsi_bounce_last_price": 320.79998779296875
     },
     "BAJAJHIND": {
       "mcap_cr": 4064.0,
@@ -33337,7 +33342,12 @@
       "ag": 12.178211,
       "al": 12.048222,
       "last_close": 828.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:47:34.354736",
+      "rsi_bounce_last_price": 830.2000122070312
     },
     "DALMIASUG": {
       "mcap_cr": 3735.0,
@@ -33622,7 +33632,12 @@
       "ag": 5.0488,
       "al": 4.740273,
       "last_close": 795.3,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:47:35.773898",
+      "rsi_bounce_last_price": 799.2999877929688
     },
     "EMAMIPAP": {
       "mcap_cr": 702.1,
@@ -35474,7 +35489,12 @@
       "ag": 5.65383,
       "al": 5.637453,
       "last_close": 448.05,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:47:38.398552",
+      "rsi_bounce_last_price": 462.29998779296875
     },
     "MOBIKWIK": {
       "mcap_cr": 1797.0,
@@ -35750,7 +35770,12 @@
       "ag": 16.369981,
       "al": 19.138395,
       "last_close": 1688.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:47:39.709887",
+      "rsi_bounce_last_price": 1713.4000244140625
     },
     "NRAIL": {
       "mcap_cr": 1055.0,
@@ -37963,7 +37988,12 @@
       "ag": 22.96839,
       "al": 22.881118,
       "last_close": 3528.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:47:41.563671",
+      "rsi_bounce_last_price": 3588.0
     },
     "VHLTD": {
       "mcap_cr": 1135.0,

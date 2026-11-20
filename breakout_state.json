@@ -8563,5 +8563,14 @@
     "baseline_rsi": 36.15794930776989,
     "mcap_cr": 105.74902721514773,
     "exchange": "NSE"
+  },
+  "BESTAGRO": {
+    "result_date": "2026-11-20T00:00:00",
+    "filed_at": "2026-11-20T11:58:42",
+    "day_high": 14.600000381469727,
+    "day_low": 14.25,
+    "baseline_rsi": 40.50720733431646,
+    "mcap_cr": 514.9824534355545,
+    "exchange": "NSE"
   }
 }
