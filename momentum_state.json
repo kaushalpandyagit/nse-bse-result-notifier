@@ -34375,7 +34375,12 @@
       "ag": 0.336669,
       "al": 0.490535,
       "last_close": 28.83,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T07:47:37.364451",
+      "rsi_bounce_last_price": 29.739999771118164
     },
     "IGPL": {
       "mcap_cr": 1632.0,
@@ -34422,7 +34427,12 @@
       "ag": 5.25697,
       "al": 5.483366,
       "last_close": 1018.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T07:47:38.293222",
+      "rsi_bounce_last_price": 1019.9000244140625
     },
     "INDNIPPON": {
       "mcap_cr": 2701.6,
@@ -36845,7 +36855,12 @@
       "ag": 0.712176,
       "al": 0.93186,
       "last_close": 89.94,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T07:47:40.384650",
+      "rsi_bounce_last_price": 91.1500015258789
     },
     "SARVESHWAR": {
       "mcap_cr": 457.4,
