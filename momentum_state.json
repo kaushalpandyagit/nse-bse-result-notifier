@@ -36029,7 +36029,12 @@
       "ag": 4.162052,
       "al": 6.15862,
       "last_close": 647.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T05:32:55.822644",
+      "rsi_bounce_last_price": 654.5999755859375
     },
     "PASUPTAC": {
       "mcap_cr": 650.6,
