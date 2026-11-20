@@ -30961,7 +30961,12 @@
       "rsi_ema_200": 48.8308,
       "ag": 3.70048,
       "al": 3.7626,
-      "last_close": 321.45
+      "last_close": 321.45,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T09:02:42.505540",
+      "rsi_bounce_last_price": 322.3500061035156
     },
     "SENORES": {
       "mcap_cr": 5125.7643444,
@@ -33969,7 +33974,12 @@
       "ag": 4.936794,
       "al": 9.685987,
       "last_close": 872.95,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T09:02:44.601935",
+      "rsi_bounce_last_price": 881.0499877929688
     },
     "GEECEE": {
       "mcap_cr": 748.6,
@@ -36506,7 +36516,12 @@
       "ag": 3.523144,
       "al": 5.392222,
       "last_close": 511.3,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T09:02:47.271287",
+      "rsi_bounce_last_price": 515.0
     },
     "RANEHOLDIN": {
       "mcap_cr": 2178.0,
