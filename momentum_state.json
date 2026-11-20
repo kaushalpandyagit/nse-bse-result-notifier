@@ -28485,7 +28485,12 @@
       "rsi_ema_200": 50.4915,
       "ag": 8.475337,
       "al": 14.376589,
-      "last_close": 1610.1
+      "last_close": 1610.1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T05:47:11.903467",
+      "rsi_bounce_last_price": 1621.5999755859375
     },
     "IMFA": {
       "mcap_cr": 5535.6912756,
@@ -34351,7 +34356,12 @@
       "ag": 0.359455,
       "al": 0.408659,
       "last_close": 37.57,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T05:47:14.996840",
+      "rsi_bounce_last_price": 37.900001525878906
     },
     "IMPAL": {
       "mcap_cr": 1271.0,
