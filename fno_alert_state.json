@@ -1109,7 +1109,7 @@
     "trigger_date": "2026-11-10",
     "ref_high": 998.0,
     "ref_low": 840.0,
-    "status": "Active"
+    "status": "Expired"
   },
   "SHRJAGP": {
     "trigger_date": "2026-11-10",
@@ -1151,7 +1151,7 @@
     "trigger_date": "2026-11-10",
     "ref_high": 383.0,
     "ref_low": 351.0,
-    "status": "Active"
+    "status": "Expired"
   },
   "KMEW": {
     "trigger_date": "2026-11-10",
@@ -1823,19 +1823,37 @@
     "trigger_date": "2026-11-19",
     "ref_high": 509.1,
     "ref_low": 497.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-20",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-20T03:46:21.203696",
+    "fno_low_breach_last_price": 494.95001220703125
   },
   "LFIC": {
     "trigger_date": "2026-11-19",
     "ref_high": 117.99,
     "ref_low": 114.29,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-20",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-20T03:46:22.558480",
+    "fno_low_breach_last_price": 113.7300033569336
   },
   "KRYSTAL": {
     "trigger_date": "2026-11-19",
     "ref_high": 595.95,
     "ref_low": 584.7,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-20",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-20T03:46:23.975291",
+    "fno_low_breach_last_price": 580.2000122070312
   },
   "APOLLOPIPE": {
     "trigger_date": "2026-11-19",
@@ -1853,6 +1871,12 @@
     "trigger_date": "2026-11-19",
     "ref_high": 500.5,
     "ref_low": 482.9,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-20",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-20T03:46:26.958022",
+    "fno_low_breach_last_price": 457.79998779296875
   }
 }
