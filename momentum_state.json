@@ -27473,7 +27473,12 @@
       "rsi_ema_200": 52.4347,
       "ag": 1.191643,
       "al": 1.118249,
-      "last_close": 130.15
+      "last_close": 130.15,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T08:31:21.927685",
+      "rsi_bounce_last_price": 131.0
     },
     "EIDPARRY": {
       "mcap_cr": 11375.8176111,
@@ -29383,7 +29388,12 @@
       "rsi_ema_200": 54.7933,
       "ag": 2.133272,
       "al": 1.984735,
-      "last_close": 233.92
+      "last_close": 233.92,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T08:31:23.575087",
+      "rsi_bounce_last_price": 235.10000610351562
     },
     "LTFOODS": {
       "mcap_cr": 14963.129145013623,
