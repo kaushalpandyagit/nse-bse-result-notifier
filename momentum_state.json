@@ -36938,7 +36938,12 @@
       "ag": 18.593614,
       "al": 15.297091,
       "last_close": 885.95,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:31:43.866396",
+      "rsi_bounce_last_price": 887.9000244140625
     },
     "SGIL": {
       "mcap_cr": 874.6,
@@ -37630,7 +37635,12 @@
       "ag": 21.701651,
       "al": 20.262788,
       "last_close": 2024.5,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-20T06:31:45.614658",
+      "rsi_bounce_last_price": 2032.699951171875
     },
     "TIRUPATIFL": {
       "mcap_cr": 866.0,
