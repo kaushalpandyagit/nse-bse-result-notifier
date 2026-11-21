@@ -2578,6 +2578,89 @@ def check_rsi_bounce_scanner(momentum_state: dict, fyers) -> dict:
     return momentum_state
 
 # ----------------------------------------------------------------------
+# GAP-UP OPENING SCANNER (patch_github_gapup.py)
+# ----------------------------------------------------------------------
+GAPUP_MIN_PCT = 2.5           # open at least this much above the previous close
+GAPUP_MIN_PRICE = 20.0        # leave out very cheap stocks
+GAPUP_SEND_TELEGRAM = True    # False = only the trigger list (scanner_triggers.csv), no Telegram message
+GAPUP_MAX_LINES = 30          # stocks named in the Telegram message (Telegram's size limit); the rest are counted
+
+
+def _gapup_quotes(fyers, symbols: list) -> dict:
+    """{symbol: {"open", "prev", "price"}} from Fyers batch quotes (EQ series first, then BE for the misses)."""
+    out = {}
+    for suffix in ("EQ", "BE"):
+        todo = [s for s in symbols if s not in out]
+        for i in range(0, len(todo), RSIB_QUOTE_BATCH):
+            chunk = todo[i:i + RSIB_QUOTE_BATCH]
+            try:
+                time.sleep(0.35)
+                resp = fyers.quotes(data={"symbols": ",".join(f"NSE:{s}-{suffix}" for s in chunk)})
+                for row in (resp.get("d") or []) if isinstance(resp, dict) else []:
+                    v = row.get("v") or {}
+                    sym = str(row.get("n") or v.get("symbol") or "").split(":")[-1].rsplit("-", 1)[0]
+                    if row.get("s") == "ok" and sym in chunk and v.get("open_price") and v.get("prev_close_price") and v.get("lp"):
+                        out[sym] = {"open": float(v["open_price"]), "prev": float(v["prev_close_price"]), "price": float(v["lp"])}
+            except Exception as e:
+                log.warning("Gap-up: Fyers batch quotes failed (%s).", e)
+    return out
+
+
+def check_gap_up_scanner(momentum_state: dict, fyers) -> dict:
+    """Once a day after the open: stocks that opened GAPUP_MIN_PCT or more above the previous close."""
+    now_ist = get_ist_now()
+    today = now_ist.strftime("%Y-%m-%d")
+    done = momentum_state.get("gapup_scan") or {}
+    if done.get("date") == today or not fyers or not is_market_hours_now():
+        return momentum_state
+    if now_ist.time() < datetime.time(9, 17) or now_ist.time() > datetime.time(11, 0):
+        return momentum_state
+    universe = sorted(set(momentum_state.get("rsi_bounce_universe") or {}) | set(momentum_state.get("watchlist") or {}))
+    universe = [s for s in universe if s and not str(s).isdigit()]
+    if not universe:
+        return momentum_state
+    quotes = _gapup_quotes(fyers, universe)
+    if len(quotes) < 0.5 * len(universe):
+        log.warning("Gap-up scan: prices for only %d of %d stocks; will try again on the next run.", len(quotes), len(universe))
+        return momentum_state
+    hits = []
+    for sym, q in quotes.items():
+        if q["prev"] <= 0 or q["open"] < GAPUP_MIN_PRICE:
+            continue
+        gap = (q["open"] / q["prev"] - 1) * 100
+        if gap >= GAPUP_MIN_PCT:
+            state = "holding" if q["price"] >= q["open"] else "filled" if q["price"] <= q["prev"] else "partly filled"
+            hits.append((gap, sym, q, state))
+    hits.sort(reverse=True)
+    log.info("Gap-up scan: %d of %d stocks priced, %d opened %.1f%% or more above the previous close.", len(quotes), len(universe), len(hits), GAPUP_MIN_PCT)
+    sent = True
+    if hits and GAPUP_SEND_TELEGRAM:
+        lines = [f"🌅 Gap-up openers ({GAPUP_MIN_PCT:g}%+ above yesterday's close): {len(hits)} of {len(quotes)} stocks"]
+        for gap, sym, q, state in hits[:GAPUP_MAX_LINES]:
+            safe = sym.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            try:      # the name opens the chart on the laptop, like in the other alerts
+                import result_tag as _rt
+                safe = f'<a href="{_rt.LOCAL}{_rt.quote(sym)}">{safe}</a>'
+            except Exception:
+                pass
+            lines.append(f"• <b>{safe}</b> +{gap:.1f}% | open ₹{q['open']:.2f}, now ₹{q['price']:.2f} ({(q['price'] / q['prev'] - 1) * 100:+.1f}%) | {state}")
+        if len(hits) > GAPUP_MAX_LINES:
+            lines.append(f"... and {len(hits) - GAPUP_MAX_LINES} more (all are in the trigger list)")
+        sent = send_telegram_message("\n".join(lines))
+        if not sent:
+            log.error("Gap-up message NOT delivered; will retry next run.")
+            return momentum_state
+    global _LAST_ALERT_TEXT
+    for gap, sym, q, state in hits:        # one line per stock in the trigger list, in the usual shape
+        safe = sym.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        _LAST_ALERT_TEXT = (f"<b>{safe}</b> Gap-up open +{gap:.1f}%\nOpen ₹{q['open']:.2f} against previous close ₹{q['prev']:.2f}\n"
+                            f"At the scan ({now_ist.strftime('%H:%M')}) ₹{q['price']:.2f}: gap {state}")
+        _log_trigger("gap_up", q["price"], (momentum_state.get("watchlist") or {}).get(sym) or {})
+    momentum_state["gapup_scan"] = {"date": today, "at": now_ist.strftime("%H:%M"), "priced": len(quotes), "hits": len(hits)}
+    return momentum_state
+
+
+# ----------------------------------------------------------------------
 # NEWS & SPECIAL PRICE DISCOVERY CIRCULARS SCRAPER
 # ----------------------------------------------------------------------
 
@@ -3050,6 +3133,10 @@ def main():
                     momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("RSI bounce scanner failed: %s", e)
+                try:
+                    momentum_state = check_gap_up_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Gap-up scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
@@ -3076,6 +3163,10 @@ def main():
                     momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("RSI bounce scanner failed: %s", e)
+                try:
+                    momentum_state = check_gap_up_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Gap-up scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
