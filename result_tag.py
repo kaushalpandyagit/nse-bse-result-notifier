@@ -47,7 +47,7 @@ _NOT_A_STOCK = {"VCP", "NIFTY", "SENSEX", "BANKNIFTY", "FINNIFTY", "NSE", "BSE",
 _SYMBOL_OK = re.compile(r"[A-Z0-9][A-Z0-9&\-]{1,19}")
 
 
-def tag(symbol: str, known_only: bool = False) -> str:
+def tag(symbol: str, known_only: bool = False, name_link: bool = True) -> str:
     """HTML for one stock. A stock that is not in the file gets the two links alone ('' with known_only, or when the
     text is not a symbol)."""
     sym = re.sub(r"-(EQ|BE|BZ|SM|ST)$", "", str(symbol or "").strip().upper().split(":")[-1])
@@ -59,7 +59,8 @@ def tag(symbol: str, known_only: bool = False) -> str:
         if known_only or not _SYMBOL_OK.fullmatch(sym) or sym in _NOT_A_STOCK:
             return ""
         e = {}                               # not in the screener's lists: still give the chart and Screener links
-    out = [f'<a href="{LOCAL}{quote(sym)}">1</a> <a href="{SCREENER}{quote(sym)}/">S</a>']
+    # The stock name is the chart link (no more "1"). name_link=False: the caller has made the bold name the link itself.
+    out = [(f'<a href="{LOCAL}{quote(sym)}">{html.escape(sym)}</a> ' if name_link else "") + f'<a href="{SCREENER}{quote(sym)}/">S</a>']
     fz = {"C": "🟢C", "W": "🟠W", "R": "🔴R", "V": "⛔V"}.get(e.get("f"))      # forensic verdict: Clean, Warn, Red, Veto
     if fz:
         out.append(fz)
@@ -89,9 +90,12 @@ def decorate(text: str) -> str:
         m = _BOLD_SYMBOL.search(first)
         if not m or "result_tag" in first:
             return text
-        t = tag(m.group(1))
+        t = tag(m.group(1), name_link=False)
         if not t:
             return text
-        return first[:m.end()] + " " + t + first[m.end():] + sep + rest
+        sym = re.sub(r"-(EQ|BE|BZ|SM|ST)$", "", m.group(1).strip().upper())
+        sym = _codes.get(sym, sym) if _tags().get(sym) is None else sym
+        named = first[:m.start(1)] + f'<a href="{LOCAL}{quote(sym)}">{m.group(1)}</a>' + first[m.end(1):m.end()]      # the bold name opens the chart
+        return named + " " + t + first[m.end():] + sep + rest
     except Exception:
         return text
