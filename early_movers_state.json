@@ -626,5 +626,105 @@
     ],
     "em_high_breach_last_alert": "2026-11-19T10:01:25.329945",
     "em_high_breach_last_price": 416.0
+  },
+  "PIDILITIND": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 1620.0,
+    "ref_low": 1572.3,
+    "ref_close": 1620.0,
+    "price_change_pct": 2.5,
+    "deliv_pct": 61.5,
+    "direction": "up",
+    "status": "Active"
+  },
+  "INVPRECQ": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 1358.2,
+    "ref_low": 1274.1,
+    "ref_close": 1302.7,
+    "price_change_pct": -2.49,
+    "deliv_pct": 68.6,
+    "direction": "down",
+    "status": "Active"
+  },
+  "MCLEODRUSS": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 44.22,
+    "ref_low": 42.82,
+    "ref_close": 43.12,
+    "price_change_pct": -2.49,
+    "deliv_pct": 94.5,
+    "direction": "down",
+    "status": "Active"
+  },
+  "HILTON": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 15.7,
+    "ref_low": 14.71,
+    "ref_close": 14.91,
+    "price_change_pct": -2.49,
+    "deliv_pct": 65.6,
+    "direction": "down",
+    "status": "Active"
+  },
+  "SCHAND": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 121.8,
+    "ref_low": 119.1,
+    "ref_close": 119.76,
+    "price_change_pct": -2.48,
+    "deliv_pct": 87.5,
+    "direction": "down",
+    "status": "Active"
+  },
+  "RSSOFTWARE": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 33.89,
+    "ref_low": 29.93,
+    "ref_close": 32.23,
+    "price_change_pct": 2.48,
+    "deliv_pct": 78.4,
+    "direction": "up",
+    "status": "Active"
+  },
+  "WINDMACHIN": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 325.0,
+    "ref_low": 305.45,
+    "ref_close": 321.2,
+    "price_change_pct": 2.47,
+    "deliv_pct": 63.9,
+    "direction": "up",
+    "status": "Active"
+  },
+  "GLOBE": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 2.04,
+    "ref_low": 1.98,
+    "ref_close": 1.98,
+    "price_change_pct": -2.46,
+    "deliv_pct": 93.3,
+    "direction": "down",
+    "status": "Active"
+  },
+  "INFOMEDIA": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 5.49,
+    "ref_low": 5.0,
+    "ref_close": 5.15,
+    "price_change_pct": -2.46,
+    "deliv_pct": 79.1,
+    "direction": "down",
+    "status": "Active"
+  },
+  "OCCLLTD": {
+    "trigger_date": "2026-11-20",
+    "ref_high": 157.0,
+    "ref_low": 148.85,
+    "ref_close": 149.11,
+    "price_change_pct": -2.46,
+    "deliv_pct": 60.3,
+    "direction": "down",
+    "status": "Active"
   }
 }

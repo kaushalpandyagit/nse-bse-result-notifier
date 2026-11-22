@@ -447,7 +447,8 @@ def save_fno_alert_state(unusual_list, date_obj):
 
 
 EARLY_MOVERS_STATE_FILE = Path(__file__).parent / "early_movers_state.json"
-EARLY_MOVERS_SAVE_AFTER_HOUR_IST = 20   # this job runs 3x each evening; only the >= 8 PM run has final data
+EARLY_MOVERS_SAVE_AFTER_HOUR_IST = 18   # any evening run from 6 PM: NSE's delivery file is complete once published
+                                        # (was 20; since 16 Nov 2026 the job runs once, at ~7:31 PM, so nothing was saved)
 EARLY_MOVERS_KEEP_DAYS = 20
 
 def save_early_movers_state(early_movers, date_obj):
