@@ -16775,7 +16775,11 @@
       "rsi_al": 8.42357,
       "rs_rank": 97.8,
       "session_date": "2026-11-23",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_high60_last_alert": "2026-11-23T09:17:05.548297",
+      "rsi_high60_last_price": 1488.4000244140625
     },
     "PICCADIL": {
       "sma50": 580.2829943847656,
