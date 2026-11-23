@@ -2586,16 +2586,30 @@ GAPUP_SEND_TELEGRAM = True    # False = only the trigger list (scanner_triggers.
 GAPUP_MAX_LINES = 30          # stocks named in the Telegram message (Telegram's size limit); the rest are counted
 
 
+_GAPUP_ERRS = []      # first Fyers errors of the current scan, saved as momentum_state["gapup_try"] (patch_github_gapup_fix.py)
+
+
 def _gapup_quotes(fyers, symbols: list) -> dict:
     """{symbol: {"open", "prev", "price"}} from Fyers batch quotes (EQ series first, then BE for the misses)."""
     out = {}
+    _GAPUP_ERRS.clear()
     for suffix in ("EQ", "BE"):
         todo = [s for s in symbols if s not in out]
         for i in range(0, len(todo), RSIB_QUOTE_BATCH):
             chunk = todo[i:i + RSIB_QUOTE_BATCH]
             try:
                 time.sleep(0.35)
-                resp = fyers.quotes(data={"symbols": ",".join(f"NSE:{s}-{suffix}" for s in chunk)})
+                resp = None
+                for attempt in (0, 1):      # a refused / failed call is tried once more after 2 s
+                    try:
+                        resp = fyers.quotes(data={"symbols": ",".join(f"NSE:{s}-{suffix}" for s in chunk)})
+                    except Exception as e:
+                        resp = {"s": "error", "message": f"{type(e).__name__}: {e}"}
+                    if isinstance(resp, dict) and resp.get("s") == "ok":
+                        break
+                    if len(_GAPUP_ERRS) < 3:
+                        _GAPUP_ERRS.append(str(resp)[:160])
+                    time.sleep(2)
                 for row in (resp.get("d") or []) if isinstance(resp, dict) else []:
                     v = row.get("v") or {}
                     sym = str(row.get("n") or v.get("symbol") or "").split(":")[-1].rsplit("-", 1)[0]
@@ -2613,13 +2627,15 @@ def check_gap_up_scanner(momentum_state: dict, fyers) -> dict:
     done = momentum_state.get("gapup_scan") or {}
     if done.get("date") == today or not fyers or not is_market_hours_now():
         return momentum_state
-    if now_ist.time() < datetime.time(9, 17) or now_ist.time() > datetime.time(11, 0):
+    if now_ist.time() < datetime.time(9, 17) or now_ist.time() > datetime.time(12, 0):
         return momentum_state
     universe = sorted(set(momentum_state.get("rsi_bounce_universe") or {}) | set(momentum_state.get("watchlist") or {}))
     universe = [s for s in universe if s and not str(s).isdigit()]
     if not universe:
         return momentum_state
     quotes = _gapup_quotes(fyers, universe)
+    momentum_state["gapup_try"] = {"date": today, "at": now_ist.strftime("%H:%M"), "priced": len(quotes), "of": len(universe),
+                                   "errors": list(_GAPUP_ERRS)}
     if len(quotes) < 0.5 * len(universe):
         log.warning("Gap-up scan: prices for only %d of %d stocks; will try again on the next run.", len(quotes), len(universe))
         return momentum_state
@@ -3122,6 +3138,10 @@ def main():
             log.exception("Error during poll: %s", e)
         try:
             if not is_market_holiday(ist_today()):
+                try:      # first, while Fyers' per-minute quote budget is unused (patch_github_gapup_fix.py)
+                    momentum_state = check_gap_up_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Gap-up scanner failed: %s", e)
                 momentum_state = run_daily_momentum_scan(momentum_state)
                 momentum_state = send_morning_sector_rs_report(momentum_state)
                 momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
@@ -3133,10 +3153,6 @@ def main():
                     momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("RSI bounce scanner failed: %s", e)
-                try:
-                    momentum_state = check_gap_up_scanner(momentum_state, fyers)
-                except Exception as e:
-                    log.exception("Gap-up scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
@@ -3152,6 +3168,10 @@ def main():
             log.exception("Error during poll: %s", e)
         try:
             if not is_market_holiday(ist_today()):
+                try:      # first, while Fyers' per-minute quote budget is unused (patch_github_gapup_fix.py)
+                    momentum_state = check_gap_up_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Gap-up scanner failed: %s", e)
                 momentum_state = run_daily_momentum_scan(momentum_state)
                 momentum_state = send_morning_sector_rs_report(momentum_state)
                 momentum_state = check_intraday_momentum_triggers(momentum_state, fyers)
@@ -3163,10 +3183,6 @@ def main():
                     momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("RSI bounce scanner failed: %s", e)
-                try:
-                    momentum_state = check_gap_up_scanner(momentum_state, fyers)
-                except Exception as e:
-                    log.exception("Gap-up scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
