@@ -954,6 +954,50 @@ def detect_ipo_base(df: pd.DataFrame) -> dict:
     except Exception:
         return None
 
+# ---- IPO Gap-Hold: big thrust day on heavy volume, then a tight hold near the top (patch_github_gap_hold.py) ----
+GAPHOLD_LOOKBACK = 30          # thrust day within the last 30 sessions
+GAPHOLD_MIN_MOVE = 15.0        # close vs previous close, %
+GAPHOLD_MIN_VOL_X = 5.0        # volume vs the 20 sessions before (or all sessions since listing if fewer, min 5)
+GAPHOLD_MIN_HOLD = 5           # sessions held since the thrust
+GAPHOLD_MAX_DEPTH = 12.0       # deepest low since the thrust vs the high since the thrust, %
+GAPHOLD_TIGHT_MAX = 10.0       # last 5 sessions' range, %
+_IPO_GAPHOLD = {}              # filled by build_ipo_watch(), shown by the daily scan
+
+
+def detect_ipo_gap_hold(df: pd.DataFrame) -> dict:
+    """Gap-Hold on COMPLETED sessions since listing (see the GAPHOLD_ settings)."""
+    try:
+        d = df[["Open", "High", "Low", "Close", "Volume"]].dropna()
+        n = len(d)
+        if n < 10:
+            return None
+        o, h, l, c, v = (d[k].values.astype(float) for k in ("Open", "High", "Low", "Close", "Volume"))
+        best = None
+        for k in range(max(1, n - GAPHOLD_LOOKBACK), n - GAPHOLD_MIN_HOLD):
+            move = (c[k] / c[k - 1] - 1) * 100
+            prior = v[max(0, k - 20):k]
+            if move < GAPHOLD_MIN_MOVE or len(prior) < 5 or prior.mean() <= 0:
+                continue
+            vx = v[k] / prior.mean()
+            if vx < GAPHOLD_MIN_VOL_X:
+                continue
+            best = (k, move, vx)                      # the latest qualifying thrust wins
+        if not best:
+            return None
+        k, move, vx = best
+        top = h[k:].max()
+        depth = (top - l[k + 1:].min()) / top * 100
+        dist = (top - c[-1]) / top * 100
+        tight = (h[-5:].max() - l[-5:].min()) / h[-5:].max() * 100
+        if c[k + 1:].min() < l[k] or depth > GAPHOLD_MAX_DEPTH or not (0 <= dist <= 10.0) or tight > GAPHOLD_TIGHT_MAX:
+            return None
+        return {"thrust_date": str(d.index[k].date()), "move": round(float(move), 1), "vol_x": round(float(vx), 1),
+                "gap": round(float((o[k] / c[k - 1] - 1) * 100), 1), "pivot": round(float(top), 2), "pivot_dist": round(float(dist), 1),
+                "depth": round(float(depth), 1), "tight_pct": round(float(tight), 1), "held": int(n - 1 - k)}
+    except Exception:
+        return None
+
+
 def get_recent_listings() -> dict:
     """{symbol: listing date ISO} for NSE mainboard EQ listings in the last year (cached weekly)."""
     if IPO_LISTINGS_CACHE_FILE.exists():
@@ -981,6 +1025,7 @@ def get_recent_listings() -> dict:
 
 def build_ipo_watch() -> dict:
     listings = get_recent_listings()
+    _IPO_GAPHOLD.clear()
     if not listings:
         return {}
     hist_map = fetch_batch_history([f"{s}.NS" for s in listings])
@@ -997,7 +1042,8 @@ def build_ipo_watch() -> dict:
         if len(df) and df.index[-1].date() == ist_today():
             df = df.iloc[:-1]
         base = detect_ipo_base(df)
-        if not base:
+        gh = detect_ipo_gap_hold(df)
+        if not base and not gh:
             continue
         # Many "new listings" are old BSE companies newly listed on NSE (e.g. a batch on
         # 17 Aug 2026); their base is not an IPO base.
@@ -1011,8 +1057,11 @@ def build_ipo_watch() -> dict:
         mcap = get_market_cap_cr(sym, "NSE")
         if mcap is not None and mcap < IPO_MIN_MCAP_CR:
             continue
-        watch[sym] = {**base, "listed": listed, "mcap_cr": mcap}
-    log.info("IPO base watch: %d of %d recent listings in a base.", len(watch), len(listings))
+        if base:
+            watch[sym] = {**base, "listed": listed, "mcap_cr": mcap}
+        if gh:
+            _IPO_GAPHOLD[sym] = {**gh, "listed": listed, "mcap_cr": mcap}
+    log.info("IPO base watch: %d of %d recent listings in a base; %d in a gap-hold.", len(watch), len(listings), len(_IPO_GAPHOLD))
     return watch
 
 def volume_pace_mult(volume: float, avg_volume: float, now_ist) -> float:
@@ -1313,6 +1362,14 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     for s, b in ipo_sorted[:TOP_N_MOMENTUM]:
         lines.append(f"  {_list_name(s)} pivot ₹{b['pivot']:,.2f} ({b['pivot_dist']:.1f}% away) | base {b['sessions_since_high']}d, "
                      f"{b['depth']}% deep | 5d range {b['tight_pct']}% | listed {b['listed']}")
+    if _IPO_GAPHOLD:      # patch_github_gap_hold.py
+        lines += ["", f"🚩 <b>IPO Gap-Hold</b> ({len(_IPO_GAPHOLD)} stocks)",
+                  f"<i>New listing: a {GAPHOLD_MIN_MOVE:g}%+ day on {GAPHOLD_MIN_VOL_X:g}x+ volume, then {GAPHOLD_MIN_HOLD}+ sessions holding "
+                  f"within {GAPHOLD_MAX_DEPTH:g}% of the top, last week tight. Pivot = high since that day.</i>"]
+        for s, g in sorted(_IPO_GAPHOLD.items(), key=lambda kv: kv[1]["pivot_dist"])[:TOP_N_MOMENTUM]:
+            name = _list_name(s) if "_list_name" in globals() else f"<b>{s}</b>"
+            lines.append(f"  {name} pivot ₹{g['pivot']:,.2f} ({g['pivot_dist']:.1f}% away) | {g['thrust_date'][5:]} +{g['move']:g}% on "
+                         f"{g['vol_x']:g}x vol, held {g['held']}d, {g['depth']}% deep | 5d range {g['tight_pct']}%")
     lines += ["", f"🌟 <b>Momentum Leaders</b> ({len(momentum_leader_list)} stocks)"]
     for s, r in momentum_leader_list[:TOP_N_MOMENTUM]:
         e_tag = get_earnings_tag(s)
