@@ -1887,7 +1887,13 @@
     "trigger_date": "2026-11-19",
     "ref_high": 574.75,
     "ref_low": 531.35,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-23T04:30:03.494555",
+    "fno_low_breach_last_price": 521.4500122070312
   },
   "GREENLAM": {
     "trigger_date": "2026-11-19",
