@@ -1359,7 +1359,13 @@
     "trigger_date": "2026-11-12",
     "ref_high": 84.6,
     "ref_low": 78.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-23T06:46:06.272873",
+    "fno_low_breach_last_price": 77.61000061035156
   },
   "KPL": {
     "trigger_date": "2026-11-12",

@@ -27354,7 +27354,12 @@
       "rsi_ema_200": 49.1734,
       "ag": 2.810633,
       "al": 5.525845,
-      "last_close": 270.75
+      "last_close": 270.75,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:47:56.087057",
+      "rsi_bounce_last_price": 281.1499938964844
     },
     "EMAMILTD": {
       "mcap_cr": 18103.65547607422,
@@ -35898,7 +35903,12 @@
       "ag": 0.524445,
       "al": 0.645622,
       "last_close": 70.19,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:47:59.895655",
+      "rsi_bounce_last_price": 70.62999725341797
     },
     "PANACHE": {
       "mcap_cr": 1287.0,
