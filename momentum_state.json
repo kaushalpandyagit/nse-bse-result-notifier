@@ -34854,7 +34854,12 @@
       "ag": 5.461388,
       "al": 8.144119,
       "last_close": 840.45,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:48:00.036815",
+      "rsi_bounce_last_price": 840.7999877929688
     },
     "LANDMARK": {
       "mcap_cr": 1884.0,
@@ -36093,7 +36098,12 @@
       "ag": 1.014988,
       "al": 1.320493,
       "last_close": 125.67,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:48:02.326535",
+      "rsi_bounce_last_price": 128.8000030517578
     },
     "PROZONER": {
       "mcap_cr": 848.0,
