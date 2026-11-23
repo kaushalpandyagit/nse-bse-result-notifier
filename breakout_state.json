@@ -86,11 +86,12 @@
   "custom_alert_HINDWAREAP_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-23T03:45:58.284379",
-    "custom_last_price": 160.0,
+    "custom_last_alert": "2026-11-23T07:01:08.733964",
+    "custom_last_price": 155.5,
     "session_date": "2026-11-23",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KAYNES_rsi": {
@@ -118,11 +119,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-23T05:15:51.793403",
-    "custom_last_price": 47.5099983215332,
+    "custom_last_alert": "2026-11-23T07:01:11.463141",
+    "custom_last_price": 48.599998474121094,
     "session_date": "2026-11-23",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
@@ -344,11 +346,12 @@
     ]
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-11-23T05:18:21.133686",
-    "spread_last_price": 2.567851146827099,
+    "spread_last_alert": "2026-11-23T07:03:42.775420",
+    "spread_last_price": 3.2016922798411875,
     "session_date": "2026-11-23",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BASILIC_open_change_rs": {

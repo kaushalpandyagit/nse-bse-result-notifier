@@ -30874,7 +30874,12 @@
       "rsi_ema_200": 53.4409,
       "ag": 20.714063,
       "al": 29.703684,
-      "last_close": 4222.0
+      "last_close": 4222.0,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T07:03:29.570698",
+      "rsi_bounce_last_price": 4250.7001953125
     },
     "SHYAMMETL": {
       "mcap_cr": 36743.689959924464,
