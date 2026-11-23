@@ -2002,5 +2002,65 @@
     ],
     "fno_high_breach_last_alert": "2026-11-23T04:01:35.620631",
     "fno_high_breach_last_price": 168.5
+  },
+  "SINTERCOM": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 68.8,
+    "ref_low": 66.0,
+    "status": "Active"
+  },
+  "HAVISHA": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 1.35,
+    "ref_low": 1.04,
+    "status": "Active"
+  },
+  "SAMBANDAM": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 102.0,
+    "ref_low": 98.0,
+    "status": "Active"
+  },
+  "JTLIND": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 81.99,
+    "ref_low": 75.05,
+    "status": "Active"
+  },
+  "63MOONS": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 1005.0,
+    "ref_low": 902.35,
+    "status": "Active"
+  },
+  "SHBAJRG": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 175.0,
+    "ref_low": 161.5,
+    "status": "Active"
+  },
+  "DJML": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 73.6,
+    "ref_low": 68.62,
+    "status": "Active"
+  },
+  "ONIXSOLAR": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 260.7,
+    "ref_low": 239.5,
+    "status": "Active"
+  },
+  "MIIL": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 664.85,
+    "ref_low": 638.25,
+    "status": "Active"
+  },
+  "GSS": {
+    "trigger_date": "2026-11-23",
+    "ref_high": 10.27,
+    "ref_low": 9.81,
+    "status": "Active"
   }
 }
