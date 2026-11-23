@@ -34401,7 +34401,12 @@
       "ag": 6.166382,
       "al": 5.948255,
       "last_close": 535.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:18:05.389012",
+      "rsi_bounce_last_price": 536.3499755859375
     },
     "JAYAGROGN": {
       "mcap_cr": 709.0,
@@ -34513,7 +34518,12 @@
       "ag": 0.616113,
       "al": 0.85366,
       "last_close": 74.49,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:18:06.613852",
+      "rsi_bounce_last_price": 77.5199966430664
     },
     "KABRAEXTRU": {
       "mcap_cr": 2534.0,
@@ -34817,7 +34827,12 @@
       "ag": 1.68485,
       "al": 2.723261,
       "last_close": 177.53,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:18:07.955668",
+      "rsi_bounce_last_price": 183.0
     },
     "KROSS": {
       "mcap_cr": 1893.0,
@@ -35299,7 +35314,12 @@
       "ag": 0.39773,
       "al": 0.513294,
       "last_close": 35.32,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:18:09.955008",
+      "rsi_bounce_last_price": 36.70000076293945
     },
     "MMP": {
       "mcap_cr": 1089.0,
@@ -36075,7 +36095,12 @@
       "ag": 0.171823,
       "al": 0.341575,
       "last_close": 19.71,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:18:11.280012",
+      "rsi_bounce_last_price": 20.0
     },
     "PRIZOR": {
       "mcap_cr": 1609.0,
@@ -37385,7 +37410,12 @@
       "ag": 23.577791,
       "al": 21.246752,
       "last_close": 3559.5,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:18:13.349561",
+      "rsi_bounce_last_price": 3600.0
     },
     "VHLTD": {
       "mcap_cr": 1083.0,
