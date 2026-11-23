@@ -28557,7 +28557,12 @@
       "rsi_ema_200": 48.6462,
       "ag": 2.091816,
       "al": 1.911786,
-      "last_close": 288.1
+      "last_close": 288.1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:47:36.539419",
+      "rsi_bounce_last_price": 288.95001220703125
     },
     "JAMNAAUTO": {
       "mcap_cr": 5509.410853438957,
@@ -28583,7 +28588,12 @@
       "rsi_ema_200": 50.4421,
       "ag": 0.653378,
       "al": 0.748051,
-      "last_close": 89.35
+      "last_close": 89.35,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:47:37.629697",
+      "rsi_bounce_last_price": 89.68000030517578
     },
     "JBMA": {
       "mcap_cr": 11499.533587,
@@ -31717,7 +31727,12 @@
       "rsi_ema_200": 50.7234,
       "ag": 0.523148,
       "al": 0.564954,
-      "last_close": 59.74
+      "last_close": 59.74,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:47:39.479650",
+      "rsi_bounce_last_price": 60.400001525878906
     },
     "UNIMECH": {
       "mcap_cr": 8963.332776002453,
@@ -32940,7 +32955,12 @@
       "ag": 2.256618,
       "al": 4.625631,
       "last_close": 457.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:47:41.511545",
+      "rsi_bounce_last_price": 465.0
     },
     "CELLECOR": {
       "mcap_cr": 640.0,
@@ -36629,7 +36649,12 @@
       "ag": 5.656524,
       "al": 7.062353,
       "last_close": 968.65,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:47:45.599130",
+      "rsi_bounce_last_price": 974.1500244140625
     },
     "SANGAMIND": {
       "mcap_cr": 3480.0,
