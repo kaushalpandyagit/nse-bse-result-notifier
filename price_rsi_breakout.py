@@ -2709,12 +2709,35 @@ def _gapup_quotes(fyers, symbols: list) -> dict:
     return out
 
 
+def _gapup_quotes_yahoo(symbols: list) -> dict:
+    """Same shape as _gapup_quotes, from Yahoo daily bars (used when there is no Fyers connection)."""
+    out = {}
+    today = get_ist_now().date()
+    for i in range(0, len(symbols), 200):
+        chunk = symbols[i:i + 200]
+        try:
+            data = yf.download([f"{s}.NS" for s in chunk], period="5d", interval="1d", group_by="ticker",
+                               threads=True, progress=False, auto_adjust=False)
+        except Exception as e:
+            _GAPUP_ERRS.append(f"yahoo: {type(e).__name__}: {e}"[:160])
+            continue
+        for s in chunk:
+            try:
+                df = (data[f"{s}.NS"] if len(chunk) > 1 else data).dropna(subset=["Open", "Close"])
+                if len(df) < 2 or df.index[-1].date() != today:
+                    continue
+                out[s] = {"open": float(df["Open"].iloc[-1]), "prev": float(df["Close"].iloc[-2]), "price": float(df["Close"].iloc[-1])}
+            except Exception:
+                continue
+    return out
+
+
 def check_gap_up_scanner(momentum_state: dict, fyers) -> dict:
     """Once a day after the open: stocks that opened GAPUP_MIN_PCT or more above the previous close."""
     now_ist = get_ist_now()
     today = now_ist.strftime("%Y-%m-%d")
     done = momentum_state.get("gapup_scan") or {}
-    if done.get("date") == today or not fyers or not is_market_hours_now():
+    if done.get("date") == today or not is_market_hours_now():
         return momentum_state
     if now_ist.time() < datetime.time(9, 17) or now_ist.time() > datetime.time(12, 0):
         return momentum_state
@@ -2722,9 +2745,17 @@ def check_gap_up_scanner(momentum_state: dict, fyers) -> dict:
     universe = [s for s in universe if s and not str(s).isdigit()]
     if not universe:
         return momentum_state
-    quotes = _gapup_quotes(fyers, universe)
+    quotes = _gapup_quotes(fyers, universe) if fyers else {}
+    src = "fyers"
+    if len(quotes) < 0.5 * len(universe):          # no Fyers login on GitHub, or Fyers refused: Yahoo's daily bars
+        if not fyers:
+            _GAPUP_ERRS.append("no Fyers connection (login failed?)")
+        yq = _gapup_quotes_yahoo([s for s in universe if s not in quotes])
+        if yq:
+            quotes.update(yq)
+            src = "fyers+yahoo" if fyers else "yahoo"
     momentum_state["gapup_try"] = {"date": today, "at": now_ist.strftime("%H:%M"), "priced": len(quotes), "of": len(universe),
-                                   "errors": list(_GAPUP_ERRS)}
+                                   "src": src, "errors": list(_GAPUP_ERRS)}
     if len(quotes) < 0.5 * len(universe):
         log.warning("Gap-up scan: prices for only %d of %d stocks; will try again on the next run.", len(quotes), len(universe))
         return momentum_state
