@@ -30170,7 +30170,12 @@
       "rsi_ema_200": 55.6119,
       "ag": 180.170695,
       "al": 170.147201,
-      "last_close": 24120.0
+      "last_close": 24120.0,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T08:03:18.869827",
+      "rsi_bounce_last_price": 24470.0
     },
     "PURVA": {
       "mcap_cr": 4699.358264622809,
@@ -33392,7 +33397,12 @@
       "ag": 0.845968,
       "al": 1.761462,
       "last_close": 154.68,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T08:03:20.919420",
+      "rsi_bounce_last_price": 159.25
     },
     "EIHAHOTELS": {
       "mcap_cr": 1760.0,
@@ -36330,7 +36340,12 @@
       "ag": 4.588812,
       "al": 5.109652,
       "last_close": 535.65,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T08:03:23.234470",
+      "rsi_bounce_last_price": 540.0
     },
     "RAMRAT": {
       "mcap_cr": 4776.0,
