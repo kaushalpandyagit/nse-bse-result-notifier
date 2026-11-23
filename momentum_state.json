@@ -27889,7 +27889,12 @@
       "rsi_ema_200": 52.2758,
       "ag": 6.989522,
       "al": 7.265252,
-      "last_close": 765.55
+      "last_close": 765.55,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:17:16.140919",
+      "rsi_bounce_last_price": 778.0
     },
     "GRAVITA": {
       "mcap_cr": 10783.354929563868,
@@ -30212,7 +30217,12 @@
       "rsi_ema_200": 53.4853,
       "ag": 4.13608,
       "al": 4.0219,
-      "last_close": 335.1
+      "last_close": 335.1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:17:17.808593",
+      "rsi_bounce_last_price": 336.70001220703125
     },
     "RAILTEL": {
       "mcap_cr": 7928.783442877629,
@@ -35134,7 +35144,12 @@
       "ag": 0.990136,
       "al": 1.090493,
       "last_close": 75.73,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:17:20.748424",
+      "rsi_bounce_last_price": 76.1500015258789
     },
     "MANBA": {
       "mcap_cr": 782.0,
@@ -35681,7 +35696,12 @@
       "ag": 1.856101,
       "al": 3.167339,
       "last_close": 149.11,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:17:22.301629",
+      "rsi_bounce_last_price": 151.11000061035156
     },
     "OMAXAUTO": {
       "mcap_cr": 426.0,
@@ -36505,7 +36525,12 @@
       "ag": 28.286257,
       "al": 36.93089,
       "last_close": 2540.8999,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:17:23.944240",
+      "rsi_bounce_last_price": 2546.0
     },
     "RSYSTEMS": {
       "mcap_cr": 2885.0,
@@ -37621,5 +37646,21 @@
       "mcap_cr": null
     }
   },
-  "market_up": null
+  "market_up": null,
+  "gapup_try": {
+    "date": "2026-11-23",
+    "at": "11:46",
+    "priced": 845,
+    "of": 869,
+    "src": "yahoo",
+    "errors": [
+      "no Fyers connection (login failed?)"
+    ]
+  },
+  "gapup_scan": {
+    "date": "2026-11-23",
+    "at": "11:46",
+    "priced": 845,
+    "hits": 26
+  }
 }
