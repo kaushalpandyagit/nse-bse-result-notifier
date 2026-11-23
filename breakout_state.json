@@ -71,10 +71,12 @@
   "custom_alert_ESFL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-11T03:46:08.693474",
-    "custom_last_price": 115.0999984741211,
+    "custom_last_alert": "2026-11-23T09:29:44.282142",
+    "custom_last_price": 113.0,
     "session_date": "2026-11-23",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_GPIL_news": {
     "alerted": false,

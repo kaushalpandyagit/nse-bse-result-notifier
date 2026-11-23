@@ -1833,7 +1833,13 @@
     "trigger_date": "2026-11-20",
     "ref_high": 81.99,
     "ref_low": 79.5,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-23T09:29:55.836128",
+    "fno_low_breach_last_price": 79.0
   },
   "EIFFL": {
     "trigger_date": "2026-11-19",
