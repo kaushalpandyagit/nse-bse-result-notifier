@@ -32161,7 +32161,12 @@
       "rsi_ema_200": 48.5445,
       "ag": 2.494319,
       "al": 4.690164,
-      "last_close": 448.05
+      "last_close": 448.05,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:03:18.040740",
+      "rsi_bounce_last_price": 454.75
     },
     "63MOONS": {
       "mcap_cr": 4246.0,
@@ -34149,7 +34154,12 @@
       "ag": 0.294322,
       "al": 0.422961,
       "last_close": 28.89,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:03:20.466668",
+      "rsi_bounce_last_price": 29.3700008392334
     },
     "IGPL": {
       "mcap_cr": 1632.0,
@@ -35442,7 +35452,12 @@
       "ag": 1.341332,
       "al": 2.456412,
       "last_close": 90.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T06:03:22.541971",
+      "rsi_bounce_last_price": 91.55999755859375
     },
     "MSPL": {
       "mcap_cr": 1781.0,
