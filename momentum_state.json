@@ -26503,7 +26503,12 @@
       "rsi_ema_200": 47.9149,
       "ag": 3.012213,
       "al": 3.625371,
-      "last_close": 303.15
+      "last_close": 303.15,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:09.979814",
+      "rsi_bounce_last_price": 311.5
     },
     "CAMPUS": {
       "mcap_cr": 5914.90260135,
@@ -28052,7 +28057,12 @@
       "rsi_ema_200": 51.3828,
       "ag": 2.424845,
       "al": 2.560814,
-      "last_close": 376.3
+      "last_close": 376.3,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:11.398177",
+      "rsi_bounce_last_price": 380.6499938964844
     },
     "HEXT": {
       "mcap_cr": 30236.238506616668,
@@ -29279,7 +29289,12 @@
       "rsi_ema_200": 47.1053,
       "ag": 9.981737,
       "al": 17.019988,
-      "last_close": 1440.1
+      "last_close": 1440.1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:13.155131",
+      "rsi_bounce_last_price": 1457.9000244140625
     },
     "MBAPL": {
       "mcap_cr": 8656.227588799438,
@@ -33186,7 +33201,12 @@
       "ag": 4.216872,
       "al": 6.821567,
       "last_close": 484.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:16.486016",
+      "rsi_bounce_last_price": 484.8999938964844
     },
     "DIFFNKG": {
       "mcap_cr": 1681.0,
@@ -34983,7 +35003,12 @@
       "ag": 4.524585,
       "al": 8.389723,
       "last_close": 844.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:19.334404",
+      "rsi_bounce_last_price": 845.0
     },
     "MANAKCOAT": {
       "mcap_cr": 1936.0,
@@ -35585,7 +35610,12 @@
       "ag": 1.209372,
       "al": 1.516788,
       "last_close": 97.01,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:21.098509",
+      "rsi_bounce_last_price": 97.30000305175781
     },
     "ONEPOINT": {
       "mcap_cr": 1818.0,
@@ -36389,7 +36419,12 @@
       "ag": 4.442605,
       "al": 5.88704,
       "last_close": 451.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:24.616489",
+      "rsi_bounce_last_price": 459.8999938964844
     },
     "RUSHIL": {
       "mcap_cr": 644.0,
@@ -36660,7 +36695,12 @@
       "ag": 6.493335,
       "al": 5.565471,
       "last_close": 635.5,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:26.250802",
+      "rsi_bounce_last_price": 642.0
     },
     "SDBL": {
       "mcap_cr": 1566.0,
@@ -36674,7 +36714,12 @@
       "ag": 0.618975,
       "al": 0.534383,
       "last_close": 75.21,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:28.189818",
+      "rsi_bounce_last_price": 75.6500015258789
     },
     "SEAMECLTD": {
       "mcap_cr": 3897.0,
@@ -37146,7 +37191,12 @@
       "ag": 1.652149,
       "al": 2.477689,
       "last_close": 171.65,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T04:18:29.583793",
+      "rsi_bounce_last_price": 176.89999389648438
     },
     "UNICHEMLAB": {
       "mcap_cr": 3347.0,

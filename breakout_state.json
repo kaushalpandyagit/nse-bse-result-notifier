@@ -2,10 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-20T07:01:02.030563",
-    "custom_last_price": 100.55000305175781,
+    "custom_last_alert": "2026-11-23T04:15:50.151709",
+    "custom_last_price": 97.0,
     "session_date": "2026-11-23",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_AERON_price": {
     "alerted": false,
