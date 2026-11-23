@@ -35319,7 +35319,12 @@
       "ag": 0.879115,
       "al": 1.270538,
       "last_close": 144.3,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T08:30:56.891595",
+      "rsi_bounce_last_price": 146.39999389648438
     },
     "MAYURUNIQ": {
       "mcap_cr": 3156.0,

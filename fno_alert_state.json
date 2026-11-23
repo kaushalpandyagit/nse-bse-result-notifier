@@ -1521,7 +1521,13 @@
     "trigger_date": "2026-11-16",
     "ref_high": 70.5,
     "ref_low": 64.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-23T08:29:53.021009",
+    "fno_low_breach_last_price": 63.83000183105469
   },
   "THAKDEV": {
     "trigger_date": "2026-11-16",
