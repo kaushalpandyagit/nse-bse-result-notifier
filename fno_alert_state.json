@@ -1227,7 +1227,7 @@
     "trigger_date": "2026-11-11",
     "ref_high": 2489.2,
     "ref_low": 2329.0,
-    "status": "Active"
+    "status": "Expired"
   },
   "NIMBSPROJ": {
     "trigger_date": "2026-11-11",
@@ -1257,7 +1257,7 @@
     "trigger_date": "2026-11-11",
     "ref_high": 4.02,
     "ref_low": 3.6,
-    "status": "Active"
+    "status": "Expired"
   },
   "NICCOPAR": {
     "trigger_date": "2026-11-11",
@@ -1923,7 +1923,13 @@
     "trigger_date": "2026-11-20",
     "ref_high": 2405.0,
     "ref_low": 2348.1,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-23T03:46:26.427227",
+    "fno_low_breach_last_price": 2333.0
   },
   "ABCIND": {
     "trigger_date": "2026-11-20",

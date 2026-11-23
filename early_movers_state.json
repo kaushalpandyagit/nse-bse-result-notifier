@@ -635,7 +635,13 @@
     "price_change_pct": 2.5,
     "deliv_pct": 61.5,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-23T03:46:28.557205",
+    "em_high_breach_last_price": 1626.0
   },
   "INVPRECQ": {
     "trigger_date": "2026-11-20",
@@ -645,7 +651,13 @@
     "price_change_pct": -2.49,
     "deliv_pct": 68.6,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-23T03:46:30.197856",
+    "em_low_breach_last_price": 1256.0999755859375
   },
   "MCLEODRUSS": {
     "trigger_date": "2026-11-20",
@@ -675,7 +687,13 @@
     "price_change_pct": -2.48,
     "deliv_pct": 87.5,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-23T03:46:32.128742",
+    "em_high_breach_last_price": 124.91000366210938
   },
   "RSSOFTWARE": {
     "trigger_date": "2026-11-20",
@@ -695,7 +713,13 @@
     "price_change_pct": 2.47,
     "deliv_pct": 63.9,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-23T03:46:33.591502",
+    "em_high_breach_last_price": 348.6499938964844
   },
   "GLOBE": {
     "trigger_date": "2026-11-20",
@@ -705,7 +729,13 @@
     "price_change_pct": -2.46,
     "deliv_pct": 93.3,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-23T03:46:35.113307",
+    "em_low_breach_last_price": 1.9700000286102295
   },
   "INFOMEDIA": {
     "trigger_date": "2026-11-20",
