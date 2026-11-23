@@ -1299,7 +1299,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     for s, r in stage2_vcp_list[:TOP_N_MOMENTUM]:
         v = per_symbol_data[s]["vcp"]
         e_tag = get_earnings_tag(s)
-        lines.append(f"  <b>{s}</b> pivot ₹{v['pivot']:,.2f} ({v['pivot_dist']:.1f}% away) | "
+        lines.append(f"  {_list_name(s)} pivot ₹{v['pivot']:,.2f} ({v['pivot_dist']:.1f}% away) | "
                      f"T {'→'.join(f'{x:g}' for x in v['contractions'])}% | 7d range {v['tight_pct']}% | "
                      f"vol {v['dryup']}x | RS {r}{e_tag}")
     try:
@@ -1311,13 +1311,13 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     lines += ["", f"🆕 <b>IPO Base (listed &lt; 12 months)</b> ({len(ipo_watch)} stocks)",
               "<i>Post-listing high is 3+ weeks old, 12-35% correction, back near the high and tight. Alert fires on a break of the high with volume.</i>"]
     for s, b in ipo_sorted[:TOP_N_MOMENTUM]:
-        lines.append(f"  <b>{s}</b> pivot ₹{b['pivot']:,.2f} ({b['pivot_dist']:.1f}% away) | base {b['sessions_since_high']}d, "
+        lines.append(f"  {_list_name(s)} pivot ₹{b['pivot']:,.2f} ({b['pivot_dist']:.1f}% away) | base {b['sessions_since_high']}d, "
                      f"{b['depth']}% deep | 5d range {b['tight_pct']}% | listed {b['listed']}")
     lines += ["", f"🌟 <b>Momentum Leaders</b> ({len(momentum_leader_list)} stocks)"]
     for s, r in momentum_leader_list[:TOP_N_MOMENTUM]:
         e_tag = get_earnings_tag(s)
-        lines.append(f"  {s} (RS rank {r}){e_tag}")
-    send_telegram_message("\n".join(lines))
+        lines.append(f"  {_list_name(s)} (RS rank {r}){e_tag}")
+    _send_long("\n".join(lines))      # split between sections if over Telegram's limit (patch_github_list_links.py)
     
     try:      # SETUP 8 also scans stocks outside the index list (see RSIB_EXTRA_FILE)
         rsi_bounce_universe.update(build_rsi_bounce_extras(set(symbols)))
@@ -1326,6 +1326,38 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis, "rsi_bounce_universe": rsi_bounce_universe,
             "last_sector_report_date": momentum_state.get("last_sector_report_date"), "ipo_watch": ipo_watch,
             "market_up": get_market_uptrend()}
+
+def _list_name(sym: str) -> str:
+    """One stock in a list message: chart link, S (Screener), forensic letter (patch_github_list_links.py)."""
+    safe = sym.replace("&", "&amp;").replace("<", "&lt;")
+    try:      # short form for lists (Telegram's 4,096-character limit): name -> chart, S -> Screener, forensic letter
+        import result_tag as _rt
+        q = _rt.quote(sym)
+        fz = {"C": " 🟢C", "W": " 🟠W", "R": " 🔴R", "V": " ⛔V"}.get((_rt._tags().get(sym) or {}).get("f"), "")
+        return f'<b><a href="{_rt.LOCAL}{q}">{safe}</a></b> <a href="{_rt.SCREENER}{q}/">S</a>{fz}'
+    except Exception:
+        return f"<b>{safe}</b>"
+
+
+def _send_long(text: str, limit: int = 3900):
+    """Send a long report; over the limit (visible characters) it goes as several messages, cut between sections."""
+    vis = lambda t: len(re.sub(r"<[^>]+>", "", t))
+    if vis(text) <= limit:
+        return send_telegram_message(text)
+    parts, cur = [], ""
+    for sec in text.split("\n\n"):
+        if cur and vis(cur) + vis(sec) + 2 > limit:
+            parts.append(cur)
+            cur = sec
+        else:
+            cur = cur + "\n\n" + sec if cur else sec
+    if cur:
+        parts.append(cur)
+    ok = True
+    for i, part in enumerate(parts, 1):
+        ok = send_telegram_message(part + (f"\n<i>({i}/{len(parts)})</i>" if len(parts) > 1 else "")) and ok
+    return ok
+
 
 def send_morning_sector_rs_report(momentum_state: dict) -> dict:
     now_ist = get_ist_now()
@@ -2656,7 +2688,7 @@ def check_gap_up_scanner(momentum_state: dict, fyers) -> dict:
             safe = sym.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
             try:      # the name opens the chart on the laptop, like in the other alerts
                 import result_tag as _rt
-                safe = f'<a href="{_rt.LOCAL}{_rt.quote(sym)}">{safe}</a>'
+                safe = _list_name(sym).replace("<b>", "").replace("</b>", "")      # chart link, S, forensic letter
             except Exception:
                 pass
             lines.append(f"• <b>{safe}</b> +{gap:.1f}% | open ₹{q['open']:.2f}, now ₹{q['price']:.2f} ({(q['price'] / q['prev'] - 1) * 100:+.1f}%) | {state}")
