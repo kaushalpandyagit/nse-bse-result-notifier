@@ -34695,7 +34695,12 @@
       "ag": 3.952654,
       "al": 3.943983,
       "last_close": 322.45,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T07:47:45.911080",
+      "rsi_bounce_last_price": 334.54998779296875
     },
     "KDDL": {
       "mcap_cr": 5851.0,
@@ -37388,7 +37393,12 @@
       "ag": 0.550687,
       "al": 0.711724,
       "last_close": 81.17,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T07:47:48.998717",
+      "rsi_bounce_last_price": 82.7699966430664
     },
     "UNITEDPOLY": {
       "mcap_cr": 1299.0,
