@@ -34907,7 +34907,12 @@
       "ag": 6.328625,
       "al": 10.249566,
       "last_close": 1621.5,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T05:31:58.488320",
+      "rsi_bounce_last_price": 1633.4000244140625
     },
     "LIKHITHA": {
       "mcap_cr": 789.0,

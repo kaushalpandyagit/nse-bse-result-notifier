@@ -1743,7 +1743,13 @@
     "trigger_date": "2026-11-18",
     "ref_high": 128.86,
     "ref_low": 115.52,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-23T05:30:02.209819",
+    "fno_low_breach_last_price": 115.33000183105469
   },
   "TURTLEMINT": {
     "trigger_date": "2026-11-18",
