@@ -35413,7 +35413,12 @@
       "ag": 5.729068,
       "al": 4.860865,
       "last_close": 460.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T08:48:02.295703",
+      "rsi_bounce_last_price": 462.70001220703125
     },
     "MOBIKWIK": {
       "mcap_cr": 1797.0,
@@ -37081,7 +37086,12 @@
       "ag": 1.608919,
       "al": 2.832722,
       "last_close": 159.67,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T08:48:04.301152",
+      "rsi_bounce_last_price": 160.30999755859375
     },
     "SREEL": {
       "mcap_cr": 648.0,
