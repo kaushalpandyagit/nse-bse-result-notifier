@@ -1953,7 +1953,13 @@
     "trigger_date": "2026-11-20",
     "ref_high": 422.2,
     "ref_low": 411.2,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-23T07:29:59.397348",
+    "fno_low_breach_last_price": 411.1000061035156
   },
   "GULFOILLUB": {
     "trigger_date": "2026-11-20",
