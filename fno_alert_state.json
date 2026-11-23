@@ -239,7 +239,13 @@
     "trigger_date": "2026-11-20",
     "ref_high": 270.0,
     "ref_low": 243.09,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-23T04:01:19.896811",
+    "fno_low_breach_last_price": 242.13999938964844
   },
   "JINDALPHOT": {
     "trigger_date": "2026-10-28",
@@ -1125,7 +1131,13 @@
     "trigger_date": "2026-11-20",
     "ref_high": 280.0,
     "ref_low": 272.65,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-23T04:01:21.238659",
+    "fno_high_breach_last_price": 282.1000061035156
   },
   "IPRINGLTD": {
     "trigger_date": "2026-11-12",
@@ -1701,7 +1713,13 @@
     "trigger_date": "2026-11-18",
     "ref_high": 238.5,
     "ref_low": 219.1,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-23T04:01:27.435531",
+    "fno_high_breach_last_price": 239.5
   },
   "SWANCORP": {
     "trigger_date": "2026-11-18",
@@ -1905,7 +1923,13 @@
     "trigger_date": "2026-11-20",
     "ref_high": 724.95,
     "ref_low": 693.45,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-23T04:01:33.094733",
+    "fno_low_breach_last_price": 687.0499877929688
   },
   "AADHARHFC": {
     "trigger_date": "2026-11-20",
@@ -1935,6 +1959,12 @@
     "trigger_date": "2026-11-20",
     "ref_high": 165.98,
     "ref_low": 160.06,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-23T04:01:35.620631",
+    "fno_high_breach_last_price": 168.5
   }
 }

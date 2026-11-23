@@ -667,7 +667,13 @@
     "price_change_pct": -2.49,
     "deliv_pct": 94.5,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-23T04:01:37.123718",
+    "em_low_breach_last_price": 42.54999923706055
   },
   "HILTON": {
     "trigger_date": "2026-11-20",
@@ -755,6 +761,12 @@
     "price_change_pct": -2.46,
     "deliv_pct": 60.3,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-23",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-23T04:01:38.956766",
+    "em_low_breach_last_price": 147.24000549316406
   }
 }
