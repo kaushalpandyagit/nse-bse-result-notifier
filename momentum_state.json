@@ -32008,7 +32008,12 @@
       "rsi_ema_200": 45.65,
       "ag": 0.669116,
       "al": 0.807148,
-      "last_close": 134.59
+      "last_close": 134.59,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T09:47:01.000209",
+      "rsi_bounce_last_price": 134.6699981689453
     },
     "WEBELSOLAR": {
       "mcap_cr": 2787.763601121147,
@@ -32863,7 +32868,12 @@
       "ag": 8.502408,
       "al": 9.28424,
       "last_close": 640.55,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T09:47:02.217928",
+      "rsi_bounce_last_price": 665.0
     },
     "BLKASHYAP": {
       "mcap_cr": 1193.0,
@@ -34798,7 +34808,12 @@
       "ag": 0.477342,
       "al": 0.38949,
       "last_close": 32.64,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T09:47:04.118695",
+      "rsi_bounce_last_price": 32.79999923706055
     },
     "KODYTECH": {
       "mcap_cr": 2620.0,
@@ -36340,7 +36355,12 @@
       "ag": 0.154532,
       "al": 0.262906,
       "last_close": 25.96,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T09:47:05.980358",
+      "rsi_bounce_last_price": 25.989999771118164
     },
     "RAMCOSYS": {
       "mcap_cr": 2040.0,
@@ -37413,7 +37433,12 @@
       "ag": 2.735433,
       "al": 4.999837,
       "last_close": 468.95,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-23T09:47:07.658030",
+      "rsi_bounce_last_price": 469.25
     },
     "UNIECOM": {
       "mcap_cr": 935.0,
