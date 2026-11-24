@@ -17,6 +17,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 6: High-Volume Anchor Day (breakout above anchor high / pullback hold in anchor zone).
 - SETUP 7: Descending Trendline 3+ touches + Floor (floor bounce RR / trendline breakout).
 - SETUP 8: RSI Bounce (Chartink port: 4H RSI crossing above EMA of daily RSI, buyers > sellers).
+- SETUP 9: Downtrend reversal, higher low (long fall, oversold bottom, bounce, higher low, turn day) - patch_github_reversal.py.
 - RSI_ scanners: the price scanners applied to the RSI line itself (RSI_Trendline, RSI_High60), leaders only.
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
 - Custom Synthetic Index Engine (Equal-Weighted Basket RSI via custom_indices.json).
@@ -1297,6 +1298,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     per_symbol_data = {}
     returns_6m = {}
     rsi_bounce_universe = {}
+    reversal_universe = {}      # SETUP 9 (patch_github_reversal.py)
 
     for symbol in symbols:
         df = hist_map.get(f"{symbol}.NS")
@@ -1314,6 +1316,12 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         # SETUP 8 has its own market-cap band, so build it before the momentum filter below.
         bounce_fields = build_rsi_bounce_fields(closes, mcap_cr)
         if bounce_fields: rsi_bounce_universe[symbol] = bounce_fields
+        try:      # SETUP 9: its own market-cap floor, so before the momentum filter below
+            if mcap_cr is None or mcap_cr >= REV_MIN_MCAP_CR:
+                rev_fields = detect_reversal_setup(df.dropna(subset=["Close", "High", "Low"]))
+                if rev_fields: reversal_universe[symbol] = rev_fields
+        except Exception as e:
+            log.debug("Reversal fields failed for %s: %s", symbol, e)
 
         if mcap_cr is not None and (mcap_cr < MIN_MARKET_CAP_CR or mcap_cr > MAX_MARKET_CAP_CR): continue
 
@@ -1380,7 +1388,14 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         rsi_bounce_universe.update(build_rsi_bounce_extras(set(symbols)))
     except Exception as e:
         log.warning("RSI bounce extras failed: %s", e)
+    try:      # SETUP 9 also scans the laptop's list of smaller and SME stocks (REV_EXTRA_FILE)
+        reversal_universe.update(build_reversal_extras(set(symbols)))
+    except Exception as e:
+        log.warning("Reversal extras failed: %s", e)
+    log.info("Reversal (higher low): %d stocks set up for today's turn check.", len(reversal_universe))
     return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis, "rsi_bounce_universe": rsi_bounce_universe,
+            "reversal_universe": reversal_universe, "rev_last": momentum_state.get("rev_last") or {},
+            "rev_scan": momentum_state.get("rev_scan") or {},
             "last_sector_report_date": momentum_state.get("last_sector_report_date"), "ipo_watch": ipo_watch,
             "market_up": get_market_uptrend()}
 
@@ -2732,6 +2747,221 @@ def _gapup_quotes_yahoo(symbols: list) -> dict:
     return out
 
 
+# ----------------------------------------------------------------------
+# SETUP 9: DOWNTREND REVERSAL, HIGHER LOW (patch_github_reversal.py)
+# ----------------------------------------------------------------------
+REV_FALL_X = 2.0              # highest high of the year before the bottom >= 2x the bottom (a 50%+ fall)
+REV_LOW_WINDOW = 60           # the bottom = lowest low of this many sessions ...
+REV_LOW_AGE = (8, 60)         # ... made this many sessions ago (today = 0)
+REV_RSI_OS = 30.0             # daily RSI at or under this within 3 sessions of the bottom
+REV_BOUNCE = 1.15             # first bounce high >= bottom x this
+REV_BOUNCE_AGE = 3            # bounce high at least this many sessions ago
+REV_HL_MIN = 1.02             # higher low >= bottom x this
+REV_RETRACE = 0.382           # higher low gave back at least this share of the bounce
+REV_HL_FRESH = 5              # higher low made within this many sessions (or today)
+REV_DAY_UP = 2.0              # turn day: price >= yesterday's close + this %, and above yesterday's high
+REV_MIN_TV = 10e5             # 20-day average turnover (close x volume), Rs
+REV_MIN_PRICE = 10.0
+REV_MIN_MCAP_CR = 50.0
+REV_AFTER = (14, 45)          # checked once a day from this time (the test used the closing price)
+REV_COOL_DAYS = 28            # one alert per stock in this many days
+REV_EXTRA_FILE = "reversal_extra.json"   # NSE stocks of Rs 50 Cr+ (SME included) outside the index list, from the laptop
+REV_SEND_TELEGRAM = True      # False = only the trigger list (scanner_triggers.csv)
+REV_MAX_LINES = 25
+
+
+def detect_reversal_setup(df: pd.DataFrame) -> dict:
+    """SETUP 9 levels from COMPLETED daily bars (today is not in df). None unless rules 1-3 hold and the higher low
+    can still qualify; the live check (reversal_hit) adds today's low and price."""
+    c = df["Close"].astype(float)
+    C, H, L = c.values, df["High"].astype(float).values, df["Low"].astype(float).values
+    V = df["Volume"].astype(float).fillna(0).values
+    n = len(C)
+    if n < 262 or np.isnan(C[-20:]).any():
+        return None
+    lw = L[n - REV_LOW_WINDOW:n]
+    lo_i = n - REV_LOW_WINDOW + int(np.nanargmin(lw))
+    lo = float(L[lo_i])
+    if not (REV_LOW_AGE[0] <= n - lo_i <= REV_LOW_AGE[1]) or lo <= 0:
+        return None
+    hi = float(np.nanmax(H[max(0, lo_i - 252):lo_i])) if lo_i > 0 else 0.0
+    if hi < REV_FALL_X * lo:
+        return None
+    s200 = c.rolling(200).mean().values
+    if not (s200[n - 1] < s200[n - 61]):
+        return None
+    r = get_rsi_series(c, RSI_PERIOD).values
+    if np.nanmin(r[max(0, lo_i - 3):lo_i + 4]) > REV_RSI_OS:
+        return None
+    bw = H[lo_i:n]
+    b_i = lo_i + int(np.nanargmax(bw))
+    b = float(H[b_i])
+    if b < lo * REV_BOUNCE or n - b_i < REV_BOUNCE_AGE:
+        return None
+    hw = L[b_i + 1:n]
+    hl_i = b_i + 1 + int(np.nanargmin(hw))
+    hl = float(L[hl_i])
+    tv20 = float(np.nanmean(C[-20:] * V[-20:]))
+    if hl < lo * REV_HL_MIN or C[-1] >= b or tv20 < REV_MIN_TV:
+        return None
+    d = lambda i: df.index[i].strftime("%Y-%m-%d")
+    return {"lo": round(lo, 2), "lo_date": d(lo_i), "hi": round(hi, 2), "hi_date": d(int(np.nanargmax(H[max(0, lo_i - 252):lo_i])) + max(0, lo_i - 252)),
+            "b": round(b, 2), "b_date": d(b_i), "hl": round(hl, 2), "hl_date": d(hl_i), "hl_age": n - hl_i,
+            "prev_high": round(float(H[-1]), 2), "prev_close": round(float(C[-1]), 2), "tv20_lakh": round(tv20 / 1e5, 1),
+            "rsi_low": round(float(np.nanmin(r[max(0, lo_i - 3):lo_i + 4])), 1)}
+
+
+def reversal_hit(f: dict, price: float, day_low: float):
+    """Rules 4-5 with today's price and low. Returns the higher low used, or None."""
+    lo, b = f["lo"], f["b"]
+    if day_low and day_low < f["hl"]:
+        hl, fresh = float(day_low), True
+    else:
+        hl, fresh = f["hl"], f["hl_age"] <= REV_HL_FRESH
+    if not fresh or hl < lo * REV_HL_MIN or hl > b - REV_RETRACE * (b - lo):
+        return None
+    if price < REV_MIN_PRICE or price >= b or price <= f["prev_high"] or price < f["prev_close"] * (1 + REV_DAY_UP / 100):
+        return None
+    return hl
+
+
+def build_reversal_extras(skip) -> dict:
+    """SETUP 9 levels for the laptop's extra stocks (REV_EXTRA_FILE) that the index list does not hold."""
+    try:
+        data = json.loads((Path(__file__).parent / REV_EXTRA_FILE).read_text())
+        extra = {str(k).upper(): float(v) for k, v in (data.get("symbols") or {}).items()
+                 if str(k).upper() not in skip and float(v) >= REV_MIN_MCAP_CR}
+    except Exception as e:
+        log.info("Reversal: no extra stock list (%s).", e)
+        return {}
+    out, names = {}, sorted(extra)
+    for i in range(0, len(names), 250):
+        chunk = names[i:i + 250]
+        hist = fetch_batch_history([f"{s}.NS" for s in chunk])
+        for sym in chunk:
+            df = hist.get(f"{sym}.NS")
+            if df is None or df.empty or "Close" not in df.columns:
+                continue
+            if df.index[-1].date() == ist_today():
+                df = df.iloc[:-1]
+            try:
+                f = detect_reversal_setup(df.dropna(subset=["Close", "High", "Low"]))
+            except Exception:
+                f = None
+            if f:
+                f["x"] = 1
+                out[sym] = f
+    log.info("Reversal: %d extra stocks listed, %d set up.", len(extra), len(out))
+    return out
+
+
+def _rev_quotes(fyers, symbols: list) -> dict:
+    """{symbol: {"price", "low", "prev"}} from Fyers batch quotes (EQ, BE, then SME series SM / ST for the misses)."""
+    out = {}
+    for suffix in ("EQ", "BE", "SM", "ST"):
+        todo = [s for s in symbols if s not in out]
+        for i in range(0, len(todo), RSIB_QUOTE_BATCH):
+            chunk = todo[i:i + RSIB_QUOTE_BATCH]
+            try:
+                time.sleep(0.35)
+                resp = fyers.quotes(data={"symbols": ",".join(f"NSE:{s}-{suffix}" for s in chunk)})
+                for row in (resp.get("d") or []) if isinstance(resp, dict) else []:
+                    v = row.get("v") or {}
+                    sym = str(row.get("n") or v.get("symbol") or "").split(":")[-1].rsplit("-", 1)[0]
+                    if row.get("s") == "ok" and sym in chunk and v.get("lp") and v.get("low_price"):
+                        out[sym] = {"price": float(v["lp"]), "low": float(v["low_price"]), "prev": float(v.get("prev_close_price") or 0)}
+            except Exception as e:
+                log.warning("Reversal: Fyers quotes failed (%s).", e)
+    return out
+
+
+def _rev_quotes_yahoo(symbols: list) -> dict:
+    out, today = {}, get_ist_now().date()
+    for i in range(0, len(symbols), 200):
+        chunk = symbols[i:i + 200]
+        try:
+            data = yf.download([f"{s}.NS" for s in chunk], period="5d", interval="1d", group_by="ticker",
+                               threads=True, progress=False, auto_adjust=False)
+        except Exception:
+            continue
+        for s in chunk:
+            try:
+                df = (data[f"{s}.NS"] if len(chunk) > 1 else data).dropna(subset=["Low", "Close"])
+                if len(df) >= 2 and df.index[-1].date() == today:
+                    out[s] = {"price": float(df["Close"].iloc[-1]), "low": float(df["Low"].iloc[-1]), "prev": float(df["Close"].iloc[-2])}
+            except Exception:
+                continue
+    return out
+
+
+def check_reversal_scanner(momentum_state: dict, fyers) -> dict:
+    """SETUP 9, once a day after REV_AFTER: today's turn of the stocks set up by the daily scan."""
+    now_ist = get_ist_now()
+    today = now_ist.strftime("%Y-%m-%d")
+    if (momentum_state.get("rev_scan") or {}).get("date") == today or not is_market_hours_now():
+        return momentum_state
+    if (now_ist.hour, now_ist.minute) < REV_AFTER:
+        return momentum_state
+    uni = momentum_state.get("reversal_universe") or {}
+    last = momentum_state.setdefault("rev_last", {})
+    cut = (now_ist.date() - datetime.timedelta(days=REV_COOL_DAYS)).isoformat()
+    syms = [s for s in uni if str(last.get(s, "")) < cut]
+    if not syms:
+        momentum_state["rev_scan"] = {"date": today, "at": now_ist.strftime("%H:%M"), "set_up": len(uni), "hits": 0}
+        return momentum_state
+    quotes = _rev_quotes(fyers, syms) if fyers else {}
+    src = "fyers"
+    if len(quotes) < 0.8 * len(syms):
+        yq = _rev_quotes_yahoo([s for s in syms if s not in quotes])
+        quotes.update(yq)
+        src = "fyers+yahoo" if fyers else "yahoo"
+    if len(quotes) < 0.5 * len(syms) and now_ist.time() < datetime.time(15, 25):
+        log.warning("Reversal scan: prices for only %d of %d stocks; will try again on the next run.", len(quotes), len(syms))
+        return momentum_state
+    hits = []
+    for s, q in quotes.items():
+        f = uni.get(s) or {}
+        try:
+            hl = reversal_hit(f, q["price"], q["low"])
+        except Exception:
+            hl = None
+        if hl is not None:
+            hits.append((s, q, f, hl))
+    hits.sort(key=lambda x: x[2]["hi"] / x[2]["lo"], reverse=True)       # deepest fall first
+    log.info("Reversal scan (%s): %d set up, %d priced, %d turned up.", src, len(syms), len(quotes), len(hits))
+
+    def _nm(sym):
+        try:
+            return _list_name(sym).replace("<b>", "").replace("</b>", "")
+        except Exception:
+            return sym.replace("&", "&amp;").replace("<", "&lt;")
+
+    def _line(sym, q, f, hl):
+        day = (q["price"] / f["prev_close"] - 1) * 100
+        return (f"₹{q['price']:.2f} ({day:+.1f}%) | fell {f['hi']:g} → {f['lo']:g} (-{(1 - f['lo'] / f['hi']) * 100:.0f}%, "
+                f"RSI {f['rsi_low']:g} on {f['lo_date'][5:]}) | bounce {f['b']:g} ({f['b_date'][5:]}) | "
+                f"higher low {hl:g} (+{(hl / f['lo'] - 1) * 100:.0f}% over the bottom)")
+    if hits and REV_SEND_TELEGRAM:
+        lines = [f"🔄 <b>Downtrend reversal - higher low</b>: {len(hits)} stock(s) turning up today "
+                 f"(of {len(uni)} set up)\n<i>Long fall, oversold bottom, first bounce, a low above the bottom, today above yesterday's high.</i>"]
+        for s, q, f, hl in hits[:REV_MAX_LINES]:
+            lines.append(f"• <b>{_nm(s)}</b> {_line(s, q, f, hl)}")
+        if len(hits) > REV_MAX_LINES:
+            lines.append(f"... and {len(hits) - REV_MAX_LINES} more (all are in the trigger list)")
+        if not send_telegram_message("\n".join(lines)):
+            log.error("Reversal message NOT delivered; will retry next run.")
+            return momentum_state
+    global _LAST_ALERT_TEXT
+    for s, q, f, hl in hits:
+        safe = s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        _LAST_ALERT_TEXT = f"<b>{safe}</b> Downtrend reversal, higher low\n{_line(s, q, f, hl)}"
+        _log_trigger("reversal_hl", q["price"], (momentum_state.get("watchlist") or {}).get(s) or {})
+        last[s] = today
+    momentum_state["rev_scan"] = {"date": today, "at": now_ist.strftime("%H:%M"), "set_up": len(uni), "priced": len(quotes),
+                                  "src": src, "hits": len(hits)}
+    return momentum_state
+
+
 def check_gap_up_scanner(momentum_state: dict, fyers) -> dict:
     """Once a day after the open: stocks that opened GAPUP_MIN_PCT or more above the previous close."""
     now_ist = get_ist_now()
@@ -3273,6 +3503,10 @@ def main():
                     momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("RSI bounce scanner failed: %s", e)
+                try:      # SETUP 9 (patch_github_reversal.py)
+                    momentum_state = check_reversal_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Reversal scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
@@ -3303,6 +3537,10 @@ def main():
                     momentum_state = check_rsi_bounce_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("RSI bounce scanner failed: %s", e)
+                try:      # SETUP 9 (patch_github_reversal.py)
+                    momentum_state = check_reversal_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Reversal scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
