@@ -2049,7 +2049,13 @@
     "trigger_date": "2026-11-24",
     "ref_high": 81.99,
     "ref_low": 75.05,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-25T04:16:11.981477",
+    "fno_low_breach_last_price": 74.87000274658203
   },
   "63MOONS": {
     "trigger_date": "2026-11-24",

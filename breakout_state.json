@@ -122,10 +122,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-23T07:01:11.463141",
-    "custom_last_price": 48.599998474121094,
+    "custom_last_alert": "2026-11-25T04:15:55.357018",
+    "custom_last_price": 50.93000030517578,
     "session_date": "2026-11-25",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
     "alerted": false,
@@ -405,10 +407,12 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-20T04:03:49.258143",
-    "spread_last_price": 3.294117647058824,
-    "session_date": "2026-11-23",
-    "alert_slots": []
+    "spread_last_alert": "2026-11-25T04:19:23.752016",
+    "spread_last_price": 2.5084842342244054,
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_AVL": {
     "spread_last_alert": "2026-11-11T06:31:38.372845",
