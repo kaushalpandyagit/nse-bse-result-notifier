@@ -33141,7 +33141,12 @@
       "ag": 16.26302,
       "al": 16.242167,
       "last_close": 1751.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:31:12.090946",
+      "rsi_bounce_last_price": 1753.0
     },
     "CANTABIL": {
       "mcap_cr": 2145.0,
