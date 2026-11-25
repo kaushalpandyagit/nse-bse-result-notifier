@@ -22155,7 +22155,14 @@
       "rsi_hi60_fresh": true,
       "rsi_ag": 9.289636,
       "rsi_al": 6.162128,
-      "rs_rank": 86.4
+      "rs_rank": 86.4,
+      "session_date": "2026-11-25",
+      "alert_slots": [
+        "H1"
+      ],
+      "ema21_pullback_last_alert": "2026-11-25T05:17:20.385542",
+      "ema21_pullback_last_price": 663.3499755859375,
+      "ema21_sent": true
     },
     "TARC": {
       "sma50": 123.02899978637696,
@@ -28884,7 +28891,12 @@
       "rsi_ema_200": 48.6932,
       "ag": 4.244156,
       "al": 6.320987,
-      "last_close": 924.3
+      "last_close": 924.3,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:17:44.218072",
+      "rsi_bounce_last_price": 931.0
     },
     "JUSTDIAL": {
       "mcap_cr": 5634.49837,
@@ -32940,7 +32952,12 @@
       "ag": 1.282585,
       "al": 1.214933,
       "last_close": 93.45,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:17:47.809695",
+      "rsi_bounce_last_price": 95.44000244140625
     },
     "BEDMUTHA": {
       "mcap_cr": 342.0,
@@ -33024,7 +33041,12 @@
       "ag": 0.795208,
       "al": 0.741306,
       "last_close": 54.97,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:17:49.216945",
+      "rsi_bounce_last_price": 55.20000076293945
     },
     "BLSE": {
       "mcap_cr": 2673.0,
@@ -33436,7 +33458,12 @@
       "ag": 4.522809,
       "al": 6.334312,
       "last_close": 492.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:17:50.741541",
+      "rsi_bounce_last_price": 492.79998779296875
     },
     "DIFFNKG": {
       "mcap_cr": 1681.0,
@@ -34355,7 +34382,12 @@
       "ag": 0.281156,
       "al": 0.39275,
       "last_close": 29.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:17:52.943276",
+      "rsi_bounce_last_price": 29.399999618530273
     },
     "IGPL": {
       "mcap_cr": 1632.0,
@@ -35002,7 +35034,12 @@
       "ag": 3.510512,
       "al": 3.317175,
       "last_close": 265.35,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:17:55.705486",
+      "rsi_bounce_last_price": 268.2300109863281
     },
     "KRISHANA": {
       "mcap_cr": 7518.0,
@@ -35142,7 +35179,12 @@
       "ag": 1.067459,
       "al": 2.355636,
       "last_close": 190.81,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:17:56.968847",
+      "rsi_bounce_last_price": 192.3300018310547
     },
     "LMW": {
       "mcap_cr": 18936.0,

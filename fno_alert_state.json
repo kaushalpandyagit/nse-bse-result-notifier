@@ -1827,7 +1827,13 @@
     "trigger_date": "2026-11-18",
     "ref_high": 1710.0,
     "ref_low": 1639.6,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-25T05:16:03.415517",
+    "fno_low_breach_last_price": 1616.5
   },
   "ENIL": {
     "trigger_date": "2026-11-20",
