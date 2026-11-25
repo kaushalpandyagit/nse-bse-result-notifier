@@ -27329,7 +27329,12 @@
       "rsi_ema_200": 56.9512,
       "ag": 3.183303,
       "al": 3.070856,
-      "last_close": 364.05
+      "last_close": 364.05,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:17:53.010588",
+      "rsi_bounce_last_price": 367.8999938964844
     },
     "DOMS": {
       "mcap_cr": 12896.878876019531,
@@ -33675,7 +33680,12 @@
       "ag": 2.64273,
       "al": 3.116721,
       "last_close": 253.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:17:57.863124",
+      "rsi_bounce_last_price": 255.9499969482422
     },
     "ESAFSFB": {
       "mcap_cr": 2388.0,
@@ -34482,7 +34492,12 @@
       "ag": 0.842077,
       "al": 1.777059,
       "last_close": 110.01,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:17:59.728676",
+      "rsi_bounce_last_price": 111.12999725341797
     },
     "INDOCO": {
       "mcap_cr": 2259.0,
@@ -35742,7 +35757,12 @@
       "ag": 0.222493,
       "al": 0.302651,
       "last_close": 24.86,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:18:02.898747",
+      "rsi_bounce_last_price": 25.229999542236328
     },
     "MWL": {
       "mcap_cr": 1212.0,
