@@ -18,6 +18,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 7: Descending Trendline 3+ touches + Floor (floor bounce RR / trendline breakout).
 - SETUP 8: RSI Bounce (Chartink port: 4H RSI crossing above EMA of daily RSI, buyers > sellers).
 - SETUP 10: Downtrend reversal, EARLY (first daily RSI close above 50 after an oversold bottom) - patch_github_reversal_early.py.
+- SETUP 9 INTRADAY: the SETUP 9 turn from 10:15 (strong candle) + held/faded check at 14:45 - patch_github_reversal_intraday.py.
 - SETUP 9: Downtrend reversal, higher low (long fall, oversold bottom, bounce, higher low, turn day) - patch_github_reversal.py.
 - RSI_ scanners: the price scanners applied to the RSI line itself (RSI_Trendline, RSI_High60), leaders only.
 - EoD Sector RSI Calculation & Persistent Local Sector Cache.
@@ -2883,7 +2884,8 @@ def _rev_quotes(fyers, symbols: list) -> dict:
                     v = row.get("v") or {}
                     sym = str(row.get("n") or v.get("symbol") or "").split(":")[-1].rsplit("-", 1)[0]
                     if row.get("s") == "ok" and sym in chunk and v.get("lp") and v.get("low_price"):
-                        out[sym] = {"price": float(v["lp"]), "low": float(v["low_price"]), "prev": float(v.get("prev_close_price") or 0)}
+                        out[sym] = {"price": float(v["lp"]), "low": float(v["low_price"]), "prev": float(v.get("prev_close_price") or 0),
+                                    "high": float(v.get("high_price") or 0), "open": float(v.get("open_price") or 0)}
             except Exception as e:
                 log.warning("Reversal: Fyers quotes failed (%s).", e)
     return out
@@ -2902,7 +2904,8 @@ def _rev_quotes_yahoo(symbols: list) -> dict:
             try:
                 df = (data[f"{s}.NS"] if len(chunk) > 1 else data).dropna(subset=["Low", "Close"])
                 if len(df) >= 2 and df.index[-1].date() == today:
-                    out[s] = {"price": float(df["Close"].iloc[-1]), "low": float(df["Low"].iloc[-1]), "prev": float(df["Close"].iloc[-2])}
+                    out[s] = {"price": float(df["Close"].iloc[-1]), "low": float(df["Low"].iloc[-1]), "prev": float(df["Close"].iloc[-2]),
+                              "high": float(df["High"].iloc[-1]), "open": float(df["Open"].iloc[-1])}
             except Exception:
                 continue
     return out
@@ -2954,7 +2957,8 @@ def check_reversal_scanner(momentum_state: dict, fyers) -> dict:
         day = (q["price"] / f["prev_close"] - 1) * 100
         return (f"₹{q['price']:.2f} ({day:+.1f}%) | fell {f['hi']:g} → {f['lo']:g} (-{(1 - f['lo'] / f['hi']) * 100:.0f}%, "
                 f"RSI {f['rsi_low']:g} on {f['lo_date'][5:]}) | bounce {f['b']:g} ({f['b_date'][5:]}) | "
-                f"higher low {hl:g} (+{(hl / f['lo'] - 1) * 100:.0f}% over the bottom)")
+                f"higher low {hl:g} (+{(hl / f['lo'] - 1) * 100:.0f}% over the bottom)"
+                + (" | ⚠️ upper wick" if _revi_pos(q) < REVI_HOLD_POS else ""))
     if hits and REV_SEND_TELEGRAM:
         lines = [f"🔄 <b>Downtrend reversal - higher low</b>: {len(hits)} stock(s) turning up today "
                  f"(of {len(uni)} set up)\n<i>Long fall, oversold bottom, first bounce, a low above the bottom, today above yesterday's high.</i>"]
@@ -2973,6 +2977,137 @@ def check_reversal_scanner(momentum_state: dict, fyers) -> dict:
         last[s] = today
     momentum_state["rev_scan"] = {"date": today, "at": now_ist.strftime("%H:%M"), "set_up": len(uni), "priced": len(quotes),
                                   "src": src, "hits": len(hits)}
+    return momentum_state
+
+
+# ----------------------------------------------------------------------
+# SETUP 9 INTRADAY: THE HIGHER-LOW TURN EARLY IN THE DAY + 14:45 FOLLOW-UP (patch_github_reversal_intraday.py)
+# ----------------------------------------------------------------------
+REVI_FROM = (10, 15)          # first check (the opening hour's range is set by then)
+REVI_TO = (14, 30)            # no new early alerts after this; SETUP 9 itself runs from REV_AFTER
+REVI_EVERY_MIN = 15           # at most one check per this many minutes
+REVI_RANGE_POS = 0.6          # price in the top 40% of today's range so far (no long upper wick)
+REVI_ABOVE_OPEN = True        # and at or above today's open
+REVI_HOLD_POS = 0.5           # at the follow-up, "held" needs price in the top half of the day's range
+REVI_SEND_TELEGRAM = True
+
+
+def _revi_pos(q: dict) -> float:
+    """Where the price sits in today's range: 1 = at the high, 0 = at the low."""
+    hi, lo = float(q.get("high") or 0), float(q.get("low") or 0)
+    return (q["price"] - lo) / (hi - lo) if hi > lo else 1.0
+
+
+def _revi_quotes(fyers, syms: list, now_ist) -> dict:
+    quotes = _rev_quotes(fyers, syms) if fyers else {}
+    if len(quotes) < 0.8 * len(syms):
+        quotes.update(_rev_quotes_yahoo([s for s in syms if s not in quotes]))
+    return quotes
+
+
+def check_reversal_intraday_scanner(momentum_state: dict, fyers) -> dict:
+    """SETUP 9 early in the day (REVI_FROM to REVI_TO), and at REV_AFTER a held / faded follow-up of those alerts."""
+    if not is_market_hours_now():
+        return momentum_state
+    now_ist = get_ist_now()
+    today, hm = now_ist.strftime("%Y-%m-%d"), (now_ist.hour, now_ist.minute)
+    st = momentum_state.get("rev_intraday") or {}
+    if st.get("date") != today:
+        st = {"date": today, "sent": {}, "followup": False, "last_check": ""}
+    momentum_state["rev_intraday"] = st
+    uni = momentum_state.get("reversal_universe") or {}
+
+    def _nm(sym):
+        try:
+            return _list_name(sym).replace("<b>", "").replace("</b>", "")
+        except Exception:
+            return sym.replace("&", "&amp;").replace("<", "&lt;")
+
+    if hm >= REV_AFTER:                      # the follow-up
+        if not st["sent"] or st.get("followup"):
+            return momentum_state
+        quotes = _revi_quotes(fyers, list(st["sent"]), now_ist)
+        held, faded = [], []
+        for s, a in st["sent"].items():
+            q, f = quotes.get(s), uni.get(s) or {}
+            if not q or not f:
+                faded.append(f"• <b>{_nm(s)}</b> no price now (alert ₹{a['price']:g} at {a['at']})")
+                continue
+            pos = _revi_pos(q)
+            txt = f"₹{q['price']:.2f} ({(q['price'] / f['prev_close'] - 1) * 100:+.1f}%) vs ₹{a['price']:g} at {a['at']}"
+            why = ("broke the higher low" if q["low"] < f["lo"] * REV_HL_MIN
+                   else "back below yesterday's high" if q["price"] <= f["prev_high"]
+                   else f"gave back the +{REV_DAY_UP:g}%" if q["price"] < f["prev_close"] * (1 + REV_DAY_UP / 100)
+                   else f"upper wick (price in the bottom {pos * 100:.0f}% of the day's range)" if pos < REVI_HOLD_POS
+                   else "")
+            if not why:      # going through the bounce high is strength, not a fade
+                held.append(f"• <b>{_nm(s)}</b> {txt}" + (f" - through the bounce high {f['b']:g}" if q["price"] >= f["b"] else ""))
+            else:
+                faded.append(f"• <b>{_nm(s)}</b> {txt} - {why}")
+        lines = [f"🔄 <b>Reversal - early alerts, 14:45 check</b>: {len(held)} held, {len(faded)} faded"]
+        if held:
+            lines += ["✅ <b>Held</b>"] + held
+        if faded:
+            lines += ["❌ <b>Faded</b>"] + faded
+        if REVI_SEND_TELEGRAM and not send_telegram_message("\n".join(lines)):
+            log.error("Reversal follow-up NOT delivered; will retry next run.")
+            return momentum_state
+        st["followup"] = True
+        log.info("Reversal intraday follow-up: %d held, %d faded.", len(held), len(faded))
+        return momentum_state
+
+    if hm < REVI_FROM or hm > REVI_TO:
+        return momentum_state
+    if st.get("last_check"):
+        h, m = map(int, st["last_check"].split(":"))
+        if (hm[0] * 60 + hm[1]) - (h * 60 + m) < REVI_EVERY_MIN:
+            return momentum_state
+    last = momentum_state.get("rev_last") or {}
+    cut = (now_ist.date() - datetime.timedelta(days=REV_COOL_DAYS)).isoformat()
+    syms = [s for s in uni if str(last.get(s, "")) < cut and s not in st["sent"]]
+    if not syms:
+        st["last_check"] = now_ist.strftime("%H:%M")
+        return momentum_state
+    quotes = _revi_quotes(fyers, syms, now_ist)
+    if len(quotes) < 0.5 * len(syms):
+        log.warning("Reversal intraday: prices for only %d of %d stocks; will try again on the next run.", len(quotes), len(syms))
+        return momentum_state
+    hits = []
+    for s, q in quotes.items():
+        f = uni.get(s) or {}
+        try:
+            hl = reversal_hit(f, q["price"], q["low"])
+        except Exception:
+            hl = None
+        if hl is None or _revi_pos(q) < REVI_RANGE_POS:
+            continue
+        if REVI_ABOVE_OPEN and q.get("open") and q["price"] < q["open"]:
+            continue
+        hits.append((s, q, f, hl))
+    hits.sort(key=lambda x: x[2]["hi"] / x[2]["lo"], reverse=True)
+    log.info("Reversal intraday (%s): %d set up, %d priced, %d forming.", now_ist.strftime("%H:%M"), len(syms), len(quotes), len(hits))
+
+    def _line(q, f, hl):
+        return (f"₹{q['price']:.2f} ({(q['price'] / f['prev_close'] - 1) * 100:+.1f}%) | day range position {_revi_pos(q) * 100:.0f}% | "
+                f"fell {f['hi']:g} → {f['lo']:g} (-{(1 - f['lo'] / f['hi']) * 100:.0f}%) | bounce {f['b']:g} | "
+                f"higher low {hl:g} | yday high {f['prev_high']:g}")
+    if hits and REVI_SEND_TELEGRAM:
+        lines = [f"⏳ <b>Downtrend reversal - forming ({now_ist.strftime('%H:%M')})</b>: {len(hits)} stock(s)\n"
+                 f"<i>SETUP 9 rule met early, strong so far (top of the day's range, above the open). "
+                 f"Not confirmed until the 14:45 check.</i>"]
+        lines += [f"• <b>{_nm(s)}</b> {_line(q, f, hl)}" for s, q, f, hl in hits[:REV_MAX_LINES]]
+        if len(hits) > REV_MAX_LINES:
+            lines.append(f"... and {len(hits) - REV_MAX_LINES} more (all are in the trigger list)")
+        if not send_telegram_message("\n".join(lines)):
+            log.error("Reversal intraday message NOT delivered; will retry next run.")
+            return momentum_state
+    global _LAST_ALERT_TEXT
+    for s, q, f, hl in hits:
+        safe = s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        _LAST_ALERT_TEXT = f"<b>{safe}</b> Downtrend reversal forming (intraday)\n{_line(q, f, hl)}"
+        _log_trigger("reversal_hl_intraday", q["price"], (momentum_state.get("watchlist") or {}).get(s) or {})
+        st["sent"][s] = {"price": round(q["price"], 2), "at": now_ist.strftime("%H:%M")}
+    st["last_check"] = now_ist.strftime("%H:%M")
     return momentum_state
 
 
@@ -3651,6 +3786,10 @@ def main():
                     momentum_state = check_reversal_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("Reversal scanner failed: %s", e)
+                try:      # SETUP 9 intraday (patch_github_reversal_intraday.py)
+                    momentum_state = check_reversal_intraday_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Reversal intraday scanner failed: %s", e)
                 try:      # SETUP 10 (patch_github_reversal_early.py)
                     momentum_state = check_reversal_early_scanner(momentum_state, fyers)
                 except Exception as e:
@@ -3689,6 +3828,10 @@ def main():
                     momentum_state = check_reversal_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("Reversal scanner failed: %s", e)
+                try:      # SETUP 9 intraday (patch_github_reversal_intraday.py)
+                    momentum_state = check_reversal_intraday_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Reversal intraday scanner failed: %s", e)
                 try:      # SETUP 10 (patch_github_reversal_early.py)
                     momentum_state = check_reversal_early_scanner(momentum_state, fyers)
                 except Exception as e:
