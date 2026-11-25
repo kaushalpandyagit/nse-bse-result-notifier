@@ -2182,5 +2182,11 @@
     "ref_high": 57.79,
     "ref_low": 53.12,
     "status": "Active"
+  },
+  "LIBAS": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 11.37,
+    "ref_low": 10.89,
+    "status": "Active"
   }
 }
