@@ -797,7 +797,13 @@
     "price_change_pct": -2.45,
     "deliv_pct": 60.2,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-25T05:46:09.331814",
+    "em_low_breach_last_price": 755.1500244140625
   },
   "MARALOVER": {
     "trigger_date": "2026-11-24",

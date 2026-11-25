@@ -26516,7 +26516,12 @@
       "rsi_ema_200": 51.6695,
       "ag": 19.381032,
       "al": 20.14532,
-      "last_close": 2008.1
+      "last_close": 2008.1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:47:30.956265",
+      "rsi_bounce_last_price": 2042.699951171875
     },
     "BIRET": {
       "mcap_cr": 21866.531017281,
