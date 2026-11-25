@@ -8985,10 +8985,11 @@
       "rs_rank": 95.0,
       "session_date": "2026-11-25",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "vol_breakout_last_alert": "2026-11-25T05:01:39.233088",
-      "vol_breakout_last_price": 307.010009765625
+      "vol_breakout_last_alert": "2026-11-25T08:01:46.633400",
+      "vol_breakout_last_price": 310.6499938964844
     },
     "GRINDWELL": {
       "sma50": 1914.163994140625,
@@ -26758,7 +26759,12 @@
       "rsi_ema_200": 49.8044,
       "ag": 7.1901,
       "al": 13.876922,
-      "last_close": 977.1
+      "last_close": 977.1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T08:02:42.628403",
+      "rsi_bounce_last_price": 988.7000122070312
     },
     "CARTRADE": {
       "mcap_cr": 12845.775530932251,
@@ -30925,7 +30931,12 @@
       "rsi_ema_200": 52.3613,
       "ag": 10.15368,
       "al": 19.451456,
-      "last_close": 1068.5
+      "last_close": 1068.5,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T08:02:45.411185",
+      "rsi_bounce_last_price": 1079.199951171875
     },
     "SFL": {
       "mcap_cr": 6550.014640415174,
