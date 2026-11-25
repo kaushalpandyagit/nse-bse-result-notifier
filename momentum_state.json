@@ -28741,7 +28741,12 @@
       "rsi_ema_200": 48.6025,
       "ag": 1.942401,
       "al": 2.446658,
-      "last_close": 278.7
+      "last_close": 278.7,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T09:47:04.274663",
+      "rsi_bounce_last_price": 280.6000061035156
     },
     "JAMNAAUTO": {
       "mcap_cr": 5412.5925570610425,
@@ -30923,7 +30928,12 @@
       "rsi_ema_200": 47.7941,
       "ag": 3.19072,
       "al": 3.862395,
-      "last_close": 312.7
+      "last_close": 312.7,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T09:47:05.994680",
+      "rsi_bounce_last_price": 314.54998779296875
     },
     "SENORES": {
       "mcap_cr": 4921.746724688965,
@@ -33381,7 +33391,12 @@
       "ag": 2.315618,
       "al": 2.88624,
       "last_close": 351.45,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T09:47:07.894423",
+      "rsi_bounce_last_price": 356.0
     },
     "CSLFINANCE": {
       "mcap_cr": 534.0,
@@ -33841,7 +33856,12 @@
       "ag": 0.568324,
       "al": 0.921488,
       "last_close": 71.53,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T09:47:08.953701",
+      "rsi_bounce_last_price": 73.11000061035156
     },
     "EXPLEOSOL": {
       "mcap_cr": 1180.0,
@@ -36242,7 +36262,12 @@
       "ag": 0.966775,
       "al": 1.226172,
       "last_close": 126.01,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T09:47:11.735935",
+      "rsi_bounce_last_price": 130.58999633789062
     },
     "PROZONER": {
       "mcap_cr": 848.0,
