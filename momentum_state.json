@@ -31653,7 +31653,12 @@
       "rsi_ema_200": 48.722,
       "ag": 13.884581,
       "al": 26.860489,
-      "last_close": 1539.6
+      "last_close": 1539.6,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T08:47:19.417134",
+      "rsi_bounce_last_price": 1557.5
     },
     "TEJASNET": {
       "mcap_cr": 7179.7881318,
@@ -32470,7 +32475,12 @@
       "ag": 1.407017,
       "al": 1.95854,
       "last_close": 118.3,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T08:47:20.544743",
+      "rsi_bounce_last_price": 118.9000015258789
     },
     "ADVENTHTL": {
       "mcap_cr": 637.0,
@@ -33385,7 +33395,12 @@
       "ag": 2.042955,
       "al": 1.777483,
       "last_close": 228.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T08:47:22.073284",
+      "rsi_bounce_last_price": 229.07000732421875
     },
     "CYIENTDLM": {
       "mcap_cr": 6537.0,
