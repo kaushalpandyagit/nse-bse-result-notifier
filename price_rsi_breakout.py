@@ -2832,6 +2832,33 @@ def reversal_hit(f: dict, price: float, day_low: float):
     return hl
 
 
+REV_FETCH_RETRIES = 2          # rounds of re-asking Yahoo for stocks a bulk download dropped (patch_github_reversal_retry.py)
+REV_RETRY_BATCH = 50
+
+
+def _fetch_history_retry(tickers: list) -> dict:
+    """fetch_batch_history, then the dropped tickers again in small batches after a pause."""
+    got = fetch_batch_history(tickers)
+    miss = [t for t in tickers if t not in got]
+    for k in range(REV_FETCH_RETRIES):
+        if not miss:
+            break
+        time.sleep(10 * (k + 1))     # a rate-limited Yahoo needs a real pause
+        for i in range(0, len(miss), REV_RETRY_BATCH):
+            got.update(fetch_batch_history(miss[i:i + REV_RETRY_BATCH]))
+            time.sleep(1)
+        left = [t for t in miss if t not in got]
+        if len(left) == len(miss):
+            break
+        miss = left
+    _REV_FETCH_STATS["asked"] += len(tickers)
+    _REV_FETCH_STATS["missing"] += len([t for t in tickers if t not in got])
+    return got
+
+
+_REV_FETCH_STATS = {"asked": 0, "missing": 0}
+
+
 def build_reversal_extras(skip) -> dict:
     """SETUP 9 levels for the laptop's extra stocks (REV_EXTRA_FILE) that the index list does not hold."""
     try:
@@ -2843,9 +2870,10 @@ def build_reversal_extras(skip) -> dict:
         return {}
     out, names = {}, sorted(extra)
     _EARLY_EXTRA.clear()        # SETUP 10 levels of the same stocks, filled below
+    _REV_FETCH_STATS.update(asked=0, missing=0)
     for i in range(0, len(names), 250):
         chunk = names[i:i + 250]
-        hist = fetch_batch_history([f"{s}.NS" for s in chunk])
+        hist = _fetch_history_retry([f"{s}.NS" for s in chunk])
         for sym in chunk:
             df = hist.get(f"{sym}.NS")
             if df is None or df.empty or "Close" not in df.columns:
@@ -2866,7 +2894,8 @@ def build_reversal_extras(skip) -> dict:
             if f:
                 f["x"] = 1
                 out[sym] = f
-    log.info("Reversal: %d extra stocks listed, %d set up.", len(extra), len(out))
+    log.info("Reversal: %d extra stocks listed, %d set up (no Yahoo history for %d after retries).", len(extra), len(out),
+             _REV_FETCH_STATS["missing"])
     return out
 
 
