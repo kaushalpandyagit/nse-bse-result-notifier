@@ -8984,7 +8984,11 @@
       "rsi_al": 1.18295,
       "rs_rank": 95.0,
       "session_date": "2026-11-25",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-25T05:01:39.233088",
+      "vol_breakout_last_price": 307.010009765625
     },
     "GRINDWELL": {
       "sma50": 1914.163994140625,
@@ -26762,7 +26766,12 @@
       "rsi_ema_200": 50.891,
       "ag": 0.515466,
       "al": 0.636657,
-      "last_close": 190.35
+      "last_close": 190.35,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:02:21.091207",
+      "rsi_bounce_last_price": 190.5399932861328
     },
     "CCL": {
       "mcap_cr": 12556.359178507422,
@@ -32069,7 +32078,12 @@
       "rsi_ema_200": 50.7441,
       "ag": 60.580051,
       "al": 87.060563,
-      "last_close": 9587.0
+      "last_close": 9587.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:02:23.417211",
+      "rsi_bounce_last_price": 9678.0
     },
     "VTL": {
       "mcap_cr": 15146.821235,
@@ -32429,7 +32443,12 @@
       "ag": 0.22327,
       "al": 0.255431,
       "last_close": 201.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:02:24.498264",
+      "rsi_bounce_last_price": 201.07000732421875
     },
     "AGARWALEYE": {
       "mcap_cr": 17344.0,
@@ -34491,7 +34510,12 @@
       "ag": 1.881656,
       "al": 2.620686,
       "last_close": 278.55,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T05:02:26.699760",
+      "rsi_bounce_last_price": 287.95001220703125
     },
     "INTLCONV": {
       "mcap_cr": 480.0,
