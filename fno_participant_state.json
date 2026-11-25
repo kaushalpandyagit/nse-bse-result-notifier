@@ -1,17 +1,5 @@
 {
  "history": {
-  "2026-11-09": {
-   "smart_net": {
-    "net_fut": -111216,
-    "net_call": -44389,
-    "net_put": 279107
-   },
-   "retail_net": {
-    "net_fut": 80759,
-    "net_call": 30795,
-    "net_put": -383339
-   }
-  },
   "2026-11-11": {
    "smart_net": {
     "net_fut": -94160,
@@ -137,6 +125,20 @@
    },
    "fii_long_pct": 20.131102747508983,
    "fii_net_fut": -90949
+  },
+  "2026-11-25": {
+   "smart_net": {
+    "net_fut": -84893,
+    "net_call": -74740,
+    "net_put": 385052
+   },
+   "retail_net": {
+    "net_fut": 69839,
+    "net_call": 67627,
+    "net_put": -430959
+   },
+   "fii_long_pct": 23.79634753735473,
+   "fii_net_fut": -85230
   }
  }
 }

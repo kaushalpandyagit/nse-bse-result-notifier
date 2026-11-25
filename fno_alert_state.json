@@ -2122,5 +2122,65 @@
     "ref_high": 10.27,
     "ref_low": 9.81,
     "status": "Active"
+  },
+  "MHRIL": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 217.95,
+    "ref_low": 193.73,
+    "status": "Active"
+  },
+  "ZIMLAB": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 164.39,
+    "ref_low": 139.6,
+    "status": "Active"
+  },
+  "BRIGADE": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 621.0,
+    "ref_low": 580.0,
+    "status": "Active"
+  },
+  "PERMAGN": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 1563.0,
+    "ref_low": 1268.1,
+    "status": "Active"
+  },
+  "MEDPLUS": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 610.5,
+    "ref_low": 597.35,
+    "status": "Active"
+  },
+  "BRIGHTBR": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 221.9,
+    "ref_low": 211.0,
+    "status": "Active"
+  },
+  "BANG": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 28.99,
+    "ref_low": 26.3,
+    "status": "Active"
+  },
+  "BENARAS": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 10329.0,
+    "ref_low": 10200.0,
+    "status": "Active"
+  },
+  "PLASTIBLEN": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 174.12,
+    "ref_low": 164.99,
+    "status": "Active"
+  },
+  "RAJOOENG": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 57.79,
+    "ref_low": 53.12,
+    "status": "Active"
   }
 }

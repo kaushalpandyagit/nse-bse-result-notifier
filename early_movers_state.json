@@ -1,19 +1,13 @@
 {
   "LAMBODHARA": {
-    "trigger_date": "2026-11-10",
-    "ref_high": 134.0,
-    "ref_low": 127.0,
-    "ref_close": 128.79,
-    "price_change_pct": -2.5,
-    "deliv_pct": 62.7,
+    "trigger_date": "2026-11-25",
+    "ref_high": 129.49,
+    "ref_low": 121.5,
+    "ref_close": 122.16,
+    "price_change_pct": -2.48,
+    "deliv_pct": 65.6,
     "direction": "down",
-    "status": "Breached Low",
-    "session_date": "2026-11-12",
-    "alert_slots": [
-      "H2"
-    ],
-    "em_low_breach_last_alert": "2026-11-12T09:46:09.346419",
-    "em_low_breach_last_price": 126.30000305175781
+    "status": "Active"
   },
   "PRUDMOULI": {
     "trigger_date": "2026-11-10",
@@ -880,6 +874,96 @@
     "ref_close": 0.8,
     "price_change_pct": -2.44,
     "deliv_pct": 85.6,
+    "direction": "down",
+    "status": "Active"
+  },
+  "PRITIKAUTO": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 14.94,
+    "ref_low": 13.68,
+    "ref_close": 14.07,
+    "price_change_pct": -2.49,
+    "deliv_pct": 60.6,
+    "direction": "down",
+    "status": "Active"
+  },
+  "SUDARSHAN": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 31.3,
+    "ref_low": 29.51,
+    "ref_close": 30.12,
+    "price_change_pct": -2.49,
+    "deliv_pct": 76.6,
+    "direction": "down",
+    "status": "Active"
+  },
+  "PYRAMID": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 150.8,
+    "ref_low": 145.0,
+    "ref_close": 145.53,
+    "price_change_pct": -2.49,
+    "deliv_pct": 71.6,
+    "direction": "down",
+    "status": "Active"
+  },
+  "DRCSYSTEMS": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 11.15,
+    "ref_low": 10.5,
+    "ref_close": 10.58,
+    "price_change_pct": -2.49,
+    "deliv_pct": 65.2,
+    "direction": "down",
+    "status": "Active"
+  },
+  "MUTHOOTCAP": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 193.99,
+    "ref_low": 187.33,
+    "ref_close": 191.99,
+    "price_change_pct": 2.49,
+    "deliv_pct": 89.0,
+    "direction": "up",
+    "status": "Active"
+  },
+  "XCHANGING": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 57.68,
+    "ref_low": 55.0,
+    "ref_close": 55.16,
+    "price_change_pct": -2.48,
+    "deliv_pct": 71.3,
+    "direction": "down",
+    "status": "Active"
+  },
+  "VMSTMT": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 39.89,
+    "ref_low": 38.4,
+    "ref_close": 38.76,
+    "price_change_pct": -2.47,
+    "deliv_pct": 71.0,
+    "direction": "down",
+    "status": "Active"
+  },
+  "SVPGLOB": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 3.8,
+    "ref_low": 3.51,
+    "ref_close": 3.56,
+    "price_change_pct": -2.47,
+    "deliv_pct": 80.6,
+    "direction": "down",
+    "status": "Active"
+  },
+  "OILCOUNTUB": {
+    "trigger_date": "2026-11-25",
+    "ref_high": 62.8,
+    "ref_low": 58.3,
+    "ref_close": 58.96,
+    "price_change_pct": -2.46,
+    "deliv_pct": 78.7,
     "direction": "down",
     "status": "Active"
   }
