@@ -34188,7 +34188,12 @@
       "ag": 1.626156,
       "al": 2.500155,
       "last_close": 266.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T09:31:07.021703",
+      "rsi_bounce_last_price": 269.79998779296875
     },
     "GRMOVER": {
       "mcap_cr": 1803.0,
@@ -37977,5 +37982,11 @@
     "at": "09:31",
     "priced": 774,
     "hits": 20
+  },
+  "rev_intraday": {
+    "date": "2026-11-25",
+    "sent": {},
+    "followup": false,
+    "last_check": ""
   }
 }
