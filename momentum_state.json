@@ -32589,7 +32589,12 @@
       "ag": 4.12765,
       "al": 6.515694,
       "last_close": 751.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T07:17:27.824057",
+      "rsi_bounce_last_price": 757.5
     },
     "ALICON": {
       "mcap_cr": 1626.0,
@@ -35811,7 +35816,12 @@
       "ag": 26.953285,
       "al": 33.742383,
       "last_close": 2718.3999,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T07:17:31.451701",
+      "rsi_bounce_last_price": 2823.0
     },
     "NINSYS": {
       "mcap_cr": 1724.0,
