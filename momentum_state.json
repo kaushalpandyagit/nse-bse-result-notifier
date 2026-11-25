@@ -26932,7 +26932,12 @@
       "rsi_ema_200": 52.5506,
       "ag": 1.00762,
       "al": 1.641367,
-      "last_close": 232.61
+      "last_close": 232.61,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T07:31:16.015622",
+      "rsi_bounce_last_price": 234.3300018310547
     },
     "CHALET": {
       "mcap_cr": 19333.895967541368,
