@@ -268,12 +268,11 @@
     ]
   },
   "arb_GANGESSECU": {
-    "spread_last_alert": "2026-11-23T08:31:09.006434",
-    "spread_last_price": 2.5605213788915684,
-    "session_date": "2026-11-23",
+    "spread_last_alert": "2026-11-25T04:48:09.206224",
+    "spread_last_price": 3.5631666134927436,
+    "session_date": "2026-11-25",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "arb_BALRAMCHIN": {

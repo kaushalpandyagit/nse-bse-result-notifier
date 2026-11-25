@@ -26344,7 +26344,12 @@
       "rsi_ema_200": 51.8357,
       "ag": 18.431376,
       "al": 35.100852,
-      "last_close": 2289.7
+      "last_close": 2289.7,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T04:47:36.091947",
+      "rsi_bounce_last_price": 2328.60009765625
     },
     "BAJAJCON": {
       "mcap_cr": 5298.532111641904,
@@ -33112,7 +33117,12 @@
       "ag": 3.049003,
       "al": 4.295229,
       "last_close": 470.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T04:47:39.927416",
+      "rsi_bounce_last_price": 475.04998779296875
     },
     "CELLECOR": {
       "mcap_cr": 640.0,
@@ -33299,7 +33309,12 @@
       "ag": 1.468045,
       "al": 1.437604,
       "last_close": 142.16,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T04:47:41.211675",
+      "rsi_bounce_last_price": 144.10000610351562
     },
     "DBOL": {
       "mcap_cr": 863.0,
@@ -33650,7 +33665,12 @@
       "ag": 25.496588,
       "al": 26.283831,
       "last_close": 2669.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T04:47:43.201419",
+      "rsi_bounce_last_price": 2737.89990234375
     },
     "EVERESTIND": {
       "mcap_cr": 643.0,
@@ -33945,7 +33965,12 @@
       "ag": 13.898522,
       "al": 17.565178,
       "last_close": 1180.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T04:47:44.445543",
+      "rsi_bounce_last_price": 1182.199951171875
     },
     "GNA": {
       "mcap_cr": 2401.0,
@@ -36474,7 +36499,12 @@
       "ag": 0.574763,
       "al": 0.537641,
       "last_close": 74.63,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T04:47:48.933494",
+      "rsi_bounce_last_price": 75.26000213623047
     },
     "SEAMECLTD": {
       "mcap_cr": 3897.0,

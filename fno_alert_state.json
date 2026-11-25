@@ -2085,7 +2085,13 @@
     "trigger_date": "2026-11-24",
     "ref_high": 260.7,
     "ref_low": 239.5,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-25T04:46:11.535238",
+    "fno_high_breach_last_price": 261.0
   },
   "MIIL": {
     "trigger_date": "2026-11-24",
