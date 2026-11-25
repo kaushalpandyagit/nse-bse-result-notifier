@@ -37894,8 +37894,22 @@
     }
   },
   "early_last": {},
-  "early_scan": {},
-  "rev_scan": {},
+  "early_scan": {
+    "date": "2026-11-25",
+    "at": "14:47",
+    "set_up": 3,
+    "priced": 2,
+    "src": "yahoo",
+    "hits": 0
+  },
+  "rev_scan": {
+    "date": "2026-11-25",
+    "at": "14:47",
+    "set_up": 58,
+    "priced": 54,
+    "src": "yahoo",
+    "hits": 0
+  },
   "last_sector_report_date": "2026-11-25",
   "ipo_watch": {
     "DHOOTTRANS": {
