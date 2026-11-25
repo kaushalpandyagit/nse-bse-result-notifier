@@ -1581,7 +1581,13 @@
     "trigger_date": "2026-11-16",
     "ref_high": 318.95,
     "ref_low": 295.5,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-25T07:45:58.904870",
+    "fno_low_breach_last_price": 295.3999938964844
   },
   "SHRADDHA": {
     "trigger_date": "2026-11-17",
