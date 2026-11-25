@@ -1977,7 +1977,13 @@
     "trigger_date": "2026-11-20",
     "ref_high": 1163.6,
     "ref_low": 1140.4,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-25T03:46:13.602104",
+    "fno_high_breach_last_price": 1186.5
   },
   "KAMAHOLD": {
     "trigger_date": "2026-11-20",
@@ -2007,7 +2013,13 @@
     "trigger_date": "2026-11-24",
     "ref_high": 68.8,
     "ref_low": 66.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-25T03:46:14.908433",
+    "fno_low_breach_last_price": 64.18000030517578
   },
   "HAVISHA": {
     "trigger_date": "2026-11-24",

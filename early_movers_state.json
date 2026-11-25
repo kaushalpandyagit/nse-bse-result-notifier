@@ -801,7 +801,13 @@
     "price_change_pct": -2.45,
     "deliv_pct": 85.7,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-25T03:46:24.345346",
+    "em_high_breach_last_price": 57.70000076293945
   },
   "ELGIEQUIP": {
     "trigger_date": "2026-11-24",
