@@ -30840,7 +30840,12 @@
       "rsi_ema_200": 48.454,
       "ag": 1.537206,
       "al": 2.383219,
-      "last_close": 193.47
+      "last_close": 193.47,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T08:30:53.273402",
+      "rsi_bounce_last_price": 200.07000732421875
     },
     "SARDAEN": {
       "mcap_cr": 15947.013943697082,
@@ -35922,7 +35927,12 @@
       "ag": 1.723522,
       "al": 2.943957,
       "last_close": 149.07,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T08:30:56.330373",
+      "rsi_bounce_last_price": 151.5
     },
     "OMAXAUTO": {
       "mcap_cr": 426.0,
