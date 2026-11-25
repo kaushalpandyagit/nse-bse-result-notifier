@@ -31149,7 +31149,12 @@
       "rsi_ema_200": 49.819,
       "ag": 4.019184,
       "al": 6.021029,
-      "last_close": 482.5
+      "last_close": 482.5,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T08:18:16.581845",
+      "rsi_bounce_last_price": 483.8500061035156
     },
     "SKYGOLD": {
       "mcap_cr": 12513.8098272,
@@ -35785,7 +35790,12 @@
       "ag": 1.056381,
       "al": 1.987,
       "last_close": 133.96,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T08:18:21.340036",
+      "rsi_bounce_last_price": 137.14999389648438
     },
     "MUKKA": {
       "mcap_cr": 757.0,
