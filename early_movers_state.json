@@ -837,7 +837,13 @@
     "price_change_pct": -2.44,
     "deliv_pct": 82.6,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-25T04:30:16.396839",
+    "em_high_breach_last_price": 28.0
   },
   "INDTERRAIN": {
     "trigger_date": "2026-11-24",

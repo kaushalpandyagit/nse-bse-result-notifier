@@ -32738,7 +32738,12 @@
       "ag": 3.56051,
       "al": 2.908844,
       "last_close": 327.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T04:32:39.123413",
+      "rsi_bounce_last_price": 328.45001220703125
     },
     "ASAHISONG": {
       "mcap_cr": 454.0,
@@ -36272,7 +36277,12 @@
       "ag": 2.501036,
       "al": 3.490083,
       "last_close": 313.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T04:32:47.264424",
+      "rsi_bounce_last_price": 315.1499938964844
     },
     "SAKAR": {
       "mcap_cr": 2247.0,
@@ -36567,7 +36577,12 @@
       "ag": 6.024823,
       "al": 7.820416,
       "last_close": 809.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T04:32:49.424658",
+      "rsi_bounce_last_price": 816.0
     },
     "WHEELS": {
       "mcap_cr": 5980.0,
