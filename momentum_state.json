@@ -27851,7 +27851,12 @@
       "rsi_ema_200": 54.3016,
       "ag": 13.630566,
       "al": 11.885943,
-      "last_close": 1538.3
+      "last_close": 1538.3,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:02:41.224603",
+      "rsi_bounce_last_price": 1548.4000244140625
     },
     "GILLETTE": {
       "mcap_cr": 23096.4018096,
@@ -29382,7 +29387,12 @@
       "rsi_ema_200": 48.6542,
       "ag": 1.387624,
       "al": 2.269005,
-      "last_close": 148.97
+      "last_close": 148.97,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:02:42.513179",
+      "rsi_bounce_last_price": 153.64999389648438
     },
     "MANAPPURAM": {
       "mcap_cr": 25502.9751693,
@@ -30317,7 +30327,12 @@
       "rsi_ema_200": 55.4743,
       "ag": 189.087074,
       "al": 157.993829,
-      "last_close": 24425.0
+      "last_close": 24425.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:02:43.742636",
+      "rsi_bounce_last_price": 24565.0
     },
     "PURVA": {
       "mcap_cr": 4659.9913299,
