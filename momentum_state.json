@@ -25887,7 +25887,12 @@
       "rsi_ema_200": 54.1685,
       "ag": 3.931866,
       "al": 3.842023,
-      "last_close": 411.6
+      "last_close": 411.6,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:47:11.145962",
+      "rsi_bounce_last_price": 414.75
     },
     "ACUTAAS": {
       "mcap_cr": 31344.3590577,
@@ -32996,7 +33001,12 @@
       "ag": 0.715697,
       "al": 0.980366,
       "last_close": 103.18,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T06:47:14.059103",
+      "rsi_bounce_last_price": 105.9000015258789
     },
     "BHAGERIA": {
       "mcap_cr": 1565.0,

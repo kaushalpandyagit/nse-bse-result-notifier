@@ -252,9 +252,9 @@
     ]
   },
   "arb_PRADPME": {
-    "spread_last_alert": "2026-11-17T03:52:09.128364",
-    "spread_last_price": 2.5150288412174957,
-    "session_date": "2026-11-17",
+    "spread_last_alert": "2026-11-25T06:47:27.432372",
+    "spread_last_price": 2.9561255980687577,
+    "session_date": "2026-11-25",
     "alert_slots": [
       "H1"
     ]
@@ -476,10 +476,12 @@
   "custom_alert_BSE:DESCO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-23T03:46:07.956032",
-    "custom_last_price": 160.9499969482422,
+    "custom_last_alert": "2026-11-25T06:46:02.835991",
+    "custom_last_price": 158.0,
     "session_date": "2026-11-25",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_AETHER": {
     "spread_last_alert": "2026-11-02T04:05:26.197403",
