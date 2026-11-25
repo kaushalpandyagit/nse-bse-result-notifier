@@ -2025,13 +2025,25 @@
     "trigger_date": "2026-11-24",
     "ref_high": 1.35,
     "ref_low": 1.04,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-25T04:01:27.435324",
+    "fno_high_breach_last_price": 1.3600000143051147
   },
   "SAMBANDAM": {
     "trigger_date": "2026-11-24",
     "ref_high": 102.0,
     "ref_low": 98.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-25T04:01:28.776396",
+    "fno_low_breach_last_price": 97.16000366210938
   },
   "JTLIND": {
     "trigger_date": "2026-11-24",
@@ -2043,7 +2055,13 @@
     "trigger_date": "2026-11-24",
     "ref_high": 1005.0,
     "ref_low": 902.35,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-25T04:01:30.725047",
+    "fno_low_breach_last_price": 878.7999877929688
   },
   "SHBAJRG": {
     "trigger_date": "2026-11-24",

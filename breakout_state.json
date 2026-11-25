@@ -72,10 +72,12 @@
   "custom_alert_ESFL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-23T09:29:44.282142",
-    "custom_last_price": 113.0,
+    "custom_last_alert": "2026-11-25T04:01:07.633527",
+    "custom_last_price": 115.0,
     "session_date": "2026-11-25",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_GPIL_news": {
     "alerted": false,
@@ -98,10 +100,12 @@
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-23T07:29:43.806890",
-    "custom_last_price": 2832.0,
+    "custom_last_alert": "2026-11-25T04:01:09.173418",
+    "custom_last_price": 2800.89990234375,
     "session_date": "2026-11-25",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -630,9 +634,9 @@
   },
   "etf_inav_alerts": {},
   "arb_PILANIINVS": {
-    "spread_last_alert": "2026-11-23T06:31:28.646542",
-    "spread_last_price": 4.432460870708931,
-    "session_date": "2026-11-23",
+    "spread_last_alert": "2026-11-25T04:05:00.980089",
+    "spread_last_price": 3.8154114555942678,
+    "session_date": "2026-11-25",
     "alert_slots": [
       "H1"
     ]
@@ -6243,6 +6247,15 @@
     "day_low": 104.0999984741211,
     "baseline_rsi": 46.236525430736705,
     "mcap_cr": 624.5999908447266,
+    "exchange": "NSE"
+  },
+  "CLEDUCATE": {
+    "result_date": "2026-11-25T00:00:00",
+    "filed_at": "2026-11-24T17:07:03",
+    "day_high": 49.2400016784668,
+    "day_low": 48.2400016784668,
+    "baseline_rsi": 42.88870911664728,
+    "mcap_cr": 266.0354403,
     "exchange": "NSE"
   }
 }
