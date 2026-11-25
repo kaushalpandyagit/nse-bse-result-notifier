@@ -839,7 +839,13 @@
     "price_change_pct": -2.44,
     "deliv_pct": 66.2,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-25",
+    "alert_slots": [
+      "H2"
+    ],
+    "em_low_breach_last_alert": "2026-11-25T07:01:25.173005",
+    "em_low_breach_last_price": 9.800000190734863
   },
   "BEARDSELL": {
     "trigger_date": "2026-11-24",

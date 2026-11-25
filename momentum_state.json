@@ -23102,10 +23102,11 @@
       "rs_rank": 90.9,
       "session_date": "2026-11-25",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
-      "vol_breakout_last_alert": "2026-11-25T04:03:18.053410",
-      "vol_breakout_last_price": 137.1999969482422
+      "vol_breakout_last_alert": "2026-11-25T07:02:22.661123",
+      "vol_breakout_last_price": 145.14999389648438
     },
     "THYROCARE": {
       "sma50": 514.9719995117188,
@@ -32851,7 +32852,12 @@
       "ag": 6.685116,
       "al": 6.057557,
       "last_close": 623.5,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-25T07:02:40.172025",
+      "rsi_bounce_last_price": 633.1500244140625
     },
     "ATL": {
       "mcap_cr": 771.0,

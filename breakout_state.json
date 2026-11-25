@@ -2,11 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-25T03:45:49.645854",
-    "custom_last_price": 100.6500015258789,
+    "custom_last_alert": "2026-11-25T07:01:05.911701",
+    "custom_last_price": 98.25,
     "session_date": "2026-11-25",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_AERON_price": {
@@ -100,11 +101,12 @@
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-25T04:01:09.173418",
-    "custom_last_price": 2800.89990234375,
+    "custom_last_alert": "2026-11-25T07:01:11.088869",
+    "custom_last_price": 2726.10009765625,
     "session_date": "2026-11-25",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_KOTHARIPET_rsi": {
@@ -244,11 +246,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-25T05:02:48.598036",
-    "spread_last_price": 2.9317174352040074,
+    "spread_last_alert": "2026-11-25T07:02:51.068444",
+    "spread_last_price": 3.234784254288951,
     "session_date": "2026-11-25",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_PRADPME": {
