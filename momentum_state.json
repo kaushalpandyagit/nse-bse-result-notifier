@@ -30665,7 +30665,12 @@
       "rsi_ema_200": 51.7159,
       "ag": 0.744191,
       "al": 1.010686,
-      "last_close": 87.02
+      "last_close": 87.02,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:18:47.676740",
+      "rsi_bounce_last_price": 88.68000030517578
     },
     "RCF": {
       "mcap_cr": 5725.970840408554,
@@ -32348,7 +32353,12 @@
       "rsi_ema_200": 45.647,
       "ag": 0.622037,
       "al": 0.749494,
-      "last_close": 134.6
+      "last_close": 134.6,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:18:49.245628",
+      "rsi_bounce_last_price": 135.39999389648438
     },
     "WEBELSOLAR": {
       "mcap_cr": 2745.649857152897,
@@ -35317,7 +35327,12 @@
       "ag": 6.033037,
       "al": 7.542773,
       "last_close": 350.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:18:54.821486",
+      "rsi_bounce_last_price": 355.0
     },
     "MACPOWER": {
       "mcap_cr": 2187.0,
@@ -36516,7 +36531,12 @@
       "ag": 0.794616,
       "al": 0.749848,
       "last_close": 54.76,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:18:59.082235",
+      "rsi_bounce_last_price": 56.119998931884766
     },
     "PTL": {
       "mcap_cr": 520.0,
@@ -37251,7 +37271,12 @@
       "ag": 2.015733,
       "al": 4.329583,
       "last_close": 279.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:19:01.359730",
+      "rsi_bounce_last_price": 280.79998779296875
     },
     "SHIVAUM": {
       "mcap_cr": 757.0,
@@ -40114,7 +40139,7 @@
       }
     },
     "followup": false,
-    "last_check": "10:33"
+    "last_check": "10:49"
   },
   "gapup_try": {
     "date": "2026-11-26",
