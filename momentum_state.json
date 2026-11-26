@@ -31000,7 +31000,12 @@
       "rsi_ema_200": 48.454,
       "ag": 1.537206,
       "al": 2.383219,
-      "last_close": 193.47
+      "last_close": 193.47,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T07:47:25.183159",
+      "rsi_bounce_last_price": 199.32000732421875
     },
     "SARDAEN": {
       "mcap_cr": 16843.824706,
@@ -34298,7 +34303,12 @@
       "ag": 1.626156,
       "al": 2.500155,
       "last_close": 266.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T07:47:28.693351",
+      "rsi_bounce_last_price": 269.20001220703125
     },
     "GRMOVER": {
       "mcap_cr": 1803.0,
@@ -40276,7 +40286,7 @@
       }
     },
     "followup": false,
-    "last_check": "13:01"
+    "last_check": "13:17"
   },
   "gapup_try": {
     "date": "2026-11-26",
