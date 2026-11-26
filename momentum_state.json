@@ -34977,7 +34977,12 @@
       "ag": 1.723478,
       "al": 2.392012,
       "last_close": 163.13,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:17:32.151123",
+      "rsi_bounce_last_price": 166.89999389648438
     },
     "KANPRPLA": {
       "mcap_cr": 619.0,
@@ -35863,7 +35868,12 @@
       "ag": 1.056381,
       "al": 1.987,
       "last_close": 133.96,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:17:33.893304",
+      "rsi_bounce_last_price": 139.11000061035156
     },
     "MUKKA": {
       "mcap_cr": 757.0,
@@ -36219,7 +36229,12 @@
       "ag": 3.252875,
       "al": 5.213987,
       "last_close": 522.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:17:35.197669",
+      "rsi_bounce_last_price": 537.2000122070312
     },
     "OSWALGREEN": {
       "mcap_cr": 482.0,
@@ -36412,7 +36427,12 @@
       "ag": 0.751061,
       "al": 0.936486,
       "last_close": 86.79,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:17:36.194874",
+      "rsi_bounce_last_price": 87.19000244140625
     },
     "PENIND": {
       "mcap_cr": 2146.0,

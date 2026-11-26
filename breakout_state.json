@@ -234,12 +234,11 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-25T07:02:51.068444",
-    "spread_last_price": 3.234784254288951,
-    "session_date": "2026-11-25",
+    "spread_last_alert": "2026-11-26T06:17:46.004851",
+    "spread_last_price": 3.3682726683568824,
+    "session_date": "2026-11-26",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "arb_PRADPME": {
