@@ -37806,7 +37806,12 @@
       "ag": 6.844291,
       "al": 10.242821,
       "last_close": 739.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T07:17:57.311909",
+      "rsi_bounce_last_price": 750.4000244140625
     },
     "SWANDEF": {
       "mcap_cr": 15070.0,
