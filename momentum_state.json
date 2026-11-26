@@ -19170,7 +19170,11 @@
       "rsi_al": 15.932778,
       "rs_rank": 97.9,
       "session_date": "2026-11-26",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "zanger_last_alert": "2026-11-26T09:46:47.526786",
+      "zanger_last_price": 1848.0
     },
     "SAFARI": {
       "sma50": 1357.3679931640625,
@@ -37407,7 +37411,12 @@
       "ag": 5.256693,
       "al": 6.828221,
       "last_close": 540.3,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T09:47:13.838800",
+      "rsi_bounce_last_price": 545.0
     },
     "SHALPAINTS": {
       "mcap_cr": 820.0,
