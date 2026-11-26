@@ -32656,7 +32656,12 @@
       "ag": 0.874186,
       "al": 1.113165,
       "last_close": 116.78,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T07:31:25.062286",
+      "rsi_bounce_last_price": 118.4800033569336
     },
     "AEROENTER": {
       "mcap_cr": 1518.0,
@@ -37539,7 +37544,12 @@
       "ag": 4.996006,
       "al": 5.417509,
       "last_close": 473.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T07:31:31.493358",
+      "rsi_bounce_last_price": 485.54998779296875
     },
     "SOFTTECH": {
       "mcap_cr": 594.0,
@@ -40259,10 +40269,14 @@
       "SHARDACROP": {
         "price": 675.6,
         "at": "10:17"
+      },
+      "JISLJALEQS": {
+        "price": 28.02,
+        "at": "13:01"
       }
     },
     "followup": false,
-    "last_check": "12:34"
+    "last_check": "13:01"
   },
   "gapup_try": {
     "date": "2026-11-26",
