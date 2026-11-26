@@ -27915,7 +27915,12 @@
       "rsi_ema_200": 50.1845,
       "ag": 2.348243,
       "al": 2.43081,
-      "last_close": 283.6
+      "last_close": 283.6,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T08:18:00.797770",
+      "rsi_bounce_last_price": 288.25
     },
     "GABRIEL": {
       "mcap_cr": 28814.121903863,
@@ -36701,7 +36706,12 @@
       "ag": 3.638176,
       "al": 6.37302,
       "last_close": 392.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T08:18:08.322688",
+      "rsi_bounce_last_price": 396.6000061035156
     },
     "RACLGEAR": {
       "mcap_cr": 1840.0,
@@ -40286,7 +40296,7 @@
       }
     },
     "followup": false,
-    "last_check": "13:32"
+    "last_check": "13:48"
   },
   "gapup_try": {
     "date": "2026-11-26",
