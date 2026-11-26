@@ -32812,7 +32812,12 @@
       "ag": 4.12765,
       "al": 6.515694,
       "last_close": 751.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T09:02:44.741759",
+      "rsi_bounce_last_price": 756.0999755859375
     },
     "ALICON": {
       "mcap_cr": 1626.0,
