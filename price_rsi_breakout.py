@@ -17,6 +17,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 6: High-Volume Anchor Day (breakout above anchor high / pullback hold in anchor zone).
 - SETUP 7: Descending Trendline 3+ touches + Floor (floor bounce RR / trendline breakout).
 - SETUP 8: RSI Bounce (Chartink port: 4H RSI crossing above EMA of daily RSI, buyers > sellers).
+- SETUP 11: Tight base breakout near the 52-week high (15-day range <=10%, volume, market filter) - patch_github_tight_breakout.py.
 - SETUP 10: Downtrend reversal, EARLY (first daily RSI close above 50 after an oversold bottom) - patch_github_reversal_early.py.
 - SETUP 9 INTRADAY: the SETUP 9 turn from 10:15 (strong candle) + held/faded check at 14:45 - patch_github_reversal_intraday.py.
 - SETUP 9: Downtrend reversal, higher low (long fall, oversold bottom, bounce, higher low, turn day) - patch_github_reversal.py.
@@ -1302,6 +1303,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     rsi_bounce_universe = {}
     reversal_universe = {}      # SETUP 9 (patch_github_reversal.py)
     early_universe = {}         # SETUP 10 (patch_github_reversal_early.py)
+    tight_universe = {}         # SETUP 11 (patch_github_tight_breakout.py)
 
     for symbol in symbols:
         df = hist_map.get(f"{symbol}.NS")
@@ -1327,6 +1329,12 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
                 if early_fields: early_universe[symbol] = early_fields
         except Exception as e:
             log.debug("Reversal fields failed for %s: %s", symbol, e)
+        try:      # SETUP 11 (patch_github_tight_breakout.py)
+            if mcap_cr is None or mcap_cr >= REV_MIN_MCAP_CR:
+                tb_fields = detect_tight_base(df.dropna(subset=["Close", "High", "Low"]))
+                if tb_fields: tight_universe[symbol] = tb_fields
+        except Exception as e:
+            log.debug("Tight base fields failed for %s: %s", symbol, e)
 
         if mcap_cr is not None and (mcap_cr < MIN_MARKET_CAP_CR or mcap_cr > MAX_MARKET_CAP_CR): continue
 
@@ -1401,6 +1409,8 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
     return {"last_scan_date": today_str, "watchlist": watchlist, "sector_rsis": sector_rsis, "rsi_bounce_universe": rsi_bounce_universe,
             "reversal_universe": reversal_universe, "rev_last": momentum_state.get("rev_last") or {},
             "early_universe": {**early_universe, **_EARLY_EXTRA}, "early_last": momentum_state.get("early_last") or {},
+            "tight_universe": {**tight_universe, **_TIGHT_EXTRA}, "tight_last": momentum_state.get("tight_last") or {},
+            "tight_scan": momentum_state.get("tight_scan") or {},
             "early_scan": momentum_state.get("early_scan") or {},
             "rev_scan": momentum_state.get("rev_scan") or {},
             "last_sector_report_date": momentum_state.get("last_sector_report_date"), "ipo_watch": ipo_watch,
@@ -2870,6 +2880,7 @@ def build_reversal_extras(skip) -> dict:
         return {}
     out, names = {}, sorted(extra)
     _EARLY_EXTRA.clear()        # SETUP 10 levels of the same stocks, filled below
+    _TIGHT_EXTRA.clear()        # SETUP 11 bases of the same stocks (patch_github_tight_breakout.py)
     _REV_FETCH_STATS.update(asked=0, missing=0)
     for i in range(0, len(names), 250):
         chunk = names[i:i + 250]
@@ -2887,6 +2898,13 @@ def build_reversal_extras(skip) -> dict:
                     if fe:
                         fe["x"] = 1
                         _EARLY_EXTRA[sym] = fe
+                except Exception:
+                    pass
+                try:
+                    ft = detect_tight_base(df.dropna(subset=["Close", "High", "Low"]))
+                    if ft:
+                        ft["x"] = 1
+                        _TIGHT_EXTRA[sym] = ft
                 except Exception:
                     pass
             except Exception:
@@ -2914,7 +2932,8 @@ def _rev_quotes(fyers, symbols: list) -> dict:
                     sym = str(row.get("n") or v.get("symbol") or "").split(":")[-1].rsplit("-", 1)[0]
                     if row.get("s") == "ok" and sym in chunk and v.get("lp") and v.get("low_price"):
                         out[sym] = {"price": float(v["lp"]), "low": float(v["low_price"]), "prev": float(v.get("prev_close_price") or 0),
-                                    "high": float(v.get("high_price") or 0), "open": float(v.get("open_price") or 0)}
+                                    "high": float(v.get("high_price") or 0), "open": float(v.get("open_price") or 0),
+                                    "vol": float(v.get("volume") or 0)}
             except Exception as e:
                 log.warning("Reversal: Fyers quotes failed (%s).", e)
     return out
@@ -2934,7 +2953,8 @@ def _rev_quotes_yahoo(symbols: list) -> dict:
                 df = (data[f"{s}.NS"] if len(chunk) > 1 else data).dropna(subset=["Low", "Close"])
                 if len(df) >= 2 and df.index[-1].date() == today:
                     out[s] = {"price": float(df["Close"].iloc[-1]), "low": float(df["Low"].iloc[-1]), "prev": float(df["Close"].iloc[-2]),
-                              "high": float(df["High"].iloc[-1]), "open": float(df["Open"].iloc[-1])}
+                              "high": float(df["High"].iloc[-1]), "open": float(df["Open"].iloc[-1]),
+                              "vol": float(df["Volume"].iloc[-1] or 0)}
             except Exception:
                 continue
     return out
@@ -3006,6 +3026,115 @@ def check_reversal_scanner(momentum_state: dict, fyers) -> dict:
         last[s] = today
     momentum_state["rev_scan"] = {"date": today, "at": now_ist.strftime("%H:%M"), "set_up": len(uni), "priced": len(quotes),
                                   "src": src, "hits": len(hits)}
+    return momentum_state
+
+
+# ----------------------------------------------------------------------
+# SETUP 11: TIGHT BASE BREAKOUT NEAR THE HIGH (patch_github_tight_breakout.py)
+# ----------------------------------------------------------------------
+TB_BASE_DAYS = 15             # the base = the last this many completed sessions
+TB_RANGE = 0.10               # base high-low range at most this share of the base low
+TB_NEAR_HIGH = 0.90           # price at least this share of the 52-week high (completed bars)
+TB_VOL_MULT = 1.5             # day volume >= this x the 50-day average ...
+TB_VOL_AT_CHECK = 0.8         # ... x this, because at 14:45 about 80% of the day's volume has traded
+TB_MIN_TV = 10e5              # 20-day average turnover, Rs
+TB_MIN_PRICE = 10.0
+TB_TARGET = 0.15              # shown in the message: the backtest's target
+TB_AFTER = (14, 45)
+TB_COOL_DAYS = 28
+TB_NEED_MARKET_UP = True      # only while the Nifty 50 is above its 50-day average (momentum_state["market_up"])
+TB_SEND_TELEGRAM = True
+TB_MAX_LINES = 25
+
+
+def detect_tight_base(df: pd.DataFrame) -> dict:
+    """SETUP 11 base from COMPLETED daily bars (today is not in df), or None."""
+    C, H, L = df["Close"].astype(float).values, df["High"].astype(float).values, df["Low"].astype(float).values
+    V = df["Volume"].astype(float).fillna(0).values
+    n = len(C)
+    if n < 260 or np.isnan(C[-TB_BASE_DAYS:]).any():
+        return None
+    hi, lo = float(np.nanmax(H[-TB_BASE_DAYS:])), float(np.nanmin(L[-TB_BASE_DAYS:]))
+    if lo <= 0 or (hi - lo) / lo > TB_RANGE:
+        return None
+    hi52 = float(np.nanmax(H[-252:]))
+    tv20 = float(np.nanmean(C[-20:] * V[-20:]))
+    v50 = float(np.nanmean(V[-50:]))
+    if tv20 < TB_MIN_TV or C[-1] < TB_MIN_PRICE or v50 <= 0 or hi < 0.85 * hi52:
+        return None
+    return {"base_high": round(hi, 2), "base_low": round(lo, 2), "range_pct": round((hi - lo) / lo * 100, 1),
+            "hi52": round(hi52, 2), "v50": round(v50), "prev_close": round(float(C[-1]), 2), "tv20_lakh": round(tv20 / 1e5, 1)}
+
+
+def tight_hit(f: dict, q: dict) -> bool:
+    p = q["price"]
+    return (p >= TB_MIN_PRICE and p > f["base_high"] and p >= TB_NEAR_HIGH * f["hi52"]
+            and q.get("vol", 0) >= TB_VOL_MULT * TB_VOL_AT_CHECK * f["v50"])
+
+
+def check_tight_breakout_scanner(momentum_state: dict, fyers) -> dict:
+    """SETUP 11, once a day after TB_AFTER."""
+    now_ist = get_ist_now()
+    today = now_ist.strftime("%Y-%m-%d")
+    if (momentum_state.get("tight_scan") or {}).get("date") == today or not is_market_hours_now():
+        return momentum_state
+    if (now_ist.hour, now_ist.minute) < TB_AFTER:
+        return momentum_state
+    uni = momentum_state.get("tight_universe") or {}
+    market_up = momentum_state.get("market_up")
+    if TB_NEED_MARKET_UP and market_up is False:
+        log.info("Tight base breakout: market filter off (Nifty 50 under its 50-day average) - nothing sent.")
+        momentum_state["tight_scan"] = {"date": today, "at": now_ist.strftime("%H:%M"), "set_up": len(uni), "hits": 0, "market_up": False}
+        return momentum_state
+    last = momentum_state.setdefault("tight_last", {})
+    cut = (now_ist.date() - datetime.timedelta(days=TB_COOL_DAYS)).isoformat()
+    syms = [s for s in uni if str(last.get(s, "")) < cut]
+    if not syms:
+        momentum_state["tight_scan"] = {"date": today, "at": now_ist.strftime("%H:%M"), "set_up": len(uni), "hits": 0}
+        return momentum_state
+    quotes = _rev_quotes(fyers, syms) if fyers else {}
+    src = "fyers"
+    if len(quotes) < 0.8 * len(syms):
+        quotes.update(_rev_quotes_yahoo([s for s in syms if s not in quotes]))
+        src = "fyers+yahoo" if fyers else "yahoo"
+    if len(quotes) < 0.5 * len(syms) and now_ist.time() < datetime.time(15, 25):
+        log.warning("Tight base breakout: prices for only %d of %d stocks; will try again on the next run.", len(quotes), len(syms))
+        return momentum_state
+    hits = [(s, q, uni[s]) for s, q in quotes.items() if s in uni and tight_hit(uni[s], q)]
+    hits.sort(key=lambda x: x[2]["range_pct"])          # tightest base first
+    log.info("Tight base breakout (%s): %d bases, %d priced, %d broke out.", src, len(syms), len(quotes), len(hits))
+
+    def _nm(sym):
+        try:
+            return _list_name(sym).replace("<b>", "").replace("</b>", "")
+        except Exception:
+            return sym.replace("&", "&amp;").replace("<", "&lt;")
+
+    def _line(q, f):
+        p = q["price"]
+        return (f"₹{p:.2f} ({(p / f['prev_close'] - 1) * 100:+.1f}%) | {TB_BASE_DAYS}-day base {f['base_low']:g}-{f['base_high']:g} "
+                f"({f['range_pct']:g}% range) | stop {f['base_low']:g} (-{(1 - f['base_low'] / p) * 100:.1f}%) | "
+                f"+{TB_TARGET * 100:.0f}% = {p * (1 + TB_TARGET):.2f} | vol {q.get('vol', 0) / f['v50']:.1f}x | "
+                f"{p / f['hi52'] * 100:.0f}% of 52w high")
+    if hits and TB_SEND_TELEGRAM:
+        lines = [f"📦 <b>Tight base breakout</b>: {len(hits)} stock(s) today (of {len(uni)} bases)"
+                 + ("" if market_up else " - market filter unknown today") +
+                 f"\n<i>{TB_BASE_DAYS}-day range ≤{TB_RANGE * 100:.0f}%, near the 52-week high, out of the base on volume. "
+                 f"Backtest: stop = a close below the base low; +15% hit first in ~42%.</i>"]
+        lines += [f"• <b>{_nm(s)}</b> {_line(q, f)}" for s, q, f in hits[:TB_MAX_LINES]]
+        if len(hits) > TB_MAX_LINES:
+            lines.append(f"... and {len(hits) - TB_MAX_LINES} more (all are in the trigger list)")
+        if not send_telegram_message("\n".join(lines)):
+            log.error("Tight base breakout message NOT delivered; will retry next run.")
+            return momentum_state
+    global _LAST_ALERT_TEXT
+    for s, q, f in hits:
+        safe = s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        _LAST_ALERT_TEXT = f"<b>{safe}</b> Tight base breakout\n{_line(q, f)}"
+        _log_trigger("tight_breakout", q["price"], (momentum_state.get("watchlist") or {}).get(s) or {})
+        last[s] = today
+    momentum_state["tight_scan"] = {"date": today, "at": now_ist.strftime("%H:%M"), "set_up": len(uni), "priced": len(quotes),
+                                    "src": src, "hits": len(hits)}
     return momentum_state
 
 
@@ -3155,6 +3284,7 @@ REVE_AFTER = (14, 45)
 REVE_COOL_DAYS = 28
 REVE_SEND_TELEGRAM = True
 REVE_MAX_LINES = 25
+_TIGHT_EXTRA = {}             # SETUP 11 bases of the extra stocks (patch_github_tight_breakout.py)
 _EARLY_EXTRA = {}             # filled by build_reversal_extras() for the laptop's extra stocks
 
 
@@ -3823,6 +3953,10 @@ def main():
                     momentum_state = check_reversal_early_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("Early reversal scanner failed: %s", e)
+                try:      # SETUP 11 (patch_github_tight_breakout.py)
+                    momentum_state = check_tight_breakout_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Tight base breakout scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
@@ -3865,6 +3999,10 @@ def main():
                     momentum_state = check_reversal_early_scanner(momentum_state, fyers)
                 except Exception as e:
                     log.exception("Early reversal scanner failed: %s", e)
+                try:      # SETUP 11 (patch_github_tight_breakout.py)
+                    momentum_state = check_tight_breakout_scanner(momentum_state, fyers)
+                except Exception as e:
+                    log.exception("Tight base breakout scanner failed: %s", e)
                 check_nse_bse_arbitrage(momentum_state, state, fyers)
                 MOMENTUM_STATE_FILE.write_text(json.dumps(momentum_state, indent=2))
             STATE_FILE.write_text(json.dumps(state, indent=2))
