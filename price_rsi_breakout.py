@@ -17,6 +17,7 @@ Dual-Engine Fyers & Yahoo Finance Edition:
 - SETUP 6: High-Volume Anchor Day (breakout above anchor high / pullback hold in anchor zone).
 - SETUP 7: Descending Trendline 3+ touches + Floor (floor bounce RR / trendline breakout).
 - SETUP 8: RSI Bounce (Chartink port: 4H RSI crossing above EMA of daily RSI, buyers > sellers).
+- Reversal lists (SETUP 9 / 9 intraday / 10): days with RSI < 35 in the fall, fewest first, 🟢 at 2 or fewer - patch_github_rsi35_rank.py.
 - SETUP 11: Tight base breakout near the 52-week high (15-day range <=10%, volume, market filter) - patch_github_tight_breakout.py.
 - SETUP 10: Downtrend reversal, EARLY (first daily RSI close above 50 after an oversold bottom) - patch_github_reversal_early.py.
 - SETUP 9 INTRADAY: the SETUP 9 turn from 10:15 (strong candle) + held/faded check at 14:45 - patch_github_reversal_intraday.py.
@@ -2787,6 +2788,32 @@ REV_SEND_TELEGRAM = True      # False = only the trigger list (scanner_triggers.
 REV_MAX_LINES = 25
 
 
+REV_OS35 = 35.0              # RSI level counted in the latest fall (patch_github_rsi35_rank.py)
+REV_OS35_FEW = 2              # this many days or fewer -> 🟢, listed first
+
+
+def _os35_fields(r, H, lo_i) -> dict:
+    """Days with daily RSI below REV_OS35 in the latest fall: from the highest high of the 60 sessions before the bottom
+    (index lo_i) to the bottom."""
+    a = max(0, lo_i - 60)
+    hi_i = a + int(np.nanargmax(H[a:lo_i + 1]))
+    return {"os35": int(np.sum(np.asarray(r[hi_i:lo_i + 1]) < REV_OS35)), "os35_wave": int(lo_i - hi_i)}
+
+
+def _os35_tag(f: dict) -> str:
+    if f.get("os35") is None:
+        return ""
+    if f["os35"] <= REV_OS35_FEW:
+        return f" | 🟢 RSI<35 only {f['os35']} of {f['os35_wave']} days"
+    return f" | RSI<35 on {f['os35']} of {f['os35_wave']} days"
+
+
+def _os35_key(x):
+    """Sort key: fewest days below 35 first (unknown last), then the deepest fall."""
+    f = x[2]
+    return (f.get("os35", 999), -(f["hi"] / f["lo"]))
+
+
 def detect_reversal_setup(df: pd.DataFrame) -> dict:
     """SETUP 9 levels from COMPLETED daily bars (today is not in df). None unless rules 1-3 hold and the higher low
     can still qualify; the live check (reversal_hit) adds today's low and price."""
@@ -2825,7 +2852,7 @@ def detect_reversal_setup(df: pd.DataFrame) -> dict:
     return {"lo": round(lo, 2), "lo_date": d(lo_i), "hi": round(hi, 2), "hi_date": d(int(np.nanargmax(H[max(0, lo_i - 252):lo_i])) + max(0, lo_i - 252)),
             "b": round(b, 2), "b_date": d(b_i), "hl": round(hl, 2), "hl_date": d(hl_i), "hl_age": n - hl_i,
             "prev_high": round(float(H[-1]), 2), "prev_close": round(float(C[-1]), 2), "tv20_lakh": round(tv20 / 1e5, 1),
-            "rsi_low": round(float(np.nanmin(r[max(0, lo_i - 3):lo_i + 4])), 1)}
+            "rsi_low": round(float(np.nanmin(r[max(0, lo_i - 3):lo_i + 4])), 1), **_os35_fields(r, H, lo_i)}
 
 
 def reversal_hit(f: dict, price: float, day_low: float):
@@ -2993,7 +3020,7 @@ def check_reversal_scanner(momentum_state: dict, fyers) -> dict:
             hl = None
         if hl is not None:
             hits.append((s, q, f, hl))
-    hits.sort(key=lambda x: x[2]["hi"] / x[2]["lo"], reverse=True)       # deepest fall first
+    hits.sort(key=_os35_key)       # fewest days with RSI < 35 first, then the deepest fall (patch_github_rsi35_rank.py)
     log.info("Reversal scan (%s): %d set up, %d priced, %d turned up.", src, len(syms), len(quotes), len(hits))
 
     def _nm(sym):
@@ -3012,7 +3039,7 @@ def check_reversal_scanner(momentum_state: dict, fyers) -> dict:
         lines = [f"🔄 <b>Downtrend reversal - higher low</b>: {len(hits)} stock(s) turning up today "
                  f"(of {len(uni)} set up)\n<i>Long fall, oversold bottom, first bounce, a low above the bottom, today above yesterday's high.</i>"]
         for s, q, f, hl in hits[:REV_MAX_LINES]:
-            lines.append(f"• <b>{_nm(s)}</b> {_line(s, q, f, hl)}")
+            lines.append(f"• <b>{_nm(s)}</b> {_line(s, q, f, hl)}{_os35_tag(f)}")
         if len(hits) > REV_MAX_LINES:
             lines.append(f"... and {len(hits) - REV_MAX_LINES} more (all are in the trigger list)")
         if not send_telegram_message("\n".join(lines)):
@@ -3242,7 +3269,7 @@ def check_reversal_intraday_scanner(momentum_state: dict, fyers) -> dict:
         if REVI_ABOVE_OPEN and q.get("open") and q["price"] < q["open"]:
             continue
         hits.append((s, q, f, hl))
-    hits.sort(key=lambda x: x[2]["hi"] / x[2]["lo"], reverse=True)
+    hits.sort(key=_os35_key)       # fewest days with RSI < 35 first (patch_github_rsi35_rank.py)
     log.info("Reversal intraday (%s): %d set up, %d priced, %d forming.", now_ist.strftime("%H:%M"), len(syms), len(quotes), len(hits))
 
     def _line(q, f, hl):
@@ -3253,7 +3280,7 @@ def check_reversal_intraday_scanner(momentum_state: dict, fyers) -> dict:
         lines = [f"⏳ <b>Downtrend reversal - forming ({now_ist.strftime('%H:%M')})</b>: {len(hits)} stock(s)\n"
                  f"<i>SETUP 9 rule met early, strong so far (top of the day's range, above the open). "
                  f"Not confirmed until the 14:45 check.</i>"]
-        lines += [f"• <b>{_nm(s)}</b> {_line(q, f, hl)}" for s, q, f, hl in hits[:REV_MAX_LINES]]
+        lines += [f"• <b>{_nm(s)}</b> {_line(q, f, hl)}{_os35_tag(f)}" for s, q, f, hl in hits[:REV_MAX_LINES]]
         if len(hits) > REV_MAX_LINES:
             lines.append(f"... and {len(hits) - REV_MAX_LINES} more (all are in the trigger list)")
         if not send_telegram_message("\n".join(lines)):
@@ -3314,7 +3341,7 @@ def detect_reversal_early(df: pd.DataFrame) -> dict:
     if tv20 < REVE_MIN_TV:
         return None
     d = c.diff()
-    return {"lo": round(lo, 2), "lo_date": df.index[lo_i].strftime("%Y-%m-%d"), "hi": round(hi, 2), "rsi_low": round(rsi_low, 1),
+    return {"lo": round(lo, 2), "lo_date": df.index[lo_i].strftime("%Y-%m-%d"), "hi": round(hi, 2), "rsi_low": round(rsi_low, 1), **_os35_fields(r, H, lo_i),
             "rsi_prev": round(float(r[-1]), 2), "prev_close": round(float(C[-1]), 4),
             "e20": round(float(c.ewm(span=20, adjust=False).mean().iloc[-1]), 4), "tv20_lakh": round(tv20 / 1e5, 1),
             "ag": round(float(d.where(d > 0, 0.0).ewm(com=RSI_PERIOD - 1, min_periods=1, adjust=False).mean().iloc[-1]), 6),
@@ -3366,7 +3393,7 @@ def check_reversal_early_scanner(momentum_state: dict, fyers) -> dict:
             rn = None
         if rn is not None:
             hits.append((s, q, f, rn))
-    hits.sort(key=lambda x: x[2]["hi"] / x[2]["lo"], reverse=True)
+    hits.sort(key=_os35_key)       # fewest days with RSI < 35 first (patch_github_rsi35_rank.py)
     log.info("Early reversal scan (%s): %d set up, %d priced, %d entries.", src, len(syms), len(quotes), len(hits))
 
     def _nm(sym):
@@ -3383,7 +3410,7 @@ def check_reversal_early_scanner(momentum_state: dict, fyers) -> dict:
         lines = [f"🌱 <b>Downtrend reversal - EARLY</b>: {len(hits)} stock(s), RSI above 50 for the first time since the bottom "
                  f"(of {len(uni)} set up)\n<i>Riskier than the higher-low scanner: no higher low yet, a retest of the bottom is common.</i>"]
         for s, q, f, rn in hits[:REVE_MAX_LINES]:
-            lines.append(f"• <b>{_nm(s)}</b> {_line(q, f, rn)}")
+            lines.append(f"• <b>{_nm(s)}</b> {_line(q, f, rn)}{_os35_tag(f)}")
         if len(hits) > REVE_MAX_LINES:
             lines.append(f"... and {len(hits) - REVE_MAX_LINES} more (all are in the trigger list)")
         if not send_telegram_message("\n".join(lines)):
