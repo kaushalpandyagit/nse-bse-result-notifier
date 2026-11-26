@@ -26506,7 +26506,12 @@
       "rsi_ema_200": 52.9057,
       "ag": 4.52207,
       "al": 7.322499,
-      "last_close": 611.8
+      "last_close": 611.8,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:18:45.881193",
+      "rsi_bounce_last_price": 631.9000244140625
     },
     "BALUFORGE": {
       "mcap_cr": 6154.56933,
@@ -29050,7 +29055,12 @@
       "rsi_ema_200": 52.0717,
       "ag": 9.922389,
       "al": 9.955147,
-      "last_close": 1019.2
+      "last_close": 1019.2,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:18:49.541673",
+      "rsi_bounce_last_price": 1047.0
     },
     "KAJARIACER": {
       "mcap_cr": 19026.88126130005,
@@ -32081,7 +32091,12 @@
       "rsi_ema_200": 50.0732,
       "ag": 3.343877,
       "al": 5.244117,
-      "last_close": 449.1
+      "last_close": 449.1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:18:53.692456",
+      "rsi_bounce_last_price": 456.5
     },
     "UTIAMC": {
       "mcap_cr": 10884.252951975,
@@ -32972,7 +32987,12 @@
       "ag": 11.159273,
       "al": 11.52516,
       "last_close": 843.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:18:56.585756",
+      "rsi_bounce_last_price": 863.2999877929688
     },
     "AVTNPL": {
       "mcap_cr": 1567.0,
@@ -33420,7 +33440,12 @@
       "ag": 5.460385,
       "al": 6.233284,
       "last_close": 443.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:18:59.444568",
+      "rsi_bounce_last_price": 459.0
     },
     "DAMCAPITAL": {
       "mcap_cr": 1056.0,
@@ -33715,7 +33740,12 @@
       "ag": 0.744017,
       "al": 1.022775,
       "last_close": 110.98,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:19:01.279513",
+      "rsi_bounce_last_price": 112.4000015258789
     },
     "EMKAY": {
       "mcap_cr": 716.0,
@@ -34169,7 +34199,12 @@
       "ag": 0.181126,
       "al": 0.273051,
       "last_close": 52.91,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:19:03.397900",
+      "rsi_bounce_last_price": 53.279998779296875
     },
     "GUFICBIO": {
       "mcap_cr": 4275.0,
@@ -35128,7 +35163,12 @@
       "ag": 11.023683,
       "al": 11.655896,
       "last_close": 996.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:19:07.786563",
+      "rsi_bounce_last_price": 1025.0
     },
     "KSL": {
       "mcap_cr": 3659.0,
@@ -35750,7 +35790,12 @@
       "ag": 1.110268,
       "al": 1.317091,
       "last_close": 121.21,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:19:10.662829",
+      "rsi_bounce_last_price": 124.5
     },
     "NAHARPOLY": {
       "mcap_cr": 585.0,
@@ -36335,7 +36380,12 @@
       "ag": 0.15955,
       "al": 0.327177,
       "last_close": 19.57,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:19:13.374473",
+      "rsi_bounce_last_price": 19.84000015258789
     },
     "PRIZOR": {
       "mcap_cr": 1609.0,
@@ -37266,7 +37316,12 @@
       "ag": 3.427034,
       "al": 3.98563,
       "last_close": 426.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:19:16.494941",
+      "rsi_bounce_last_price": 427.54998779296875
     },
     "SOLARA": {
       "mcap_cr": 3050.0,
@@ -37659,7 +37714,12 @@
       "ag": 0.35269,
       "al": 0.652883,
       "last_close": 49.46,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:19:19.058993",
+      "rsi_bounce_last_price": 50.83000183105469
     },
     "TEXINFRA": {
       "mcap_cr": 1530.0,
@@ -37734,7 +37794,12 @@
       "ag": 0.924129,
       "al": 1.34495,
       "last_close": 109.73,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:19:20.402889",
+      "rsi_bounce_last_price": 110.1500015258789
     },
     "TSFINV": {
       "mcap_cr": 9295.0,

@@ -2145,7 +2145,13 @@
     "trigger_date": "2026-11-25",
     "ref_high": 1563.0,
     "ref_low": 1268.1,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-26T04:16:16.113126",
+    "fno_low_breach_last_price": 1267.25
   },
   "MEDPLUS": {
     "trigger_date": "2026-11-25",
@@ -2169,7 +2175,13 @@
     "trigger_date": "2026-11-25",
     "ref_high": 10329.0,
     "ref_low": 10200.0,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-26T04:16:19.477875",
+    "fno_high_breach_last_price": 10437.0
   },
   "PLASTIBLEN": {
     "trigger_date": "2026-11-25",

@@ -92,10 +92,12 @@
   "custom_alert_KAYNES_rsi": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-25T07:01:11.088869",
-    "custom_last_price": 2726.10009765625,
+    "custom_last_alert": "2026-11-26T04:15:55.787542",
+    "custom_last_price": 2697.800048828125,
     "session_date": "2026-11-26",
-    "alert_slots": []
+    "alert_slots": [
+      "H1"
+    ]
   },
   "custom_alert_KOTHARIPET_rsi": {
     "alerted": false,
@@ -340,12 +342,11 @@
     ]
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-11-23T07:03:42.775420",
-    "spread_last_price": 3.2016922798411875,
-    "session_date": "2026-11-23",
+    "spread_last_alert": "2026-11-26T04:19:30.487288",
+    "spread_last_price": 3.3282047129322136,
+    "session_date": "2026-11-26",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "custom_alert_BASILIC_open_change_rs": {
