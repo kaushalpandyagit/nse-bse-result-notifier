@@ -905,7 +905,13 @@
     "price_change_pct": -2.49,
     "deliv_pct": 71.6,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-26T03:46:23.221684",
+    "em_low_breach_last_price": 144.5
   },
   "DRCSYSTEMS": {
     "trigger_date": "2026-11-25",
@@ -925,7 +931,13 @@
     "price_change_pct": 2.49,
     "deliv_pct": 89.0,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-26T03:46:24.207780",
+    "em_high_breach_last_price": 194.0
   },
   "XCHANGING": {
     "trigger_date": "2026-11-25",
@@ -935,7 +947,13 @@
     "price_change_pct": -2.48,
     "deliv_pct": 71.3,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-26T03:46:25.325601",
+    "em_low_breach_last_price": 54.68000030517578
   },
   "VMSTMT": {
     "trigger_date": "2026-11-25",
@@ -945,7 +963,13 @@
     "price_change_pct": -2.47,
     "deliv_pct": 71.0,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-26T03:46:26.652522",
+    "em_low_breach_last_price": 38.04999923706055
   },
   "SVPGLOB": {
     "trigger_date": "2026-11-25",
