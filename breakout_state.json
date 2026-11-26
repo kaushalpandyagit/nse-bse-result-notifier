@@ -118,11 +118,12 @@
   "custom_alert_BSE:METAINFO_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-26T03:46:05.344536",
-    "custom_last_price": 48.5099983215332,
+    "custom_last_alert": "2026-11-26T08:01:08.165913",
+    "custom_last_price": 49.900001525878906,
     "session_date": "2026-11-26",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_BSE:PGFOILQ_price": {
