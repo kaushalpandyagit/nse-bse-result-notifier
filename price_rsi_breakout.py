@@ -246,14 +246,17 @@ SMA200_TREND_LOOKBACK_DAYS = 22
 # 700 Nifty Total Market stocks, 2 years. Tight variant: confirmed breakouts +3.1% avg
 # 20-day return, 55% win vs -0.03% / 46% for plain 20-day-high breakouts; n=20, so
 # indicative only. Looser textbook thresholds were NEGATIVE (-1.7%, n=131).) ---
+# 26 Nov 2026 (patch_github_vcp_flex.py): loosened after a 2022-26 test on 2,384 stocks (studies/vcp_bench.py on the
+# laptop): these settings gave ~15x more breakouts and +3.9% a trade bought at the pivot (+2.4% bought at the close,
+# positive all 5 years) vs +3.1% / +1.0% for the old strict ones (old values in the comments).
 VCP_PARAMS = dict(
     base_max_len=65, base_min_len=15,
-    depth_min=8.0, depth_max=25.0,      # % from base left high to base low
+    depth_min=8.0, depth_max=30.0,      # % from base left high to base low (was 25)
     swing_k=2, min_pullback=2.0,        # a contraction must pull back >= 2%
-    min_contractions=2, last_max=4.0,   # final contraction <= 4%
-    shrink=0.85,                        # each contraction <= 85% of the previous one
-    tight_days=7, tight_max=6.0,        # right side: last 7 sessions' range <= 6%
-    dryup_max=0.55,                     # last 5 sessions' avg volume <= 55% of 50-day avg
+    min_contractions=2, last_max=8.0,   # final contraction <= 8% (was 4)
+    shrink=0.95,                        # each contraction <= 95% of the previous one (was 0.85)
+    tight_days=7, tight_max=10.0,       # right side: last 7 sessions' range <= 10% (was 6)
+    dryup_max=0.90,                     # last 5 sessions' avg volume <= 90% of 50-day avg (was 0.55)
     pivot_dist_max=8.0,                 # close within 8% below the pivot
 )
 VCP_MAX_CHASE_PCT = 4.0                 # breakout alert only up to 4% above pivot
@@ -1351,6 +1354,7 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
 
     watchlist = {}
     stage2_vcp_list, momentum_leader_list = [], []
+    _vcp_before = {s for s, e in (momentum_state.get("watchlist") or {}).items() if isinstance(e, dict) and e.get("vcp")}
 
     for symbol, d in per_symbol_data.items():
         rs_rank = rs_rank_pct.get(symbol)
@@ -1359,6 +1363,18 @@ def run_daily_momentum_scan(momentum_state: dict) -> dict:
         if rs_rank is not None and rs_rank >= MOMENTUM_LEADER_RS_RANK_MIN and d["near_high"]: momentum_leader_list.append((symbol, rs_rank))
 
     stage2_vcp_list.sort(key=lambda x: (x[1] or 0), reverse=True)
+    global _LAST_ALERT_TEXT
+    for s, r in stage2_vcp_list:      # NEW VCP set-ups -> trigger list -> "VCP Setups" watchlist (patch_github_vcp_flex.py)
+        if s in _vcp_before:
+            continue
+        try:
+            v = per_symbol_data[s]["vcp"]
+            safe = s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            _LAST_ALERT_TEXT = (f"<b>{safe}</b> VCP set-up | pivot {v['pivot']:g} ({v['pivot_dist']:g}% away) | stop {v['stop']:g} | "
+                                f"contractions {'-'.join(f'{x:g}' for x in v['contractions'])}% | 7d range {v['tight_pct']}% | vol {v['dryup']}x")
+            _log_trigger("vcp_setup", per_symbol_data[s].get("prev_close"), {**per_symbol_data[s], "rs_rank": r})
+        except Exception as e:
+            log.debug("VCP set-up log failed for %s: %s", s, e)
     momentum_leader_list.sort(key=lambda x: (x[1] or 0), reverse=True)
 
     lines = [
