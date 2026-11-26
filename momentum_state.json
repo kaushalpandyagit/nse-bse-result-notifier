@@ -35403,7 +35403,12 @@
       "ag": 4.62827,
       "al": 4.590933,
       "last_close": 465.05,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T09:31:59.622323",
+      "rsi_bounce_last_price": 465.70001220703125
     },
     "LGBBROSLTD": {
       "mcap_cr": 5221.0,
@@ -35698,7 +35703,12 @@
       "ag": 5.528668,
       "al": 6.800138,
       "last_close": 520.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T09:32:01.559237",
+      "rsi_bounce_last_price": 530.0499877929688
     },
     "MAWANASUG": {
       "mcap_cr": 548.0,
@@ -37041,7 +37051,12 @@
       "ag": 1.512981,
       "al": 2.575692,
       "last_close": 238.35,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T09:32:04.184372",
+      "rsi_bounce_last_price": 240.0500030517578
     },
     "RUBYMILLS": {
       "mcap_cr": 1507.0,
@@ -37486,7 +37501,12 @@
       "ag": 0.954382,
       "al": 0.956404,
       "last_close": 51.43,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T09:32:05.991764",
+      "rsi_bounce_last_price": 52.900001525878906
     },
     "SHRINGARMS": {
       "mcap_cr": 2366.0,
