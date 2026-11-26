@@ -263,8 +263,12 @@
     ]
   },
   "arb_BALRAMCHIN": {
-    "spread_last_alert": "2026-10-06T03:51:55.290909",
-    "spread_last_price": 2.5998229871379683
+    "spread_last_alert": "2026-11-26T04:04:08.434241",
+    "spread_last_price": 3.4474561168889335,
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ]
   },
   "arb_JPOLYINVST": {
     "spread_last_alert": "2026-11-20T04:03:47.406650",
@@ -312,9 +316,9 @@
     ]
   },
   "arb_VHL": {
-    "spread_last_alert": "2026-11-12T03:53:27.247341",
-    "spread_last_price": 2.9814697128544356,
-    "session_date": "2026-11-12",
+    "spread_last_alert": "2026-11-26T04:04:31.463228",
+    "spread_last_price": 2.755425504251085,
+    "session_date": "2026-11-26",
     "alert_slots": [
       "H1"
     ]
@@ -393,12 +397,11 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-25T09:02:46.146295",
-    "spread_last_price": 2.726611690155315,
-    "session_date": "2026-11-25",
+    "spread_last_alert": "2026-11-26T04:04:20.138101",
+    "spread_last_price": 2.648444526903951,
+    "session_date": "2026-11-26",
     "alert_slots": [
-      "H1",
-      "H2"
+      "H1"
     ]
   },
   "arb_AVL": {
@@ -473,16 +476,18 @@
   },
   "arb_AETHER": {
     "spread_last_alert": "2026-11-02T04:05:26.197403",
-    "spread_last_price": 2.893913837908006
+    "spread_last_price": 2.893913837908006,
+    "session_date": "2026-11-26",
+    "alert_slots": []
   },
   "arb_BANDHANBNK": {
     "spread_last_alert": "2026-10-13T03:57:28.615316",
     "spread_last_price": 2.9604427304639143
   },
   "arb_ACE": {
-    "spread_last_alert": "2026-11-13T03:52:35.097256",
-    "spread_last_price": 3.5164814527419694,
-    "session_date": "2026-11-13",
+    "spread_last_alert": "2026-11-26T04:04:07.440895",
+    "spread_last_price": 2.9932652749276882,
+    "session_date": "2026-11-26",
     "alert_slots": [
       "H1"
     ]

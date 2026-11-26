@@ -989,6 +989,12 @@
     "price_change_pct": -2.46,
     "deliv_pct": 78.7,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-26T04:01:26.569597",
+    "em_low_breach_last_price": 58.119998931884766
   }
 }
