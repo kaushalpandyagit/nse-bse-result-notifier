@@ -33868,7 +33868,12 @@
       "ag": 4.635208,
       "al": 5.256879,
       "last_close": 781.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T09:17:33.077474",
+      "rsi_bounce_last_price": 801.0
     },
     "EMAMIPAP": {
       "mcap_cr": 675.0,
@@ -36928,7 +36933,12 @@
       "ag": 1.624511,
       "al": 2.46108,
       "last_close": 138.18,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T09:17:37.052797",
+      "rsi_bounce_last_price": 141.3300018310547
     },
     "RISHABH": {
       "mcap_cr": 2306.0,
@@ -38400,7 +38410,12 @@
       "ag": 1.139706,
       "al": 1.165531,
       "last_close": 141.78,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T09:17:39.743958",
+      "rsi_bounce_last_price": 143.5
     },
     "VIDHIING": {
       "mcap_cr": 1527.0,
@@ -40157,7 +40172,16 @@
       "x": 1
     }
   },
-  "rev_last": {},
+  "rev_last": {
+    "HEGAM": "2026-11-26",
+    "VEDL": "2026-11-26",
+    "RTNINDIA": "2026-11-26",
+    "AURIONPRO": "2026-11-26",
+    "SHALBY": "2026-11-26",
+    "GUJENERGY": "2026-11-26",
+    "PANACEABIO": "2026-11-26",
+    "SHARDACROP": "2026-11-26"
+  },
   "early_universe": {
     "JSLL": {
       "lo": 280.0,
@@ -40225,20 +40249,20 @@
   },
   "early_last": {},
   "early_scan": {
-    "date": "2026-11-25",
+    "date": "2026-11-26",
     "at": "14:47",
-    "set_up": 3,
-    "priced": 2,
+    "set_up": 5,
+    "priced": 3,
     "src": "yahoo",
     "hits": 0
   },
   "rev_scan": {
-    "date": "2026-11-25",
+    "date": "2026-11-26",
     "at": "14:47",
-    "set_up": 58,
-    "priced": 54,
+    "set_up": 94,
+    "priced": 89,
     "src": "yahoo",
-    "hits": 0
+    "hits": 8
   },
   "last_sector_report_date": "2026-11-26",
   "ipo_watch": {
@@ -40320,7 +40344,7 @@
         "at": "13:01"
       }
     },
-    "followup": false,
+    "followup": true,
     "last_check": "14:17"
   },
   "gapup_try": {
@@ -40338,5 +40362,12 @@
     "at": "09:31",
     "priced": 862,
     "hits": 52
+  },
+  "tight_last": {},
+  "tight_scan": {
+    "date": "2026-11-26",
+    "at": "14:47",
+    "set_up": 0,
+    "hits": 0
   }
 }
