@@ -26053,7 +26053,12 @@
       "rsi_ema_200": 54.5652,
       "ag": 6.436765,
       "al": 9.301437,
-      "last_close": 464.05
+      "last_close": 464.05,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:02:49.888753",
+      "rsi_bounce_last_price": 480.79998779296875
     },
     "AETHER": {
       "mcap_cr": 22272.019426675964,
@@ -31629,7 +31634,12 @@
       "rsi_ema_200": 55.0432,
       "ag": 14.611359,
       "al": 21.283223,
-      "last_close": 1434.0
+      "last_close": 1434.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:02:54.676575",
+      "rsi_bounce_last_price": 1456.5
     },
     "TANLA": {
       "mcap_cr": 8569.431895174732,
@@ -33367,7 +33377,12 @@
       "ag": 0.154716,
       "al": 0.298256,
       "last_close": 27.61,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:02:56.974673",
+      "rsi_bounce_last_price": 28.15999984741211
     },
     "CONSOFINVT": {
       "mcap_cr": 1037.0,
@@ -35119,7 +35134,12 @@
       "ag": 4.102466,
       "al": 5.76329,
       "last_close": 424.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:03:00.364216",
+      "rsi_bounce_last_price": 436.0
     },
     "KOPRAN": {
       "mcap_cr": 1291.0,
@@ -40094,7 +40114,7 @@
       }
     },
     "followup": false,
-    "last_check": "10:17"
+    "last_check": "10:33"
   },
   "gapup_try": {
     "date": "2026-11-26",

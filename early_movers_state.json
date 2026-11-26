@@ -979,7 +979,13 @@
     "price_change_pct": -2.47,
     "deliv_pct": 80.6,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-26T05:01:25.964279",
+    "em_low_breach_last_price": 3.4000000953674316
   },
   "OILCOUNTUB": {
     "trigger_date": "2026-11-25",
