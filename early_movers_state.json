@@ -1008,5 +1008,105 @@
     ],
     "em_low_breach_last_alert": "2026-11-26T04:01:26.569597",
     "em_low_breach_last_price": 58.119998931884766
+  },
+  "MAANALU": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 97.2,
+    "ref_low": 94.41,
+    "ref_close": 96.79,
+    "price_change_pct": 2.5,
+    "deliv_pct": 60.2,
+    "direction": "up",
+    "status": "Active"
+  },
+  "BUTTERFLY": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 566.0,
+    "ref_low": 544.0,
+    "ref_close": 546.25,
+    "price_change_pct": -2.5,
+    "deliv_pct": 60.5,
+    "direction": "down",
+    "status": "Active"
+  },
+  "HLVLTD": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 6.54,
+    "ref_low": 6.22,
+    "ref_close": 6.25,
+    "price_change_pct": -2.5,
+    "deliv_pct": 88.0,
+    "direction": "down",
+    "status": "Active"
+  },
+  "MODTHREAD": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 50.85,
+    "ref_low": 47.9,
+    "ref_close": 49.09,
+    "price_change_pct": 2.48,
+    "deliv_pct": 84.4,
+    "direction": "up",
+    "status": "Active"
+  },
+  "INDTONER": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 43.85,
+    "ref_low": 42.41,
+    "ref_close": 43.77,
+    "price_change_pct": 2.48,
+    "deliv_pct": 91.4,
+    "direction": "up",
+    "status": "Active"
+  },
+  "INCREDIBLE": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 29.98,
+    "ref_low": 29.16,
+    "ref_close": 29.88,
+    "price_change_pct": 2.47,
+    "deliv_pct": 86.7,
+    "direction": "up",
+    "status": "Active"
+  },
+  "GILLANDERS": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 93.8,
+    "ref_low": 89.52,
+    "ref_close": 89.88,
+    "price_change_pct": -2.46,
+    "deliv_pct": 91.9,
+    "direction": "down",
+    "status": "Active"
+  },
+  "PRIMESECU": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 310.4,
+    "ref_low": 295.35,
+    "ref_close": 297.25,
+    "price_change_pct": -2.46,
+    "deliv_pct": 92.8,
+    "direction": "down",
+    "status": "Active"
+  },
+  "SADBHAV": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 6.97,
+    "ref_low": 6.51,
+    "ref_close": 6.75,
+    "price_change_pct": -2.46,
+    "deliv_pct": 66.5,
+    "direction": "down",
+    "status": "Active"
+  },
+  "TECILCHEM": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 9.35,
+    "ref_low": 8.62,
+    "ref_close": 8.74,
+    "price_change_pct": -2.46,
+    "deliv_pct": 67.1,
+    "direction": "down",
+    "status": "Active"
   }
 }

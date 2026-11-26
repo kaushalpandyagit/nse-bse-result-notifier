@@ -2230,5 +2230,65 @@
     ],
     "fno_low_breach_last_alert": "2026-11-26T06:29:58.380765",
     "fno_low_breach_last_price": 10.479999542236328
+  },
+  "CARBORUNIV": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 987.6,
+    "ref_low": 964.9,
+    "status": "Active"
+  },
+  "RITCO": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 265.0,
+    "ref_low": 258.3,
+    "status": "Active"
+  },
+  "SGFIN": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 639.0,
+    "ref_low": 564.55,
+    "status": "Active"
+  },
+  "IRISDOREME": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 57.48,
+    "ref_low": 50.77,
+    "status": "Active"
+  },
+  "WIPL": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 165.1,
+    "ref_low": 162.4,
+    "status": "Active"
+  },
+  "BCPL": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 66.5,
+    "ref_low": 64.0,
+    "status": "Active"
+  },
+  "GMBREW": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 882.0,
+    "ref_low": 806.1,
+    "status": "Active"
+  },
+  "BELLACASA": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 198.0,
+    "ref_low": 185.0,
+    "status": "Active"
+  },
+  "KSB": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 678.8,
+    "ref_low": 635.8,
+    "status": "Active"
+  },
+  "BVCL": {
+    "trigger_date": "2026-11-26",
+    "ref_high": 35.94,
+    "ref_low": 34.0,
+    "status": "Active"
   }
 }
