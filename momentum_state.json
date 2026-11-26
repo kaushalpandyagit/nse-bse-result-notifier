@@ -9043,7 +9043,11 @@
       "rsi_al": 1.098454,
       "rs_rank": 98.5,
       "session_date": "2026-11-26",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "zanger_last_alert": "2026-11-26T04:30:45.021431",
+      "zanger_last_price": 320.2300109863281
     },
     "GRINDWELL": {
       "sma50": 1914.163994140625,
@@ -26462,7 +26466,12 @@
       "rsi_ema_200": 51.7191,
       "ag": 21.829135,
       "al": 32.593648,
-      "last_close": 2355.7
+      "last_close": 2355.7,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:04.348233",
+      "rsi_bounce_last_price": 2377.300048828125
     },
     "BAJAJCON": {
       "mcap_cr": 5101.298367208808,
@@ -26885,7 +26894,12 @@
       "rsi_ema_200": 50.8271,
       "ag": 0.478647,
       "al": 0.597611,
-      "last_close": 190.26
+      "last_close": 190.26,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:05.885552",
+      "rsi_bounce_last_price": 190.27999877929688
     },
     "CCL": {
       "mcap_cr": 12530.35689205371,
@@ -26937,7 +26951,12 @@
       "rsi_ema_200": 54.4401,
       "ag": 1.824978,
       "al": 2.499496,
-      "last_close": 374.85
+      "last_close": 374.85,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:07.613099",
+      "rsi_bounce_last_price": 382.1499938964844
     },
     "CELLO": {
       "mcap_cr": 8462.196278275274,
@@ -27457,7 +27476,12 @@
       "rsi_ema_200": 55.3698,
       "ag": 128.068231,
       "al": 102.98926,
-      "last_close": 13294.0
+      "last_close": 13294.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:09.302790",
+      "rsi_bounce_last_price": 13314.0
     },
     "E2E": {
       "mcap_cr": 9583.70311886618,
@@ -32612,7 +32636,12 @@
       "ag": 0.22327,
       "al": 0.255431,
       "last_close": 201.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:14.550076",
+      "rsi_bounce_last_price": 201.1999969482422
     },
     "AGARWALEYE": {
       "mcap_cr": 17344.0,
@@ -34274,7 +34303,12 @@
       "ag": 6.256698,
       "al": 11.597507,
       "last_close": 529.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:18.181709",
+      "rsi_bounce_last_price": 538.0499877929688
     },
     "HALEOSLABS": {
       "mcap_cr": 493.0,
@@ -35004,7 +35038,12 @@
       "ag": 41.69908,
       "al": 57.439352,
       "last_close": 6170.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:21.575822",
+      "rsi_bounce_last_price": 6216.0
     },
     "KIRIINDUS": {
       "mcap_cr": 3212.0,
@@ -35182,7 +35221,12 @@
       "ag": 5.071289,
       "al": 8.698113,
       "last_close": 824.55,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:22.998657",
+      "rsi_bounce_last_price": 826.0999755859375
     },
     "LANDMARK": {
       "mcap_cr": 1884.0,
@@ -36324,7 +36368,12 @@
       "ag": 0.706824,
       "al": 1.165986,
       "last_close": 108.41,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:26.831063",
+      "rsi_bounce_last_price": 108.91999816894531
     },
     "PRECOT": {
       "mcap_cr": 837.0,
@@ -36633,7 +36682,12 @@
       "ag": 0.728825,
       "al": 1.016456,
       "last_close": 86.97,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:29.079622",
+      "rsi_bounce_last_price": 86.98999786376953
     },
     "REMUS": {
       "mcap_cr": 931.0,
@@ -37995,7 +38049,12 @@
       "ag": 36.207718,
       "al": 51.359082,
       "last_close": 6893.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:32.630932",
+      "rsi_bounce_last_price": 6909.5
     },
     "VALIANTORG": {
       "mcap_cr": 954.0,
@@ -38224,7 +38283,12 @@
       "ag": 6.024823,
       "al": 7.820416,
       "last_close": 809.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:32:34.044768",
+      "rsi_bounce_last_price": 815.7999877929688
     },
     "WHEELS": {
       "mcap_cr": 5980.0,

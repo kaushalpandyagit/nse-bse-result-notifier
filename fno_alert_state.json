@@ -2163,7 +2163,13 @@
     "trigger_date": "2026-11-25",
     "ref_high": 221.9,
     "ref_low": 211.0,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-26T04:30:06.181343",
+    "fno_low_breach_last_price": 209.0
   },
   "BANG": {
     "trigger_date": "2026-11-25",
