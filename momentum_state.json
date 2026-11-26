@@ -29307,7 +29307,12 @@
       "rsi_ema_200": 51.1705,
       "ag": 4.82006,
       "al": 7.372182,
-      "last_close": 1312.6
+      "last_close": 1312.6,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:31:19.228958",
+      "rsi_bounce_last_price": 1312.5999755859375
     },
     "KPITTECH": {
       "mcap_cr": 14274.233563647766,
@@ -33159,7 +33164,12 @@
       "ag": 0.715697,
       "al": 0.980366,
       "last_close": 103.18,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:31:22.075746",
+      "rsi_bounce_last_price": 106.69999694824219
     },
     "BHAGERIA": {
       "mcap_cr": 1565.0,
@@ -34949,7 +34959,12 @@
       "ag": 8.613271,
       "al": 8.736968,
       "last_close": 724.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:31:25.016905",
+      "rsi_bounce_last_price": 730.7999877929688
     },
     "KAMATHOTEL": {
       "mcap_cr": 661.0,
@@ -35981,7 +35996,12 @@
       "ag": 26.953285,
       "al": 33.742383,
       "last_close": 2718.3999,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:31:27.302834",
+      "rsi_bounce_last_price": 2801.0
     },
     "NINSYS": {
       "mcap_cr": 1724.0,
@@ -40209,7 +40229,7 @@
       }
     },
     "followup": false,
-    "last_check": "11:33"
+    "last_check": "12:01"
   },
   "gapup_try": {
     "date": "2026-11-26",

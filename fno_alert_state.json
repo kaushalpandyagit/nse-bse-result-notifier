@@ -2205,6 +2205,12 @@
     "trigger_date": "2026-11-25",
     "ref_high": 11.37,
     "ref_low": 10.89,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-26T06:29:58.380765",
+    "fno_low_breach_last_price": 10.479999542236328
   }
 }
