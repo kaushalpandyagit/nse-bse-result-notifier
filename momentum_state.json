@@ -33201,7 +33201,12 @@
       "ag": 3.713955,
       "al": 6.549331,
       "last_close": 281.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:03:19.909645",
+      "rsi_bounce_last_price": 292.3500061035156
     },
     "BLISSGVS": {
       "mcap_cr": 7275.0,
@@ -33641,7 +33646,12 @@
       "ag": 4.522809,
       "al": 6.334312,
       "last_close": 492.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:03:21.331897",
+      "rsi_bounce_last_price": 495.95001220703125
     },
     "DIFFNKG": {
       "mcap_cr": 1681.0,
@@ -33988,7 +33998,12 @@
       "ag": 0.480423,
       "al": 0.810859,
       "last_close": 61.86,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:03:23.199364",
+      "rsi_bounce_last_price": 64.01000213623047
     },
     "FMGOETZE": {
       "mcap_cr": 2404.0,
@@ -34105,7 +34120,12 @@
       "ag": 2.108872,
       "al": 2.268211,
       "last_close": 357.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:03:24.553270",
+      "rsi_bounce_last_price": 367.20001220703125
     },
     "GFLLIMITED": {
       "mcap_cr": 621.0,
@@ -35126,7 +35146,12 @@
       "ag": 0.44896,
       "al": 0.361669,
       "last_close": 32.72,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:03:28.411795",
+      "rsi_bounce_last_price": 32.810001373291016
     },
     "KODYTECH": {
       "mcap_cr": 2620.0,
@@ -36072,7 +36097,12 @@
       "ag": 0.726545,
       "al": 1.115916,
       "last_close": 67.93,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:03:31.184184",
+      "rsi_bounce_last_price": 69.94000244140625
     },
     "ONWARDTEC": {
       "mcap_cr": 770.0,
@@ -36222,7 +36252,12 @@
       "ag": 0.509842,
       "al": 0.599506,
       "last_close": 70.51,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:03:32.150016",
+      "rsi_bounce_last_price": 70.7300033569336
     },
     "PANACHE": {
       "mcap_cr": 1287.0,
@@ -38448,7 +38483,12 @@
       "ag": 0.433723,
       "al": 0.568074,
       "last_close": 56.56,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:03:36.532189",
+      "rsi_bounce_last_price": 56.56999969482422
     },
     "YASHO": {
       "mcap_cr": 4351.0,
@@ -40149,7 +40189,7 @@
       }
     },
     "followup": false,
-    "last_check": "11:17"
+    "last_check": "11:33"
   },
   "gapup_try": {
     "date": "2026-11-26",
