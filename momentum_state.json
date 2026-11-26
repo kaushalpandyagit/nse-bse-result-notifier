@@ -26391,7 +26391,12 @@
       "rsi_ema_200": 53.7538,
       "ag": 24.138977,
       "al": 46.839641,
-      "last_close": 1674.5
+      "last_close": 1674.5,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:47:38.805272",
+      "rsi_bounce_last_price": 1739.4000244140625
     },
     "AVANTIFEED": {
       "mcap_cr": 9482.695848,
@@ -31063,7 +31068,12 @@
       "rsi_ema_200": 52.1802,
       "ag": 9.428417,
       "al": 18.17635,
-      "last_close": 1066.9
+      "last_close": 1066.9,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:47:42.458987",
+      "rsi_bounce_last_price": 1073.4000244140625
     },
     "SFL": {
       "mcap_cr": 6424.976712580346,
@@ -33441,7 +33451,12 @@
       "ag": 2.042955,
       "al": 1.777483,
       "last_close": 228.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:47:45.318263",
+      "rsi_bounce_last_price": 230.0
     },
     "CYIENTDLM": {
       "mcap_cr": 6537.0,
@@ -35853,7 +35868,12 @@
       "ag": 1.508503,
       "al": 1.498431,
       "last_close": 232.03,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:47:50.453597",
+      "rsi_bounce_last_price": 233.97999572753906
     },
     "NAHARSPING": {
       "mcap_cr": 908.0,
@@ -36888,7 +36908,12 @@
       "ag": 2.501036,
       "al": 3.490083,
       "last_close": 313.2,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T04:47:53.018371",
+      "rsi_bounce_last_price": 322.0
     },
     "SAKAR": {
       "mcap_cr": 2247.0,
@@ -40034,9 +40059,42 @@
   "market_up": null,
   "rev_intraday": {
     "date": "2026-11-26",
-    "sent": {},
+    "sent": {
+      "HEGAM": {
+        "price": 272.82,
+        "at": "10:17"
+      },
+      "VEDL": {
+        "price": 238.71,
+        "at": "10:17"
+      },
+      "RTNINDIA": {
+        "price": 25.13,
+        "at": "10:17"
+      },
+      "AURIONPRO": {
+        "price": 572.45,
+        "at": "10:17"
+      },
+      "SHALBY": {
+        "price": 129.2,
+        "at": "10:17"
+      },
+      "GUJENERGY": {
+        "price": 238.55,
+        "at": "10:17"
+      },
+      "PANACEABIO": {
+        "price": 336.85,
+        "at": "10:17"
+      },
+      "SHARDACROP": {
+        "price": 675.6,
+        "at": "10:17"
+      }
+    },
     "followup": false,
-    "last_check": ""
+    "last_check": "10:17"
   },
   "gapup_try": {
     "date": "2026-11-26",
