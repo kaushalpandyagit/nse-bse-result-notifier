@@ -27925,7 +27925,12 @@
       "rsi_ema_200": 52.9966,
       "ag": 21.841736,
       "al": 19.070068,
-      "last_close": 1501.8
+      "last_close": 1501.8,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:31:01.372203",
+      "rsi_bounce_last_price": 1528.199951171875
     },
     "GAEL": {
       "mcap_cr": 6463.128438030212,
@@ -32624,7 +32629,12 @@
       "ag": 1.407017,
       "al": 1.95854,
       "last_close": 118.3,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T05:31:04.104650",
+      "rsi_bounce_last_price": 118.37000274658203
     },
     "ADVENTHTL": {
       "mcap_cr": 637.0,
