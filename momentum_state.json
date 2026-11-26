@@ -35701,7 +35701,12 @@
       "ag": 3.114946,
       "al": 4.17714,
       "last_close": 267.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:48:16.334635",
+      "rsi_bounce_last_price": 273.3500061035156
     },
     "MENONBE": {
       "mcap_cr": 1841.0,
@@ -37389,7 +37394,12 @@
       "ag": 6.085091,
       "al": 7.205828,
       "last_close": 515.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T06:48:20.311962",
+      "rsi_bounce_last_price": 521.7999877929688
     },
     "SHREERAMA": {
       "mcap_cr": 761.0,
@@ -40229,7 +40239,7 @@
       }
     },
     "followup": false,
-    "last_check": "12:01"
+    "last_check": "12:18"
   },
   "gapup_try": {
     "date": "2026-11-26",
