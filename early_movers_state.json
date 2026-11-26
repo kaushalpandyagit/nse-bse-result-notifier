@@ -865,7 +865,13 @@
     "price_change_pct": -2.44,
     "deliv_pct": 74.5,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-26",
+    "alert_slots": [
+      "H2"
+    ],
+    "em_low_breach_last_alert": "2026-11-26T07:01:31.441893",
+    "em_low_breach_last_price": 28.06999969482422
   },
   "ADVIKCA": {
     "trigger_date": "2026-11-24",

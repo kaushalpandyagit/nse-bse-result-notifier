@@ -9044,10 +9044,13 @@
       "rs_rank": 98.5,
       "session_date": "2026-11-26",
       "alert_slots": [
-        "H1"
+        "H1",
+        "H2"
       ],
       "zanger_last_alert": "2026-11-26T04:30:45.021431",
-      "zanger_last_price": 320.2300109863281
+      "zanger_last_price": 320.2300109863281,
+      "vol_breakout_last_alert": "2026-11-26T07:02:12.841914",
+      "vol_breakout_last_price": 324.94000244140625
     },
     "GRINDWELL": {
       "sma50": 1914.163994140625,
@@ -33197,7 +33200,12 @@
       "ag": 11.281827,
       "al": 16.385064,
       "last_close": 972.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T07:03:50.886045",
+      "rsi_bounce_last_price": 999.0999755859375
     },
     "BIRLACABLE": {
       "mcap_cr": 920.0,
@@ -33708,7 +33716,12 @@
       "ag": 4.849658,
       "al": 6.153418,
       "last_close": 971.6,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T07:03:52.729678",
+      "rsi_bounce_last_price": 972.4500122070312
     },
     "DOLPHIN": {
       "mcap_cr": 2580.0,
@@ -34589,7 +34602,12 @@
       "ag": 0.294958,
       "al": 0.423953,
       "last_close": 36.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T07:03:55.869730",
+      "rsi_bounce_last_price": 37.0
     },
     "IMPAL": {
       "mcap_cr": 1271.0,
@@ -40239,7 +40257,7 @@
       }
     },
     "followup": false,
-    "last_check": "12:18"
+    "last_check": "12:34"
   },
   "gapup_try": {
     "date": "2026-11-26",
