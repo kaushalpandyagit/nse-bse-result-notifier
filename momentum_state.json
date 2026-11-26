@@ -27642,7 +27642,12 @@
       "rsi_ema_200": 49.0907,
       "ag": 3.545589,
       "al": 5.131141,
-      "last_close": 283.85
+      "last_close": 283.85,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T08:47:10.091273",
+      "rsi_bounce_last_price": 283.5
     },
     "EMAMILTD": {
       "mcap_cr": 18350.44547607422,
@@ -31693,7 +31698,12 @@
       "rsi_ema_200": 47.8587,
       "ag": 1.264883,
       "al": 1.480465,
-      "last_close": 119.26
+      "last_close": 119.26,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T08:47:11.978905",
+      "rsi_bounce_last_price": 121.54000091552734
     },
     "TARIL": {
       "mcap_cr": 8701.807344453315,
@@ -34294,7 +34304,12 @@
       "ag": 0.879584,
       "al": 1.05017,
       "last_close": 112.54,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T08:47:14.354812",
+      "rsi_bounce_last_price": 113.69999694824219
     },
     "GREENPLY": {
       "mcap_cr": 3466.0,
@@ -38225,7 +38240,12 @@
       "ag": 4.843522,
       "al": 5.515176,
       "last_close": 450.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-26T08:47:18.098382",
+      "rsi_bounce_last_price": 468.1000061035156
     },
     "UTTAMSUGAR": {
       "mcap_cr": 1352.0,
@@ -40296,7 +40316,7 @@
       }
     },
     "followup": false,
-    "last_check": "13:48"
+    "last_check": "14:17"
   },
   "gapup_try": {
     "date": "2026-11-26",
