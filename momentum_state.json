@@ -19311,7 +19311,12 @@
       "rsi_al": 14.794723,
       "rs_rank": 99.1,
       "session_date": "2026-11-27",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vcp_breakout_last_alert": "2026-11-27T04:16:53.157540",
+      "vcp_breakout_last_price": 1842.0,
+      "vcp_sent": true
     },
     "SAFARI": {
       "sma50": 1357.4399951171874,
@@ -20197,7 +20202,11 @@
       "rsi_al": 22.781412,
       "rs_rank": 90.4,
       "session_date": "2026-11-27",
-      "alert_slots": []
+      "alert_slots": [
+        "H1"
+      ],
+      "vol_breakout_last_alert": "2026-11-27T04:16:55.990252",
+      "vol_breakout_last_price": 919.2000122070312
     },
     "SHAILY": {
       "sma50": 3091.5380126953123,
@@ -26338,7 +26347,12 @@
       "rsi_ema_200": 53.4086,
       "ag": 6.153751,
       "al": 6.055101,
-      "last_close": 428.8
+      "last_close": 428.8,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:17:13.657628",
+      "rsi_bounce_last_price": 437.20001220703125
     },
     "APOLLOTYRE": {
       "mcap_cr": 26970.105561187007,
@@ -28080,7 +28094,12 @@
       "rsi_ema_200": 49.6969,
       "ag": 0.90239,
       "al": 1.631012,
-      "last_close": 140.3
+      "last_close": 140.3,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:17:15.462871",
+      "rsi_bounce_last_price": 141.2100067138672
     },
     "GALLANTT": {
       "mcap_cr": 13186.00364425,
@@ -30535,7 +30554,12 @@
       "rsi_ema_200": 50.8899,
       "ag": 2.904943,
       "al": 5.981046,
-      "last_close": 368.5
+      "last_close": 368.5,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:17:18.748458",
+      "rsi_bounce_last_price": 383.45001220703125
     },
     "PREMIERENE": {
       "mcap_cr": 36483.50974620646,
@@ -31906,7 +31930,12 @@
       "rsi_ema_200": 48.0197,
       "ag": 11.971909,
       "al": 25.042968,
-      "last_close": 1512.8
+      "last_close": 1512.8,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:17:20.193612",
+      "rsi_bounce_last_price": 1537.199951171875
     },
     "TEJASNET": {
       "mcap_cr": 7153.0974696,
@@ -32400,7 +32429,12 @@
       "rsi_ema_200": 50.6963,
       "ag": 58.137901,
       "al": 86.781812,
-      "last_close": 9512.0
+      "last_close": 9512.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:17:21.764600",
+      "rsi_bounce_last_price": 9640.0
     },
     "VOLTAS": {
       "mcap_cr": 39143.664742,
@@ -32821,7 +32855,12 @@
       "ag": 0.268267,
       "al": 0.390396,
       "last_close": 24.19,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:17:23.262224",
+      "rsi_bounce_last_price": 24.90999984741211
     },
     "AHLWEST": {
       "mcap_cr": 630.0,
@@ -33228,7 +33267,12 @@
       "ag": 0.227399,
       "al": 0.301325,
       "last_close": 17.16,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:17:25.024480",
+      "rsi_bounce_last_price": 17.520000457763672
     },
     "BALAJITELE": {
       "mcap_cr": 1182.0,
