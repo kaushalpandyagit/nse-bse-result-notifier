@@ -1069,7 +1069,13 @@
     "price_change_pct": -2.5,
     "deliv_pct": 60.5,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H2"
+    ],
+    "em_high_breach_last_alert": "2026-11-27T09:46:12.704284",
+    "em_high_breach_last_price": 568.8499755859375
   },
   "HLVLTD": {
     "trigger_date": "2026-11-26",
