@@ -29216,7 +29216,12 @@
       "rsi_ema_200": 49.0167,
       "ag": 3.941002,
       "al": 6.437346,
-      "last_close": 916.35
+      "last_close": 916.35,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T08:17:55.808132",
+      "rsi_bounce_last_price": 934.7999877929688
     },
     "JUSTDIAL": {
       "mcap_cr": 5577.515414740381,
@@ -32329,7 +32334,12 @@
       "rsi_ema_200": 50.1117,
       "ag": 3.343877,
       "al": 5.244117,
-      "last_close": 449.1
+      "last_close": 449.1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T08:17:58.454485",
+      "rsi_bounce_last_price": 462.0
     },
     "UTIAMC": {
       "mcap_cr": 11003.1538552,
