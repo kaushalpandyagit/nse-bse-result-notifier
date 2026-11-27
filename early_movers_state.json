@@ -1198,5 +1198,105 @@
     ],
     "em_low_breach_last_alert": "2026-11-27T10:01:27.404353",
     "em_low_breach_last_price": 8.529999732971191
+  },
+  "KAKATCEM": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 95.5,
+    "ref_low": 93.43,
+    "ref_close": 94.09,
+    "price_change_pct": -2.49,
+    "deliv_pct": 81.6,
+    "direction": "down",
+    "status": "Active"
+  },
+  "ASIANTNE": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 9.69,
+    "ref_low": 8.8,
+    "ref_close": 9.17,
+    "price_change_pct": 2.46,
+    "deliv_pct": 91.6,
+    "direction": "up",
+    "status": "Active"
+  },
+  "ORIENTLTD": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 83.4,
+    "ref_low": 77.6,
+    "ref_close": 80.07,
+    "price_change_pct": 2.46,
+    "deliv_pct": 82.4,
+    "direction": "up",
+    "status": "Active"
+  },
+  "DHATRE": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 4.27,
+    "ref_low": 3.7,
+    "ref_close": 3.76,
+    "price_change_pct": 2.45,
+    "deliv_pct": 72.1,
+    "direction": "up",
+    "status": "Active"
+  },
+  "RAMANEWS": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 27.94,
+    "ref_low": 25.5,
+    "ref_close": 26.35,
+    "price_change_pct": 2.45,
+    "deliv_pct": 78.9,
+    "direction": "up",
+    "status": "Active"
+  },
+  "PPAP": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 249.31,
+    "ref_low": 235.5,
+    "ref_close": 237.55,
+    "price_change_pct": -2.44,
+    "deliv_pct": 79.4,
+    "direction": "down",
+    "status": "Active"
+  },
+  "AONEGOLD": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 11.85,
+    "ref_low": 11.6,
+    "ref_close": 11.76,
+    "price_change_pct": 2.44,
+    "deliv_pct": 62.1,
+    "direction": "up",
+    "status": "Active"
+  },
+  "VIRTUALG": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 0.42,
+    "ref_low": 0.4,
+    "ref_close": 0.4,
+    "price_change_pct": -2.44,
+    "deliv_pct": 90.8,
+    "direction": "down",
+    "status": "Active"
+  },
+  "GLOBECIVIL": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 36.89,
+    "ref_low": 35.4,
+    "ref_close": 36.2,
+    "price_change_pct": 2.43,
+    "deliv_pct": 81.9,
+    "direction": "up",
+    "status": "Active"
+  },
+  "IMPAL": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 1047.8,
+    "ref_low": 1008.0,
+    "ref_close": 1037.6,
+    "price_change_pct": 2.43,
+    "deliv_pct": 81.9,
+    "direction": "up",
+    "status": "Active"
   }
 }

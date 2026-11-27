@@ -348,12 +348,10 @@
     "fno_high_breach_last_price": 1175.800048828125
   },
   "BSL": {
-    "trigger_date": "2026-10-28",
-    "ref_high": 118.5,
-    "ref_low": 115.51,
-    "status": "Breached Low",
-    "fno_low_breach_last_alert": "2026-10-29T03:51:22.421997",
-    "fno_low_breach_last_price": 117.44000244140625
+    "trigger_date": "2026-11-27",
+    "ref_high": 121.49,
+    "ref_low": 117.32,
+    "status": "Active"
   },
   "GATEWAY": {
     "trigger_date": "2026-10-28",
@@ -2350,5 +2348,59 @@
     ],
     "fno_low_breach_last_alert": "2026-11-27T04:01:34.789337",
     "fno_low_breach_last_price": 40.54999923706055
+  },
+  "SANOFICONR": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 3547.9,
+    "ref_low": 3404.0,
+    "status": "Active"
+  },
+  "FLAIR": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 259.98,
+    "ref_low": 244.22,
+    "status": "Active"
+  },
+  "ZAGGLE": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 168.18,
+    "ref_low": 157.5,
+    "status": "Active"
+  },
+  "SHERVANI": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 330.0,
+    "ref_low": 310.0,
+    "status": "Active"
+  },
+  "TREEHOUSE": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 6.16,
+    "ref_low": 5.38,
+    "status": "Active"
+  },
+  "BTTL": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 37.79,
+    "ref_low": 33.6,
+    "status": "Active"
+  },
+  "LCCPROJECT": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 137.4,
+    "ref_low": 129.5,
+    "status": "Active"
+  },
+  "THOMASCOTT": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 347.0,
+    "ref_low": 322.1,
+    "status": "Active"
+  },
+  "HGM": {
+    "trigger_date": "2026-11-27",
+    "ref_high": 38.48,
+    "ref_low": 37.0,
+    "status": "Active"
   }
 }
