@@ -881,7 +881,13 @@
     "price_change_pct": -2.44,
     "deliv_pct": 85.6,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-27T03:46:19.387365",
+    "em_high_breach_last_price": 0.8399999737739563
   },
   "PRITIKAUTO": {
     "trigger_date": "2026-11-25",
@@ -1047,7 +1053,13 @@
     "price_change_pct": 2.48,
     "deliv_pct": 84.4,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-27T03:46:21.218117",
+    "em_low_breach_last_price": 46.400001525878906
   },
   "INDTONER": {
     "trigger_date": "2026-11-26",
@@ -1067,7 +1079,13 @@
     "price_change_pct": 2.47,
     "deliv_pct": 86.7,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-27T03:46:22.407925",
+    "em_high_breach_last_price": 30.170000076293945
   },
   "GILLANDERS": {
     "trigger_date": "2026-11-26",

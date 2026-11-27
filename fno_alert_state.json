@@ -1515,7 +1515,7 @@
     "trigger_date": "2026-11-16",
     "ref_high": 949.0,
     "ref_low": 832.0,
-    "status": "Active"
+    "status": "Expired"
   },
   "SHIVAMILLS": {
     "trigger_date": "2026-11-16",
@@ -2253,7 +2253,13 @@
     "trigger_date": "2026-11-26",
     "ref_high": 165.1,
     "ref_low": 162.4,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-27T03:46:12.397152",
+    "fno_high_breach_last_price": 165.27999877929688
   },
   "BCPL": {
     "trigger_date": "2026-11-26",
