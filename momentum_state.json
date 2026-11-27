@@ -34171,7 +34171,12 @@
       "ag": 5.15162,
       "al": 6.314414,
       "last_close": 520.85,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T09:02:42.218005",
+      "rsi_bounce_last_price": 528.5999755859375
     },
     "MAXIND": {
       "mcap_cr": 824.0,

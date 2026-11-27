@@ -2241,7 +2241,13 @@
     "trigger_date": "2026-11-26",
     "ref_high": 265.0,
     "ref_low": 258.3,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-27T09:01:27.264316",
+    "fno_low_breach_last_price": 257.95001220703125
   },
   "SGFIN": {
     "trigger_date": "2026-11-26",
