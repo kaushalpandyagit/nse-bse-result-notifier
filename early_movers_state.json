@@ -841,7 +841,13 @@
     "price_change_pct": -2.44,
     "deliv_pct": 61.0,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H2"
+    ],
+    "em_high_breach_last_alert": "2026-11-27T10:01:25.831086",
+    "em_high_breach_last_price": 561.0
   },
   "STEELXIND": {
     "trigger_date": "2026-11-24",
@@ -1185,6 +1191,12 @@
     "price_change_pct": -2.46,
     "deliv_pct": 67.1,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H2"
+    ],
+    "em_low_breach_last_alert": "2026-11-27T10:01:27.404353",
+    "em_low_breach_last_price": 8.529999732971191
   }
 }

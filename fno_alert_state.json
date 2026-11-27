@@ -2091,7 +2091,13 @@
     "trigger_date": "2026-11-24",
     "ref_high": 73.6,
     "ref_low": 68.62,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_low_breach_last_alert": "2026-11-27T10:01:19.136794",
+    "fno_low_breach_last_price": 68.5
   },
   "ONIXSOLAR": {
     "trigger_date": "2026-11-24",
