@@ -100,7 +100,28 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 log = logging.getLogger("fno_analysis")
 
 
+FNO_REPORT_FILE = Path(__file__).parent / "fno_report.json"      # every message of the day, for the laptop's H page (patch_github_fno_report.py)
+
+
+def _save_report(text: str):
+    try:
+        now = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
+        try:
+            rep = json.loads(FNO_REPORT_FILE.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            rep = {}
+        days = rep.setdefault("days", {})
+        days.setdefault(now.strftime("%Y-%m-%d"), []).append({"at": now.strftime("%H:%M"), "text": text})
+        for d in sorted(days)[:-7]:
+            days.pop(d, None)
+        rep["updated"] = now.strftime("%Y-%m-%d %H:%M")
+        FNO_REPORT_FILE.write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
+    except Exception as e:      # never let the report break the alerts
+        log.warning("fno_report.json not written: %s", e)
+
+
 def send_telegram_message(text: str) -> bool:
+    _save_report(text)
     if "PUT_YOUR" in TELEGRAM_BOT_TOKEN or "PUT_YOUR" in TELEGRAM_CHAT_ID:
         log.error("Telegram not configured.")
         return False
