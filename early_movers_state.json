@@ -7,7 +7,13 @@
     "price_change_pct": -2.48,
     "deliv_pct": 65.6,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-27T06:01:20.533323",
+    "em_low_breach_last_price": 121.01000213623047
   },
   "PRUDMOULI": {
     "trigger_date": "2026-11-10",

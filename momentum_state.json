@@ -30838,7 +30838,12 @@
       "rsi_ema_200": 51.5443,
       "ag": 0.769606,
       "al": 0.938494,
-      "last_close": 88.12
+      "last_close": 88.12,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T06:02:34.089046",
+      "rsi_bounce_last_price": 88.62000274658203
     },
     "RCF": {
       "mcap_cr": 5709.971835,
@@ -36048,10 +36053,14 @@
       "GODFRYPHLP": {
         "price": 1804.2,
         "at": "10:47"
+      },
+      "AVANTIFEED": {
+        "price": 713.0,
+        "at": "11:32"
       }
     },
     "followup": false,
-    "last_check": "11:17"
+    "last_check": "11:32"
   },
   "gapup_try": {
     "date": "2026-11-27",

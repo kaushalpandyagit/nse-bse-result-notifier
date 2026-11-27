@@ -2307,7 +2307,13 @@
     "trigger_date": "2026-11-26",
     "ref_high": 65.35,
     "ref_low": 59.3,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-27T06:01:19.413818",
+    "fno_low_breach_last_price": 59.2599983215332
   },
   "VERTOZ": {
     "trigger_date": "2026-11-26",
