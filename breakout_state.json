@@ -357,11 +357,11 @@
     ]
   },
   "arb_STEL": {
-    "spread_last_alert": "2026-11-26T04:19:30.487288",
-    "spread_last_price": 3.3282047129322136,
-    "session_date": "2026-11-26",
+    "spread_last_alert": "2026-11-27T09:32:00.267743",
+    "spread_last_price": 3.453947368421053,
+    "session_date": "2026-11-27",
     "alert_slots": [
-      "H1"
+      "H2"
     ]
   },
   "custom_alert_BASILIC_open_change_rs": {

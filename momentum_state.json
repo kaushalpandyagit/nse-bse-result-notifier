@@ -33205,7 +33205,12 @@
       "ag": 3.070031,
       "al": 3.091553,
       "last_close": 318.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T09:31:37.729560",
+      "rsi_bounce_last_price": 326.5
     },
     "ASAHISONG": {
       "mcap_cr": 454.0,
@@ -33501,7 +33506,12 @@
       "ag": 0.953874,
       "al": 1.1097,
       "last_close": 146.31,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T09:31:39.303895",
+      "rsi_bounce_last_price": 147.1699981689453
     },
     "BLUSPRING": {
       "mcap_cr": 2400.0,
@@ -33764,7 +33774,12 @@
       "ag": 1.89703,
       "al": 1.694806,
       "last_close": 228.18,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T09:31:40.605477",
+      "rsi_bounce_last_price": 228.47000122070312
     },
     "CYIENTDLM": {
       "mcap_cr": 6537.0,

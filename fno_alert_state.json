@@ -1911,7 +1911,13 @@
     "trigger_date": "2026-11-26",
     "ref_high": 590.0,
     "ref_low": 562.35,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_high_breach_last_alert": "2026-11-27T09:29:53.582246",
+    "fno_high_breach_last_price": 604.4000244140625
   },
   "APOLLOPIPE": {
     "trigger_date": "2026-11-19",
