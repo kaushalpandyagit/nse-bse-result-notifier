@@ -29218,7 +29218,12 @@
       "rsi_ema_200": 48.5399,
       "ag": 3.670421,
       "al": 5.676398,
-      "last_close": 647.55
+      "last_close": 647.55,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T05:31:19.505633",
+      "rsi_bounce_last_price": 654.9500122070312
     },
     "JWL": {
       "mcap_cr": 9638.911466575197,
@@ -33171,7 +33176,12 @@
       "ag": 3.166512,
       "al": 4.863065,
       "last_close": 347.65,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T05:31:22.789326",
+      "rsi_bounce_last_price": 359.0
     },
     "ASKAUTOLTD": {
       "mcap_cr": 12708.0,
@@ -33607,7 +33617,12 @@
       "ag": 0.180094,
       "al": 0.276952,
       "last_close": 28.12,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T05:31:23.865396",
+      "rsi_bounce_last_price": 28.260000228881836
     },
     "CONSOFINVT": {
       "mcap_cr": 1037.0,

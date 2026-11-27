@@ -1123,7 +1123,13 @@
     "price_change_pct": -2.46,
     "deliv_pct": 92.8,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_low_breach_last_alert": "2026-11-27T05:30:04.404693",
+    "em_low_breach_last_price": 295.25
   },
   "SADBHAV": {
     "trigger_date": "2026-11-26",
