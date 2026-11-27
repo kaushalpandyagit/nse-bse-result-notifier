@@ -33830,7 +33830,12 @@
       "ag": 0.538493,
       "al": 0.943424,
       "last_close": 83.01,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T06:47:21.111831",
+      "rsi_bounce_last_price": 84.91999816894531
     },
     "FILATEX": {
       "mcap_cr": 4978.0,
@@ -33933,7 +33938,12 @@
       "ag": 0.697257,
       "al": 1.005525,
       "last_close": 74.4,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T06:47:22.190517",
+      "rsi_bounce_last_price": 74.7300033569336
     },
     "INNOVANA": {
       "mcap_cr": 595.0,
@@ -36065,7 +36075,7 @@
       }
     },
     "followup": false,
-    "last_check": "11:47"
+    "last_check": "12:17"
   },
   "gapup_try": {
     "date": "2026-11-27",
