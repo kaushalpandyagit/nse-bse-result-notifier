@@ -26390,7 +26390,12 @@
       "rsi_ema_200": 51.7758,
       "ag": 3.705886,
       "al": 3.984553,
-      "last_close": 510.45
+      "last_close": 510.45,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:08.607811",
+      "rsi_bounce_last_price": 515.0
     },
     "ARVINDFASN": {
       "mcap_cr": 4762.107184912003,
@@ -26468,7 +26473,12 @@
       "rsi_ema_200": 52.9732,
       "ag": 14.506423,
       "al": 16.859957,
-      "last_close": 1600.7
+      "last_close": 1600.7,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:09.850902",
+      "rsi_bounce_last_price": 1640.5
     },
     "ATLANTAELE": {
       "mcap_cr": 11449.9074625,
@@ -26577,7 +26587,12 @@
       "rsi_ema_200": 52.588,
       "ag": 18.808766,
       "al": 24.098201,
-      "last_close": 1832.9
+      "last_close": 1832.9,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:11.036341",
+      "rsi_bounce_last_price": 1845.0
     },
     "AZAD": {
       "mcap_cr": 15234.8331737,
@@ -27179,7 +27194,12 @@
       "rsi_ema_200": 52.3728,
       "ag": 1.171264,
       "al": 1.738831,
-      "last_close": 232.64
+      "last_close": 232.64,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:13.307595",
+      "rsi_bounce_last_price": 233.8699951171875
     },
     "CHALET": {
       "mcap_cr": 19091.907724533186,
@@ -28954,7 +28974,12 @@
       "rsi_ema_200": 48.5366,
       "ag": 1.7511,
       "al": 2.123905,
-      "last_close": 279.65
+      "last_close": 279.65,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:15.573019",
+      "rsi_bounce_last_price": 281.8999938964844
     },
     "JAMNAAUTO": {
       "mcap_cr": 5199.353980063957,
@@ -28980,7 +29005,12 @@
       "rsi_ema_200": 50.3347,
       "ag": 0.563372,
       "al": 0.766534,
-      "last_close": 87.63
+      "last_close": 87.63,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:16.865698",
+      "rsi_bounce_last_price": 88.94999694824219
     },
     "JBMA": {
       "mcap_cr": 11222.835009430713,
@@ -29396,7 +29426,12 @@
       "rsi_ema_200": 51.1858,
       "ag": 4.47577,
       "al": 7.038451,
-      "last_close": 1309.9
+      "last_close": 1309.9,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:18.733646",
+      "rsi_bounce_last_price": 1320.9000244140625
     },
     "KPITTECH": {
       "mcap_cr": 14191.204594161383,
@@ -29617,7 +29652,12 @@
       "rsi_ema_200": 48.4952,
       "ag": 1.547339,
       "al": 2.17501,
-      "last_close": 151.2
+      "last_close": 151.2,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:20.214821",
+      "rsi_bounce_last_price": 152.8000030517578
     },
     "M&MFIN": {
       "mcap_cr": 39847.473791625,
@@ -29656,7 +29696,12 @@
       "rsi_ema_200": 53.6026,
       "ag": 16.443151,
       "al": 19.07166,
-      "last_close": 1859.9
+      "last_close": 1859.9,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:21.425002",
+      "rsi_bounce_last_price": 1878.0
     },
     "MANYAVAR": {
       "mcap_cr": 11229.253447517664,
@@ -30215,7 +30260,12 @@
       "rsi_ema_200": 52.3734,
       "ag": 10.790503,
       "al": 12.94693,
-      "last_close": 1242.0
+      "last_close": 1242.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:23.798502",
+      "rsi_bounce_last_price": 1282.4000244140625
     },
     "PARKHOSPS": {
       "mcap_cr": 10180.61035623516,
@@ -30371,7 +30421,12 @@
       "rsi_ema_200": 47.8005,
       "ag": 1.640864,
       "al": 1.706232,
-      "last_close": 163.77
+      "last_close": 163.77,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:25.007737",
+      "rsi_bounce_last_price": 164.47999572753906
     },
     "PNBHOUSING": {
       "mcap_cr": 30659.211991806493,
@@ -30410,7 +30465,12 @@
       "rsi_ema_200": 49.7931,
       "ag": 3.896675,
       "al": 6.092862,
-      "last_close": 558.0
+      "last_close": 558.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:26.177032",
+      "rsi_bounce_last_price": 574.5999755859375
     },
     "POLYMED": {
       "mcap_cr": 16621.25352562903,
@@ -30579,7 +30639,12 @@
       "rsi_ema_200": 54.6866,
       "ag": 20.196909,
       "al": 20.65754,
-      "last_close": 1473.9
+      "last_close": 1473.9,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:27.283506",
+      "rsi_bounce_last_price": 1521.199951171875
     },
     "QUESS": {
       "mcap_cr": 4841.1833056,
@@ -30735,7 +30800,12 @@
       "rsi_ema_200": 54.0751,
       "ag": 3.585201,
       "al": 4.972462,
-      "last_close": 330.0
+      "last_close": 330.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:28.638269",
+      "rsi_bounce_last_price": 331.04998779296875
     },
     "REFEX": {
       "mcap_cr": 2803.167608626361,
@@ -31112,7 +31182,12 @@
       "rsi_ema_200": 52.0983,
       "ag": 10.254959,
       "al": 16.878039,
-      "last_close": 1087.9
+      "last_close": 1087.9,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:29.989646",
+      "rsi_bounce_last_price": 1094.4000244140625
     },
     "SFL": {
       "mcap_cr": 6406.958565684827,
@@ -31190,7 +31265,12 @@
       "rsi_ema_200": 51.3353,
       "ag": 1.282554,
       "al": 1.907187,
-      "last_close": 173.57
+      "last_close": 173.57,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:31.210146",
+      "rsi_bounce_last_price": 174.8800048828125
     },
     "SHILCTECH": {
       "mcap_cr": 3553.5548681396485,
@@ -31268,7 +31348,12 @@
       "rsi_ema_200": 60.4433,
       "ag": 14.351947,
       "al": 14.216083,
-      "last_close": 912.95
+      "last_close": 912.95,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:32.357654",
+      "rsi_bounce_last_price": 922.0
     },
     "SIGNATURE": {
       "mcap_cr": 12127.1354412,
@@ -31528,7 +31613,12 @@
       "rsi_ema_200": 51.8221,
       "ag": 4.873289,
       "al": 9.691251,
-      "last_close": 1003.6
+      "last_close": 1003.6,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:33.832511",
+      "rsi_bounce_last_price": 1009.7000122070312
     },
     "SUNFLAG": {
       "mcap_cr": 6621.262409522778,
@@ -31541,7 +31631,12 @@
       "rsi_ema_200": 51.2867,
       "ag": 3.322136,
       "al": 5.005276,
-      "last_close": 365.15
+      "last_close": 365.15,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:34.930122",
+      "rsi_bounce_last_price": 367.75
     },
     "SUNTECK": {
       "mcap_cr": 4836.976213874741,
@@ -31658,7 +31753,12 @@
       "rsi_ema_200": 54.9907,
       "ag": 16.781976,
       "al": 19.762993,
-      "last_close": 1479.0
+      "last_close": 1479.0,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:36.049868",
+      "rsi_bounce_last_price": 1503.5
     },
     "TANLA": {
       "mcap_cr": 8317.214528750537,
@@ -31684,7 +31784,12 @@
       "rsi_ema_200": 47.8826,
       "ag": 1.320639,
       "al": 1.403871,
-      "last_close": 120.56
+      "last_close": 120.56,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:37.302311",
+      "rsi_bounce_last_price": 121.23999786376953
     },
     "TARIL": {
       "mcap_cr": 8835.381506996686,
@@ -32321,7 +32426,12 @@
       "rsi_ema_200": 47.4041,
       "ag": 3.240107,
       "al": 3.982357,
-      "last_close": 513.55
+      "last_close": 513.55,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:39.090773",
+      "rsi_bounce_last_price": 516.6500244140625
     },
     "WAAREERTL": {
       "mcap_cr": 7725.105595337927,
@@ -32425,7 +32535,12 @@
       "rsi_ema_200": 51.3686,
       "ag": 4.395451,
       "al": 5.513287,
-      "last_close": 660.35
+      "last_close": 660.35,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:40.515465",
+      "rsi_bounce_last_price": 682.7000122070312
     },
     "WHIRLPOOL": {
       "mcap_cr": 10121.89719475,
@@ -32626,7 +32741,12 @@
       "ag": 1.23605,
       "al": 1.777619,
       "last_close": 117.28,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:41.588783",
+      "rsi_bounce_last_price": 121.55999755859375
     },
     "ADVENTHTL": {
       "mcap_cr": 637.0,
@@ -32668,7 +32788,12 @@
       "ag": 0.211607,
       "al": 0.237186,
       "last_close": 201.06,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:42.769253",
+      "rsi_bounce_last_price": 201.94000244140625
     },
     "AGARWALEYE": {
       "mcap_cr": 17344.0,
@@ -32850,7 +32975,12 @@
       "ag": 0.395509,
       "al": 0.659905,
       "last_close": 60.63,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:44.269120",
+      "rsi_bounce_last_price": 61.41999816894531
     },
     "ANUHPHR": {
       "mcap_cr": 796.0,
@@ -32864,7 +32994,12 @@
       "ag": 0.466087,
       "al": 0.634995,
       "last_close": 79.24,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:45.381896",
+      "rsi_bounce_last_price": 79.48999786376953
     },
     "APOLLOPIPE": {
       "mcap_cr": 2269.0,
@@ -33046,7 +33181,12 @@
       "ag": 2.572889,
       "al": 2.159025,
       "last_close": 272.91,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:47.924570",
+      "rsi_bounce_last_price": 272.9800109863281
     },
     "BAFNAPH": {
       "mcap_cr": 1113.0,
@@ -33172,7 +33312,12 @@
       "ag": 3.713955,
       "al": 6.549331,
       "last_close": 281.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:49.533270",
+      "rsi_bounce_last_price": 291.25
     },
     "BLISSGVS": {
       "mcap_cr": 7275.0,
@@ -33200,7 +33345,12 @@
       "ag": 0.738407,
       "al": 0.718356,
       "last_close": 54.55,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:50.655020",
+      "rsi_bounce_last_price": 54.79999923706055
     },
     "BLSE": {
       "mcap_cr": 2673.0,
@@ -33270,7 +33420,12 @@
       "ag": 15.172704,
       "al": 16.458807,
       "last_close": 1730.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:51.931008",
+      "rsi_bounce_last_price": 1739.699951171875
     },
     "CANTABIL": {
       "mcap_cr": 2145.0,
@@ -33396,7 +33551,12 @@
       "ag": 5.122543,
       "al": 5.169334,
       "last_close": 597.7,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:53.391621",
+      "rsi_bounce_last_price": 606.5499877929688
     },
     "CORDSCABLE": {
       "mcap_cr": 369.0,
@@ -33410,7 +33570,12 @@
       "ag": 2.688595,
       "al": 4.275126,
       "last_close": 273.35,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:54.668986",
+      "rsi_bounce_last_price": 280.0
     },
     "CORONA": {
       "mcap_cr": 13694.0,
@@ -33438,7 +33603,12 @@
       "ag": 2.243073,
       "al": 2.68008,
       "last_close": 352.75,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:55.850625",
+      "rsi_bounce_last_price": 353.95001220703125
     },
     "CSLFINANCE": {
       "mcap_cr": 534.0,
@@ -33466,7 +33636,12 @@
       "ag": 10.557659,
       "al": 13.989533,
       "last_close": 769.0,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:57.140416",
+      "rsi_bounce_last_price": 787.5499877929688
     },
     "DALMIASUG": {
       "mcap_cr": 3735.0,
@@ -33480,7 +33655,12 @@
       "ag": 5.379617,
       "al": 5.507271,
       "last_close": 451.15,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:58.368040",
+      "rsi_bounce_last_price": 462.6000061035156
     },
     "DAMCAPITAL": {
       "mcap_cr": 1056.0,
@@ -33522,7 +33702,12 @@
       "ag": 3.899769,
       "al": 6.124228,
       "last_close": 482.95,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:03:59.676213",
+      "rsi_bounce_last_price": 497.70001220703125
     },
     "ESTER": {
       "mcap_cr": 892.0,
@@ -33676,7 +33861,12 @@
       "ag": 0.447634,
       "al": 0.620348,
       "last_close": 54.86,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:04:01.262929",
+      "rsi_bounce_last_price": 56.400001525878906
     },
     "JAYKAY": {
       "mcap_cr": 2715.0,
@@ -33690,7 +33880,12 @@
       "ag": 2.197769,
       "al": 3.788353,
       "last_close": 174.01,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:04:02.691618",
+      "rsi_bounce_last_price": 178.88999938964844
     },
     "JINDALPHOT": {
       "mcap_cr": 1143.0,
@@ -33830,7 +34025,12 @@
       "ag": 0.853726,
       "al": 1.106791,
       "last_close": 145.47,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:04:04.377029",
+      "rsi_bounce_last_price": 146.0800018310547
     },
     "MMP": {
       "mcap_cr": 1089.0,
@@ -33844,7 +34044,12 @@
       "ag": 5.168687,
       "al": 5.330543,
       "last_close": 447.9,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:04:05.555592",
+      "rsi_bounce_last_price": 451.3500061035156
     },
     "MONTECARLO": {
       "mcap_cr": 1022.0,
@@ -33914,7 +34119,12 @@
       "ag": 27.342347,
       "al": 31.332213,
       "last_close": 2750.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:04:06.844828",
+      "rsi_bounce_last_price": 2835.199951171875
     },
     "ORIENTBELL": {
       "mcap_cr": 554.0,
@@ -33984,7 +34194,12 @@
       "ag": 0.833811,
       "al": 1.444566,
       "last_close": 81.26,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:04:08.473192",
+      "rsi_bounce_last_price": 83.94000244140625
     },
     "PROSTARM": {
       "mcap_cr": 750.0,
@@ -34040,7 +34255,12 @@
       "ag": 0.628426,
       "al": 1.075414,
       "last_close": 83.98,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:04:09.693794",
+      "rsi_bounce_last_price": 85.27999877929688
     },
     "RML": {
       "mcap_cr": 3372.0,
@@ -34194,7 +34414,12 @@
       "ag": 0.402743,
       "al": 0.627498,
       "last_close": 55.16,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:04:11.118410",
+      "rsi_bounce_last_price": 56.310001373291016
     },
     "YASHOPTICS": {
       "mcap_cr": 307.0,
@@ -35685,5 +35910,21 @@
     "sent": {},
     "followup": false,
     "last_check": ""
+  },
+  "gapup_try": {
+    "date": "2026-11-27",
+    "at": "09:31",
+    "priced": 604,
+    "of": 621,
+    "src": "yahoo",
+    "errors": [
+      "no Fyers connection (login failed?)"
+    ]
+  },
+  "gapup_scan": {
+    "date": "2026-11-27",
+    "at": "09:31",
+    "priced": 604,
+    "hits": 44
   }
 }

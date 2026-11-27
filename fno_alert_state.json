@@ -2229,7 +2229,13 @@
     "trigger_date": "2026-11-26",
     "ref_high": 987.6,
     "ref_low": 964.9,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-27T04:01:27.278180",
+    "fno_high_breach_last_price": 1006.0
   },
   "RITCO": {
     "trigger_date": "2026-11-26",
@@ -2241,7 +2247,13 @@
     "trigger_date": "2026-11-26",
     "ref_high": 639.0,
     "ref_low": 564.55,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_high_breach_last_alert": "2026-11-27T04:01:29.008057",
+    "fno_high_breach_last_price": 663.9500122070312
   },
   "IRISDOREME": {
     "trigger_date": "2026-11-26",
@@ -2301,6 +2313,12 @@
     "trigger_date": "2026-11-26",
     "ref_high": 47.51,
     "ref_low": 43.11,
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "fno_low_breach_last_alert": "2026-11-27T04:01:34.789337",
+    "fno_low_breach_last_price": 40.54999923706055
   }
 }

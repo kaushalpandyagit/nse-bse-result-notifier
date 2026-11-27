@@ -1023,7 +1023,13 @@
     "price_change_pct": 2.5,
     "deliv_pct": 60.2,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-27T04:01:38.175381",
+    "em_high_breach_last_price": 97.87000274658203
   },
   "BUTTERFLY": {
     "trigger_date": "2026-11-26",
@@ -1069,7 +1075,13 @@
     "price_change_pct": 2.48,
     "deliv_pct": 91.4,
     "direction": "up",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H1"
+    ],
+    "em_high_breach_last_alert": "2026-11-27T04:01:40.105300",
+    "em_high_breach_last_price": 44.68000030517578
   },
   "INCREDIBLE": {
     "trigger_date": "2026-11-26",
