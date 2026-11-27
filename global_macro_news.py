@@ -190,7 +190,25 @@ log = logging.getLogger("global_macro")
 # ----------------------------------------------------------------------
 # TELEGRAM DISPATCHER
 # ----------------------------------------------------------------------
+MACRO_REPORT_FILE = Path(__file__).parent / "macro_report.json"      # every alert of the last 3 days, for the laptop's H page (28 Nov 2026)
+
+
+def _save_report(text: str):
+    try:
+        now = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
+        try:
+            rep = json.loads(MACRO_REPORT_FILE.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            rep = {}
+        items = [x for x in rep.get("items", []) if x.get("at", "") >= (now - datetime.timedelta(days=3)).strftime("%Y-%m-%d %H:%M")]
+        items.append({"at": now.strftime("%Y-%m-%d %H:%M"), "text": text})
+        MACRO_REPORT_FILE.write_text(json.dumps({"updated": now.strftime("%Y-%m-%d %H:%M"), "items": items[-300:]}, ensure_ascii=False, indent=1), encoding="utf-8")
+    except Exception as e:      # never let the report break the alerts
+        log.warning("macro_report.json not written: %s", e)
+
+
 def send_telegram_message(text: str) -> bool:
+    _save_report(text)
     if "PUT_YOUR" in TELEGRAM_BOT_TOKEN or "PUT_YOUR" in TELEGRAM_CHAT_ID:
         log.error("Telegram credentials not configured.")
         return False
