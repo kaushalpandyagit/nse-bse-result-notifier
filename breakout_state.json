@@ -17,18 +17,22 @@
   "custom_alert_ALLETEC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-25T03:45:51.339631",
-    "custom_last_price": 108.0,
+    "custom_last_alert": "2026-11-27T08:45:55.435595",
+    "custom_last_price": 112.30000305175781,
     "session_date": "2026-11-27",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BASILIC_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-26T08:45:55.876753",
-    "custom_last_price": 147.25,
+    "custom_last_alert": "2026-11-27T08:45:57.095050",
+    "custom_last_price": 142.8000030517578,
     "session_date": "2026-11-27",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BEACON_price": {
     "alerted": false,
@@ -61,10 +65,12 @@
   "custom_alert_EMMIL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-26T08:45:58.459297",
-    "custom_last_price": 99.0,
+    "custom_last_alert": "2026-11-27T08:46:00.330864",
+    "custom_last_price": 95.6500015258789,
     "session_date": "2026-11-27",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_ESFL_price": {
     "alerted": false,
@@ -155,10 +161,12 @@
   "custom_alert_SPCL_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-26T08:46:02.023977",
-    "custom_last_price": 47.900001525878906,
+    "custom_last_alert": "2026-11-27T08:46:04.575847",
+    "custom_last_price": 45.70000076293945,
     "session_date": "2026-11-27",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_SSEGL_price": {
     "alerted": false,
@@ -359,10 +367,12 @@
   "custom_alert_BASILIC_open_change_rs": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-26T08:45:55.086354",
-    "custom_last_price": 147.25,
+    "custom_last_alert": "2026-11-27T08:45:56.527993",
+    "custom_last_price": 142.8000030517578,
     "session_date": "2026-11-27",
-    "alert_slots": []
+    "alert_slots": [
+      "H2"
+    ]
   },
   "custom_alert_BSE:PGFOILQ_rsi": {
     "alerted": false,
