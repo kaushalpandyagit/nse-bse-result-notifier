@@ -28092,7 +28092,12 @@
       "rsi_ema_200": 52.9986,
       "ag": 21.841736,
       "al": 19.070068,
-      "last_close": 1501.8
+      "last_close": 1501.8,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T08:03:14.202439",
+      "rsi_bounce_last_price": 1520.4000244140625
     },
     "GAEL": {
       "mcap_cr": 6461.293363459717,
@@ -30203,7 +30208,12 @@
       "rsi_ema_200": 52.6861,
       "ag": 16.289869,
       "al": 17.056371,
-      "last_close": 1795.4
+      "last_close": 1795.4,
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T08:03:17.098662",
+      "rsi_bounce_last_price": 1840.5999755859375
     },
     "NUVOCO": {
       "mcap_cr": 12943.338766729184,
@@ -36080,7 +36090,7 @@
       }
     },
     "followup": false,
-    "last_check": "13:17"
+    "last_check": "13:33"
   },
   "gapup_try": {
     "date": "2026-11-27",
