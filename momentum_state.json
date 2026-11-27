@@ -28522,7 +28522,12 @@
       "rsi_ema_200": 51.2295,
       "ag": 2.09081,
       "al": 2.790191,
-      "last_close": 367.9
+      "last_close": 367.9,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T05:47:25.723214",
+      "rsi_bounce_last_price": 375.95001220703125
     },
     "HEXT": {
       "mcap_cr": 30507.2114877,
@@ -36046,7 +36051,7 @@
       }
     },
     "followup": false,
-    "last_check": "10:47"
+    "last_check": "11:17"
   },
   "gapup_try": {
     "date": "2026-11-27",
