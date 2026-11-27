@@ -27065,7 +27065,12 @@
       "rsi_ema_200": 50.8366,
       "ag": 0.444458,
       "al": 0.569924,
-      "last_close": 190.05
+      "last_close": 190.05,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:31:15.361762",
+      "rsi_bounce_last_price": 190.10000610351562
     },
     "CCL": {
       "mcap_cr": 12383.678245653711,
@@ -29068,7 +29073,12 @@
       "rsi_ema_200": 49.4024,
       "ag": 2.930578,
       "al": 4.267958,
-      "last_close": 351.75
+      "last_close": 351.75,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:31:17.660947",
+      "rsi_bounce_last_price": 355.3999938964844
     },
     "JKTYRE": {
       "mcap_cr": 10430.314156064092,
@@ -32930,7 +32940,12 @@
       "ag": 3.88996,
       "al": 6.050287,
       "last_close": 751.8,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:31:21.168807",
+      "rsi_bounce_last_price": 766.7999877929688
     },
     "ALICON": {
       "mcap_cr": 1626.0,
@@ -33300,7 +33315,12 @@
       "ag": 0.756004,
       "al": 0.910339,
       "last_close": 104.46,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:31:22.856174",
+      "rsi_bounce_last_price": 106.0
     },
     "BGRENERGY": {
       "mcap_cr": 2107.0,
@@ -33891,7 +33911,12 @@
       "ag": 0.436808,
       "al": 0.560005,
       "last_close": 75.52,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:31:24.402324",
+      "rsi_bounce_last_price": 76.30000305175781
     },
     "IRISDOREME": {
       "mcap_cr": 1050.0,
@@ -34182,7 +34207,12 @@
       "ag": 3.727666,
       "al": 6.013101,
       "last_close": 347.1,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:31:26.071227",
+      "rsi_bounce_last_price": 360.6000061035156
     },
     "PANACHE": {
       "mcap_cr": 1287.0,
