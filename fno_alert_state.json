@@ -2259,7 +2259,13 @@
     "trigger_date": "2026-11-26",
     "ref_high": 57.48,
     "ref_low": 50.77,
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H2"
+    ],
+    "fno_high_breach_last_alert": "2026-11-27T07:01:22.829534",
+    "fno_high_breach_last_price": 58.0
   },
   "WIPL": {
     "trigger_date": "2026-11-26",

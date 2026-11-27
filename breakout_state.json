@@ -2,11 +2,12 @@
   "custom_alert_BSE:ACLD_price": {
     "alerted": false,
     "last_alert": null,
-    "custom_last_alert": "2026-11-27T03:45:49.532316",
-    "custom_last_price": 95.55000305175781,
+    "custom_last_alert": "2026-11-27T07:01:02.059851",
+    "custom_last_price": 107.0999984741211,
     "session_date": "2026-11-27",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "custom_alert_AERON_price": {
@@ -234,11 +235,12 @@
     "spread_last_price": 4.229195088676671
   },
   "arb_WELINV": {
-    "spread_last_alert": "2026-11-27T04:04:41.486654",
-    "spread_last_price": 6.612979630506864,
+    "spread_last_alert": "2026-11-27T07:02:58.281896",
+    "spread_last_price": 4.329696937174325,
     "session_date": "2026-11-27",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_PRADPME": {
@@ -318,11 +320,12 @@
     ]
   },
   "arb_VHL": {
-    "spread_last_alert": "2026-11-27T05:17:26.264994",
-    "spread_last_price": 2.7036238199336875,
+    "spread_last_alert": "2026-11-27T07:03:02.081467",
+    "spread_last_price": 3.2359679266895767,
     "session_date": "2026-11-27",
     "alert_slots": [
-      "H1"
+      "H1",
+      "H2"
     ]
   },
   "arb_ASHAPURMIN": {
