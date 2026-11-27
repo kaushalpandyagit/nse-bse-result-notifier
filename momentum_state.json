@@ -27621,7 +27621,12 @@
       "rsi_ema_200": 56.5018,
       "ag": 2.955925,
       "al": 4.005081,
-      "last_close": 347.9
+      "last_close": 347.9,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T05:02:52.313809",
+      "rsi_bounce_last_price": 360.45001220703125
     },
     "DOMS": {
       "mcap_cr": 13928.580588019531,
@@ -30060,7 +30065,12 @@
       "rsi_ema_200": 43.9019,
       "ag": 0.214698,
       "al": 0.305587,
-      "last_close": 24.67
+      "last_close": 24.67,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T05:02:54.898276",
+      "rsi_bounce_last_price": 25.079999923706055
     },
     "NEULANDLAB": {
       "mcap_cr": 27154.4600685,
@@ -36012,7 +36022,7 @@
       }
     },
     "followup": false,
-    "last_check": "10:17"
+    "last_check": "10:32"
   },
   "gapup_try": {
     "date": "2026-11-27",
