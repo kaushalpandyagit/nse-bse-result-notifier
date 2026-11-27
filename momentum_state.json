@@ -33889,7 +33889,12 @@
       "ag": 0.294958,
       "al": 0.423953,
       "last_close": 36.25,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T05:17:16.260964",
+      "rsi_bounce_last_price": 37.0
     },
     "INDORAMA": {
       "mcap_cr": 1970.0,
@@ -36019,10 +36024,14 @@
       "WAAREERTL": {
         "price": 752.8,
         "at": "10:17"
+      },
+      "GODFRYPHLP": {
+        "price": 1804.2,
+        "at": "10:47"
       }
     },
     "followup": false,
-    "last_check": "10:32"
+    "last_check": "10:47"
   },
   "gapup_try": {
     "date": "2026-11-27",
