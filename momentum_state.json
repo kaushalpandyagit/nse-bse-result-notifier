@@ -36073,10 +36073,14 @@
       "AVANTIFEED": {
         "price": 713.0,
         "at": "11:32"
+      },
+      "OSWALPUMPS": {
+        "price": 218.11,
+        "at": "13:17"
       }
     },
     "followup": false,
-    "last_check": "12:47"
+    "last_check": "13:17"
   },
   "gapup_try": {
     "date": "2026-11-27",

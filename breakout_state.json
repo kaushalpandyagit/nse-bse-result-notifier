@@ -404,11 +404,10 @@
     ]
   },
   "arb_SILINV": {
-    "spread_last_alert": "2026-11-26T07:04:51.019740",
-    "spread_last_price": 3.8577806013990537,
-    "session_date": "2026-11-26",
+    "spread_last_alert": "2026-11-27T07:48:27.710366",
+    "spread_last_price": 2.631578947368421,
+    "session_date": "2026-11-27",
     "alert_slots": [
-      "H1",
       "H2"
     ]
   },

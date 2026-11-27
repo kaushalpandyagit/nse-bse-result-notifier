@@ -951,7 +951,13 @@
     "price_change_pct": -2.49,
     "deliv_pct": 65.2,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached Low",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H2"
+    ],
+    "em_low_breach_last_alert": "2026-11-27T07:46:12.303364",
+    "em_low_breach_last_price": 10.479999542236328
   },
   "MUTHOOTCAP": {
     "trigger_date": "2026-11-25",
