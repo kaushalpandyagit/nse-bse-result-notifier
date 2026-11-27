@@ -1009,7 +1009,11 @@
       "rsi_al": 16.834609,
       "rs_rank": 95.1,
       "session_date": "2026-11-27",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_trendline_last_alert": "2026-11-27T09:16:15.480211",
+      "rsi_trendline_last_price": 1760.0
     },
     "AFCONS": {
       "sma50": 234.57720001220704,
@@ -16519,7 +16523,11 @@
       "rsi_al": 12.94693,
       "rs_rank": 93.6,
       "session_date": "2026-11-27",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_trendline_last_alert": "2026-11-27T09:17:08.414271",
+      "rsi_trendline_last_price": 1306.199951171875
     },
     "PARKHOSPS": {
       "sma50": 251.80699920654297,
@@ -22311,7 +22319,11 @@
       "rsi_al": 19.762993,
       "rs_rank": 91.9,
       "session_date": "2026-11-27",
-      "alert_slots": []
+      "alert_slots": [
+        "H2"
+      ],
+      "rsi_trendline_last_alert": "2026-11-27T09:17:29.129746",
+      "rsi_trendline_last_price": 1511.0
     },
     "TANLA": {
       "sma50": 575.8999987792969,
@@ -35371,7 +35383,8 @@
     "SHALBY": "2026-11-26",
     "GUJENERGY": "2026-11-26",
     "PANACEABIO": "2026-11-26",
-    "SHARDACROP": "2026-11-26"
+    "SHARDACROP": "2026-11-26",
+    "LAXMIDENTL": "2026-11-27"
   },
   "early_universe": {
     "ABFRL": {
@@ -36005,28 +36018,32 @@
       "x": 1
     }
   },
-  "tight_last": {},
+  "tight_last": {
+    "TORNTPHARM": "2026-11-27"
+  },
   "tight_scan": {
-    "date": "2026-11-26",
+    "date": "2026-11-27",
     "at": "14:47",
-    "set_up": 0,
-    "hits": 0
+    "set_up": 64,
+    "priced": 60,
+    "src": "yahoo",
+    "hits": 1
   },
   "early_scan": {
-    "date": "2026-11-26",
+    "date": "2026-11-27",
     "at": "14:47",
-    "set_up": 5,
+    "set_up": 3,
     "priced": 3,
     "src": "yahoo",
     "hits": 0
   },
   "rev_scan": {
-    "date": "2026-11-26",
+    "date": "2026-11-27",
     "at": "14:47",
-    "set_up": 94,
-    "priced": 89,
+    "set_up": 43,
+    "priced": 38,
     "src": "yahoo",
-    "hits": 8
+    "hits": 1
   },
   "last_sector_report_date": "2026-11-27",
   "ipo_watch": {
@@ -36104,7 +36121,7 @@
         "at": "13:17"
       }
     },
-    "followup": false,
+    "followup": true,
     "last_check": "14:17"
   },
   "gapup_try": {
