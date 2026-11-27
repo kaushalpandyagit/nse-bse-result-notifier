@@ -28460,7 +28460,12 @@
       "rsi_ema_200": 50.7403,
       "ag": 6.279887,
       "al": 7.704114,
-      "last_close": 764.25
+      "last_close": 764.25,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:47:11.320974",
+      "rsi_bounce_last_price": 768.5
     },
     "HCC": {
       "mcap_cr": 4138.759587922388,
@@ -30107,7 +30112,12 @@
       "rsi_ema_200": 47.5409,
       "ag": 0.985093,
       "al": 1.939884,
-      "last_close": 146.54
+      "last_close": 146.54,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:47:13.514947",
+      "rsi_bounce_last_price": 148.35000610351562
     },
     "NIVABUPA": {
       "mcap_cr": 13746.51026257651,
@@ -33897,7 +33907,12 @@
       "ag": 1.747252,
       "al": 2.512064,
       "last_close": 277.45,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:47:16.112204",
+      "rsi_bounce_last_price": 285.04998779296875
     },
     "INTLCONV": {
       "mcap_cr": 480.0,
@@ -33996,7 +34011,12 @@
       "ag": 2.719723,
       "al": 2.950284,
       "last_close": 243.72,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T04:47:17.267863",
+      "rsi_bounce_last_price": 244.0
     },
     "KOPRAN": {
       "mcap_cr": 1291.0,
@@ -35981,9 +36001,18 @@
   "market_up": true,
   "rev_intraday": {
     "date": "2026-11-27",
-    "sent": {},
+    "sent": {
+      "LAXMIDENTL": {
+        "price": 195.0,
+        "at": "10:17"
+      },
+      "WAAREERTL": {
+        "price": 752.8,
+        "at": "10:17"
+      }
+    },
     "followup": false,
-    "last_check": ""
+    "last_check": "10:17"
   },
   "gapup_try": {
     "date": "2026-11-27",
