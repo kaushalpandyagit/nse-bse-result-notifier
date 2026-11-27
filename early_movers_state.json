@@ -751,7 +751,13 @@
     "price_change_pct": -2.46,
     "deliv_pct": 79.1,
     "direction": "down",
-    "status": "Active"
+    "status": "Breached High",
+    "session_date": "2026-11-27",
+    "alert_slots": [
+      "H2"
+    ],
+    "em_high_breach_last_alert": "2026-11-27T08:30:28.682419",
+    "em_high_breach_last_price": 5.610000133514404
   },
   "OCCLLTD": {
     "trigger_date": "2026-11-20",
