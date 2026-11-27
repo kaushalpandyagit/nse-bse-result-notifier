@@ -34450,7 +34450,12 @@
       "ag": 0.444,
       "al": 0.743009,
       "last_close": 58.33,
-      "x": 1
+      "x": 1,
+      "alert_slots": [
+        "H1"
+      ],
+      "rsi_bounce_last_alert": "2026-11-27T06:17:24.954898",
+      "rsi_bounce_last_price": 58.709999084472656
     },
     "SHRINGARMS": {
       "mcap_cr": 2366.0,
@@ -36060,7 +36065,7 @@
       }
     },
     "followup": false,
-    "last_check": "11:32"
+    "last_check": "11:47"
   },
   "gapup_try": {
     "date": "2026-11-27",
